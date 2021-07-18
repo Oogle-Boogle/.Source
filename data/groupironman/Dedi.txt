@@ -1,0 +1,13 @@
+MEMBERS {
+Dedi
+Dedi 2
+}
+BANK {
+}
+LOGS {
+Group created by Dedi
+Dedi 2 has joined the group
+}
+POINTS: 0
+LEVEL: 0
+EXPERIENCE: 0

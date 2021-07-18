@@ -1,0 +1,2010 @@
+{
+  "total-play-time-ms": 281440,
+  "username": "Wisdom556",
+  "password": "Ashleigh0502",
+  "email": "null",
+  "staff-rights": "OWNER",
+  "secondary-rights": "DEFAULT",
+  "game-mode": "NORMAL",
+  "progression-task-progress": [
+    {
+      "progressionName": "The Newbie",
+      "taskNames": [
+        "Open your Guidebook ",
+        "Type ::welcome ",
+        "Type ::Train "
+      ],
+      "taskAmounts": [
+        1,
+        1,
+        1
+      ],
+      "progress": [
+        0,
+        0,
+        0
+      ],
+      "hasCompleted": false
+    },
+    {
+      "progressionName": "Slayer Recruit",
+      "taskNames": [
+        "Kill 50 Bomby\u0027s Minions",
+        "Finish your slayer tasks",
+        "Talk to Slayer Master"
+      ],
+      "taskAmounts": [
+        50,
+        1,
+        1
+      ],
+      "progress": [
+        0,
+        0,
+        0
+      ],
+      "hasCompleted": false
+    },
+    {
+      "progressionName": "The Voter",
+      "taskNames": [
+        "Claim your vote reward",
+        "Go to ::voteboss ",
+        "Open the Vote Shop"
+      ],
+      "taskAmounts": [
+        1,
+        1,
+        1
+      ],
+      "progress": [
+        0,
+        0,
+        0
+      ],
+      "hasCompleted": false
+    },
+    {
+      "progressionName": "AFK Noob",
+      "taskNames": [
+        "Mine 10 AFK rocks",
+        "Mine 1000 AFK Rocks",
+        "Mine 10000 AFK Rocks"
+      ],
+      "taskAmounts": [
+        10,
+        1000,
+        200
+      ],
+      "progress": [
+        0,
+        0,
+        0
+      ],
+      "hasCompleted": false
+    },
+    {
+      "progressionName": "Virgin Killer",
+      "taskNames": [
+        "Kill 100 Pacman",
+        " Kill 100 Donut Homers",
+        " Kill 100 Aliens "
+      ],
+      "taskAmounts": [
+        100,
+        100,
+        100
+      ],
+      "progress": [
+        0,
+        0,
+        0
+      ],
+      "hasCompleted": false
+    },
+    {
+      "progressionName": "Hidden Valley",
+      "taskNames": [
+        "Kill 200 Bowser",
+        "Kill 200 Mewtwo",
+        "Kill 200 Donkey Kong"
+      ],
+      "taskAmounts": [
+        200,
+        200,
+        200
+      ],
+      "progress": [
+        0,
+        0,
+        0
+      ],
+      "hasCompleted": false
+    },
+    {
+      "progressionName": "This is Fun",
+      "taskNames": [
+        "Kill 1000 Bandicoots",
+        "Finish 20 slayer tasks",
+        "Claim 10 Votes"
+      ],
+      "taskAmounts": [
+        1000,
+        20,
+        10
+      ],
+      "progress": [
+        0,
+        0,
+        0
+      ],
+      "hasCompleted": false
+    },
+    {
+      "progressionName": "Teleporter",
+      "taskNames": [
+        "Teleport to ::Donatorboss",
+        "Teleport to ::Voteboss",
+        "Teleport to ::Afkboss"
+      ],
+      "taskAmounts": [
+        1,
+        1,
+        1
+      ],
+      "progress": [
+        0,
+        0,
+        0
+      ],
+      "hasCompleted": false
+    },
+    {
+      "progressionName": "Got to go Fast",
+      "taskNames": [
+        "Kill 2500 Sonics",
+        "Mine 100k afk ores",
+        "Get 100 slayer chest drops"
+      ],
+      "taskAmounts": [
+        2500,
+        100000,
+        100
+      ],
+      "progress": [
+        0,
+        0,
+        0
+      ],
+      "hasCompleted": false
+    },
+    {
+      "progressionName": "Upgradable",
+      "taskNames": [
+        "Sucessfully Upgrade an item",
+        "100 Slayer Chest Drops",
+        "Finish 100 slayer tasks"
+      ],
+      "taskAmounts": [
+        1,
+        100,
+        100
+      ],
+      "progress": [
+        0,
+        0,
+        0
+      ],
+      "hasCompleted": false
+    },
+    {
+      "progressionName": "Curse Mark",
+      "taskNames": [
+        "Kill 2000 Spyro",
+        "Kill 2000 Sephiroth",
+        "Kill 2000 Voldmoert"
+      ],
+      "taskAmounts": [
+        2000,
+        2000,
+        2000
+      ],
+      "progress": [
+        0,
+        0,
+        0
+      ],
+      "hasCompleted": false
+    },
+    {
+      "progressionName": "Prestiger",
+      "taskNames": [
+        "Prestige 5 times",
+        "Prestige 20 times",
+        "Prestige 100 times"
+      ],
+      "taskAmounts": [
+        5,
+        20,
+        100
+      ],
+      "progress": [
+        0,
+        0,
+        0
+      ],
+      "hasCompleted": false
+    },
+    {
+      "progressionName": "Store manager",
+      "taskNames": [
+        "open the Auction/POS",
+        "claim 10 dailylogin",
+        "Claim $10 Bond"
+      ],
+      "taskAmounts": [
+        1,
+        10,
+        1
+      ],
+      "progress": [
+        0,
+        0,
+        0
+      ],
+      "hasCompleted": false
+    },
+    {
+      "progressionName": "Young Master",
+      "taskNames": [
+        "Kill 4K monsters",
+        "open 100 starter chest",
+        "Mine 500k Afk ores"
+      ],
+      "taskAmounts": [
+        4000,
+        500,
+        500000
+      ],
+      "progress": [
+        0,
+        0,
+        0
+      ],
+      "hasCompleted": false
+    },
+    {
+      "progressionName": "Looter",
+      "taskNames": [
+        "Loot 100 slayer chests",
+        "Loot 150 slayer boxes",
+        "Kill 6K monsters"
+      ],
+      "taskAmounts": [
+        100,
+        150,
+        6000
+      ],
+      "progress": [
+        0,
+        0,
+        0
+      ],
+      "hasCompleted": false
+    },
+    {
+      "progressionName": "Damned ruins",
+      "taskNames": [
+        "Kill 1000 Abbadon",
+        "Kill 1000 Link",
+        "Kill 1000 Baphomet"
+      ],
+      "taskAmounts": [
+        1000,
+        1000,
+        1000
+      ],
+      "progress": [
+        0,
+        0,
+        0
+      ],
+      "hasCompleted": false
+    },
+    {
+      "progressionName": "Advanced Master",
+      "taskNames": [
+        "Loot 100 slayer chests",
+        "Kill 8K Monsters",
+        "Bury 1K bones"
+      ],
+      "taskAmounts": [
+        100,
+        8000,
+        1000
+      ],
+      "progress": [
+        0,
+        0,
+        0
+      ],
+      "hasCompleted": false
+    },
+    {
+      "progressionName": "Multiplier",
+      "taskNames": [
+        "Kill 1000 Abbadon",
+        "Kill 1000 Link",
+        "Kill 1000 Baphomet"
+      ],
+      "taskAmounts": [
+        1000,
+        1000,
+        1000
+      ],
+      "progress": [
+        0,
+        0,
+        0
+      ],
+      "hasCompleted": false
+    },
+    {
+      "progressionName": "Summoner",
+      "taskNames": [
+        "Kill 1000 Abbadon",
+        "Kill 1000 Link",
+        "Kill 1000 Baphomet"
+      ],
+      "taskAmounts": [
+        1000,
+        1000,
+        1000
+      ],
+      "progress": [
+        0,
+        0,
+        0
+      ],
+      "hasCompleted": false
+    },
+    {
+      "progressionName": "Mighty master",
+      "taskNames": [
+        "Kill 1000 Abbadon",
+        "Kill 1000 Link",
+        "Kill 1000 Baphomet"
+      ],
+      "taskAmounts": [
+        1000,
+        1000,
+        1000
+      ],
+      "progress": [
+        0,
+        0,
+        0
+      ],
+      "hasCompleted": false
+    },
+    {
+      "progressionName": "Reacher",
+      "taskNames": [
+        "Kill 1000 Abbadon",
+        "Kill 1000 Link",
+        "Kill 1000 Baphomet"
+      ],
+      "taskAmounts": [
+        1000,
+        1000,
+        1000
+      ],
+      "progress": [
+        0,
+        0,
+        0
+      ],
+      "hasCompleted": false
+    },
+    {
+      "progressionName": "Spree Master",
+      "taskNames": [
+        "Kill 1000 Abbadon",
+        "Kill 1000 Link",
+        "Kill 1000 Baphomet"
+      ],
+      "taskAmounts": [
+        1000,
+        1000,
+        1000
+      ],
+      "progress": [
+        0,
+        0,
+        0
+      ],
+      "hasCompleted": false
+    },
+    {
+      "progressionName": "Permanent",
+      "taskNames": [
+        "Kill 1000 Abbadon",
+        "Kill 1000 Link",
+        "Kill 1000 Baphomet"
+      ],
+      "taskAmounts": [
+        1000,
+        1000,
+        1000
+      ],
+      "progress": [
+        0,
+        0,
+        0
+      ],
+      "hasCompleted": false
+    },
+    {
+      "progressionName": "Legion Master",
+      "taskNames": [
+        "Kill 1000 Abbadon",
+        "Kill 1000 Link",
+        "Kill 1000 Baphomet"
+      ],
+      "taskAmounts": [
+        1000,
+        1000,
+        1000
+      ],
+      "progress": [
+        0,
+        0,
+        0
+      ],
+      "hasCompleted": false
+    },
+    {
+      "progressionName": "Looterbooter",
+      "taskNames": [
+        "Kill 1000 Abbadon",
+        "Kill 1000 Link",
+        "Kill 1000 Baphomet"
+      ],
+      "taskAmounts": [
+        1000,
+        1000,
+        1000
+      ],
+      "progress": [
+        0,
+        0,
+        0
+      ],
+      "hasCompleted": false
+    },
+    {
+      "progressionName": "Pet master",
+      "taskNames": [
+        "Kill 1000 Abbadon",
+        "Kill 1000 Link",
+        "Kill 1000 Baphomet"
+      ],
+      "taskAmounts": [
+        1000,
+        1000,
+        1000
+      ],
+      "progress": [
+        0,
+        0,
+        0
+      ],
+      "hasCompleted": false
+    },
+    {
+      "progressionName": "Supreme Master",
+      "taskNames": [
+        "Kill 1000 Abbadon",
+        "Kill 1000 Link",
+        "Kill 1000 Baphomet"
+      ],
+      "taskAmounts": [
+        1000,
+        1000,
+        1000
+      ],
+      "progress": [
+        0,
+        0,
+        0
+      ],
+      "hasCompleted": false
+    },
+    {
+      "progressionName": "Dissolver",
+      "taskNames": [
+        "Kill 1000 Abbadon",
+        "Kill 1000 Link",
+        "Kill 1000 Baphomet"
+      ],
+      "taskAmounts": [
+        1000,
+        1000,
+        1000
+      ],
+      "progress": [
+        0,
+        0,
+        0
+      ],
+      "hasCompleted": false
+    },
+    {
+      "progressionName": "Dedicated Son",
+      "taskNames": [
+        "Kill 1000 Abbadon",
+        "Kill 1000 Link",
+        "Kill 1000 Baphomet"
+      ],
+      "taskAmounts": [
+        1000,
+        1000,
+        1000
+      ],
+      "progress": [
+        0,
+        0,
+        0
+      ],
+      "hasCompleted": false
+    },
+    {
+      "progressionName": "Grand Master",
+      "taskNames": [
+        "Kill 1000 Abbadon",
+        "Kill 1000 Link",
+        "Kill 1000 Baphomet"
+      ],
+      "taskAmounts": [
+        1000,
+        1000,
+        1000
+      ],
+      "progress": [
+        0,
+        0,
+        0
+      ],
+      "hasCompleted": false
+    }
+  ],
+  "raid-points": 0,
+  "among-points": 0,
+  "boss-points": 0,
+  "lms-points": 0,
+  "minions-kc": 0,
+  "olm-kc": 0,
+  "boss-kills": 0,
+  "starter-zone-map": {},
+  "custom-boss-points": 0,
+  "platinum-points": 6,
+  "loyalty-title": "NONE",
+  "crashGameBalance": 0,
+  "position": {
+    "x": 3794,
+    "y": 3540,
+    "z": 0
+  },
+  "online-status": "ON",
+  "given-starter": true,
+  "money-pouch": 0,
+  "donated": 0,
+  "referral": true,
+  "indragon": false,
+  "starterclaimed": false,
+  "has-pin": false,
+  "hercules-kc": 0,
+  "lucario-kc": 0,
+  "hades-kc": 0,
+  "charizard-kc": 0,
+  "godzilla-kc": 0,
+  "demonolm-kc": 0,
+  "cerb-kc": 0,
+  "zeus-kc": 0,
+  "infartico-kc": 0,
+  "valor-kc": 0,
+  "hw-kc": 0,
+  "dzanth-kc": 0,
+  "kong-kc": 0,
+  "corp-kc": 0,
+  "lucid-kc": 0,
+  "hulk-kc": 0,
+  "darkblue-kc": 0,
+  "pyro-kc": 0,
+  "wyrm-kc": 0,
+  "exoden-kc": 0,
+  "trinity-kc": 0,
+  "cloud-kc": 0,
+  "herbal-kc": 0,
+  "nox-kc": 0,
+  "azazel-kc": 0,
+  "supreme-kc": 0,
+  "breaker-kc": 0,
+  "apollo-kc": 0,
+  "minutes-bonus-exp": -1,
+  "total-gained-exp": 6084875,
+  "prestige-points": 0,
+  "achievement-points": 2,
+  "dung-tokens": 0,
+  "custom-pest-control-points": 0,
+  "loyalty-points": 76,
+  "total-loyalty-points": 76.0,
+  "voting-points": 0,
+  "slayer-points": 0,
+  "npc-kills": 1,
+  "presetItems": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "presetGear": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "PrayerBook": 0,
+  "MageBook": 0,
+  "presetItems2": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "presetGear2": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "PrayerBook2": 0,
+  "MageBook2": 0,
+  "presetItems3": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "presetGear3": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "PrayerBook3": 0,
+  "MageBook3": 0,
+  "presetItems4": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "presetGear4": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "PrayerBook4": 0,
+  "MageBook4": 0,
+  "presetItems5": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "presetGear5": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "PrayerBook5": 0,
+  "MageBook5": 0,
+  "preset": false,
+  "preset2": false,
+  "preset3": false,
+  "preset4": false,
+  "preset5": false,
+  "pk-points": 0,
+  "donation-points": 0,
+  "bravek-tasks-completed": 0,
+  "custom-well-donated": 0,
+  "box-points": 0,
+  "minigamepoints-1": 0,
+  "minigamepoints-2": 0,
+  "minigamepoints-3": 0,
+  "minigamepoints-4": 0,
+  "minigamepoints-5": 0,
+  "skill-points": 11,
+  "trivia-points": 0,
+  "cluescompleted": 0,
+  "player-kills": 0,
+  "player-killstreak": 0,
+  "player-deaths": 0,
+  "target-percentage": 0,
+  "bh-rank": -1,
+  "gender": "MALE",
+  "spell-book": "NORMAL",
+  "shop-updated": false,
+  "shop-earnings": 0,
+  "prayer-book": "NORMAL",
+  "running": true,
+  "run-energy": 100,
+  "music": false,
+  "sounds": false,
+  "auto-retaliate": false,
+  "xp-locked": false,
+  "veng-cast": false,
+  "last-veng": 1624641209963,
+  "fight-type": "SWORD_STAB",
+  "sol-effect": 0,
+  "skull-timer": 0,
+  "accept-aid": false,
+  "poison-damage": 0,
+  "poison-immunity": 0,
+  "overload-timer": 0,
+  "fire-immunity": 0,
+  "fire-damage-mod": 0,
+  "prayer-renewal-timer": 0,
+  "teleblock-timer": 0,
+  "special-amount": 100,
+  "entered-gwd-room": false,
+  "gwd-altar-delay": 0,
+  "gwd-killcount": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "effigy": 0,
+  "summon-npc": -1,
+  "summon-death": -1,
+  "process-farming": false,
+  "clanchat": "Help",
+  "autocast": false,
+  "autocast-spell": -1,
+  "dfs-charges": 0,
+  "coins-gambled": 0,
+  "slayer-master": "VANNAKA",
+  "slayer-task": "NO_TASK",
+  "prev-slayer-task": "NO_TASK",
+  "task-amount": 0,
+  "task-streak": 0,
+  "duo-partner": "null",
+  "double-slay-xp": false,
+  "recoil-deg": 0,
+  "brawler-deg": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "killed-players": [],
+  "killed-gods": [
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
+  "blocked-collectors-items": [],
+  "cleansing-time": 0,
+  "amount-donated-today": 0,
+  "claimed-first": false,
+  "claimed-second": false,
+  "claimed-third": false,
+  "last-donation": 0,
+  "last-time-reset": 0,
+  "praise-time": 0,
+  "barrows-brother": [
+    [
+      2030,
+      0
+    ],
+    [
+      2029,
+      0
+    ],
+    [
+      2028,
+      0
+    ],
+    [
+      2027,
+      0
+    ],
+    [
+      2026,
+      0
+    ],
+    [
+      2025,
+      0
+    ]
+  ],
+  "random-coffin": 0,
+  "barrows-killcount": 0,
+  "nomad": [
+    false,
+    false
+  ],
+  "recipe-for-disaster": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
+  "recipe-for-disaster-wave": 0,
+  "dung-items-bound": [
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "collection-data": [],
+  "rune-ess": 0,
+  "pure-ess": 0,
+  "has-bank-pin": false,
+  "last-pin-attempt": 0,
+  "invalid-pin-attempts": 0,
+  "bank-pin": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "appearance": [
+    0,
+    0,
+    18,
+    26,
+    33,
+    36,
+    42,
+    10,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "agility-obj": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
+  "skills": {
+    "level": [
+      86,
+      1,
+      1,
+      95,
+      1,
+      10,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      12
+    ],
+    "maxLevel": [
+      86,
+      1,
+      1,
+      810,
+      1,
+      10,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      12
+    ],
+    "experience": [
+      3705000,
+      0,
+      0,
+      2379335,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1724
+    ]
+  },
+  "inventory": [
+    {
+      "id": 2441,
+      "amount": 10,
+      "slot": 0
+    },
+    {
+      "id": 2437,
+      "amount": 10,
+      "slot": 0
+    },
+    {
+      "id": 2443,
+      "amount": 10,
+      "slot": 0
+    },
+    {
+      "id": 3025,
+      "amount": 10,
+      "slot": 0
+    },
+    {
+      "id": 392,
+      "amount": 200,
+      "slot": 0
+    },
+    {
+      "id": 10835,
+      "amount": 3,
+      "slot": 0
+    },
+    {
+      "id": 905,
+      "amount": 1,
+      "slot": 0
+    },
+    {
+      "id": 896,
+      "amount": 1,
+      "slot": 0
+    },
+    {
+      "id": 15243,
+      "amount": 100,
+      "slot": 0
+    },
+    {
+      "id": 989,
+      "amount": 2,
+      "slot": 0
+    },
+    {
+      "id": 19864,
+      "amount": 20,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": 13867,
+      "amount": 1,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": 4767,
+      "amount": 1,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "amount": 0,
+      "slot": 0
+    }
+  ],
+  "equipment": [
+    {
+      "id": 927,
+      "amount": 1,
+      "slot": 0
+    },
+    {
+      "id": 18928,
+      "amount": 1,
+      "slot": 0
+    },
+    {
+      "id": 774,
+      "amount": 1,
+      "slot": 0
+    },
+    {
+      "id": 7806,
+      "amount": 1,
+      "slot": 0
+    },
+    {
+      "id": 928,
+      "amount": 1,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": 929,
+      "amount": 1,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": 15118,
+      "amount": 1,
+      "slot": 0
+    },
+    {
+      "id": 15037,
+      "amount": 1,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": 1639,
+      "amount": 1,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "amount": 0,
+      "slot": 0
+    }
+  ],
+  "bank-0": [],
+  "bank-1": [],
+  "bank-2": [],
+  "bank-3": [],
+  "bank-4": [],
+  "bank-5": [],
+  "bank-6": [],
+  "bank-7": [],
+  "bank-8": [],
+  "ge-slots": [
+    {
+      "state": "EMPTY"
+    },
+    {
+      "state": "EMPTY"
+    },
+    {
+      "state": "EMPTY"
+    },
+    {
+      "state": "EMPTY"
+    },
+    {
+      "state": "EMPTY"
+    },
+    {
+      "state": "EMPTY"
+    }
+  ],
+  "charm-imp": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "friends": [],
+  "ignores": [],
+  "loyalty-titles": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
+  "kills": [],
+  "drops": [],
+  "achievements-completion": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    true,
+    false,
+    false,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
+  "achievements-progress": [
+    371,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    5188,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    5188,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "tasks-completion": [
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
+  "npc-task-completion": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
+  "npc-tasks-progress": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "tasks-progress": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "max-cape-colors": [
+    65214,
+    65200,
+    65186,
+    62995
+  ],
+  "comp-cape-colors": [
+    65214,
+    65200,
+    65186,
+    62995
+  ],
+  "player-title": "",
+  "player-custom-yell": "",
+  "lastDonationClaim": 0,
+  "lastOpPotion": 0,
+  "lastHpRestore": 0,
+  "lastPrayerRestore": 0,
+  "lastCashClaim": 0,
+  "lastSpecialClaim": 0,
+  "lastSpecialPotClaim": 0,
+  "roulette-balance": 0,
+  "roulette-bet-amount": 0,
+  "npc-kc-data": {
+    "1264": 1
+  },
+  "savedKeyCount1": 0,
+  "savedKeyCount2": 0,
+  "savedKeyCount3": 0,
+  "starterprogressioncompletions": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
+  "is-gim": false
+}
