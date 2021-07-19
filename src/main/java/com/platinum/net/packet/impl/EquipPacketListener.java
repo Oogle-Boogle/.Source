@@ -259,6 +259,7 @@ public class EquipPacketListener implements PacketListener {
 					BonusManager.update(player);
 					player.getEquipment().refreshItems();
 					player.getInventory().refreshItems();
+					player.getEquipmentWings().refreshItems();
 					player.getUpdateFlag().flag(Flag.APPEARANCE);
 					Sounds.sendSound(player, Sound.EQUIP_ITEM);
 				}

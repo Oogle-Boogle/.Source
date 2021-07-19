@@ -2024,6 +2024,9 @@ public class Player extends Character {
             } else {
                 properties.putShort(0x100 + appearance.getLook()[Appearance.FEET]);
             }
+			if (equip[Equipment.WINGS_SLOT] > -1) {
+				properties.putShort(0x200 + equip[Equipment.WINGS_SLOT]);
+			}
             if (appearance.getLook()[Appearance.BEARD] <= 0 || appearance.getGender().equals(Gender.FEMALE)) {
 				if(test < 2) {
 					if (player.getEquipmentWings().get(test).getId() != -1) {
