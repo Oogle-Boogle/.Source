@@ -4,12 +4,7 @@ import com.platinum.model.Flag;
 import com.platinum.model.Item;
 import com.platinum.model.PlayerRights;
 import com.platinum.model.Locations.Location;
-import com.platinum.model.container.impl.Bank;
-import com.platinum.model.container.impl.BeastOfBurden;
-import com.platinum.model.container.impl.Equipment;
-import com.platinum.model.container.impl.EquipmentWings;
-import com.platinum.model.container.impl.PriceChecker;
-import com.platinum.model.container.impl.Shop;
+import com.platinum.model.container.impl.*;
 import com.platinum.model.container.impl.Shop.ShopManager;
 import com.platinum.model.definitions.ItemDefinition;
 import com.platinum.model.definitions.WeaponAnimations;
@@ -161,32 +156,6 @@ public class ItemContainerActionPacketListener implements PacketListener {
 				player.getGambling().removeGambledItem(id, 1);
 			}
 			break;
-		case EquipmentWings.INVENTORY_INTERFACE_ID:
-
-			item = slot < 0 ? null : player.getEquipmentWings().getItems()[slot];
-
-			if(item == null || item.getId() != id)
-				return;
-
-			boolean stackItem = item.getDefinition().isStackable() && player.getInventory().getAmount(item.getId()) > 0;
-			int inventorySlot = player.getInventory().getEmptySlot();
-			if (inventorySlot != -1) {
-				Item itemReplacement = new Item(-1, 0);
-				player.getEquipmentWings().setItem(slot, itemReplacement);
-				if(!stackItem)
-					player.getInventory().setItem(inventorySlot, item);
-				else
-					player.getInventory().add(item.getId(), item.getAmount());
-				BonusManager.update(player);
-
-				player.getEquipmentWings().refreshItems();
-				player.getInventory().refreshItems();
-				player.getUpdateFlag().flag(Flag.APPEARANCE);
-			} else {
-				player.getInventory().full();
-			}
-
-			break;
 
 		case 57150:
 			System.out.println("xd ok k");
@@ -248,7 +217,6 @@ public class ItemContainerActionPacketListener implements PacketListener {
 					}
 				}
 				player.getEquipment().refreshItems();
-				player.getEquipmentWings().refreshItems();
 				player.getInventory().refreshItems();
 				player.getUpdateFlag().flag(Flag.APPEARANCE);
 			} else {
@@ -369,6 +337,32 @@ public class ItemContainerActionPacketListener implements PacketListener {
 				return;
 			}
 			break;
+			case EquipmentWings.INVENTORY_INTERFACE_ID:
+
+				item = slot < 0 ? null : player.getEquipmentWings().getItems()[slot];
+
+				if(item == null || item.getId() != id)
+					return;
+
+				boolean stackItem = item.getDefinition().isStackable() && player.getInventory().getAmount(item.getId()) > 0;
+				int inventorySlot = player.getInventory().getEmptySlot();
+				if (inventorySlot != -1) {
+					Item itemReplacement = new Item(-1, 0);
+					player.getEquipmentWings().setItem(slot, itemReplacement);
+					if(!stackItem)
+						player.getInventory().setItem(inventorySlot, item);
+					else
+						player.getInventory().add(item.getId(), item.getAmount());
+					BonusManager.update(player);
+
+					player.getEquipmentWings().refreshItems();
+					player.getInventory().refreshItems();
+					player.getUpdateFlag().flag(Flag.APPEARANCE);
+				} else {
+					player.getInventory().full();
+				}
+
+				break;
 
 		case 19313:
 			if (player.getInterfaceId() == 19307 && player.getGroupIronmanGroup() != null) {

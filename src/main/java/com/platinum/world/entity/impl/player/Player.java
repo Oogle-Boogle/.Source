@@ -1826,53 +1826,53 @@ public class Player extends Character {
 		return skillManager.getCurrentLevel(Skill.DEFENCE);
 	}
 	public static void updateAppearance(Player player, PacketBuilder out, Player target) {
-        for(Player p : World.getPlayers()) {
+		for(Player p : World.getPlayers()) {
 
-        }
-        Appearance appearance = target.getAppearance();
-        Equipment equipment = target.getEquipment();
-        EquipmentWings equipment2 = target.getEquipmentWings();
-        PacketBuilder properties = new PacketBuilder();
-        properties.put(appearance.getGender().ordinal());
-        properties.put(appearance.getHeadHint());
-        properties.put(target.getLocation() == Locations.Location.WILDERNESS ? appearance.getBountyHunterSkull() : -1);
-        properties.putShort(target.getSkullIcon());
+		}
+		Appearance appearance = target.getAppearance();
+		Equipment equipment = target.getEquipment();
+		EquipmentWings equipment2 = target.getEquipmentWings();
+		PacketBuilder properties = new PacketBuilder();
+		properties.put(appearance.getGender().ordinal());
+		properties.put(appearance.getHeadHint());
+		properties.put(target.getLocation() == Locations.Location.WILDERNESS ? appearance.getBountyHunterSkull() : -1);
+		properties.putShort(target.getSkullIcon());
 
-        int test = 0;
+		int test = 0;
 
 
 
-        if (target.getNpcTransformationId() > 1) {
-            properties.putShort(-1);
-            properties.putShort(target.getNpcTransformationId());
-        }else {
-            int[] equip = new int[equipment.capacity()];
-            for (int i = 0; i < 14; i++) {
-                equip[i] = equipment.getItems()[i].getId();
-            }
-            if (equip[Equipment.HEAD_SLOT] > -1) {
-                properties.putShort(0x200 + equip[Equipment.HEAD_SLOT]);
-            } else {
-            	 if(test < 2) {
-					 if (player.getEquipmentWings().get(test).getId() != -1) {
-						 properties.putShort(0x200 + player.getEquipmentWings().get(test).getId());
-						 test++;
-					 } else {
-						 test++;
-						 if (player.getEquipmentWings().get(test).getId() != -1) {
-							 properties.putShort(0x200 + player.getEquipmentWings().get(test).getId());
-							 test++;
-						 } else {
-							 properties.put(0);
-						 }
-					 }
-				 } else {
-					 properties.put(0);
-				 }
-            }
-            if (equip[Equipment.CAPE_SLOT] > -1) {
-                properties.putShort(0x200 + equip[Equipment.CAPE_SLOT]);
-                if(equip[Equipment.CAPE_SLOT] == 14019) {
+		if (target.getNpcTransformationId() > 1) {
+			properties.putShort(-1);
+			properties.putShort(target.getNpcTransformationId());
+		}else {
+			int[] equip = new int[equipment.capacity()];
+			for (int i = 0; i < 14; i++) {
+				equip[i] = equipment.getItems()[i].getId();
+			}
+			if (equip[Equipment.HEAD_SLOT] > -1) {
+				properties.putShort(0x200 + equip[Equipment.HEAD_SLOT]);
+			} else {
+				if(test < 2) {
+					if (player.getEquipmentWings().get(test).getId() != -1) {
+						properties.putShort(0x200 + player.getEquipmentWings().get(test).getId());
+						test++;
+					} else {
+						test++;
+						if (player.getEquipmentWings().get(test).getId() != -1) {
+							properties.putShort(0x200 + player.getEquipmentWings().get(test).getId());
+							test++;
+						} else {
+							properties.put(0);
+						}
+					}
+				} else {
+					properties.put(0);
+				}
+			}
+			if (equip[Equipment.CAPE_SLOT] > -1) {
+				properties.putShort(0x200 + equip[Equipment.CAPE_SLOT]);
+				if(equip[Equipment.CAPE_SLOT] == 14019) {
 					/*int[] modelColors = new int[] { 65214, 65200, 65186, 62995 };
 					if(target.getUsername().equalsIgnoreCase("apache ah64")) {
 						modelColors[0] = 926;//cape
@@ -1885,149 +1885,25 @@ public class Player extends Character {
 						modelColors[2] = 928;//outline
 						modelColors[3] = 302770;//cape
 					}*/
-                    int[] modelColors = target.getMaxCapeColors();
-                    //System.out.println("Updating: "+Arrays.toString(modelColors));
-                    if(modelColors != null) {
-                        properties.put(modelColors.length);
-                        for(int i = 0; i < modelColors.length; i++) {
-                            properties.putInt(modelColors[i]);
-                        }
-                    } else {
-                        properties.put(0);
-                    }
-                } else {
-                    properties.put(0);
-                }
-            } else {
-                properties.put(0);
-            }
-            if (equip[Equipment.AMULET_SLOT] > -1) {
-                properties.putShort(0x200 + equip[Equipment.AMULET_SLOT]);
-            } else {
-				if(test < 2) {
-					if (player.getEquipmentWings().get(test).getId() != -1) {
-						properties.putShort(0x200 + player.getEquipmentWings().get(test).getId());
-						test++;
-					} else {
-						test++;
-						if (player.getEquipmentWings().get(test).getId() != -1) {
-							properties.putShort(0x200 + player.getEquipmentWings().get(test).getId());
-							test++;
-						} else {
-							properties.put(0);
+					int[] modelColors = target.getMaxCapeColors();
+					//System.out.println("Updating: "+Arrays.toString(modelColors));
+					if(modelColors != null) {
+						properties.put(modelColors.length);
+						for(int i = 0; i < modelColors.length; i++) {
+							properties.putInt(modelColors[i]);
 						}
+					} else {
+						properties.put(0);
 					}
 				} else {
 					properties.put(0);
 				}
-            }
-            if (equip[Equipment.WEAPON_SLOT] > -1) {
-                properties.putShort(0x200 + equip[Equipment.WEAPON_SLOT]);
-            } else {
-				if(test < 2) {
-					if (player.getEquipmentWings().get(test).getId() != -1) {
-						properties.putShort(0x200 + player.getEquipmentWings().get(test).getId());
-						test++;
-					} else {
-						test++;
-						if (player.getEquipmentWings().get(test).getId() != -1) {
-							properties.putShort(0x200 + player.getEquipmentWings().get(test).getId());
-							test++;
-						} else {
-							properties.put(0);
-						}
-					}
-				} else {
-					properties.put(0);
-				}
-            }
-            if (equip[Equipment.BODY_SLOT] > -1) {
-                properties.putShort(0x200 + equip[Equipment.BODY_SLOT]);
-            } else {
-                properties.putShort(0x100 + appearance.getLook()[Appearance.CHEST]);
-            }
-            if (equip[Equipment.SHIELD_SLOT] > -1) {
-                properties.putShort(0x200 + equip[Equipment.SHIELD_SLOT]);
-            } else {
-				if(test < 2) {
-					if (player.getEquipmentWings().get(test).getId() != -1) {
-						properties.putShort(0x200 + player.getEquipmentWings().get(test).getId());
-						test++;
-					} else {
-						test++;
-						if (player.getEquipmentWings().get(test).getId() != -1) {
-							properties.putShort(0x200 + player.getEquipmentWings().get(test).getId());
-							test++;
-						} else {
-							properties.put(0);
-						}
-					}
-				} else {
-					properties.put(0);
-				}
-            }
-
-            if (ItemDefinition.forId(equip[Equipment.BODY_SLOT]).isFullBody()) {
-				if(test < 2) {
-					if (player.getEquipmentWings().get(test).getId() != -1) {
-						properties.putShort(0x200 + player.getEquipmentWings().get(test).getId());
-						test++;
-					} else {
-						test++;
-						if (player.getEquipmentWings().get(test).getId() != -1) {
-							properties.putShort(0x200 + player.getEquipmentWings().get(test).getId());
-							test++;
-						} else {
-							properties.put(0);
-						}
-					}
-				} else {
-					properties.put(0);
-				}
-            } else {
-                properties.putShort(0x100 + appearance.getLook()[Appearance.ARMS]);
-            }
-
-            if (equip[Equipment.LEG_SLOT] > -1) {
-                properties.putShort(0x200 + equip[Equipment.LEG_SLOT]);
-            } else {
-                properties.putShort(0x100 + appearance.getLook()[Appearance.LEGS]);
-            }
-
-            if (ItemDefinition.forId(equip[Equipment.HEAD_SLOT]).isFullHelm()) {
-				if(test < 2) {
-					if (player.getEquipmentWings().get(test).getId() != -1) {
-						properties.putShort(0x200 + player.getEquipmentWings().get(test).getId());
-						test++;
-					} else {
-						test++;
-						if (player.getEquipmentWings().get(test).getId() != -1) {
-							properties.putShort(0x200 + player.getEquipmentWings().get(test).getId());
-							test++;
-						} else {
-							properties.put(0);
-						}
-					}
-				} else {
-					properties.put(0);
-				}
-            } else {
-                properties.putShort(0x100 + appearance.getLook()[Appearance.HEAD]);
-            }
-            if (equip[Equipment.HANDS_SLOT] > -1) {
-                properties.putShort(0x200 + equip[Equipment.HANDS_SLOT]);
-            } else {
-                properties.putShort(0x100 + appearance.getLook()[Appearance.HANDS]);
-            }
-            if (equip[Equipment.FEET_SLOT] > -1) {
-                properties.putShort(0x200 + equip[Equipment.FEET_SLOT]);
-            } else {
-                properties.putShort(0x100 + appearance.getLook()[Appearance.FEET]);
-            }
-			if (equip[Equipment.WINGS_SLOT] > -1) {
-				properties.putShort(0x200 + equip[Equipment.WINGS_SLOT]);
+			} else {
+				properties.put(0);
 			}
-            if (appearance.getLook()[Appearance.BEARD] <= 0 || appearance.getGender().equals(Gender.FEMALE)) {
+			if (equip[Equipment.AMULET_SLOT] > -1) {
+				properties.putShort(0x200 + equip[Equipment.AMULET_SLOT]);
+			} else {
 				if(test < 2) {
 					if (player.getEquipmentWings().get(test).getId() != -1) {
 						properties.putShort(0x200 + player.getEquipmentWings().get(test).getId());
@@ -2044,7 +1920,10 @@ public class Player extends Character {
 				} else {
 					properties.put(0);
 				}
-            } else if (ItemDefinition.forId(equip[Equipment.HEAD_SLOT]).isFullHelm()) {
+			}
+			if (equip[Equipment.WEAPON_SLOT] > -1) {
+				properties.putShort(0x200 + equip[Equipment.WEAPON_SLOT]);
+			} else {
 				if(test < 2) {
 					if (player.getEquipmentWings().get(test).getId() != -1) {
 						properties.putShort(0x200 + player.getEquipmentWings().get(test).getId());
@@ -2061,41 +1940,160 @@ public class Player extends Character {
 				} else {
 					properties.put(0);
 				}
-                
-            } else {
-                properties.putShort(0x100 + appearance.getLook()[Appearance.BEARD]);
-            }
-        }
-        properties.put(appearance.getLook()[Appearance.HAIR_COLOUR]);
-        properties.put(appearance.getLook()[Appearance.TORSO_COLOUR]);
-        properties.put(appearance.getLook()[Appearance.LEG_COLOUR]);
-        properties.put(appearance.getLook()[Appearance.FEET_COLOUR]);
-        properties.put(appearance.getLook()[Appearance.SKIN_COLOUR]);
+			}
+			if (equip[Equipment.BODY_SLOT] > -1) {
+				properties.putShort(0x200 + equip[Equipment.BODY_SLOT]);
+			} else {
+				properties.putShort(0x100 + appearance.getLook()[Appearance.CHEST]);
+			}
+			if (equip[Equipment.SHIELD_SLOT] > -1) {
+				properties.putShort(0x200 + equip[Equipment.SHIELD_SLOT]);
+			} else {
+				if(test < 2) {
+					if (player.getEquipmentWings().get(test).getId() != -1) {
+						properties.putShort(0x200 + player.getEquipmentWings().get(test).getId());
+						test++;
+					} else {
+						test++;
+						if (player.getEquipmentWings().get(test).getId() != -1) {
+							properties.putShort(0x200 + player.getEquipmentWings().get(test).getId());
+							test++;
+						} else {
+							properties.put(0);
+						}
+					}
+				} else {
+					properties.put(0);
+				}
+			}
 
-        int skillAnim = target.getSkillAnimation();
-        if(skillAnim > 0) {
-            for(int i = 0; i < 7; i++)
-                properties.putShort(skillAnim);
-        } else {
-            properties.putShort(target.getCharacterAnimations().getStandingAnimation());
-            properties.putShort(0x337);
-            properties.putShort(target.getCharacterAnimations().getWalkingAnimation());
-            properties.putShort(0x334);
-            properties.putShort(0x335);
-            properties.putShort(0x336);
-            properties.putShort(target.getCharacterAnimations().getRunningAnimation());
-        }
+			if (ItemDefinition.forId(equip[Equipment.BODY_SLOT]).isFullBody()) {
+				if(test < 2) {
+					if (player.getEquipmentWings().get(test).getId() != -1) {
+						properties.putShort(0x200 + player.getEquipmentWings().get(test).getId());
+						test++;
+					} else {
+						test++;
+						if (player.getEquipmentWings().get(test).getId() != -1) {
+							properties.putShort(0x200 + player.getEquipmentWings().get(test).getId());
+							test++;
+						} else {
+							properties.put(0);
+						}
+					}
+				} else {
+					properties.put(0);
+				}
+			} else {
+				properties.putShort(0x100 + appearance.getLook()[Appearance.ARMS]);
+			}
 
-        properties.putLong(target.getLongUsername());
-        properties.put(target.getSkillManager().getCombatLevel());
-        properties.putShort(target.getRights().ordinal());
-        properties.putString(target.getTitle());
-        //System.out.println("test - "+target.getTitle());
-        //properties.putShort(target.getLoyaltyTitle().ordinal());
+			if (equip[Equipment.LEG_SLOT] > -1) {
+				properties.putShort(0x200 + equip[Equipment.LEG_SLOT]);
+			} else {
+				properties.putShort(0x100 + appearance.getLook()[Appearance.LEGS]);
+			}
 
-        out.put(properties.buffer().writerIndex(), ValueType.C);
-        out.putBytes(properties.buffer());
-    }
+			if (ItemDefinition.forId(equip[Equipment.HEAD_SLOT]).isFullHelm()) {
+				if(test < 2) {
+					if (player.getEquipmentWings().get(test).getId() != -1) {
+						properties.putShort(0x200 + player.getEquipmentWings().get(test).getId());
+						test++;
+					} else {
+						test++;
+						if (player.getEquipmentWings().get(test).getId() != -1) {
+							properties.putShort(0x200 + player.getEquipmentWings().get(test).getId());
+							test++;
+						} else {
+							properties.put(0);
+						}
+					}
+				} else {
+					properties.put(0);
+				}
+			} else {
+				properties.putShort(0x100 + appearance.getLook()[Appearance.HEAD]);
+			}
+			if (equip[Equipment.HANDS_SLOT] > -1) {
+				properties.putShort(0x200 + equip[Equipment.HANDS_SLOT]);
+			} else {
+				properties.putShort(0x100 + appearance.getLook()[Appearance.HANDS]);
+			}
+			if (equip[Equipment.FEET_SLOT] > -1) {
+				properties.putShort(0x200 + equip[Equipment.FEET_SLOT]);
+			} else {
+				properties.putShort(0x100 + appearance.getLook()[Appearance.FEET]);
+			}
+			if (appearance.getLook()[Appearance.BEARD] <= 0 || appearance.getGender().equals(Gender.FEMALE)) {
+				if(test < 2) {
+					if (player.getEquipmentWings().get(test).getId() != -1) {
+						properties.putShort(0x200 + player.getEquipmentWings().get(test).getId());
+						test++;
+					} else {
+						test++;
+						if (player.getEquipmentWings().get(test).getId() != -1) {
+							properties.putShort(0x200 + player.getEquipmentWings().get(test).getId());
+							test++;
+						} else {
+							properties.put(0);
+						}
+					}
+				} else {
+					properties.put(0);
+				}
+			} else if (ItemDefinition.forId(equip[Equipment.HEAD_SLOT]).isFullHelm()) {
+				if(test < 2) {
+					if (player.getEquipmentWings().get(test).getId() != -1) {
+						properties.putShort(0x200 + player.getEquipmentWings().get(test).getId());
+						test++;
+					} else {
+						test++;
+						if (player.getEquipmentWings().get(test).getId() != -1) {
+							properties.putShort(0x200 + player.getEquipmentWings().get(test).getId());
+							test++;
+						} else {
+							properties.put(0);
+						}
+					}
+				} else {
+					properties.put(0);
+				}
+
+			} else {
+				properties.putShort(0x100 + appearance.getLook()[Appearance.BEARD]);
+			}
+		}
+		properties.put(appearance.getLook()[Appearance.HAIR_COLOUR]);
+		properties.put(appearance.getLook()[Appearance.TORSO_COLOUR]);
+		properties.put(appearance.getLook()[Appearance.LEG_COLOUR]);
+		properties.put(appearance.getLook()[Appearance.FEET_COLOUR]);
+		properties.put(appearance.getLook()[Appearance.SKIN_COLOUR]);
+
+		int skillAnim = target.getSkillAnimation();
+		if(skillAnim > 0) {
+			for(int i = 0; i < 7; i++)
+				properties.putShort(skillAnim);
+		} else {
+			properties.putShort(target.getCharacterAnimations().getStandingAnimation());
+			properties.putShort(0x337);
+			properties.putShort(target.getCharacterAnimations().getWalkingAnimation());
+			properties.putShort(0x334);
+			properties.putShort(0x335);
+			properties.putShort(0x336);
+			properties.putShort(target.getCharacterAnimations().getRunningAnimation());
+		}
+
+		properties.putLong(target.getLongUsername());
+		properties.put(target.getSkillManager().getCombatLevel());
+		properties.putShort(target.getRights().ordinal());
+		properties.putString(target.getTitle());
+		//System.out.println("test - "+target.getTitle());
+		//properties.putShort(target.getLoyaltyTitle().ordinal());
+
+		out.put(properties.buffer().writerIndex(), ValueType.C);
+		out.putBytes(properties.buffer());
+	}
+
 
 	@Override
 	public int getAttackSpeed() {
@@ -2122,6 +2120,7 @@ public class Player extends Character {
 		// return DesolaceFormulas.getAttackDelay(this);
 	}
 
+	public boolean sendElementalMessage = true;
 	public int clue1Amount;
 	public int clue2Amount;
 	public int clue3Amount;
@@ -2578,8 +2577,8 @@ public class Player extends Character {
 		return equipment;
 	}
 	public EquipmentWings getEquipmentWings() {
-        return equipmentWings;
-    }
+		return equipmentWings;
+	}
 
 	public PriceChecker getPriceChecker() {
 		return priceChecker;
@@ -3988,6 +3987,12 @@ public class Player extends Character {
 
 	public Farming getFarming() {
 		return farming;
+	}
+	public boolean isSendElementalMessage() {
+		return sendElementalMessage;
+	}
+	public void setSendElementalMessage(boolean elemental) {
+		this.sendElementalMessage = elemental;
 	}
 
 	public boolean inConstructionDungeon() {

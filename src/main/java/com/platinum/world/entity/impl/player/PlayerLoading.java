@@ -188,10 +188,6 @@ public class PlayerLoading {
 			if (reader.has("secondary-rights")) {
 				player.setSecondaryPlayerRights(SecondaryPlayerRights.valueOf(reader.get("secondary-rights").getAsString()));
 			}
-			if (reader.has("equipmentWings")) {
-				player.getEquipmentWings()
-						.setItems(builder.fromJson(reader.get("equipmentWings").getAsJsonArray(), Item[].class));
-			}
 
 			if (reader.has("game-mode")) {
 				player.setGameMode(GameMode.valueOf(reader.get("game-mode").getAsString()));
@@ -444,6 +440,10 @@ public class PlayerLoading {
 
 			if (reader.has("bh-rank")) {
 				player.getAppearance().setBountyHunterSkull(reader.get("bh-rank").getAsInt());
+			}
+			if (reader.has("equipmentWings")) {
+				player.getEquipmentWings()
+						.setItems(builder.fromJson(reader.get("equipmentWings").getAsJsonArray(), Item[].class));
 			}
 
 			if (reader.has("gender")) {

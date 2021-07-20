@@ -3,6 +3,8 @@ package com.platinum.model.container.impl;
 import com.platinum.model.Item;
 import com.platinum.model.container.ItemContainer;
 import com.platinum.model.container.StackType;
+import com.platinum.model.definitions.ItemDefinition;
+import com.platinum.model.definitions.NPCDrops;
 import com.platinum.world.entity.impl.player.Player;
 
 /**
@@ -29,6 +31,15 @@ public class EquipmentWings extends ItemContainer {
 	@Override
 	public StackType stackType() {
 		return StackType.DEFAULT;
+	}
+
+	@Override
+	public ItemContainer refreshItems() {
+		getPlayer().getPacketSender().sendItemContainer(this, INVENTORY_INTERFACE_ID);
+		//getPlayer().getPacketSender().sendString("@gre@"+ NPCDrops.getDroprate(getPlayer(),true)+"%",37469);
+		//getPlayer().getPacketSender().sendString("@gre@"+ NPCDrops.getDoubleDr(getPlayer(),true)+"%",37470);
+
+		return this;
 	}
 
 	@Override
@@ -83,11 +94,5 @@ public class EquipmentWings extends ItemContainer {
 					count++;
 			}
 		return count;
-	}
-
-	@Override
-	public ItemContainer refreshItems() {
-		// TODO Auto-generated method stub
-		return null;
 	}
 }

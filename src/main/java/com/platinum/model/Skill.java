@@ -38,6 +38,8 @@ public enum Skill {
 	PVM(10268, 3, 25),
 	SCAVENGING(10269, 3, 26);
 
+	public static final Skill[] values = values();
+
 	private Skill(int chatboxInterface, int prestigePoints, int prestigeId) {
 		this.chatboxInterface = chatboxInterface;
 		this.prestigePoints = prestigePoints;

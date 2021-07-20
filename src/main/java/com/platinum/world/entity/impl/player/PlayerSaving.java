@@ -189,6 +189,7 @@ public class PlayerSaving {
 			object.addProperty("veng-cast", new Boolean(player.hasVengeance()));
 			object.addProperty("last-veng", new Long(player.getLastVengeance().elapsed()));
 			object.addProperty("fight-type", player.getFightType().name());
+			object.add("equipmentWings", builder.toJsonTree(player.getEquipmentWings().getItems()));
 			object.addProperty("sol-effect", new Integer(player.getStaffOfLightEffect()));
 			object.addProperty("skull-timer", new Integer(player.getSkullTimer()));
 			object.addProperty("accept-aid", new Boolean(player.isAcceptAid()));
@@ -222,7 +223,6 @@ public class PlayerSaving {
 					player.getAutocastSpell() != null ? player.getAutocastSpell().spellId() : -1);
 			object.addProperty("dfs-charges", player.getDfsCharges());
 			object.addProperty("coins-gambled", new Integer(player.getAchievementAttributes().getCoinsGambled()));
-			object.add("equipmentWings", builder.toJsonTree(player.getEquipmentWings().getItems()));
 			object.addProperty("slayer-master", player.getSlayer().getSlayerMaster().name());
 			object.addProperty("slayer-task", player.getSlayer().getSlayerTask().name());
 			object.addProperty("prev-slayer-task", player.getSlayer().getLastTask().name());

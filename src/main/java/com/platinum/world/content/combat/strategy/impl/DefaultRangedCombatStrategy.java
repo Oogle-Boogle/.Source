@@ -379,9 +379,7 @@ public class DefaultRangedCombatStrategy implements CombatStrategy {
 
         // Refresh the equipment interface.
         player.getEquipment().refreshItems();
-        
-        player.getEquipmentWings().refreshItems();
-        player.getEquipmentWings().refreshItems();
+        ;
 
 	}
 

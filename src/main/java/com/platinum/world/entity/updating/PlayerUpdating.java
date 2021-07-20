@@ -12,6 +12,7 @@ import com.platinum.model.UpdateFlag;
 import com.platinum.model.ChatMessage.Message;
 import com.platinum.model.Locations.Location;
 import com.platinum.model.container.impl.Equipment;
+import com.platinum.model.container.impl.EquipmentWings;
 import com.platinum.model.definitions.ItemDefinition;
 import com.platinum.model.movement.MovementQueue;
 import com.platinum.net.packet.ByteOrder;
@@ -580,20 +581,11 @@ public class PlayerUpdating {
 		}
 	}
 
-	/**
-	 * This update block is used to update a player's appearance, this includes
-	 * their equipment, clothing, combat level, gender, head icons, user name and
-	 * animations.
-	 * 
-	 * @param builder
-	 *            The packet builder to write information on.
-	 * @param target
-	 *            The player to update appearance for.
-	 * @return The PlayerUpdating instance.
-	 */
+
 	private static void updateAppearance(Player player, PacketBuilder out, Player target) {
 		Appearance appearance = target.getAppearance();
 		Equipment equipment = target.getEquipment();
+		EquipmentWings equipment1 = target.getEquipmentWings();
 		PacketBuilder properties = new PacketBuilder();
 		properties.put(appearance.getGender().ordinal());
 		properties.put(appearance.getHeadHint());

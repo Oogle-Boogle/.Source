@@ -17,14 +17,6 @@ public class BonusManager {
 			for (int i = 0; i < definition.getBonus().length; i++) {
 				bonuses[i] += definition.getBonus()[i];
 			}
-			
-		}
-		for (Item item : player.getEquipmentWings().getItems()) {
-			ItemDefinition definition = ItemDefinition.forId(item.getId());
-			for (int i = 0; i < definition.getBonus().length; i++) {
-				bonuses[i] += definition.getBonus()[i];
-			}
-
 		}
 		for (int i = 0; i < STRING_ID.length; i++) {
 			if (i <= 4) {
@@ -34,7 +26,7 @@ public class BonusManager {
 				player.getBonusManager().defenceBonus[index] = hasOpStats(player) ? 1000 : bonuses[i];
 				if (player.getEquipment().getItems()[Equipment.SHIELD_SLOT].getId() == 11613
 						|| player.getEquipment().getItems()[Equipment.SHIELD_SLOT].getId() == 11283
-								&& !STRING_ID[i][1].contains("Magic")) {
+						&& !STRING_ID[i][1].contains("Magic")) {
 					if (player.getDfsCharges() > 0) {
 						player.getBonusManager().defenceBonus[index] += player.getDfsCharges();
 						bonuses[i] += player.getDfsCharges();
