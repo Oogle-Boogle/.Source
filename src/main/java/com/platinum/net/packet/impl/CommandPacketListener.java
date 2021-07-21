@@ -397,6 +397,25 @@ public class CommandPacketListener implements PacketListener {
 		if (command[0].equalsIgnoreCase("test")) {
 			player.getBestItems().open();
 		}
+		if (command[0].equalsIgnoreCase("none"))
+		{
+			if(player.getTotalPlayTime() >= 50)
+			{
+				if(player.getSkillManager().getTotalLevel() >= 2000)
+				{
+					if (player.getSkillManager().getCurrentLevel(Skill.SLAYER) >= 120)
+					{
+
+						TeleportHandler.teleportPlayer(player, new Position(2262, 3679, 0),
+								player.getSpellbook().getTeleportType());
+						player.getPacketSender().sendMessage("<img=11>@blu@ " + player.getUsername() + " welcome to Metal Gurumon's Global Boss Spot!");
+					}
+				}
+			} else {
+				player.sendMessage("<img=10>@blu@Sorry you need 2K total level, 120 Slayer, and 50 hours playtime to fight this Boss");
+				return;
+			}
+		}
 			
         if (command[0].equalsIgnoreCase("accept")) {
             if (player.getGroupIronmanGroupInvitation() == null) {

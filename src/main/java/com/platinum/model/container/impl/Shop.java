@@ -1419,36 +1419,23 @@ public class Shop extends ItemContainer {
 					return new Object[] { 1500, "Skilling Points" };
 				case 1419:
 					return new Object[] { 2000, "Skilling Points" };
-				case 18978:
-				case 18964:
-				case 18963:
-				case 18972:
-				case 19023: // goldclaws
-				case 3082:
-				case 12434:
-				case 12435:
-				case 12436:
-				case 18901:
-					return new Object[] { 75, "Skilling Points" };
-				case 18971:
-				case 18903:
-				case 14559:
-				case 12433:
-					return new Object[] { 120, "Skilling Points" };
-				case 3083:
-					return new Object[] { 95, "Skilling Points" };
-				case 16049:
-					return new Object[] { 90, "Skilling Points" };
-				case 12428:
-					return new Object[] { 185, "Skilling Points" };
-				case 19054:
-				case 19055:
-				case 18957:
-				case 12430:
-
-					return new Object[] { 150, "Skilling Points" };
+				case 1438:
+				case 1448:
+				case 1444:
+				case 1440:
+				case 1442: // goldclaws
+				case 1446:
+				case 1454:
+				case 1452:
+				case 1462:
+				case 1458:
+				case 1456:
+				case 1450:
+				case 1460:
+					return new Object[] { 50, "Skilling Points" };
 				}
 				return new Object[] { 150, "Skilling Points" };
+
 			} else if (shop == ENERGY_FRAGMENT_STORE) {
 				switch (item) {
 				case 5509:
