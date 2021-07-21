@@ -554,9 +554,9 @@ public class ConstructionData {
 						5, 5)), PARLOUR_RUG_2(7, 15415, 2, 2, 0,
 				ConstructionData.PARLOUR, 22, new Dimension(5, 5)), PARLOUR_RUG_3(
 				7, 15413, 2, 2, 0, ConstructionData.PARLOUR, 22, new Dimension(
-						5, 5)), PARLOUR_BOOKCASE_1(8, 15416, 0, 1, 0,
-				ConstructionData.PARLOUR), PARLOUR_BOOKCASE_2(8, 15416, 7, 1,
-				2, ConstructionData.PARLOUR), PARLOUR_FIREPLACE(9, 15418, 3, 7,
+						5, 5)),
+		PARLOUR_BOOKCASE(8, 15416, 0, 1, 0, ConstructionData.PARLOUR),
+		PARLOUR_BOOKCASE1(8, 15416, 7, 1, 2, ConstructionData.PARLOUR), PARLOUR_FIREPLACE(9, 15418, 3, 7,
 				1, ConstructionData.PARLOUR), PARLOUR_CURTAIN_1(10, 15419, 0,
 				2, 0, ConstructionData.PARLOUR, 5, true), PARLOUR_CURTAIN_2(10,
 				15419, 0, 5, 0, ConstructionData.PARLOUR, 5, true), PARLOUR_CURTAIN_3(
@@ -1223,29 +1223,31 @@ public class ConstructionData {
 		/**
 		 * Parlour
 		 */
-		CRUDE_WOODEN_CHAIR(6, 13581, 66, 1, 8309, new int[][] { { PLANK, 2 },
-				{ NAILS, 2 } }), WOODEN_CHAIR(6, 13582, 96, 8, 8310,
-				new int[][] { { PLANK, 3 }, { NAILS, 3 } }), ROCKING_CHAIR(6,
-				13583, 96, 14, 8311, new int[][] { { PLANK, 3 }, { NAILS, 3 } }), OAK_CHAIR(
-				6, 13584, 120, 19, 8312, new int[][] { { OAK_PLANK, 2 } }), OAK_ARMCHAIR(
-				6, 13585, 180, 26, 8313, new int[][] { { OAK_PLANK, 3 } }), TEAK_ARMCHAIR(
-				6, 13586, 180, 35, 8314, new int[][] { { TEAK_PLANK, 3 } }), MAHOGANY_ARMCHAIR(
-				6, 13587, 20, 50, 8315, new int[][] { { MAHOGANY_PLANK, 3 } }), BROWN_RUG(
-				7, 13588, 30, 2, 8316, new int[][] { { CLOTH, 2 } }), RUG(7,
-				13591, 60, 13, 8317, new int[][] { { CLOTH, 4 } }), OPULENT_RUG(
-				7, 13594, 360, 65, 8318, new int[][] { { CLOTH, 4 },
-						{ GOLD_LEAF, 1 } }), WOODEN_BOOKCASE(8, 13597, 115, 4,
-				8319, new int[][] { { PLANK, 4 }, { NAILS, 4 } }), OAK_BOOKCASE(
-				8, 13598, 180, 29, 8320, new int[][] { { OAK_PLANK, 3 } }), MAHOGANY_BOOKCASE(
-				8, 13599, 420, 40, 8321, new int[][] { { MAHOGANY_PLANK, 3 } }), CLAY_FIREPLACE(
-				9, 13609, 30, 3, 8325, new int[][] { { SOFT_CLAY, 3 } }), STONE_FIREPLACE(
-				9, 13611, 40, 33, 8326, new int[][] { { LIMESTONE_BRICK, 2 } }), MARBLE_FIREPLACE(
-				9, 13613, 500, 63, 8327, new int[][] { { MARBLE_BLOCK, 1 } }), TORN_CURTAINS(
-				10, 13603, 132, 2, 8322, new int[][] { { PLANK, 3 },
-						{ CLOTH, 3 }, { NAILS, 3 } }), CURTAINS(10, 13604, 225,
-				18, 8323, new int[][] { { OAK_PLANK, 3 }, { CLOTH, 3 } }), OPULENT_CURTAINS(
-				10, 13605, 315, 40, 8324, new int[][] { { TEAK_PLANK, 3 },
-						{ CLOTH, 3 } }),
+		CRUDE_WOODEN_CHAIR(6, 13581, 66, 1, 8309, new int[][] { { PLANK, 2 }, { NAILS, 2 } }),
+		WOODEN_CHAIR(6, 13582, 96, 8, 8310, new int[][] { { PLANK, 3 }, { NAILS, 3 } }),
+		ROCKING_CHAIR(6, 13583, 96, 14, 8311, new int[][] { { PLANK, 3 }, { NAILS, 3 } }),
+		OAK_CHAIR(6, 13584, 120, 19, 8312, new int[][] { { OAK_PLANK, 2 } }),
+
+		OAK_ARMCHAIR(6, 13585, 180, 26, 8313, new int[][] { { OAK_PLANK, 3 } }),
+		TEAK_ARMCHAIR(6, 13586, 180, 35, 8314, new int[][] { { TEAK_PLANK, 3 } }),
+		MAHOGANY_ARMCHAIR(6, 13587, 20, 50, 8315, new int[][] { { MAHOGANY_PLANK, 3 } }),
+
+		BROWN_RUG(7, 13588, 30, 2, 8316, new int[][] { { CLOTH, 2 } }),
+		RUG(7, 13591, 60, 13, 8317, new int[][] { { CLOTH, 4 } }),
+		OPULENT_RUG(7, 13594, 360, 65, 8318, new int[][] { { CLOTH, 4 }, { GOLD_LEAF, 1 } }),
+
+
+		WOODEN_BOOKCASE(8, 13597, 115, 4, 8319, new int[][] { { PLANK, 4 }, { NAILS, 4 } }),
+		OAK_BOOKCASE(8, 13598, 180, 29, 8320, new int[][] { { OAK_PLANK, 3 } }),
+		MAHOGANY_BOOKCASE(8, 13599, 420, 40, 8321, new int[][] { { MAHOGANY_PLANK, 3 } }),
+
+		CLAY_FIREPLACE(9, 13609, 30, 3, 8325, new int[][] { { SOFT_CLAY, 3 } }),
+		STONE_FIREPLACE(9, 13611, 40, 33, 8326, new int[][] { { LIMESTONE_BRICK, 2 } }),
+		MARBLE_FIREPLACE(9, 13613, 500, 63, 8327, new int[][] { { MARBLE_BLOCK, 1 } }),
+
+		TORN_CURTAINS(10, 13603, 132, 2, 8322, new int[][] { { PLANK, 3 }, { CLOTH, 3 }, { NAILS, 3 } }),
+		CURTAINS(10, 13604, 225, 18, 8323, new int[][] { { OAK_PLANK, 3 }, { CLOTH, 3 } }),
+		OPULENT_CURTAINS(10, 13605, 315, 40, 8324, new int[][] { { TEAK_PLANK, 3 }, { CLOTH, 3 } }),
 		/**
 		 * Kitchen
 		 */

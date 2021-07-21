@@ -29,6 +29,7 @@ import com.platinum.world.entity.impl.player.Player;
  * 
  * @author relex lawl
  */
+//hopefully fixes
 
 public class PlayerUpdating {
 
@@ -326,16 +327,14 @@ public class PlayerUpdating {
 	 *            Do not allow player to chat?
 	 * @return The PlayerUpdating instance.
 	 */
-	private static void appendUpdates(Player player, PacketBuilder builder, Player target, boolean updateAppearance,
-			boolean noChat) {
+	private static void appendUpdates(Player player, PacketBuilder builder, Player target, boolean updateAppearance, boolean noChat) {
 		if (!target.getUpdateFlag().isUpdateRequired() && !updateAppearance)
 			return;
-		/*
-		 * if (player.getCachedUpdateBlock() != null && !player.equals(target) &&
-		 * !updateAppearance && !noChat) {
-		 * builder.putBytes(player.getCachedUpdateBlock()); return; }
-		 */
-		// synchronized (target) {
+	/*	if (player.getCachedUpdateBlock() != null && !player.equals(target) && !updateAppearance && !noChat) {
+			builder.putBytes(player.getCachedUpdateBlock());
+			return;
+		}*/
+		//	synchronized (target) {
 		final UpdateFlag flag = target.getUpdateFlag();
 		int mask = 0;
 		if (flag.flagged(Flag.GRAPHIC) && target.getGraphic() != null) {
@@ -347,8 +346,7 @@ public class PlayerUpdating {
 		if (flag.flagged(Flag.FORCED_CHAT) && target.getForcedChat().length() > 0) {
 			mask |= 0x4;
 		}
-		if (flag.flagged(Flag.CHAT) && !noChat
-				&& !player.getRelations().getIgnoreList().contains(target.getLongUsername())) {
+		if (flag.flagged(Flag.CHAT) && !noChat && !player.getRelations().getIgnoreList().contains(target.getLongUsername())) {
 			mask |= 0x80;
 		}
 		if (flag.flagged(Flag.ENTITY_INTERACTION)) {
@@ -356,7 +354,6 @@ public class PlayerUpdating {
 		}
 		if (flag.flagged(Flag.APPEARANCE) || updateAppearance) {
 			mask |= 0x10;
-			System.out.println("Set mask to: " + (mask |= 0x10) + " Mask is: " + mask);
 		}
 		if (flag.flagged(Flag.FACE_POSITION)) {
 			mask |= 0x2;
@@ -384,24 +381,19 @@ public class PlayerUpdating {
 			updateGraphics(builder, target);
 		}
 		if (flag.flagged(Flag.ANIMATION) && target.getAnimation() != null) {
-			//System.out.println("Updating animation");
 			updateAnimation(builder, target);
-		} else {
-			//System.out.println("is flagged: " + flag.flagged(Flag.ANIMATION));
-			//System.out.println("Is null: " + target.getAnimation());
 		}
 		if (flag.flagged(Flag.FORCED_CHAT) && target.getForcedChat().length() > 0) {
 			updateForcedChat(builder, target);
 		}
-		if (flag.flagged(Flag.CHAT) && !noChat
-				&& !player.getRelations().getIgnoreList().contains(target.getLongUsername())) {
+		if (flag.flagged(Flag.CHAT) && !noChat && !player.getRelations().getIgnoreList().contains(target.getLongUsername())) {
 			updateChat(builder, target);
 		}
 		if (flag.flagged(Flag.ENTITY_INTERACTION)) {
 			updateEntityInteraction(builder, target);
 		}
 		if (flag.flagged(Flag.APPEARANCE) || updateAppearance) {
-			updateAppearance(player, builder, target);
+			Player.updateAppearance(player, builder, target);
 		}
 		if (flag.flagged(Flag.FACE_POSITION)) {
 			updateFacingPosition(builder, target);
@@ -412,11 +404,10 @@ public class PlayerUpdating {
 		if (flag.flagged(Flag.DOUBLE_HIT)) {
 			updateDoubleHit(builder, target);
 		}
-		/*
-		 * if (!player.equals(target) && !updateAppearance && !noChat) {
-		 * player.setCachedUpdateBlock(cachedBuffer.buffer()); }
-		 */
-		// }
+			/*if (!player.equals(target) && !updateAppearance && !noChat) {
+				player.setCachedUpdateBlock(cachedBuffer.buffer());
+			}*/
+		//	}
 	}
 
 	/**

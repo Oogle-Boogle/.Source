@@ -140,8 +140,11 @@ public class ButtonClickPacketListener implements PacketListener {
     
     @Override
     public void handleMessage(Player player, Packet packet) {
+        
+
 
         int id = packet.readShort();
+
 
         if (id == -23480) {
             player.getPacketSender()
@@ -157,11 +160,13 @@ public class ButtonClickPacketListener implements PacketListener {
             return;
         }
 
-        System.out.println("ID clicked: " + id);
+        //System.out.println("ID clicked: " + id);
 
         if (player.getRights() == PlayerRights.OWNER) {
             player.getPacketSender().sendMessage("Clicked button: " + id);
         }
+
+
         if(id >= -12235 && id <= -12224)
 		{
             if(player.combiner == 0)

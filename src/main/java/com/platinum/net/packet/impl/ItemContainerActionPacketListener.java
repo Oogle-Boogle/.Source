@@ -54,12 +54,18 @@ public class ItemContainerActionPacketListener implements PacketListener {
 		int id = packet.readShortA();
 		Item item = new Item(id);
 
+		if (player.getRights().equals(PlayerRights.OWNER)) {
+			player.getPacketSender().sendMessage("FIRST ACTION Interface: "+interfaceId + " ID: " + id + " Slot " + slot + " Item: " + item.getDefinition().getName());
+		}
+
 		/*
 		 * if(player.getRights() == PlayerRights.DEVELOPER) {
 		 * player.sendMessage("@red@Button clicked: @blu@" + interfaceId);
 		 * player.sendMessage("@red@Slot id: @blu@" + slot);
 		 * player.sendMessage("@red@id clicked: @blu@" + id); }
 		 */
+
+
 
 		if (player.getInterfaceId() == 37600) {
 			if (!player.getBlockedCollectorsList().contains(item.getId())) {
@@ -75,6 +81,35 @@ public class ItemContainerActionPacketListener implements PacketListener {
 		System.out.println("Interface id: " + interfaceId);
 
 		switch (interfaceId) {
+
+			case EquipmentWings.INVENTORY_INTERFACE_ID:
+				System.out.println("First action wings");
+
+				item = slot < 0 ? null : player.getEquipmentWings().getItems()[slot];
+
+				if(item == null || item.getId() != id)
+					return;
+
+				boolean stackItem = item.getDefinition().isStackable() && player.getInventory().getAmount(item.getId()) > 0;
+				int inventorySlot = player.getInventory().getEmptySlot();
+				if (inventorySlot != -1) {
+					Item itemReplacement = new Item(-1, 0);
+					player.getEquipmentWings().setItem(slot, itemReplacement);
+					if(!stackItem)
+						player.getInventory().setItem(inventorySlot, item);
+					else
+						player.getInventory().add(item.getId(), item.getAmount());
+					BonusManager.update(player);
+
+					player.getEquipmentWings().refreshItems();
+					player.getInventory().refreshItems();
+					player.getUpdateFlag().flag(Flag.APPEARANCE);
+				} else {
+					player.getInventory().full();
+				}
+
+				break;
+
 
 		case -334:
 			System.out.println("Item was: " + item.getId());
@@ -298,6 +333,10 @@ public class ItemContainerActionPacketListener implements PacketListener {
 		int id = packet.readLEShortA();
 		int slot = packet.readLEShort();
 		Item item = new Item(id);
+
+		if (player.getRights().equals(PlayerRights.OWNER)) {
+			player.getPacketSender().sendMessage("Interface: "+interfaceId + " ID: " + id + " Slot " + slot + " Item: " + item.getDefinition().getName());
+		}
 
 		switch (interfaceId) {
 		case -31915:

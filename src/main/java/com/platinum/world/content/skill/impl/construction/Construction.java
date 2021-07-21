@@ -1666,7 +1666,7 @@ public class Construction {
 		if (objectId == 13449)
 			if (room.getType() == ConstructionData.FORMAL_GARDEN)
 				hs = HotSpots.FORMAL_FENCE;
-		if (objectId == 15270 || objectId == 15273 || objectId == 15274 || objectId >= 13588 && objectId <= 13597) {
+		if (objectId == 15270 || objectId == 15273 || objectId == 15274 || objectId >= 13588 && objectId <= 13594) {
 			if (room.getType() == ConstructionData.CHAPEL)
 				hs = HotSpots.CHAPEL_RUG_1;
 			if (room.getType() == ConstructionData.PARLOUR)

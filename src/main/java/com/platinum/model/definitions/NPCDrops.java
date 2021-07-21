@@ -453,6 +453,13 @@ public class NPCDrops {
 		if (npc.getId() == 227 || npc.getId() == 2043 || npc.getId() == 2044) {
 			pos = player.getPosition();
 		}
+		if (player.getInventory().contains(18337)
+				&& BonesData.forId(item.getId()) != null) {
+			player.getPacketSender().sendGlobalGraphic(new Graphic(777), pos);
+			player.getSkillManager().addExperience(Skill.PRAYER,
+					BonesData.forId(item.getId()).getBuryingXP());
+			return;
+		}
 		
 		player.handleCollectedItem(npc.getId(), item);
 		
