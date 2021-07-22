@@ -69,7 +69,10 @@ public class DefaultMagicCombatStrategy implements CombatStrategy {
 		} 
 		if(equipment == 15656) {
 			player.setCastSpell(CombatSpells.TIER7.getSpell());
-		} 
+		}
+		if(equipment == 5129) {
+			player.setCastSpell(CombatSpells.TIER7.getSpell());
+		}
 		if(equipment == 19727) {
 			player.setCastSpell(CombatSpells.TIER9.getSpell());
 		} 
@@ -117,7 +120,11 @@ public class DefaultMagicCombatStrategy implements CombatStrategy {
 			if(equipment == 15656) {
 				player.setCastSpell(CombatSpells.TIER7.getSpell());
 				player.setAutocast(true);
-			} 
+			}
+			if(equipment == 5129) {
+				player.setCastSpell(CombatSpells.TIER7.getSpell());
+				player.setAutocast(true);
+			}
 			if(equipment == 19727) {
 				player.setCastSpell(CombatSpells.TIER9.getSpell());
 				player.setAutocast(true);

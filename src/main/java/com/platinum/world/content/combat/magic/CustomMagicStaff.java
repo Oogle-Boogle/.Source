@@ -16,7 +16,7 @@ public class CustomMagicStaff {
     	TIER4(new int[] { 3951 }, CombatSpells.TIER4.getSpell()),
     	TIER5(new int[] { 19720 }, CombatSpells.TIER5.getSpell()),
     	TIER6(new int[] { 15653 }, CombatSpells.TIER6.getSpell()),
-    	TIER7(new int[] { 15656 }, CombatSpells.TIER7.getSpell()),
+    	TIER7(new int[] { 15656, 5129 }, CombatSpells.TIER7.getSpell()),
     	TIER9(new int[] { 19727 }, CombatSpells.TIER9.getSpell()),
     	DRAGONLAVA(new int[] { 13995, 8664 }, CombatSpells.DRAGONLAVA.getSpell());
         private int[] itemIds;

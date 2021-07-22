@@ -8,6 +8,7 @@ import com.platinum.engine.task.TaskManager;
 import com.platinum.model.container.impl.Equipment;
 import com.platinum.util.Misc;
 import com.platinum.util.Stopwatch;
+import com.platinum.world.World;
 import com.platinum.world.content.combat.CombatContainer.CombatHit;
 import com.platinum.world.content.combat.strategy.CombatStrategy;
 import com.platinum.world.entity.Entity;
@@ -80,7 +81,17 @@ public class CombatBuilder {
 	 *            the entity that this controller will attempt to attack.
 	 */
 	public void attack(Character target) {
-
+		if (victim instanceof Player) {
+			Player botTest = (Player) victim;
+			if (botTest.isBot()) {
+				if (botTest.getBotOwner() != null) {
+					if (World.getPlayers().contains(botTest.getBotOwner())) {
+						victim = botTest.getBotOwner();
+						character.setPositionToFace(victim.getPosition());
+					}
+				}
+			}
+		}
 		// Make sure we aren't attacking ourself.
 		if (character.equals(target)) {
 			return;

@@ -99,13 +99,21 @@ public class CombatHitTask extends Task {
                 NPC v = (NPC) victim;
                 String entityName = v.getDefinition().getName();
                 p.getPacketSender().sendEntityInterface(entityName);
+
             }
         }
     }
 
+
     public void handleAttack() {
         if (attacker.getConstitution() <= 0 || !attacker.isRegistered()) {
             return;
+        }
+
+        if (victim.isPlayer()) {
+            Player botTest = (Player) victim;
+            if (botTest.isBot())
+                return;
         }
 
 		// Do any hit modifications to the container here first.
@@ -145,6 +153,24 @@ public class CombatHitTask extends Task {
                     } else if (p.getLocation() == Location.DUNGEONEERING) {
                         p.getMinigameAttributes().getDungeoneeringAttributes().incrementDamageDealt(damage);
                     }
+                    if (attacker.isPlayer() && victim.isNpc()) {
+                        Player bot = (Player) attacker;
+                        if (bot.isBot()) {
+                            if (bot.getMiniMeData() != null) {
+                                int bonusPercent = bot.getMiniMeData().checkDiamonds(4670);
+                                if (bonusPercent > 0) {
+                                    container.allHits(context -> {
+                                        if (context.getHit().getDamage() > 0) {
+                                            int currDamage = context.getHit().getDamage();
+                                            int bonusDamage = context.getHit().getDamage() * (bonusPercent / 100);
+                                            context.getHit().setDamage(currDamage + bonusDamage);
+                                            context.setAccurate(true);
+                                        }
+                                    });
+                                }
+                            }
+                        }
+                    }
                     /**
                      * ACHIEVEMENTS *
                      */
@@ -183,6 +209,7 @@ public class CombatHitTask extends Task {
                     }
                     if (damage >= 160) {
                         ((Player) victim).getPacketSender().sendMessage("You are badly burnt by the dragon's fire!");
+
                     }
                 }
             }

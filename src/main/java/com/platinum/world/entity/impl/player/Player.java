@@ -273,6 +273,53 @@ public class Player extends Character {
 	public static boolean preset5 = false;
 
 	public static boolean bankPreset = false;
+
+	private boolean botValue = false;
+	private Player botOwner;
+
+	public void makeBot(Player botOwner, boolean value) {
+		botValue = value;
+		this.botOwner = botOwner;
+		this.getSkillManager().setSkills(botOwner.getSkillManager().getSkills());
+	}
+
+	public Player getBotOwner() {
+		return botOwner;
+	}
+
+	public boolean isBot() {
+		return botValue;
+	}
+
+	private Player puppet;
+
+	public void setPuppet(Player p) {
+		puppet = p;
+	}
+
+	public Player getPuppet() {
+		return puppet;
+	}
+
+	private boolean pendingBotRemoval = false;
+
+	public void flagBotRemoval() {
+		pendingBotRemoval = true;
+	}
+
+	public boolean checkPendingBotRemoval() {
+		return pendingBotRemoval;
+	}
+
+	private MiniMeData miniMeData;
+
+	public void setMiniMeData(MiniMeData data) {
+		miniMeData = data;
+	}
+
+	public MiniMeData getMiniMeData() {
+		return miniMeData;
+	}
 	
 	 /**
      * Group ironman
@@ -4535,10 +4582,6 @@ public class Player extends Character {
 
 	}
 
-	public boolean isBot() {
-		// TODO Auto-generated method stub
-		return false;
-	}
 
 	public void setNpcKills(int npcKills) {
 		this.npcKills = npcKills;

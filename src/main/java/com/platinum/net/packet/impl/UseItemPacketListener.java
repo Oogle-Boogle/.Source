@@ -344,6 +344,13 @@ public class UseItemPacketListener implements PacketListener {
 		Player target = World.getPlayers().get(targetIndex);
 		if (target == null)
 			return;
+		if (target.isBot() && target.getBotOwner() != player) {
+			player.sendMessage("@red@This is someone's else mini-me!");
+			return;
+		} else if (target.isBot() && target.getBotOwner() == player) {
+			target.getMiniMeData().addEnchantment(itemId);
+			return;
+		}
 		switch (itemId) {
 		case 6950: // MAGICAL ORB
 			OldRaidParty oldRaidParty = player.getOldRaidParty();

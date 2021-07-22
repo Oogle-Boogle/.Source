@@ -24,6 +24,7 @@ import com.platinum.world.content.minigames.impl.Dueling.DuelRule;
 import com.platinum.world.content.skill.SkillManager;
 import com.platinum.world.entity.impl.player.Player;
 import com.platinum.world.content.combat.magic.CombatSpells;
+import com.platinum.world.entity.impl.player.PlayerShadow;
 
 /**
  * This packet listener manages the equip action a player executes when wielding
@@ -64,6 +65,17 @@ public class EquipPacketListener implements PacketListener {
 					/*
 					 * Making sure item exists and that id is consistent.
 					 */
+					if(id == 6639) {
+						if(player.getPuppet() != null) {
+							player.getPuppet().flagBotRemoval();
+						} else {
+							PlayerShadow.create(player);
+							player.getPacketSender()
+									.sendMessage("You Summon Yourself");
+
+						}
+						return;
+					}
 					if (item != null && id == item.getId()) {
 						if (!meetsEquipLevelReqs(player.getSkillManager(), player, item, true)) {
 							return;
@@ -259,6 +271,10 @@ public class EquipPacketListener implements PacketListener {
 			player.setAutocastSpell(CombatSpells.TIER6.getSpell());
 		}
 		if(weapon.getId() == 15656) {
+			//75 dmg
+			player.setAutocastSpell(CombatSpells.TIER7.getSpell());
+		}
+		if(weapon.getId() == 5129) {
 			//75 dmg
 			player.setAutocastSpell(CombatSpells.TIER7.getSpell());
 		}
