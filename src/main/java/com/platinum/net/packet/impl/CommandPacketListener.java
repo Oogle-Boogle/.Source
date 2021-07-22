@@ -290,7 +290,7 @@ public class CommandPacketListener implements PacketListener {
 			{ 14019, 5, 1 }, // max cape
 			{ 14022, 25, 1 }, // comp cape
 			{ 19886, 15, 1 }, // col neck
-			{ 3822, 100, 1 }, // col neck
+			{ 3822, 100, 1 }, // col neckkmhgjkmjhgkhgjkhj
 			{ 3821, 100, 1 }, // col neck
 			{ 3820, 50, 1 }, // col neck
 			{ 3317, 25, 1 }, { 19821, 50, 1 }, { 19106, 100, 1 }, };
