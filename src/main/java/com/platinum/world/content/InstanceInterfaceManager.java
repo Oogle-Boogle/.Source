@@ -24,11 +24,11 @@ public class InstanceInterfaceManager {
 		this.player = player;
 	}
 
-	private List<Integer> npcs = Arrays.asList(3154, 33, 1684, 5957, 5958, 5959, 185, 6311);
+	private static List<Integer> npcs = Arrays.asList(3154, 33, 1684, 5957, 5958, 5959, 185, 6311);
 
 	//
 
-	public void open() {
+	public static void open(Player player) {
 
 		int startId = 58720;
 
