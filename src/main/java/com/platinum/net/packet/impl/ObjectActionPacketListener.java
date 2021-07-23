@@ -208,6 +208,9 @@ public class ObjectActionPacketListener implements PacketListener {
 				case 12120:
 					KeyRoom.handleObjectClick(player, gameObject, 1);
 					return;
+					case 3479:
+						//player.InstanceInterfaceManager.open;
+						break;
 					
 					case 10817:
 						GunGame.start(player);
@@ -1206,6 +1209,7 @@ public class ObjectActionPacketListener implements PacketListener {
 					} else
 						player.getPacketSender().sendMessage("Please finish what you're doing before opening this.");
 					break;
+
 				case 6:
 					DwarfCannon cannon = player.getCannon();
 					if (cannon == null || cannon.getOwnerIndex() != player.getIndex()) {

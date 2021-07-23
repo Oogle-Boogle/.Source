@@ -313,7 +313,7 @@ public class DropUtils {
 			{744, 1}, //Godzilla
 			{806, 1}, //Goku
 			{808, 1}, //Vegeta
-			{809, 1}, //Fuzed Goku
+			{809, 5}, //Fuzed Goku
 			{3137, 1}, //Eevee
 			{3138, 1}, //Jolteon
 			{642, 1}, //Flareon
