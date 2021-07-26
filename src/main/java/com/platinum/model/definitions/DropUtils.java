@@ -19,10 +19,10 @@ public class DropUtils {
     		{ 19776, 2 }, // 2% swanky boots
     		{ 19821, 2 }, // 2% swanky boots
 
-    		{ 9503, 5 }, // 5% dr blessed amulet
-    		{ 18402, 5 }, // 5% dr blazed wings
-    		{ 18750, 5 }, // 5% dr demonic olm partyhat
-    		{ 18751, 5 }, // 5% dr demonic olm gloves
+    		{ 9503, 2 }, // 5% dr blessed amulet
+    		{ 18402, 2 }, // 5% dr blazed wings
+    		{ 18750, 2 }, // 5% dr demonic olm partyhat
+    		{ 18751, 2 }, // 5% dr demonic olm gloves
 
     		{ 20016, 0,5 }, // 0.5% DR Tier 1 item
     		{ 20017, 0,5 }, // 0.5% DR Tier 1 item
@@ -253,7 +253,6 @@ public class DropUtils {
     		{ 13991, 5 }, // 5.0% DR Tier 10 item
     		{ 14448, 5 }, // 5.0% DR Tier 10 item
     		{ 14447, 5 }, // 5.0% DR Tier 10 item
-    		{ 20431, 5 }, // 5.0% DR Tier 10 item
     		{ 20427, 5 }, // 5.0% DR Tier 10 item
     		{ 19741, 5 }, // 5.0% DR Tier 10 item
     		{ 19742, 5 }, // 5.0% DR Tier 10 item
@@ -308,7 +307,7 @@ public class DropUtils {
 			{1739, 1}, //lucario
 			{229, 1}, //donald duck
 			{230, 1}, //baby yoda
-			{641, 1}, //Charizard
+			{641, 5}, //Charizard
 			{8512, 1}, //Vorago
 			{744, 1}, //Godzilla
 			{806, 1}, //Goku

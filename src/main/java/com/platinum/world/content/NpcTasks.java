@@ -135,7 +135,7 @@ public class NpcTasks {
 				new Item[] { new Item(10835, 1250), new Item(19935, 1),new Item(3988, 1)}),
 		KILL_10000_EXODEN("Kill 10000 Exoden", 65644, "Some Gear", new int[] { 38, 10000 }, "Kill 10000 Exoden",
 				"Find them at Expert teleports", "", "",
-				new Item[] { new Item(19937, 1), new Item(10835, 1000),new Item(3988, 2) }),
+				new Item[] { new Item(19936, 1), new Item(10835, 1000),new Item(3988, 2) }),
 		
 		KILL_1000_SUPREME_NEX("Kill 1000 Supreme Nex", 65645, "Some Gear", new int[] { 39, 1000 }, "Kill 1000 Supreme Nex",
 				"Find them at Expert teleports", "", "",
