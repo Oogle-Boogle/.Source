@@ -327,8 +327,6 @@ public class PlayerSaving {
 			object.addProperty("roulette-balance", new Long(player.getRouletteBalance()));
 			object.addProperty("roulette-bet-amount", new Long(player.getRouletteBet()));
 
-			object.addProperty("fuseCombinationTimer", new Long(player.fuseCombinationTimer));
-
 			object.add("npc-kc-data", builder.toJsonTree(player.getNpcKillCount()));
 
 			object.addProperty("savedKeyCount1", new Integer(player.savedKeyCount1));

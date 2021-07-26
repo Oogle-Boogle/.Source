@@ -1124,9 +1124,6 @@ public class PlayerLoading {
 			
 			if(reader.has("roulette-bet-amount"))
 				player.setRouletteBet(reader.get("roulette-bet-amount").getAsInt());
-
-			if(reader.has("fuseCombinationTimer"))
-				player.setFuseCombinationTimer(reader.get("fuseCombinationTimer").getAsLong());
 			
 			if(reader.has("lastSpecialPotClaim"))
 				player.lastSpecialRestoreClaim = (reader.get("lastSpecialPotClaim").getAsLong());

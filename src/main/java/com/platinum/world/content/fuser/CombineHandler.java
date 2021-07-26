@@ -6,11 +6,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 public class CombineHandler {
-    Player player;
 
-    public CombineHandler(Player player) {
-        this.player = player;
-    }
+    /** User to display time on the interface **/
 
     public static String timeLeft(Player player) {
         long durationInMillis = player.getFuseCombinationTimer() - System.currentTimeMillis();
@@ -18,9 +15,9 @@ public class CombineHandler {
         long hour = (durationInMillis / (1000 * 60 * 60)) % 24;
 
         if (durationInMillis <= 0) {
-            return "Fuse!";
+            return "@gre@Claim!";
         } else {
-            return String.format("%02d:%02d", hour, minute);
+            return String.format("@red@%02d:%02d", hour, minute);
         }
     }
 
@@ -48,6 +45,7 @@ public class CombineHandler {
             interfaceId++;
         }
         player.getPacketSender().sendString(43542,"");
+        player.getPacketSender().sendString(43541, CombineHandler.timeLeft(player));
 
     }
 

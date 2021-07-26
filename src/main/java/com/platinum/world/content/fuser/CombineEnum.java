@@ -44,7 +44,7 @@ public enum CombineEnum {
     int chance;
     @Getter
     @Setter
-    long timer;
+    long timer; //TIME IS IN MILLISECONDS.. 1h = 3600000
 
     public int getChance() {
         return chance;
@@ -66,7 +66,7 @@ public enum CombineEnum {
 
     public static boolean checkRequirements(CombineEnum combine, Player player) {
         if (!(System.currentTimeMillis() >= player.getFuseCombinationTimer())) {
-            player.sendMessage("Please wait @red@" + CombineHandler.timeLeft(player) + "@bla@before your next fusion.");
+            player.sendMessage("Please wait @red@" + CombineHandler.timeLeft(player) + "@bla@ before your next fusion.");
             player.getPA().closeAllWindows();
             return false;
         }
