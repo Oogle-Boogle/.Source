@@ -87,9 +87,7 @@ import com.platinum.world.content.droppreview.SKOT;
 import com.platinum.world.content.droppreview.SLASHBASH;
 import com.platinum.world.content.droppreview.TDS;
 import com.platinum.world.content.fuser.CombineEnum;
-import com.platinum.world.content.fuser.CombineEnum2;
 import com.platinum.world.content.fuser.CombineHandler;
-import com.platinum.world.content.fuser.CombineHandler2;
 import com.platinum.world.content.grandexchange.GrandExchange;
 import com.platinum.world.content.groupironman.GroupIronmanGroup;
 import com.platinum.world.content.groupironman.input.InvitePlayerInputListener;
@@ -177,15 +175,6 @@ public class ButtonClickPacketListener implements PacketListener {
                 }
                 player.combineIndex = (id- -12235);
                 CombineHandler.openInterface((CombineEnum.values()[player.combineIndex]), player);
-                return;
-            } else 
-            {
-                if(id-12234 > CombineEnum2.values().length)
-                {
-                    return;
-                }
-                player.combineIndex = (id- -12235);
-                CombineHandler2.openInterface((CombineEnum2.values()[player.combineIndex]), player);
                 return;
             }
 		}
