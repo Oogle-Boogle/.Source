@@ -3293,6 +3293,10 @@ public class Player extends Character {
 	@Getter
 	public long fuseCombinationTimer;
 
+	@Setter
+	@Getter
+	private Stopwatch instanceTimer = new Stopwatch();
+
 	public int getWalkableInterfaceId() {
 		return walkableInterfaceId;
 	}

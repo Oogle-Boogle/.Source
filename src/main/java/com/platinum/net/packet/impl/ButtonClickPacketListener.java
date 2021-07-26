@@ -20,6 +20,7 @@ import com.platinum.model.input.impl.EnterSyntaxToBankSearchFor;
 import com.platinum.model.input.impl.EnterSyntaxToItemSearchFor;
 import com.platinum.model.input.impl.EnterSyntaxToNpcSearchFor;
 import com.platinum.model.input.impl.PosInput;
+import com.platinum.util.Stopwatch;
 import com.platinum.world.content.preset.Presets;
 import com.platinum.model.input.impl.SearchForItemInput;
 import com.platinum.net.packet.Packet;
@@ -179,16 +180,11 @@ public class ButtonClickPacketListener implements PacketListener {
                 return;
             }
 		}
-        
-        if (checkHandlers(player, id))
-			return;
-        
-        
-        
-
 
         if (checkHandlers(player, id))
             return;
+
+
 
         if (id >= 32623 && id <= 32722) {
             if (player.getClickDelay().elapsed(4500)) {
@@ -220,6 +216,10 @@ public class ButtonClickPacketListener implements PacketListener {
 
 
         switch (id) {
+
+            case 58954:
+                player.getInstanceTimer().reset(); //Starts the timer
+            break;
 
         
 		case -19028:
