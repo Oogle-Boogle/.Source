@@ -497,6 +497,9 @@ public class PlayerLoading {
 			if (reader.has("skull-timer")) {
 				player.setSkullTimer(reader.get("skull-timer").getAsInt());
 			}
+			if (reader.has("fuse-combination-timer")) {
+				player.setFuseCombinationTimer(reader.get("fuse-combination-timer").getAsLong());
+			}
 			if (reader.has("accept-aid")) {
 				player.setAcceptAid(reader.get("accept-aid").getAsBoolean());
 			}

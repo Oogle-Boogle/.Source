@@ -2,8 +2,27 @@ package com.platinum.world.content.fuser;
 
 import com.platinum.model.definitions.ItemDefinition;
 import com.platinum.world.entity.impl.player.Player;
+import lombok.Getter;
+import lombok.Setter;
 
 public class CombineHandler {
+    Player player;
+
+    public CombineHandler(Player player) {
+        this.player = player;
+    }
+
+    public static String timeLeft(Player player) {
+        long durationInMillis = player.getFuseCombinationTimer() - System.currentTimeMillis();
+        long minute = (durationInMillis / (1000 * 60)) % 60;
+        long hour = (durationInMillis / (1000 * 60 * 60)) % 24;
+
+        if (durationInMillis <= 0) {
+            return "Fuse!";
+        } else {
+            return String.format("%02d:%02d", hour, minute);
+        }
+    }
 
     public static void openInterface(CombineEnum combine, Player player){
         player.combineIndex = combine.ordinal();

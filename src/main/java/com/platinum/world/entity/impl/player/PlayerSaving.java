@@ -194,6 +194,7 @@ public class PlayerSaving {
 			object.add("equipmentWings", builder.toJsonTree(player.getEquipmentWings().getItems()));
 			object.addProperty("sol-effect", new Integer(player.getStaffOfLightEffect()));
 			object.addProperty("skull-timer", new Integer(player.getSkullTimer()));
+			object.addProperty("fuse-combination-timer", new Long(player.getFuseCombinationTimer()));
 			object.addProperty("accept-aid", new Boolean(player.isAcceptAid()));
 			object.addProperty("poison-damage", new Integer(player.getPoisonDamage()));
 			object.addProperty("poison-immunity", new Integer(player.getPoisonImmunity()));

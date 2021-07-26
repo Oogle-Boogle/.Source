@@ -54,6 +54,7 @@ import com.platinum.world.content.combat.weapon.FightType;
 import com.platinum.world.content.customraids.CustomRaid;
 import com.platinum.world.content.customraids.RaidParty;
 import com.platinum.world.content.dialogue.Dialogue;
+import com.platinum.world.content.fuser.CombineHandler;
 import com.platinum.world.content.gamblinginterface.GamblingInterface;
 import com.platinum.world.content.grandexchange.GrandExchangeSlot;
 import com.platinum.world.content.groupironman.GroupIronman;
@@ -126,7 +127,7 @@ public class Player extends Character {
 	public DPSOverlay getDpsOverlay() {
 		return dpsOverlay;
 	}
-	
+
 
 	/**
 	 * Raids
@@ -1580,7 +1581,7 @@ public class Player extends Character {
 		this.doubleRateActive = doubleRateActive;
 	}
 
-	private final Stopwatch doubleRateTimer = new Stopwatch()
+	private final Stopwatch doubleRateTimer = new Stopwatch();
 
 	public Stopwatch getDoubleRateTimer() {
 		return doubleRateTimer;
@@ -3040,6 +3041,8 @@ public class Player extends Character {
 	public int[] oldSkillXP = new int[25];
 	public int[] oldSkillMaxLevels = new int[25];
 
+
+
 	public void resetInterfaces() {
 		walkableInterfaceList.stream().filter((i) -> !(i == 41005 || i == 41000)).forEach((i) -> {
 			getPacketSender().sendWalkableInterface(i, false);
@@ -3285,6 +3288,10 @@ public class Player extends Character {
 		this.multiIcon = multiIcon;
 		return this;
 	}
+
+	@Setter
+	@Getter
+	public long fuseCombinationTimer;
 
 	public int getWalkableInterfaceId() {
 		return walkableInterfaceId;
@@ -4407,10 +4414,6 @@ public class Player extends Character {
 	public long lastSpecialClaim;
 
 	public long lastSpecialRestoreClaim;
-
-	@Getter
-	@Setter
-	public long fuseCombinationTimer;
 
 	public void handleKeyRates(Player killer, NPC npc) {
 
