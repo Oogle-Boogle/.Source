@@ -1580,7 +1580,7 @@ public class Player extends Character {
 		this.doubleRateActive = doubleRateActive;
 	}
 
-	private final Stopwatch doubleRateTimer = new Stopwatch();
+	private final Stopwatch doubleRateTimer = new Stopwatch()
 
 	public Stopwatch getDoubleRateTimer() {
 		return doubleRateTimer;
@@ -4407,6 +4407,10 @@ public class Player extends Character {
 	public long lastSpecialClaim;
 
 	public long lastSpecialRestoreClaim;
+
+	@Getter
+	@Setter
+	public long fuseCombinationTimer;
 
 	public void handleKeyRates(Player killer, NPC npc) {
 

@@ -54,6 +54,9 @@ public enum CombineEnum {
     }
 
     public static boolean checkRequirements(CombineEnum combine, Player player) {
+
+
+
         Item[] reqs = combine.getRequirements();
         for (Item req : reqs) {
             if (player.getInventory().contains(req.getId()) && player.getInventory().getAmount(req.getId()) >= req.getAmount()) {

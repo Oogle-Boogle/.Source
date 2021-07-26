@@ -174,6 +174,7 @@ public class ButtonClickPacketListener implements PacketListener {
                     return;
                 }
                 player.combineIndex = (id- -12235);
+
                 CombineHandler.openInterface((CombineEnum.values()[player.combineIndex]), player);
                 return;
             }

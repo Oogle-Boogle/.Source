@@ -16,6 +16,7 @@ import com.google.common.collect.Multiset.Entry;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
+import org.apache.commons.lang3.time.StopWatch;
 
 
 public class PlayerSaving {
@@ -324,6 +325,8 @@ public class PlayerSaving {
 
 			object.addProperty("roulette-balance", new Long(player.getRouletteBalance()));
 			object.addProperty("roulette-bet-amount", new Long(player.getRouletteBet()));
+
+			object.addProperty("fuseCombinationTimer", new Long(player.fuseCombinationTimer));
 
 			object.add("npc-kc-data", builder.toJsonTree(player.getNpcKillCount()));
 
