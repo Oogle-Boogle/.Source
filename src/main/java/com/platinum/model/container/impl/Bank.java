@@ -42,6 +42,7 @@ public class Bank extends ItemContainer {
 	
 	
 	public Bank open() {
+		getPlayer().getPacketSender().sendConfig(324, getPlayer().isPlaceholders() ? 1 : 0);
 		return open(getPlayer(), true);
 	}
 
@@ -78,6 +79,7 @@ public class Bank extends ItemContainer {
 				.sendConfig(304, player.swapMode() ? 1 : 0)
 				.sendConfig(117,(player.getBankSearchingAttribtues().isSearchingBank() && player.getBankSearchingAttribtues().getSearchedBank() != null) ? 1 : 0)
 				.sendConfig(111, player.isPlaceholders() ? 1 : 0)
+				
 				.sendInterfaceSet(5292, 5063);
 		return this;
 	}

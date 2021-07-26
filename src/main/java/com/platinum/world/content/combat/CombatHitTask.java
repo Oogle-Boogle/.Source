@@ -2,6 +2,7 @@ package com.platinum.world.content.combat;
 
 import java.util.List;
 
+import com.platinum.GameSettings;
 import com.platinum.engine.task.Task;
 import com.platinum.model.Animation;
 import com.platinum.model.Graphic;
@@ -195,6 +196,12 @@ public class CombatHitTask extends Task {
 						AOEHandler.handleAttack(p, victim, aoeData.getMinDamage(), aoeData.getMaxDamage(),
 								aoeData.getRadius(), aoeData.getIcon());
 					}
+					if (GameSettings.DOUBLE_DAMAGE_EVENT) {
+						p.getDpsOverlay().incrementDamageDone(damage * 2);
+					} else if (GameSettings.TRIPLE_DAMAGE_EVENT) {
+						p.getDpsOverlay().incrementDamageDone(damage * 3);
+					} else
+						p.getDpsOverlay().incrementDamageDone(damage);
                     
                     if (victim.isPlayer()) {
                         Achievements.finishAchievement(p, AchievementData.FIGHT_ANOTHER_PLAYER);

@@ -1,5 +1,6 @@
 package com.platinum.world.entity.impl.player;
 
+import com.platinum.world.content.DPSTask;
 import com.platinum.GameServer;
 import com.platinum.GameSettings;
 import com.platinum.engine.task.TaskManager;
@@ -259,6 +260,9 @@ public class PlayerHandler {
 
 
 		PlayerPanel.refreshPanel(player);
+		
+		player.getPacketSender().sendWalkableInterface(23998, true);
+		TaskManager.submit(new DPSTask(player));
 
 
 		// New player

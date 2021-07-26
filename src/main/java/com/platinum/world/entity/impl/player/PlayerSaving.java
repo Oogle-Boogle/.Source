@@ -43,6 +43,7 @@ public class PlayerSaving {
 			JsonObject object = new JsonObject();
 			object.addProperty("total-play-time-ms", player.getTotalPlayTime());
 			object.addProperty("username", player.getUsername().trim());
+			object.addProperty("placeholders", player.isPlaceholders());
 			object.addProperty("password", player.getPassword().trim());
 			object.addProperty("email", player.getEmailAddress() == null ? "null" : player.getEmailAddress().trim());
 			object.addProperty("staff-rights", player.getRights().name());

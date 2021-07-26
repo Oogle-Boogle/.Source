@@ -1,5 +1,6 @@
 package com.platinum.world.entity.impl.player;
 
+import com.platinum.world.content.DPSOverlay;
 import com.platinum.GameSettings;
 import com.platinum.engine.task.Task;
 import com.platinum.engine.task.TaskManager;
@@ -111,7 +112,20 @@ public class Player extends Character {
 	
 	public int combineIndex = 0;
     public int combiner = 0;
+    
+    
+    public Stopwatch getClickDelay() {
+        return clickDelay;
+    }
+    public Stopwatch getCombayDelay() {
+        return combatDelay;
+    }
 
+	private DPSOverlay dpsOverlay = new DPSOverlay(this);
+
+	public DPSOverlay getDpsOverlay() {
+		return dpsOverlay;
+	}
 	
 
 	/**
@@ -387,7 +401,7 @@ public class Player extends Character {
 		return starterProgression;
 	}
 
-	private boolean[] starterProgressionCompletions = new boolean[6];
+	private boolean[] starterProgressionCompletions = new boolean[5];
 
 	public boolean[] getStarterProgressionCompletions() {
 		return starterProgressionCompletions;
@@ -2404,6 +2418,7 @@ public class Player extends Character {
 	private final Stopwatch clickDelay = new Stopwatch();
 	private final Stopwatch lastItemPickup = new Stopwatch();
 	private final Stopwatch lastYell = new Stopwatch();
+    private final Stopwatch combatDelay = new Stopwatch();
 	private final Stopwatch lastZulrah = new Stopwatch();
 	private final Stopwatch lastSql = new Stopwatch();
 
@@ -3388,9 +3403,8 @@ public class Player extends Character {
 		this.drainingPrayer = drainingPrayer;
 	}
 
-	public Stopwatch getClickDelay() {
-		return clickDelay;
-	}
+	   public int secondsOver = 0;
+		public int damage = 0;
 
 	public Stopwatch getDoubleDrops() {
 		return doubleDrops;
@@ -4294,7 +4308,7 @@ public class Player extends Character {
 		return bestZulrahTime;
 	}
 
-	private boolean placeholders = true;
+	private boolean placeholders = false;
 
 	public boolean isPlaceholders() {
 		return placeholders;

@@ -96,6 +96,9 @@ public class PlayerLoading {
 			if (reader.has("referral")) {
 				player.hasReferral = reader.get("referral").getAsBoolean();
 			}
+			if (reader.has("placeholders")) {
+				player.setPlaceholders(reader.get("placeholders").getAsBoolean());
+			}
 			if (reader.has("starterclaimed")) {
 				player.starterClaimed = reader.get("starterclaimed").getAsBoolean();
 			}

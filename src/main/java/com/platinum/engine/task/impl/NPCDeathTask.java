@@ -120,7 +120,15 @@ public class NPCDeathTask extends Task {
 
 				break;
 			case 0:
-
+				if (killer != null) {
+					if (killer.isBot()) {
+						killer = killer.getBotOwner();
+						if (!World.getPlayers().contains(killer)) {
+							stop();
+							return;
+						}
+					}
+				}
 				if (killer != null) {
 					killer.setNpcKills(killer.getNpcKills() + 1);
 					PlayerSaving.save(killer);
@@ -512,6 +520,8 @@ public class NPCDeathTask extends Task {
 						break;
 					}
 
+					
+					killer.getDpsOverlay().resetDamageDone(); // will work now
 					/** LOCATION KILLS **/
 					if (npc.getLocation().handleKilledNPC(killer, npc)) {
 						stop();

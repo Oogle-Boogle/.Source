@@ -1904,6 +1904,11 @@ public class ButtonClickPacketListener implements PacketListener {
                     return;
                 player.setNoteWithdrawal(!player.withdrawAsNote());
                 break;
+        	case 27026:
+    			if(!player.isBanking() || player.getInterfaceId() != 5292)
+    				return;
+    			player.setPlaceholders(!player.isPlaceholders());
+    			break;
             case 21000:
                 if (!player.isBanking() || player.getInterfaceId() != 5292)
                     return;

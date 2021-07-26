@@ -124,7 +124,8 @@ public class GameSettings {
 	 */
 	public static final int ENGINE_PROCESSING_CYCLE_RATE = 600;
 	public static final int GAME_PROCESSING_CYCLE_RATE = 600;
-
+	public static boolean DOUBLE_DAMAGE_EVENT = false;
+	public static boolean TRIPLE_DAMAGE_EVENT = false;
 	/**
 	 * Are the MYSQL services enabled?
 	 */

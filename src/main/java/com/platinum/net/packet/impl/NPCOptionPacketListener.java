@@ -685,6 +685,7 @@ public class NPCOptionPacketListener implements PacketListener {
 			player.getMovementQueue().reset();
 		}
 
+		player.getDpsOverlay().resetTimer();
 		if (npc instanceof RaidNpc) {
 			RaidNpc raidNpc = (RaidNpc) npc;
 			OldRaidParty party = player.getOldRaidParty();
