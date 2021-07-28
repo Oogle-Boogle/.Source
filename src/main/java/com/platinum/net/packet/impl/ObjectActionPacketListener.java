@@ -1,6 +1,6 @@
 package com.platinum.net.packet.impl;
 import com.platinum.world.content.FantasyChest;
-import com.platinum.world.content.InstanceInterfaceManager;
+import com.platinum.world.content.InstanceSystem;
 import com.platinum.GameSettings;
 import com.platinum.engine.task.Task;
 import com.platinum.engine.task.TaskManager;
@@ -31,7 +31,6 @@ import com.platinum.world.clip.region.RegionClipping;
 import com.platinum.world.content.CrystalChest;
 import com.platinum.world.content.CustomObjects;
 import com.platinum.world.content.DeluxeDonatorChest;
-import com.platinum.world.content.DropLog;
 import com.platinum.world.content.DungeonMinigameChest;
 import com.platinum.world.content.EvilTrees;
 import com.platinum.world.content.KeysEvent;
@@ -1398,7 +1397,7 @@ public class ObjectActionPacketListener implements PacketListener {
 					break;
 				case 3479:
 				
-					InstanceInterfaceManager.open(player);
+					InstanceSystem.open(player);
 					break;
 				case 6420:
 					int[] itemList9 = { 18377, 15418, 19468, 2572, 16137, 11076, 18363,

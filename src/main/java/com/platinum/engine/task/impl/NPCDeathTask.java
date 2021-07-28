@@ -16,24 +16,10 @@ import com.platinum.model.definitions.NPCDrops;
 import com.platinum.util.Misc;
 import com.platinum.util.RandomUtility;
 import com.platinum.world.World;
-import com.platinum.world.content.Achievements;
+import com.platinum.world.content.*;
 import com.platinum.world.content.Achievements.AchievementData;
-import com.platinum.world.content.Bork;
-import com.platinum.world.content.DailyNpc;
-import com.platinum.world.content.HWeenBoss;
-import com.platinum.world.content.Juggernaut;
-import com.platinum.world.content.KeysEvent;
-import com.platinum.world.content.NpcTasks;
 import com.platinum.world.content.NpcTasks.NpcTaskData;
-import com.platinum.world.content.Onslaught;
-import com.platinum.world.content.StarterTasks;
 import com.platinum.world.content.StarterTasks.StarterTaskData;
-import com.platinum.world.content.TheMay;
-import com.platinum.world.content.TheRick;
-import com.platinum.world.content.TheSeph;
-import com.platinum.world.content.TrioBosses;
-import com.platinum.world.content.Tztok;
-import com.platinum.world.content.Wildywyrm;
 import com.platinum.world.content.combat.DailyNPCTask;
 import com.platinum.world.content.combat.TenKMassacre;
 import com.platinum.world.content.combat.bossminigame.BossMinigameFunctions;
@@ -290,25 +276,20 @@ public class NPCDeathTask extends Task {
 						}
 					}
 
-					if (killer.getInstanceInterface().getNpcToSpawn() != null
-							&& killer.getInstanceInterface().getNpcToSpawn().getId() == npc.getId()) {
-						killer.getInstanceInterface().handleKill();
-						if (killer.getInstanceInterface().getSpawnAmount() >= 1) {
-							killer.sendMessage(
-									"YES executed: left to kill - " + killer.getInstanceInterface().getSpawnAmount());
-							TaskManager.submit(new Task(5) {
+					if (killer.getInstanceSystem().getNpcsToSpawn() != null
+							&& killer.getInstanceSystem().getNpcsToSpawn()[0].getId() == npc.getId()) {
+
+						World.deregister(npc);
+						System.out.println("NPC REMOVED FROM INSTANCE");
+
+							TaskManager.submit(new Task(3) {
 								@Override
 								protected void execute() {
-									killer.getInstanceInterface().respawn();
+									killer.getInstanceSystem().respawn();
 									stop();
 								}
 							});
-
-						} else {
-							killer.getInstanceInterface().despawn();
-							killer.sendMessage("Instance ended because killcount ended ->");
 						}
-					}
 
 
 					if (killer.isInRaid()) {
@@ -680,10 +661,8 @@ public class NPCDeathTask extends Task {
 		// respawn
 		if (npc.getDefinition().getRespawnTime() > 0 && npc.getLocation() != Location.GRAVEYARD
 				&& npc.getLocation() != Location.DUNGEONEERING && npc.getLocation() != Location.BOSS_TIER_LOCATION
-				&& !npc.equals(killer.getInstanceInterface().getNpcToSpawn()) && !killer.isInRaid() && !(npc instanceof RaidNpc)) {
-			// System.out.println("setting new task for npcId="+npc.getId()+"
-			// name="+npc.getDefinition().getName()+"
-			// respawntime="+npc.getDefinition().getRespawnTime());
+				&& npc.getLocation() != Location.INSTANCE_ARENA && !killer.isInRaid() && !(npc instanceof RaidNpc)) {
+
 			TaskManager.submit(new NPCRespawnTask(npc, npc.getDefinition().getRespawnTime(), killer));
 			System.out.println(
 					"setting respawn task for npc: " + npc.getId() + " OBJECT: " + npc.getDefinition().getName());
@@ -691,7 +670,7 @@ public class NPCDeathTask extends Task {
 			System.out.println(
 					"Not setting respawn task for npc: " + npc.getId() + " OBJECT: " + npc.getDefinition().getName());
 		}
-		System.out.println("-> " + npc.equals(killer.getInstanceInterface().getNpcToSpawn()));
+
 		World.deregister(npc);
 
 		if (npc.getId() == 1158 || npc.getId() == 1160) {

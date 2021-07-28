@@ -1,0 +1,357 @@
+package com.platinum.world.content;
+
+import java.util.Arrays;
+import java.util.List;
+
+import com.platinum.engine.task.Task;
+import com.platinum.engine.task.TaskManager;
+import com.platinum.engine.task.impl.PoisonImmunityTask;
+import com.platinum.model.*;
+import com.platinum.model.definitions.NPCDrops;
+import com.platinum.model.definitions.NpcDefinition;
+import com.platinum.world.World;
+import com.platinum.world.content.aoesystem.AOESystem;
+import com.platinum.world.content.combat.weapon.CombatSpecial;
+import com.platinum.world.entity.impl.npc.NPC;
+import com.platinum.world.entity.impl.player.Player;
+import lombok.Getter;
+import lombok.Setter;
+
+/**
+ * 
+ * @author Flub
+ *
+ */
+
+public class InstanceSystem {
+
+	public InstanceSystem(Player player) {
+		this.player = player;
+	}
+
+	private Player player;
+
+	/** Currency used to enter the instance **/
+	public static int INSTANCE_TOKEN_ID = 3901;
+
+	/** List to store NPC ID's **/
+	private static List<Integer> npcs = Arrays.asList(3154, 33, 1684, 5957, 5958, 5959, 185, 6311);
+
+	/** Sets the total cost of tokens based on rank **/
+	public static int COST_TO_ENTER(Player player) {
+		int modifiedCost;
+		switch (player.getRights()) {
+			case DONATOR:
+				modifiedCost = 30;
+				break;
+			case SUPER_DONATOR:
+				modifiedCost = 25;
+				break;
+			case EXTREME_DONATOR:
+				modifiedCost = 20;
+				break;
+			case LEGENDARY_DONATOR:
+				modifiedCost = 15;
+				break;
+			case UBER_DONATOR:
+				modifiedCost = 10;
+				break;
+			case DELUXE_DONATOR:
+				modifiedCost = 5;
+				break;
+			case SUPPORT:
+			case MODERATOR:
+			case ADMINISTRATOR:
+			case OWNER:
+			case DEVELOPER:
+				modifiedCost = 1;
+				break;
+			default: //Applies to anyone not listed above
+				modifiedCost = 50;
+		}
+		player.getPacketSender().sendMessage("Your price to enter is " + modifiedCost + " tokens");
+		return modifiedCost;
+	}
+
+	/** Opens the interface and sends the data **/
+	public static void open(Player player) {
+
+		int startId = 58720;
+
+		for (int i = 0; i < npcs.size(); i++) {
+			player.getPacketSender().sendString(startId, NpcDefinition.forId(npcs.get(i)).getName());
+			startId++;
+		}
+
+		player.getPacketSender().sendInterface(58705);
+	}
+
+	/** Deals with clicks, selecting the relevant NPC and sending the new data **/
+	public boolean handleClick(int id) {
+
+		if (!(id >= -6816 && id <= -6807)) {
+			return false;
+		}
+		int index = -1;
+
+		if (id >= -6816) {
+			index = 6816 + id;
+		}
+		final int npcId = npcs.get(index);
+		NpcDefinition def = NpcDefinition.forId(npcs.get(index));
+
+		player.getPacketSender().sendString(58716, "Npc killcount: @gre@" + player.getNpcKillCount(npcId))
+				.sendString(58717, "Npc hitpoints: @gre@" + def.getHitpoints())
+				.sendString(58718, "Npc level: @gre@" + def.getCombatLevel()).sendString(58926, def.getName());
+		player.getPacketSender().sendNpcOnInterface(58927, npcId, 0);
+
+		sendDrops(npcId);
+
+		this.npcId = npcId;
+
+		return true;
+
+	}
+
+	/** Sends the drops to the interface **/
+	private void sendDrops(int npcId) {
+		player.getPacketSender().resetItemsOnInterface(58936, 100);
+		try {
+			NPCDrops drops = NPCDrops.forId(npcId);
+			if (drops == null) {
+				System.out.println("Was null");
+				return;
+			}
+			for (int i = 0; i < drops.getDropList().length; i++) {
+
+				player.getPacketSender().sendItemOnInterface(58936, drops.getDropList()[i].getId(), i,
+						drops.getDropList()[i].getItem().getAmount());
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	/** used to set the initial NPC the player sees upon opening.
+	 * This is the first entry in the npcs array **/
+	private int npcId = npcs.get(0);
+
+	/** Used to store NPCs for use later **/
+	@Getter
+	private NPC[] npcsToSpawn;
+
+	/** Gets the required amount of NPC's to spawn and applies
+	 * minimum and maximum parameters
+	 */
+	public int getSpawnAmount() {
+		if (spawnAmount < 1)
+			spawnAmount = 1;
+
+		if (spawnAmount > 8)
+			spawnAmount = 8;
+
+		return spawnAmount;
+	}
+
+	/** Stores the amount to spawn. Defualt value of 1 **/
+	@Setter
+	private int spawnAmount = 1;
+
+	/** Creates a task to make the NPC's in the instance attack the player **/
+	public static void aggroNpcs(Player player) {
+		TaskManager.submit(new Task(2, player, false) {
+			@Override
+			public void execute() {
+				player.getRegionInstance().getNpcsList().forEach(npc -> npc.getCombatBuilder().attack(player));
+				this.stop();
+			}
+		});
+	}
+
+	/** Stars the instance, handles all code relating to initial spawn. **/
+	public void startInstance() {
+		int currentTokens = player.getInventory().getAmount(INSTANCE_TOKEN_ID);
+		int costToEnter = COST_TO_ENTER(player);
+
+		if (currentTokens >= costToEnter){
+			player.getInventory().delete(INSTANCE_TOKEN_ID, costToEnter);
+		} else {
+			int missingTokens = costToEnter - currentTokens;
+			player.getPacketSender().sendMessage("You need @red@" + missingTokens + " @bla@more"+ (missingTokens <= 1 ? " token " : " tokens ") + "to enter.");
+			return;
+		}
+
+		if (!AOESystem.hasAoeWeapon(player)) {
+			player.getPacketSender().sendMessage("You must equip an AOE weapon to use the Instance Arena!");
+			return;
+		}
+
+		player.getPacketSender().sendInterfaceReset().sendInterfaceRemoval();
+
+		if (player.getRegionInstance() != null) {
+			player.getRegionInstance().destruct();
+		}
+
+		player.setRegionInstance(new RegionInstance(player, RegionInstance.RegionInstanceType.INSTANCE_ARENA));
+
+		int height = player.getIndex() * 4;
+
+		int x = 2526; //Base number for X Coord
+		int y = 3671; //Base number for Y Coord
+
+		Position firstPosition = new Position(x, y, height);
+		Position secondPosition = new Position(x+4, y, height);
+		Position thirdPosition = new Position(x+8, y, height);
+		Position fourthPosition = new Position(x+12, y, height);
+		Position fifthPosition = new Position(x, y+4, height);
+		Position sixthPosition = new Position(x+4, y+4, height);
+		Position seventhPosition = new Position(x+8, y+4, height);
+		Position eighthPosition = new Position(x+12, y+4, height);
+
+		switch (spawnAmount) {
+			case 1:
+				npcsToSpawn = new NPC[]{
+						new NPC(this.npcId, firstPosition)};
+				break;
+			case 2:
+				npcsToSpawn = new NPC[]{
+						new NPC(this.npcId, firstPosition),
+						new NPC(this.npcId, secondPosition)};
+				break;
+			case 3:
+				npcsToSpawn = new NPC[]{
+						new NPC(this.npcId, firstPosition),
+						new NPC(this.npcId, secondPosition),
+						new NPC(this.npcId, thirdPosition)};
+				break;
+			case 4:
+				npcsToSpawn = new NPC[]{
+						new NPC(this.npcId, firstPosition),
+						new NPC(this.npcId, secondPosition),
+						new NPC(this.npcId, thirdPosition),
+						new NPC(this.npcId, fourthPosition)};
+				break;
+			case 5:
+				npcsToSpawn = new NPC[]{
+						new NPC(this.npcId, firstPosition),
+						new NPC(this.npcId, secondPosition),
+						new NPC(this.npcId, thirdPosition),
+						new NPC(this.npcId, fourthPosition),
+						new NPC(this.npcId, fifthPosition)};
+				break;
+			case 6:
+				npcsToSpawn = new NPC[]{
+						new NPC(this.npcId, firstPosition),
+						new NPC(this.npcId, secondPosition),
+						new NPC(this.npcId, thirdPosition),
+						new NPC(this.npcId, fourthPosition),
+						new NPC(this.npcId, fifthPosition),
+						new NPC(this.npcId, sixthPosition)};
+				break;
+			case 7:
+				npcsToSpawn = new NPC[]{
+						new NPC(this.npcId, firstPosition),
+						new NPC(this.npcId, secondPosition),
+						new NPC(this.npcId, thirdPosition),
+						new NPC(this.npcId, fourthPosition),
+						new NPC(this.npcId, fifthPosition),
+						new NPC(this.npcId, sixthPosition),
+						new NPC(this.npcId, seventhPosition)};
+				break;
+			case 8:
+				npcsToSpawn = new NPC[]{
+						new NPC(this.npcId, firstPosition),
+						new NPC(this.npcId, secondPosition),
+						new NPC(this.npcId, thirdPosition),
+						new NPC(this.npcId, fourthPosition),
+						new NPC(this.npcId, fifthPosition),
+						new NPC(this.npcId, sixthPosition),
+						new NPC(this.npcId, seventhPosition),
+						new NPC(this.npcId, eighthPosition)};
+				break;
+		}
+
+		for (int n = 0; n < npcsToSpawn.length; n++){
+			World.register(npcsToSpawn[n]);
+			npcsToSpawn[n].setInstancedNPC(true);
+			npcsToSpawn[n].setForcedChat("Get ready!");
+			npcsToSpawn[n].setSpawnedFor(player);
+			npcsToSpawn[n].getCombatBuilder().attack(player);
+			player.getRegionInstance().getNpcsList().add(npcsToSpawn[n]);
+		}
+
+		aggroNpcs(player);
+
+		player.moveTo(new Position(2524, 3671, height));
+
+	}
+
+	/** Handles deaths in the instance areana. **/
+	public void respawn() {
+		if (!AOESystem.hasAoeWeapon(player)) {
+			player.getPacketSender().sendMessage("You must equip an AOE weapon to use the Instance Arena!");
+			destructInstance(player);
+			return;
+		}
+		for (int n = 0; n < npcsToSpawn.length; n++){
+			World.register(npcsToSpawn[n]);
+			npcsToSpawn[n].setInstancedNPC(true);
+			npcsToSpawn[n].setForcedChat("I'm back!");
+			npcsToSpawn[n].setSpawnedFor(player);
+			npcsToSpawn[n].getCombatBuilder().attack(player);
+			player.getRegionInstance().getNpcsList().add(npcsToSpawn[n]);
+		}
+		aggroNpcs(player);
+	}
+
+	/** Restores the players HP when leaving the area. **/
+	public static void restoreHP(Player player) {
+		if (player.getRights().isMember() || player.getRights().isStaff()) {
+			if (player.getSkillManager().getCurrentLevel(Skill.CONSTITUTION) < player.getSkillManager().getMaxLevel(Skill.CONSTITUTION)) {
+				player.getSkillManager().setCurrentLevel(Skill.CONSTITUTION, player.getSkillManager().getMaxLevel(Skill.CONSTITUTION), true);
+			}
+		}
+	}
+
+	/** Restores the players skills when leaving the area. **/
+	public static void restoreStats(Player player) {
+		if (player.getRights().isMember() || player.getRights().isStaff()) {
+			if (player.getSkillManager().getCurrentLevel(Skill.PRAYER) < player.getSkillManager().getMaxLevel(Skill.PRAYER)) {
+				player.getSkillManager().setCurrentLevel(Skill.PRAYER, player.getSkillManager().getMaxLevel(Skill.PRAYER), true);
+			}
+		}
+	}
+
+	/** Restores the players special attack when leaving the area. **/
+	public static void restoreSpec(Player player) {
+		if (player.getRights().isMember() || player.getRights().isStaff()) {
+			player.setSpecialPercentage(100);
+			CombatSpecial.updateBar(player);
+			player.performGraphic(new Graphic(1302));
+		}
+	}
+
+	/** Runs the previous restore methods in one method purely for vanity. **/
+	public static void restore(Player player) {
+		restoreHP(player);
+		restoreSpec(player);
+		restoreStats(player);
+	}
+
+	/** Properly handles the destruction of the instance. Removes NPCs and deals with the player in the proper manner **/
+	public static void destructInstance(final Player player) {
+		if ((player.getLocation() != Locations.Location.INSTANCE_ARENA) || (!player.getRegionInstance().equals(RegionInstance.RegionInstanceType.INSTANCE_ARENA)) || (player.getRegionInstance().getNpcsList().isEmpty())) {
+		System.out.println("Nothing to do to destruct the instance?");
+		} else {
+			//player.moveTo(ENTRANCE);
+			System.out.println("Destroying Arena for " + player.getUsername());
+			player.getRegionInstance().getNpcsList().forEach(npc -> npc.removeInstancedNpcs(Locations.Location.INSTANCE_ARENA, player.getPosition().getZ()));
+			player.getRegionInstance().getNpcsList().forEach(npc -> World.deregister(npc));
+			player.getRegionInstance().destruct();
+			restore(player);
+			PoisonImmunityTask.makeImmune(player, 0);
+		}
+	}
+
+
+}

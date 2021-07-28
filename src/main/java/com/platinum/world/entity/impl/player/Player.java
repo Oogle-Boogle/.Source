@@ -54,7 +54,6 @@ import com.platinum.world.content.combat.weapon.FightType;
 import com.platinum.world.content.customraids.CustomRaid;
 import com.platinum.world.content.customraids.RaidParty;
 import com.platinum.world.content.dialogue.Dialogue;
-import com.platinum.world.content.fuser.CombineHandler;
 import com.platinum.world.content.gamblinginterface.GamblingInterface;
 import com.platinum.world.content.grandexchange.GrandExchangeSlot;
 import com.platinum.world.content.groupironman.GroupIronman;
@@ -113,8 +112,7 @@ public class Player extends Character {
 	
 	public int combineIndex = 0;
     public int combiner = 0;
-    
-    
+
     public Stopwatch getClickDelay() {
         return clickDelay;
     }
@@ -610,10 +608,10 @@ public class Player extends Character {
 	 * Instance manager interface
 	 */
 
-	private InstanceInterfaceManager instanceInterface = new InstanceInterfaceManager(this);
+	private InstanceSystem instanceSystem = new InstanceSystem(this);
 
-	public InstanceInterfaceManager getInstanceInterface() {
-		return instanceInterface;
+	public InstanceSystem getInstanceSystem() {
+		return instanceSystem;
 	}
 
 	private int amountDonatedToday;
@@ -2310,11 +2308,6 @@ public class Player extends Character {
 	}
 
 	public boolean logout() {
-
-		if (this.getInstanceInterface().getNpcToSpawn() != null) {
-			this.getInstanceInterface().despawn();
-			this.getInstanceInterface().resetNpc();
-		}
 
 		boolean debugMessage = false;
 

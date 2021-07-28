@@ -11,13 +11,16 @@ public class ChangeInstanceAmount extends Input {
 		boolean isNumber = text.matches("[0-9]+");
 		
 		if(!isNumber) {
-			player.sendMessage("What you entered isn't a number.");
+			player.sendMessage("Enter a valid number.");
 			return;
 		}
 		
-		player.getInstanceInterface().setSpawnAmount(Integer.parseInt(text));
+		player.getInstanceSystem().setSpawnAmount(Integer.parseInt(text));
+
+		if (Integer.parseInt(text) > 8)
+			player.sendMessage("@red@The maximum number of NPC's is 8");
 		
-		player.sendMessage("@blu@Spawn amount has been set to: @red@" + player.getInstanceInterface().getSpawnAmount());
+		player.sendMessage("@blu@Spawn amount has been set to: @red@" + player.getInstanceSystem().getSpawnAmount());
 	}
 	
 }

@@ -8,6 +8,7 @@ import com.platinum.util.Misc;
 import com.platinum.world.World;
 import com.platinum.world.content.CustomFreeForAll;
 import com.platinum.world.content.CustomObjects;
+import com.platinum.world.content.InstanceSystem;
 import com.platinum.world.content.PlayerPunishment.Jail;
 import com.platinum.world.content.combat.CombatFactory;
 import com.platinum.world.content.combat.bossminigame.BossMinigameFunctions;
@@ -1250,6 +1251,48 @@ public class Locations {
 				return true;
 			}
 		},
+		INSTANCE_ARENA(new int[]{2518, 2539}, new int[]{3661, 3682}, true, false, true, false, true, true) {
+			@Override
+			public void leave(Player player) {
+				if (player.getLocation() != INSTANCE_ARENA) {
+					if (player.getRegionInstance() != null) {
+						InstanceSystem.destructInstance(player);
+					}
+				}
+				player.getPacketSender().sendCameraNeutrality();
+			}
+
+			@Override
+			public boolean canTeleport(Player player) {
+				if (player.getRegionInstance() != null) {
+					InstanceSystem.destructInstance(player);
+				}
+				return true;
+			}
+
+			@Override
+			public void logout(Player player) {
+				player.moveTo(GameSettings.DEFAULT_POSITION);
+
+				if (player.getRegionInstance() != null) {
+					InstanceSystem.destructInstance(player);
+				}
+
+
+			}
+
+			@Override
+			public void onDeath(Player player) {
+				player.moveTo(GameSettings.DEFAULT_POSITION);
+
+				if (player.getRegionInstance() != null) {
+					InstanceSystem.destructInstance(player);
+				}
+				player.forceChat("Whoops..");
+			}
+
+		},
+		
 		DEFAULT(null, null, false, true, true, true, true, true) {
 
 		};

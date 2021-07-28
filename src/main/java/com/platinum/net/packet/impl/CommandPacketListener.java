@@ -40,27 +40,9 @@ import com.platinum.util.Misc;
 import com.platinum.util.NameUtils;
 import com.platinum.util.RandomUtility;
 import com.platinum.world.World;
-import com.platinum.world.content.BonusManager;
-import com.platinum.world.content.CustomObjects;
-import com.platinum.world.content.EvilTrees;
-import com.platinum.world.content.ItemComparing;
-import com.platinum.world.content.Lottery;
-import com.platinum.world.content.MonsterDrops;
-import com.platinum.world.content.NpcTasks;
-import com.platinum.world.content.PlayerDropLog;
-import com.platinum.world.content.PlayerLogs;
-import com.platinum.world.content.PlayerPanel;
-import com.platinum.world.content.PlayerPunishment;
+import com.platinum.world.content.*;
 import com.platinum.world.content.PlayerPunishment.Jail;
-import com.platinum.world.content.ProfileViewing;
-import com.platinum.world.content.ShootingStar;
-import com.platinum.world.content.StarterTasks;
 import com.platinum.world.content.StarterTasks.StarterTaskData;
-import com.platinum.world.content.TriviaBot;
-import com.platinum.world.content.Warmonger;
-import com.platinum.world.content.WellOfGoodwill;
-import com.platinum.world.content.WellOfWealth;
-import com.platinum.world.content.Wildywyrm;
 import com.platinum.world.content.clan.ClanChatManager;
 import com.platinum.world.content.combat.CombatFactory;
 import com.platinum.world.content.combat.DailyNPCTask;
@@ -562,12 +544,9 @@ public class CommandPacketListener implements PacketListener {
 		}
 		
 		if (command[0].equalsIgnoreCase("endcustominstance")) {
-			if (player.getInstanceInterface().getNpcToSpawn() != null
-					|| player.getInstanceInterface().getSpawnAmount() > 0) {
-				player.getInstanceInterface().despawn();
-				player.getInstanceInterface().setSpawnAmount(0);
+			InstanceSystem.destructInstance(player);
 				player.sendMessage("Instance reset.");
-			}
+
 		}
 
 		if (wholeCommand.equals("afk")) {

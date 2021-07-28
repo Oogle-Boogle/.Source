@@ -1,5 +1,5 @@
 {
-  "total-play-time-ms": 320862102,
+  "total-play-time-ms": 328992972,
   "username": "Wisdom",
   "placeholders": false,
   "password": "Ashleigh0502",
@@ -594,8 +594,8 @@
   "loyalty-title": "NONE",
   "crashGameBalance": 0,
   "position": {
-    "x": 2318,
-    "y": 4587,
+    "x": 3039,
+    "y": 2847,
     "z": 0
   },
   "online-status": "ON",
@@ -643,11 +643,11 @@
   "achievement-points": 15,
   "dung-tokens": 0,
   "custom-pest-control-points": 0,
-  "loyalty-points": 73958,
-  "total-loyalty-points": 73958.0,
+  "loyalty-points": 76157,
+  "total-loyalty-points": 76157.0,
   "voting-points": 0,
   "slayer-points": 4,
-  "npc-kills": 15163,
+  "npc-kills": 15177,
   "presetItems": [
     0,
     0,
@@ -1143,7 +1143,7 @@
   "auto-retaliate": true,
   "xp-locked": false,
   "veng-cast": false,
-  "last-veng": 1626858582231,
+  "last-veng": 1626863305137,
   "fight-type": "SWORD_LUNGE",
   "equipmentWings": [
     {
@@ -1470,9 +1470,9 @@
       120,
       120,
       120,
-      1200,
+      137332,
       120,
-      994,
+      1200,
       120,
       120,
       120,
@@ -1556,93 +1556,93 @@
   },
   "inventory": [
     {
-      "id": 15649,
-      "amount": 1,
+      "id": -1,
+      "amount": 0,
       "slot": 0
     },
     {
-      "id": 15650,
-      "amount": 1,
+      "id": -1,
+      "amount": 0,
       "slot": 0
     },
     {
-      "id": 15651,
-      "amount": 1,
+      "id": -1,
+      "amount": 0,
       "slot": 0
     },
     {
-      "id": 15652,
-      "amount": 1,
+      "id": -1,
+      "amount": 0,
       "slot": 0
     },
     {
-      "id": 3277,
-      "amount": 1,
+      "id": -1,
+      "amount": 0,
       "slot": 0
     },
     {
-      "id": 15654,
-      "amount": 1,
+      "id": -1,
+      "amount": 0,
       "slot": 0
     },
     {
-      "id": 15655,
-      "amount": 1,
+      "id": -1,
+      "amount": 0,
       "slot": 0
     },
     {
-      "id": 19626,
-      "amount": 1,
+      "id": -1,
+      "amount": 0,
       "slot": 0
     },
     {
-      "id": 7956,
-      "amount": 1,
+      "id": -1,
+      "amount": 0,
       "slot": 0
     },
     {
-      "id": 16579,
-      "amount": 1,
+      "id": -1,
+      "amount": 0,
       "slot": 0
     },
     {
-      "id": 15653,
-      "amount": 1,
+      "id": -1,
+      "amount": 0,
       "slot": 0
     },
     {
-      "id": 3974,
-      "amount": 1,
+      "id": -1,
+      "amount": 0,
       "slot": 0
     },
     {
-      "id": 3277,
-      "amount": 1,
+      "id": -1,
+      "amount": 0,
       "slot": 0
     },
     {
-      "id": 12845,
-      "amount": 22211,
+      "id": -1,
+      "amount": 0,
       "slot": 0
     },
     {
-      "id": 12846,
-      "amount": 4540,
+      "id": -1,
+      "amount": 0,
       "slot": 0
     },
     {
-      "id": 12847,
-      "amount": 444207,
+      "id": -1,
+      "amount": 0,
       "slot": 0
     },
     {
-      "id": 10835,
-      "amount": 1999986544,
+      "id": -1,
+      "amount": 0,
       "slot": 0
     },
     {
-      "id": 6482,
-      "amount": 1,
+      "id": -1,
+      "amount": 0,
       "slot": 0
     },
     {
@@ -1713,7 +1713,7 @@
       "slot": 0
     },
     {
-      "id": 5089,
+      "id": 13265,
       "amount": 1,
       "slot": 0
     },
@@ -1758,8 +1758,8 @@
       "slot": 0
     },
     {
-      "id": -1,
-      "amount": 0,
+      "id": 773,
+      "amount": 1,
       "slot": 0
     },
     {
@@ -1771,32 +1771,27 @@
   "bank-0": [
     {
       "id": 12845,
-      "amount": 1,
+      "amount": 22212,
       "slot": 0
     },
     {
       "id": 12846,
-      "amount": 1,
+      "amount": 4541,
       "slot": 0
     },
     {
       "id": 12847,
-      "amount": 1,
-      "slot": 0
-    },
-    {
-      "id": 532,
-      "amount": 1,
+      "amount": 444208,
       "slot": 0
     },
     {
       "id": 7956,
-      "amount": 1,
+      "amount": 2,
       "slot": 0
     },
     {
       "id": 10835,
-      "amount": 5008,
+      "amount": 1999991552,
       "slot": 0
     },
     {
@@ -1816,7 +1811,7 @@
     },
     {
       "id": 3277,
-      "amount": 1,
+      "amount": 3,
       "slot": 0
     },
     {
@@ -1835,17 +1830,12 @@
       "slot": 0
     },
     {
-      "id": 18400,
+      "id": 16137,
       "amount": 1,
       "slot": 0
     },
     {
       "id": 1511,
-      "amount": 1,
-      "slot": 0
-    },
-    {
-      "id": 1777,
       "amount": 1,
       "slot": 0
     },
@@ -1862,11 +1852,6 @@
     {
       "id": 19864,
       "amount": 467,
-      "slot": 0
-    },
-    {
-      "id": 19156,
-      "amount": 1,
       "slot": 0
     },
     {
@@ -1890,27 +1875,12 @@
       "slot": 0
     },
     {
-      "id": 13265,
+      "id": 18400,
       "amount": 1,
       "slot": 0
     },
     {
       "id": 19101,
-      "amount": 1,
-      "slot": 0
-    },
-    {
-      "id": 6482,
-      "amount": 1,
-      "slot": 0
-    },
-    {
-      "id": 13267,
-      "amount": 1,
-      "slot": 0
-    },
-    {
-      "id": 20427,
       "amount": 1,
       "slot": 0
     },
@@ -1946,6 +1916,11 @@
     },
     {
       "id": 15653,
+      "amount": 2,
+      "slot": 0
+    },
+    {
+      "id": 13265,
       "amount": 1,
       "slot": 0
     },
@@ -1955,17 +1930,7 @@
       "slot": 0
     },
     {
-      "id": 16137,
-      "amount": 1,
-      "slot": 0
-    },
-    {
       "id": 13996,
-      "amount": 1,
-      "slot": 0
-    },
-    {
-      "id": 13997,
       "amount": 1,
       "slot": 0
     },
@@ -1990,17 +1955,102 @@
       "slot": 0
     },
     {
-      "id": 13994,
-      "amount": 1,
-      "slot": 0
-    },
-    {
       "id": 14448,
       "amount": 1,
       "slot": 0
     },
     {
+      "id": 15649,
+      "amount": 1,
+      "slot": 0
+    },
+    {
+      "id": 15650,
+      "amount": 1,
+      "slot": 0
+    },
+    {
+      "id": 15651,
+      "amount": 1,
+      "slot": 0
+    },
+    {
+      "id": 15652,
+      "amount": 1,
+      "slot": 0
+    },
+    {
+      "id": 15654,
+      "amount": 1,
+      "slot": 0
+    },
+    {
+      "id": 15655,
+      "amount": 1,
+      "slot": 0
+    },
+    {
+      "id": 19626,
+      "amount": 1,
+      "slot": 0
+    },
+    {
+      "id": 16579,
+      "amount": 1,
+      "slot": 0
+    },
+    {
+      "id": 3974,
+      "amount": 1,
+      "slot": 0
+    },
+    {
+      "id": 6482,
+      "amount": 2,
+      "slot": 0
+    },
+    {
+      "id": 5089,
+      "amount": 1,
+      "slot": 0
+    },
+    {
+      "id": 13267,
+      "amount": 1,
+      "slot": 0
+    },
+    {
+      "id": 1777,
+      "amount": 1,
+      "slot": 0
+    },
+    {
       "id": 14447,
+      "amount": 1,
+      "slot": 0
+    },
+    {
+      "id": 532,
+      "amount": 1,
+      "slot": 0
+    },
+    {
+      "id": 20427,
+      "amount": 1,
+      "slot": 0
+    },
+    {
+      "id": 13997,
+      "amount": 1,
+      "slot": 0
+    },
+    {
+      "id": 19156,
+      "amount": 1,
+      "slot": 0
+    },
+    {
+      "id": 13994,
       "amount": 1,
       "slot": 0
     }
@@ -2256,7 +2306,7 @@
     0,
     0,
     0,
-    156,
+    170,
     0,
     0,
     0,
@@ -2362,9 +2412,9 @@
     1,
     1,
     1,
-    2,
-    2,
-    2,
+    16,
+    16,
+    16,
     0,
     0,
     0,
@@ -2489,7 +2539,7 @@
     "224": 2,
     "4457": 8,
     "8949": 1,
-    "3154": 2,
+    "3154": 16,
     "15": 9,
     "6311": 5,
     "8493": 3

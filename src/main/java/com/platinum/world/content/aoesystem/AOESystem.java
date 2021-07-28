@@ -10,14 +10,17 @@ import java.util.List;
 import java.util.stream.Stream;
 
 import com.platinum.model.CombatIcon;
+import com.platinum.model.container.impl.Equipment;
+import com.platinum.world.entity.impl.player.Player;
 
 public class AOESystem {
 
-	private List<AOEWeaponData> weaponData = new ArrayList<>();
+	public static List<AOEWeaponData> weaponData = new ArrayList<>();
 
 	public void parseData() { // look this parses the data from the file, thats why it was never working, forgot that cuz its midnight and im tired:
 
-		Path filePath = Paths.get("data", "AOEWeapons.txt");
+		Path filePath = Paths.get("data", "" +
+				"AOEWeapons.txt");
 
 		try (Stream<String> lines = Files.lines(filePath)) {
 			lines.forEach(line -> {
@@ -44,6 +47,15 @@ public class AOESystem {
 		}
 
 		return index > -1 ? weaponData.get(index) : null;
+	}
+
+	public static boolean hasAoeWeapon(Player player){
+		for (int i = 0; i < weaponData.size(); i++) {
+			if (weaponData.get(i).getId() == player.getEquipment().getItems()[Equipment.WEAPON_SLOT].getId()) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	private CombatIcon getIcon(String str) {

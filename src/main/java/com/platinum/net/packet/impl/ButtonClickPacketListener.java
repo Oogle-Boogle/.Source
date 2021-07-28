@@ -20,7 +20,6 @@ import com.platinum.model.input.impl.EnterSyntaxToBankSearchFor;
 import com.platinum.model.input.impl.EnterSyntaxToItemSearchFor;
 import com.platinum.model.input.impl.EnterSyntaxToNpcSearchFor;
 import com.platinum.model.input.impl.PosInput;
-import com.platinum.util.Stopwatch;
 import com.platinum.world.content.preset.Presets;
 import com.platinum.model.input.impl.SearchForItemInput;
 import com.platinum.net.packet.Packet;
@@ -408,16 +407,13 @@ public class ButtonClickPacketListener implements PacketListener {
                 break;
 
             case -6582:
-                player.getInstanceInterface().startInstance();
+                player.getInstanceSystem().startInstance();
                 break;
 
             case 2461:
                 player.getPacketSender().sendInterfaceRemoval();
                 player.sendMessage("Clicked it ->");
                 break;
-            /*case 10004:
-                player.getPacketSender().sendInterface(36800);
-                break;*/
 
             case -26218:
             case -26215:
@@ -1555,15 +1551,7 @@ public class ButtonClickPacketListener implements PacketListener {
                 player.setDialogueActionId(26);
                 break;
             case 11001:
-                TeleportHandler.teleportPlayer(player, GameSettings.DEFAULT_POSITION.copy(),
-                        player.getSpellbook().getTeleportType());
-                if (!player.getClanChatName().equalsIgnoreCase("gamble")
-                        || player.getCurrentClanChat().getName().isEmpty()) {
-                    return;
-                } else {
-                    ClanChatManager.leave(player, true);
-                    ClanChatManager.join(player, "help");
-                }
+                TeleportHandler.teleportPlayer(player, GameSettings.DEFAULT_POSITION.copy(), player.getSpellbook().getTeleportType());
                 break;
             case 8667:
                 TeleportHandler.teleportPlayer(player, new Position(3208, 3159), player.getSpellbook()
@@ -2393,7 +2381,7 @@ public class ButtonClickPacketListener implements PacketListener {
             return true;
         }
 
-        if (player.getInstanceInterface().handleClick(id)) {
+        if (player.getInstanceSystem().handleClick(id)) {
             return true;
         }
 

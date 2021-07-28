@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.platinum.model.Locations;
 import com.platinum.model.definitions.NpcDefinition;
 import com.platinum.world.entity.impl.npc.NPC;
 import com.platinum.world.entity.impl.player.Player;
@@ -79,6 +80,9 @@ public class KCSystem {
 	
 	public NPC npc1;
 	public boolean meetsRequirements(int[][] npcData) {
+		if (player.getLocation() == Locations.Location.INSTANCE_ARENA) //Remove KC in the instance arena
+			return true;
+
 		if (npcData == null) {
 			return true;
 		}
