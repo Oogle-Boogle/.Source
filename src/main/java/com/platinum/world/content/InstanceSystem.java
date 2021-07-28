@@ -32,7 +32,7 @@ public class InstanceSystem {
 	private Player player;
 
 	/** Currency used to enter the instance **/
-	public static int INSTANCE_TOKEN_ID = 3901;
+	public static int INSTANCE_TOKEN_ID = 11179;
 
 	/** List to store NPC ID's **/
 	private static List<Integer> npcs = Arrays.asList(3154, 33, 1684, 5957, 5958, 5959, 185, 6311);
@@ -42,22 +42,22 @@ public class InstanceSystem {
 		int modifiedCost;
 		switch (player.getRights()) {
 			case DONATOR:
-				modifiedCost = 30;
-				break;
-			case SUPER_DONATOR:
-				modifiedCost = 25;
-				break;
-			case EXTREME_DONATOR:
 				modifiedCost = 20;
 				break;
-			case LEGENDARY_DONATOR:
+			case SUPER_DONATOR:
 				modifiedCost = 15;
 				break;
-			case UBER_DONATOR:
+			case EXTREME_DONATOR:
 				modifiedCost = 10;
 				break;
-			case DELUXE_DONATOR:
+			case LEGENDARY_DONATOR:
+				modifiedCost = 7;
+				break;
+			case UBER_DONATOR:
 				modifiedCost = 5;
+				break;
+			case DELUXE_DONATOR:
+				modifiedCost = 3;
 				break;
 			case SUPPORT:
 			case MODERATOR:
@@ -67,7 +67,7 @@ public class InstanceSystem {
 				modifiedCost = 1;
 				break;
 			default: //Applies to anyone not listed above
-				modifiedCost = 50;
+				modifiedCost = 25;
 		}
 		player.getPacketSender().sendMessage("Your price to enter is " + modifiedCost + " tokens");
 		return modifiedCost;

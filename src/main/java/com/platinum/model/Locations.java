@@ -164,6 +164,8 @@ public class Locations {
 		},
 		GENERAL(new int[] { 2580, 2611 }, new int[] { 3150, 3175 }, true, true, true, false, false, true) {
 		},
+		INSTANCE(new int[] { 2520, 2538 }, new int[] { 3662, 3682 }, true, true, true, false, false, true) {
+		},
 		MEMBER_ZONE(new int[] { 3415, 3435 }, new int[] { 2900, 2926 }, false, true, true, false, false, true) {
 		},
 		DONATOR_ZONE(new int[] { 2290, 2400 }, new int[] { 9750, 9999 }, false, true, true, false, false, true) {
