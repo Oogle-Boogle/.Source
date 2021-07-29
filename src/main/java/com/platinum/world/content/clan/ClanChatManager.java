@@ -10,6 +10,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Map.Entry;
 
+
 import com.platinum.model.GameMode;
 import com.platinum.model.Item;
 import com.platinum.model.PlayerRights;
@@ -237,14 +238,17 @@ public class ClanChatManager {
 				int childId = 29344;
 				for (Player others : clan.getMembers()) {
 					if (others != null) {
-						ClanChatRank rank = clan.getRank(others);
-
-						int image = -1;
-						if (rank != null) {
-							image = 34 + rank.ordinal();
+						int img = others.getRights().ordinal();
+						//int img2 = others.getSecondaryPlayerRights().ordinal();
+						if (!others.getRights().isStaff() && !others.getRights().isMember()) {
+							if (others.getGameMode() == GameMode.IRONMAN) {
+								img = 33;
+							} else if (others.getGameMode() == GameMode.HARDCORE_IRONMAN) {
+								img = 32;
+							}
 						}
-
-						String prefix = image >= 0 ? ("<img=" + (image) + "> ") : "";
+						
+						String prefix = img >= 0 ? ("<img=" + (img) + "> ") : "";
 						member.getPacketSender().sendString(childId, prefix + others.getUsername());
 						childId++;
 					}
@@ -584,6 +588,7 @@ public class ClanChatManager {
 			break;
 		}
 	}
+
 
 	public static boolean dropShareLoot(Player player, NPC npc, Item itemDropped) {
 		/*
