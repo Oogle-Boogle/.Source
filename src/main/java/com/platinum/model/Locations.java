@@ -3,6 +3,8 @@ package com.platinum.model;
 import java.awt.Point;
 
 import com.platinum.GameSettings;
+import com.platinum.engine.task.Task;
+import com.platinum.engine.task.TaskManager;
 import com.platinum.model.RegionInstance.RegionInstanceType;
 import com.platinum.util.Misc;
 import com.platinum.world.World;
@@ -10,6 +12,7 @@ import com.platinum.world.content.CustomFreeForAll;
 import com.platinum.world.content.CustomObjects;
 import com.platinum.world.content.InstanceSystem;
 import com.platinum.world.content.PlayerPunishment.Jail;
+import com.platinum.world.content.aoesystem.AOESystem;
 import com.platinum.world.content.combat.CombatFactory;
 import com.platinum.world.content.combat.bossminigame.BossMinigameFunctions;
 import com.platinum.world.content.combat.pvp.BountyHunter;
@@ -163,8 +166,6 @@ public class Locations {
 			}
 		},
 		GENERAL(new int[] { 2580, 2611 }, new int[] { 3150, 3175 }, true, true, true, false, false, true) {
-		},
-		INSTANCE(new int[] { 2520, 2538 }, new int[] { 3662, 3682 }, true, true, true, false, false, true) {
 		},
 		MEMBER_ZONE(new int[] { 3415, 3435 }, new int[] { 2900, 2926 }, false, true, true, false, false, true) {
 		},
@@ -500,7 +501,7 @@ public class Locations {
 			}
 
 			@Override
-			public boolean canAttack(Player player, Player target) {
+			public boolean canAttackPlayer(Player player, Player target) {
 				int combatDifference = CombatFactory.combatLevelDifference(player.getSkillManager().getCombatLevel(),
 						target.getSkillManager().getCombatLevel());
 				if (combatDifference > player.getWildernessLevel() || combatDifference > target.getWildernessLevel()) {
@@ -839,7 +840,7 @@ public class Locations {
 			}
 
 			@Override
-			public boolean canAttack(Player player, Player target) {
+			public boolean canAttackPlayer(Player player, Player target) {
 				String state1 = FightPit.getState(player);
 				String state2 = FightPit.getState(target);
 				return state1 != null && state1.equals("PLAYING") && state2 != null && state2.equals("PLAYING");
@@ -949,7 +950,7 @@ public class Locations {
 			}
 
 			@Override
-			public boolean canAttack(Player player, Player target) {
+			public boolean canAttackPlayer(Player player, Player target) {
 				if (target.getIndex() != player.getDueling().duelingWith) {
 					player.getPacketSender().sendMessage("That player is not your opponent!");
 					return false;
@@ -1091,7 +1092,7 @@ public class Locations {
 			}
 
 			@Override
-			public boolean canAttack(Player player, Player target) {
+			public boolean canAttackPlayer(Player player, Player target) {
 				if (target.getLocation() != FREE_FOR_ALL_ARENA) {
 					player.getPacketSender().sendMessage("That player has not entered the dangerous zone yet.");
 					player.getMovementQueue().reset();
@@ -1254,6 +1255,32 @@ public class Locations {
 			}
 		},
 		INSTANCE_ARENA(new int[]{2518, 2539}, new int[]{3661, 3682}, true, false, true, false, true, true) {
+
+			@Override
+			public boolean canAttackNPC(Player player, NPC Target) {
+				return AOESystem.hasAoeWeapon(player);
+			}
+
+			@Override
+			public boolean handleKilledNPC(Player killer, NPC npc) {
+				System.out.println(killer.getUsername() + " Has just killed an " + npc.getDefinition().getName() + "!");
+				if (killer.getInstanceSystem().getNpcsToSpawn() != null
+						&& killer.getInstanceSystem().getNpcsToSpawn()[0].getId() == npc.getId()) {
+
+					World.deregister(npc);
+					System.out.println("NPC REMOVED FROM INSTANCE");
+
+					TaskManager.submit(new Task(3) {
+						@Override
+						protected void execute() {
+							killer.getInstanceSystem().respawn();
+							stop();
+						}
+					});
+				}
+				return true;
+			}
+
 			@Override
 			public void leave(Player player) {
 				if (player.getLocation() != INSTANCE_ARENA) {
@@ -1557,7 +1584,11 @@ public class Locations {
 			return false;
 		}
 
-		public boolean canAttack(Player player, Player target) {
+		public boolean canAttackPlayer(Player player, Player target) {
+			return false;
+		}
+
+		public boolean canAttackNPC(Player player, NPC target) {
 			return false;
 		}
 
