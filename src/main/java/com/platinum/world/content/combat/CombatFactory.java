@@ -1693,6 +1693,6 @@ public final class CombatFactory {
 			}
 		}
 		//|| player.inCustomFFA && player2.inCustomFFA && !CustomFreeForAll.isInSameTeam(player, player2)
-		return player.getLocation().canAttack(player, player2);
+		return player.getLocation().canAttackPlayer(player, player2);
 	}
 }

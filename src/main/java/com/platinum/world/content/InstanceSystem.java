@@ -3,12 +3,15 @@ package com.platinum.world.content;
 import java.util.Arrays;
 import java.util.List;
 
+import com.platinum.GameServer;
+import com.platinum.GameSettings;
 import com.platinum.engine.task.Task;
 import com.platinum.engine.task.TaskManager;
 import com.platinum.engine.task.impl.PoisonImmunityTask;
 import com.platinum.model.*;
 import com.platinum.model.definitions.NPCDrops;
 import com.platinum.model.definitions.NpcDefinition;
+import com.platinum.util.Stopwatch;
 import com.platinum.world.World;
 import com.platinum.world.content.aoesystem.AOESystem;
 import com.platinum.world.content.combat.weapon.CombatSpecial;
@@ -30,6 +33,8 @@ public class InstanceSystem {
 	}
 
 	private Player player;
+
+	private Stopwatch instanceTimer = new Stopwatch();
 
 	/** Currency used to enter the instance **/
 	public static int INSTANCE_TOKEN_ID = 11179;
@@ -110,7 +115,6 @@ public class InstanceSystem {
 		this.npcId = npcId;
 
 		return true;
-
 	}
 
 	/** Sends the drops to the interface **/
@@ -157,6 +161,9 @@ public class InstanceSystem {
 	@Setter
 	private int spawnAmount = 1;
 
+	/** Stores the amount of times the player removed their AOE Weapon. **/
+	private int unequippedAoeWeapon;
+
 	/** Creates a task to make the NPC's in the instance attack the player **/
 	public static void aggroNpcs(Player player) {
 		TaskManager.submit(new Task(2, player, false) {
@@ -170,21 +177,22 @@ public class InstanceSystem {
 
 	/** Stars the instance, handles all code relating to initial spawn. **/
 	public void startInstance() {
+		unequippedAoeWeapon = 0;
 		int currentTokens = player.getInventory().getAmount(INSTANCE_TOKEN_ID);
 		int costToEnter = COST_TO_ENTER(player);
 
-		if (currentTokens >= costToEnter){
+		if (currentTokens >= costToEnter && AOESystem.hasAoeWeapon(player)){
 			player.getInventory().delete(INSTANCE_TOKEN_ID, costToEnter);
-		} else {
+		} else if (currentTokens <= costToEnter) {
 			int missingTokens = costToEnter - currentTokens;
 			player.getPacketSender().sendMessage("You need @red@" + missingTokens + " @bla@more"+ (missingTokens <= 1 ? " token " : " tokens ") + "to enter.");
 			return;
-		}
-
-		if (!AOESystem.hasAoeWeapon(player)) {
+		} else 	if (!AOESystem.hasAoeWeapon(player)) {
 			player.getPacketSender().sendMessage("You must equip an AOE weapon to use the Instance Arena!");
 			return;
 		}
+
+		instanceTimer.reset();
 
 		player.getPacketSender().sendInterfaceReset().sendInterfaceRemoval();
 
@@ -271,13 +279,14 @@ public class InstanceSystem {
 				break;
 		}
 
-		for (int n = 0; n < npcsToSpawn.length; n++){
-			World.register(npcsToSpawn[n]);
-			npcsToSpawn[n].setInstancedNPC(true);
-			npcsToSpawn[n].setForcedChat("Get ready!");
-			npcsToSpawn[n].setSpawnedFor(player);
-			npcsToSpawn[n].getCombatBuilder().attack(player);
-			player.getRegionInstance().getNpcsList().add(npcsToSpawn[n]);
+		for (NPC npc : npcsToSpawn) {
+			World.register(npc);
+			npc.setInstancedNPC(true);
+			npc.forceChat("Get ready " + player.getUsername() + "!");
+			npc.setSpawnedFor(player);
+			npc.performGraphic(new Graphic(453));
+			npc.getCombatBuilder().attack(player);
+			player.getRegionInstance().getNpcsList().add(npc);
 		}
 
 		aggroNpcs(player);
@@ -288,20 +297,55 @@ public class InstanceSystem {
 
 	/** Handles deaths in the instance areana. **/
 	public void respawn() {
-		if (!AOESystem.hasAoeWeapon(player)) {
-			player.getPacketSender().sendMessage("You must equip an AOE weapon to use the Instance Arena!");
-			destructInstance(player);
-			return;
+		try {
+
+			if (instanceTimer.elapsed() > 3600000) { //If the timer reaches 1 hour.
+				player.getPacketSender().sendMessage("1 hour is up! Moving you home..");
+				destructInstance(player);
+				return;
+			}
+
+			if (unequippedAoeWeapon >= 2) { // If the player has removed their AOE weapon twice.
+				player.getPacketSender().sendMessage("You have removed your AOE weapon for a second time and have been removed.");
+				destructInstance(player);
+				return;
+			}
+
+			if (!AOESystem.hasAoeWeapon(player)) { // First time removing the AOE weapon.
+				player.getPacketSender().sendMessage("You must equip your AOE weapon within 10 seconds or be teleported home!");
+
+				unequippedAoeWeapon++;
+
+				TaskManager.submit(new Task(10, player, false) {
+					@Override
+					public void execute() {
+						if (!AOESystem.hasAoeWeapon(player)) {
+							destructInstance(player);
+						}
+						respawn();
+						this.stop();
+					}
+				});
+				return;
+			}
+
+			if (!player.getRegionInstance().getType().equals(RegionInstance.RegionInstanceType.INSTANCE_ARENA)  //Check if the player is still in an instance before respawning the NPC.
+					|| !player.getLocation().equals(Locations.Location.INSTANCE_ARENA)) { //Check if the player is in the Instance Arena Location
+				return;
+			}
+
+			for (NPC npc : npcsToSpawn) {
+				World.register(npc);
+				npc.setInstancedNPC(true);
+				npc.forceChat(player.getUsername() + ", I'm coming for you!");
+				npc.performGraphic(new Graphic(453));
+				npc.setSpawnedFor(player);
+				player.getRegionInstance().getNpcsList().add(npc);
+			}
+			aggroNpcs(player); //Makes all NPC's get pissed off and chase the player.
+		} catch (Exception e) {
+			System.out.println("Caught an exception : " + e.getMessage());
 		}
-		for (int n = 0; n < npcsToSpawn.length; n++){
-			World.register(npcsToSpawn[n]);
-			npcsToSpawn[n].setInstancedNPC(true);
-			npcsToSpawn[n].setForcedChat("I'm back!");
-			npcsToSpawn[n].setSpawnedFor(player);
-			npcsToSpawn[n].getCombatBuilder().attack(player);
-			player.getRegionInstance().getNpcsList().add(npcsToSpawn[n]);
-		}
-		aggroNpcs(player);
 	}
 
 	/** Restores the players HP when leaving the area. **/
@@ -343,7 +387,7 @@ public class InstanceSystem {
 		if ((player.getLocation() != Locations.Location.INSTANCE_ARENA) || (!player.getRegionInstance().equals(RegionInstance.RegionInstanceType.INSTANCE_ARENA)) || (player.getRegionInstance().getNpcsList().isEmpty())) {
 		System.out.println("Nothing to do to destruct the instance?");
 		} else {
-			//player.moveTo(ENTRANCE);
+			player.moveTo(GameSettings.DEFAULT_POSITION);
 			System.out.println("Destroying Arena for " + player.getUsername());
 			player.getRegionInstance().getNpcsList().forEach(npc -> npc.removeInstancedNpcs(Locations.Location.INSTANCE_ARENA, player.getPosition().getZ()));
 			player.getRegionInstance().getNpcsList().forEach(npc -> World.deregister(npc));

@@ -6,12 +6,8 @@ import java.util.Set;
 
 import com.platinum.engine.task.Task;
 import com.platinum.engine.task.TaskManager;
-import com.platinum.model.Animation;
-import com.platinum.model.CombatIcon;
-import com.platinum.model.Hit;
-import com.platinum.model.Hitmask;
+import com.platinum.model.*;
 import com.platinum.model.Locations.Location;
-import com.platinum.model.Position;
 import com.platinum.model.definitions.NPCDrops;
 import com.platinum.util.Misc;
 import com.platinum.util.RandomUtility;
@@ -275,22 +271,6 @@ public class NPCDeathTask extends Task {
 									+ killer.getPointsHandler().getminiGamePoints3() + " Minigame3 Points");
 						}
 					}
-
-					if (killer.getInstanceSystem().getNpcsToSpawn() != null
-							&& killer.getInstanceSystem().getNpcsToSpawn()[0].getId() == npc.getId()) {
-
-						World.deregister(npc);
-						System.out.println("NPC REMOVED FROM INSTANCE");
-
-							TaskManager.submit(new Task(3) {
-								@Override
-								protected void execute() {
-									killer.getInstanceSystem().respawn();
-									stop();
-								}
-							});
-						}
-
 
 					if (killer.isInRaid()) {
 						killer.getRaidParty().getOwner().getCustomRaid().handleKill();

@@ -1,6 +1,6 @@
 {
-  "total-play-time-ms": 333061320,
-  "username": "Wisdom",
+  "total-play-time-ms": 331346524,
+  "username": "Wisdom copy",
   "placeholders": false,
   "password": "Ashleigh0502",
   "email": "null",
@@ -643,11 +643,11 @@
   "achievement-points": 15,
   "dung-tokens": 0,
   "custom-pest-control-points": 0,
-  "loyalty-points": 77282,
-  "total-loyalty-points": 77282.0,
+  "loyalty-points": 76808,
+  "total-loyalty-points": 76808.0,
   "voting-points": 0,
   "slayer-points": 4,
-  "npc-kills": 15286,
+  "npc-kills": 15226,
   "presetItems": [
     0,
     0,
@@ -1143,7 +1143,7 @@
   "auto-retaliate": true,
   "xp-locked": false,
   "veng-cast": false,
-  "last-veng": 1626866383904,
+  "last-veng": 728630051,
   "fight-type": "SWORD_LUNGE",
   "equipmentWings": [
     {
@@ -1470,7 +1470,7 @@
       120,
       120,
       120,
-      30954,
+      104102,
       120,
       1200,
       120,
@@ -1557,7 +1557,7 @@
   "inventory": [
     {
       "id": 11179,
-      "amount": 4315,
+      "amount": 4322,
       "slot": 0
     },
     {
@@ -2306,7 +2306,7 @@
     0,
     0,
     0,
-    279,
+    219,
     0,
     0,
     0,
@@ -2412,9 +2412,9 @@
     1,
     1,
     1,
-    117,
-    117,
-    117,
+    59,
+    59,
+    59,
     0,
     0,
     0,
@@ -2535,11 +2535,11 @@
     "17": 12,
     "9993": 1,
     "5959": 5,
-    "33": 15,
+    "33": 13,
     "224": 2,
     "4457": 8,
     "8949": 1,
-    "3154": 117,
+    "3154": 59,
     "15": 9,
     "6311": 5,
     "8493": 3
