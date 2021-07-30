@@ -49,7 +49,7 @@ public class BossMiniGame {
                 stats = StatSetups.BLACK_DRAGON;
                 inventory = InventorySetups.BLACK_DRAGON;
                 break;
-            case 6203:// King Black Dragon (KBD)
+            case 6203:// King Black Dragon (KBD) nope
                 gear = EquipmentSetups.KBD_WAVE_ONE;
                 stats = StatSetups.KBD_WAVE_ONE;
                 inventory = InventorySetups.KBD_WAVE_ONE;

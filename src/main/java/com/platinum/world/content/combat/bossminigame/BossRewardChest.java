@@ -66,13 +66,9 @@ public class BossRewardChest {
         /* This should be obvious. It will change chances based on the players rights **/
 
         switch (rights) {
-        	case SUPER_DONATOR:
-            case UBER_DONATOR:
-            case SUPPORT:
             case MODERATOR:
             case ADMINISTRATOR:
             case DEVELOPER:
-            case COMMUNITY_MANAGER:
             case OWNER:
                 chanceOfShitReward -= 10; //2% Decreased change of a shit reward
                 chanceOfMediumReward -= 7; //5% Increased chance of medium reward
