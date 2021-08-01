@@ -68,7 +68,7 @@ public class GameSettings {
 	/**
 	 * The game version
 	 */
-	public static final int GAME_VERSION = 15;
+	public static final int GAME_VERSION = 16;
 
 	/**
 	 * The maximum amount of players that can be logged in on a single game
