@@ -274,7 +274,7 @@ public class EquipPacketListener implements PacketListener {
 			//75 dmg
 			player.setAutocastSpell(CombatSpells.TIER7.getSpell());
 		}
-		if(weapon.getId() == 19720) {
+		if(weapon.getId() == 19720|| weapon.getId() == 18891 ) {
 			//75 dmg
 			player.setAutocastSpell(CombatSpells.TIER9.getSpell());
 		}

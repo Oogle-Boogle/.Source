@@ -2148,7 +2148,7 @@ public class Player extends Character {
 		if (weaponId == 13265 || weaponId == 19618 || weaponId == 19163 || weaponId == 9492 || weaponId == 2760
 				|| weaponId == 19727 || weaponId == 13207 || weaponId == 8664 || weaponId == 4796 || weaponId == 18931
 				|| weaponId == 13995 || weaponId == 10905 || weaponId == 19154 || weaponId == 20431
-				|| weaponId == 20427 || weaponId == 13201) {
+				|| weaponId == 20427 || weaponId == 13201 || weaponId == 18891) {
 			return 3;
 		}
 
@@ -2248,6 +2248,7 @@ public class Player extends Character {
 				|| this.getEquipment().get(Equipment.WEAPON_SLOT).getId() == 19727
 				|| this.getEquipment().get(Equipment.WEAPON_SLOT).getId() == 6483
 				|| this.getEquipment().get(Equipment.WEAPON_SLOT).getId() == 8664
+				|| this.getEquipment().get(Equipment.WEAPON_SLOT).getId() == 18891
 				|| this.getEquipment().get(Equipment.WEAPON_SLOT).getId() == 19720
 				|| this.getEquipment().get(Equipment.WEAPON_SLOT).getId() == 5179
 				|| this.getEquipment().get(Equipment.WEAPON_SLOT).getId() == 3911) {
