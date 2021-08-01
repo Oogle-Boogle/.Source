@@ -16,13 +16,14 @@ import com.google.common.collect.Multiset.Entry;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
-import org.apache.commons.lang3.time.StopWatch;
 
 
 public class PlayerSaving {
 
 	public static void save(Player player) {
 		if (player.newPlayer())
+			return;
+		if (player.isMiniMe)
 			return;
 		// Create the path and file objects.
 		Path path = Paths.get("./data/saves/characters/", player.getUsername() + ".json");

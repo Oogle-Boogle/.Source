@@ -321,6 +321,10 @@ public class PlayerHandler {
 	public static boolean handleLogout(Player player, boolean fromUpdate) {
 		try {
 
+			if (player.isMiniMe) {
+				return true;
+			}
+
 			PlayerSession session = player.getSession();
 
 			if (session.getChannel().isOpen()) {
@@ -405,7 +409,7 @@ public class PlayerHandler {
 
 	public static boolean handleLogout(Player player) {
 		try {
-			if (player.isBot()) {
+			if (player.isMiniMe) {
 				System.out.println("Trying to get rid of bot: " + player.getUsername());
 				return true;
 			}

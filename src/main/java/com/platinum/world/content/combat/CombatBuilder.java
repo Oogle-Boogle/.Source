@@ -81,20 +81,22 @@ public class CombatBuilder {
 	 *            the entity that this controller will attempt to attack.
 	 */
 	public void attack(Character target) {
-		if (victim instanceof Player) {
-			Player botTest = (Player) victim;
-			if (botTest.isBot()) {
-				if (botTest.getBotOwner() != null) {
-					if (World.getPlayers().contains(botTest.getBotOwner())) {
-						victim = botTest.getBotOwner();
+
+		// Make sure we aren't attacking ourself.
+		if (character.equals(target)) {
+			return;
+		}
+
+		if (victim instanceof Player) { //If you attack a mini me, you will attack the owner
+			Player attackedBot = (Player) victim;
+			if (attackedBot.isMiniMe) {
+				if (attackedBot.getMinimeOwner() != null) {
+					if (World.getPlayers().contains(attackedBot.getMinimeOwner())) {
+						victim = attackedBot.getMinimeOwner();
 						character.setPositionToFace(victim.getPosition());
 					}
 				}
 			}
-		}
-		// Make sure we aren't attacking ourself.
-		if (character.equals(target)) {
-			return;
 		}
 
 		if (target.equals(victim)) {

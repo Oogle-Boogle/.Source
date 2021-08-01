@@ -70,6 +70,7 @@ public class NPCUpdating {
 			} else {
 				packet.initializeAccess(AccessType.BYTE);
 			}
+			if(!player.isMiniMe)
 			player.getSession().queueMessage(packet);
 		} catch (Throwable e) {
 			e.printStackTrace();// let me know if it happens again

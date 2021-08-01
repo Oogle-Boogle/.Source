@@ -46,6 +46,11 @@ public class PlayerOptionPacketListener implements PacketListener {
 		if(index > World.getPlayers().capacity() || index < 0)
 			return;
 		final Player attacked = World.getPlayers().get(index);
+
+		if(attacked.isMiniMe) {
+			player.sendMessage("@red@You cannot attack this mini-me!");
+			return;
+		}
 		
 		if(attacked == null || attacked.getConstitution() <= 0 || attacked.equals(player)) {
 			player.getMovementQueue().reset();

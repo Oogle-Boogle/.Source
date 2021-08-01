@@ -38,6 +38,11 @@ public class TradeInvitationPacketListener implements PacketListener {
 		//System.out.println("Name: " + target.getUsername());
 		if (target == null || !Locations.goodDistance(player.getPosition(), target.getPosition(), 13)) 
 			return;
+		if(target.isMiniMe) {
+			if (target.getMinimeOwner() != player)
+			player.sendMessage("@red@You cannot trade with this mini-me!");
+			return;
+		}
 		player.setWalkToTask(new WalkToTask(player, target.getPosition(), target.getSize(), new FinalizedMovementTask() {
 			@Override
 			public void execute() {

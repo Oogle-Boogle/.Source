@@ -103,8 +103,8 @@ public class NPCDeathTask extends Task {
 				break;
 			case 0:
 				if (killer != null) {
-					if (killer.isBot()) {
-						killer = killer.getBotOwner();
+					if (killer.isMiniMe) {
+						killer = killer.getMinimeOwner();
 						if (!World.getPlayers().contains(killer)) {
 							stop();
 							return;

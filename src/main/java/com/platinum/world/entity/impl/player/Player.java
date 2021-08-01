@@ -287,34 +287,19 @@ public class Player extends Character {
 
 	public static boolean bankPreset = false;
 
-	private boolean botValue = false;
-	private Player botOwner;
+	/** Mini Me's **/
 
-	public void makeBot(Player botOwner, boolean value) {
-		botValue = value;
-		this.botOwner = botOwner;
-		this.getSkillManager().setSkills(botOwner.getSkillManager().getSkills());
-	}
+	@Getter
+	@Setter
+	private MiniMeData miniMeData;
 
-	public Player getBotOwner() {
-		return botOwner;
-	}
+	@Getter
+	@Setter
+	public Player minime, minimeOwner;
 
-	public boolean isBot() {
-		return botValue;
-	}
+	public boolean isMiniMe = false;
 
-	private Player puppet;
-
-	public void setPuppet(Player p) {
-		puppet = p;
-	}
-
-	public Player getPuppet() {
-		return puppet;
-	}
-
-	private boolean pendingBotRemoval = false;
+	public boolean pendingBotRemoval = false;
 
 	public void flagBotRemoval() {
 		pendingBotRemoval = true;
@@ -324,15 +309,6 @@ public class Player extends Character {
 		return pendingBotRemoval;
 	}
 
-	private MiniMeData miniMeData;
-
-	public void setMiniMeData(MiniMeData data) {
-		miniMeData = data;
-	}
-
-	public MiniMeData getMiniMeData() {
-		return miniMeData;
-	}
 	
 	 /**
      * Group ironman
@@ -2301,6 +2277,8 @@ public class Player extends Character {
 	}
 
 	public void save() {
+		if (isMiniMe)
+			return;
 		if (session.getState() != SessionState.LOGGED_IN && session.getState() != SessionState.LOGGING_OUT) {
 			return;
 		}
@@ -3644,7 +3622,18 @@ public class Player extends Character {
 	/*
 	 * Construction instancing Arlania
 	 */
+
+	private boolean hideBot = false;
+
+	public void hideBot() {
+		hideBot = (!hideBot);
+	}
+
+
 	public boolean isVisible() {
+		if (isMiniMe && hideBot) {
+			return false;
+		}
 		if (getLocation() == Locations.Location.CONSTRUCTION) {
 			return false;
 		}

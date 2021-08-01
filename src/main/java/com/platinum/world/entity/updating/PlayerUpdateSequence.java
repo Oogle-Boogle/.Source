@@ -30,11 +30,13 @@ public class PlayerUpdateSequence implements UpdateSequence<Player> {
 	@Override
 	public void executePreUpdate(Player t) {
 		try {
-			t.getSession().handleQueuedMessages();
+			if(!t.isMiniMe)
+				t.getSession().handleQueuedMessages();
 			t.process();
 			if (t.getWalkToTask() != null)
 				t.getWalkToTask().tick();
 			t.getMovementQueue().sequence();
+			if(!t.isMiniMe)
 			NpcAggression.target(t);
 		} catch (Exception e) {
 			e.printStackTrace();

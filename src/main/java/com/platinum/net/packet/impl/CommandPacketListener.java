@@ -69,6 +69,7 @@ import com.platinum.world.content.transportation.TeleportHandler;
 import com.platinum.world.content.transportation.TeleportType;
 import com.platinum.world.entity.impl.npc.NPC;
 import com.platinum.world.entity.impl.npc.minigame.KeyRoom;
+import com.platinum.world.entity.impl.player.MiniMe;
 import com.platinum.world.entity.impl.player.Player;
 import com.platinum.world.entity.impl.player.PlayerHandler;
 import com.platinum.world.entity.impl.player.PlayerSaving;
@@ -103,7 +104,6 @@ public class CommandPacketListener implements PacketListener {
 			switch (player.getRights()) {
 			case PLAYER:
 				playerCommands(player, parts, command);
-
 				break;
 			case MODERATOR:
 				playerCommands(player, parts, command);
@@ -130,6 +130,7 @@ public class CommandPacketListener implements PacketListener {
 				administratorCommands(player, parts, command);
 				handlePunishmentCommands(player, parts, command, true);
 				break;
+			case DEVELOPER:
 			case OWNER:
 				playerCommands(player, parts, command);
 				superDonator(player, parts, command);
@@ -145,7 +146,6 @@ public class CommandPacketListener implements PacketListener {
 				handlePunishmentCommands(player, parts, command, true);
 				deluxeDonator(player, parts, command);
 				break;
-			case DEVELOPER:
 			case COMMUNITY_MANAGER:
 				playerCommands(player, parts, command);
 				superDonator(player, parts, command);
@@ -156,7 +156,6 @@ public class CommandPacketListener implements PacketListener {
 				helperCommands(player, parts, command);
 				moderatorCommands(player, parts, command);
 				administratorCommands(player, parts, command);
-				ownerCommands(player, parts, command);
 				developerCommands(player, parts, command);
 				handlePunishmentCommands(player, parts, command, true);
 				deluxeDonator(player, parts, command);
@@ -2086,26 +2085,21 @@ public class CommandPacketListener implements PacketListener {
 	private static int entries = 0;
 
 	private static void ownerCommands(final Player player, String[] command, String wholeCommand) {
+
+		if (command[0].equals("minime")) {
+			if(player.getMinime() != null) {
+				player.getMinime().flagBotRemoval();
+			} else {
+				MiniMe.create(player);
+				player.getPacketSender()
+						.sendMessage("You Summon Yourself!");
+			}
+		}
+
 		if (wholeCommand.equals("afk")) {
 			World.sendMessage("<img=10> <col=FF0000><shad=0>" + player.getUsername()
 					+ ": I am now away, please don't message me; I won't reply.");
 		}
-
-		/** Test commands for new 10k massacre game **/
-		/*if (command[0].equalsIgnoreCase("addtolist")) {
-			TenKMassacre.POSSIBLE_WINNERS.add(command[1]);
-			TenKMassacre.CURRENT_SERVER_KILLS+=333;
-		}
-
-		if (command[0].equalsIgnoreCase("showwinnerlist")) {
-			for (int i = 0; i <= TenKMassacre.POSSIBLE_WINNERS.size(); i++) {
-				System.out.println(TenKMassacre.POSSIBLE_WINNERS.get(i));
-			}
-		}
-
-		if (command[0].equalsIgnoreCase("pickwinner")) {
-			TenKMassacre.pickWinner();
-		}*/
 
 		if (command[0].equalsIgnoreCase("destructinstance")) {
 			BossMinigameFunctions.despawnNpcs(player);

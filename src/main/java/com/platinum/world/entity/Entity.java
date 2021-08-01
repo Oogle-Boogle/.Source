@@ -147,6 +147,10 @@ public class Entity {
 		return this instanceof Player;
 	}
 
+	public Player getAsPlayer() {
+		return (Player) this;
+	}
+
 	public boolean isGameObject() {
 		return this instanceof GameObject;
 	}

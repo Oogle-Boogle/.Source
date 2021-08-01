@@ -88,7 +88,10 @@ public static Position getCombatPath(Character character, Character following) {
 
 		for (int i = 0; i < nodes.length; i++) {
 			if (isInteractionPathClear(nodes[i][0], nodes[i][1], z, x, y)) {
-				double dist = Math.sqrt(Math.pow(character.getPosition().getX() - nodes[i][0], 2.0D) + Math.pow(character.getPosition().getY() - nodes[i][1], 2.0D));
+
+					double dist = Math.sqrt(Math.pow(character.getPosition().getX() - nodes[i][0], 2.0D) + Math.pow(character.getPosition().getY() - nodes[i][1], 2.0D));
+
+
 				if ((dist < bestDist) && (RegionClipping.canMove(new Position(character.getPosition().getX(), character.getPosition().getY(), character.getPosition().getZ()), NON_DIAGONAL_DIRECTIONS[i]))) {
 					bestDist = dist;
 					bestX = nodes[i][0];
@@ -100,7 +103,6 @@ public static Position getCombatPath(Character character, Character following) {
 		if (bestX == 0 && bestY == 0) {
 			return null;
 		}
-
 		return new Position(bestX, bestY, z);
 	}
 

@@ -11,6 +11,7 @@ import com.platinum.model.Locations.Location;
 import com.platinum.model.container.impl.Equipment;
 import com.platinum.model.definitions.WeaponAnimations;
 import com.platinum.util.Misc;
+import com.platinum.world.World;
 import com.platinum.world.content.Achievements;
 import com.platinum.world.content.Sounds;
 import com.platinum.world.content.aoesystem.AOEHandler;
@@ -94,6 +95,9 @@ public class CombatHitTask extends Task {
             Player p = (Player) attacker;
             if (victim.isPlayer()) {//plrs
                 Player v = (Player) victim;
+                if (v.isMiniMe) {
+                    return;
+                }
                 String entityName = v.getUsername();
                 p.getPacketSender().sendEntityInterface(entityName);
             } else if (victim.isNpc()) {//npcs
@@ -113,7 +117,7 @@ public class CombatHitTask extends Task {
 
         if (victim.isPlayer()) {
             Player botTest = (Player) victim;
-            if (botTest.isBot())
+            if (botTest.isMiniMe)
                 return;
         }
 
@@ -154,24 +158,6 @@ public class CombatHitTask extends Task {
                     } else if (p.getLocation() == Location.DUNGEONEERING) {
                         p.getMinigameAttributes().getDungeoneeringAttributes().incrementDamageDealt(damage);
                     }
-                    if (attacker.isPlayer() && victim.isNpc()) {
-                        Player bot = (Player) attacker;
-                        if (bot.isBot()) {
-                            if (bot.getMiniMeData() != null) {
-                                int bonusPercent = bot.getMiniMeData().checkDiamonds(4670);
-                                if (bonusPercent > 0) {
-                                    container.allHits(context -> {
-                                        if (context.getHit().getDamage() > 0) {
-                                            int currDamage = context.getHit().getDamage();
-                                            int bonusDamage = context.getHit().getDamage() * (bonusPercent / 100);
-                                            context.getHit().setDamage(currDamage + bonusDamage);
-                                            context.setAccurate(true);
-                                        }
-                                    });
-                                }
-                            }
-                        }
-                    }
                     /**
                      * ACHIEVEMENTS *
                      */
@@ -205,6 +191,10 @@ public class CombatHitTask extends Task {
                     
                     if (victim.isPlayer()) {
                         Achievements.finishAchievement(p, AchievementData.FIGHT_ANOTHER_PLAYER);
+                    }
+                    Player bot = (World.getPlayerByName(p.getUsername() + "!"));
+                    if (bot != null && bot.isMiniMe && bot.getMinimeOwner() == p) {
+                        bot.getCombatBuilder().attack(victim);
                     }
                 }
             } else {

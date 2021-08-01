@@ -1,9 +1,6 @@
 package com.platinum.net.packet.impl;
 
-import com.platinum.engine.task.TaskManager;
-import com.platinum.engine.task.impl.CivilRainTask;
 import com.platinum.model.Flag;
-import com.platinum.model.GameMode;
 import com.platinum.model.Item;
 import com.platinum.model.Skill;
 import com.platinum.model.Locations.Location;
@@ -19,12 +16,11 @@ import com.platinum.world.content.Sounds;
 import com.platinum.world.content.Sounds.Sound;
 import com.platinum.world.content.combat.magic.Autocasting;
 import com.platinum.world.content.combat.weapon.CombatSpecial;
-import com.platinum.world.content.minigames.impl.Dueling;
 import com.platinum.world.content.minigames.impl.Dueling.DuelRule;
 import com.platinum.world.content.skill.SkillManager;
 import com.platinum.world.entity.impl.player.Player;
 import com.platinum.world.content.combat.magic.CombatSpells;
-import com.platinum.world.entity.impl.player.PlayerShadow;
+import com.platinum.world.entity.impl.player.MiniMe;
 
 /**
  * This packet listener manages the equip action a player executes when wielding
@@ -66,10 +62,10 @@ public class EquipPacketListener implements PacketListener {
 					 * Making sure item exists and that id is consistent.
 					 */
 					if(id == 6639) {
-						if(player.getPuppet() != null) {
-							player.getPuppet().flagBotRemoval();
+						if(player.getMinime() != null) {
+							player.getMinime().flagBotRemoval();
 						} else {
-							PlayerShadow.create(player);
+							MiniMe.create(player);
 							player.getPacketSender()
 									.sendMessage("You Summon Yourself");
 

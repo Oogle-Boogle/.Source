@@ -17,6 +17,11 @@ public class EntityHandler {
 		if(entity.isPlayer()) {
 			Player player = (Player) entity;
 			PlayerSession session = player.getSession();
+			if(player.isMiniMe) {
+				System.out.println("Registered bot: " + player.getUsername());
+				World.getPlayers().add(player);
+				return;
+			}
 			if (session.getState() == SessionState.LOGGING_IN && !World.getLoginQueue().contains(player)) {
 				World.getLoginQueue().add(player);
 			}

@@ -106,7 +106,14 @@ public final class CharacterList<E extends Character> implements Iterable<E> {
 		// login process, so we request a logout instead.
 		if (e.isPlayer()) {
 			Player player = (Player) e;
-			if (player.getSession().getState() != SessionState.LOGGING_OUT) {
+			if (player.isMiniMe && e.isRegistered()) {
+				e.setRegistered(false);
+				characters[e.getIndex()] = null;
+				slotQueue.add(e.getIndex());
+				size--;
+				return true;
+			}
+			if (player.getSession().getState() != SessionState.LOGGING_OUT && !player.isMiniMe) {
 				player.dispose();
 				return false;
 			}

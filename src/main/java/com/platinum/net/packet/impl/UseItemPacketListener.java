@@ -344,11 +344,12 @@ public class UseItemPacketListener implements PacketListener {
 		Player target = World.getPlayers().get(targetIndex);
 		if (target == null)
 			return;
-		if (target.isBot() && target.getBotOwner() != player) {
+		if (target.isMiniMe && target.getMinimeOwner() != player) {
 			player.sendMessage("@red@This is someone's else mini-me!");
 			return;
-		} else if (target.isBot() && target.getBotOwner() == player) {
-			target.getMiniMeData().addEnchantment(itemId);
+		} else if (target.isMiniMe && target.getMinimeOwner() == player) {
+			int amount = player.getInventory().getAmount(itemId);
+			target.getMiniMeData().addItem(itemId, amount);
 			return;
 		}
 		switch (itemId) {

@@ -76,8 +76,8 @@ public enum CombineEnum {
         for (Item req : reqs) {
             return player.getInventory().contains(req.getId()) && player.getInventory().getAmount(req.getId()) >= req.getAmount();
         }
-        return false; //TODO Check this because it can let things slip through.. prob set to false by default
 
+        return false; //TODO Check this because it can let things slip through.. prob set to false by default
     }
     public static void removeRequirements(CombineEnum combine, Player player){
       Item[] reqs = combine.getRequirements();

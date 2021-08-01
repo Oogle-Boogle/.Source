@@ -882,13 +882,22 @@ public final class CombatFactory {
 
 		if(victim.isNpc() && entity.isPlayer()) {
 			NPC npc = (NPC)victim;
+			Player player = ((Player) entity);
+			if (npc.getSpawnedFor() != null && npc.getSpawnedFor().getIndex() != (player.getIndex())) {
+				if (player.isMiniMe) {
+					return true;
+				} else {
+					player.getPacketSender().sendMessage("That's not your enemy to fight.");
+					player.getCombatBuilder().reset(true);
+					return false;
+				}
+			}
 			if(npc.getSpawnedFor() != null && npc.getSpawnedFor().getIndex() != ((Player)entity).getIndex()) {
 				((Player)entity).getPacketSender().sendMessage("That's not your enemy to fight.");
 				entity.getCombatBuilder().reset(true);
 				return false;
 			}
 			if(npc.isSummoningNpc()) {
-				Player player = ((Player)entity);
 				if(player.getLocation() != Location.WILDERNESS) {
 					player.getPacketSender().sendMessage("You can only attack familiars in the wilderness.");
 					player.getCombatBuilder().reset(true);

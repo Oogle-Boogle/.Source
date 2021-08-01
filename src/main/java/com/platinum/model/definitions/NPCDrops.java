@@ -437,11 +437,6 @@ public class NPCDrops {
 	
 		public static double getDroprate(Player p, boolean display) {
 			double drBoost = 0;
-			if (p.getPuppet() != null) {
-				if (p.getPuppet().getBotOwner() == p) {
-					drBoost += p.getPuppet().getMiniMeData().checkDiamonds(4670);
-				}
-			}
 		
 		if(p.getGameMode() == GameMode.IRONMAN) {
 			drBoost += 5;

@@ -84,6 +84,9 @@ public class SkillManager {
 	 */
 	public SkillManager addExperience(Skill skill, int experience) {
 
+		if (player.isMiniMe)
+			return this;
+
 		if (player.getLocation() == Location.BOSS_TIER_LOCATION)
 			return this;
 
