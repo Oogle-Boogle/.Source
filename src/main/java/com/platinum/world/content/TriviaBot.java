@@ -18,16 +18,14 @@ public class TriviaBot
 
 	private static final String[][] TRIVIA_DATA = 
 	{
-			{ "<col=6666FF> [ Platinum Trivia ]:</col> @red@What is a virus but also a beer?", "corona" }, 
-			{ "<col=6666FF> [ Platinum Trivia ]:</col> @red@What country has the world's largest population?", "china" }, 
+			{ "<col=6666FF> [ Platinum Trivia ]:</col> @red@What is a virus but also a beer?", "corona" },
+			{ "<col=6666FF> [ Platinum Trivia ]:</col> @red@What country has the world's largest population?", "china" },
 			{ "<col=6666FF> [ Platinum Trivia ]:</col> @red@What is the cube root of 729?", "9" },
 			{ "<col=6666FF> [ Platinum Trivia ]:</col> @red@What is the spiciest pepper in the world?", "carolina reaper" },
 			{ "<col=6666FF> [ Platinum Trivia ]:</col> @red@Who is the founder of Amazon?", "jeff bazos" }, 
 			{ "<col=6666FF> [ Platinum Trivia ]:</col> @red@What skill allows you to make armour and weapons?", "smithing" },
-			{ "<col=6666FF> [ Platinum Trivia ]:</col> @red@What is the cube root of 729?", "9" },
 			{ "<col=6666FF> [ Platinum Trivia ]:</col> @red@What rank is Wisdom?", "owner" }, 
 			{ "<col=6666FF> [ Platinum Trivia ]:</col> @red@What is the name of this server?", "platinum" },
-			{ "<col=6666FF> [ Platinum Trivia ]:</col> @red@How much is a slayer gem?", "1" },
 			{ "<col=6666FF> [ Platinum Trivia ]:</col> @red@What is the armour set you get when you start the server?", "starter" }, 
 			{ "<col=6666FF> [ Platinum Trivia ]:</col> @red@What is the command when you need assistance in game? ::", "help" },
 			{ "<col=6666FF> [ Platinum Trivia ]:</col> @red@What skill has a magnifying glass?", "scavenger" }, 
@@ -38,11 +36,9 @@ public class TriviaBot
 			{ "<col=6666FF> [ Platinum Trivia ]:</col> @red@What KC is needed to participate in raids?", "1000" }, 
 			{ "<col=6666FF> [ Platinum Trivia ]:</col> @red@What key do you need to open the chest with wings?", "raids" }, 
 			{ "<col=6666FF> [ Platinum Trivia ]:</col> @red@Who is the discord manager?", "kroxy" },
-			{ "<col=6666FF> [ Platinum Trivia ]:</col> @red@Who is the co-owner of Platinum?", "nike" }, 
 			{ "<col=6666FF> [ Platinum Trivia ]:</col> @red@Who is the Head Admin of Platinum?", "toxic" }, 
 			{ "<col=6666FF> [ Platinum Trivia ]:</col> @red@What is the command to get to the world boss? ::", "wb" }, 
 			{ "<col=6666FF> [ Platinum Trivia ]:</col> @red@WWhat is the Azazel KC required to kill Ravanas?", "3500" },
-			{ "<col=6666FF> [ Platinum Trivia ]:</col> @red@Who is better at warzone RoDaddy or Toxic?", "rodaddy" },
 			{ "<col=6666FF> [ Platinum Trivia ]:</col> @red@What is the Dzanth KC required to kill King Kong?", "1000" },
 			{ "<col=6666FF> [ Platinum Trivia ]:</col> @red@What is Luminitous Warrior armour called?", "luminita" }, 
     };
