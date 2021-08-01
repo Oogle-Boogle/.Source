@@ -47,9 +47,6 @@ public class PlayerUpdating {
 
 	public static void update(final Player player) {
 		try {
-			if (player.isMiniMe)
-				return;
-
 			PacketBuilder update = new PacketBuilder();
 			PacketBuilder packet = new PacketBuilder(81, PacketType.SHORT);
 			packet.initializeAccess(AccessType.BIT);
@@ -94,6 +91,7 @@ public class PlayerUpdating {
 			} else {
 				packet.initializeAccess(AccessType.BYTE);
 			}
+			if (!player.isMiniMe)
 				player.getSession().queueMessage(packet);
 		} catch (Throwable e) {
 			e.printStackTrace();
