@@ -1,5 +1,7 @@
 package com.platinum.world.content;
 
+import com.platinum.model.Item;
+import com.platinum.model.definitions.ItemDefinition;
 import com.platinum.util.Misc;
 import com.platinum.util.RandomUtility;
 import com.platinum.world.entity.impl.player.Player;
@@ -12,6 +14,17 @@ public class DonationBox {
 	public static final int [] shitRewards = {20250, 12434, 20251, 20252, 20253, 14557, 14558 };
 	public static final int [] goodRewards = {19067, 19936, 18896, 3286, 11605,
 			3662, 17776, 3664, 3073, 20000, 20001, 20002};
+
+
+	public static void getDonorBoxItems() {
+		for (int shitReward : shitRewards) {
+			System.out.println("Shit Donor Box Reward Name: " + ItemDefinition.forId(shitRewards[shitReward]) + " ID: " + shitRewards[shitReward]);
+		}
+
+		for (int goodReward : goodRewards) {
+			System.out.println("Good Donor Box Reward Name: " + ItemDefinition.forId(goodRewards[goodReward]) + " ID: " + goodRewards[goodReward]);
+		}
+	}
 	
 	/*
 	 * Handles the opening of the donation box
