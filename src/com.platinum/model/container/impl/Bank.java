@@ -459,7 +459,7 @@ public class Bank extends ItemContainer {
 		public static void beginSearch(Player player, String searchSyntax) {
 			player.getPacketSender().sendClientRightClickRemoval();
 			searchSyntax = (String) ItemSearch.getFixedSyntax(searchSyntax)[0];
-			player.getPacketSender().sendString(5383, "Searching for: " + searchSyntax + "..");
+			player.getPacketSender().sendString(5383, "Searching for: " + searchSyntax + "");
 			player.getBankSearchingAttribtues().setSearchingBank(true).setSearchSyntax(searchSyntax);
 			player.setCurrentBankTab(0).setNoteWithdrawal(false);
 			player.getPacketSender().sendString(27002, Integer.toString(player.getCurrentBankTab())).sendString(27000,

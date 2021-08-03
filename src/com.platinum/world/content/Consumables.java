@@ -1486,7 +1486,7 @@ public class Consumables {
 			player.getFoodTimer().reset();
 			player.getPotionTimer().reset();
 			String potion = ItemDefinition.forId(itemId).getName();
-			player.getPacketSender().sendMessage("You drink some of your "+ potion + "..");
+			player.getPacketSender().sendMessage("You drink some of your "+ potion + "");
 			if (potion.endsWith("(4)")) {
 				player.getPacketSender().sendMessage("You have 3 doses of potion left.");
 			} else if (potion.endsWith("(3)")) {

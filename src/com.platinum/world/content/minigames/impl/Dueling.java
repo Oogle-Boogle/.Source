@@ -584,7 +584,7 @@ public class Dueling {
 					return;
 				}
 				if(timer == 3 || timer == 2 || timer == 1)
-					player.forceChat(""+timer+"..");
+					player.forceChat(""+timer+ "");
 				else {
 					player.forceChat("FIGHT!!");
 					player.getMovementQueue().setLockMovement(false);
