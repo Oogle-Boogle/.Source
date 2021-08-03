@@ -29,8 +29,6 @@ import com.platinum.model.definitions.WeaponInterfaces;
 import com.platinum.model.input.impl.EnterReferral;
 import com.platinum.model.input.impl.EnterYellTitle;
 import com.platinum.model.input.impl.SetPinPacketListener;
-import com.platinum.mysql.impl.Donation;
-import com.platinum.mysql.impl.Voting;
 import com.platinum.net.packet.InterfaceInputPacketListener;
 import com.platinum.net.packet.Packet;
 import com.platinum.net.packet.PacketListener;
@@ -551,14 +549,6 @@ public class CommandPacketListener implements PacketListener {
 		if (wholeCommand.equals("afk")) {
 			TeleportHandler.teleportPlayer(player, new Position(2919, 4063), player.getSpellbook().getTeleportType());
 		}
-
-		if (command[0].equals("donated")) {
-			new Thread(new Donation(player)).start();
-		 }
-
-		if (command[0].equals("voted")) {
-			new Thread (new Voting(player)).start();
-		} // FoxVote voted
 		
 		if (command[0].equalsIgnoreCase("fuser")) {
 			CombineHandler.openInterface(CombineEnum.OP_INVESTOR,player);

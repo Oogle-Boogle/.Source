@@ -1,4 +1,4 @@
-package com.platinum.mysql.impl;
+/*package com.platinum.mysql.impl;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -61,7 +61,7 @@ public class Donation implements Runnable {
 							+ "@bla@ has just donated Thanks for @red@Contributing@bla@!");
 					break;*/
 
-				case 43: // example
+				/*case 43: // example
 					player.getInventory().add(19938, quantity);
 					player.sendMessage("Thanks for donating!");
 					World.sendMessage("[<img=10>][@red@Donation@bla@] @red@" + player.getUsername()
@@ -221,4 +221,4 @@ public class Donation implements Runnable {
 		}
 		return null;
 	}
-}
+}*/

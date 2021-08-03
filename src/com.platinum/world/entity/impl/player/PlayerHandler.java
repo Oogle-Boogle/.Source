@@ -303,8 +303,6 @@ public class PlayerHandler {
 			player.sendMessage("<col=FF0000>You have unclaimed earnings in your player owned shop!");
 		}
 
-		
-		player.claimDonation(player, true);
 		NPCDropTableChecker.getSingleton().refreshDropTableChilds(player);
 		PlayerLogs.log(player.getUsername(),
 				"Login from host " + player.getHostAddress() + ", serial number: " + player.getSerialNumber());

@@ -52,10 +52,7 @@ public class BirdNests {
 		if(Misc.getRandom(60) == 1) {
 			Item nest = null;
 			int r = Misc.getRandom(1000);
-			if(r >= 0 && r <= 780){
-				nest = new Item(3912);
-			}
-			else if(r >= 780 && r <= 999){
+			 if(r >= 780 && r <= 999){
 				nest = new Item(3912);
 			}
 			else if(r >= 961){

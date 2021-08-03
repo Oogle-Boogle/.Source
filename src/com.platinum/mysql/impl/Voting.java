@@ -1,4 +1,4 @@
-package com.platinum.mysql.impl;
+/*package com.platinum.mysql.impl;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -107,4 +107,4 @@ public class Voting implements Runnable {
         }
         return null;
     }
-}
+}*/

@@ -14,7 +14,6 @@ import com.platinum.model.definitions.WeaponAnimations;
 import com.platinum.model.definitions.WeaponInterfaces;
 import com.platinum.model.definitions.WeaponInterfaces.WeaponInterface;
 import com.platinum.model.input.Input;
-import com.platinum.mysql.impl.Donation;
 import com.platinum.net.PlayerSession;
 import com.platinum.net.SessionState;
 import com.platinum.net.packet.Packet;
@@ -4440,13 +4439,6 @@ public class Player extends Character {
 						killer.getUsername(), false, 150, true, 200));
 			}
 		}
-	}
-
-	public void claimDonation(Player player, boolean fromLogin) {
-		if (player.lastDonationClaim < System.currentTimeMillis())
-			new Thread(new Donation(player)).start();
-		else if (!fromLogin)
-			player.sendMessage("You can only claim donations once every 30seconds!");
 	}
 
 	/**
