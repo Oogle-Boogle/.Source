@@ -18,7 +18,7 @@ public class ChatboxInterfaceSkillAction {
 	public static void handleChatboxInterfaceButtons(Player player, int buttonId) {
 		if(!player.getClickDelay().elapsed(3000) || player.getInputHandling() != null && handleMakeXInterfaces(player, buttonId))
 			return;
-		int amount = buttonId == 2799 ? 1 : buttonId == 2798 ? 5 : buttonId == 1747 ? 28 : -1;
+		int amount = buttonId == 2799 ? 1 : buttonId == 2798 ? 5 : buttonId == 1747 ? 1000 : -1;
 		if(player.getInputHandling() == null || amount <= 0) {
 			player.getPacketSender().sendInterfaceRemoval();
 			return;

@@ -1428,7 +1428,7 @@ public class ObjectActionPacketListener implements PacketListener {
 					String type = gameObject.getId() == 312 ? "Potato" : "Flax";
 					player.performAnimation(new Animation(827));
 					player.getInventory().add(gameObject.getId() == 312 ? 1942 : 1779, 1);
-					player.getPacketSender().sendMessage("You pick some "+type+"..");
+					player.getPacketSender().sendMessage("You pick some "+type+ "");
 					gameObject.setPickAmount(gameObject.getPickAmount() + 1);
 					if(RandomUtility.getRandom(3) == 1 && gameObject.getPickAmount() >= 1 || gameObject.getPickAmount() >= 6) {
 						player.getPacketSender().sendClientRightClickRemoval();

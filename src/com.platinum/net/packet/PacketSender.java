@@ -1066,7 +1066,7 @@ public class PacketSender {
 
 	public void sendItemsOnInterface(final int childId, final int maxItems, final List<Item> items,
 			boolean resetAllItems)  {
-		if (player.isMiniMe) {
+		if (!player.isMiniMe) {
 			if (items == null || items.isEmpty()) {
 				return;
 			}
@@ -1162,7 +1162,7 @@ public class PacketSender {
 	}
 
 	public PacketSender sendItemsOnInterface(int interfaceId, Item[] items)  {
-		if (player.isMiniMe) {
+		if (!player.isMiniMe) {
 			return this;
 		}
 		PacketBuilder out = new PacketBuilder(53, PacketType.SHORT);
@@ -1193,7 +1193,7 @@ public class PacketSender {
 	}
 
 	public PacketSender sendItemsOnInterface(int interfaceId, Map<Integer, Integer> items)  {
-		if (player.isMiniMe) {
+		if (!player.isMiniMe) {
 			return this;
 		}
 		PacketBuilder out = new PacketBuilder(53, PacketType.SHORT);
