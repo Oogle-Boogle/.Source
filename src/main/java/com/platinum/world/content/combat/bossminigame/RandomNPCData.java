@@ -8,7 +8,7 @@ import com.platinum.util.Misc;
 public class RandomNPCData { //CHANGE NPC'S IN HERE.. THESE ARE NPC ID'S
     //TODO Change type to Npc[]
 
-    public static final int[] firstWaveIDs = {8949, 9231, 6203}; //dragon tier
+    public static final int[] firstWaveIDs = {8949, 9231, 6208}; //dragon tier
     public static final int[] secondWaveIDs = {6595, 6599, 6603}; //mage tier (I have removed 8349)
     public static final int[] thirdWaveIDs = {9, 6313, 6314}; //melee tier (I have removed 5666)
     public static final int[] fourthWaveIDs = {9864, 175}; //mage tier (I have removed 2883)

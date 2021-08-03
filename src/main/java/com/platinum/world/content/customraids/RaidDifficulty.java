@@ -12,13 +12,13 @@ public enum RaidDifficulty {
      */
 
 
-	EASY(3042, 5212, "Easy raid", new Item[] {new Item(18831, 100)},  //Common Rewards
+	EASY(3042, 5212, "Easy raid", new Item[] {new Item(10835, 100)},  //Common Rewards
             new Item[]{new Item(21644), new Item(21645), new Item(19057)},95, "@gre@Easy raid"), //Rare Rewards
 
-    MEDIUM(3042, 5212, "Medium raid", new Item[] {new Item(18831, 200)}, //Common Rewards
-            new Item[]{new Item(13591, 1)},90, "@red@Medium raid"), //Rare Rewards
+    MEDIUM(3042, 5212, "Medium raid", new Item[] {new Item(10835, 200)}, //Common Rewards
+            new Item[]{new Item(13591, 1)},90, "@red@Medium raid"), //Rare Rewards 10% chance
 
-    HARD(3042, 5212, "Hard raid", new Item[] {new Item(18831, 500)}, //Common Rewards
+    HARD(3042, 5212, "Hard raid", new Item[] {new Item(10835, 500)}, //Common Rewards
             new Item[]{new Item(13591, 2)},85, "@red@Hard raid"); //Rare Rewards 15% chance to win.
 
     RaidDifficulty(int x, int y, String description, Item[] commonRewards, Item[] rareRewards, int rareChance, String name) {
