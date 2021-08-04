@@ -1,7 +1,9 @@
 package com.platinum.world.content;
 
+import com.dropbox.core.v2.team.UploadApiRateLimitValue;
 import com.platinum.model.Locations.Location;
 import com.platinum.model.container.impl.Bank;
+import com.platinum.model.definitions.ItemDefinition;
 import com.platinum.util.Misc;
 import com.platinum.world.entity.impl.player.Player;
 
@@ -29,12 +31,12 @@ public class MoneyPouch {
 	}
 
 	/**
-	 * Deposits money into the money pouch
+	 * Deposits tax bags into the money pouch
 	 * @param amount How many Taxbags to deposit
 	 * @return true Returns true if transaction was successful
 	 * @return false Returns false if transaction was unsuccessful
 	 */
-	public static boolean depositMoney(Player plr, int amount, boolean fromTaxBag) {
+	public static boolean depositTaxBag(Player plr, int amount, boolean fromTaxBag, int itemID) {
 		if(amount <= 0)
 			return false;
 		if(plr.getInterfaceId() > 0) {
@@ -49,7 +51,7 @@ public class MoneyPouch {
 			plr.getPacketSender().sendMessage("You cannot do this here.");
 			return false;
 		}
-		if (validateAmount(plr, amount, fromTaxBag)) {
+		if ((itemID == 10835) && validateTaxBagQuantity(plr, amount, fromTaxBag)) {
 			long addedMoney = (long)plr.getMoneyInPouch() + (long)amount;
 			if (addedMoney > Long.MAX_VALUE) {
 				long canStore = Long.MAX_VALUE - plr.getMoneyInPouch();
@@ -67,60 +69,33 @@ public class MoneyPouch {
 				plr.getPacketSender().sendMessage("You've added "+formatNumber(amount)+" Taxbags to your money pouch.");
 				return true;
 			}
-		} else {
-			plr.getPacketSender().sendMessage("You do not seem to have "+formatNumber(amount)+" Taxbags in your inventory.");
+		} else if ((itemID == 995) && validateAmount(plr, amount, fromTaxBag)) {
+			int b = 1000000000;
+			int billsToAdd = 0;
+			if (amount < b) {
+				billsToAdd = 0;
+				plr.getPacketSender().sendMessage("You can only deposit in 1b blocks.");
+				return false;
+			} else if (amount <= b*2) {
+				billsToAdd = 1;
+			} else {
+				billsToAdd = 2;
+			}
+
+			System.out.println("Bills to add: "+billsToAdd);
+				if (!fromTaxBag)
+					plr.getInventory().delete(995, billsToAdd*b);
+				plr.setMoneyInPouch(plr.getMoneyInPouch() + (billsToAdd));
+				plr.getPacketSender().sendString(8135, ""+plr.getMoneyInPouch());
+				plr.getPacketSender().sendMessage("You've added "+formatNumber(amount)+" GP to your money pouch.");
+				return true;
+			}
+		 else {
+			plr.getPacketSender().sendMessage("You do not seem to have "+formatNumber(amount)+" "+ ItemDefinition.forId(itemID).getName() + " in your inventory!");
 			return false;
 		}
 	}
 
-	/**
-	 * @param amount How many Taxbags to withdraw
-	 * @return true Returns true if transaction was successful
-	 * @return false Returns false if the transaction was unsuccessful
-	 */
-	/*public static boolean withdrawMoney(Player plr, long amount) {
-		if(amount <= 0)
-			return false;
-		if(plr.getMoneyInPouch() <= 0) {
-			plr.getPacketSender().sendMessage("Your money pouch is empty.");
-			return false;
-		}
-		boolean allowWithdraw = plr.getTrading().inTrade() || plr.getDueling().inDuelScreen;
-		if(!allowWithdraw) {
-			if(plr.getInterfaceId() > 0) {
-				plr.getPacketSender().sendMessage("Please close the interface you have open before opening another one.");
-				return false;
-			}
-			plr.getPacketSender().sendInterfaceRemoval();
-		}
-		if(amount > plr.getMoneyInPouch())
-			amount = plr.getMoneyInPouch();
-		if ((plr.getInventory().getAmount(10835) + amount) < Integer.MAX_VALUE) {
-			plr.setMoneyInPouch(plr.getMoneyInPouch() - amount);
-			plr.getInventory().add(10835, (int) amount);
-			plr.getPacketSender().sendString(8135, ""+plr.getMoneyInPouch());
-			plr.getPacketSender().sendMessage("You withdraw "+formatNumber(amount)+" Taxbags from your pouch.");
-			if(allowWithdraw)
-				plr.getPacketSender().sendItemContainer(plr.getInventory(), 3322);
-			return true;
-		} else if((plr.getInventory().getAmount(10835) + amount) > Integer.MAX_VALUE) {
-			int canWithdraw = (Integer.MAX_VALUE - plr.getInventory().getAmount(10835));
-			if(canWithdraw == 0) {
-				plr.getPacketSender().sendMessage("You cannot withdraw more money into your inventory.");
-				return false;
-			}
-			plr.setMoneyInPouch(plr.getMoneyInPouch() - canWithdraw);
-			plr.getInventory().add(10835, canWithdraw);
-			plr.getPacketSender().sendString(8135, ""+plr.getMoneyInPouch());
-			plr.getPacketSender().sendMessage("You could only withdraw "+canWithdraw+" Taxbags.");
-			if(allowWithdraw)
-				plr.getPacketSender().sendItemContainer(plr.getInventory(), 3322);
-			return true;
-		}
-		return false; 
-	}*/
-	
-	
 	public static void withdrawMoney(Player player, long amount) {
 		System.out.println("amount was(pouch): " + amount);
 		if(amount <= 0)
@@ -168,7 +143,6 @@ public class MoneyPouch {
 		
 	}
 
-
 	public static void toBank(Player player) {
 		if(!player.isBanking() || player.getInterfaceId() != 5292)
 			return;
@@ -209,8 +183,18 @@ public class MoneyPouch {
 	 * @return true Returns true if the player has the Taxbags in their inventory
 	 * @return false Returns false if the player does not have the Taxbags in their inventory
 	 */
-	private static boolean validateAmount(Player plr, int amount, boolean fromPouch) {
+	private static boolean validateTaxBagQuantity(Player plr, int amount, boolean fromPouch) {
 		return plr.getInventory().getAmount(10835) >= amount || fromPouch;
+	}
+
+	/**
+	 * Validates that the player has the coins in their inventory
+	 *
+	 * @param amount The amount the player wishes to insert
+	 * @return false Returns false if the player does not have the coins in their inventory
+	 */
+	private static boolean validateAmount(Player plr, int amount, boolean fromPouch) {
+		return plr.getInventory().getAmount(995) >= amount || fromPouch;
 	}
 
 }

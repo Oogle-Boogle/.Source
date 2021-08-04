@@ -107,9 +107,9 @@ public class PlayerHandler {
             GroupIronmanGroup gim = GroupIronmanGroup.getGroups().get(player.getUsername());
             gim.setOwner(player);
             player.setGroupIronmanGroup(GroupIronmanGroup.getGroups().get(player.getUsername()));
-            System.out.println("Group set ->");
+            //System.out.println("Group set ->");
         } else {
-            System.out.println("No cuz -> " + GroupIronmanGroup.getGroups());
+            //System.out.println("No cuz -> " + GroupIronmanGroup.getGroups());
         }
 
         if (GroupIronmanGroup.getGroups().containsKey(player.getGroupOwnerName())) {

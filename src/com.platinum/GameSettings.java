@@ -45,6 +45,8 @@ public class GameSettings {
 
 	public static boolean DEBUG_MODE;
 
+	public static boolean SHOW_DEBUG_MESSAGES;
+
 	public static boolean DEVELOPER_MODE;
 
 	public static final boolean LOCALHOST = false;

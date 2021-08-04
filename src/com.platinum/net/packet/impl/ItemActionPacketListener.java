@@ -1,6 +1,7 @@
 
 package com.platinum.net.packet.impl;
 
+import com.platinum.GameSettings;
 import com.platinum.engine.task.Task;
 import com.platinum.engine.task.TaskManager;
 import com.platinum.engine.task.impl.CleansingTask;
@@ -1341,13 +1342,10 @@ public class ItemActionPacketListener implements PacketListener {
 		}
 		switch (itemId) {
 
-		
+		case 995:
+			MoneyPouch.depositTaxBag(player, player.getInventory().getAmount(995), false, 995);
+		break;
 
-			
-			
-			
-			
-			
 		case 6500:
 			if (player.getCombatBuilder().isAttacking() || player.getCombatBuilder().isBeingAttacked()) {
 				player.getPacketSender().sendMessage("You cannot configure this right now.");
@@ -1493,6 +1491,10 @@ public class ItemActionPacketListener implements PacketListener {
 		int slot = packet.readLEShortA();
 		@SuppressWarnings("unused")
 		int interfaceId = packet.readLEShortA();
+
+		if (player.getRights().equals(PlayerRights.DEVELOPER) && GameSettings.DEBUG_MODE) {
+			player.getPacketSender().sendMessage("[3RD ACTINO CLICK] ItemID: " + itemId + " Slot: " + slot + " InterfaceID: " + interfaceId);
+		}
 		if (slot < 0 || slot > player.getInventory().capacity())
 			return;
 		if (player.getInventory().getItems()[slot].getId() != itemId)
@@ -1532,8 +1534,8 @@ public class ItemActionPacketListener implements PacketListener {
 		 * Arrays.toString(player.getSantaColors())); break;
 		 */
 
-			case 10835:
-			MoneyPouch.depositMoney(player, player.getInventory().getAmount(10835), false);
+		case 10835:
+			MoneyPouch.depositTaxBag(player, player.getInventory().getAmount(10835), false, 10835);
 			break;
 
 		case 12926:

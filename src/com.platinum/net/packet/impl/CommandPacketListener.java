@@ -2377,6 +2377,11 @@ public class CommandPacketListener implements PacketListener {
 		}
 
 		switch (command[0]) {
+
+			case "debug":
+				GameSettings.SHOW_DEBUG_MESSAGES = (!GameSettings.SHOW_DEBUG_MESSAGES);
+				break;
+
 		case "testdiscord":
 			JavaCord.sendMessage("drop-feed", "Testing this");
 			break;
