@@ -491,18 +491,6 @@ public class CommandPacketListener implements PacketListener {
 			}
 			player.getCustomRaid().open(player);
 			break;
-		case "raids":
-			if (player.getNpcKills() < 1000 && player.getRights() != PlayerRights.DEVELOPER) {
-				player.sendMessage("@red@You need 1000 NPC kill count to participate in raids.");
-				player.sendMessage("@red@You have " + player.getNpcKills() + " NPC kills.");
-				return;
-			}
-			TeleportHandler.teleportPlayer(player,  new Position(3044, 5233), player.getSpellbook().getTeleportType());
-			break;
-			
-			/*if (player.getNpcKills() < 1000 && player.getRights() != PlayerRights.DEVELOPER) {
-						player.sendMessage("@red@You need 1000 NPC kill count to participate in raids.");
-						player.sendMessage("@red@You have " + player.getNpcKills() + " NPC kills.");*/
 		
 	
 		case "claim":
@@ -544,6 +532,16 @@ public class CommandPacketListener implements PacketListener {
 			InstanceSystem.destructInstance(player);
 				player.sendMessage("Instance reset.");
 
+		}
+		if (command[0].equalsIgnoreCase("raids")) {
+			if (player.getNpcKills() < 1000 && player.getRights() != PlayerRights.DEVELOPER) {
+				player.sendMessage("@red@You need 1000 NPC kill count to participate in raids.");
+				player.sendMessage("@red@You have " + player.getNpcKills() + " NPC kills.");
+				player.sendMessage("@blu@To create a raid party do ::raidlobby");
+				return;
+			}
+			TeleportHandler.teleportPlayer(player,  new Position(3044, 5233), player.getSpellbook().getTeleportType());
+			break;
 		}
 
 		if (wholeCommand.equals("afk")) {
@@ -1707,6 +1705,7 @@ public class CommandPacketListener implements PacketListener {
 		}
 		if (command[0].equalsIgnoreCase("raids")) {
 			TeleportHandler.teleportPlayer(player,  new Position(3044, 5233), player.getSpellbook().getTeleportType());
+			player.sendMessage("to create a raid party do ::raidlobby");
 		}
 		if (command[0].equalsIgnoreCase("teletome")) {
 			String playerToTele = wholeCommand.substring(9);

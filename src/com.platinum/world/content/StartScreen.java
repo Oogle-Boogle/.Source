@@ -231,7 +231,7 @@ public class StartScreen {
         } else if (player.selectedGameMode == GameModes.ULTIMATE_IRON) {
             GameMode.set(player, GameMode.HARDCORE_IRONMAN, false);
         } else if (player.selectedGameMode == GameModes.GROUP_IRONMAN) {
-            GameMode.set(player, GameMode.GROUP_IRONMAN, false);
+            GameMode.set(player, GameMode.IRONMAN, false);
             player.setGim(true);
         } else {
             GameMode.set(player, GameMode.NORMAL, false);
