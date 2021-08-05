@@ -374,7 +374,7 @@ public class Player extends Character {
 		return starterProgression;
 	}
 
-	private boolean[] starterProgressionCompletions = new boolean[5];
+	private boolean[] starterProgressionCompletions = new boolean[6];
 
 	public boolean[] getStarterProgressionCompletions() {
 		return starterProgressionCompletions;
