@@ -98,12 +98,12 @@ public class BossRewardChest {
 
     public static void chestDialogue(Player player) {
         if (player.getCurrentBossWave() <= 4) {
-            DialogueManager.start(player, 179);
+            DialogueManager.start(player, 174);
             player.getPacketSender().sendString(988, "It's time to roll a random number!");
             player.getPacketSender().sendString(990, "Number needed: Crap: @blu@" + (chanceOfShitReward + "+") + "@bla@, Medium: @blu@" + (chanceOfMediumReward + "+") + (player.currentBossWave > 1 ? ("@bla@, Rare: @blu@" + (chanceOfRareReward + "+") + "@bla@") : ""));
             player.setDialogueActionId(85);
         } else {
-            DialogueManager.start(player, 182);
+            DialogueManager.start(player, 177);
             player.getPacketSender().sendString(2460, "Good Job!");
             player.getPacketSender().sendString(2461, "Lets open this chest! My chances are below..");
             player.getPacketSender().sendString(2462, "Number needed: Crap: @blu@" + (chanceOfShitReward + "+") + "@bla@, Medium: @blu@" + (chanceOfMediumReward + "+") + (player.currentBossWave > 1 ? ("@bla@, Rare: @blu@" + (chanceOfRareReward + "+") + "@bla@") : ""));
