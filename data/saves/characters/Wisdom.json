@@ -1,5 +1,5 @@
 {
-  "total-play-time-ms": 333061320,
+  "total-play-time-ms": 333826340,
   "username": "Wisdom",
   "placeholders": false,
   "password": "Ashleigh0502",
@@ -594,8 +594,8 @@
   "loyalty-title": "NONE",
   "crashGameBalance": 0,
   "position": {
-    "x": 3039,
-    "y": 2847,
+    "x": 2334,
+    "y": 4644,
     "z": 0
   },
   "online-status": "ON",
@@ -608,7 +608,7 @@
   "has-pin": false,
   "has-used-boss-tier-tp": true,
   "should-give-boss-reward": false,
-  "currentBossWave": 1,
+  "currentBossWave": 2,
   "hercules-kc": 0,
   "lucario-kc": 0,
   "hades-kc": 0,
@@ -643,11 +643,11 @@
   "achievement-points": 15,
   "dung-tokens": 0,
   "custom-pest-control-points": 0,
-  "loyalty-points": 77282,
-  "total-loyalty-points": 77282.0,
+  "loyalty-points": 77942,
+  "total-loyalty-points": 77942.0,
   "voting-points": 0,
   "slayer-points": 4,
-  "npc-kills": 15286,
+  "npc-kills": 15287,
   "presetItems": [
     0,
     0,
@@ -1143,17 +1143,17 @@
   "auto-retaliate": true,
   "xp-locked": false,
   "veng-cast": false,
-  "last-veng": 1626866383904,
-  "fight-type": "SWORD_LUNGE",
+  "last-veng": 1324126995,
+  "fight-type": "UNARMED_KICK",
   "equipmentWings": [
     {
-      "id": 3974,
-      "amount": 1,
+      "id": -1,
+      "amount": 0,
       "slot": 0
     },
     {
-      "id": 3277,
-      "amount": 1,
+      "id": -1,
+      "amount": 0,
       "slot": 0
     },
     {
@@ -1470,7 +1470,7 @@
       120,
       120,
       120,
-      30954,
+      30926,
       120,
       1200,
       120,
@@ -1556,13 +1556,13 @@
   },
   "inventory": [
     {
-      "id": 11179,
-      "amount": 4315,
+      "id": -1,
+      "amount": 0,
       "slot": 0
     },
     {
-      "id": 19626,
-      "amount": 1,
+      "id": -1,
+      "amount": 0,
       "slot": 0
     },
     {
@@ -1698,28 +1698,13 @@
   ],
   "equipment": [
     {
-      "id": 4761,
-      "amount": 1,
-      "slot": 0
-    },
-    {
-      "id": 3905,
-      "amount": 1,
-      "slot": 0
-    },
-    {
       "id": -1,
       "amount": 0,
       "slot": 0
     },
     {
-      "id": 13265,
-      "amount": 1,
-      "slot": 0
-    },
-    {
-      "id": 4762,
-      "amount": 1,
+      "id": -1,
+      "amount": 0,
       "slot": 0
     },
     {
@@ -1733,8 +1718,8 @@
       "slot": 0
     },
     {
-      "id": 4763,
-      "amount": 1,
+      "id": -1,
+      "amount": 0,
       "slot": 0
     },
     {
@@ -1743,13 +1728,8 @@
       "slot": 0
     },
     {
-      "id": 4764,
-      "amount": 1,
-      "slot": 0
-    },
-    {
-      "id": 4765,
-      "amount": 1,
+      "id": -1,
+      "amount": 0,
       "slot": 0
     },
     {
@@ -1758,8 +1738,28 @@
       "slot": 0
     },
     {
-      "id": 773,
-      "amount": 1,
+      "id": -1,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "amount": 0,
       "slot": 0
     },
     {
@@ -2306,7 +2306,7 @@
     0,
     0,
     0,
-    279,
+    280,
     0,
     0,
     0,
@@ -2542,7 +2542,8 @@
     "3154": 117,
     "15": 9,
     "6311": 5,
-    "8493": 3
+    "8493": 3,
+    "6599": 1
   },
   "savedKeyCount1": 0,
   "savedKeyCount2": 0,
