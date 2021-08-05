@@ -18,7 +18,7 @@ public class StarterProgression {
 			{ new Item(10835, 200), new Item(15373, 2), new Item(2572, 1) },
 			{ new Item(10835, 300), new Item(15373, 2), new Item(3082, 1) },
 			{ new Item(10835, 400), new Item(15373, 3), new Item(14006, 1) },
-			//{ new Item(10835, 500), new Item(15373, 3), new Item(3928, 1) },
+			{ new Item(10835, 500), new Item(15373, 3), new Item(3928, 1) },
 			// indexed rewards, so first column = first task reward
 	};
 
