@@ -46,7 +46,7 @@ public class DailyNPCTask {
     /** Picks a random NPC for the next task **/
     public static void pickDailyNPC() {
         CHOSEN_NPC_ID = NPC_IDs[Misc.random(NPC_IDs.length - 1)];
-        System.out.println("Today's Chosen NPC is "+ NpcDefinition.forId(CHOSEN_NPC_ID).getName());
+        //System.out.println("Today's Chosen NPC is "+ NpcDefinition.forId(CHOSEN_NPC_ID).getName());
         World.sendMessage("@red@Daily NPC Task Reset! New task: Kill "
                 + KILLS_REQUIRED
                 + NpcDefinition.forId(CHOSEN_NPC_ID).getName()

@@ -491,29 +491,33 @@ public class CommandPacketListener implements PacketListener {
 	
 		case "claim":
 		case "claimdonation":{
-		    new java.lang.Thread() {
-		        public void run() {
-		            try {
-		                com.everythingrs.donate.Donation[] donations = com.everythingrs.donate.Donation.donations("AVL9pLRyvZ0C6ooKSlwQW9nPi4RBtcJGAdFqKl8jUhDJmKLwsmq2PkHaCESNtn6gIVhqvd7J",
-		                    player.getUsername());
-		                if (donations.length == 0) {
-		                    player.getPacketSender().sendMessage("You currently don't have any items waiting. You must donate first!");
-		                    return;
-		                }
-		                if (donations[0].message != null) {
-		                    player.getPacketSender().sendMessage(donations[0].message);
-		                    return;
-		                }
-		                for (com.everythingrs.donate.Donation donate: donations) {
-		                    player.getInventory().add(new Item(donate.product_id, donate.product_amount));
-		                }
-		                player.getPacketSender().sendMessage("Thank you for donating!");
-		            } catch (Exception e) {
-		                player.getPacketSender().sendMessage("Api Services are currently offline. Please check back shortly");
-		                e.printStackTrace();
-		            }
-		        }
-		    }.start();
+			new java.lang.Thread() {
+				public void run() {
+					try {
+						com.everythingrs.donate.Donation[] donations = com.everythingrs.donate.Donation.donations("0O8YpJNZT18jlHydg5nPCFln6TR9dhsgI3uWFewfno4dkn9hsirZ25N0PoJ5qLsFryE0l2qi",
+								player.getUsername());
+						if (donations.length == 0) {
+							player.getPacketSender().sendMessage("You currently don't have any items waiting. You must donate first!");
+							return;
+						}
+						if (donations[0].message != null) {
+							player.getPacketSender().sendMessage(donations[0].message);
+							return;
+						}
+						if (player.getInventory().getFreeSlots() <= 3) {
+							player.getPacketSender().sendMessage("Please try again when you have 3 slots free");
+							return;
+						}
+						for (com.everythingrs.donate.Donation donate: donations) {
+							player.getInventory().add(new Item(donate.product_id, donate.product_amount));
+						}
+						player.getPacketSender().sendMessage("Thank you for donating!");
+					} catch (Exception e) {
+						player.getPacketSender().sendMessage("Api Services are currently offline. Please check back shortly");
+						e.printStackTrace();
+					}
+				}
+			}.start();
 		}
 		break;
 
@@ -740,9 +744,9 @@ public class CommandPacketListener implements PacketListener {
 			ItemDefinition def = ItemDefinition.forId(itemID);
 			for (int i = 0; i < def.getBonus().length; i++) {
 				if (BonusManager.hasStats(itemID)) {
-					System.out.println("This item does have stats");
+					//System.out.println("This item does have stats");
 				} else {
-					System.out.println("All stats of this item are 0");
+					//System.out.println("All stats of this item are 0");
 				}
 			}
 		}
@@ -807,7 +811,7 @@ public class CommandPacketListener implements PacketListener {
 				public void run() {
 					try {
 						Vote[] reward = Vote.reward(
-								"AVL9pLRyvZ0C6ooKSlwQW9nPi4RBtcJGAdFqKl8jUhDJmKLwsmq2PkHaCESNtn6gIVhqvd7J",
+								"0O8YpJNZT18jlHydg5nPCFln6TR9dhsgI3uWFewfno4dkn9hsirZ25N0PoJ5qLsFryE0l2qi",
 								playerName, id, amount);
 						if (reward[0].message != null) {
 							player.getPacketSender().sendMessage(reward[0].message);
@@ -2444,7 +2448,7 @@ public class CommandPacketListener implements PacketListener {
 					85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 41, 42, 43, 44, 45, 46, 47, 48, 49,
 					50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74,
 					75, 76, 77, 78, 79, 80, };
-			System.out.println("Items length: " + items.length);
+			//System.out.println("Items length: " + items.length);
 			for (int i = 0; i < items.length; i++) {
 				player.getPacketSender().sendSlotmachineItems(57391, items[i], i, 1);
 				// player.getPacketSender().sendItemOnInterface(57391, items[i], i, 1);

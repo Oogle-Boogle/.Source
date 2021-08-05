@@ -146,7 +146,7 @@ public class BossMinigameFunctions {
 
     public static void despawnNpcs(Player player) {
         if (player.getLocation() == BOSS_TIER_LOCATION && !player.getRegionInstance().getNpcsList().isEmpty() && player.getRegionInstance() != null) {
-            //System.out.println("DESPAWNING NPC'S FOR " + player.getUsername());
+            ////System.out.println("DESPAWNING NPC'S FOR " + player.getUsername());
             player.getRegionInstance().getNpcsList().forEach(npc -> npc.removeInstancedNpcs(BOSS_TIER_LOCATION, player.getPosition().getZ()));
             player.getRegionInstance().getNpcsList().forEach(npc -> World.deregister(npc));
         }
@@ -189,12 +189,12 @@ public class BossMinigameFunctions {
     public static void destructBossTier(final Player player) {
 
         if (shouldDestroy(player)) {
-           // System.out.println("DESTROYING INSTANCE FOR " + player.getUsername());
+           // //System.out.println("DESTROYING INSTANCE FOR " + player.getUsername());
 
             int z = 0;
             Position nonInstance = new Position(stairsX, stairsY, z);
             player.moveTo(nonInstance);//Moves player to height 0
-            //System.out.println("Sending " + player.getUsername() + " to height 0");
+            ////System.out.println("Sending " + player.getUsername() + " to height 0");
         } else {
             int z = 0;
             Position nonInstance = new Position(stairsX, stairsY, z);
@@ -203,7 +203,7 @@ public class BossMinigameFunctions {
 
 
         if (shouldDespawnNPCs(player)) {
-            //System.out.println("DESPAWNING NPC'S FOR " + player.getUsername());
+            ////System.out.println("DESPAWNING NPC'S FOR " + player.getUsername());
             player.getRegionInstance().getNpcsList().forEach(npc -> npc.removeInstancedNpcs(BOSS_TIER_LOCATION, player.getPosition().getZ()));
             player.getRegionInstance().getNpcsList().forEach(npc -> World.deregister(npc));
         }

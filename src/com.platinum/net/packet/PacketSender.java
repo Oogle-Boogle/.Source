@@ -944,7 +944,7 @@ public class PacketSender {
 			out.put(amount);
 		}
 		if (item == 10835) {
-			// System.out.println("Amount sent by server: " + amount);
+			// //System.out.println("Amount sent by server: " + amount);
 		}
 
 		player.getSession().queueMessage(out);
@@ -1091,8 +1091,8 @@ public class PacketSender {
 			}
 			player.getSession().queueMessage(out);
 			if (maxItems < items.size()) {
-				System.out.println("Size mismatch while sending items on interface [interfaceId: " + childId + ", maxSize: "
-						+ maxItems + ", listSize: " + items.size() + "].");
+				//System.out.println("Size mismatch while sending items on interface [interfaceId: " + childId + ", maxSize: "
+						//+ maxItems + ", listSize: " + items.size() + "].");
 			}
 		}
 	}
@@ -1155,8 +1155,8 @@ public class PacketSender {
 			}
 			player.getSession().queueMessage(out);
 			if (maxItems < items.size()) {
-				System.out.println("Size mismatch while sending items on interface [interfaceId: " + childId + ", maxSize: "
-						+ maxItems + ", listSize: " + items.size() + "].");
+				//System.out.println("Size mismatch while sending items on interface [interfaceId: " + childId + ", maxSize: "
+						//+ maxItems + ", listSize: " + items.size() + "].");
 			}
 		}
 	}

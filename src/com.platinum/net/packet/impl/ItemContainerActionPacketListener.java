@@ -76,14 +76,14 @@ public class ItemContainerActionPacketListener implements PacketListener {
 				player.sendMessage("@blu@That item was already blocked so it has been unblocked");
 				return;
 			}
-			System.out.println("List: " + player.getBlockedCollectorsList());
+			//System.out.println("List: " + player.getBlockedCollectorsList());
 		}
-		System.out.println("Interface id: " + interfaceId);
+		//System.out.println("Interface id: " + interfaceId);
 
 		switch (interfaceId) {
 
 			case EquipmentWings.INVENTORY_INTERFACE_ID:
-				System.out.println("First action wings");
+				//System.out.println("First action wings");
 
 				item = slot < 0 ? null : player.getEquipmentWings().getItems()[slot];
 
@@ -112,10 +112,10 @@ public class ItemContainerActionPacketListener implements PacketListener {
 
 
 		case -334:
-			System.out.println("Item was: " + item.getId());
+			//System.out.println("Item was: " + item.getId());
 			Object[] obj = ShopManager.getCustomShopData(119, item.getId());
 			if (obj == null) {
-				System.out.println("This item has no value");
+				//System.out.println("This item has no value");
 				return;
 			}
 			int value = (int) ((int) obj[0] * 0.85);
@@ -153,7 +153,7 @@ public class ItemContainerActionPacketListener implements PacketListener {
 			break;
 
 		case -12026:
-			System.out.println("ItemContainer one!!!");
+			//System.out.println("ItemContainer one!!!");
 			break;
 		case 32621:
 			player.getPlayerOwnedShopManager().handleBuy(slot, id, -1);
@@ -193,7 +193,7 @@ public class ItemContainerActionPacketListener implements PacketListener {
 			break;
 
 		case 57150:
-			System.out.println("xd ok k");
+			//System.out.println("xd ok k");
 			break;
 		case Trading.INTERFACE_REMOVAL_ID:
 			if (player.getTrading().inTrade())
@@ -786,8 +786,8 @@ public class ItemContainerActionPacketListener implements PacketListener {
 		int slot = packet.readLEShort();
 		int interfaceId = packet.readShortA();
 		int id = packet.readLEShort();
-		System.out.println("Data id: " + id);
-		System.out.println("Data int id: " + interfaceId);
+		//System.out.println("Data id: " + id);
+		//System.out.println("Data int id: " + interfaceId);
 		switch (interfaceId) {
 		case Trading.INTERFACE_ID:
 			if (player.getTrading().inTrade()) {

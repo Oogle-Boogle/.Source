@@ -150,7 +150,7 @@ public class ButtonClickPacketListener implements PacketListener {
             return;
         }
 
-        //System.out.println("ID clicked: " + id);
+        ////System.out.println("ID clicked: " + id);
 
         if (player.getRights() == PlayerRights.OWNER) {
             player.getPacketSender().sendMessage("Clicked button: " + id);
@@ -514,7 +514,7 @@ public class ButtonClickPacketListener implements PacketListener {
                 break;
 
             case -3203:
-                System.out.println("-");
+                //System.out.println("-");
                 // player.getGambling().sendGambleScreen();
                 break;
 
@@ -1719,7 +1719,7 @@ public class ButtonClickPacketListener implements PacketListener {
                 } else {
                     player.sendMessage("@red@Game mode not set, set 1 to play");
                 }
-                System.out.println("In gamble: " + player.getGambling().inGamble());
+                //System.out.println("In gamble: " + player.getGambling().inGamble());
                 break;
 
             case -8383:

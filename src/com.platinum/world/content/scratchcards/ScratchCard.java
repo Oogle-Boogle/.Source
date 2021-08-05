@@ -51,7 +51,7 @@ public class ScratchCard {
 		int count = 0;
 
 		if (item1 == item2 && item1 == item3) {
-			System.out.println("A TRIPLE!");
+			//System.out.println("A TRIPLE!");
 			count = 2;
 		} else if (item1 == item2 || item1 == item3) {
 			count = 1;

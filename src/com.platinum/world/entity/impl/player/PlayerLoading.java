@@ -885,12 +885,12 @@ public class PlayerLoading {
 				boolean[] loadedCompletion = builder.fromJson(reader.get("npc-task-completion").getAsJsonArray(),
 						boolean[].class);
 				int defaultLength = player.getNpcTaskAttributes().getCompletion().length;
-			//	System.out.println("load length: "+ loadedCompletion.length + " default: " + defaultLength);
+			//	//System.out.println("load length: "+ loadedCompletion.length + " default: " + defaultLength);
 				if (loadedCompletion.length < defaultLength) {
-					System.out.println("load length: "+ loadedCompletion + " default: " + defaultLength);
+					//System.out.println("load length: "+ loadedCompletion + " default: " + defaultLength);
 					for (int index = 0; index < defaultLength - 1; index++) {
 						if (index < loadedCompletion.length) {
-							System.out.println("what is this: " + index);
+							//System.out.println("what is this: " + index);
 							player.getNpcTaskAttributes().setCompletion(index, loadedCompletion[index]);
 						} else {
 							player.getNpcTaskAttributes().setCompletion(index, false);
@@ -905,12 +905,12 @@ public class PlayerLoading {
 				boolean[] loadedCompletion = builder.fromJson(reader.get("tasks-completion").getAsJsonArray(),
 						boolean[].class);
 				int defaultLength = player.getStarterTaskAttributes().getCompletion().length;
-			//	System.out.println("load length: "+ loadedCompletion.length + " default: " + defaultLength);
+			//	//System.out.println("load length: "+ loadedCompletion.length + " default: " + defaultLength);
 				if (loadedCompletion.length < defaultLength) {
-					System.out.println("load length: "+ loadedCompletion + " default: " + defaultLength);
+					//System.out.println("load length: "+ loadedCompletion + " default: " + defaultLength);
 					for (int index = 0; index < defaultLength - 1; index++) {
 						if (index < loadedCompletion.length) {
-							System.out.println("what is this: " + index);
+							//System.out.println("what is this: " + index);
 							player.getStarterTaskAttributes().setCompletion(index, loadedCompletion[index]);
 						} else {
 							player.getStarterTaskAttributes().setCompletion(index, false);
@@ -926,7 +926,7 @@ public class PlayerLoading {
 					    reader.get("npc-kc-data"), 
 					    new TypeToken<Map<Integer, Integer>>() {}.getType()
 					);
-				System.out.println("Got this data: " + kcData);
+				//System.out.println("Got this data: " + kcData);
 				player.setNpcKillCount(kcData);
 			}
 

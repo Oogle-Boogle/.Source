@@ -18,11 +18,11 @@ public class DonationBox {
 
 	public static void getDonorBoxItems() {
 		for (int shitReward : shitRewards) {
-			System.out.println("Shit Donor Box Reward Name: " + ItemDefinition.forId(shitRewards[shitReward]) + " ID: " + shitRewards[shitReward]);
+			//System.out.println("Shit Donor Box Reward Name: " + ItemDefinition.forId(shitRewards[shitReward]) + " ID: " + shitRewards[shitReward]);
 		}
 
 		for (int goodReward : goodRewards) {
-			System.out.println("Good Donor Box Reward Name: " + ItemDefinition.forId(goodRewards[goodReward]) + " ID: " + goodRewards[goodReward]);
+			//System.out.println("Good Donor Box Reward Name: " + ItemDefinition.forId(goodRewards[goodReward]) + " ID: " + goodRewards[goodReward]);
 		}
 	}
 	

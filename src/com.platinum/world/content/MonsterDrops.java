@@ -31,9 +31,9 @@ public class MonsterDrops {
 			NPCDrops.getDrops().entrySet().stream().filter(Objects::nonNull)
 					.filter($d -> $d.getKey() > 0 && NpcDefinition.forId($d.getKey()) != null).forEach($d -> {
 						npcDrops.put(NpcDefinition.forId($d.getKey()).getName().toLowerCase(), $d.getValue());
-//						System.out.println("Added: " + $d.getValue().toString() + " " + $d.getKey());
+//						//System.out.println("Added: " + $d.getValue().toString() + " " + $d.getKey());
 					});
-			//System.out.println("MonsterDrops has been initialized: size " + npcDrops.size());
+			////System.out.println("MonsterDrops has been initialized: size " + npcDrops.size());
 		} catch (Exception i) {
 			i.printStackTrace();
 		}

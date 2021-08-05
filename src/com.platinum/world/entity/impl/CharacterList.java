@@ -78,7 +78,6 @@ public final class CharacterList<E extends Character> implements Iterable<E> {
 
 		if (!e.isRegistered()) {
 			int slot = slotSearch();
-			System.out.println("SLOT: " + slot);
 			if (slot < 0)
 				return false;
 			e.setRegistered(true);

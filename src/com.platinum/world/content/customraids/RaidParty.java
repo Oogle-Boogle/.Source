@@ -57,7 +57,7 @@ public class RaidParty {
             return;
         }
 
-        System.out.println(owner.getBannedRaidMembers() + " | " + player.getUsername());
+        //System.out.println(owner.getBannedRaidMembers() + " | " + player.getUsername());
         if (owner.getBannedRaidMembers().contains(player.getUsername().toLowerCase())) {
             player.sendMessage("You are banned from " + owner.getUsername() + "'s raid party");
             return;
@@ -93,14 +93,14 @@ public class RaidParty {
             }
             member.setRaidParty(null);
             clearNames(member);
-            System.out.println("Member = " + member.getUsername());
+            //System.out.println("Member = " + member.getUsername());
         });
         members.clear();
     }
 
     public void leave(Player player) {
         if(isOwner(player)) {
-            System.out.println("Was owner");
+            //System.out.println("Was owner");
             delete(player);
             return;
         }

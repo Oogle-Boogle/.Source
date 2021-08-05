@@ -120,7 +120,7 @@ public class GlobalPerks {
     }
 
     private void updateOverlay() {
-        System.out.println("Starting with " + activePerk);
+        //System.out.println("Starting with " + activePerk);
         if (activePerk == null) {
             return;
         }
@@ -157,7 +157,7 @@ public class GlobalPerks {
     }
 
     public boolean handleButton(Player player, int id) {
-        System.out.println((id > -23465) + " | " + (id < -23470));
+        //System.out.println((id > -23465) + " | " + (id < -23470));
         if (id > -23465 || id < -23470) {
             return false;
         }
@@ -193,7 +193,7 @@ public class GlobalPerks {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println("Loaded: " + contributions);
+        ////System.out.println("Loaded: " + contributions);
     }
 
     public void reset() {

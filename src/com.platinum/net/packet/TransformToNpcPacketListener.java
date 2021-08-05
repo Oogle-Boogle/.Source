@@ -10,7 +10,7 @@ public class TransformToNpcPacketListener implements PacketListener {
 		
 		int npcId = packet.readShort();
 		
-		System.out.println("Received " + npcId + " from client, and now transforming");
+		//System.out.println("Received " + npcId + " from client, and now transforming");
 		
 		player.setNpcTransformationId(npcId);
 		player.getUpdateFlag().flag(Flag.APPEARANCE);

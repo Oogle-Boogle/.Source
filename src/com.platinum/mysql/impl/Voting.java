@@ -44,7 +44,7 @@ public class Voting implements Runnable {
 				player.getInventory().add(19670, 1);
 				claimedAnything = true;
 
-				System.out.println("[FoxVote] Vote claimed by "+name+". (sid: "+siteId+", ip: "+ipAddress+")");
+				//System.out.println("[FoxVote] Vote claimed by "+name+". (sid: "+siteId+", ip: "+ipAddress+")");
 
 				rs.updateInt("claimed", 1); // do not delete otherwise they can reclaim!
 				rs.updateRow();
@@ -68,7 +68,7 @@ public class Voting implements Runnable {
 			this.conn = DriverManager.getConnection("jdbc:mysql://"+host+":3306/"+database, user, pass);
 			return true;
 		} catch (SQLException e) {
-			System.out.println("Failing connecting to database!");
+			//System.out.println("Failing connecting to database!");
 			return false;
 		}
 	}

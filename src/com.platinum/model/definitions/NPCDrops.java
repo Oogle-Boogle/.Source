@@ -61,7 +61,7 @@ public class NPCDrops {
 	private static Map<Integer, NPCDrops> dropControllers = new HashMap<Integer, NPCDrops>();
 
 	public static JsonLoader parseDrops() {
-		// System.out.println("CALLED");
+		// //System.out.println("CALLED");
 		ItemDropAnnouncer.init();
 
 		return new JsonLoader() {
@@ -76,8 +76,8 @@ public class NPCDrops {
 				d.drops = drops;
 				for (int id : npcIds) {
 					dropControllers.put(id, d);
-					// System.out.println("Drops put: " + id + " . " + d);
-					// System.out.println("put: "+id+" "+d);
+					// //System.out.println("Drops put: " + id + " . " + d);
+					// //System.out.println("put: "+id+" "+d);
 				}
 
 			}
@@ -333,7 +333,7 @@ public class NPCDrops {
 		}
 
 		if (npc.getDefaultConstitution() > 10000) {
-			System.out.println("DROPPING");
+			//System.out.println("DROPPING");
 			dropScratchcard(p, p.getPosition());
 		}
 
@@ -355,7 +355,7 @@ public class NPCDrops {
 			break;
 		}
 		if (items.isEmpty()) {
-			System.out.println("No such item.");
+			//System.out.println("No such item.");
 			return new ArrayList<>();
 		}
 		Collection<Integer> npcs = new ArrayList<>();
@@ -382,13 +382,13 @@ public class NPCDrops {
 		boolean hasRecievedDrop = false;
 		int playerDr = DropUtils.drBonus(player);
 
-		System.out.println("Player dr: " + playerDr);
+		//System.out.println("Player dr: " + playerDr);
 
 		if (npc.getId() == HourlyBoss.currentHourlyBoss) {
 			playerDr += 20;
 		}
 
-		System.out.println("Player dr after: " + playerDr);
+		//System.out.println("Player dr after: " + playerDr);
 
 		Arrays.sort(drops, (a, b) -> b.getChance().compareTo(a.getChance()));
 
@@ -397,7 +397,7 @@ public class NPCDrops {
 			int adjustedDr = (int) Math.floor(chance / (playerDr > 0 ? (DropUtils.drBonus(player) / 100.0) + 1 : 1))
 					+ (playerDr > 0 ? 1 : 0);
 
-			// System.out.println("Item: " + drops[i].getItem().getDefinition().getName() +
+			// //System.out.println("Item: " + drops[i].getItem().getDefinition().getName() +
 			// "x" + drops[i].getItem().getAmount() + " chance: " + chance + " adj chance: "
 			// + adjustedDr);
 
@@ -406,13 +406,13 @@ public class NPCDrops {
 				if (player.isDoubleDropsActive())
 					drop = new Item(drop.getId(), drop.getAmount() * getDropAmntMult(player));
 				drop(player, drop, npc, npcPos, goGlobal);
-				System.out.println("Drop: " + drop.getId() + ", " + drop.getAmount());
+				//System.out.println("Drop: " + drop.getId() + ", " + drop.getAmount());
 			} else if (RandomUtility.getRandom(adjustedDr) == 1 && !hasRecievedDrop) {
 				Item drop = drops[i].getItem();
 				if (player.isDoubleDropsActive())
 					drop = new Item(drop.getId(), drop.getAmount() * getDropAmntMult(player));
 				drop(player, drop, npc, npcPos, goGlobal);
-				System.out.println("Drop1: " + drop.getId() + ", " + drop.getAmount());
+				//System.out.println("Drop1: " + drop.getId() + ", " + drop.getAmount());
 				hasRecievedDrop = true;
 			}
 

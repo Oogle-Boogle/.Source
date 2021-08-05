@@ -36,7 +36,7 @@ public class PlayerSaving {
 			try {
 				file.getParentFile().mkdirs();
 			} catch (SecurityException e) {
-				System.out.println("Unable to create directory for player data!");
+				//System.out.println("Unable to create directory for player data!");
 			}
 		}
 		try (FileWriter writer = new FileWriter(file)) {

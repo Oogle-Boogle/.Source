@@ -321,7 +321,7 @@ public class PathFinder {
 			}
 		} catch(Exception e) {
 			e.printStackTrace();
-			System.out.println("Error finding route, destx: "+destX+", destY: "+destY+". Reseted queue.");
+			//System.out.println("Error finding route, destx: "+destX+", destY: "+destY+". Reseted queue.");
 			gc.getMovementQueue().setFollowCharacter(null);
 			gc.getMovementQueue().reset();
 		}

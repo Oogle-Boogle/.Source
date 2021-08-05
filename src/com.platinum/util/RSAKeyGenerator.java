@@ -84,14 +84,14 @@ public class RSAKeyGenerator {
     }
 
     public static void printKey(String file, BigInteger ondemand_modulus, BigInteger ondemand_exponent, BigInteger login_modulus, BigInteger login_exponent) {
-        System.out.println("file: " + file);
-        System.out.println("public static final BigInteger ONDEMAND_MODULUS = new BigInteger(\"" + ondemand_modulus.toString() + "\");");
-        System.out.println("public static final BigInteger ONDEMAND_EXPONENT = new BigInteger(\"" + ondemand_exponent.toString() + "\");");
-        System.out.println();
-        System.out.println("public static final BigInteger LOGIN_MODULUS = new BigInteger(\"" + login_modulus.toString() + "\");");
-        System.out.println("public static final BigInteger LOGIN_EXPONENT = new BigInteger(\"" + login_exponent.toString() + "\");");
-        System.out.println();
-        System.out.println("---");
+        //System.out.println("file: " + file);
+        //System.out.println("public static final BigInteger ONDEMAND_MODULUS = new BigInteger(\"" + ondemand_modulus.toString() + "\");");
+        //System.out.println("public static final BigInteger ONDEMAND_EXPONENT = new BigInteger(\"" + ondemand_exponent.toString() + "\");");
+        //System.out.println();
+        //System.out.println("public static final BigInteger LOGIN_MODULUS = new BigInteger(\"" + login_modulus.toString() + "\");");
+        //System.out.println("public static final BigInteger LOGIN_EXPONENT = new BigInteger(\"" + login_exponent.toString() + "\");");
+        //System.out.println();
+        //System.out.println("---");
     }
 
 }

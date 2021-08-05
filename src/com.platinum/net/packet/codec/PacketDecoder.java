@@ -33,7 +33,7 @@ public class PacketDecoder extends FrameDecoder {
 				return null;
 			}
 		}
-		//System.out.println("OP code: " + opcode);
+		////System.out.println("OP code: " + opcode);
 		if (size == -1) {
 			if (buffer.readable()) {
 				size = buffer.readUnsignedByte();

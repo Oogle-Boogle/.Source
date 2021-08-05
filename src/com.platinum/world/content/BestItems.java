@@ -43,7 +43,7 @@ public class BestItems {
 	public void open() {
 		definitionIndex = 0;
 		definitions.sort(new sortDefinitions(definitionIndex).reversed());
-		System.out.println(definitions.get(0).getName());
+		//System.out.println(definitions.get(0).getName());
 		displayBonuses();
 		player.getPA().sendInterface(56000);
 	}

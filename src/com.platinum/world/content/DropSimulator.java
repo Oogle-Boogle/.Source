@@ -80,7 +80,7 @@ public class DropSimulator {
 
 			NPCDrops npcDrops = NPCDrops.forId(def.getId());
 			if (npcDrops == null) {
-				//System.out.println(def.getId() + " Has no drops");
+				////System.out.println(def.getId() + " Has no drops");
 				continue;
 			}
 

@@ -30,10 +30,10 @@ public class NPCFightDuration {
 	public static void main(String[] args) {
 		start();
 		for (int i = 0; i <= 5_000_000; i++) {
-			System.out.println(i);
+			//System.out.println(i);
 		}
 		stop();
-		System.out.println(stopwatch.elapsed(TimeUnit.SECONDS));
+		//System.out.println(stopwatch.elapsed(TimeUnit.SECONDS));
 	}
  	
 

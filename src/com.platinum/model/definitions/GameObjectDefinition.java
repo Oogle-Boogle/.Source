@@ -161,7 +161,7 @@ public final class GameObjectDefinition {
 
 	public static void init() {
 		//long startup = System.currentTimeMillis();
-		//System.out.println("Loading cache game object definitions...");
+		////System.out.println("Loading cache game object definitions...");
 		
 		dataBuffer525 = new ByteStreamExt(getBuffer("loc.dat"));
 		ByteStreamExt idxBuffer525 = new ByteStreamExt(getBuffer("loc.idx"));
@@ -192,7 +192,7 @@ public final class GameObjectDefinition {
 			cache[k] = new GameObjectDefinition();
 		}
 		
-		///System.out.println("Loaded " + totalObjects525 + " cache object definitions #525 and " 
+		/////System.out.println("Loaded " + totalObjects525 + " cache object definitions #525 and " 
 		//		+ totalObjects667 + " cache object definitions #667 in " + (System.currentTimeMillis() - startup) + "ms");
 	}
 

@@ -1263,12 +1263,12 @@ public class Locations {
 
 			@Override
 			public boolean handleKilledNPC(Player killer, NPC npc) {
-				System.out.println(killer.getUsername() + " Has just killed an " + npc.getDefinition().getName() + "!");
+				//System.out.println(killer.getUsername() + " Has just killed an " + npc.getDefinition().getName() + "!");
 				if (killer.getInstanceSystem().getNpcsToSpawn() != null
 						&& killer.getInstanceSystem().getNpcsToSpawn()[0].getId() == npc.getId()) {
 
 					World.deregister(npc);
-					System.out.println("NPC REMOVED FROM INSTANCE");
+					//System.out.println("NPC REMOVED FROM INSTANCE");
 
 					TaskManager.submit(new Task(3) {
 						@Override

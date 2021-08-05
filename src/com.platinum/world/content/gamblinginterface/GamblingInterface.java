@@ -361,8 +361,8 @@ public class GamblingInterface {
 		}
 
 		if (stage == 1) {
-			System.out.println(
-					"Player username: " + player.getUsername() + " player2 username: " + player2.getUsername());
+			//System.out.println(
+					//"Player username: " + player.getUsername() + " player2 username: " + player2.getUsername());
 			player2.getGambling().goodGamble = true;
 			player2.getPacketSender().sendString(57175, "Other player has accepted.");
 			goodGamble = true;
@@ -374,7 +374,7 @@ public class GamblingInterface {
 			player2.getPacketSender().sendString(57197, "55x2 (" + player.getUsername() + " hosts)");
 			if (inGamble() && player2.getGambling().gambleConfirmed && player2.getGambling().goodGamble && goodGamble) {
 				startGame(getGamblingMode());
-				System.out.println("Confirmed");
+				//System.out.println("Confirmed");
 			}
 		}
 		player.getClickDelay().reset();
@@ -609,10 +609,10 @@ public class GamblingInterface {
 			startDiceDuel();
 		} else if (mode.equals(GamblingMode.BLACKJACK)) {
 			startBlackjack();
-			System.out.println("Starting blackjack");
+			//System.out.println("Starting blackjack");
 		} else if (mode.equals(GamblingMode.FIFTY_FIVE_X2)) {
 			start55x2();
-			System.out.println("Starting 55x2");
+			//System.out.println("Starting 55x2");
 		}
 	}
 
@@ -645,7 +645,7 @@ public class GamblingInterface {
 			protected void execute() {
 
 				plantFlower();
-				System.out.println("Flower count: " + flowerCount);
+				//System.out.println("Flower count: " + flowerCount);
 				if (flowerCount >= 5) {
 					getFPWinner();
 					stop();
@@ -720,14 +720,14 @@ public class GamblingInterface {
 		player.getPacketSender().removeInterface();
 		player2.getPacketSender().removeInterface();
 
-		System.out.println("Starting for: " + player.getUsername() + " and " + player2.getUsername());
+		//System.out.println("Starting for: " + player.getUsername() + " and " + player2.getUsername());
 
 		TaskManager.submit(new Task(5) {
 			@Override
 			protected void execute() {
 				player.setDialogueActionId(920);
 				DialogueManager.start(player, 185);
-				System.out.println("Starting for: " + player.getUsername());
+				//System.out.println("Starting for: " + player.getUsername());
 				stop();
 				return;
 
@@ -741,7 +741,7 @@ public class GamblingInterface {
 		Player player2 = World.getPlayers().get(getGambleWith());
 		player2.setDialogueActionId(920);
 		DialogueManager.start(player2, 185);
-		System.out.println("Starting for: " + player2.getUsername());
+		//System.out.println("Starting for: " + player2.getUsername());
 		player2.getGambling().bjTurn = 2;
 		bjTurn = 2;
 	}
@@ -751,7 +751,7 @@ public class GamblingInterface {
 		int hostScore = this.bjScore;
 		int playerScore = player2.getGambling().bjScore;
 
-		System.out.println("Scores are: " + hostScore + " and " + playerScore);
+		//System.out.println("Scores are: " + hostScore + " and " + playerScore);
 
 		if (hostScore > 100 && playerScore <= 100) {
 			player2.forceChat("I won!");
@@ -807,8 +807,8 @@ public class GamblingInterface {
 			result = "One pair!";
 		else
 			result = "No pair";
-		System.out.println("List elements: " + ints);
-		System.out.println("List result(String): " + result);
+		//System.out.println("List elements: " + ints);
+		//System.out.println("List result(String): " + result);
 
 		return result;
 	}
@@ -844,11 +844,11 @@ public class GamblingInterface {
 		Player player2 = World.getPlayers().get(getGambleWith());
 		int result1 = convertPairToInt();
 		int result2 = player2.getGambling().convertPairToInt();
-		System.out.println(player.getUsername() + " result1(int): " + result1);
-		System.out.println(player2.getUsername() + " result2(int): " + result2);
+		//System.out.println(player.getUsername() + " result1(int): " + result1);
+		//System.out.println(player2.getUsername() + " result2(int): " + result2);
 
 		if (result1 == result2) {
-			System.out.println("TIE!");
+			//System.out.println("TIE!");
 			TaskManager.submit(new Task(2) {
 				@Override
 				protected void execute() {
@@ -864,7 +864,7 @@ public class GamblingInterface {
 				protected void execute() {
 					
 					for(GameObject object : plants) {
-						System.out.println("-executed-");
+						//System.out.println("-executed-");
 						CustomObjects.globalObjectRemovalTask(object, 1);
 					}
 					
@@ -877,7 +877,7 @@ public class GamblingInterface {
 				}
 			});
 		} else if (result1 > result2) {
-			System.out.println(player.getUsername() + " wins");
+			//System.out.println(player.getUsername() + " wins");
 			TaskManager.submit(new Task(4) {
 				@Override
 				protected void execute() {
@@ -885,7 +885,7 @@ public class GamblingInterface {
 					giveItems();
 					flowerCount = 0;
 					for(GameObject object : plants) {
-						System.out.println("-executed-");
+						//System.out.println("-executed-");
 						CustomObjects.globalObjectRemovalTask(object, 4);
 					}
 					
@@ -910,14 +910,14 @@ public class GamblingInterface {
 				protected void execute() {
 					player2.forceChat("I win with " + result2 + " pairs!");
 					for(GameObject object : plants) {
-						System.out.println("-executed-");
+						//System.out.println("-executed-");
 						CustomObjects.globalObjectRemovalTask(object, 1);
 					}
 					
 					for(GameObject obj : player2.getGambling().plants) {
 						CustomObjects.globalObjectRemovalTask(obj, 1);
 					}
-					System.out.println(player2.getUsername() + " wins");
+					//System.out.println(player2.getUsername() + " wins");
 					player2.getGambling().giveItems();
 					flowerCount = 0;
 

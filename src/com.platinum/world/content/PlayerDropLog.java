@@ -130,7 +130,7 @@ public class PlayerDropLog {
 	public static void init(Player player) {
 		File f = new File(DIRECTORY + player.getUsername());
 		if (!f.exists()) {
-			System.out.println(DIRECTORY + player.getUsername() + " doesn't exist");
+			//System.out.println(DIRECTORY + player.getUsername() + " doesn't exist");
 			return;
 		}
 		try {
@@ -146,7 +146,7 @@ public class PlayerDropLog {
 				DropLogItem dropLogItem = new DropLogItem(npcName, item, date, time);
 				player.getPlayerDropLog().getDropLog().add(dropLogItem);
 			}
-			System.out.println("Loaded " + player.getPlayerDropLog().getDropLog().size() + " drop log items");
+			//System.out.println("Loaded " + player.getPlayerDropLog().getDropLog().size() + " drop log items");
 			input.close();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();

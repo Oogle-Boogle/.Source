@@ -123,7 +123,7 @@ public class InstanceSystem {
 		try {
 			NPCDrops drops = NPCDrops.forId(npcId);
 			if (drops == null) {
-				System.out.println("Was null");
+				//System.out.println("Was null");
 				return;
 			}
 			for (int i = 0; i < drops.getDropList().length; i++) {
@@ -344,7 +344,7 @@ public class InstanceSystem {
 			}
 			aggroNpcs(player); //Makes all NPC's get pissed off and chase the player.
 		} catch (Exception e) {
-			System.out.println("Caught an exception : " + e.getMessage());
+			//System.out.println("Caught an exception : " + e.getMessage());
 		}
 	}
 
@@ -385,10 +385,10 @@ public class InstanceSystem {
 	/** Properly handles the destruction of the instance. Removes NPCs and deals with the player in the proper manner **/
 	public static void destructInstance(final Player player) {
 		if ((player.getLocation() != Locations.Location.INSTANCE_ARENA) || (!player.getRegionInstance().equals(RegionInstance.RegionInstanceType.INSTANCE_ARENA)) || (player.getRegionInstance().getNpcsList().isEmpty())) {
-		System.out.println("Nothing to do to destruct the instance?");
+		//System.out.println("Nothing to do to destruct the instance?");
 		} else {
 			player.moveTo(GameSettings.DEFAULT_POSITION);
-			System.out.println("Destroying Arena for " + player.getUsername());
+			//System.out.println("Destroying Arena for " + player.getUsername());
 			player.getRegionInstance().getNpcsList().forEach(npc -> npc.removeInstancedNpcs(Locations.Location.INSTANCE_ARENA, player.getPosition().getZ()));
 			player.getRegionInstance().getNpcsList().forEach(npc -> World.deregister(npc));
 			player.getRegionInstance().destruct();

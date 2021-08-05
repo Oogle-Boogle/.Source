@@ -50,7 +50,7 @@ public class NpcBattles {
 	private static void declareWinner() {
 		
 		if(dmgDone1 >= 25000) {
-			System.out.println("Winner: " + player1.getUsername());
+			//System.out.println("Winner: " + player1.getUsername());
 			npc1.setDying(true);
 			World.deregister(npc1);
 			npc2.setDying(true);
@@ -167,7 +167,7 @@ public class NpcBattles {
 		}
 		
 		player1Turn = player1Turn ? false : true;
-		System.out.println("DAMAGE DONE SO FAR for each: " + dmgDone1 + " and " + dmgDone2);
+		//System.out.println("DAMAGE DONE SO FAR for each: " + dmgDone1 + " and " + dmgDone2);
 		player1.forceChat("My total damage done: " + dmgDone1);
 		player2.forceChat("My total damage done: " + dmgDone2);
 		declareWinner();

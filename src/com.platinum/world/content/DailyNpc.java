@@ -79,7 +79,7 @@ public class DailyNpc extends NPC {
 		DailyNpcLocation location = Misc.randomElement(LOCATIONS);
 		DailyNpc instance = new DailyNpc(location.copy());
 
-		// System.out.println(instance.getPosition());
+		// //System.out.println(instance.getPosition());
 
 		World.register(instance);
 		setCurrent(instance);

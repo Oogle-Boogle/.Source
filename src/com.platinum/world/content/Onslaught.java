@@ -86,7 +86,7 @@ public class Onslaught extends NPC {
 		OnslaughtLocation location = Misc.randomElement(LOCATIONS);
 		Onslaught instance = new Onslaught(location.copy());
 
-		// System.out.println(instance.getPosition());
+		// //System.out.println(instance.getPosition());
 
 		World.register(instance);
 		setCurrent(instance);

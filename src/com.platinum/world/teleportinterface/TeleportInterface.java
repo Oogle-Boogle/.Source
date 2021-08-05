@@ -470,7 +470,7 @@ public class TeleportInterface {
 		}
 		if (currentTab == 0) {
 			if (index >= 0 && index < Bosses.values().length) {
-				System.out.println("Handled boss data [As index was 0]");
+				//System.out.println("Handled boss data [As index was 0]");
 				Bosses bossData = Bosses.values()[index];
 				currentClickIndex = index;
 				sendBossData(player, bossData);
@@ -479,7 +479,7 @@ public class TeleportInterface {
 		}
 		if (currentTab == 1) {
 			if (index >= 0 && index < Monsters.values().length) {
-				System.out.println("Handled monster data [As index was 1]");
+				//System.out.println("Handled monster data [As index was 1]");
 				Monsters monsterData = Monsters.values()[index];
 				currentClickIndex = index;
 				sendMonsterData(player, monsterData);
@@ -488,7 +488,7 @@ public class TeleportInterface {
 		}
 		if (currentTab == 2) {
 			if (index >= 0 && index < Wilderness.values().length) {
-				System.out.println("Handled monster data [As index was 1]");
+				//System.out.println("Handled monster data [As index was 1]");
 				Wilderness wildyData = Wilderness.values()[index];
 				currentClickIndex = index;
 				sendWildyData(player, wildyData);
@@ -497,7 +497,7 @@ public class TeleportInterface {
 		}
 		if (currentTab == 3) {
 			if (index >= 0 && index < Zones.values().length) {
-				System.out.println("Handled monster data [As index was 1]");
+				//System.out.println("Handled monster data [As index was 1]");
 				Zones ZonesData = Zones.values()[index];
 				currentClickIndex = index;
 				sendZonesData(player, ZonesData);
@@ -506,7 +506,7 @@ public class TeleportInterface {
 		}
 		if (currentTab == 4) {
 			if (index >= 0 && index < Minigames.values().length) {
-				System.out.println("Handled monster data [As index was 1]");
+				//System.out.println("Handled monster data [As index was 1]");
 				Minigames minigamesData = Minigames.values()[index];
 				currentClickIndex = index;
 				sendMinigameData(player, minigamesData);
@@ -515,7 +515,7 @@ public class TeleportInterface {
 		}
 		if (currentTab == 5) {
 			if (index >= 0 && index < Cities.values().length) {
-				System.out.println("Handled monster data [As index was 1]");
+				//System.out.println("Handled monster data [As index was 1]");
 				Cities cityData = Cities.values()[index];
 				currentClickIndex = index;
 				sendCityData(player, cityData);
@@ -644,7 +644,7 @@ public class TeleportInterface {
 		try {
 			NPCDrops drops = NPCDrops.forId(npcId);
 			if(drops == null) {
-				System.out.println("Was null");
+				//System.out.println("Was null");
 				return;
 			}
 			for (int i = 0; i < drops.getDropList().length; i++) {

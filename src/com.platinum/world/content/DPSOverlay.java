@@ -35,7 +35,7 @@ public class DPSOverlay {
 	}
 	
 	public long getDPS() {
-		//System.out.println("Damage done: " + damageDone + " | Timer: " + timer.elapsed() + " | DPS: " + (1000 * damageDone / timer.elapsed()));
+		////System.out.println("Damage done: " + damageDone + " | Timer: " + timer.elapsed() + " | DPS: " + (1000 * damageDone / timer.elapsed()));
 		return 1000 * damageDone / timer.elapsed(); // brb sec
 	}
 

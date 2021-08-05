@@ -209,10 +209,10 @@ public class StartScreen {
             //DialogueManager.start(player, 81);
             //return true;
         }
-        System.out.println("ID: " + buttonId);
+        //System.out.println("ID: " + buttonId);
 
         for (GameModes mode : GameModes.values()) {
-            System.out.println(mode.checkClick + " | " + mode.textClick + " | " + buttonId);
+            //System.out.println(mode.checkClick + " | " + mode.textClick + " | " + buttonId);
             if (mode.checkClick == buttonId || mode.textClick == buttonId) {
                 selectMode(player, mode);
                 return true;
@@ -224,7 +224,7 @@ public class StartScreen {
 
     public static void handleConfirm(Player player) {
 
-        System.out.println("Game mode: " + player.selectedGameMode);
+        //System.out.println("Game mode: " + player.selectedGameMode);
 
         if (player.selectedGameMode == GameModes.IRONMAN) {
             GameMode.set(player, GameMode.IRONMAN, false);

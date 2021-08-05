@@ -84,7 +84,7 @@ public class TheSeph extends NPC {
 		TheSephLocation location = Misc.randomElement(LOCATIONS);
 		TheSeph instance = new TheSeph(location.copy());
 
-		// System.out.println(instance.getPosition());
+		// //System.out.println(instance.getPosition());
 
 		World.register(instance);
 		setCurrent(instance);

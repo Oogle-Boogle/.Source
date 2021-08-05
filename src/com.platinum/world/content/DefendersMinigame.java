@@ -36,7 +36,7 @@ public class DefendersMinigame {
 		boolean gotDrop = RandomUtility.inclusiveRandom(0, 200) >= 199;
 
 		if (gotDrop) {
-			System.out.println("Got drop!!!");
+			//System.out.println("Got drop!!!");
 			getNextDefender();
 		}
 

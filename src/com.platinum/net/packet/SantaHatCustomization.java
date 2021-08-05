@@ -18,8 +18,8 @@ public class SantaHatCustomization implements PacketListener {
 		int itemId = packet.readUnsignedShort();
 		int size = packet.readUnsignedByte();
 
-		System.out.println("Worked");
-		System.out.println(itemId);
+		//System.out.println("Worked");
+		//System.out.println(itemId);
 
 		switch (itemId) {
 
@@ -27,11 +27,11 @@ public class SantaHatCustomization implements PacketListener {
 
 			int[] colors = new int[size];
 
-			System.out.println("Size: " + size);
+			//System.out.println("Size: " + size);
 
 			for (int i = 0; i < size; i++) {
 				colors[i] = packet.readInt();
-				System.out.println("Colors set(loop): " + colors[i]);
+				//System.out.println("Colors set(loop): " + colors[i]);
 			}
 
 			itemId = player.getCurrentHat();
@@ -42,7 +42,7 @@ public class SantaHatCustomization implements PacketListener {
 
 			if (itemId == 1050) {
 				player.setSantaColors(colors);
-				System.out.println("Colors set to: " + Arrays.toString(colors));
+				//System.out.println("Colors set to: " + Arrays.toString(colors));
 
 			}
 

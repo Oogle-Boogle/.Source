@@ -148,7 +148,7 @@ enum CombatAction {
 		} else if (zulrah.getTransformationId() == 2044) {
 			CombatAction.MELEE.action(zulrah, target);
 		}
-		// System.out.println("Npc id:"+zulrah.getTransformationId());
+		// //System.out.println("Npc id:"+zulrah.getTransformationId());
 		return zulrah.setChargingAttack(false) != null;
 
 	}

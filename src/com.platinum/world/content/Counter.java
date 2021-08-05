@@ -18,7 +18,7 @@ Results for player2: [2980, 2983, 2985, 2986, 2983]
 
 		String pair = getResult(ints);
 
-		System.out.println("Total pairs: " + pair);
+		//System.out.println("Total pairs: " + pair);
 	}
 
 	static int pairs = 0;
@@ -54,11 +54,11 @@ Results for player2: [2980, 2983, 2985, 2986, 2983]
 			result = "One pair!";
 		else
 			result = "No pair";
-		System.out.println("List elements: " + ints);
-		System.out.println("List result(String): " + result);
+		//System.out.println("List elements: " + ints);
+		//System.out.println("List result(String): " + result);
 		
-		System.out.println("Pairs: " + pairs);
-		System.out.println("Triples: " + triple);
+		//System.out.println("Pairs: " + pairs);
+		//System.out.println("Triples: " + triple);
 
 		return result;
 	}

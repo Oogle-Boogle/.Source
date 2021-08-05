@@ -113,7 +113,7 @@ public class WarriorsGuild {
 		} else if(npc.getId() == 4291 && player.getPosition().getZ() == 2) {
 			if(Misc.getRandom(13) == 4 || player.getRights().isStaff()) {
 				GroundItemManager.spawnGroundItem(player, new GroundItem(new Item(getDefender(player)), npc.getPosition().copy(), player.getUsername(), false, 100, false, -1));
-				//System.out.println("Defender Drop Called");
+				////System.out.println("Defender Drop Called");
 			}
 		}
 	}

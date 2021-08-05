@@ -43,10 +43,10 @@ public class TenKMassacre {
     public static int REQUIRED_SERVER_KILLS = 10000; //How many kills are required to start prize draw?
 
     public static void incrementServerKills(Player possibleWinner, int numberOfKills) {
-        System.out.println("Player "+possibleWinner.getUsername() + " Added to 10kMassacre list after "+numberOfKills+" kills");
+        //System.out.println("Player "+possibleWinner.getUsername() + " Added to 10kMassacre list after "+numberOfKills+" kills");
         if (CURRENT_SERVER_KILLS <= REQUIRED_SERVER_KILLS) {
             CURRENT_SERVER_KILLS += numberOfKills;
-            System.out.println("CURRENT SERVER KILLS = "+CURRENT_SERVER_KILLS);
+            //System.out.println("CURRENT SERVER KILLS = "+CURRENT_SERVER_KILLS);
             POSSIBLE_WINNERS.add(possibleWinner.getUsername());
             updateQuestTab();
         } else {
@@ -65,10 +65,10 @@ public class TenKMassacre {
             Player winningPlayer = World.getPlayerByName(winner);//Set the
             rewardPlayer(winningPlayer);//Starts Reward Process below
         } catch (Exception e) {
-            System.out.println("Picking winner - player offline");
+            //System.out.println("Picking winner - player offline");
         }
         lastWinnerName = winner;//Saving last players username
-        System.out.println(lastWinnerName+"won but was offline");
+        //System.out.println(lastWinnerName+"won but was offline");
     }
 
     public static void rewardPlayer(Player winningPlayer) {
@@ -77,10 +77,10 @@ public class TenKMassacre {
         try {
             if (winningPlayer == null) {// If Player is offline
                 winnerReceivedReward = false;
-                System.out.println("User "+lastWinnerName+" is Offline");
+                //System.out.println("User "+lastWinnerName+" is Offline");
             }
             if (winningPlayer != null && !winnerReceivedReward) { //If player is online and winner hasn't been rewarded yet
-                System.out.println("Reward player reached part 2");
+                //System.out.println("Reward player reached part 2");
                 //TODO CHANGE THE GLOBAL MESSAGE BELOW TO SOMETHING YOU LIKE
                 String rewardMessage = (winningPlayer.getUsername() + " has won " + reward.getAmount() + " x " + reward.getDefinition().getName());
                 int freeInvSlots = winningPlayer.getInventory().getFreeSlots();
@@ -101,7 +101,7 @@ public class TenKMassacre {
                 }
             }
         } catch (Exception e) {
-            System.out.println("Winner of 10k Massacre was offline.");
+            //System.out.println("Winner of 10k Massacre was offline.");
         }
     }
 

@@ -15,27 +15,27 @@ public class RandomNPCData { //CHANGE NPC'S IN HERE.. THESE ARE NPC ID'S
     public static final int[] fifthWaveIDs = {176}; //boss tier
 
     public static int randomFirstWaveID() {
-        System.out.println("RANDOM NPC 1 SELECTED");
+        //System.out.println("RANDOM NPC 1 SELECTED");
         return (firstWaveIDs[Misc.getRandom(firstWaveIDs.length - 1)]);
     }
 
     public static int randomSecondWaveID() {
-        System.out.println("RANDOM NPC 2 SELECTED");
+        //System.out.println("RANDOM NPC 2 SELECTED");
         return (secondWaveIDs[Misc.getRandom(secondWaveIDs.length - 1)]);
     }
 
     public static int randomThirdWaveID() {
-        System.out.println("RANDOM NPC 3 SELECTED");
+        //System.out.println("RANDOM NPC 3 SELECTED");
         return (thirdWaveIDs[Misc.getRandom(thirdWaveIDs.length - 1)]);
     }
 
     public static int randomFourthWaveID() {
-        System.out.println("RANDOM NPC 4 SELECTED");
+        //System.out.println("RANDOM NPC 4 SELECTED");
         return (fourthWaveIDs[Misc.getRandom(fourthWaveIDs.length - 1)]);
     }
 
     public static int randomFifthWaveID() {
-        System.out.println("RANDOM NPC 5 SELECTED");
+        //System.out.println("RANDOM NPC 5 SELECTED");
         return (fifthWaveIDs[Misc.getRandom(fifthWaveIDs.length - 1)]);
     }
 

@@ -52,14 +52,14 @@ public class NPC extends Character {
 		this.defaultPosition = position;
 		this.id = id;
 		this.definition = definition;
-		//System.out.println("Definition id: " + definition.getId());
+		////System.out.println("Definition id: " + definition.getId());
 		if(definition == null) {
-			System.out.println("Was null for definition: " + id);
+			////System.out.println("Was null for definition: " + id);
 			return;
 		}
 		this.defaultConstitution = definition.getHitpoints() < 100 ? 100 : definition.getHitpoints();
 		this.setAttackbonus(definition.getAttackBonus());
-		//System.out.println("Null for id: " + id);
+		////System.out.println("Null for id: " + id);
 		this.constitution = defaultConstitution;
 		setLocation(Location.getLocation(this));
 	}
@@ -202,7 +202,7 @@ public class NPC extends Character {
 				npc.movementCoordinator.setCoordinator(coordinator);
 				npc.setDirection(direction);
 				World.register(npc);
-				// System.out.println("Added npc: " + npc.getDefinition().getName());
+				// //System.out.println("Added npc: " + npc.getDefinition().getName());
 				if (id > 5070 && id < 5081) {
 					Hunter.HUNTER_NPC_LIST.add(npc);
 				}
@@ -253,7 +253,7 @@ public class NPC extends Character {
 			if (add) {
 				World.register(npc);
 			}
-			System.out.println("Added npc this one here: " + npc.hashCode());
+			//System.out.println("Added npc this one here: " + npc.hashCode());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -316,7 +316,7 @@ public class NPC extends Character {
 		TaskManager.submit(new Task(cycles) {
 			@Override
 			public void execute() {
-				// System.out.println("REMOVED");
+				// //System.out.println("REMOVED");
 				World.deregister(npc);
 				this.stop();
 			}
@@ -460,7 +460,7 @@ public class NPC extends Character {
 					if (getPosition().getZ() == height) {
 						if (getId() == npcId) {
 							ii++;
-							System.out.println(ii);
+							//System.out.println(ii);
 						}
 					}
 				}

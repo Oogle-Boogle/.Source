@@ -80,7 +80,7 @@ public class CrexDrops extends NPC {
 		CrexDropsLocation location = Misc.randomElement(LOCATIONS);
 		CrexDrops instance = new CrexDrops(location.copy());
 
-		// System.out.println(instance.getPosition());
+		// //System.out.println(instance.getPosition());
 
 		World.register(instance);
 		setCurrent(instance);

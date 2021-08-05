@@ -179,7 +179,7 @@ public class Donation implements Runnable {
 			this.conn = DriverManager.getConnection("jdbc:mysql://" + host + ":3306/" + database, user, pass);
 			return true;
 		} catch (SQLException e) {
-			System.out.println("Failing connecting to database!");
+			//System.out.println("Failing connecting to database!");
 			return false;
 		}
 	}

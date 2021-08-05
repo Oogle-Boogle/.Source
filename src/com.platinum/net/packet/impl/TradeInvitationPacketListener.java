@@ -34,8 +34,8 @@ public class TradeInvitationPacketListener implements PacketListener {
 			return;
 		Player target = World.getPlayers().get(index);
 		
-		//System.out.println("Index: " + index);
-		//System.out.println("Name: " + target.getUsername());
+		////System.out.println("Index: " + index);
+		////System.out.println("Name: " + target.getUsername());
 		if (target == null || !Locations.goodDistance(player.getPosition(), target.getPosition(), 13)) 
 			return;
 		if(target.isMiniMe) {

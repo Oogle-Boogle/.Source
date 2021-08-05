@@ -190,7 +190,7 @@ public class CrashGame {
 	}
 
 	public static void run() {
-		System.out.println("Starting Crash Game...");
+		//System.out.println("Starting Crash Game...");
 		startTimer();
 	}
 
@@ -198,7 +198,7 @@ public class CrashGame {
 		
 		int c = RandomUtility.random(10000);
 		
-		//System.out.println("Was called c: " + c);
+		////System.out.println("Was called c: " + c);
 
 		return c >= 9999;
 		

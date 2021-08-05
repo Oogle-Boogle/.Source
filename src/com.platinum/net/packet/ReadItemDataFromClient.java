@@ -26,7 +26,7 @@ public class ReadItemDataFromClient implements PacketListener {
 		
 		if(def.isWeapon() || def.getEquipmentSlot() == Equipment.WEAPON_SLOT || def.isTwoHanded()) {
 			WeaponAnimations.assign(player, item);
-			System.out.println("Assigned this");
+			//System.out.println("Assigned this");
 		}
 		
 		player.getUpdateFlag().flag(Flag.APPEARANCE);

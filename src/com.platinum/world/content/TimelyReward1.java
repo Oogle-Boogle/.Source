@@ -15,15 +15,15 @@ public class TimelyReward1 extends Task {
 	@Override
 	protected void execute() {
 		
-		System.out.println("executed it here");
+		//System.out.println("executed it here");
 		if(!player.hasRewardTimerActive1()) {
-			System.out.println("Wasn't active");
+			//System.out.println("Wasn't active");
 			player.getPacketSender().sendString(57202, "Claim via ::claimreward1");
 			return;
 		}
 		
 		if(player == null) {
-			System.out.println("Was null");
+			//System.out.println("Was null");
 			return;
 		}
 		

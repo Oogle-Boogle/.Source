@@ -23,12 +23,12 @@ public class ShiftBankListener implements PacketListener {
 			return;
 		}
 
-		System.out.println("clicked_item= " + clicked_item.getDefinition().getName() + " amount= " + amount);
+		//System.out.println("clicked_item= " + clicked_item.getDefinition().getName() + " amount= " + amount);
 		
 		ItemContainer container = player.getBank(player.getCurrentBankTab()).add(clicked_item);
 		
 		if (container != null) {
-			System.out.println("clicked item amount: " + clicked_item.getAmount());
+			//System.out.println("clicked item amount: " + clicked_item.getAmount());
 			player.getInventory().delete(clicked_item);
 		}
 

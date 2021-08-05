@@ -64,7 +64,7 @@ public class EcoReset {
 			 * Save File
 			 */
 			PlayerSaving.save(player);
-			System.out.println("Account Reset Successfully");
+			//System.out.println("Account Reset Successfully");
 		}
 	}
 }

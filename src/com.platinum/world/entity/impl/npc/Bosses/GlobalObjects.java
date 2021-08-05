@@ -208,7 +208,7 @@ public class GlobalObjects {
 					face = Integer.parseInt(data[4]);
 					type = Integer.parseInt(data[5]);
 				} catch (NumberFormatException nfe) {
-					System.out.println("WARNING: Unable to load object from file.");
+					//System.out.println("WARNING: Unable to load object from file.");
 					continue;
 				} catch (NullPointerException ne) {
 					continue;

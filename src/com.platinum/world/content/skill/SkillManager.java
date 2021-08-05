@@ -121,7 +121,7 @@ public class SkillManager {
 		if (pet != null) {
 			if (PetPerkData.hasPerks(pet.getSummonNpc().getId())) {
 				experience *= PetPerkData.getXpBonus(pet.getSummonNpc().getId());
-				System.out.println("Multiplying experience by: " + PetPerkData.getXpBonus(pet.getSummonNpc().getId()));
+				//System.out.println("Multiplying experience by: " + PetPerkData.getXpBonus(pet.getSummonNpc().getId()));
 			}
 		}
 

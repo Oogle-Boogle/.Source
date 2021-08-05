@@ -71,7 +71,7 @@ public class InstanceInterfaceManager {
 		try {
 			NPCDrops drops = NPCDrops.forId(npcId);
 			if (drops == null) {
-				System.out.println("Was null");
+				//System.out.println("Was null");
 				return;
 			}
 			for (int i = 0; i < drops.getDropList().length; i++) {
@@ -109,7 +109,7 @@ public class InstanceInterfaceManager {
 	public void startInstance() {
 
 		if (spawnAmount < 1) {
-			System.out.println("Was: " + spawnAmount);
+			//System.out.println("Was: " + spawnAmount);
 			return;
 		}
 

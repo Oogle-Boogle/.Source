@@ -79,7 +79,7 @@ public class CustomVoragoMultiDrop extends NPC {
 		CustomVoragoMultiDropLocation location = Misc.randomElement(LOCATIONS);
 		CustomVoragoMultiDrop instance = new CustomVoragoMultiDrop(location.copy());
 
-		// System.out.println(instance.getPosition());
+		// //System.out.println(instance.getPosition());
 
 		World.register(instance);
 		setCurrent(instance);

@@ -79,7 +79,7 @@ public class DragonMultiDrop extends NPC {
 		DragonMultiDropLocation location = Misc.randomElement(LOCATIONS);
 		DragonMultiDrop instance = new DragonMultiDrop(location.copy());
 
-		// System.out.println(instance.getPosition());
+		// //System.out.println(instance.getPosition());
 
 		World.register(instance);
 		setCurrent(instance);

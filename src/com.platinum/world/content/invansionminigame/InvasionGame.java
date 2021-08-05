@@ -72,7 +72,7 @@ public class InvasionGame {
 
 		chooseCity();
 
-		System.out.println("Chosen: " + cityIndex);
+		//System.out.println("Chosen: " + cityIndex);
 
 		switch (cityIndex) {
 

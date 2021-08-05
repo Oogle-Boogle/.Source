@@ -664,7 +664,7 @@ public class NPCOptionPacketListener implements PacketListener {
 		}
 
 		if (npc.getConstitution() <= 0) {
-			System.out.println("npc health is 0");
+			//System.out.println("npc health is 0");
 			player.getMovementQueue().reset();
 			return;
 		}
@@ -677,11 +677,11 @@ public class NPCOptionPacketListener implements PacketListener {
 		}
 
 		if (player.getCombatBuilder().getStrategy() == null) {
-			System.out.println("player strategy is null");
+			//System.out.println("player strategy is null");
 			player.getCombatBuilder().determineStrategy();
 		}
 		if (CombatFactory.checkAttackDistance(player, npc)) {
-			System.out.println("check attack distance failed");
+			//System.out.println("check attack distance failed");
 			player.getMovementQueue().reset();
 		}
 
@@ -735,7 +735,7 @@ public class NPCOptionPacketListener implements PacketListener {
 		if (npcConfigEditing) {
 			NPC.writeNpcData(npcId, npc.getDirection(), npc.getDefaultPosition(),
 					npc.getMovementCoordinator().getCoordinator(), false);
-			System.out.println("Added npc: " + npc.hashCode());
+			//System.out.println("Added npc: " + npc.hashCode());
 			World.deregister(npc);
 			player.getMovementQueue().reset();
 			return;

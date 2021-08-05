@@ -43,7 +43,7 @@ public class Warmonger implements CombatStrategy {
 		if (war.isChargingAttack()) {
 			return true;
 		}
-		System.out.println("hp : " + war.getConstitution());
+		//System.out.println("hp : " + war.getConstitution());
 		Player target = (Player) victim;
 
 		if (war.getConstitution() <= 15000 && !target.getWarmonger()) {

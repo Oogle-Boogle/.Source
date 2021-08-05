@@ -79,8 +79,8 @@ public class PlayerHandler {
 	}
 
 	public static void handleLogin(Player player) {
-		System.out.println("[World] Registering player - [username, host] : [" + player.getUsername() + ", "
-				+ player.getHostAddress() + "]");
+		//System.out.println("[World] Registering player - [username, host] : [" + player.getUsername() + ", "
+				//+ player.getHostAddress() + "]");
 		player.setPlaceholders(false);
 		player.getPacketSender().sendConfig(111, player.isPlaceholders() ? 1 : 0);
 		if (player.getHasPin() == true && !player.getSavedIp().equalsIgnoreCase(player.getHostAddress())) {
@@ -107,9 +107,9 @@ public class PlayerHandler {
             GroupIronmanGroup gim = GroupIronmanGroup.getGroups().get(player.getUsername());
             gim.setOwner(player);
             player.setGroupIronmanGroup(GroupIronmanGroup.getGroups().get(player.getUsername()));
-            //System.out.println("Group set ->");
+            ////System.out.println("Group set ->");
         } else {
-            //System.out.println("No cuz -> " + GroupIronmanGroup.getGroups());
+            ////System.out.println("No cuz -> " + GroupIronmanGroup.getGroups());
         }
 
         if (GroupIronmanGroup.getGroups().containsKey(player.getGroupOwnerName())) {
@@ -158,9 +158,9 @@ public class PlayerHandler {
 		Barrows.updateInterface(player);
 
 		if (player.getDonationDeals().shouldReset()) {
-			System.out.println("Resetting");
+			//System.out.println("Resetting");
 		} else {
-			System.out.println("Not resetting");
+			//System.out.println("Not resetting");
 		}
 
 		TaskManager.submit(new PlayerSkillsTask(player));
@@ -229,12 +229,12 @@ public class PlayerHandler {
 		}
 
 		if (player.getHasPin() == true && !player.getSavedIp().equalsIgnoreCase(player.getHostAddress())) {
-			System.out.println("Current ip: " + player.getHostAddress());
-			System.out.println("Saved ip: " + player.getSavedIp());
+			//System.out.println("Current ip: " + player.getHostAddress());
+			//System.out.println("Saved ip: " + player.getSavedIp());
 			player.setInputHandling(new EnterPinPacketListener());
 			player.getPacketSender().sendEnterInputPrompt("Enter your pin to play#confirmstatus");
 		} else {
-			System.out.println("Player: " + player.getUsername() + " Didn't have pin set");
+			//System.out.println("Player: " + player.getUsername() + " Didn't have pin set");
 		}
 
 		player.getUpdateFlag().flag(Flag.APPEARANCE);
@@ -336,8 +336,8 @@ public class PlayerHandler {
 			boolean exception = GameServer.isUpdating()
 					|| World.getLogoutQueue().contains(player) && player.getLogoutTimer().elapsed(600000);
 			if (player.logout() || exception) {
-				System.out.println("[World] Deregistering player - [username, host] : [" + player.getUsername() + ", "
-						+ player.getHostAddress() + "]");
+				//System.out.println("[World] Deregistering player - [username, host] : [" + player.getUsername() + ", "
+						//+ player.getHostAddress() + "]");
 				player.getSession().setState(SessionState.LOGGING_OUT);
 				ConnectionHandler.remove(player.getHostAddress());
 				player.setTotalPlayTime(player.getTotalPlayTime() + player.getRecordedLogin().elapsed());
@@ -408,30 +408,30 @@ public class PlayerHandler {
 	public static boolean handleLogout(Player player) {
 		try {
 			if (player.isMiniMe) {
-				System.out.println("Trying to get rid of bot: " + player.getUsername());
+				//System.out.println("Trying to get rid of bot: " + player.getUsername());
 				return true;
 			}
 			PlayerSession session = player.getSession();
 
 			if (session != null) {
 				if (session.getChannel().isOpen()) {
-					System.out.println(player.getUsername() + " closed channel 1");
+					//System.out.println(player.getUsername() + " closed channel 1");
 					session.getChannel().close();
 				}
 			}
 
 			if (!player.isRegistered()) {
-				System.out.println(player.getUsername() + " returned true 1");
+				//System.out.println(player.getUsername() + " returned true 1");
 				return true;
 			}
 
 			boolean exception = GameServer.isUpdating()
 					|| World.getLogoutQueue().contains(player) && player.getLogoutTimer().elapsed(600000);
-			System.out.println(player.getUsername() + " exception: " + exception);
+			//System.out.println(player.getUsername() + " exception: " + exception);
 			if (player.logout() || exception) {
 				// new Thread(new HighscoresHandler(player)).start();
-				System.out.println("[World] Deregistering player - [username, host] : [" + player.getUsername() + ", "
-						+ player.getHostAddress() + "]");
+				//System.out.println("[World] Deregistering player - [username, host] : [" + player.getUsername() + ", "
+						//+ player.getHostAddress() + "]");
 				player.getSession().setState(SessionState.LOGGING_OUT);
 				ConnectionHandler.remove(player.getHostAddress());
 				player.setTotalPlayTime(player.getTotalPlayTime() + player.getRecordedLogin().elapsed());
@@ -473,7 +473,7 @@ public class PlayerHandler {
 				if (player.getGodPotionStatus()) {
 					player.setGodPotionStatus(false);
 					player.setGodPotionStatus(0);
-					System.out.println("Ended god potion for " + player.getUsername());
+					//System.out.println("Ended god potion for " + player.getUsername());
 				}
 				Hunter.handleLogout(player);
 				Locations.logout(player);
@@ -505,16 +505,16 @@ public class PlayerHandler {
 				World.getPlayers().remove(player);
 				session.setState(SessionState.LOGGED_OUT);
 				World.updatePlayersOnline();
-				System.out.println(player.getUsername() + " returned true 2");
+				//System.out.println(player.getUsername() + " returned true 2");
 				return true;
 			}
-			System.out.println(player.getUsername() + " returned false 1");
+			//System.out.println(player.getUsername() + " returned false 1");
 			return false;
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		System.out.println(player.getUsername() + " returned true 3");
+		//System.out.println(player.getUsername() + " returned true 3");
 		return true;
 	}
 }

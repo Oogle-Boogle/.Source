@@ -23,7 +23,7 @@ public class PlayerOptionPacketListener implements PacketListener {
 			return;
 		if(player.isTeleporting())
 			return;
-		System.out.println("Op code from client: " + packet.getOpcode());
+		//System.out.println("Op code from client: " + packet.getOpcode());
 		switch(packet.getOpcode()) {
 		
 		case 153:

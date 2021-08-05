@@ -105,10 +105,10 @@ public class GroundItemManager {
 			}
 		} else {
 			Player person = World.getPlayerByName(groundItem.getOwner());
-			System.out.println("Person != null: " + person != null);
-			System.out.println("G item pos is null: " + groundItem.getPosition());
-			System.out.println("Person get pos is null: " + groundItem.getPosition());
-			System.out.println("Ground item z == person z: " + (groundItem.getPosition().getZ() == person.getPosition().getZ()));
+			//System.out.println("Person != null: " + person != null);
+			//System.out.println("G item pos is null: " + groundItem.getPosition());
+			//System.out.println("Person get pos is null: " + groundItem.getPosition());
+			//System.out.println("Ground item z == person z: " + (groundItem.getPosition().getZ() == person.getPosition().getZ()));
 			if(person != null && groundItem.getPosition().getZ() == person.getPosition().getZ() && person.getPosition().distanceToPoint(groundItem.getPosition().getX(), groundItem.getPosition().getY()) <= 120)
 				person.getPacketSender().createGroundItem(groundItem.getItem().getId(), groundItem.getPosition().getX(), groundItem.getPosition().getY(), groundItem.getItem().getAmount());
 		}

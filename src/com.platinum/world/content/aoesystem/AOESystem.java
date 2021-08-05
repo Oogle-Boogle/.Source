@@ -25,7 +25,7 @@ public class AOESystem {
 		try (Stream<String> lines = Files.lines(filePath)) {
 			lines.forEach(line -> {
 				String[] wepData = line.split(" ");
-				System.out.println(Arrays.toString(wepData));
+				////System.out.println(Arrays.toString(wepData));
 				weaponData.add(new AOEWeaponData(parseInt(wepData[0]), parseInt(wepData[1]), parseInt(wepData[2]),
 						parseInt(wepData[3]), getIcon(wepData[4])));
 			});

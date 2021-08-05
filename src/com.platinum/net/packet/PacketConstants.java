@@ -138,7 +138,7 @@ public class PacketConstants {
 			}
 			
 		};
-		System.out.println("Read packet");
+		//System.out.println("Read packet");
 		PACKETS[141] = new PacketListener() {
 
 			@Override

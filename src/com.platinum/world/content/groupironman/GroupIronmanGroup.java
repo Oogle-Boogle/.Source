@@ -140,7 +140,7 @@ public class GroupIronmanGroup {
         player.getInventory().delete(id, amount);
         if (bank.containsKey(id)) {
             long newAmount = (long) bank.get(id) + (long) amount;
-            System.out.println("New amount = " + newAmount);
+            //System.out.println("New amount = " + newAmount);
             if(newAmount > Integer.MAX_VALUE) {
                 return;
             }
@@ -163,7 +163,7 @@ public class GroupIronmanGroup {
             }
             if (bank.get(id) >= amountInBank) {
                 int remainder = amountInBank - amount;
-                //    System.out.println("remainder = " + remainder);
+                //    //System.out.println("remainder = " + remainder);
                 if (remainder == 0) {
                     bank.remove(id);
                 } else {
@@ -209,7 +209,7 @@ public class GroupIronmanGroup {
 
             int index = 0;
             Item[] items = new Item[bank.size()];
-            System.out.println(bank.entrySet());
+            //System.out.println(bank.entrySet());
             for (Map.Entry<Integer, Integer> item : bank.entrySet()) {
                 items[index++] = new Item(item.getKey(), item.getValue());
             }
@@ -231,7 +231,7 @@ public class GroupIronmanGroup {
             Files.walk(path).filter(Files::isRegularFile).forEach(file -> {
                 try {
 
-                    System.out.println(path.toAbsolutePath() + " | " + file.toAbsolutePath());
+                    //System.out.println(path.toAbsolutePath() + " | " + file.toAbsolutePath());
                     List<String> lines = Files.readAllLines(file);
                     List<String> members = new ArrayList<>();
                     Map<Integer, Integer> bank = new LinkedHashMap<>();
@@ -258,15 +258,15 @@ public class GroupIronmanGroup {
                         }
 
                         if (line.startsWith("MEMBERS {")) {
-                            System.out.println("state = 1");
+                            ////System.out.println("state = 1");
                             state = 1;
                             continue;
                         } else if (line.startsWith("BANK {")) {
                             state = 2;
-                            System.out.println("State = 2");
+                            ////System.out.println("State = 2");
                             continue;
                         } else if (line.startsWith("LOGS {")) {
-                            System.out.println("State = 3");
+                            ////System.out.println("State = 3");
                             state = 3;
                             continue;
                         }

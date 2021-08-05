@@ -111,8 +111,8 @@ public class PlayerPanel {
 		};
 		for (int i = 0; i < Messages.length; i++) {
 			if (i + FIRST_STRING > LAST_STRING) {
-				System.out.println("PlayerPanel(" + player.getUsername() + "): " + i + " is larger than max string: "
-						+ LAST_STRING + ". Breaking.");
+				/*System.out.println("PlayerPanel(" + player.getUsername() + "): " + i + " is larger than max string: "
+						+ LAST_STRING + ". Breaking.");*/
 				break;
 			}
 
@@ -150,8 +150,8 @@ public class PlayerPanel {
 
 		for (int i = 0; i < Messages.length; i++) {
 			if (i + FIRST_STRING > LAST_STRING) {
-				System.out.println("PlayerPanel(" + player.getUsername() + "): " + i + " is larger than max string: "
-						+ LAST_STRING + ". Breaking.");
+				//System.out.println("PlayerPanel(" + player.getUsername() + "): " + i + " is larger than max string: "
+						//+ LAST_STRING + ". Breaking.");
 				break;
 			}
 
@@ -223,8 +223,8 @@ public class PlayerPanel {
 
 		for (int i = 0; i < Messages.length; i++) {
 			if (i + FIRST_STRING > LAST_STRING) {
-				System.out.println("PlayerPanel(" + player.getUsername() + "): " + i + " is larger than max string: "
-						+ LAST_STRING + ". Breaking.");
+				//System.out.println("PlayerPanel(" + player.getUsername() + "): " + i + " is larger than max string: "
+						//+ LAST_STRING + ". Breaking.");
 				break;
 			}
 
@@ -258,8 +258,8 @@ public class PlayerPanel {
 
 		for (int i = 0; i < Messages.length; i++) {
 			if (i + FIRST_STRING > LAST_STRING) {
-				System.out.println("PlayerPanel(" + player.getUsername() + "): " + i + " is larger than max string: "
-						+ LAST_STRING + ". Breaking.");
+				//System.out.println("PlayerPanel(" + player.getUsername() + "): " + i + " is larger than max string: "
+						//+ LAST_STRING + ". Breaking.");
 				break;
 			}
 
@@ -274,89 +274,5 @@ public class PlayerPanel {
 			player.getPacketSender().sendString(i, "");
 		}
 	}
-	/***
-	 * 
-	 * 
-	 * 
-	 * if(player.currentPlayerPanelIndex != 1) { // now it would update the other
-	 * tab, if this is not the current tab refreshCurrentTab(player); return; }
-	 * 
-	 * String[] Messages = new String[] { "@red@ - @whi@ World Overview",
-	 * "@or2@Players Online: @or2@[ @yel@" + (int) (World.getPlayers().size()) +
-	 * "@or2@ ]", (ShootingStar.CRASHED_STAR == null ? "@or2@Crashed
-	 * Star: @red@Cleared" : "@or2@Crashed Star: @gre@" +
-	 * ShootingStar.CRASHED_STAR.getStarLocation().playerPanelFrame),
-	 * (EvilTree.SPAWNED_TREE == null ? "@or2@Evil Tree: @red@Cleared" : "@or2@Evil
-	 * Tree: @gre@" + EvilTree.SPAWNED_TREE.getTreeLocation().playerPanelFrame),
-	 * (Wildywyrm.wyrmAlive ? "@or2@WildyWyrm: @gre@" +
-	 * Wildywyrm.getPlayerPanelHint() : "@or2@WildyWyrm: @red@Dead"), //
-	 * (Abyssector.wyrmAlive ? "@or2@Abyssector:
-	 * // @gre@"+Abyssector.getPlayerPanelHint() : "@or2@Abyssector: @red@Dead"),
-	 * (WellOfGoodwill.isActive() ? "@or2@Well of Goodwill: @gre@On" : "@or2@Well of
-	 * Goodwill: @red@Off"), (doMotivote.getVoteCount() <= 20 ? "@or2@Vote
-	 * Boss: @yel@" + doMotivote.getVoteCount() + "/20" : "@or2@Vote
-	 * Boss: @gre@::Vboss"), // "Vote Boss" + doMotivote.getVoteCount()+"@bla@
-	 * votes.", "@or3@ - @whi@ Account Information", // "@yel@Difficulty:
-	 * // @whi@"+Misc.capitalizeString(player.getDifficulty().toString().toLowerCase()),
-	 * "@or2@Mode: @yel@" +
-	 * Misc.capitalizeString(player.getGameMode().toString().toLowerCase().replace("_",
-	 * " ")), "@or2@Claimed: @yel@$" + player.getAmountDonated(), "@or2@Time
-	 * played: @yel@" + Misc.getTimePlayed((player.getTotalPlayTime() +
-	 * player.getRecordedLogin().elapsed())), "@or2@Current Double XP skill:@yel@ "
-	 * + StringUtils.capitalizeFirst(DoubleXPSkillEvent.currentSkill.toString()),
-	 * "@or3@ - @whi@ Statistics", "@or2@NPC kill Count: @yel@ " +
-	 * player.getPointsHandler().getNPCKILLCount(), "@red@Boss Points: @yel@ " +
-	 * player.getPointsHandler().getBossPoints(), "@or2@Event Points: @yel@ " +
-	 * player.getPointsHandler().getEventPoints(), "@or2@Prestige Points: @yel@" +
-	 * player.getPointsHandler().getPrestigePoints(), "@or2@Total Prestige: @yel@" +
-	 * player.getPointsHandler().getTotalPrestiges(), "@or2@Commendations: @yel@ " +
-	 * player.getPointsHandler().getCommendations(), "@or2@Loyalty Points: @yel@" +
-	 * (int) player.getPointsHandler().getLoyaltyPoints(), "@or2@Dung. Tokens: @yel@
-	 * " + player.getPointsHandler().getDungeoneeringTokens(), "@or2@Voting
-	 * Points: @yel@ " + player.getPointsHandler().getVotingPoints(), "@or2@Slayer
-	 * Points: @yel@" + player.getPointsHandler().getSlayerPoints(), "@or2@Penguin
-	 * Multiplier: +@yel@ " + player.getPointsHandler().getSHILLINGRate() +
-	 * "%", "@or2@Barrows Points: @yel@" +
-	 * player.getPointsHandler().getBarrowsPoints(), "@or2@Member Points: @yel@" +
-	 * player.getPointsHandler().getMemberPoints(), "@or2@Pk Points: @yel@" +
-	 * player.getPointsHandler().getPkPoints(), "@or2@Wilderness Killstreak: @yel@"
-	 * + player.getPlayerKillingAttributes().getPlayerKillStreak(), "@or2@Wilderness
-	 * Kills: @yel@" + player.getPlayerKillingAttributes().getPlayerKills(),
-	 * "@or2@Wilderness Deaths: @yel@" +
-	 * player.getPlayerKillingAttributes().getPlayerDeaths(), "@or2@Arena
-	 * Victories: @yel@" + player.getDueling().arenaStats[0], "@or2@Arena
-	 * Points: @yel@" + player.getDueling().arenaStats[1], "@or2@Imp Kill
-	 * Count: @yel@ " + player.getPointsHandler().getSPAWNKILLCount(), "@or2@Lord
-	 * Kill Count: @yel@ " + player.getPointsHandler().getLORDKILLCount(),
-	 * "@or2@Demon Kill Count: @yel@ " +
-	 * player.getPointsHandler().getDEMONKILLCount(), "@or2@Dragon Kill Count: @yel@
-	 * " + player.getPointsHandler().getDRAGONKILLCount(), "@or2@Beast Kill
-	 * Count: @yel@ " + player.getPointsHandler().getBEASTKILLCount(), "@or2@King
-	 * Kill Count: @yel@ " + player.getPointsHandler().getKINGKILLCount(),
-	 * "@or2@Avatar Kill Count: @yel@ " +
-	 * player.getPointsHandler().getAVATARKILLCount(), "@or2@Angel Kill Count: @yel@
-	 * " + player.getPointsHandler().getANGELKILLCount(), "@or2@Lucien Kill
-	 * Count: @yel@ " + player.getPointsHandler().getLUCIENKILLCount(),
-	 * "@or2@Hercules Kill Count: @yel@ " +
-	 * player.getPointsHandler().getHERCULESKILLCount(), "@or2@Satan Kill
-	 * Count: @yel@ " + player.getPointsHandler().getSATANKILLCount(), "@or2@Zeus
-	 * Kill Count: @yel@ " + player.getPointsHandler().getZEUSKILLCount(), "",
-	 * "@or3@ - @whi@ Slayer", // "@or2@Open Kills Tracker", // "@or2@Open Drop
-	 * Log", "@or2@Master: @yel@" + Misc
-	 * .formatText(player.getSlayer().getSlayerMaster().toString().toLowerCase().replaceAll("_",
-	 * " ")), (player.getSlayer().getSlayerTask() == SlayerTasks.NO_TASK ?
-	 * "@or2@Task: @yel@" + Misc.formatText(
-	 * player.getSlayer().getSlayerTask().toString().toLowerCase().replaceAll("_", "
-	 * ")) : "@or2@Task: @yel@" + Misc.formatText(
-	 * player.getSlayer().getSlayerTask().toString().toLowerCase().replaceAll("_", "
-	 * ")) + "s"), "@or2@Task Streak: @yel@" + player.getSlayer().getTaskStreak(),
-	 * "@or2@Task Amount: @yel@" + player.getSlayer().getAmountToSlay(),
-	 * (player.getSlayer().getDuoPartner() != null ? "@or2@Duo Partner: @yel@" +
-	 * player.getSlayer().getDuoPartner() : "@or2@Duo Partner: @yel@N/A"),
-	 * 
-	 * /* "@yel@lre", "@red@red", "@dre@dre", "@yel@yel", "@whi@whi", "blu",
-	 * "cya", "@mag@mag", "@bla@bla", "@gre@gre", "@gr1@gr1", "@gr2@gr2",
-	 * "@gr3@gr3", "@str@str", "@or1@or1", "@or2@or2", "@or3@or3",
-	 */
 
 }

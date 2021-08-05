@@ -49,7 +49,7 @@ public final class LoginDecoder extends FrameDecoder {
 			}
 			int request = buffer.readUnsignedByte();
 			if (request != 14) {
-				System.out.println("Invalid login request: " + request);
+				//System.out.println("Invalid login request: " + request);
 				channel.close();
 				return null;
 			}
@@ -60,12 +60,12 @@ public final class LoginDecoder extends FrameDecoder {
 			return null;
 		case LOGGING_IN:
 			if (buffer.readableBytes() < 2) {
-				System.out.println("no readable bytes");
+				//System.out.println("no readable bytes");
 				return null;
 			}
 			int loginType = buffer.readByte();
 			if (loginType != 16 && loginType != 18) {
-				System.out.println("Invalid login type: " + loginType);
+				//System.out.println("Invalid login type: " + loginType);
 				channel.close();
 				return null;
 			}			
@@ -76,14 +76,14 @@ public final class LoginDecoder extends FrameDecoder {
 			}
 			int magicId = buffer.readUnsignedByte();
 			if(magicId != 0xFF) {
-				System.out.println("Invalid magic id");
+				//System.out.println("Invalid magic id");
 				channel.close();
 				return null;
 			}
 			int clientVersion = buffer.readShort();
 			int memory =  buffer.readByte();
 			if (memory != 0 && memory != 1) {
-				System.out.println("Unhandled memory byte value");
+				//System.out.println("Unhandled memory byte value");
 				channel.close();
 				return null;
 			}
@@ -101,14 +101,14 @@ public final class LoginDecoder extends FrameDecoder {
 			rsaBuffer = ChannelBuffers.wrappedBuffer(bigInteger.toByteArray());
 			int securityId = rsaBuffer.readByte();
 			if(securityId != 10) {
-				//System.out.println("securityId id != 10.");
+				////System.out.println("securityId id != 10.");
 				channel.close();
 				return null;
 			}
 			long clientSeed = rsaBuffer.readLong();
 			long seedReceived = rsaBuffer.readLong();
 			if (seedReceived != seed) {
-				//System.out.println("Unhandled seed read: [seed, seedReceived] : [" + seed + ", " + seedReceived + "]");
+				////System.out.println("Unhandled seed read: [seed, seedReceived] : [" + seed + ", " + seedReceived + "]");
 				channel.close();
 				return null;
 			}
@@ -127,7 +127,7 @@ public final class LoginDecoder extends FrameDecoder {
 			String password = Misc.readString(rsaBuffer);
 			String serial = Misc.readString(rsaBuffer);
 			if (username.length() > 12 || password.length() > 20) {
-				System.out.println("Username or password length too long");
+				//System.out.println("Username or password length too long");
 				return null;
 			}
 			username = Misc.formatText(username.toLowerCase());

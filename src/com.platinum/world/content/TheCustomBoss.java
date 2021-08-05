@@ -80,7 +80,7 @@ public class TheCustomBoss extends NPC {
 		CustomBossLocation location = Misc.randomElement(LOCATIONS);
 		TheCustomBoss instance = new TheCustomBoss(location.copy());
 
-		// System.out.println(instance.getPosition());
+		// //System.out.println(instance.getPosition());
 
 		World.register(instance);
 		setCurrent(instance);

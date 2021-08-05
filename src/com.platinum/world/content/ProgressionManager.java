@@ -40,7 +40,7 @@ public class ProgressionManager {
 	}
 
 	public ProgressionTask getProgressionTask(int index) {
-	//	System.out.println("Progression tasks: " + progressions.toString());
+	//	//System.out.println("Progression tasks: " + progressions.toString());
 		return progressions.get(index);
 	}
 

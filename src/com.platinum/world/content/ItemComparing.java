@@ -61,7 +61,7 @@ public class ItemComparing {
 				return false;
 			}
 			if (countItemClicks == 0) {
-				System.out.println("Got executed!!!");
+				//System.out.println("Got executed!!!");
 				player.getPacketSender().sendString(56000, itemData.values().toArray(new String[200])[index]);
 				countItemClicks = 1;
 			} else if (countItemClicks == 1) {
@@ -103,7 +103,7 @@ public class ItemComparing {
 				}
 			}
 
-			System.out.println("Size atm: " + tabData.size());
+			//System.out.println("Size atm: " + tabData.size());
 
 		}
 		return true;
@@ -137,10 +137,10 @@ public class ItemComparing {
 		for(int index = 0; index < foundItems.size(); index++) {
 			int id = ItemDefinition.getItemId(foundItems.get(index));
 			itemData.put(id, foundItems.get(index));
-			System.out.println("Index: " + index + " for item name: " + foundItems.get(index));
+			//System.out.println("Index: " + index + " for item name: " + foundItems.get(index));
 		}
 		
-		System.out.println("Found items size: " + foundItems.size());
+		//System.out.println("Found items size: " + foundItems.size());
 		for(int x = 0; x < foundItems.size(); x++) {
 			player.getPacketSender().sendString(53510 + x, foundItems.get(x));
 		}
@@ -266,7 +266,7 @@ public class ItemComparing {
 		}
 
 		itemData = sortedMap(unsorted);
-		System.out.println("Map size: " + itemData.size());
+		////System.out.println("Map size: " + itemData.size());
 
 	}
 

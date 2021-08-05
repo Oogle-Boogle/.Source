@@ -191,7 +191,7 @@ public class CustomFreeForAll {
 			waitTimer = 50;
 			// initialRedTeam = redTeam;
 			// initialBlueTeam = blueTeam;
-			System.out.println("This method was called");
+			//System.out.println("This method was called");
 		}
 	}
 
@@ -299,7 +299,7 @@ public class CustomFreeForAll {
 		World.sendMessage("@or2@[Custom FFA] " + winner + " Has won the game");
 		if (winner.equalsIgnoreCase("@red@Red Team")) {
 			initialRedTeam.forEach(x -> {
-				System.out.println("Initial red team player name: " + x);
+				//System.out.println("Initial red team player name: " + x);
 				Player player = World.getPlayerByName(x);
 				player.getInventory().add(reward, 1).refreshItems();
 			});
@@ -307,7 +307,7 @@ public class CustomFreeForAll {
 
 		if (winner.equalsIgnoreCase("@blu@Blue Team")) { // this better work
 			initialBlueTeam.forEach(x -> {
-				System.out.println("Initial blue team player name: " + x);
+				//System.out.println("Initial blue team player name: " + x);
 				Player player = World.getPlayerByName(x);
 				player.getInventory().add(reward, 1).refreshItems();
 			});

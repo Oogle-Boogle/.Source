@@ -85,7 +85,7 @@ public class TheMay extends NPC {
 		TheMayLocation location = Misc.randomElement(LOCATIONS);
 		TheMay instance = new TheMay(location.copy());
 
-		// System.out.println(instance.getPosition());
+		// //System.out.println(instance.getPosition());
 
 		World.register(instance);
 		setCurrent(instance);

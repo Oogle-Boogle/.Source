@@ -65,9 +65,9 @@ public class StarterProgression {
 			String name = NpcDefinition.forId(requirement.getId()).getName();
 			player.getPacketSender().sendString(STARTING_POINT + 3, name);
 		} else {
-			System.out.println("Npcdefinition was null for npc id " + requirement.getId() + " | Task index = " + index);
-			System.out.println(npcDefinition);
-			System.out.println(npcDefinition.getName());
+			//System.out.println("Npcdefinition was null for npc id " + requirement.getId() + " | Task index = " + index);
+			//System.out.println(npcDefinition);
+			//System.out.println(npcDefinition.getName());
 		}
 		Item[] rewards = REWARDS[index];
 		player.getPacketSender().sendItemArrayOnInterface(STARTING_POINT + 4, rewards);

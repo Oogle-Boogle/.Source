@@ -804,7 +804,6 @@ public class Shop extends ItemContainer {
 		}
 		
 		public static JsonLoader parseShops() {
-			System.out.println("starting to load shops..");
 			return new JsonLoader() {
 				@Override
 				public void load(JsonObject reader, Gson builder) {
@@ -813,7 +812,7 @@ public class Shop extends ItemContainer {
 					Item[] items = builder.fromJson(reader.get("items").getAsJsonArray(), Item[].class);
 					Item currency = new Item(reader.get("currency").getAsInt());
 					if (id != 0)
-						System.out.println("Id=" + id + " " + name + " " + currency + " " + "");
+						////System.out.println("Id=" + id + " " + name + " " + currency + " " + "");
 					shops.put(id, new Shop(null, id, name, currency, items));
 				}
 

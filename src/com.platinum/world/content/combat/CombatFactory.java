@@ -966,7 +966,7 @@ public final class CombatFactory {
 							Player player = (Player)entity;
 							if(player.getSummoning().getFamiliar() != null && player.getSummoning().getFamiliar().getSummonNpc() != null && player.getSummoning().getFamiliar().getSummonNpc().getIndex() == npc.getIndex()) {
 								allowAttack = true;
-								//System.out.println("Not this one fyi");
+								////System.out.println("Not this one fyi");
 							}
 						}
 					}
@@ -1686,13 +1686,13 @@ public final class CombatFactory {
 	}
 
 	public static boolean properLocation(Player player, Player player2) {
-	//	System.out.println("Is in same team properLocation: " + CustomFreeForAll.isInSameTeam(player, player2));
+	//	//System.out.println("Is in same team properLocation: " + CustomFreeForAll.isInSameTeam(player, player2));
 		if (player.inFFA && player2.inFFA || player.inLMS && player2.inLMS)
 			return true;
 		if(player.inCustomFFA && player2.inCustomFFA) {
-			System.out.println("Was in Custom ffa");
+			//System.out.println("Was in Custom ffa");
 			if(!CustomFreeForAll.isInSameTeam(player, player2)) {
-				System.out.println("Wasnt in same team also");
+				//System.out.println("Wasnt in same team also");
 				return true;
 			}
 		}

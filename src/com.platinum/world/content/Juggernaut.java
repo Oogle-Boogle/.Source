@@ -82,7 +82,7 @@ public class Juggernaut extends NPC {
 		JuggernautLocation location = Misc.randomElement(LOCATIONS);
 		Juggernaut instance = new Juggernaut(location.copy());
 
-		// System.out.println(instance.getPosition());
+		// //System.out.println(instance.getPosition());
 
 		World.register(instance);
 		setCurrent(instance);

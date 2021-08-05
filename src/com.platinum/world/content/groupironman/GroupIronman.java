@@ -134,13 +134,13 @@ public class GroupIronman {
 
         List<String> members = player.getGroupIronmanGroup().getMembers();
 
-        System.out.println("Members there = " + members);
+        //System.out.println("Members there = " + members);
         for (String memberName : members) {
             Player member = World.getPlayerByName(memberName);
             if (member == null) {
                 continue;
             }
-            System.out.println("Member -> " + member.getUsername() + " | " + member.getGroupIronmanGroup());
+            //System.out.println("Member -> " + member.getUsername() + " | " + member.getGroupIronmanGroup());
             List<String> groupMembers = member.getGroupIronmanGroup().getMembers();
             int index = 0;
             for (String groupMember : groupMembers) {
@@ -204,7 +204,7 @@ public class GroupIronman {
 
         List<String> members = group.getMembers();
 
-        System.out.println("Members there = " + members);
+        //System.out.println("Members there = " + members);
         for (String memberName : members) {
             Player member = World.getPlayerByName(memberName);
             if (member == null) {

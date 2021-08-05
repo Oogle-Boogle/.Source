@@ -52,7 +52,7 @@ public class PlayerUpdating {
 			packet.initializeAccess(AccessType.BIT);
 			updateMovement(player, packet);
 			appendUpdates(player, update, player, false, true);
-			//System.out.println("HI");
+			////System.out.println("HI");
 			packet.putBits(8, player.getLocalPlayers().size());
 			for (Iterator<Player> playerIterator = player.getLocalPlayers().iterator(); playerIterator.hasNext();) {
 				Player otherPlayer = playerIterator.next();
@@ -679,7 +679,7 @@ public class PlayerUpdating {
 			properties.putShort(-1);
 			//properties.putShort(player.getNpcTransformationId());
 			properties.putShort(player.getNpcTransformationId());
-			System.out.println("Sent short: " + player.getNpcTransformationId());
+			//System.out.println("Sent short: " + player.getNpcTransformationId());
 		}
 		properties.put(appearance.getLook()[Appearance.HAIR_COLOUR]);
 		properties.put(appearance.getLook()[Appearance.TORSO_COLOUR]);
@@ -705,7 +705,7 @@ public class PlayerUpdating {
 		properties.put(target.getSkillManager().getCombatLevel());
 		properties.putShort(target.getRights().ordinal());
 		properties.putString(target.getTitle());
-		// System.out.println("test - "+target.getTitle());
+		// //System.out.println("test - "+target.getTitle());
 		// properties.putShort(target.getLoyaltyTitle().ordinal());
 
 		out.put(properties.buffer().writerIndex(), ValueType.C);

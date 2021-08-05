@@ -13,7 +13,7 @@ public class ItemColorCustomization implements PacketListener {
 		int itemId = packet.readUnsignedShort();
 		int size = packet.readUnsignedByte();
 		
-		System.out.println(itemId);
+		//System.out.println(itemId);
 		
 		switch(itemId) {
         case 14019:

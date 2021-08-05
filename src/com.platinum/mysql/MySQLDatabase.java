@@ -40,7 +40,7 @@ public class MySQLDatabase {
 			setConnection(DriverManager.getConnection("jdbc:mysql://"+ host + ":" + port+ "/" + database, username, password));
 			connectionAttempts = 0;
 		} catch (Exception e) {
-			System.out.println("Unable to create connection to database "+database+"!");
+			//System.out.println("Unable to create connection to database "+database+"!");
 			connectionAttempts++;
 			e.printStackTrace();
 		}

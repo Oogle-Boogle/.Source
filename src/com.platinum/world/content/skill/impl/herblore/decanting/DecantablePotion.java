@@ -48,7 +48,7 @@ public enum DecantablePotion {
 	}
 
 	public static void main(String[] args) {
-		System.out.println(forId(113));
+		//System.out.println(forId(113));
 		FISHING.getIds();
 	}
 

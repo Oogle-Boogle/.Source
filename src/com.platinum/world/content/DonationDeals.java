@@ -36,7 +36,7 @@ public class DonationDeals {
 		long seconds = (int) Math.ceil((timeInMs / 1000));
 		
 		if(seconds < 0) {
-			System.out.println("Stopping as its less than 0");
+			//System.out.println("Stopping as its less than 0");
 			return 0;
 		}
 		
@@ -44,7 +44,7 @@ public class DonationDeals {
 		String time = timeOfDay.toString();
 		
 	    player.getPacketSender().sendString(57267, "Promotions: (Expires in: @yel@" + time + ")");
-	    System.out.println(time);
+	    //System.out.println(time);
 	    
 	    return seconds;
 		
@@ -57,7 +57,6 @@ public class DonationDeals {
 		for(int[] item : items) {
 			player.getPacketSender().sendItemOnInterface(57276, item[0], slot, item[1]);
 			slot++;
-			System.out.println("Added to slot: " + slot);
 		}
 	}
 	
@@ -127,7 +126,7 @@ public class DonationDeals {
 		TaskManager.submit(new Task(1, player, false) {
 			@Override
 			protected void execute() {
-				System.out.println("Called this method");
+				//System.out.println("Called this method");
 				if(timeLeft > 0) {
 		    	displayTimeLeft(timeLeft);
 		    	timeLeft -= 600;

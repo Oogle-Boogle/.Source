@@ -34,11 +34,11 @@ public class ConflictedCopyRemover {
 			}
 			if (f.getName().contains("conflicted ")) {
 				if (f.delete()) {
-					System.out.println("Removed " + f.getName() + "!");
+					//System.out.println("Removed " + f.getName() + "!");
 					count++;
 				}
 			}
-			System.out.println("Removed " + count + " total conflicted copies within this project.");
+			//System.out.println("Removed " + count + " total conflicted copies within this project.");
 		}
 	}
 

@@ -82,7 +82,7 @@ public class MoneyPouch {
 				billsToAdd = 2;
 			}
 
-			System.out.println("Bills to add: "+billsToAdd);
+			//System.out.println("Bills to add: "+billsToAdd);
 				if (!fromTaxBag)
 					plr.getInventory().delete(995, billsToAdd*b);
 				plr.setMoneyInPouch(plr.getMoneyInPouch() + (billsToAdd));
@@ -97,7 +97,7 @@ public class MoneyPouch {
 	}
 
 	public static void withdrawMoney(Player player, long amount) {
-		System.out.println("amount was(pouch): " + amount);
+		//System.out.println("amount was(pouch): " + amount);
 		if(amount <= 0)
 			return;
 		if(player.getMoneyInPouch() <= 0) {

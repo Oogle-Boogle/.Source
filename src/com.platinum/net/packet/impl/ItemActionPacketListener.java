@@ -1530,7 +1530,7 @@ public class ItemActionPacketListener implements PacketListener {
 		 * Integer.toString(santaColors[i]); }
 		 * 
 		 * player.getPacketSender().sendInterface(58000);
-		 * System.out.println("Current santa colors: " +
+		 * //System.out.println("Current santa colors: " +
 		 * Arrays.toString(player.getSantaColors())); break;
 		 */
 

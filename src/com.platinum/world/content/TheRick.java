@@ -84,7 +84,7 @@ public class TheRick extends NPC {
 		TheRickLocation location = Misc.randomElement(LOCATIONS);
 		TheRick instance = new TheRick(location.copy());
 
-		// System.out.println(instance.getPosition());
+		// //System.out.println(instance.getPosition());
 
 		World.register(instance);
 		setCurrent(instance);

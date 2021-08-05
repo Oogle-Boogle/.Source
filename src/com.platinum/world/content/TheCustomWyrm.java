@@ -83,7 +83,7 @@ public class TheCustomWyrm extends NPC {
 		HarambeLocation location = Misc.randomElement(LOCATIONS);
 		TheCustomWyrm instance = new TheCustomWyrm(location.copy());
 
-		// System.out.println(instance.getPosition());
+		// //System.out.println(instance.getPosition());
 
 		World.register(instance);
 		setCurrent(instance);

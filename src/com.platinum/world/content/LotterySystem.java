@@ -59,7 +59,7 @@ public final class LotterySystem {
 		try {
 			List<String> winners = Files.readAllLines(LOTTERY_WINNERS).stream().map(x -> x.substring(0, x.indexOf(",")))
 					.collect(Collectors.toList());
-			System.out.println("Winners: " + Arrays.asList(winners.toArray()));
+			//System.out.println("Winners: " + Arrays.asList(winners.toArray()));
 			if (winners.contains(name)) {
 				player.sendMessage("Winner!");
 				player.getInventory().add(10835, getWinnerPrizePool());
@@ -79,7 +79,7 @@ public final class LotterySystem {
 
 			lines.forEach(line -> {
 				String name = line.substring(0, line.indexOf(","));
-				System.out.println("Found name: " + name);
+				//System.out.println("Found name: " + name);
 				if (!name.equalsIgnoreCase(username)) {
 					winnerList.add(line);
 				} else {

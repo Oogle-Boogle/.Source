@@ -102,7 +102,7 @@ public class Wildywyrm extends NPC {
 		WildywyrmLocation location = Misc.randomElement(LOCATIONS);
 		Wildywyrm instance = new Wildywyrm(location.copy());
 
-		// System.out.println(instance.getPosition());
+		// //System.out.println(instance.getPosition());
 
 		World.register(instance);
 		setCurrent(instance);

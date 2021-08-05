@@ -19,7 +19,7 @@ public class ResetDonatorPoints {
                             int donatorPoints = jobject.get("donation-points").getAsInt();
                             if (donatorPoints >= 400) {
                             	PrintWriter toRewrite = new PrintWriter(new FileWriter(username + ".json", false));
-                                System.out.println(username + " - " +donatorPoints);
+                                //System.out.println(username + " - " +donatorPoints);
                             	/*jobject.remove("donation-points");
                                 jobject.addProperty("donation-points", 0);
                                 String newJSON = gson.toJson(jobject);
@@ -38,6 +38,6 @@ public class ResetDonatorPoints {
         } catch(IOException io) {
             io.printStackTrace();
         }
-        System.out.println("COMPLETED");
+        //System.out.println("COMPLETED");
     }
 }

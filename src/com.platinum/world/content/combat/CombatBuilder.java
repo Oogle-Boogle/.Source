@@ -109,9 +109,9 @@ public class CombatBuilder {
 
 		// Start following the victim right away.
 		character.getMovementQueue().setFollowCharacter(target);
-		System.out.println("following target");
+		////System.out.println("following target");
 		if(character.getInteractingEntity() != target) {
-			System.out.println("Set entity interaction");
+			////System.out.println("Set entity interaction");
 			character.setEntityInteraction(target);
 		}
 
@@ -129,7 +129,7 @@ public class CombatBuilder {
 					cooldown = 0;
 				}
 			}
-			System.out.println("Returning because null combat task");
+			////System.out.println("Returning because null combat task");
 			return;
 		}
 
@@ -139,13 +139,13 @@ public class CombatBuilder {
 		
 		if (distanceTask != null) {
 			if (distanceTask.isRunning()) {
-				System.out.println("Cancelling distance task.");
+				////System.out.println("Cancelling distance task.");
 				distanceTask.stop();
 			}
 		}
 		distanceTask = new CombatDistanceTask(this, target);
 		TaskManager.submit(distanceTask);
-		System.out.println("Submitting new distance task");
+		////System.out.println("Submitting new distance task");
 		
 	}
 

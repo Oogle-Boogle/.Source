@@ -95,7 +95,7 @@ public class CustomSkillCapeTask extends Task {
 			player.sendMessage("@red@Task ended");
 			stop();
 		}
-		System.out.println(taskActive);
+		//System.out.println(taskActive);
 		player.getEquipment().refreshItems();
 		player.getUpdateFlag().flag(Flag.APPEARANCE);
 	}

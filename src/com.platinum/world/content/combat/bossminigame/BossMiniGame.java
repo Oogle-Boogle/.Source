@@ -24,7 +24,7 @@ public class BossMiniGame {
         /** DECLARATIONS **/
 
         NPC chosenBoss = BossMinigameFunctions.chosenBoss(player);
-        System.out.println("Chosen boss from StartBossMinigame is "+chosenBoss.getId());
+        //System.out.println("Chosen boss from StartBossMinigame is "+chosenBoss.getId());
         StatSetups stats = StatSetups.DEFAULT;
         EquipmentSetups gear = EquipmentSetups.DEFAULT;
         Item[] inventory = InventorySetups.DEFAULT;
@@ -119,7 +119,7 @@ public class BossMiniGame {
             case 2:
             case 3:
             case 4:
-                System.out.println("We're at the wave selection phase and booleans are spell book change :"+changeSpellBook + " prayer change: "+changePrayerBook);
+                //System.out.println("We're at the wave selection phase and booleans are spell book change :"+changeSpellBook + " prayer change: "+changePrayerBook);
                 player.getInventory().deleteAll();
                 BossMinigameFunctions.setNewStats(player, statID[0], statID[1], statID[2], statID[3], statID[4], statID[5], statID[6]);
                 BossMinigameFunctions.setEquipment(player, gearID[0], gearID[1], gearID[2], gearID[3], gearID[4], gearID[5], gearID[6], gearID[7], gearID[8], gearID[9]);

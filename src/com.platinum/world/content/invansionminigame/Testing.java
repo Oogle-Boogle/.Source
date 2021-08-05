@@ -31,7 +31,7 @@ public class Testing {
 				.collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e2, LinkedHashMap::new));
 
 		for (Map.Entry<Player, Integer> map : top3.entrySet()) {
-			System.out.println("Key: " + map.getKey().getUsername() + " | Value: " + map.getValue());
+			//System.out.println("Key: " + map.getKey().getUsername() + " | Value: " + map.getValue());
 		}
 
 	}

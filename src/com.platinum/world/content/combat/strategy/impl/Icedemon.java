@@ -235,7 +235,7 @@ public class Icedemon implements CombatStrategy {
 	 * 0).sendProjectile();
 	 * 
 	 * cB.forceChat("bend the knee jon snow"); uc.setChargingAttack(false); stop();
-	 * } }); } else { System.out.println("Attacking now");
+	 * } }); } else { //System.out.println("Attacking now");
 	 * uc.setChargingAttack(true); uc.performAnimation(new
 	 * Animation(uc.getDefinition().getAttackAnimation()));
 	 * 

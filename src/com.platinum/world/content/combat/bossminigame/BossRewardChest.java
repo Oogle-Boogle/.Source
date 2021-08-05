@@ -61,7 +61,7 @@ public class BossRewardChest {
 
         PlayerRights rights = player.getRights();
         int currentBossWave = player.getCurrentBossWave();
-        System.out.println("Player "+player.getUsername() + " is a " + rights + " on wave: " + currentBossWave);
+        //System.out.println("Player "+player.getUsername() + " is a " + rights + " on wave: " + currentBossWave);
 
         /* This should be obvious. It will change chances based on the players rights **/
 
@@ -88,7 +88,7 @@ public class BossRewardChest {
         }
 
         //Work Out Percentage Chance
-        System.out.println(player.getUsername() + " Shit Reward Chance:"+((double)(1000-chanceOfShitReward)/10) +"% Medium:"+((double)(1000-chanceOfMediumReward)/10)+"% Rare:"+((double)(1000-chanceOfRareReward)/10)+"%");
+        //System.out.println(player.getUsername() + " Shit Reward Chance:"+((double)(1000-chanceOfShitReward)/10) +"% Medium:"+((double)(1000-chanceOfMediumReward)/10)+"% Rare:"+((double)(1000-chanceOfRareReward)/10)+"%");
     }
 
     /** This configures the dialogue that the player sees. It
@@ -121,19 +121,19 @@ public class BossRewardChest {
 
 
 
-        System.out.println("Getting Chance modifiers from getChances");
+        //System.out.println("Getting Chance modifiers from getChances");
 
         int chance = Misc.random(0, 1000); //Pick the number
 
         player.forceChat("I rolled " + chance+"!");
 
-        System.out.println("Boss Game Roll for "+ player.getUsername() + " was " + chance);
+        //System.out.println("Boss Game Roll for "+ player.getUsername() + " was " + chance);
 
         Item rewardGiven = null;
 
         if (chance < chanceOfShitReward) { //No Reward for you Mr
             player.getPacketSender().sendMessage("Sorry! Better luck next time..");
-            System.out.println("["+player.getUsername()+"] No Reward");
+            //System.out.println("["+player.getUsername()+"] No Reward");
 
         }
 
@@ -141,26 +141,26 @@ public class BossRewardChest {
             Item shitReward = BossRewardChestData.SHIT_REWARDS[Misc.getRandom(BossRewardChestData.SHIT_REWARDS.length - 1)];
             player.getInventory().add(shitReward);
             rewardGiven = shitReward;
-            System.out.println("["+player.getUsername()+"] Shit Reward selected:  " + shitReward.getAmount() + " x " + shitReward.getDefinition().getName());
+            //System.out.println("["+player.getUsername()+"] Shit Reward selected:  " + shitReward.getAmount() + " x " + shitReward.getDefinition().getName());
         }
 
         if (chance >= chanceOfMediumReward && chance < chanceOfRareReward) {
             Item mediumReward = BossRewardChestData.MEDIUM_REWARDS[Misc.getRandom(BossRewardChestData.MEDIUM_REWARDS.length - 1)];
             player.getInventory().add(mediumReward);
             rewardGiven = mediumReward;
-            System.out.println("["+player.getUsername()+"] Medium Reward selected:  " + mediumReward.getAmount() + " x " + mediumReward.getDefinition().getName());
+            //System.out.println("["+player.getUsername()+"] Medium Reward selected:  " + mediumReward.getAmount() + " x " + mediumReward.getDefinition().getName());
         }
 
         if (chance >= chanceOfRareReward) {
             if (player.getCurrentBossWave() == 1) {
                 Item mediumReward = BossRewardChestData.MEDIUM_REWARDS[Misc.getRandom(BossRewardChestData.MEDIUM_REWARDS.length - 1)];
                 player.getInventory().add(mediumReward);
-                System.out.println("["+player.getUsername()+"] Rare on wave 1 Reward selected:  " + mediumReward.getAmount() + " x " + mediumReward.getDefinition().getName());
+                //System.out.println("["+player.getUsername()+"] Rare on wave 1 Reward selected:  " + mediumReward.getAmount() + " x " + mediumReward.getDefinition().getName());
             } else if (player.getCurrentBossWave() >= 2) {
                 Item rareReward = BossRewardChestData.RARE_REWARDS[Misc.getRandom(BossRewardChestData.RARE_REWARDS.length - 1)];
                 player.getInventory().add(rareReward);
                 rewardGiven = rareReward;
-                System.out.println("["+player.getUsername()+"] Rare Reward selected:  " + rareReward.getAmount() + " x " + rareReward.getDefinition().getName());
+                //System.out.println("["+player.getUsername()+"] Rare Reward selected:  " + rareReward.getAmount() + " x " + rareReward.getDefinition().getName());
             }
         }
 

@@ -9,7 +9,7 @@ public class AddGambleItemPacketListener implements PacketListener {
 		
 		int itemId = packet.readShort();
 		
-		System.out.println("Item id ffs: " + itemId);
+		//System.out.println("Item id ffs: " + itemId);
 
 	}
 

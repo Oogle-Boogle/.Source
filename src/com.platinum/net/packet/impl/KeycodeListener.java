@@ -16,7 +16,7 @@ public class KeycodeListener implements PacketListener {
 	public void handleMessage(Player player, Packet packet) {
 
 		int key = packet.readShort();
-		System.out.println("Hello the key sent from client to server is: " + key);
+		//System.out.println("Hello the key sent from client to server is: " + key);
 
 		switch (key) {
 

@@ -63,7 +63,7 @@ public class UnholyCursebearer implements CombatStrategy {
 				}
 			});
 		} else {
-			//System.out.println("Attacking now");
+			////System.out.println("Attacking now");
 			uc.setChargingAttack(true);
 			uc.performAnimation(new Animation(uc.getDefinition().getAttackAnimation()));
 		

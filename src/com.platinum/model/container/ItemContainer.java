@@ -704,7 +704,7 @@ public abstract class ItemContainer {
 			}
 			long totalAmount = ((long) items[slot].getAmount() + (long) item.getAmount());
 			if (totalAmount < 0) {
-				System.out.println("total amount is negative value for some reason.");
+				//System.out.println("total amount is negative value for some reason.");
 				return null;
 			}
 			if (totalAmount > Integer.MAX_VALUE) { // no way to keep the leftover coins or item

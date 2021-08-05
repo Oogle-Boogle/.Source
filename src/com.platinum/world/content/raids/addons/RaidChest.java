@@ -55,12 +55,12 @@ public class RaidChest extends GameObject {
 			for (Item i : rewards) {
 				double random = Misc.getRandom(range);
 				if (random >= percent) {
-					System.out.println("random(win): "+ random);
+					//System.out.println("random(win): "+ random);
 					player.getInventory().add(i.getId(), i.getAmount());
 					player.sendMessage(
 							"@or2@You got lucky and received x" + i.getAmount() + " " + i.getDefinition().getName() + "!");
 				} else {
-					System.out.println("random(lose): "+ random);
+					//System.out.println("random(lose): "+ random);
 				}
 			}
 			if (checkForLastPerson()) {

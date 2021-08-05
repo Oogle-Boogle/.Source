@@ -21,13 +21,13 @@ public class GambleInvititationPacketListener implements PacketListener {
 			return;
 		}
 		int index = packet.getOpcode() == GAMBLE_OPCODE ? (packet.readShort() & 0xFF) : packet.readLEShort();
-		System.out.println("Index from client: " + index);
+		//System.out.println("Index from client: " + index);
 		if (index < 0 || index > World.getPlayers().capacity())
 			return;
 		Player target = World.getPlayers().get(index);
 
-		// System.out.println("Index: " + index);
-		// System.out.println("Name: " + target.getUsername());
+		// //System.out.println("Index: " + index);
+		// //System.out.println("Name: " + target.getUsername());
 		if (target == null || !Locations.goodDistance(player.getPosition(), target.getPosition(), 13))
 			return;
 		player.setWalkToTask(

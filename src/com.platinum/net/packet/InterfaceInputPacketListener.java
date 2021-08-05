@@ -13,7 +13,7 @@ public class InterfaceInputPacketListener implements PacketListener {
 		if(message == null) {
 			return;
 		} else {
-			System.out.println("Message sent from client to server: " + message);
+			//System.out.println("Message sent from client to server: " + message);
 		}
 		
 

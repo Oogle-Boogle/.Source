@@ -41,7 +41,7 @@ public final class PotionDecanting {
 			int oneDoseAmt = player.getInventory().getAmount(potion.getIds()[3]);
 			int twoDoseAmt = player.getInventory().getAmount(potion.getIds()[2]);
 			int threeDoseAmt = player.getInventory().getAmount(potion.getIds()[1]);
-			System.out.println(oneDoseAmt + ", " + twoDoseAmt + ", " + threeDoseAmt + ", " + item.getId());
+			//System.out.println(oneDoseAmt + ", " + twoDoseAmt + ", " + threeDoseAmt + ", " + item.getId());
 			
 //			if (dose == 1 && threeDoseAmt > 0) {
 //				PotionCombinating.combinePotion(player, potion.getIds()[1], item.getId());

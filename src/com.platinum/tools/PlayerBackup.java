@@ -21,7 +21,7 @@ public final class PlayerBackup {
 	@SuppressWarnings("unused")
 	private static void runBackup() {
 		if (!FROM_DIRECTORY.exists()) {
-			System.out.println("Source file not found.");
+			//System.out.println("Source file not found.");
 		}
 		
 		if (!TO_DIRECTORY.exists()) {

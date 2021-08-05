@@ -325,7 +325,7 @@ public class PlayerOwnedShopManager {
 
 			amount = (int) Math.round((double) (((double) coins / item.getPrice()) - 0.3));
 
-			System.out.println("new amount: " + amount);
+			//System.out.println("new amount: " + amount);
 
 			if (amount < 0) {
 				amount = 0;
@@ -769,7 +769,7 @@ public class PlayerOwnedShopManager {
 
 	public void addEarnings(long amount) {
 		earnings += amount;
-		System.out.println(" earnings: " + earnings);
+		//System.out.println(" earnings: " + earnings);
 	}
 
 	/*

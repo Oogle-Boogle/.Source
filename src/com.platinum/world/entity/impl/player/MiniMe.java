@@ -73,7 +73,7 @@ public class MiniMe {
 
                 if (!World.getPlayers().contains(player) && World.getPlayers().contains(puppet)) {
                     World.deregister(puppet);
-                    System.out.println("stopped");
+                    //System.out.println("stopped");
                     stop();
                 }
             }

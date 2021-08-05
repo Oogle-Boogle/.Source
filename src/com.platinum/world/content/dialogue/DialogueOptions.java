@@ -1114,11 +1114,11 @@ public class DialogueOptions {
 			/*
 			 * if (player.getInventory().contains(10835, 200)) { }
 			 * player.getInventory().delete(10835, 200); GameSettings.TRIPLE_EXP = true;
-			 * System.out.println("Goodwill started"); Timer t = new Timer(); t.schedule(new
+			 * //System.out.println("Goodwill started"); Timer t = new Timer(); t.schedule(new
 			 * TimerTask() {
 			 * 
 			 * @Override public void run() { GameSettings.TRIPLE_EXP = false;
-			 * System.out.println("Goodwill ended"); }
+			 * //System.out.println("Goodwill ended"); }
 			 * 
 			 * }, 9000); World.sendMessage("<img=10>@blu@" + player.getUsername().toString()
 			 * + " @red@Has just donated 200 bags for Triple Exp");
@@ -1498,7 +1498,7 @@ public class DialogueOptions {
 						player.getGambling().setHostTurn();
 					} else {
 						player.getGambling().getBlackjackWinner();
-						System.out.println("Blackjack has ended ->");
+						//System.out.println("Blackjack has ended ->");
 					}
 				}
 				player.performAnimation(new Animation(11900));
@@ -1680,7 +1680,7 @@ public class DialogueOptions {
 					player.getGambling().setHostTurn();
 				} else {
 					player.getGambling().getBlackjackWinner();
-					System.out.println("Declaring winner");
+					//System.out.println("Declaring winner");
 				}
 
 				break;

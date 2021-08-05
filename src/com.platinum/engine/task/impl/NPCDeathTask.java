@@ -625,11 +625,11 @@ public class NPCDeathTask extends Task {
 				&& npc.getLocation() != Location.INSTANCE_ARENA && !killer.isInRaid() && !(npc instanceof RaidNpc)) {
 
 			TaskManager.submit(new NPCRespawnTask(npc, npc.getDefinition().getRespawnTime(), killer));
-			System.out.println(
-					"setting respawn task for npc: " + npc.getId() + " OBJECT: " + npc.getDefinition().getName());
+			//System.out.println(
+					//"setting respawn task for npc: " + npc.getId() + " OBJECT: " + npc.getDefinition().getName());
 		} else {
-			System.out.println(
-					"Not setting respawn task for npc: " + npc.getId() + " OBJECT: " + npc.getDefinition().getName());
+			//System.out.println(
+					//"Not setting respawn task for npc: " + npc.getId() + " OBJECT: " + npc.getDefinition().getName());
 		}
 
 		World.deregister(npc);

@@ -80,7 +80,7 @@ public enum Direction {
 													// values
 
 			if (dir.intValue == number) {
-				System.out.println("Dir is: " + dir.toString());
+				//System.out.println("Dir is: " + dir.toString());
 				return dir;
 			}
 

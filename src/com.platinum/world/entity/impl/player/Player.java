@@ -1920,7 +1920,7 @@ public class Player extends Character {
 						modelColors[3] = 302770;//cape
 					}*/
 					int[] modelColors = target.getMaxCapeColors();
-					//System.out.println("Updating: "+Arrays.toString(modelColors));
+					////System.out.println("Updating: "+Arrays.toString(modelColors));
 					if(modelColors != null) {
 						properties.put(modelColors.length);
 						for(int i = 0; i < modelColors.length; i++) {
@@ -2121,7 +2121,7 @@ public class Player extends Character {
 		properties.put(target.getSkillManager().getCombatLevel());
 		properties.putShort(target.getRights().ordinal());
 		properties.putString(target.getTitle());
-		//System.out.println("test - "+target.getTitle());
+		////System.out.println("test - "+target.getTitle());
 		//properties.putShort(target.getLoyaltyTitle().ordinal());
 
 		out.put(properties.buffer().writerIndex(), ValueType.C);
@@ -2295,24 +2295,15 @@ public class Player extends Character {
 		for (int i = 0; i < Skill.values().length; i++) {
 			playerXP[i] = this.getSkillManager().getExperience(Skill.forId(i));
 		}
-		com.everythingrs.hiscores.Hiscores.update(
-				"87nmgkk9qc27grft6czcb4kj4inavujenp7c3hivm7kcqwoecdie0hi151ndyixigev7sc9s5rk9", "Normal Mode",
-				this.getUsername(), this.getRights().ordinal(), playerXP, debugMessage);
-		if (gameMode != GameMode.HARDCORE_IRONMAN && gameMode != GameMode.IRONMAN && getRights() != PlayerRights.OWNER
-				&& getRights() != PlayerRights.DEVELOPER)
-			com.everythingrs.hiscores.Hiscores.update(
-					"87nmgkk9qc27grft6czcb4kj4inavujenp7c3hivm7kcqwoecdie0hi151ndyixigev7sc9s5rk9", "Normal Mode",
-					this.getUsername(), this.getRights().ordinal(), playerXP, debugMessage);
-		if (gameMode == GameMode.IRONMAN && gameMode != GameMode.GROUP_IRONMAN && gameMode != GameMode.HARDCORE_IRONMAN && gameMode != GameMode.NORMAL
-				&& getRights() != PlayerRights.OWNER && getRights() != PlayerRights.DEVELOPER)
-			com.everythingrs.hiscores.Hiscores.update(
-					"87nmgkk9qc27grft6czcb4kj4inavujenp7c3hivm7kcqwoecdie0hi151ndyixigev7sc9s5rk9", "Ironman",
-					this.getUsername(), this.getRights().ordinal(), playerXP, debugMessage);
-		if (gameMode == GameMode.HARDCORE_IRONMAN && gameMode != GameMode.GROUP_IRONMAN && gameMode != GameMode.IRONMAN && gameMode != GameMode.NORMAL
-				&& getRights() != PlayerRights.OWNER && getRights() != PlayerRights.DEVELOPER)
-			com.everythingrs.hiscores.Hiscores.update(
-					"87nmgkk9qc27grft6czcb4kj4inavujenp7c3hivm7kcqwoecdie0hi151ndyixigev7sc9s5rk9", "Hardcore Ironman",
-					this.getUsername(), this.getRights().ordinal(), playerXP, debugMessage);
+
+		//Nicely format the gamemode
+		String gameMode = Misc.formatText(this.getGameMode().name());
+
+		// Only submit a hiscore if the player isn't an Owner, Admin or Dev
+		if (!this.getRights().equals(PlayerRights.OWNER) && !this.getRights().equals(PlayerRights.DEVELOPER) && !this.getRights().equals(PlayerRights.ADMINISTRATOR)){
+			com.everythingrs.hiscores.Hiscores.update("0O8YpJNZT18jlHydg5nPCFln6TR9dhsgI3uWFewfno4dkn9hsirZ25N0PoJ5qLsFryE0l2qi", gameMode, getUsername(), this.getRights().ordinal(), playerXP, debugMessage);
+		}
+
 		if (getCombatBuilder().isBeingAttacked()) {
 			getPacketSender().sendMessage("You must wait a few seconds after being out of combat before doing this.");
 			return false;

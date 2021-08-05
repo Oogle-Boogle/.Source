@@ -82,7 +82,7 @@ public class HWeenBoss extends NPC {
 		HWeenBossLocation location = Misc.randomElement(LOCATIONS);
 		HWeenBoss instance = new HWeenBoss(location.copy());
 
-		// System.out.println(instance.getPosition());
+		// //System.out.println(instance.getPosition());
 
 		World.register(instance);
 		setCurrent(instance);

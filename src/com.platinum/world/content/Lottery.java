@@ -196,7 +196,7 @@ public class Lottery {
 				} else {
 					LAST_WINNER_REWARDED = false;
 					writer.write("NOT REWARDED. NEEDS REWARD!");
-					System.out.println("Player "+winner+" won the lottery but wasn't online.");
+					//System.out.println("Player "+winner+" won the lottery but wasn't online.");
 				}
 				CONTESTERS.clear();
 				writer.close();

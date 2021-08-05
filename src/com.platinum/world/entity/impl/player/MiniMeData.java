@@ -46,7 +46,7 @@ public class MiniMeData {
 				}
 				initialize();
 			} catch (SecurityException e) {
-				System.out.println("Unable to create directory for player data!");
+				//System.out.println("Unable to create directory for player data!");
 			}
 		} else {
 			load();
@@ -64,7 +64,7 @@ public class MiniMeData {
 
 			writer.write(builder.toJson(object));
 			writer.close();
-			System.out.println("Created minime data file: " + file.getPath());
+			//System.out.println("Created minime data file: " + file.getPath());
 		} catch (Exception e) {
 			// An error happened while saving.
 			GameServer.getLogger().log(Level.WARNING, "An error has occured while creating mini me data file!", e);
@@ -94,9 +94,9 @@ public class MiniMeData {
 
 
 	public void addItem(int itemID, int amount) {
-		System.out.println("Attempting to add "+amount + " x " + itemID);
+		//System.out.println("Attempting to add "+amount + " x " + itemID);
 		for (int i = 0; i < MAX_ITEMS; i++) {
-			System.out.println("Into slot "+ i);
+			//System.out.println("Into slot "+ i);
 			if (items[i] == null) {
 				items[i] = new Item(itemID, amount);
 			}

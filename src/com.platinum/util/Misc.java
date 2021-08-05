@@ -589,7 +589,7 @@ public class Misc {
 			fis.close();
 			return buf.array();
 		} catch (Exception e) {
-			System.out.println("FILE : " + s.getName() + " missing.");
+			//System.out.println("FILE : " + s.getName() + " missing.");
 			return null;
 		}
 	}
@@ -608,7 +608,7 @@ public class Misc {
 		do {
 			if(bufferlength == gzipInputBuffer.length)
 			{
-				System.out.println("Error inflating data.\nGZIP buffer overflow.");
+				//System.out.println("Error inflating data.\nGZIP buffer overflow.");
 				break;
 			}
 			int readByte = gzip.read(gzipInputBuffer, bufferlength, gzipInputBuffer.length - bufferlength);

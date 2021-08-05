@@ -206,7 +206,7 @@ public class CustomRaid {
     }
 
     public void handleFinish(boolean onOwnerLeave) {
-        System.out.println("finished: " + onOwnerLeave);
+        //System.out.println("finished: " + onOwnerLeave);
         waves.values()
                 .stream()
                 .flatMap(List::stream)
@@ -252,7 +252,7 @@ public class CustomRaid {
         if (player.getRaidParty().isOwner(player)) {
             handleFinish(true);
         } else {
-            System.out.println("from " + damageMap + " removing " + player.getUsername());
+            //System.out.println("from " + damageMap + " removing " + player.getUsername());
             damageMap.remove(player.getUsername());
             player.getRaidParty().getMembers().forEach(this::updateOverlay);
             player.getRaidParty().leave(player);
@@ -264,7 +264,7 @@ public class CustomRaid {
         if (player.getRaidParty().isOwner(player)) {
             handleFinish(true);
         } else {
-            System.out.println("from " + damageMap + " removing " + player.getUsername());
+            //System.out.println("from " + damageMap + " removing " + player.getUsername());
             damageMap.remove(player.getUsername());
             player.getRaidParty().getMembers().forEach(this::updateOverlay);
             player.getRaidParty().leave(player);

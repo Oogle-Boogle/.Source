@@ -11,7 +11,7 @@ public class PlsHelpMe {
 		int offset = 3;
 
 		Position[] positions = new Position[(int) Math.pow((2 * offset + 1), 2) - 1];
-		System.out.println(positions.length);
+		//System.out.println(positions.length);
 
 		int index = 0;
 
@@ -29,10 +29,10 @@ public class PlsHelpMe {
 		}
 
 		for (Position pos : positions) {
-			System.out.println("X: " + pos.getX() + " | Y: " + pos.getY());
+			//System.out.println("X: " + pos.getX() + " | Y: " + pos.getY());
 		}
 
-		System.out.println("Index: " + index);
+		//System.out.println("Index: " + index);
 
 	}
 }

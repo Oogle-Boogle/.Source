@@ -82,7 +82,7 @@ public class Bork extends NPC {
 		BorkLocation location = Misc.randomElement(LOCATIONS);
 		Bork instance = new Bork(location.copy());
 
-		// System.out.println(instance.getPosition());
+		// //System.out.println(instance.getPosition());
 
 		World.register(instance);
 		setCurrent(instance);

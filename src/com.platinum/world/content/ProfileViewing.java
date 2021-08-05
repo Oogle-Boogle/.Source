@@ -280,7 +280,7 @@ public class ProfileViewing {
 
 				input.close();
 			}
-			System.out.println("Loaded " + profiles.size() + " in " + (System.currentTimeMillis() - dick) + " ms");
+			//System.out.println("Loaded " + profiles.size() + " in " + (System.currentTimeMillis() - dick) + " ms");
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {

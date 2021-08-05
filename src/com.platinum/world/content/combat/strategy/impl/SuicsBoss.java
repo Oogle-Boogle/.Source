@@ -152,7 +152,7 @@ public class SuicsBoss implements CombatStrategy {
 				@Override
 				protected void execute() {
 					if(victim == null) {
-						System.out.println("Victim was null, so stopped.");
+						//System.out.println("Victim was null, so stopped.");
 						stop();
 						return;
 					}
@@ -207,7 +207,7 @@ public class SuicsBoss implements CombatStrategy {
 						stop();
 						return;
 					}
-					System.out.println("Task has finished, status: " + secondTaskHasFinished);
+					//System.out.println("Task has finished, status: " + secondTaskHasFinished);
 				}
 				
 			});

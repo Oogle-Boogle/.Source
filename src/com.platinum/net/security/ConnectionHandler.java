@@ -53,7 +53,7 @@ public class ConnectionHandler {
 		if(!isLocal(host)) {
 			if(CONNECTIONS.get(host) != null) {
 				if(CONNECTIONS.get(host) >= GameSettings.CONNECTION_AMOUNT) {
-					//System.out.println("Connection limit reached : "+player.getUsername()+". Host: "+host);
+					////System.out.println("Connection limit reached : "+player.getUsername()+". Host: "+host);
 					return LoginResponses.LOGIN_CONNECTION_LIMIT;//LoginResponses.LOGIN_SUCCESSFUL;
 				}
 			}
@@ -92,7 +92,7 @@ public class ConnectionHandler {
 			in.close();
 			in = null;
 		} catch (final Exception e) {
-			System.out.println("Could not load blacklisted hosts.");
+			//System.out.println("Could not load blacklisted hosts.");
 		}
 	}
 
@@ -113,7 +113,7 @@ public class ConnectionHandler {
 			in.close();
 			in = null;
 		} catch (final Exception e) {
-			System.out.println("Could not load blacklisted hadware numbers.");
+			//System.out.println("Could not load blacklisted hadware numbers.");
 		}
 	}
 	/*private static void loadBannedComputers() {
@@ -129,7 +129,7 @@ public class ConnectionHandler {
 			in = null;
 		} catch (final Exception e) {
 			e.printStackTrace();
-			System.out.println("Could not load blacklisted hadware numbers.");
+			//System.out.println("Could not load blacklisted hadware numbers.");
 		}
 	}*/
 
