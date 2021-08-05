@@ -2,6 +2,7 @@ package com.platinum.world.content;
 
 import com.platinum.GameSettings;
 import com.platinum.engine.task.Task;
+import com.platinum.util.Misc;
 import com.platinum.world.entity.impl.player.Player;
 
 public class DPSTask extends Task {
@@ -14,8 +15,8 @@ public class DPSTask extends Task {
 	}
 	
 	protected void execute() {
-		//System.out.println("Executing");
-		player.getPacketSender().sendString(23999, "DPS: @gre@" + player.getDpsOverlay().getDPS());
+
+		player.getPacketSender().sendString(23999, "DPS: @gre@" + Misc.formatNumber(player.getDpsOverlay().getDPS()));
 		
 	}
 
