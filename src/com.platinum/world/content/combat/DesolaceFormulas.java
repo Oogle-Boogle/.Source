@@ -13,7 +13,6 @@ import com.platinum.world.content.combat.prayer.PrayerHandler;
 import com.platinum.world.content.combat.range.CombatRangedAmmo.RangedWeaponData;
 import com.platinum.world.content.combat.weapon.FightType;
 import com.platinum.world.content.serverperks.GlobalPerks;
-import com.platinum.world.content.serverperks.PersonalPerks;
 import com.platinum.world.content.skill.SkillManager;
 import com.platinum.world.content.skill.impl.summoning.Familiar;
 import com.platinum.world.entity.impl.Character;
@@ -115,9 +114,6 @@ public class DesolaceFormulas {
                 }
                 if (GlobalPerks.getInstance().getActivePerk() == GlobalPerks.Perk.DAMAGE) {
                     base *= 2;
-                }
-                if (PersonalPerks.getInstance().getActivePerk() == PersonalPerks.Perk.DAMAGE) {
-                	base *= 2;
                 }
             }
             maxHit = (base *= 10);

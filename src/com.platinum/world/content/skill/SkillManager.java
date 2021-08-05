@@ -29,7 +29,6 @@ import com.platinum.world.content.combat.prayer.CurseHandler;
 import com.platinum.world.content.combat.prayer.PrayerHandler;
 import com.platinum.world.content.event.SpecialEvents;
 import com.platinum.world.content.serverperks.GlobalPerks;
-import com.platinum.world.content.serverperks.PersonalPerks;
 import com.platinum.world.content.skill.impl.summoning.Familiar;
 import com.platinum.world.entity.impl.player.Player;
 
@@ -111,7 +110,7 @@ public class SkillManager {
 			experience *= 1.15; // 15
 		}
 
-		if (GameSettings.TRIPLE_EXP || PersonalPerks.getInstance().getActivePerk() == PersonalPerks.Perk.XP || GlobalPerks.getInstance().getActivePerk() == GlobalPerks.Perk.XP) {
+		if (GameSettings.TRIPLE_EXP || GlobalPerks.getInstance().getActivePerk() == GlobalPerks.Perk.XP) {
 			experience *= 3;
 		}
 

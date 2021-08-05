@@ -102,7 +102,6 @@ import com.platinum.world.content.roulette.RouletteDeposit;
 import com.platinum.world.content.roulette.RouletteWithdraw;
 import com.platinum.world.content.roulette.SetRouletteBet;
 import com.platinum.world.content.serverperks.GlobalPerks;
-import com.platinum.world.content.serverperks.PersonalPerks;
 import com.platinum.world.content.skill.ChatboxInterfaceSkillAction;
 import com.platinum.world.content.skill.impl.construction.Construction;
 import com.platinum.world.content.skill.impl.crafting.LeatherMaking;
@@ -148,13 +147,6 @@ public class ButtonClickPacketListener implements PacketListener {
             player.getPacketSender()
                     .sendEnterAmountPrompt("How much would you like to contribute?");
             player.setInputHandling(new ServerPerkContributionInput());
-            return;
-        }
-       
-        if (id == -23380) {
-            player.getPacketSender()
-                    .sendEnterAmountPrompt("How much personal would you like to contribute?");
-            player.setInputHandling(new PersonalPerkContributionInput());
             return;
         }
 
@@ -2338,9 +2330,6 @@ public class ButtonClickPacketListener implements PacketListener {
     private boolean checkHandlers(Player player, int id) {
 
         if (GlobalPerks.getInstance().handleButton(player, id)) {
-            return true;
-        }
-        if (PersonalPerks.getInstance().handleButton(player, id)) {
             return true;
         }
         if (StartScreen.handleButton(player, id)) {

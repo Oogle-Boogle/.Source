@@ -47,7 +47,6 @@ import com.platinum.world.content.groupironman.GroupIronmanGroup;
 import com.platinum.world.content.guidesInterface.GuideBook;
 import com.platinum.world.content.pos.PlayerOwnedShopManager;
 import com.platinum.world.content.serverperks.GlobalPerks;
-import com.platinum.world.content.serverperks.PersonalPerks;
 import com.platinum.world.content.starterprogression.StarterProgression;
 import com.platinum.world.entity.impl.npc.NPC;
 import com.google.common.base.Preconditions;
@@ -124,7 +123,6 @@ public final class GameLoader {
 		serviceLoader.execute(StarterProgression::loadTasks);
         serviceLoader.execute(GroupIronmanGroup::loadGroups);
 		serviceLoader.execute(GlobalPerks.getInstance()::load);
-		serviceLoader.execute(PersonalPerks.getInstance()::load);
 		 if (!GameSettings.LOCALHOST)
 				serviceLoader.execute(() -> {
 					JavaCord.init();

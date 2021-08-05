@@ -59,7 +59,6 @@ import com.platinum.world.content.guidesInterface.GuideBook;
 import com.platinum.world.content.minigames.impl.FreeForAll;
 import com.platinum.world.content.minigames.impl.LastManStanding;
 import com.platinum.world.content.serverperks.GlobalPerks;
-import com.platinum.world.content.serverperks.PersonalPerks;
 import com.platinum.world.content.skill.SkillManager;
 import com.platinum.world.content.skill.impl.herblore.Decanting;
 import com.platinum.world.content.skill.impl.slayer.SlayerMaster;
@@ -364,11 +363,8 @@ public class CommandPacketListener implements PacketListener {
 
 	private static void playerCommands(final Player player, String[] command, String wholeCommand) {
 
-		if (command[0].equalsIgnoreCase("sperks")) {
+		if (command[0].equalsIgnoreCase("serverperks")) {
 			GlobalPerks.getInstance().open(player);
-		}
-		if (command[0].equalsIgnoreCase("pperks")) {
-			PersonalPerks.getInstance().open(player);
 		}
 		if (command[0].equalsIgnoreCase("progress")) {
 			player.getProgressionManager().open();
@@ -483,7 +479,7 @@ public class CommandPacketListener implements PacketListener {
 			/*if (command[0].equalsIgnoreCase("raidlobby")) {
 				player.getCustomRaid().open(player);
 			}*/
-		case "raidlobby":
+		case "raids":
 			if (player.getNpcKills() < 1000 && player.getRights() != PlayerRights.DEVELOPER) {
 				player.sendMessage("@red@You need 1000 NPC kill count to participate in raids.");
 				player.sendMessage("@red@You have " + player.getNpcKills() + " NPC kills.");
@@ -532,16 +528,6 @@ public class CommandPacketListener implements PacketListener {
 			InstanceSystem.destructInstance(player);
 				player.sendMessage("Instance reset.");
 
-		}
-		if (command[0].equalsIgnoreCase("raids")) {
-			if (player.getNpcKills() < 1000 && player.getRights() != PlayerRights.DEVELOPER) {
-				player.sendMessage("@red@You need 1000 NPC kill count to participate in raids.");
-				player.sendMessage("@red@You have " + player.getNpcKills() + " NPC kills.");
-				player.sendMessage("@blu@To create a raid party do ::raidlobby");
-				return;
-			}
-			TeleportHandler.teleportPlayer(player,  new Position(3044, 5233), player.getSpellbook().getTeleportType());
-			break;
 		}
 
 		if (wholeCommand.equals("afk")) {

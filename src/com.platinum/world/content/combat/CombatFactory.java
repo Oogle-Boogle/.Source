@@ -42,7 +42,6 @@ import com.platinum.world.content.combat.strategy.impl.Nex;
 import com.platinum.world.content.combat.weapon.CombatSpecial;
 import com.platinum.world.content.combat.weapon.FightStyle;
 import com.platinum.world.content.serverperks.GlobalPerks;
-import com.platinum.world.content.serverperks.PersonalPerks;
 import com.platinum.world.content.transportation.TeleportHandler;
 import com.platinum.world.content.transportation.TeleportType;
 import com.platinum.world.entity.impl.Character;
@@ -775,10 +774,6 @@ public final class CombatFactory {
 			}
 
 			if (GlobalPerks.getInstance().getActivePerk() == GlobalPerks.Perk.DAMAGE) {
-				maxHit *= 2;
-			}
-			
-			if (PersonalPerks.getInstance().getActivePerk() == PersonalPerks.Perk.DAMAGE) {
 				maxHit *= 2;
 			}
 		}

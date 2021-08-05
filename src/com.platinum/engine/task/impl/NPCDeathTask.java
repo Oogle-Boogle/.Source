@@ -26,7 +26,6 @@ import com.platinum.world.content.combat.strategy.impl.SuicsBoss;
 import com.platinum.world.content.raids.RaidNpc;
 import com.platinum.world.content.raids.OldRaidParty;
 import com.platinum.world.content.serverperks.GlobalPerks;
-import com.platinum.world.content.serverperks.PersonalPerks;
 import com.platinum.world.content.skill.impl.pvm.NpcGain;
 import com.platinum.world.entity.impl.npc.NPC;
 import com.platinum.world.entity.impl.player.Player;
@@ -175,16 +174,10 @@ public class NPCDeathTask extends Task {
 						if (GlobalPerks.getInstance().getActivePerk() == GlobalPerks.Perk.BOSS_POINTS) {
 							killer.setBossPoints(killer.getBossPoints() + 2);
 						}
-						else if (PersonalPerks.getInstance().getActivePerk() == PersonalPerks.Perk.BOSS_POINTS) {
-							killer.setBossPoints(killer.getBossPoints() + 2);
-						}
-						else if (!(PersonalPerks.getInstance().getActivePerk() != PersonalPerks.Perk.BOSS_POINTS) || GlobalPerks.getInstance().getActivePerk() != GlobalPerks.Perk.BOSS_POINTS) {
-							killer.setBossPoints(killer.getBossPoints() + 1);
-						}
-						
-						
-						killer.sendMessage("<img=0>You now have @red@" + killer.getBossPoints() + " Boss Points!");
-						killer.incrementTotalBossKills(1);
+
+
+					killer.sendMessage("<img=0>You now have @red@" + killer.getBossPoints() + " Boss Points!");
+					killer.incrementTotalBossKills(1);
 
 						// expcustomskill
 						if (killer.getOldRaidParty() == null && !(npc instanceof RaidNpc)) {
@@ -194,12 +187,6 @@ public class NPCDeathTask extends Task {
 						}
 						if (GlobalPerks.getInstance().getActivePerk() == GlobalPerks.Perk.BOSS_POINTS) {
 							killer.setBossPoints(killer.getBossPoints() + 2);
-						}
-						else if (PersonalPerks.getInstance().getActivePerk() == PersonalPerks.Perk.BOSS_POINTS) {
-							killer.setBossPoints(killer.getBossPoints() + 2);
-						}
-						else if (!(PersonalPerks.getInstance().getActivePerk() != PersonalPerks.Perk.BOSS_POINTS) || GlobalPerks.getInstance().getActivePerk() != GlobalPerks.Perk.BOSS_POINTS) {
-							killer.setBossPoints(killer.getBossPoints() + 1);
 						}
 						
 						killer.sendMessage("<img=0>You now have @red@" + killer.getBossPoints() + " Boss Points!");
@@ -214,12 +201,6 @@ public class NPCDeathTask extends Task {
 						}
 						if (GlobalPerks.getInstance().getActivePerk() == GlobalPerks.Perk.BOSS_POINTS) {
 							killer.setBossPoints(killer.getBossPoints() + 2);
-						}
-						else if (PersonalPerks.getInstance().getActivePerk() == PersonalPerks.Perk.BOSS_POINTS) {
-							killer.setBossPoints(killer.getBossPoints() + 2);
-						}
-						else if (!(PersonalPerks.getInstance().getActivePerk() != PersonalPerks.Perk.BOSS_POINTS) || GlobalPerks.getInstance().getActivePerk() != GlobalPerks.Perk.BOSS_POINTS) {
-							killer.setBossPoints(killer.getBossPoints() + 1);
 						}
 						
 						killer.sendMessage("<img=0>You now have @red@" + killer.getBossPoints() + " Boss Points!");

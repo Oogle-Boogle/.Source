@@ -66,7 +66,6 @@ import com.platinum.world.content.raids.OldRaidParty;
 import com.platinum.world.content.roulette.Roulette;
 import com.platinum.world.content.scratchcards.ScratchCard;
 import com.platinum.world.content.serverperks.GlobalPerks;
-import com.platinum.world.content.serverperks.PersonalPerks;
 import com.platinum.world.content.skill.SkillManager;
 import com.platinum.world.content.skill.impl.construction.ConstructionData.HouseLocation;
 import com.platinum.world.content.skill.impl.construction.ConstructionData.HouseTheme;
@@ -670,7 +669,7 @@ public class Player extends Character {
 	}
 
 	public void addNpcKillCount(int npcId) {
-		int amount = GlobalPerks.getInstance().getActivePerk() == GlobalPerks.Perk.NPC_KILLS || PersonalPerks.getInstance().getActivePerk() == PersonalPerks.Perk.NPC_KILLS ? 2 : 1;
+		int amount = GlobalPerks.getInstance().getActivePerk() == GlobalPerks.Perk.NPC_KILLS ? 2 : 1;
 		npcKillCountMap.merge(npcId, amount, Integer::sum);
 	}
 

@@ -25,7 +25,6 @@ import com.platinum.world.content.minigames.impl.FreeForAll;
 import com.platinum.world.content.minigames.impl.LastManStanding;
 import com.platinum.world.content.minigames.impl.PestControl;
 import com.platinum.world.content.serverperks.GlobalPerks;
-import com.platinum.world.content.serverperks.PersonalPerks;
 import com.platinum.world.entity.Entity;
 import com.platinum.world.entity.EntityHandler;
 import com.platinum.world.entity.impl.CharacterList;
@@ -186,7 +185,6 @@ public class World {
 		CustomFreeForAll.sequence();
 		LastManStanding.sequence();
 		GlobalPerks.getInstance().tick();
-		PersonalPerks.getInstance().tick();
 		// First we construct the update sequences.
 		UpdateSequence<Player> playerUpdate = new PlayerUpdateSequence(synchronizer, updateExecutor);
 		UpdateSequence<NPC> npcUpdate = new NpcUpdateSequence();

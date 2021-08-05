@@ -16,7 +16,6 @@ import com.platinum.world.content.PlayerPanel;
 import com.platinum.world.content.dialogue.DialogueManager;
 import com.platinum.world.content.event.SpecialEvents;
 import com.platinum.world.content.serverperks.GlobalPerks;
-import com.platinum.world.content.serverperks.PersonalPerks;
 import com.platinum.world.content.transportation.TeleportHandler;
 import com.platinum.world.entity.impl.npc.NPC;
 import com.platinum.world.entity.impl.player.Player;
@@ -190,10 +189,7 @@ public class Slayer {
         if (GlobalPerks.getInstance().getActivePerk() == GlobalPerks.Perk.SLAYER_POINTS) {
             pointsReceived *= 2;
         }
-        
-        if (PersonalPerks.getInstance().getActivePerk() == PersonalPerks.Perk.SLAYER_POINTS) {
-        	pointsReceived *= 2;
-        }
+
 
         int per5 = pointsReceived * 2;
         int per10 = pointsReceived * 3;

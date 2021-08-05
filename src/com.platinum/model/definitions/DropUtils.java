@@ -1,7 +1,6 @@
 package com.platinum.model.definitions;
 
 import com.platinum.model.container.impl.Equipment;
-import com.platinum.world.content.serverperks.PersonalPerks;
 import com.platinum.world.content.skill.impl.summoning.Familiar;
 import com.platinum.world.entity.impl.player.Player;
 
@@ -407,9 +406,6 @@ public class DropUtils {
 			for(int[] pet : DRPETS)
 				if(playerFamiliar.getSummonNpc().getId() == pet[0])
 					totalBonus += pet[1];
-		}
-		if (PersonalPerks.getInstance().getActivePerk() == PersonalPerks.Perk.DROPRATE) {
-			totalBonus = 75;
 		}
 
 		if(player.isDoubleRateActive())
