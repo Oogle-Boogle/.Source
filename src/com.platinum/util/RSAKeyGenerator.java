@@ -43,9 +43,9 @@ public class RSAKeyGenerator {
 
             RSAPublicKeySpec login_publicSpec = login_factory.getKeySpec(login_keypair.getPublic(), RSAPublicKeySpec.class);
 
-            printKey(privateFile, ondemand_privateSpec.getModulus(), ondemand_privateSpec.getPrivateExponent(), login_privateSpec.getModulus(), login_privateSpec.getPrivateExponent());
+            writeKey(privateFile, ondemand_privateSpec.getModulus(), ondemand_privateSpec.getPrivateExponent(), login_privateSpec.getModulus(), login_privateSpec.getPrivateExponent());
 
-            printKey(publicFile, ondemand_publicSpec.getModulus(), ondemand_publicSpec.getPublicExponent(), login_publicSpec.getModulus(), login_publicSpec.getPublicExponent());
+            writeKey(publicFile, ondemand_publicSpec.getModulus(), ondemand_publicSpec.getPublicExponent(), login_publicSpec.getModulus(), login_publicSpec.getPublicExponent());
 
         } catch (InvalidKeySpecException | NoSuchAlgorithmException e) {
             e.printStackTrace();
