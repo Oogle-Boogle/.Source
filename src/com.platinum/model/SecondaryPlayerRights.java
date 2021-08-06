@@ -19,6 +19,8 @@ public enum SecondaryPlayerRights {
 
     SUPER_DONATOR(20, "><col=6600CC>", 1, 1.5),
 
+    EXTREME_DONOR(20, "><col=>", 1, 1.5),
+
     LEGENDARY_DONATOR(30, "<col=FFFF64>", 1, 1.5),
 
     UBER_DONATOR(40, "<col=B40404>", 1, 1.5),

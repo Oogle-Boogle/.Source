@@ -59,7 +59,6 @@ public enum PlayerRights {
 	YOUTUBER(30, "<col=CD661D>", 1, 1.1),//12
 	COMMUNITY_MANAGER(0, "<col=B40404>", 1, 1.5), //13
 	VIP_DONATOR(0, "<col=8600CC", 10, 3.5), // 14 defines the rank server-sided, to send the index to client-side
-	TEST(-1, "<col=FFFF64>", 1, 1.5),
 	HADMIN(-1, "<col=FFFF64>", 1, 1.5);
 
 	PlayerRights(int yellDelaySeconds, String yellHexColorPrefix, double loyaltyPointsGainModifier, double experienceGainModifier) {
