@@ -20,7 +20,7 @@ public enum SlayerTasks {
 	SYLVESTER(SlayerMaster.VANNAKA, 4459, "Sylvester can be found in the Starter Zone", 400, new Position(3754, 3551)),
 	COYOTE(SlayerMaster.VANNAKA, 4456, "Coyote can be found in the Starter Zone ", 400, new Position(3745, 3564, 0)),
 	YOSEMITE_SAM(SlayerMaster.VANNAKA, 4462, "Yosemite Sam can be found in the Starter Zone!", 400, new Position(3760, 3572, 0)),
-	MARTIAN(SlayerMaster.DURADEL, 2783, "Martian can be found in the Starter Zone!", 400, new Position(3785, 3572, 0)),
+	MARTIAN(SlayerMaster.DURADEL, 4409, "Martian can be found in the Starter Zone!", 400, new Position(3785, 3572, 0)),
 	
 	/**
 	 * Medium tasks

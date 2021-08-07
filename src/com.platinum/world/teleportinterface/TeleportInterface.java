@@ -219,7 +219,7 @@ public class TeleportInterface {
 		
 
 		
-		NEX(50601, "Supreme", "Supreme@bla@(T9)", "This npc drops Supreme set", "@red@KC REQ: 3500 Exoden", "@red@HP:@gre@ 825k", "", 3154,
+		NEX(50601, "Supreme nex", "Supreme nex@bla@(T9)", "This npc drops Supreme set", "@red@KC REQ: 3500 Exoden", "@red@HP:@gre@ 825k", "", 3154,
 				new int[] { 2599, 4699, 0 },2000),
 		
 		STORMBREAKER(50602, "Storm Breaker", "Storm Breaker@bla@(T10)", "This drops Stormbreaker", "@red@KC REQ: 3500 Nex", "@red@HP:@gre@ 825k", "", 33,

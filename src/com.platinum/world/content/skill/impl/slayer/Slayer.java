@@ -5,6 +5,7 @@ import com.platinum.model.Locations;
 import com.platinum.model.PlayerRights;
 import com.platinum.model.Position;
 import com.platinum.model.Skill;
+import com.platinum.model.container.impl.Shop;
 import com.platinum.model.definitions.NpcDefinition;
 import com.platinum.util.Misc;
 import com.platinum.util.RandomUtility;
@@ -472,8 +473,8 @@ public class Slayer {
                             .sendMessage("You will now permanently receive double Slayer experience.");
                     break;
                 case -29531:
-                    //ShopManager.getShops().get(47).open(player);
-                	player.sendMessage("Slayer shop is currently being reworked");
+                    Shop.ShopManager.getShops().get(47).open(player);
+                	//player.sendMessage("Slayer shop is currently being reworked");
                     break;
             }
             player.getPacketSender()
