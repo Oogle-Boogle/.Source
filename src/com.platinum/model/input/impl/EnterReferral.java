@@ -11,7 +11,7 @@ import com.platinum.world.entity.impl.player.Player;
 public class EnterReferral extends Input {
 	public static final String[] rewardableUsers = new String[] {"emp1", "emp2", "emp3", "emp4"};
 	public static final String[] temporaryCodes = new String[] {"Wisdom","Nike"};
-	public static final String[] merkCode = new String[] {"walkchaos","princespeach","noobsown"};
+	public static final String[] merkCode = new String[] {"walkchaos","noobsown"};
     @Override
     public void handleSyntax(Player player, String syntax) {
         player.hasReferral = true;
@@ -35,6 +35,7 @@ public class EnterReferral extends Input {
             } else if(Arrays.stream(temporaryCodes).anyMatch(username::equalsIgnoreCase)) {
             	player.getInventory().add(3082, 1);
             	player.getInventory().add(15373, 1);
+            	player.getInventory().add(16432, 200);
             	player.getInventory().add(989, 2);
             	player.getInventory().add(2572, 1);
             	player.sendMessage("@red@Congratz! Because you used the code " + username + " You have gotten a reward!");
@@ -43,6 +44,7 @@ public class EnterReferral extends Input {
             	player.getInventory().add(3082, 1);
             	player.getInventory().add(15373, 1);
             	player.getInventory().add(989, 1);
+                player.getInventory().add(16432, 200);
             	player.getInventory().add(2572, 1);
             	player.getInventory().add(537, 100);
             	player.sendMessage("@red@Congratz! Because you used the code " + username + " You have gotten a special reward!");

@@ -246,9 +246,9 @@ public class EquipPacketListener implements PacketListener {
 		WeaponInterfaces.assign(player, weapon);
 		WeaponAnimations.assign(player, weapon);
 
-		if (weapon.getId() == 14006 || weapon.getId() == 13867) {
+		if (weapon.getId() == 14006 || weapon.getId() == 13867 || weapon.getId() == 6483) {
 			//15k dmg
-			player.setAutocastSpell(CombatSpells.FIRE_STRIKE.getSpell());
+			player.setAutocastSpell(CombatSpells.TIER1.getSpell());
 		}
 		if(weapon.getId() == 19468) {
 			//75 dmg
