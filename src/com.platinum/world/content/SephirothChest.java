@@ -80,10 +80,8 @@ public class SephirothChest {
 			} else if (rareDrop == 10835) {
 				player.getInventory().add(rareDrop, 4);
 			} else {
-				if(ItemDefinition.forId(rareDrop).getName().toLowerCase().contains("gem"))
-					player.getInventory().add(rareDrop, Misc.inclusiveRandom(3, 5));
-				else
-					player.getInventory().add(rareDrop, 1);
+				player.getInventory().add(rareDrop, 1);
+				World.sendMessage("@blu@[SEPHIROTH CHEST]: " + player.getUsername() + " has received " + ItemDefinition.forId(rareDrop).getName() + " from the Sephiroth chest!");
 			}
 		} else if (random >= 196 && random <= 200) {
 			int ultraDrops = getRandomItem(ultraLoots);
