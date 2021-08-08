@@ -174,9 +174,9 @@ public class NPCDeathTask extends Task {
 						if (GlobalPerks.getInstance().getActivePerk() == GlobalPerks.Perk.BOSS_POINTS) {
 							killer.setBossPoints(killer.getBossPoints() + 2);
 						}
-
-					killer.sendMessage("<img=0>You now have @red@" + killer.getBossPoints() + " Boss Points!");
-					killer.incrementTotalBossKills(1);
+						
+						killer.sendMessage("<img=0>You now have @red@" + killer.getBossPoints() + " Boss Points!");
+						killer.incrementTotalBossKills(1);
 					}
 
 					if (npc.getId() == 9280) {
@@ -516,6 +516,9 @@ public class NPCDeathTask extends Task {
 						}
 						if (npc.getId() == 8949) {
 							Juggernaut.handleDrop(npc);
+						}
+						if (npc.getId() == 25) {
+							TheSeph.handleDrop(npc);
 						}
 						if (npc.getId() == 8548) {
 							DailyNpc.handleDrop(npc);
