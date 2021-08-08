@@ -29,10 +29,8 @@ public class TeleportInterface {
 				new int[] { 2913, 4759, 0 },2000),
 		
 		HADES(50605, "Hades", "Hades@yel@(T3)", "Drops Misc items", "@red@KC REQ: 50 Lucario", "@red@HP:@gre@ 350k", "", 15, 
-				new int[] { 2095, 3677, 0 }, 3000),
-		
-		CHARIZARD(50606, "Charizard", "Charizard@yel@(T3)", "Gather Claw Tokens", "For the Shop", "@red@HP:@gre@ 375k", "@red@KC REQ: 75 Hades", 1982, 
-				new int[] { 2270, 3240, 0 });
+				new int[] { 2095, 3677, 0 }, 3000);
+
 
 		Bosses(int textId, String name, String description1, String description2, String description3,
 				String description4, String description5, int npcId, int[] teleportCords) {
@@ -221,7 +219,7 @@ public class TeleportInterface {
 		
 
 		
-		NEX(50601, "Supreme", "Supreme@bla@(T9)", "This npc drops Supreme set", "@red@KC REQ: 3500 Exoden", "@red@HP:@gre@ 825k", "", 3154,
+		NEX(50601, "Supreme nex", "Supreme nex@bla@(T9)", "This npc drops Supreme set", "@red@KC REQ: 3500 Exoden", "@red@HP:@gre@ 825k", "", 3154,
 				new int[] { 2599, 4699, 0 },2000),
 		
 		STORMBREAKER(50602, "Storm Breaker", "Storm Breaker@bla@(T10)", "This drops Stormbreaker", "@red@KC REQ: 3500 Nex", "@red@HP:@gre@ 825k", "", 33,

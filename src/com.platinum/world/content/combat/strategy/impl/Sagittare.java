@@ -42,7 +42,7 @@ public class Sagittare implements CombatStrategy {
 			@Override
 			public void execute() {
 				fear.getCombatBuilder().setVictim(target);
-				AmmunitionData ammo = AmmunitionData.ICE_ARROW;
+				AmmunitionData ammo = AmmunitionData.ZEPHYRIUM_ARROW;
 				new Projectile(fear, victim, ammo.getProjectileId(), ammo.getProjectileDelay() + 16,
 						ammo.getProjectileSpeed() + 15, ammo.getStartHeight(), ammo.getEndHeight(), 0).sendProjectile();
 				new CombatHitTask(fear.getCombatBuilder(), new CombatContainer(fear, target, 1, CombatType.RANGED, true))

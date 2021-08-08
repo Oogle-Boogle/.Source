@@ -259,7 +259,7 @@ public class DwarfMultiCannon {
 		NPC n = getTarget(player, cannon);
 		if(n == null)
 			return;
-		Hit dmg = new Hit(Misc.getRandom(266) - Misc.getRandom(n.getDefinition().getDefenceRange()), Hitmask.RED, CombatIcon.CANNON);
+		Hit dmg = new Hit(Misc.getRandom(25000) - Misc.getRandom(n.getDefinition().getDefenceRange()), Hitmask.RED, CombatIcon.CANNON);
 		new Projectile(cannon.getObject(), n, 53, 44, 3, 43, 31, 0).sendProjectile();
 		n.dealDamage(dmg);
 		n.getLastCombat().reset();

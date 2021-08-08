@@ -133,7 +133,8 @@ public class CombatHookTask extends Task {
 
 					if (!player.isAutocast() && player.getEquipment().get(Equipment.WEAPON_SLOT).getId() != 11605 
 							
-						&& player.getEquipment().get(Equipment.WEAPON_SLOT).getId() != 8664 
+						&& player.getEquipment().get(Equipment.WEAPON_SLOT).getId() != 8664
+							&& player.getEquipment().get(Equipment.WEAPON_SLOT).getId() !=6483
 						&& player.getEquipment().get(Equipment.WEAPON_SLOT).getId() != 11609 
 						&& player.getEquipment().get(Equipment.WEAPON_SLOT).getId() != 3911 
 						&& player.getEquipment().get(Equipment.WEAPON_SLOT).getId() != 15653 

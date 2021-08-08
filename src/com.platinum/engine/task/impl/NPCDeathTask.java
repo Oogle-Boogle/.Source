@@ -128,9 +128,7 @@ public class NPCDeathTask extends Task {
 						}
 					}
 
-					if (npc != null) {
-						killer.handleKeyRates(killer, npc);
-					}
+					killer.handleKeyRates(killer, npc);
 
 					//Add here
 
@@ -177,36 +175,8 @@ public class NPCDeathTask extends Task {
 							killer.setBossPoints(killer.getBossPoints() + 2);
 						}
 
-
 					killer.sendMessage("<img=0>You now have @red@" + killer.getBossPoints() + " Boss Points!");
 					killer.incrementTotalBossKills(1);
-
-						// expcustomskill
-						if (killer.getOldRaidParty() == null && !(npc instanceof RaidNpc)) {
-							NpcGain.GainBossesXP(killer);
-						} else if (killer.getOldRaidParty() != null && npc instanceof RaidNpc) {
-							NpcGain.RaidNPCBossXP(killer, npc);
-						}
-						if (GlobalPerks.getInstance().getActivePerk() == GlobalPerks.Perk.BOSS_POINTS) {
-							killer.setBossPoints(killer.getBossPoints() + 2);
-						}
-						
-						killer.sendMessage("<img=0>You now have @red@" + killer.getBossPoints() + " Boss Points!");
-						killer.incrementTotalBossKills(1);
-
-
-						// expcustomskill
-						if (killer.getOldRaidParty() == null && !(npc instanceof RaidNpc)) {
-							NpcGain.GainBossesXP(killer);
-						} else if (killer.getOldRaidParty() != null && npc instanceof RaidNpc) {
-							NpcGain.RaidNPCBossXP(killer, npc);
-						}
-						if (GlobalPerks.getInstance().getActivePerk() == GlobalPerks.Perk.BOSS_POINTS) {
-							killer.setBossPoints(killer.getBossPoints() + 2);
-						}
-						
-						killer.sendMessage("<img=0>You now have @red@" + killer.getBossPoints() + " Boss Points!");
-						killer.incrementTotalBossKills(1);
 					}
 
 					if (npc.getId() == 9280) {
@@ -467,7 +437,7 @@ public class NPCDeathTask extends Task {
 					
 					killer.getDpsOverlay().resetDamageDone(); // will work now
 					/** LOCATION KILLS **/
-					if (npc.getLocation().handleKilledNPC(killer, npc)) {
+					if (npc.getLocation().handleKilledNPC(killer, npc)) { //todo check
 						stop();
 						return;
 					}
@@ -547,9 +517,6 @@ public class NPCDeathTask extends Task {
 						if (npc.getId() == 8949) {
 							Juggernaut.handleDrop(npc);
 						}
-						if (npc.getId() == 25) {
-							TheSeph.handleDrop(npc);
-						}
 						if (npc.getId() == 8548) {
 							DailyNpc.handleDrop(npc);
 						}
@@ -568,7 +535,7 @@ public class NPCDeathTask extends Task {
 						if (npc.getId() == 7134) {
 							Bork.handleDrop(npc);
 						} else {
-							NPCDrops.dropItems(killer, npc);
+							NPCDrops.dropItems(killer, npc); //todo check
 						}
 					}
 
@@ -580,6 +547,7 @@ public class NPCDeathTask extends Task {
 			}
 			ticks--;
 		} catch (Exception e) {
+			System.out.println("ERROR IN NPCDEATHTASK .. "+e.getMessage());
 			e.printStackTrace();
 			stop();
 		}
@@ -627,11 +595,9 @@ public class NPCDeathTask extends Task {
 				&& npc.getLocation() != Location.INSTANCE_ARENA && !killer.isInRaid() && !(npc instanceof RaidNpc)) {
 
 			TaskManager.submit(new NPCRespawnTask(npc, npc.getDefinition().getRespawnTime(), killer));
-			//System.out.println(
-					//"setting respawn task for npc: " + npc.getId() + " OBJECT: " + npc.getDefinition().getName());
+			System.out.println("setting respawn task for npc: " + npc.getId() + " OBJECT: " + npc.getDefinition().getName());
 		} else {
-			//System.out.println(
-					//"Not setting respawn task for npc: " + npc.getId() + " OBJECT: " + npc.getDefinition().getName());
+			System.out.println("Not setting respawn task for npc: " + npc.getId() + " OBJECT: " + npc.getDefinition().getName());
 		}
 
 		World.deregister(npc);

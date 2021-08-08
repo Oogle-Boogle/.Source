@@ -2141,7 +2141,7 @@ public class Player extends Character {
 		int weaponId = equipment.get(Equipment.WEAPON_SLOT).getDefinition().getId();
 
 		if (weaponId == 14006 || weaponId == 3928 || weaponId == 5130 || weaponId == 18865
-				|| weaponId == 14006 || weaponId == 19468 || weaponId == 16137) {
+				|| weaponId == 14006 || weaponId == 19468 || weaponId == 16137 || weaponId == 6483) {
 			return 1;
 		}
 		if (weaponId == 3951 || weaponId == 14559 || weaponId == 5131 || weaponId == 6197 || weaponId == 5132
@@ -2244,6 +2244,7 @@ public class Player extends Character {
 
 		if (castSpell != null || autocastSpell != null
 				|| this.getEquipment().get(Equipment.WEAPON_SLOT).getId() == 11605
+				|| this.getEquipment().get(Equipment.WEAPON_SLOT).getId() == 6483
 				|| this.getEquipment().get(Equipment.WEAPON_SLOT).getId() == 11609
 				|| this.getEquipment().get(Equipment.WEAPON_SLOT).getId() == 3951
 				|| this.getEquipment().get(Equipment.WEAPON_SLOT).getId() == 5129

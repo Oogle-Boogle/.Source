@@ -86,14 +86,14 @@ public class DefaultRangedCombatStrategy implements CombatStrategy {
 		if (entity.isNpc()) {
 			NPC npc = (NPC) entity;
 
-			AmmunitionData ammo = AmmunitionData.ADAMANT_ARROW;
+			AmmunitionData ammo = AmmunitionData.KRATONITE_ARROW;
 
 			switch (npc.getId()) {
 			case 688:
-				ammo = AmmunitionData.BRONZE_ARROW;
+				ammo = AmmunitionData.BATHEUS_ARROW;
 				break;
 			case 27:
-				ammo = AmmunitionData.STEEL_ARROW;
+				ammo = AmmunitionData.MARMAROS_ARROW;
 				break;
 			case 2028:
 				ammo = AmmunitionData.BOLT_RACK;
@@ -101,13 +101,13 @@ public class DefaultRangedCombatStrategy implements CombatStrategy {
 			case 6220:
 			case 6256:
 			case 6276:
-				ammo = AmmunitionData.RUNE_ARROW;
+				ammo = AmmunitionData.FRACTITIE_ARROW;
 				break;
 			case 6225:
 				ammo = AmmunitionData.STEEL_JAVELIN;
 				break;
 			case 6252:
-				ammo = AmmunitionData.RUNE_ARROW;
+				ammo = AmmunitionData.FRACTITIE_ARROW;
 				break;
 			}
 

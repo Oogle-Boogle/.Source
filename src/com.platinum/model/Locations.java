@@ -1263,12 +1263,12 @@ public class Locations {
 
 			@Override
 			public boolean handleKilledNPC(Player killer, NPC npc) {
-				//System.out.println(killer.getUsername() + " Has just killed an " + npc.getDefinition().getName() + "!");
+				System.out.println(killer.getUsername() + " Has just killed an " + npc.getDefinition().getName() + "!");
 				if (killer.getInstanceSystem().getNpcsToSpawn() != null
-						&& killer.getInstanceSystem().getNpcsToSpawn()[0].getId() == npc.getId()) {
+						&& killer.getInstanceSystem().getNpcsToSpawn()[0].getId() == npc.getId() && killer.getRegionInstance().getType().equals(RegionInstanceType.INSTANCE_ARENA)) {
 
 					World.deregister(npc);
-					//System.out.println("NPC REMOVED FROM INSTANCE");
+					System.out.println("NPC REMOVED FROM INSTANCE");
 
 					TaskManager.submit(new Task(3) {
 						@Override
@@ -1283,8 +1283,9 @@ public class Locations {
 
 			@Override
 			public void leave(Player player) {
-				if (player.getLocation() != INSTANCE_ARENA) {
-					if (player.getRegionInstance() != null) {
+
+				if (player.getLocation() == INSTANCE_ARENA) {
+					if (player.getRegionInstance().getType().equals(RegionInstanceType.INSTANCE_ARENA)) {
 						InstanceSystem.destructInstance(player);
 					}
 				}
@@ -1293,7 +1294,7 @@ public class Locations {
 
 			@Override
 			public boolean canTeleport(Player player) {
-				if (player.getRegionInstance() != null) {
+				if (player.getRegionInstance().getType().equals(RegionInstanceType.INSTANCE_ARENA)) {
 					InstanceSystem.destructInstance(player);
 				}
 				return true;
@@ -1303,23 +1304,19 @@ public class Locations {
 			public void logout(Player player) {
 				player.moveTo(GameSettings.DEFAULT_POSITION);
 
-				if (player.getRegionInstance() != null) {
+				if (player.getRegionInstance().getType().equals(RegionInstanceType.INSTANCE_ARENA)) {
 					InstanceSystem.destructInstance(player);
 				}
-
-
 			}
 
 			@Override
 			public void onDeath(Player player) {
-				player.moveTo(GameSettings.DEFAULT_POSITION);
-
-				if (player.getRegionInstance() != null) {
+				if (player.getRegionInstance().getType().equals(RegionInstanceType.INSTANCE_ARENA)) {
 					InstanceSystem.destructInstance(player);
 				}
+				player.moveTo(GameSettings.DEFAULT_POSITION);
 				player.forceChat("Whoops..");
 			}
-
 		},
 		
 		DEFAULT(null, null, false, true, true, true, true, true) {

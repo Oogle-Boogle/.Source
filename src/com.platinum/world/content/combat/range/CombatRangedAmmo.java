@@ -14,16 +14,16 @@ public class CombatRangedAmmo {
 	//TODO: Add poisonous ammo
 	public enum RangedWeaponData {
 
-		LONGBOW(new int[] {839}, new AmmunitionData[] {AmmunitionData.BRONZE_ARROW}, RangedWeaponType.LONGBOW),
-		SHORTBOW(new int[] {841}, new AmmunitionData[] {AmmunitionData.BRONZE_ARROW}, RangedWeaponType.SHORTBOW),
-		OAK_LONGBOW(new int[] {845}, new AmmunitionData[] {AmmunitionData.IRON_ARROW}, RangedWeaponType.LONGBOW),
-		OAK_SHORTBOW(new int[] {843}, new AmmunitionData[] {AmmunitionData.IRON_ARROW}, RangedWeaponType.SHORTBOW),
-		WILLOW_LONGBOW(new int[] {847}, new AmmunitionData[] {AmmunitionData.MITHRIL_ARROW}, RangedWeaponType.LONGBOW),
-		WILLOW_SHORTBOW(new int[] {849}, new AmmunitionData[] {AmmunitionData.MITHRIL_ARROW}, RangedWeaponType.SHORTBOW),
-		MAPLE_LONGBOW(new int[] {851}, new AmmunitionData[] {AmmunitionData.RUNE_ARROW}, RangedWeaponType.LONGBOW),
-		MAPLE_SHORTBOW(new int[] {853}, new AmmunitionData[] {AmmunitionData.RUNE_ARROW}, RangedWeaponType.SHORTBOW),
-		YEW_LONGBOW(new int[] {855}, new AmmunitionData[] {AmmunitionData.RUNE_ARROW}, RangedWeaponType.LONGBOW),
-		YEW_SHORTBOW(new int[] {857}, new AmmunitionData[] {AmmunitionData.RUNE_ARROW}, RangedWeaponType.SHORTBOW),
+		LONGBOW(new int[] {839}, new AmmunitionData[] {AmmunitionData.BATHEUS_ARROW}, RangedWeaponType.LONGBOW),
+		SHORTBOW(new int[] {841}, new AmmunitionData[] {AmmunitionData.BATHEUS_ARROW}, RangedWeaponType.SHORTBOW),
+		OAK_LONGBOW(new int[] {845}, new AmmunitionData[] {AmmunitionData.MARMAROS_ARROW}, RangedWeaponType.LONGBOW),
+		OAK_SHORTBOW(new int[] {843}, new AmmunitionData[] {AmmunitionData.MARMAROS_ARROW}, RangedWeaponType.SHORTBOW),
+		WILLOW_LONGBOW(new int[] {847}, new AmmunitionData[] {AmmunitionData.KRATONITE_ARROW}, RangedWeaponType.LONGBOW),
+		WILLOW_SHORTBOW(new int[] {849}, new AmmunitionData[] {AmmunitionData.KRATONITE_ARROW}, RangedWeaponType.SHORTBOW),
+		MAPLE_LONGBOW(new int[] {851}, new AmmunitionData[] {AmmunitionData.FRACTITIE_ARROW}, RangedWeaponType.LONGBOW),
+		MAPLE_SHORTBOW(new int[] {853}, new AmmunitionData[] {AmmunitionData.FRACTITIE_ARROW}, RangedWeaponType.SHORTBOW),
+		YEW_LONGBOW(new int[] {855}, new AmmunitionData[] {AmmunitionData.FRACTITIE_ARROW}, RangedWeaponType.LONGBOW),
+		YEW_SHORTBOW(new int[] {857}, new AmmunitionData[] {AmmunitionData.FRACTITIE_ARROW}, RangedWeaponType.SHORTBOW),
 		MAGIC_LONGBOW(new int[] {859}, new AmmunitionData[] {AmmunitionData.DRAGON_ARROW}, RangedWeaponType.LONGBOW),
 		MAGIC_SHORTBOW(new int[] {4312, 3666, 3072, 3069, 3663, 3074, 18965, 861, 6724}, new AmmunitionData[] {AmmunitionData.DRAGON_ARROW}, RangedWeaponType.SHORTBOW),
 		GODBOW(new int[] {19143, 19149, 19146}, new AmmunitionData[] {AmmunitionData.DRAGON_ARROW}, RangedWeaponType.SHORTBOW),
@@ -32,8 +32,7 @@ public class CombatRangedAmmo {
 		MAGMA_BLOWPIPE(new int[] {12927}, new AmmunitionData[] {AmmunitionData.BLOWPIPE}, RangedWeaponType.BLOWPIPE),
 		DRAGON_BLOWPIPE(new int[] {20557}, new AmmunitionData[] {AmmunitionData.BLOWPIPE}, RangedWeaponType.BLOWPIPE),
 		ARMADYLIAN_MACHINE(new int[] {19467}, new AmmunitionData[] {AmmunitionData.HAND_CANNON_SHOT, AmmunitionData.OPAL_BOLT, AmmunitionData.IRON_BOLT, AmmunitionData.JADE_BOLT, AmmunitionData.STEEL_BOLT, AmmunitionData.PEARL_BOLT, AmmunitionData.MITHRIL_BOLT, AmmunitionData.TOPAZ_BOLT, AmmunitionData.ADAMANT_BOLT,
-				AmmunitionData.SAPPHIRE_BOLT, AmmunitionData.EMERALD_BOLT, AmmunitionData.RUBY_BOLT, AmmunitionData.RUNITE_BOLT, AmmunitionData.BROAD_BOLT, AmmunitionData.DIAMOND_BOLT, AmmunitionData.ONYX_BOLT, AmmunitionData.DRAGON_BOLT, AmmunitionData.ARMADYLIAN_ARROW, AmmunitionData.BRONZE_ARROW, AmmunitionData.IRON_ARROW,
-				AmmunitionData.STEEL_ARROW, AmmunitionData.MITHRIL_ARROW, AmmunitionData.ADAMANT_ARROW, AmmunitionData.RUNE_ARROW, AmmunitionData.SARADOMIN_ARROW, AmmunitionData.BROAD_ARROW, AmmunitionData.DRAGON_ARROW}, RangedWeaponType.CROSSBOW),
+				AmmunitionData.SAPPHIRE_BOLT, AmmunitionData.EMERALD_BOLT, AmmunitionData.RUBY_BOLT, AmmunitionData.RUNITE_BOLT, AmmunitionData.BROAD_BOLT, AmmunitionData.DIAMOND_BOLT, AmmunitionData.ONYX_BOLT, AmmunitionData.DRAGON_BOLT, AmmunitionData.ARMADYLIAN_ARROW}, RangedWeaponType.CROSSBOW),
 
 				
 		DARK_BOW(new int[] {3077, 3084, 3083, 11235, 13405, 18971, 15701, 15702, 15703, 15704, 19957}, new AmmunitionData[] {AmmunitionData.HAND_CANNON_SHOT, AmmunitionData.DRAGON_ARROW}, RangedWeaponType.DARK_BOW),
@@ -98,7 +97,7 @@ public class CombatRangedAmmo {
 		DETRIMENTALMINIGUN(new int[] {10905}, new AmmunitionData[] {AmmunitionData.HAND_CANNON_SHOT}, RangedWeaponType.HAND_CANNON),
 		HULKMINIGUN(new int[] {5195}, new AmmunitionData[] {AmmunitionData.HAND_CANNON_SHOT}, RangedWeaponType.HAND_CANNON),
 		DRAGONMINIGUN(new int[] {5131}, new AmmunitionData[] {AmmunitionData.HAND_CANNON_SHOT}, RangedWeaponType.HAND_CANNON),
-		JOKERSBOW(new int[] {3082}, new AmmunitionData[] {AmmunitionData.BRONZE_ARROW}, RangedWeaponType.SHORTBOW),
+		JOKERSBOW(new int[] {3082}, new AmmunitionData[] {AmmunitionData.BATHEUS_ARROW}, RangedWeaponType.SHORTBOW),
 		HERBALBOW(new int[] {9492}, new AmmunitionData[] {AmmunitionData.HERBALAMMO}, RangedWeaponType.SHORTBOW),
 		
 		HANDCANNON(new int[] {15241}, new AmmunitionData[] {AmmunitionData.HAND_CANNON_SHOT}, RangedWeaponType.HAND_CANNON),
@@ -163,7 +162,7 @@ public class CombatRangedAmmo {
 					}
 				}
 			}
-			return AmmunitionData.BRONZE_ARROW;
+			return AmmunitionData.BATHEUS_ARROW;
 		}
 	}
 
@@ -173,13 +172,13 @@ public class CombatRangedAmmo {
 		DRAGONBLOWPIPE(new int[] {20557}, -1, -1, 1123, 10, 20, 85, 23, 25),
 
 		
-		BRONZE_ARROW(new int[] {882}, 19, 2107, 10, 3, 44, 7, 43, 31),
-		IRON_ARROW(new int[] {884}, 18, -1, 9, 3, 44, 10, 43, 31),
-		STEEL_ARROW(new int[] {886}, 20, -1, 11, 3, 44, 16, 43, 31),
-		MITHRIL_ARROW(new int[] {888}, 21, -1, 12, 3, 44, 22, 43, 31),
-		ADAMANT_ARROW(new int[] {890}, 22, -1, 13, 3, 44, 31, 43, 31),
-		RUNE_ARROW(new int[] {892}, 24, -1, 15, 3, 44, 50, 43, 31),
-		ICE_ARROW(new int[]{78}, 25, -1, 16, 3, 44, 58, 34, 31),
+		BATHEUS_ARROW(new int[] {16432}, 19, 2107, 10, 3, 44, 7, 43, 31),
+		MARMAROS_ARROW(new int[] {16437}, 18, -1, 9, 3, 44, 10, 43, 31),
+		KRATONITE_ARROW(new int[] {16342}, 20, -1, 11, 3, 44, 16, 43, 31),
+		FRACTITIE_ARROW(new int[] {16447}, 21, -1, 12, 3, 44, 22, 43, 31),
+		ZEPHYRIUM_ARROW(new int[] {16452}, 22, -1, 13, 3, 44, 31, 43, 31),
+		ARGONITE_ARROW(new int[] {16458}, 24, -1, 15, 3, 44, 50, 43, 31),
+		KATAGON_ARROW(new int[]{16462}, 25, -1, 16, 3, 44, 58, 34, 31),
 		BROAD_ARROW(new int[] {4160}, 20, -1, 11, 3, 44, 58, 43, 31),
 		DRAGON_ARROW(new int[] {11212}, 1111, -1, 1120, 3, 44, 65, 43, 31),
 

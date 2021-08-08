@@ -52,8 +52,8 @@ public class DefaultMagicCombatStrategy implements CombatStrategy {
 			player.setCastSpell(player.getAutocastSpell());
 
 		int equipment = player.getEquipment().get(Equipment.WEAPON_SLOT).getId();
-		if(equipment == 14006 || equipment == 13867) {
-			player.setCastSpell(CombatSpells.FIRE_STRIKE.getSpell());
+		if(equipment == 14006 || equipment == 13867 || equipment == 6483) {
+			player.setCastSpell(CombatSpells.TIER1.getSpell());
 		}
 		if(equipment == 19468) {
 			player.setCastSpell(CombatSpells.TIER3.getSpell());
@@ -97,8 +97,8 @@ public class DefaultMagicCombatStrategy implements CombatStrategy {
 			if(player.isAutocast() && player.getAutocastSpell() != null)
 				player.setCastSpell(player.getAutocastSpell());
 			
-			if(equipment == 14006 || equipment == 13867) {
-				player.setCastSpell(CombatSpells.FIRE_STRIKE.getSpell());
+			if(equipment == 14006 || equipment == 13867 || equipment == 6483) {
+				player.setCastSpell(CombatSpells.TIER1.getSpell());
 				player.setAutocast(true);
 			}
 			if(equipment == 19468) {

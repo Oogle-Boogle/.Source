@@ -11,7 +11,7 @@ import com.platinum.world.entity.impl.player.Player;
 public class CustomMagicStaff {
 
     public static enum CustomStaff {    
-    	STARTER(new int[] { 13867 }, CombatSpells.FIRE_STRIKE.getSpell()),
+    	STARTER(new int[] { 13867, 6483 }, CombatSpells.TIER1.getSpell()),
     	TIER3(new int[] { 19468 }, CombatSpells.TIER3.getSpell()),
     	TIER4(new int[] { 3951 }, CombatSpells.TIER4.getSpell()),
     	TIER5(new int[] { 19720 }, CombatSpells.TIER5.getSpell()),

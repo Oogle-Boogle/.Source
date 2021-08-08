@@ -96,7 +96,7 @@ public class Emotes {
 						return false;
 					}
 				}
-				if (!player.getEmoteDelay().elapsed(data.delay * 1000)) {
+				if (!player.getEmoteDelay().elapsed(data.delay * 500)) {
 					player.getPacketSender()
 							.sendMessage("You must wait a bit before performing another skillcape emote.");
 					return true;
