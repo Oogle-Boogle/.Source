@@ -220,7 +220,7 @@ public class Barrows {
 					if (player.getRights() == PlayerRights.PLAYER || player.getRights() == PlayerRights.YOUTUBER) {
 					player.getInventory().add(b, 1);
 					}
-					World.sendMessage("@blu@[BARROWS] @bla@"+player.getUsername()+" has just received "+ItemDefinition.forId(b).getName()+" from the Barrows!");
+					World.sendFilteredMessage("@blu@[BARROWS] @bla@"+player.getUsername()+" has just received "+ItemDefinition.forId(b).getName()+" from the Barrows!");
 				}
 				player.getPacketSender().sendCameraShake(3, 2, 3, 2);
 				player.getPacketSender().sendMessage("The cave begins to collapse!");

@@ -34,7 +34,7 @@ public class Runecrafting {
 		if(Misc.getRandom(2000) == 3) {
 			player.getInventory().add(13326, 1);
 
-			World.sendMessage("@blu@<img=10>[Skilling Pets] "+player.getUsername()+" has received the Rift Guardian pet!");
+			World.sendFilteredMessage("@blu@<img=10>[Skilling Pets] "+player.getUsername()+" has received the Rift Guardian pet!");
 			player.getPacketSender().sendMessage("@red@You have received a skilling pet!");
 		}
 		player.performGraphic(new Graphic(186));

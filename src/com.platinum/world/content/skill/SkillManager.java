@@ -71,7 +71,7 @@ public class SkillManager {
 	 * if (skills.maxLevel[skill.ordinal()] == getMaxAchievingLevel(skill)) {
 	 * for(int i = 0; i < Skill.values().length; i++) { if(i == 21) continue;
 	 * if(player.getSkillManager().getMaxLevel(i) < (i == 3 || i == 5 ? 990 : 99)) {
-	 * return true; } World.sendMessage("Testing"); } } return false; }
+	 * return true; } World.sendFilteredMessage("Testing"); } } return false; }
 	 */
 
 	/**
@@ -97,6 +97,20 @@ public class SkillManager {
 		 */
 		if (this.skills.experience[skill.ordinal()] >= MAX_EXPERIENCE)
 			return this;
+
+		// If the player isn't in combat, update the state field of the presence
+		// We do this because in CombatHitTask, the player is already sending this info based on NPC name
+		if (!player.getCombatBuilder().isAttacking() || !player.getCombatBuilder().isBeingAttacked() && !skill.equals(Skill.CONSTITUTION)) {
+			player.getPacketSender().sendRichPresenceState("Training "+ skill.getFormatName());
+		}
+
+
+		if (!skill.getName().equalsIgnoreCase("constitution")) {
+			player.getPacketSender().sendRichPresenceSmallPictureText("Lvl: " + player.getSkillManager().getMaxLevel(skill));
+			player.getPacketSender().sendSmallImageKey(skill.getName().toLowerCase());
+		}
+
+
 
 		experience *= player.getRights().getExperienceGainModifier();
 		experience *= SpecialEvents.getDoubleEXPWeekend();
@@ -240,7 +254,7 @@ public class SkillManager {
 			if (skills.maxLevel[skill.ordinal()] == getMaxAchievingLevel(skill)) {
 				player.getPacketSender()
 						.sendMessage("Well done! You've achieved the highest possible level in this skill!");
-				// World.sendMessage("@red@[Player News] @bla@" + player.getUsername() + " has
+				// World.sendFilteredMessage("@red@[Player News] @bla@" + player.getUsername() + " has
 				// just achieved level 99 in "
 				// + skillName + "!");
 				TaskManager.submit(new Task(2, player, true) {
@@ -275,6 +289,7 @@ public class SkillManager {
 
 	public SkillManager stopSkilling() {
 		if (player.getCurrentTask() != null) {
+			player.resetRichPresence();
 			player.getCurrentTask().stop();
 			player.setCurrentTask(null);
 		}

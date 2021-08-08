@@ -1,14 +1,14 @@
 package com.platinum.world.content;
 
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.concurrent.CopyOnWriteArrayList;
-
 import com.platinum.model.GameMode;
 import com.platinum.util.Misc;
 import com.platinum.util.Stopwatch;
 import com.platinum.world.World;
 import com.platinum.world.entity.impl.player.Player;
+
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class PlayersOnlineInterface {
 
@@ -81,14 +81,15 @@ public class PlayersOnlineInterface {
 			if(p == null)
 				continue;
 			int rankId = p.getRights().ordinal();
+			int ironID = 0;
 			if(rankId == 0) {
 				if(p.getGameMode() == GameMode.IRONMAN) {
-					rankId = 33;
+					ironID = 1193;
 				} else if(p.getGameMode() == GameMode.HARDCORE_IRONMAN) {
-					rankId = 32;
+					ironID = 1192;
 				}
 			}
-			player.getPacketSender().sendString(child, ""+(rankId > 0 ? "<img="+rankId+">" : "  ")+""+p.getUsername());
+			player.getPacketSender().sendString(child, ""+(rankId > 0 ? "<img="+rankId+">" : "  ")+"" + (ironID > 0 ? "<irn="+ironID+">" : "") +""+p.getUsername());
 			child++;
 		}
 	}

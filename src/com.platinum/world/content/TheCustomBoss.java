@@ -86,7 +86,7 @@ public class TheCustomBoss extends NPC {
 		setCurrent(instance);
 		// System.out.print("spawned.");
 
-		World.sendMessage("<img=10>@red@The CustomBoss has spawned at the " + location.getLocation() + "!");
+		World.sendFilteredMessage("<img=10>@red@The CustomBoss has spawned at the " + location.getLocation() + "!");
 	}
 
 	/**
@@ -161,7 +161,7 @@ public class TheCustomBoss extends NPC {
 					new GroundItem(superrare, pos, player.getUsername(), false, 150, true, 200));
 			String itemName = (superrare.getDefinition().getName());
 			String itemMessage = Misc.anOrA(itemName) + " " + itemName;
-			World.sendMessage(
+			World.sendFilteredMessage(
 					"<img=10><col=FF0000>" + player.getUsername() + " received " + itemMessage + " from the Infernal Beast!");
 			return;
 		}
@@ -171,7 +171,7 @@ public class TheCustomBoss extends NPC {
 					new GroundItem(rare, pos, player.getUsername(), false, 150, true, 200));
 			String itemName = rare.getDefinition().getName();
 			String itemMessage = Misc.anOrA(itemName) + " " + itemName;
-			World.sendMessage(
+			World.sendFilteredMessage(
 					"<img=10><col=FF0000>" + player.getUsername() + " received " + itemMessage + " from the Infernal Beast!");
 			return;
 		}

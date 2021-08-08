@@ -84,13 +84,13 @@ public class KeysEvent {
 		if (Misc.getRandom(40) == 5) { //Rare Item
 			int rareDrops = getRandomItem(rareLoots);
 			player.getInventory().add(rareDrops, 1);
-			World.sendMessage("@or3@[Medium Key Chest]@bla@ "+player.getUsername()+ " has recieved a Rare from the chest!");
+			World.sendFilteredMessage("@or3@[Medium Key Chest]@bla@ "+player.getUsername()+ " has recieved a Rare from the chest!");
 		} else if (Misc.getRandom(225) == 147) {//Ultra Rare items
-			World.sendMessage("@or3@[Medium Key Chest]@bla@ "+player.getUsername()+ " has recieved an Ultra Rare from the chest!");
+			World.sendFilteredMessage("@or3@[Medium Key Chest]@bla@ "+player.getUsername()+ " has recieved an Ultra Rare from the chest!");
 			int ultraDrops = getRandomItem(ultraLoots);
 			player.getInventory().add(ultraDrops, 1);
 		} else if (Misc.getRandom(400) == 388) {//Amazing items
-			World.sendMessage("@or3@[Medium Key Chest]@bla@ "+player.getUsername()+ " has recieved a Legendary Reward from the chest!!");
+			World.sendFilteredMessage("@or3@[Medium Key Chest]@bla@ "+player.getUsername()+ " has recieved a Legendary Reward from the chest!!");
 			int amazingDrops = getRandomItem(amazingLoots);
 			player.getInventory().add(amazingDrops, 1);
 		} else {//Common items

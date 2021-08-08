@@ -1,39 +1,20 @@
 package com.platinum.model.definitions;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.concurrent.CopyOnWriteArrayList;
-
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 import com.platinum.GameSettings;
-import com.platinum.model.GameMode;
-import com.platinum.model.Graphic;
-import com.platinum.model.GroundItem;
-import com.platinum.model.Item;
+import com.platinum.model.*;
 import com.platinum.model.Locations.Location;
-import com.platinum.model.PlayerRights;
-import com.platinum.model.Position;
-import com.platinum.model.Skill;
 import com.platinum.model.container.impl.Bank;
 import com.platinum.util.JsonLoader;
 import com.platinum.util.Misc;
 import com.platinum.util.RandomUtility;
 import com.platinum.world.World;
-import com.platinum.world.content.DropLog;
+import com.platinum.world.content.*;
 import com.platinum.world.content.DropLog.DropLogEntry;
-import com.platinum.world.content.HourlyBoss;
-import com.platinum.world.content.PetPerkData;
-import com.platinum.world.content.PlayerLogs;
-import com.platinum.world.content.WellOfWealth;
 import com.platinum.world.content.clan.ClanChatManager;
 import com.platinum.world.content.collectionlog.CollectionEntry;
-import com.platinum.world.content.discordbot.JavaCord;
+import com.platinum.world.content.discord.DiscordMessenger;
 import com.platinum.world.content.minigames.impl.WarriorsGuild;
 import com.platinum.world.content.serverperks.GlobalPerks;
 import com.platinum.world.content.skill.impl.prayer.BonesData;
@@ -43,8 +24,10 @@ import com.platinum.world.content.skill.impl.summoning.Familiar;
 import com.platinum.world.entity.impl.GroundItemManager;
 import com.platinum.world.entity.impl.npc.NPC;
 import com.platinum.world.entity.impl.player.Player;
-import com.google.gson.Gson;
-import com.google.gson.JsonObject;
+
+import java.util.*;
+import java.util.Map.Entry;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * Controls the npc drops
@@ -563,12 +546,11 @@ public class NPCDrops {
 			String itemMessage = Misc.anOrA(itemName) + " " + itemName;
 			String npcName = Misc.formatText(npc.getDefinition().getName());
 			
-			String discordmessage = "[RARE DROP] " + player.getUsername() + " has just received " + itemMessage
-					+ " from " + npcName + "!";
-			JavaCord.sendMessage("drop-feed", discordmessage);
+			String discordmessage = itemMessage + " from " + npcName + " worth " + Misc.currency(item.getDefinition().getValue()) + "!";
 			NpcGain.RareDropXP(player);
-			World.sendMessage("<col=089915><shad=1>" + player.getUsername()
+			World.sendFilteredMessage("<col=089915><shad=1>" + player.getUsername()
 			+ "  has just received <img=386><col=991608> " + itemMessage + " <img=386><col=089915> from <col=bb1313> " + npcName + "!");
+			DiscordMessenger.sendRareDrop(Misc.formatPlayerName(player.getUsername()), discordmessage);
 		}
 		
 		
@@ -682,10 +664,9 @@ public class NPCDrops {
 			
 			String message = "<img=382><col=eaeaea>[<col=FF0000>RARE DROP<col=eaeaea>]<img=382><col=eaeaea> " + toGive.getUsername() + " has just received <img=386><col=07b481>" + itemMessage
 					+ "<img=386><col=eaeaea> from <col=FF0000>" + npcName + "!";
-			String discordmessage = "[RARE DROP] " + toGive.getUsername() + " has just received " + itemMessage
-					+ " from " + npcName + "!";
-			World.sendMessage(message);
-			JavaCord.sendMessage("drop-feed", discordmessage);
+			String discordmessage = itemMessage + " from " + npcName + " worth " + Misc.currency(drop.getValue()) + "!";
+			World.sendFilteredMessage(message);
+			DiscordMessenger.sendRareDrop(Misc.formatPlayerName(toGive.getUsername()), discordmessage);
 
 			
 

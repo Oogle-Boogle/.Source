@@ -91,7 +91,7 @@ public class FantasyChest {
 				player.getInventory().add(ultraDrops, 4);
 			} else {
 				player.getInventory().add(ultraDrops, 1);
-				World.sendMessage("@blu@[UBER CHEST]: " + player.getUsername() + " has received " + ItemDefinition.forId(ultraDrops).getName() + " from the Uber chest!");
+				World.sendFilteredMessage("@blu@[UBER CHEST]: " + player.getUsername() + " has received " + ItemDefinition.forId(ultraDrops).getName() + " from the Uber chest!");
 			}
 		}
 	}

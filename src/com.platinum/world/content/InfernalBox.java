@@ -29,7 +29,7 @@ public class InfernalBox {
 		} else if(chance >=96) {
 			player.getInventory().add(bestRewards[Misc.getRandom(bestRewards.length - 1)], 1);
 			player.sendMessage("You got a rare reward");
-			World.sendMessage("<img=10>@blu@[INFERNAL BOX]<img=10> @red@"+player.getUsername().toString() + " @blu@Has just received a rare reward.");
+			World.sendFilteredMessage("<img=10>@blu@[INFERNAL BOX]<img=10> @red@"+player.getUsername().toString() + " @blu@Has just received a rare reward.");
 		}
 	}
 	

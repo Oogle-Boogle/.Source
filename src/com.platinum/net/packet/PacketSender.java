@@ -1,22 +1,8 @@
 
 package com.platinum.net.packet;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.CopyOnWriteArrayList;
-
 import com.platinum.GameSettings;
-import com.platinum.model.Animation;
-import com.platinum.model.GameObject;
-import com.platinum.model.Graphic;
-import com.platinum.model.Item;
-import com.platinum.model.PlayerInteractingOption;
-import com.platinum.model.PlayerRights;
-import com.platinum.model.Position;
-import com.platinum.model.SecondaryPlayerRights;
-import com.platinum.model.Skill;
+import com.platinum.model.*;
 import com.platinum.model.container.ItemContainer;
 import com.platinum.model.container.impl.Shop;
 import com.platinum.net.packet.Packet.PacketType;
@@ -26,6 +12,12 @@ import com.platinum.world.content.skill.impl.construction.Palette;
 import com.platinum.world.content.skill.impl.construction.Palette.PaletteTile;
 import com.platinum.world.entity.Entity;
 import com.platinum.world.entity.impl.player.Player;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 
 
@@ -37,6 +29,54 @@ import com.platinum.world.entity.impl.player.Player;
  * @author relex lawl & Gabbe
  */
 public class PacketSender {
+
+	/*** DISCORD PRESENCE ***/
+
+
+	public PacketSender sendRichPresenceDetails(String details) {//SENDS DETAILS FOR DISCORD PRESENCE
+		if (player.isMiniMe)
+			return this;
+		PacketBuilder out = new PacketBuilder(131, PacketType.BYTE);
+		out.putString(details);
+		player.getSession().queueMessage(out);
+		return this;
+	}
+
+	public PacketSender sendRichPresenceState(String state) {//SENDS STATE FOR DISCORD PRESENCE
+		if (player.isMiniMe)
+			return this;
+		PacketBuilder out = new PacketBuilder(132, PacketType.BYTE);
+		out.putString(state);
+		player.getSession().queueMessage(out);
+		return this;
+	}
+
+	public PacketSender sendSmallImageKey(String key) {//CHANGED SMALL IMAGE
+		if (player.isMiniMe)
+			return this;
+		PacketBuilder out = new PacketBuilder(133, PacketType.BYTE);
+		out.putString(key);
+		player.getSession().queueMessage(out);
+		return this;
+	}
+
+	public PacketSender sendRichPresenceBigPictureText(String bigHoverText) {//SENDS HOVER TEXT
+		if (player.isMiniMe)
+			return this;
+		PacketBuilder out = new PacketBuilder(139, PacketType.BYTE);
+		out.putString(bigHoverText);
+		player.getSession().queueMessage(out);
+		return this;
+	}
+
+	public PacketSender sendRichPresenceSmallPictureText(String smallHoverText) {//SENDS HOVER TEXT
+		if (player.isMiniMe)
+			return this;
+		PacketBuilder out = new PacketBuilder(129, PacketType.BYTE);
+		out.putString(smallHoverText);
+		player.getSession().queueMessage(out);
+		return this;
+	}
 	
     public void updateProgressBar(int interfaceId, int progress) {
 		if (!player.isMiniMe) {
@@ -836,7 +876,7 @@ public class PacketSender {
 		if (player.isMiniMe) {
 			return this;
 		}
-		
+		player.resetRichPresence();
 		if (player.isBanking()) {
 			sendClientRightClickRemoval();
 			player.setBanking(false);
@@ -875,6 +915,7 @@ public class PacketSender {
 		if (player.isMiniMe) {
 			return this;
 		}
+		player.resetRichPresence();
 		if (player.isBanking()) {
 			sendClientRightClickRemoval();
 			player.setBanking(false);

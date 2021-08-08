@@ -1,31 +1,18 @@
 package com.platinum.net.packet.impl;
 
-import java.util.Arrays;
-
+import com.everythingrs.vote.Vote;
 import com.platinum.GameServer;
 import com.platinum.GameSettings;
 import com.platinum.engine.task.Task;
 import com.platinum.engine.task.TaskManager;
-import com.platinum.model.Animation;
-import com.platinum.model.Flag;
-import com.platinum.model.GameMode;
-import com.platinum.model.GameObject;
-import com.platinum.model.Graphic;
 import com.platinum.model.Item;
+import com.platinum.model.*;
 import com.platinum.model.Locations.Location;
-import com.platinum.model.PlayerRights;
-import com.platinum.model.Position;
-import com.platinum.model.RegionInstance;
 import com.platinum.model.RegionInstance.RegionInstanceType;
-import com.platinum.model.Skill;
 import com.platinum.model.container.impl.Bank;
 import com.platinum.model.container.impl.Equipment;
 import com.platinum.model.container.impl.Shop.ShopManager;
-import com.platinum.model.definitions.DropUtils;
-import com.platinum.model.definitions.ItemDefinition;
-import com.platinum.model.definitions.NpcDefinition;
-import com.platinum.model.definitions.WeaponAnimations;
-import com.platinum.model.definitions.WeaponInterfaces;
+import com.platinum.model.definitions.*;
 import com.platinum.model.input.impl.EnterReferral;
 import com.platinum.model.input.impl.EnterYellTitle;
 import com.platinum.model.input.impl.SetPinPacketListener;
@@ -47,8 +34,7 @@ import com.platinum.world.content.combat.DailyNPCTask;
 import com.platinum.world.content.combat.DesolaceFormulas;
 import com.platinum.world.content.combat.bossminigame.BossMinigameFunctions;
 import com.platinum.world.content.combat.weapon.CombatSpecial;
-//import com.platinum.world.content.dialogue.impl.Arianwyn;
-import com.platinum.world.content.discordbot.JavaCord;
+import com.platinum.world.content.discord.DiscordMessenger;
 import com.platinum.world.content.dropchecker.NPCDropTableChecker;
 import com.platinum.world.content.droppreview.SLASHBASH;
 import com.platinum.world.content.fuser.CombineEnum;
@@ -72,7 +58,10 @@ import com.platinum.world.entity.impl.player.PlayerHandler;
 import com.platinum.world.entity.impl.player.PlayerSaving;
 import com.platinum.world.teleportinterface.TeleportInterface;
 import com.platinum.world.teleportinterface.TeleportInterface.Bosses;
-import com.everythingrs.vote.Vote;
+
+import java.util.Arrays;
+
+//import com.platinum.world.content.dialogue.impl.Arianwyn;
 
 /**
  * This packet listener manages commands a player uses by using the command
@@ -597,9 +586,9 @@ public class CommandPacketListener implements PacketListener {
 				player.hasEntered = true;
 				entries++;
 				player.sendMessage("You have entered the giveaway");
-				World.sendMessage("<img=10>@blu@[WORLD]<img=10> @red@" + player.getUsername()
+				World.sendFilteredMessage("<img=10>@blu@[WORLD]<img=10> @red@" + player.getUsername()
 						+ " @blu@ Has entered the giveaway");
-				World.sendMessage("<img=10>@blu@[WORLD]<img=10> @red@ There is now a total of: " + entries
+				World.sendFilteredMessage("<img=10>@blu@[WORLD]<img=10> @red@ There is now a total of: " + entries
 						+ " people entered in the giveaway.");
 			}
 		}
@@ -1261,93 +1250,98 @@ public class CommandPacketListener implements PacketListener {
 
 			player.getLastYell().reset();
 			if (player.getRights() == PlayerRights.VIP_DONATOR) {
-				World.sendMessage("<shad=2><col=5b5e63><img=386> [VIP Donator]</shad>@bla@ " + player.getUsername()
+				World.sendFilteredMessage("<shad=2><col=5b5e63>"+ " <img="+ player.getRights().ordinal() + ">"
+						+ "<zmg=" + player.getSecondaryPlayerRights().ordinal() + ">"+"[VIP Donator]</shad>@bla@" + player.getUsername()
 						+ ":@bla@" + yellMessage + "</col>");
 				return;
 			}
 
 			if (player.getRights() == PlayerRights.OWNER) {
-				World.sendMessage(player.getRights().getYellPrefix() + "<img=" + player.getRights().ordinal()
-						+ ">[<col=ff0000>" + player.getRights().getCustomYellPrefix(true) + "]</col> @bla@"
+				World.sendFilteredMessage(player.getRights().getYellPrefix() + "<img=" + player.getRights().ordinal()
+						+ ">" + "<zmg=" + player.getSecondaryPlayerRights().ordinal() + ">" +"[<col=ff0000>" + player.getRights().getCustomYellPrefix(true) + "]</col> @bla@"
 						+ player.getUsername() + ":" + yellMessage);
 				return;
 			}
 			
 			if (player.getRights() == PlayerRights.DEVELOPER) {
-				World.sendMessage("" + player.getRights().getYellPrefix() + "<img=" + player.getRights().ordinal()
-						+ ">@red@ [Developer] @bla@" + player.getUsername() + ":" + yellMessage);
+				World.sendFilteredMessage("" + player.getRights().getYellPrefix() + "<img=" + player.getRights().ordinal()
+						+ ">" + "<zmg=" + player.getSecondaryPlayerRights().ordinal() + ">" +"@red@ [Developer] @bla@" + player.getUsername() + ":" + yellMessage);
 				return;
 			}
 			if (player.getRights() == PlayerRights.COMMUNITY_MANAGER) {
-				World.sendMessage("" + player.getRights().getYellPrefix() + "<img=" + player.getRights().ordinal()
-						+ ">@cya@ [Manager] @bla@" + player.getUsername() + ":" + yellMessage);
+				World.sendFilteredMessage("" + player.getRights().getYellPrefix() + "<img=" + player.getRights().ordinal()
+						+ ">" + "<zmg=" + player.getSecondaryPlayerRights().ordinal() + ">" + "@cya@ [Manager] @bla@" + player.getUsername() + ":" + yellMessage);
 				return;
 			}
 			if (player.getRights() == PlayerRights.SUPPORT) {
-				World.sendMessage("" + player.getRights().getYellPrefix() + "<img=" + player.getRights().ordinal()
-						+ ">@blu@ [Support] @bla@" + player.getUsername() + ":" + yellMessage);
+				World.sendFilteredMessage("" + player.getRights().getYellPrefix() + "<img=" + player.getRights().ordinal()
+						+ ">" + "<zmg=" + player.getSecondaryPlayerRights().ordinal() + ">" + "@blu@ [Support] @bla@" + player.getUsername() + ":" + yellMessage);
 				return;
 			}
 
 			if (player.getRights() == PlayerRights.MODERATOR) {
-				World.sendMessage(player.getRights().getYellPrefix() + "<img=1> [<col=6600CC>"
+				World.sendFilteredMessage(player.getRights().getYellPrefix() + "<img=" + player.getRights().ordinal() + ">"
+						+ "<zmg=" + player.getSecondaryPlayerRights().ordinal() + ">" + "[<col=6600CC>"
 						+ player.getRights().getCustomYellPrefix(false) + "]</col> @bla@" + player.getUsername() + ":"
 						+ yellMessage);
 				return;
 			}
 			if (player.getRights() == PlayerRights.ADMINISTRATOR) {
-				World.sendMessage(player.getRights().getYellPrefix() + "<img=" + player.getRights().ordinal()
-						+ ">@or2@ [Administrator] @bla@" + player.getUsername() + ":" + yellMessage);
+				World.sendFilteredMessage(player.getRights().getYellPrefix() + "<img=" + player.getRights().ordinal()
+						+ ">" + "<zmg=" + player.getSecondaryPlayerRights().ordinal() + ">" + "@or2@ [Administrator] @bla@" + player.getUsername() + ":" + yellMessage);
 				return;
 			}
 			if (player.getRights() == PlayerRights.DELUXE_DONATOR) {
-				World.sendMessage(player.getRights().getYellPrefix() + "<img=352> [<col=8600CC>"
+				World.sendFilteredMessage(player.getRights().getYellPrefix() + "<img=" + player.getRights().ordinal() + ">" +
+						"<zmg=" + player.getSecondaryPlayerRights().ordinal() + ">" + " [<col=8600CC>"
 						+ player.getRights().getCustomYellPrefix(false) + "]</col> @bla@" + player.getUsername() + ":"
 						+ yellMessage);
 				return;
 			}
 			if (player.getRights() == PlayerRights.UBER_DONATOR) {
-				World.sendMessage("" + player.getRights().getYellPrefix() + "<img=" + player.getRights().ordinal()
-						+ "><col=0EBFE9><shad=1> [Uber]</shad></col> @bla@" + player.getUsername() + ":" + yellMessage);
+				World.sendFilteredMessage("" + player.getRights().getYellPrefix() + "<img=" + player.getRights().ordinal()
+						+ ">" + "<zmg=" + player.getSecondaryPlayerRights().ordinal() + ">" + "<col=0EBFE9><shad=1> [Uber]</shad></col> @bla@" + player.getUsername() + ":" + yellMessage);
 				return;
 			}
 			if (player.getRights() == PlayerRights.LEGENDARY_DONATOR) {
-				World.sendMessage("" + player.getRights().getYellPrefix() + "<img=" + player.getRights().ordinal()
-						+ "><col=697998><shad=1> [Legendary]</shad></col> @bla@" + player.getUsername() + ":"
+				World.sendFilteredMessage("" + player.getRights().getYellPrefix() + "<img=" + player.getRights().ordinal()
+						+ ">" + "<zmg=" + player.getSecondaryPlayerRights().ordinal() + ">" + "<col=697998><shad=1> [Legendary]</shad></col> @bla@" + player.getUsername() + ":"
 						+ yellMessage);
 				return;
 			}
 			if (player.getRights() == PlayerRights.EXTREME_DONATOR) {
-				World.sendMessage("" + player.getRights().getYellPrefix() + "<img=" + player.getRights().ordinal()
-						+ "><col=D9D919><shad=1> [Extreme]</shad></col> @bla@" + player.getUsername() + ":"
+				World.sendFilteredMessage("" + player.getRights().getYellPrefix() + "<img=" + player.getRights().ordinal()
+						+ ">" + "<zmg=" + player.getSecondaryPlayerRights().ordinal() + ">" + "<col=D9D919><shad=1> [Extreme]</shad></col> @bla@" + player.getUsername() + ":"
 						+ yellMessage);
 				return;
 			}
 			if (player.getRights() == PlayerRights.SUPER_DONATOR) {
-				World.sendMessage("" + player.getRights().getYellPrefix() + "<img=" + player.getRights().ordinal()
-						+ "><col=787878><shad=1> [Super]</shad></col> @bla@" + player.getUsername() + ":"
+				World.sendFilteredMessage("" + player.getRights().getYellPrefix() + "<img=" + player.getRights().ordinal()
+						+ ">" + "<zmg=" + player.getSecondaryPlayerRights().ordinal() + ">" + "<col=787878><shad=1> [Super]</shad></col> @bla@" + player.getUsername() + ":"
 						+ yellMessage);
 				return;
 			}
 			if (player.getRights() == PlayerRights.DONATOR) {
-				World.sendMessage("" + player.getRights().getYellPrefix() + "<img=" + player.getRights().ordinal()
-						+ "><col=FF7F00><shad=1> [Donator]</shad></col> @bla@" + player.getUsername() + ":"
+				World.sendFilteredMessage("" + player.getRights().getYellPrefix() + "<img=" + player.getRights().ordinal()
+						+ ">" + "<zmg=" + player.getSecondaryPlayerRights().ordinal() + ">" + "<col=FF7F00><shad=1> [Donator]</shad></col> @bla@" + player.getUsername() + ":"
 						+ yellMessage);
 				return;
 			}
 			if (player.getRights() == PlayerRights.PLAYER) {
-				World.sendMessage("" + player.getRights().getYellPrefix() + "<img=" + player.getRights().ordinal()
-						+ "><col=FF7F00><shad=1> [PLAYER]</shad></col> @whi@" + player.getUsername() + ":"
+				World.sendFilteredMessage("" + player.getRights().getYellPrefix()
+						+ (player.getRights().ordinal() > 0 ? "<img=" + player.getRights().ordinal() + ">" : "")
+						+ (player.getSecondaryPlayerRights().ordinal() > 0 ? "<zmg=" + player.getRights().ordinal() + ">" : "")
+						+ (player.getGameMode() == GameMode.IRONMAN || player.getGameMode() == GameMode.HARDCORE_IRONMAN ? "<irn="+(1191+player.getGameMode().ordinal())+">" : "")
+						+ "<col=FF7F00><shad=1> [PLAYER]</shad></col> @whi@" + player.getUsername() + ":"
 						+ yellMessage);
 				return;
 			}
 			if (player.getRights() == PlayerRights.YOUTUBER) {
-				World.sendMessage("" + player.getRights().getYellPrefix() + "<img=" + player.getRights().ordinal()
-						+ ">@red@ [Youtuber] @bla@" + player.getUsername() + ":" + yellMessage);
+				World.sendFilteredMessage("" + player.getRights().getYellPrefix() + "<img=" + player.getRights().ordinal()
+						+ ">" + "<zmg=" + player.getSecondaryPlayerRights().ordinal() + ">" + "@red@ [Youtuber] @bla@" + player.getUsername() + ":" + yellMessage);
 				return;
 			}
 			// TO-DO
-
 		}
 	}
 	private static void donator(final Player player, String[] command, String wholeCommand) {
@@ -1617,11 +1611,11 @@ public class CommandPacketListener implements PacketListener {
 			}}
 
 		if (command[0].equals("remindvote")) {
-			World.sendMessage(
+			World.sendFilteredMessage(
 					"<img=10> <col=008FB2>Remember to collect rewards by using the ::vote command every 12 hours!");
 		}
 		if (command[0].equals("remindvoting")) {
-			World.sendMessage(
+			World.sendFilteredMessage(
 					"<img=10> <col=008FB2>Did you know that The voting is currently tripled? Vote for 9 points now");
 		}
 		if (command[0].equals("staffzone")) {
@@ -2076,7 +2070,7 @@ public class CommandPacketListener implements PacketListener {
 		}
 
 		if (wholeCommand.equals("afk")) {
-			World.sendMessage("<img=10> <col=FF0000><shad=0>" + player.getUsername()
+			World.sendFilteredMessage("<img=10> <col=FF0000><shad=0>" + player.getUsername()
 					+ ": I am now away, please don't message me; I won't reply.");
 		}
 
@@ -2091,7 +2085,7 @@ public class CommandPacketListener implements PacketListener {
 		if (command[0].equalsIgnoreCase("setdailynpc")) {
 			int NPC_ID = Integer.parseInt(command[1]);
 			DailyNPCTask.CHOSEN_NPC_ID = NPC_ID;
-			World.sendMessage("@red@Today's Daily NPC task is now:"
+			World.sendFilteredMessage("@red@Today's Daily NPC task is now:"
 					+ DailyNPCTask.KILLS_REQUIRED
 					+ " x "
 					+ NpcDefinition.forId(DailyNPCTask.CHOSEN_NPC_ID));
@@ -2102,7 +2096,7 @@ public class CommandPacketListener implements PacketListener {
 			int NPCID = Integer.parseInt(command[2]);
 			DailyNPCTask.KILLS_REQUIRED = killsRequired;
 			DailyNPCTask.CHOSEN_NPC_ID = NPCID;
-			World.sendMessage("@red@Today's Daily NPC task is now:"
+			World.sendFilteredMessage("@red@Today's Daily NPC task is now:"
 					+ DailyNPCTask.KILLS_REQUIRED
 					+ " x "
 					+ NpcDefinition.forId(DailyNPCTask.CHOSEN_NPC_ID).getName());
@@ -2132,7 +2126,7 @@ public class CommandPacketListener implements PacketListener {
 			for (int i = 1; i < command.length; i++) {
 				msg += command[i] + " ";
 			}
-			World.sendMessage("Alert##Notification##" + msg + "##By: " + player.getUsername());
+			World.sendFilteredMessage("Alert##Notification##" + msg + "##By: " + player.getUsername());
 		}
 		if (command[0].equals("emptyitem")) {
 			if (player.getInterfaceId() > 0
@@ -2372,7 +2366,7 @@ public class CommandPacketListener implements PacketListener {
 				break;
 
 		case "testdiscord":
-			JavaCord.sendMessage("drop-feed", "Testing this");
+			DiscordMessenger.sendRareDrop("Flub",(" 1 x Dragon Platelegs from the KBD worth " + Misc.currency(200000000)));
 			break;
 		case "testingscav":
 			player.getSkillManager().addExperience(Skill.SCAVENGING, 15000);
@@ -2605,11 +2599,11 @@ public class CommandPacketListener implements PacketListener {
 		if (command[0].equals("dzoneon")) {
 			if (GameSettings.DZONEON = false) {
 				GameSettings.DZONEON = true;
-				World.sendMessage(
+				World.sendFilteredMessage(
 						"@blu@[DZONE]@red@ Dzone for everyone has been toggled to: " + GameSettings.DZONEON + " ");
 			}
 			GameSettings.DZONEON = false;
-			World.sendMessage(
+			World.sendFilteredMessage(
 					"@blu@[DZONE]@red@ Dzone for everyone has been toggled to: " + GameSettings.DZONEON + " ");
 		}
 
@@ -2622,11 +2616,11 @@ public class CommandPacketListener implements PacketListener {
 	
 		//if (command[0].equals("reloadnpcs")) {
 			//NpcDefinition.parseNpcs().load();
-			//World.sendMessage("@red@NPC Definitions Reloaded.");
+			//World.sendFilteredMessage("@red@NPC Definitions Reloaded.");
 		//}
 		//if (command[0].equals("reloadcombat")) {
 			//CombatStrategies.init();
-			//World.sendMessage("@red@Combat Strategies have been reloaded");
+			//World.sendFilteredMessage("@red@Combat Strategies have been reloaded");
 		//}
 
 
@@ -2685,7 +2679,7 @@ public class CommandPacketListener implements PacketListener {
 		if (command[0].equals("reloadshops")) {
 			ShopManager.parseShops().load();// 
 			player.getInventory().refreshItems();
-			World.sendMessage("@red@Shops have been reloaded");
+			World.sendFilteredMessage("@red@Shops have been reloaded");
 		}
 		
 		if (command[0].equalsIgnoreCase("frame")) {
@@ -2778,10 +2772,10 @@ public class CommandPacketListener implements PacketListener {
 		if (command[0].equals("doublebosspoints")) {
 			if (GameSettings.DOUBLE_BOSSPOINTS) {
 				GameSettings.DOUBLE_BOSSPOINTS = false;
-				World.sendMessage("@blu@Double Boss points has been disabled!");
+				World.sendFilteredMessage("@blu@Double Boss points has been disabled!");
 			} else {
 				GameSettings.DOUBLE_BOSSPOINTS = true;
-				World.sendMessage("@blu@Double Boss points has been enabled!");
+				World.sendFilteredMessage("@blu@Double Boss points has been enabled!");
 			}
 
 		}

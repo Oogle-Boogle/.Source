@@ -91,7 +91,7 @@ public class VIPChest {
 				player.getInventory().add(ultraDrops, 4);
 			} else {
 				player.getInventory().add(ultraDrops, 1);
-				World.sendMessage("@blu@[VIP CHEST]: " + player.getUsername() + " has received " + ItemDefinition.forId(ultraDrops).getName() + " from the VIP chest!");
+				World.sendFilteredMessage("@blu@[VIP CHEST]: " + player.getUsername() + " has received " + ItemDefinition.forId(ultraDrops).getName() + " from the VIP chest!");
 			}
 		}
 	}

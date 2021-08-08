@@ -67,7 +67,7 @@ public class ScratchCard {
 			player.sendMessage("Congrats, there were 3 of the same ones so u win the item!");
 			player.getInventory().add(item1, 1);
 			String name = ItemDefinition.forId(item1).getName();
-			World.sendMessage("@blu@<img=10>[SCRATCHCARD]<img=10> @red@" + player.getUsername() + " has got an " + name + " From scratchcards!");
+			World.sendFilteredMessage("@blu@<img=10>[SCRATCHCARD]<img=10> @red@" + player.getUsername() + " has got an " + name + " From scratchcards!");
 		}
 
 	}

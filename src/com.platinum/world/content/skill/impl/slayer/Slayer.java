@@ -217,7 +217,7 @@ public class Slayer {
         if (random == 250) {
             player.getInventory().add(14637, 1);
             player.sendMessage("Congratulations! A @red@Custom Slayer Helm@blu@Has been added to ur inventory!");
-            World.sendMessage("<img=10>@blu@[SLAYER]<img=10>@red@ " + player.getUsername()
+            World.sendFilteredMessage("<img=10>@blu@[SLAYER]<img=10>@red@ " + player.getUsername()
                     .toString() + " @blu@Has received a Custom Slayer Helmet");
         }
 

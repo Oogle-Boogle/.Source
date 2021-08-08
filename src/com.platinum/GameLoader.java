@@ -1,16 +1,7 @@
 package com.platinum;
 
-import java.io.IOException;
-import java.net.InetSocketAddress;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
-
-import org.jboss.netty.bootstrap.ServerBootstrap;
-import org.jboss.netty.channel.socket.nio.NioServerSocketChannelFactory;
-import org.jboss.netty.util.HashedWheelTimer;
-
+import com.google.common.base.Preconditions;
+import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import com.platinum.engine.GameEngine;
 import com.platinum.engine.task.TaskManager;
 import com.platinum.engine.task.impl.ServerTimeUpdateTask;
@@ -22,26 +13,12 @@ import com.platinum.model.definitions.WeaponInterfaces;
 import com.platinum.net.PipelineFactory;
 import com.platinum.net.security.ConnectionHandler;
 import com.platinum.world.clip.region.RegionClipping;
-import com.platinum.world.content.Bork;
-import com.platinum.world.content.CustomObjects;
-import com.platinum.world.content.DropSimulator;
-import com.platinum.world.content.ItemComparing;
-import com.platinum.world.content.Lottery;
-import com.platinum.world.content.MonsterDrops;
-import com.platinum.world.content.Onslaught;
-import com.platinum.world.content.PlayerPunishment;
-import com.platinum.world.content.Scoreboards;
-import com.platinum.world.content.TheMay;
-import com.platinum.world.content.TheRick;
-import com.platinum.world.content.TheSeph;
-import com.platinum.world.content.Tztok;
-import com.platinum.world.content.WellOfGoodwill;
+import com.platinum.world.content.*;
 import com.platinum.world.content.aoesystem.AOESystem;
 import com.platinum.world.content.clan.ClanChatManager;
 import com.platinum.world.content.combat.effect.CombatPoisonEffect.CombatPoisonData;
 import com.platinum.world.content.combat.strategy.CombatStrategies;
 import com.platinum.world.content.dialogue.DialogueManager;
-import com.platinum.world.content.discordbot.JavaCord;
 import com.platinum.world.content.grandexchange.GrandExchangeOffers;
 import com.platinum.world.content.groupironman.GroupIronmanGroup;
 import com.platinum.world.content.guidesInterface.GuideBook;
@@ -49,8 +26,16 @@ import com.platinum.world.content.pos.PlayerOwnedShopManager;
 import com.platinum.world.content.serverperks.GlobalPerks;
 import com.platinum.world.content.starterprogression.StarterProgression;
 import com.platinum.world.entity.impl.npc.NPC;
-import com.google.common.base.Preconditions;
-import com.google.common.util.concurrent.ThreadFactoryBuilder;
+import org.jboss.netty.bootstrap.ServerBootstrap;
+import org.jboss.netty.channel.socket.nio.NioServerSocketChannelFactory;
+import org.jboss.netty.util.HashedWheelTimer;
+
+import java.io.IOException;
+import java.net.InetSocketAddress;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 
 /**
@@ -123,11 +108,7 @@ public final class GameLoader {
 		serviceLoader.execute(StarterProgression::loadTasks);
         serviceLoader.execute(GroupIronmanGroup::loadGroups);
 		serviceLoader.execute(GlobalPerks.getInstance()::load);
-		 if (!GameSettings.LOCALHOST)
-				serviceLoader.execute(() -> {
-					JavaCord.init();
-					 System.err.println("Bot connected");
-				});
+
 	}
 
 	public GameEngine getEngine() {

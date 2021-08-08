@@ -139,7 +139,7 @@ public class Plant {
 					Achievements.finishAchievement(player, AchievementData.HARVEST_A_CROP);
 					if(Misc.getRandom(3500) == 3) {
 						player.getInventory().add(13323, 1);
-						World.sendMessage("@blu@<img=10>[Skilling Pets] "+player.getUsername()+" has received the Tangleroot pet!");
+						World.sendFilteredMessage("@blu@<img=10>[Skilling Pets] "+player.getUsername()+" has received the Tangleroot pet!");
 						player.getPacketSender().sendMessage("@red@You have received a skilling pet!");
 					} 
 					if (harvested == 3 && player.getInventory().contains(18336) && Misc.getRandom(4) == 0) {

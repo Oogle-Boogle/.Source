@@ -697,7 +697,7 @@ public class ButtonClickPacketListener implements PacketListener {
                      }
                      CombineEnum.removeRequirements(CombineEnum.values()[player.combineIndex], player);
                      player.getInventory().add(new Item(CombineEnum.values()[player.combineIndex].getEndItem(), 1));
-                     World.sendMessage("<shad=0>@red@ [News] " + player.getUsername() + "@cya@ has Fused together a " + ItemDefinition.forId(CombineEnum.values()[player.combineIndex].getEndItem()).getName() + "!");
+                     World.sendFilteredMessage("<shad=0>@red@ [News] " + player.getUsername() + "@cya@ has Fused together a " + ItemDefinition.forId(CombineEnum.values()[player.combineIndex].getEndItem()).getName() + "!");
                      player.setFuseCombinationTimer(System.currentTimeMillis() + (CombineEnum.values()[player.combineIndex].getTimer()));
         		break;
 

@@ -91,7 +91,7 @@ public class TheMay extends NPC {
 		setCurrent(instance);
 		// System.out.print("spawned.");
 
-		World.sendMessage("<shad=1><img=418>@red@ Trainer May has Respawned" + location.getLocation() + "!");
+		World.sendFilteredMessage("<shad=1><img=418>@red@ Trainer May has Respawned" + location.getLocation() + "!");
 	}
 
 	/**
@@ -168,7 +168,7 @@ public class TheMay extends NPC {
 					new GroundItem(superrare, pos, player.getUsername(), false, 150, true, 200));
 			String itemName = (superrare.getDefinition().getName());
 			String itemMessage = Misc.anOrA(itemName) + " " + itemName;
-			World.sendMessage(
+			World.sendFilteredMessage(
 					"<img=386><col=FF0000>" + player.getUsername() + " received " + itemMessage + " from Trainer May");
 			return;
 		}
@@ -178,7 +178,7 @@ public class TheMay extends NPC {
 					new GroundItem(rare, pos, player.getUsername(), false, 150, true, 200));
 			String itemName = rare.getDefinition().getName();
 			String itemMessage = Misc.anOrA(itemName) + " " + itemName;
-			World.sendMessage(
+			World.sendFilteredMessage(
 					"<img=386><col=FF0000>" + player.getUsername() + " received " + itemMessage + " from Trainer May");
 			return;
 		}

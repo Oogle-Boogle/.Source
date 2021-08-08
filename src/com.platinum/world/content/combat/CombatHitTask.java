@@ -1,7 +1,5 @@
 package com.platinum.world.content.combat;
 
-import java.util.List;
-
 import com.platinum.GameSettings;
 import com.platinum.engine.task.Task;
 import com.platinum.model.Animation;
@@ -13,17 +11,19 @@ import com.platinum.model.definitions.WeaponAnimations;
 import com.platinum.util.Misc;
 import com.platinum.world.World;
 import com.platinum.world.content.Achievements;
+import com.platinum.world.content.Achievements.AchievementData;
 import com.platinum.world.content.Sounds;
 import com.platinum.world.content.aoesystem.AOEHandler;
 import com.platinum.world.content.aoesystem.AOESystem;
 import com.platinum.world.content.aoesystem.AOEWeaponData;
-import com.platinum.world.content.Achievements.AchievementData;
 import com.platinum.world.content.combat.CombatContainer.CombatHit;
 import com.platinum.world.content.combat.strategy.impl.Nex;
 import com.platinum.world.entity.impl.Character;
 import com.platinum.world.entity.impl.npc.NPC;
 import com.platinum.world.entity.impl.npc.NPCMovementCoordinator.CoordinateState;
 import com.platinum.world.entity.impl.player.Player;
+
+import java.util.List;
 
 /**
  * A {@link Task} implementation that deals a series of hits to an entity after
@@ -111,6 +111,21 @@ public class CombatHitTask extends Task {
 
 
     public void handleAttack() {
+
+        if (attacker.isPlayer() && !attacker.getAsPlayer().isMiniMe) {
+            if (victim.isNpc()) {
+                NPC vic = (NPC) victim;
+                String name = vic.getDefinition().getName();
+                attacker.getAsPlayer().getPacketSender().sendRichPresenceState("Fighting "+ Misc.formatPlayerName(name));
+            }
+            if (victim.isPlayer()){
+                Player vic = (Player) victim;
+                String name = vic.getUsername();
+                attacker.getAsPlayer().getPacketSender().sendRichPresenceState("Fighting "+ Misc.formatPlayerName(name));
+            }
+        }
+
+
         if (attacker.getConstitution() <= 0 || !attacker.isRegistered()) {
             return;
         }

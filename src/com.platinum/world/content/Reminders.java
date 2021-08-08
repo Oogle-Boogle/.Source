@@ -54,7 +54,7 @@ public class Reminders {
 			{
 				
 			currentMessage = MESSAGE_DATA[Misc.getRandom(MESSAGE_DATA.length - 1)][0];
-			World.sendMessage(currentMessage);
+			World.sendFilteredMessage(currentMessage);
 			World.savePlayers();
 					
 				}

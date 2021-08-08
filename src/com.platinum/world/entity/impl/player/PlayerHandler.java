@@ -81,6 +81,7 @@ public class PlayerHandler {
 	public static void handleLogin(Player player) {
 		//System.out.println("[World] Registering player - [username, host] : [" + player.getUsername() + ", "
 				//+ player.getHostAddress() + "]");
+		player.getSession().setState(SessionState.LOGGED_IN);
 		player.setPlaceholders(false);
 		player.getPacketSender().sendConfig(111, player.isPlaceholders() ? 1 : 0);
 		if (player.getHasPin() == true && !player.getSavedIp().equalsIgnoreCase(player.getHostAddress())) {
@@ -96,7 +97,15 @@ public class PlayerHandler {
 		World.getPlayers().add(player);
 		World.updatePlayersOnline();
 		PlayersOnlineInterface.add(player);
-		player.getSession().setState(SessionState.LOGGED_IN);
+
+
+		/*** DISCORD PRESENCE ***/
+		player.getPacketSender().sendRichPresenceDetails("IGN: " + player.getUsername() + " | Total Lvl: " + player.getSkillManager().getTotalLevel());
+		player.getPacketSender().sendRichPresenceBigPictureText("https://platinum-ps.net");
+		player.getPacketSender().sendRichPresenceState("Exploring Platinum..");
+		player.getPacketSender().sendRichPresenceSmallPictureText("Combat Lvl: " + player.getSkillManager().getCombatLevel());
+		player.getPacketSender().sendSmallImageKey("home");
+		/** End Presence **/
 
 		player.getPacketSender().sendMapRegion().sendDetails();
 
@@ -281,7 +290,7 @@ public class PlayerHandler {
 								|| player.getRights() == PlayerRights.HADMIN
 						
 				|| player.getRights() == PlayerRights.DEVELOPER) {
-			World.sendMessage("<shad=20><col=1eaa08> " + Misc.formatText(player.getRights().toString().toLowerCase()) + " " + player.getUsername()
+			World.sendFilteredMessage("<shad=20><col=1eaa08> " + Misc.formatText(player.getRights().toString().toLowerCase()) + " " + player.getUsername()
 			+ " has just logged in, feel free to message them for support.");
 		}
 		if (player.getRights() == PlayerRights.MODERATOR || player.getRights() == PlayerRights.ADMINISTRATOR

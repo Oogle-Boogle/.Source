@@ -93,7 +93,7 @@ public class SephirothChest {
 				player.getInventory().add(ultraDrops, 4);
 			} else {
 				player.getInventory().add(ultraDrops, 1);
-				World.sendMessage("@blu@[SEPHIROTH CHEST]: " + player.getUsername() + " has received " + ItemDefinition.forId(ultraDrops).getName() + " from the Sephiroth chest!");
+				World.sendFilteredMessage("@blu@[SEPHIROTH CHEST]: " + player.getUsername() + " has received " + ItemDefinition.forId(ultraDrops).getName() + " from the Sephiroth chest!");
 			}
 		}
 	}

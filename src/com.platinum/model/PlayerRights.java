@@ -16,7 +16,7 @@ public enum PlayerRights {
 	/*
 	 * A regular member of the server.
 	 */
-	PLAYER(-1, null, 1, 1), // 0
+	PLAYER(-1, "", 1, 1), // 0
 	/*
 	 * A moderator who has more privilege than other regular members and donators.
 	 */
@@ -94,7 +94,6 @@ public enum PlayerRights {
                 return "Owner";
             else if (this == MODERATOR)
                 return "Moderator";
-            return "Deluxe";
         }
         return customYellTitle;
     }

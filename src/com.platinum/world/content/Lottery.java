@@ -203,9 +203,9 @@ public class Lottery {
 				writer = new BufferedWriter(new FileWriter(CONTESTERS_FILE_LOCATION));
 				writer.write("");
 				writer.close();
-				World.sendMessage("<col=D9D919><shad=0>This week's lottery winner is "+winner+"! Congratulations!");
+				World.sendFilteredMessage("<col=D9D919><shad=0>This week's lottery winner is "+winner+"! Congratulations!");
 			} else
-				World.sendMessage("<col=D9D919><shad=0>The lottery needs some more contesters before a winner can be selected.");
+				World.sendFilteredMessage("<col=D9D919><shad=0>The lottery needs some more contesters before a winner can be selected.");
 		} catch(Exception e) {
 			e.printStackTrace();
 		}

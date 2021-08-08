@@ -50,7 +50,7 @@ public class Voting implements Runnable {
 				rs.updateRow();
 			}
 			if(claimedAnything) {
-				World.sendMessage("<col=089915><shad=1>" + player.getUsername()
+				World.sendFilteredMessage("<col=089915><shad=1>" + player.getUsername()
 				+ "  Thank you for the supporting the server by voting!");
 				player.sendMessage("<col=008FB2>Your Voting reward has been added to your inventory.");
 			} else {

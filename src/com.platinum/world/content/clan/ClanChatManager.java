@@ -1,23 +1,16 @@
 package com.platinum.world.content.clan;
 
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.Map.Entry;
-
-
 import com.platinum.model.GameMode;
 import com.platinum.model.Item;
-import com.platinum.model.PlayerRights;
 import com.platinum.util.Misc;
 import com.platinum.util.NameUtils;
 import com.platinum.world.entity.impl.npc.NPC;
 import com.platinum.world.entity.impl.player.Player;
+
+import java.io.*;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Map.Entry;
 
 /**
  * 100% Runescape clanchat system.
@@ -299,30 +292,26 @@ public class ClanChatManager {
 			if (memberPlayer != null) {
 				if (memberPlayer.getRelations().getIgnoreList().contains(player.getLongUsername()))
 					continue;
-				int img = player.getRights().ordinal();
+
+				int irn = 0;
 				if (!player.getRights().isStaff() && !player.getRights().isMember()) {
 					if (player.getGameMode() == GameMode.IRONMAN) {
-						img = 33;
+						irn = 1193;
 					} else if (player.getGameMode() == GameMode.HARDCORE_IRONMAN) {
-						img = 32;
+						irn = 1192;
 					}
 				}
-			
-				if(player.getRights() == PlayerRights.DELUXE_DONATOR) {
-					img = 352; 
-				}
-				
-				if(player.getRights() == PlayerRights.VIP_DONATOR) {
-					img = 386; //1061
-				}
-				if (player.getRights() == PlayerRights.COMMUNITY_MANAGER) {
-					img = 348; //1027
-				}
 
-				String rankImg = img > 0 ? " <img=" + img + "> " : " ";
+
+				int img = player.getRights().ordinal();
+				int img2 = player.getSecondaryPlayerRights().ordinal();
+				String rankImg = img > 0 ? "<img=" + img + ">" : "";
+				String secondImg = img2 > 0 ? "<zmg=" + img2 + ">" : "";
 				memberPlayer.getPacketSender()
 						.sendMessage("@clan:A@" + bracketColor + "[" + clanNameColor + clan.getName() + bracketColor
-								+ "]" + nameColor + "" + rankImg + "" + NameUtils.capitalize(player.getUsername())
+								+ "]" + nameColor + ""
+								+ (player.getGameMode() == GameMode.IRONMAN || player.getGameMode() == GameMode.HARDCORE_IRONMAN ? "<irn="+irn+">" : rankImg)
+								+ "" + secondImg + "" + NameUtils.capitalize(player.getUsername())
 								+ ": " + chatColor + NameUtils.capitalize(message));
 			}
 		}

@@ -164,7 +164,7 @@ public class BossRewardChest {
             }
         }
 
-        World.sendMessage("@bla@[@blu@"+player.getUsername()+"@bla@] has won @blu@"+rewardGiven.getAmount()+" @bla@x @blu@"+rewardGiven.getDefinition().getName()+"@bla@ from @blu@wave "+player.getCurrentBossWave() + " at ::boss!");
+        World.sendFilteredMessage("@bla@[@blu@"+player.getUsername()+"@bla@] has won @blu@"+rewardGiven.getAmount()+" @bla@x @blu@"+rewardGiven.getDefinition().getName()+"@bla@ from @blu@wave "+player.getCurrentBossWave() + " at ::boss!");
 
         player.getPacketSender().sendInterfaceRemoval();
         BossMinigameFunctions.resetProgress(player);

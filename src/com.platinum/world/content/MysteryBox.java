@@ -507,7 +507,7 @@ public class MysteryBox {
 		// Reward message
 		String name = ItemDefinition.forId(mysteryPrize).getName();
 		if (mysteryPrize == 19886 || mysteryPrize == 3666 || mysteryPrize == 3664 || mysteryPrize == 18896 || mysteryPrize == 3662 || mysteryPrize == 17776 || mysteryPrize == 5130 || mysteryPrize == 3072 || mysteryPrize == 18998 || mysteryPrize == 3074 || mysteryPrize == 18954 || mysteryPrize == 18949 || mysteryPrize == 18953 || mysteryPrize == 18962 || mysteryPrize == 18955 || mysteryPrize == 18956) {
-			World.sendMessage("[<img=10>][@red@Mega Or Ultra Mystery Box@bla@] @red@"+plr.getUsername()+"@bla@ has won a "+tier +name+"@bla@!");
+			World.sendFilteredMessage("[<img=10>][@red@Mega Or Ultra Mystery Box@bla@] @red@"+plr.getUsername()+"@bla@ has won a "+tier +name+"@bla@!");
 		}
 		
 		if (name.substring(name.length() - 1).equals("s")) {

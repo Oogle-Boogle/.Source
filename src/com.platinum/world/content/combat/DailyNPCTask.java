@@ -47,7 +47,7 @@ public class DailyNPCTask {
     public static void pickDailyNPC() {
         CHOSEN_NPC_ID = NPC_IDs[Misc.random(NPC_IDs.length - 1)];
         //System.out.println("Today's Chosen NPC is "+ NpcDefinition.forId(CHOSEN_NPC_ID).getName());
-        World.sendMessage("@red@Daily NPC Task Reset! New task: Kill "
+        World.sendFilteredMessage("@red@Daily NPC Task Reset! New task: Kill "
                 + KILLS_REQUIRED
                 + NpcDefinition.forId(CHOSEN_NPC_ID).getName()
                 + "!");
@@ -97,7 +97,7 @@ public class DailyNPCTask {
                     player.getBank(0).add(reward, true); //Add reward to bank
                     player.getPacketSender().sendMessage("@red@Congratulations on winning the daily NPC task! Reward sent to your bank!");
         }
-        World.sendMessage("@red@" + winner.getUsername() + " has won today's NPC task and was rewarded "
+        World.sendFilteredMessage("@red@" + winner.getUsername() + " has won today's NPC task and was rewarded "
                 + reward.getAmount() + " x "
                 + reward.getDefinition().getName()
                 + "!");

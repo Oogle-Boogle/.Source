@@ -1,9 +1,9 @@
 package com.platinum;
 
-import java.math.BigInteger;
-
 import com.platinum.model.Position;
 import com.platinum.net.security.ConnectionHandler;
+
+import java.math.BigInteger;
 
 public class GameSettings {
 
@@ -50,6 +50,11 @@ public class GameSettings {
 	public static boolean DEVELOPER_MODE;
 
 	public static final boolean LOCALHOST = false;
+
+	/**
+	 * Dev server? Updated by a hostname check in GameServer
+	 */
+	public static boolean DEVELOPERSERVER = false;
 
 
 	public static String getFileLocationData() {

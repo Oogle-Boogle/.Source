@@ -1,25 +1,13 @@
 package com.platinum.world;
 
-import java.util.Iterator;
-import java.util.Optional;
-import java.util.Queue;
-import java.util.concurrent.ConcurrentLinkedQueue;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Phaser;
-
+import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import com.platinum.GameSettings;
 import com.platinum.engine.task.Task;
 import com.platinum.engine.task.TaskManager;
-import com.platinum.model.PlayerRights;
 import com.platinum.util.Misc;
-import com.platinum.world.content.CustomFreeForAll;
-import com.platinum.world.content.EvilTrees;
-import com.platinum.world.content.Reminders;
-import com.platinum.world.content.ShootingStar;
-import com.platinum.world.content.StaffList;
-import com.platinum.world.content.TriviaBot;
+import com.platinum.world.content.*;
 import com.platinum.world.content.combat.DailyNPCTask;
+import com.platinum.world.content.discord.DiscordMessenger;
 import com.platinum.world.content.minigames.impl.FightPit;
 import com.platinum.world.content.minigames.impl.FreeForAll;
 import com.platinum.world.content.minigames.impl.LastManStanding;
@@ -34,7 +22,14 @@ import com.platinum.world.entity.impl.player.PlayerHandler;
 import com.platinum.world.entity.updating.NpcUpdateSequence;
 import com.platinum.world.entity.updating.PlayerUpdateSequence;
 import com.platinum.world.entity.updating.UpdateSequence;
-import com.google.common.util.concurrent.ThreadFactoryBuilder;
+
+import java.util.Iterator;
+import java.util.Optional;
+import java.util.Queue;
+import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Phaser;
 
 /**
  * @author Gabriel Hannason Thanks to lare96 for help with parallel updating
@@ -96,14 +91,24 @@ public class World {
 
 	public static void sendMessage(String message) {
 		players.forEach(p -> p.getPacketSender().sendMessage(message));
+		if (message.contains("[Yell]")) {
+			DiscordMessenger.sendYellMessage(message);
+		} else if (message.contains("[New Player]")) {
+			DiscordMessenger.sendNewPlayer(message);
+		} else {
+			DiscordMessenger.sendInGameMessage(message);
+		}
+	}
+
+	public static void sendFilteredMessage(String message) {
+		/*players.stream().filter(p -> p != null ).forEach(p -> p.getPacketSender().sendMessage(message));*/
+		players.forEach(p -> p.getPacketSender().sendMessage(message));
+
 	}
 
 	public static void sendStaffMessage(String message) {
-		players.stream()
-				.filter(p -> p != null && (p.getRights() == PlayerRights.OWNER
-						|| p.getRights() == PlayerRights.DEVELOPER || p.getRights() == PlayerRights.ADMINISTRATOR
-						|| p.getRights() == PlayerRights.MODERATOR || p.getRights() == PlayerRights.SUPPORT))
-				.forEach(p -> p.getPacketSender().sendMessage(message));
+		players.stream().filter(p -> p != null && (p.getRights().isStaff())).forEach(p -> p.getPacketSender().sendMessage(message));
+		DiscordMessenger.sendStaffMessage(message);
 	}
 
 	public static void updateServerTime() {

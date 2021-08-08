@@ -87,12 +87,12 @@ public class TenKMassacre {
                 //IF THE PLAYER IS ONLINE...
                 if (stackable && freeInvSlots >= 1) { //STACKABLE REWARD ONLY NEEDS 1 INV SLOT
                     winningPlayer.getInventory().add(reward);
-                    World.sendMessage(rewardMessage);
+                    World.sendFilteredMessage(rewardMessage);
                     winnerReceivedReward = true;
                     restartGame();
                 } else if (!stackable && freeInvSlots >= reward.getAmount()) { //NON STACKABLE
                     winningPlayer.getInventory().add(reward);
-                    World.sendMessage(rewardMessage);
+                    World.sendFilteredMessage(rewardMessage);
                     winnerReceivedReward = true;
                     restartGame();
                 } else {

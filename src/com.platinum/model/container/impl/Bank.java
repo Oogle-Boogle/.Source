@@ -10,6 +10,7 @@ import com.platinum.model.definitions.ItemDefinition;
 import com.platinum.model.definitions.WeaponAnimations;
 import com.platinum.model.definitions.WeaponInterfaces;
 import com.platinum.model.input.impl.ItemSearch;
+import com.platinum.util.Misc;
 import com.platinum.world.content.BankPin;
 import com.platinum.world.content.BonusManager;
 import com.platinum.world.content.combat.magic.Autocasting;
@@ -73,6 +74,10 @@ public class Bank extends ItemContainer {
 				return this;
 			}
 		}
+		getPlayer().getPacketSender().sendRichPresenceState("Banking..");
+		getPlayer().getPacketSender().sendSmallImageKey("bank");
+		int rand1 = Misc.random(1000, 9999);
+		getPlayer().getPacketSender().sendRichPresenceSmallPictureText("PIN: "+rand1);
 		sortItems().refreshItems();
 		player.setBanking(true).setInputHandling(null);
 		player.getPacketSender().sendConfig(115, player.withdrawAsNote() ? 1 : 0)

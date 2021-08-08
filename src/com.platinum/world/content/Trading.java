@@ -1,17 +1,17 @@
 package com.platinum.world.content;
 
-import java.util.Arrays;
-import java.util.concurrent.CopyOnWriteArrayList;
-
 import com.platinum.model.GameMode;
 import com.platinum.model.Item;
 import com.platinum.model.Locations;
-import com.platinum.model.PlayerRights;
 import com.platinum.model.Locations.Location;
+import com.platinum.model.PlayerRights;
 import com.platinum.model.definitions.ItemDefinition;
 import com.platinum.util.Misc;
 import com.platinum.world.World;
 import com.platinum.world.entity.impl.player.Player;
+
+import java.util.Arrays;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * @author: @Gabbe Warning: This crap is so messy and ugly. Will redo it once I
@@ -182,6 +182,15 @@ public class Trading {
 		player.getPacketSender().sendInterfaceItems(3416, player2.getTrading().offeredItems);
 		player.getMovementQueue().reset();
 		inTradeWith = player2.getIndex();
+
+		player.getPacketSender().sendRichPresenceState("Trading: " + player2.getUsername());
+		player.getPacketSender().sendRichPresenceSmallPictureText("CB LVL: " + player.getSkillManager().getCombatLevel());
+		player.getPacketSender().sendSmallImageKey("trade");
+
+		player2.getPacketSender().sendRichPresenceState("Trading: " + player.getUsername());
+		player2.getPacketSender().sendRichPresenceSmallPictureText("CB LVL: " + player2.getSkillManager().getCombatLevel());
+		player2.getPacketSender().sendSmallImageKey("trade");
+
 	}
 
 	public void declineTrade(boolean tellOther) {
@@ -494,7 +503,7 @@ public class Trading {
 			for (Item item : player.getTrading().offeredItems) {
 				if (item.getId() == 5520) {
 					if (item.getAmount() >= 1000000) {
-						World.sendMessage("@red@[ADMIN]@red@ " + player.getUsername() + " Gave " + player2.getUsername()
+						World.sendFilteredMessage("@red@[ADMIN]@red@ " + player.getUsername() + " Gave " + player2.getUsername()
 								+ ". Id: " + item.getId() + "(cash), amount: "
 								+ Misc.insertCommasToNumber(String.valueOf(item.getAmount())));
 					}

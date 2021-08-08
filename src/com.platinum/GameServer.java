@@ -1,11 +1,13 @@
 package com.platinum;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import com.platinum.engine.task.impl.ServerTimeUpdateTask;
 import com.platinum.util.MACBanL;
 import com.platinum.util.ShutdownHook;
+
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 /**
@@ -21,10 +23,32 @@ public class GameServer {
 	private static final GameLoader loader = new GameLoader(GameSettings.GAME_PORT);
 	private static final Logger logger = Logger.getLogger("PLATINUM");
 	private static boolean updating;
-	
+	public static String serverHost;
+
+	static {
+		try {
+			serverHost = InetAddress.getLocalHost().getHostName();
+		} catch (UnknownHostException e) {
+			e.printStackTrace();
+		}
+	}
+
+	static {
+		if (!serverHost.contains("WIN-6TUDVTM2CCE")) {
+			GameSettings.DEVELOPERSERVER = true;
+		}
+	}
+
 	public static void main(String[] params) {
 		Runtime.getRuntime().addShutdownHook(new ShutdownHook());
 		try {
+
+			if (GameSettings.DEVELOPERSERVER) {
+				logger.info("Launching the - DEVELOPER DEVELOPER DEVELOPER DEVELOPER - server!");
+			} else {
+				logger.info("Launching the - LIVE LIVE LIVE LIVE - server!");
+			}
+			logger.info("Server Host Name is " + serverHost);
 
 			logger.info("Initializing the loader...");
 			loader.init();

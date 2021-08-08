@@ -32,7 +32,7 @@ public class FreeForAll {
 	
 	public static void startEvent(String type) {
 		if(!eventRunning) {
-		World.sendMessage("@or2@[FFA] A "+type+" FFA event has been started! Type ::ffa to join!");
+		World.sendFilteredMessage("@or2@[FFA] A "+type+" FFA event has been started! Type ::ffa to join!");
 		if (type == "pure") {
 			pure = true;
 		} else if (type == "brid") {
@@ -220,7 +220,7 @@ public class FreeForAll {
 		if(waitTimer > 0) { 
 			waitTimer--;
 			if (waitTimer % 100 == 0 && waitTimer > 0)
-				World.sendMessage("@or2@[FFA] "+waitTimer+" seconds until FFA starts!" +" Join now @ ::ffa");
+				World.sendFilteredMessage("@or2@[FFA] "+waitTimer+" seconds until FFA starts!" +" Join now @ ::ffa");
 		}
 		updateGameInterface();
 		if(waitTimer <= 0) {
@@ -309,7 +309,7 @@ public static final int[] ffaRewards = {19935, 19936, 3932, 19090, 13240, 3980, 
 		eventRunning = false;
 		gameRunning = false;
 		for (Player p : playerMap.keySet()) {
-			World.sendMessage("@or2@[FFA] @blu@"+Misc.formatPlayerName(p.getUsername()) + "@or2@ has won the FFA game!");
+			World.sendFilteredMessage("@or2@[FFA] @blu@"+Misc.formatPlayerName(p.getUsername()) + "@or2@ has won the FFA game!");
 			p.sendMessage("You have won the game! PM a admin or owner for your reward!");
 			leaveGame(p);
 			p.sendMessage("Gj you were the winner!");

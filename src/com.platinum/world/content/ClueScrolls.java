@@ -192,7 +192,7 @@ public class ClueScrolls {
 		Item[] extremeLoot = EXTREME_LEVEL_REWARD[Misc.getRandom(EXTREME_LEVEL_REWARD.length - 1)];
 		for(Item item : extremeLoot) {
 			player.getInventory().add(item);
-			World.sendMessage("@or3@[Clue Scroll]@bla@ "+player.getUsername()+ " has recieved a Rare!");
+			World.sendFilteredMessage("@or3@[Clue Scroll]@bla@ "+player.getUsername()+ " has recieved a Rare!");
 		}		
 		}
 

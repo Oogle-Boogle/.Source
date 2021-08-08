@@ -90,7 +90,7 @@ public class TheSeph extends NPC {
 		setCurrent(instance);
 		// System.out.print("spawned.");
 
-		World.sendMessage("<shad=1><img=418>@red@Sephiroth has Respawned" + location.getLocation() + "");
+		World.sendFilteredMessage("<shad=1><img=418>@red@Sephiroth has Respawned" + location.getLocation() + "");
 	}
 
 	/**
@@ -166,7 +166,7 @@ public class TheSeph extends NPC {
 					new GroundItem(superrare, pos, player.getUsername(), false, 150, true, 200));
 			String itemName = (superrare.getDefinition().getName());
 			String itemMessage = Misc.anOrA(itemName) + " " + itemName;
-			World.sendMessage(
+			World.sendFilteredMessage(
 					"<img=382><col=FF0000>" + player.getUsername() + " received<col=eaeaea><img=386>[ " + itemMessage + "<col=eaeaea>]<img=386><col=FF0000> from Sephiroth!");
 			return;
 		}
@@ -176,7 +176,7 @@ public class TheSeph extends NPC {
 					new GroundItem(rare, pos, player.getUsername(), false, 150, true, 200));
 			String itemName = rare.getDefinition().getName();
 			String itemMessage = Misc.anOrA(itemName) + " " + itemName;
-			World.sendMessage(
+			World.sendFilteredMessage(
 					"<img=382><col=FF0000>" + player.getUsername() + " received<col=eaeaea><img=386>[ " + itemMessage + "<col=eaeaea>]<img=386><col=FF0000> from Sephiroth!");
 			return;
 		}

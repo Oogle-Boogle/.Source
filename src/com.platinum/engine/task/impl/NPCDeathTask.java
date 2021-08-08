@@ -1,9 +1,5 @@
 package com.platinum.engine.task.impl;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
-
 import com.platinum.engine.task.Task;
 import com.platinum.engine.task.TaskManager;
 import com.platinum.model.*;
@@ -23,13 +19,17 @@ import com.platinum.world.content.combat.strategy.impl.HarLakkRiftsplitter;
 import com.platinum.world.content.combat.strategy.impl.KalphiteQueen;
 import com.platinum.world.content.combat.strategy.impl.Nex;
 import com.platinum.world.content.combat.strategy.impl.SuicsBoss;
-import com.platinum.world.content.raids.RaidNpc;
 import com.platinum.world.content.raids.OldRaidParty;
+import com.platinum.world.content.raids.RaidNpc;
 import com.platinum.world.content.serverperks.GlobalPerks;
 import com.platinum.world.content.skill.impl.pvm.NpcGain;
 import com.platinum.world.entity.impl.npc.NPC;
 import com.platinum.world.entity.impl.player.Player;
 import com.platinum.world.entity.impl.player.PlayerSaving;
+
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Represents an npc's death task, which handles everything an npc does before
@@ -81,11 +81,13 @@ public class NPCDeathTask extends Task {
 	@Override
 	public void execute() {
 		try {
+			if (killer != null && !killer.isMiniMe) {
+				killer.resetRichPresence();
+			}
 			npc.setEntityInteraction(null);
 			switch (ticks) {
 			case 2:
 				npc.getMovementQueue().setLockMovement(true).reset();
-				// killer = npc.getCombatBuilder().getKiller(true);
 				killer = npc.getCombatBuilder().getKiller(npc.getId() != 2745 && npc.getId() != 25
 						&& npc.getId() != 6309 && npc.getId() != 8548 && npc.getId() != 8949 && npc.getId() != 6593
 						&& npc.getId() != 9993 && npc.getId() != 9903 && npc.getId() != 2005 && npc.getId() != 421
@@ -598,10 +600,10 @@ public class NPCDeathTask extends Task {
 			}
 
 			if (killer.currentBossWave <= 4) {
-				World.sendMessage("@bla@[@blu@" + killer.getUsername() + "@bla@]@red@ has just completed wave " + (killer.getCurrentBossWave()) + " at ::boss!");
+				World.sendFilteredMessage("@bla@[@blu@" + killer.getUsername() + "@bla@]@red@ has just completed wave " + (killer.getCurrentBossWave()) + " at ::boss!");
 			}
 			if (killer.currentBossWave == 5) {
-				World.sendMessage("@bla@[@blu@" + killer.getUsername() + "@bla@]@red@ has just killed completed the final wave at ::boss!");
+				World.sendFilteredMessage("@bla@[@blu@" + killer.getUsername() + "@bla@]@red@ has just killed completed the final wave at ::boss!");
 			}
 
 			TaskManager.submit(new Task(2, killer, false) {

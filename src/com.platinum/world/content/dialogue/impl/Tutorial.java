@@ -538,7 +538,7 @@ public class Tutorial {
 					p.getAppearance().setCanChangeAppearance(true);
 					p.setPlayerLocked(false);
 					ClanChatManager.join(p, "help");
-					World.sendMessage("<img=10> <col=6600CC>[NEW PLAYER]: "+p.getUsername()+" has logged into abyssal-scape for the first time!");
+					World.sendFilteredMessage("<img=10> <col=6600CC>[NEW PLAYER]: "+p.getUsername()+" has logged into abyssal-scape for the first time!");
 
 					//reset interface?
 					//resetInterface(player);

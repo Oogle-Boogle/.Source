@@ -578,6 +578,12 @@ public class Player extends Character {
 
 
 
+	public void resetRichPresence() {
+		this.getPacketSender().sendRichPresenceState("Exploring Platinum..");
+		this.getPacketSender().sendRichPresenceSmallPictureText("Combat Lvl: " + this.getSkillManager().getCombatLevel());
+		this.getPacketSender().sendSmallImageKey("logo");
+	}
+
 	/**
 	 * Instance manager interface
 	 */

@@ -90,7 +90,7 @@ public class PlayerKillingAttributes {
 			player.getPointsHandler().refreshPanel();
 
 			if (this.playerKillStreak >= 10) {
-				World.sendMessage("@blu@" + player.getUsername() + " is on a kill streak of "
+				World.sendFilteredMessage("@blu@" + player.getUsername() + " is on a kill streak of "
 						+ player.getPlayerKillingAttributes().getPlayerKillStreak() + "!");
 			}
 

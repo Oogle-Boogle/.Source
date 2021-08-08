@@ -152,7 +152,7 @@ public class WellOfGoodwill {
 		MONEY_IN_WELL += amount;
 		
 		if(amount > 3) {
-			World.sendMessage("@red@[EXP WELL]@bla@"+player.getUsername()+" has donated "+Misc.insertCommasToNumber(""+amount+"")+" tax bags to the Well of Goodwill!");
+			World.sendFilteredMessage("@red@[EXP WELL]@bla@"+player.getUsername()+" has donated "+Misc.insertCommasToNumber(""+amount+"")+" tax bags to the Well of Goodwill!");
 		}
 		
 		DialogueManager.sendStatement(player, "Thank you for your donation.");
@@ -162,7 +162,7 @@ public class WellOfGoodwill {
 		if (getMissingAmount() <= 0) {
 			STATE = WellState.FULL;
 			START_TIMER = System.currentTimeMillis();
-			World.sendMessage("@red@[EXP WELL]@bla@It is now granting everyone 2 hours of 30% bonus experience.");
+			World.sendFilteredMessage("@red@[EXP WELL]@bla@It is now granting everyone 2 hours of 30% bonus experience.");
 			World.getPlayers().forEach(p -> p.getPacketSender().sendString(39167, PlayerPanel.LINE_START + "@or1@Well of Goodwill: @yel@Active"));
 		}
 	}
@@ -170,7 +170,7 @@ public class WellOfGoodwill {
 	public static void updateState() {
 		if (STATE == WellState.FULL) {
 			if(getMinutesRemaining() <= 0) {
-				World.sendMessage("<img=10> <col=6666FF>The Well of Goodwill is no longer granting bonus experience.");
+				World.sendFilteredMessage("<img=10> <col=6666FF>The Well of Goodwill is no longer granting bonus experience.");
 				World.getPlayers().forEach(p -> p.getPacketSender().sendString(39167, "@or2@Well of Goodwill: @yel@N/A"));
 				setDefaults();
 			}
