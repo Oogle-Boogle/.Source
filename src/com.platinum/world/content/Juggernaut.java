@@ -88,7 +88,7 @@ public class Juggernaut extends NPC {
 		setCurrent(instance);
 		// System.out.print("spawned.");
 
-		World.sendFilteredMessage("<img=10>@red@The Juggernaut boss has spawned at the " + location.getLocation() + "!");
+		World.sendMessageNonDiscord("<img=10>@red@The Juggernaut boss has spawned at the " + location.getLocation() + "!");
 		
 		Juggernaut.amountNeeded = 10000;
 	}
@@ -166,7 +166,7 @@ public class Juggernaut extends NPC {
 					new GroundItem(new Item(superrare), pos, player.getUsername(), false, 150, true, 200));
 			String itemName = (new Item(superrare).getDefinition().getName());
 			String itemMessage = Misc.anOrA(itemName) + " " + itemName;
-			World.sendFilteredMessage(
+			World.sendMessageNonDiscord(
 					"<img=382><col=FF0000>" + player.getUsername() + " received<col=eaeaea>[ " + itemMessage + "<col=eaeaea>]<col=FF0000> from the Juggernaut!");
 			return;
 		}
@@ -176,7 +176,7 @@ public class Juggernaut extends NPC {
 					new GroundItem(new Item(rare), pos, player.getUsername(), false, 150, true, 200));
 			String itemName = (new Item(rare).getDefinition().getName());
 			String itemMessage = Misc.anOrA(itemName) + " " + itemName;
-			World.sendFilteredMessage(
+			World.sendMessageNonDiscord(
 					"<img=382><col=FF0000>" + player.getUsername() + " received<col=eaeaea>[ " + itemMessage + "<col=eaeaea>]<col=FF0000> from the Juggernaut!");
 			return;
 		}
@@ -184,7 +184,7 @@ public class Juggernaut extends NPC {
 			GroundItemManager.spawnGroundItem(player,
 					new GroundItem(new Item(common), pos, player.getUsername(), false, 150, true, 200));
 			String itemName = (new Item(common).getDefinition().getName());
-			World.sendFilteredMessage(
+			World.sendMessageNonDiscord(
 					"<img=382><col=FF0000>" + player.getUsername() + " received<col=eaeaea>[  " + itemName + "<col=eaeaea>]<col=FF0000> from the Juggernaut");
 			return;
 		}

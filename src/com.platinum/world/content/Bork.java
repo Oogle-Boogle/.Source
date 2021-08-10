@@ -88,7 +88,7 @@ public class Bork extends NPC {
 		setCurrent(instance);
 		// System.out.print("spawned.");
 
-		World.sendFilteredMessage("<img=9><col=bababa><shad=10>[<col=0999ad>UBER BOSS<col=bababa>]<col=0999ad>Bork <col=00a745>has <shad=10>respawned <img=385> ::uberboss");
+		World.sendMessageNonDiscord("<img=9><col=bababa><shad=10>[<col=0999ad>UBER BOSS<col=bababa>]<col=0999ad>Bork <col=00a745>has <shad=10>respawned <img=385> ::uberboss");
 	}
 
 
@@ -166,7 +166,7 @@ public class Bork extends NPC {
 					new GroundItem(new Item(superrare), pos, player.getUsername(), false, 150, true, 200));
 			String itemName = (new Item(superrare).getDefinition().getName());
 			String itemMessage = Misc.anOrA(itemName) + " " + itemName;
-			World.sendFilteredMessage(
+			World.sendMessageNonDiscord(
 					"<img=382><col=FF0000>" + player.getUsername() + " received<col=eaeaea>[ " + itemMessage + "<col=eaeaea>]<col=FF0000> from the Uber Boss!");
 			return;
 		}
@@ -176,7 +176,7 @@ public class Bork extends NPC {
 					new GroundItem(new Item(rare), pos, player.getUsername(), false, 150, true, 200));
 			String itemName = (new Item(rare).getDefinition().getName());
 			String itemMessage = Misc.anOrA(itemName) + " " + itemName;
-			World.sendFilteredMessage(
+			World.sendMessageNonDiscord(
 					"<img=382><col=FF0000>" + player.getUsername() + " received<col=eaeaea>[ " + itemMessage + "<col=eaeaea>]<col=FF0000> from the Uber Boss!");
 			return;
 		}
@@ -184,7 +184,7 @@ public class Bork extends NPC {
 			GroundItemManager.spawnGroundItem(player,
 					new GroundItem(new Item(common, 1), pos, player.getUsername(), false, 150, true, 200));
 			String itemName = (new Item(common).getDefinition().getName());
-			World.sendFilteredMessage(
+			World.sendMessageNonDiscord(
 					"<img=382><col=FF0000>" + player.getUsername() + " received<col=eaeaea>[ " + itemName + "<col=eaeaea>]<col=FF0000> from the Uber Boss!");
 			return;
 		}

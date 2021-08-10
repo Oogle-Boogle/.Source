@@ -1362,7 +1362,7 @@ public class ItemActionPacketListener implements PacketListener {
 			if (player.getInventory().contains(6530)) {
 				player.getInventory().delete(6530, 250);
 				player.getInventory().add(897, 1);
-				World.sendFilteredMessage("<img=10> <col=008FB2>[Upgrade]" + player.getUsername()
+				World.sendMessageNonDiscord("<img=10> <col=008FB2>[Upgrade]" + player.getUsername()
 						+ " has just upgraded his @red@Bandos Chestplate@la@ to tier 1!");
 				player.getPacketSender().sendMessage("Your Bandos Items Has been Upgraded");
 			} else {
@@ -1373,7 +1373,7 @@ public class ItemActionPacketListener implements PacketListener {
 			if (player.getInventory().contains(6530)) {
 				player.getInventory().delete(6530, 250);
 				player.getInventory().add(894, 1);
-				World.sendFilteredMessage("<img=10> <col=008FB2>[Upgrade]" + player.getUsername()
+				World.sendMessageNonDiscord("<img=10> <col=008FB2>[Upgrade]" + player.getUsername()
 						+ " has just upgraded his @red@Bandos Tassets@la@ to tier 1!");
 				player.getPacketSender().sendMessage("Your Bandos Items Has been Upgraded");
 			} else {
@@ -1394,7 +1394,7 @@ public class ItemActionPacketListener implements PacketListener {
 			if (player.getInventory().contains(6530)) {
 				player.getInventory().delete(6530, 500);
 				player.getInventory().add(895, 1);
-				World.sendFilteredMessage("<img=10> <col=008FB2>[Upgrade]" + player.getUsername()
+				World.sendMessageNonDiscord("<img=10> <col=008FB2>[Upgrade]" + player.getUsername()
 						+ " has just upgraded his @red@Bandos Chestplate@la@ to tier 2!");
 				player.getPacketSender().sendMessage("Your Bandos Items Has been Upgraded");
 			} else {
@@ -1405,7 +1405,7 @@ public class ItemActionPacketListener implements PacketListener {
 			if (player.getInventory().contains(6530)) {
 				player.getInventory().delete(6530, 1000);
 				player.getInventory().add(896, 1);
-				World.sendFilteredMessage("<img=10> <col=008FB2>[Upgrade]" + player.getUsername()
+				World.sendMessageNonDiscord("<img=10> <col=008FB2>[Upgrade]" + player.getUsername()
 						+ " has just upgraded his @red@Bandos Tassets@la@ to tier 3!");
 				player.getPacketSender().sendMessage("Your Bandos Items Has been Upgraded");
 			} else {
@@ -1416,7 +1416,7 @@ public class ItemActionPacketListener implements PacketListener {
 			if (player.getInventory().contains(6530)) {
 				player.getInventory().delete(6530, 500);
 				player.getInventory().add(898, 1);
-				World.sendFilteredMessage("<img=10> <col=008FB2>[Upgrade]" + player.getUsername()
+				World.sendMessageNonDiscord("<img=10> <col=008FB2>[Upgrade]" + player.getUsername()
 						+ " has just upgraded his @red@Bandos Chestplate@la@ to tier 2!");
 				player.getPacketSender().sendMessage("Your Bandos Items Has been Upgraded");
 			} else {
@@ -1427,7 +1427,7 @@ public class ItemActionPacketListener implements PacketListener {
 			if (player.getInventory().contains(6530)) {
 				player.getInventory().delete(6530, 1000);
 				player.getInventory().add(899, 1);
-				World.sendFilteredMessage("<img=10> <col=008FB2>[Upgrade]" + player.getUsername()
+				World.sendMessageNonDiscord("<img=10> <col=008FB2>[Upgrade]" + player.getUsername()
 						+ " has just upgraded his @red@Bandos Chestplate@la@ to tier 3!");
 				player.getPacketSender().sendMessage("Your Bandos Items Has been Upgraded");
 			} else {

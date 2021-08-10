@@ -51,15 +51,15 @@ public class LastManStanding {
 		if(waitTimer > 0) { 
 			waitTimer--;
 			if (waitTimer % 100 == 0 && waitTimer > 0)
-				World.sendFilteredMessage("@blu@[LAST MAN STANDING] "+waitTimer / 100 +" minutes until Last Man Standing starts!" +" Join now @ ::lms");
+				World.sendMessageNonDiscord("@blu@[LAST MAN STANDING] "+waitTimer / 100 +" minutes until Last Man Standing starts!" +" Join now @ ::lms");
 		}
 		if(waitTimer <= 0 && playersInLobby >= 2) {
 			if(!gameRunning)
 				startGame();
 		}
 		if(waitTimer <= 0 && playersInLobby < 2 && !gameRunning ) {
-			World.sendFilteredMessage("@blu@[LAST MAN STANDING]@red@ Not enough players, so the timer has been reset.");
-			World.sendFilteredMessage("@blu@[LAST MAN STANDING]@red@ ::lms to join the lobby.");
+			World.sendMessageNonDiscord("@blu@[LAST MAN STANDING]@red@ Not enough players, so the timer has been reset.");
+			World.sendMessageNonDiscord("@blu@[LAST MAN STANDING]@red@ ::lms to join the lobby.");
 			waitTimer = 300;
 		}
 	}
@@ -102,7 +102,7 @@ public class LastManStanding {
 	public static void startEvent() {
 		if (!eventRunning) {
 			eventRunning = true;
-			World.sendFilteredMessage("@red@[LAST MAN STANDING]@blu@ Event has started, ::lms to join!");
+			World.sendMessageNonDiscord("@red@[LAST MAN STANDING]@blu@ Event has started, ::lms to join!");
 		}
 	}
 	
@@ -188,7 +188,7 @@ public class LastManStanding {
 		eventRunning = false;
 		gameRunning = false;
 		for (Player player : playerMap.keySet()) {
-			World.sendFilteredMessage(
+			World.sendMessageNonDiscord(
 					"@blu@[LAST MAN STANDING] @blu@" + Misc.formatPlayerName(player.getUsername()) + "@red@ has won the Last Man Standing game!");
 			leaveGame(player);
 			player.sendMessage("Gj you were the winner!");

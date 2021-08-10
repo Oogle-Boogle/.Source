@@ -1094,14 +1094,14 @@ public class DialogueOptions {
 					player.getInventory().delete(10835, 2000);
 					player.incrementCustomWellDonated(1);
 					GameSettings.TRIPLE_EXP = true;
-					World.sendFilteredMessage("<img=10>@blu@" + player.getUsername().toString()
+					World.sendMessageNonDiscord("<img=10>@blu@" + player.getUsername().toString()
 							+ " @red@Has just donated 2000 bags for 6h Triple Exp (For everyone)");
 					Timer t = new Timer();
 					t.schedule(new TimerTask() {
 						@Override
 						public void run() {
 							GameSettings.TRIPLE_EXP = false;
-							World.sendFilteredMessage("<img=10>@blu@ Triple Exp has ended");
+							World.sendMessageNonDiscord("<img=10>@blu@ Triple Exp has ended");
 						}
 
 					}, 21600000);
@@ -1220,14 +1220,14 @@ public class DialogueOptions {
 					player.getInventory().delete(10835, 2500);
 					player.incrementCustomWellDonated(1);
 					GameSettings.DOUBLE_BOSSPOINTS = true;
-					World.sendFilteredMessage("<img=10>@blu@" + player.getUsername().toString()
+					World.sendMessageNonDiscord("<img=10>@blu@" + player.getUsername().toString()
 							+ " @red@Has just donated 2500 bags for 12h Double Boss Points(For everyone)");
 					Timer t = new Timer();
 					t.schedule(new TimerTask() {
 						@Override
 						public void run() {
 							GameSettings.DOUBLE_BOSSPOINTS = false;
-							World.sendFilteredMessage("<img=10>@blu@ Double Boss Points has ended");
+							World.sendMessageNonDiscord("<img=10>@blu@ Double Boss Points has ended");
 						}
 
 					}, 43200000);
@@ -1333,14 +1333,14 @@ public class DialogueOptions {
 					player.getInventory().delete(10835, 1250);
 					player.incrementCustomWellDonated(1);
 					GameSettings.DOUBLE_EXP = true;
-					World.sendFilteredMessage("<img=10>@blu@" + player.getUsername().toString()
+					World.sendMessageNonDiscord("<img=10>@blu@" + player.getUsername().toString()
 							+ " @red@Has just donated 1250 bags for 12h Double Exp (For every1)");
 					Timer t = new Timer();
 					t.schedule(new TimerTask() {
 						@Override
 						public void run() {
 							GameSettings.DOUBLE_EXP = false;
-							World.sendFilteredMessage("<img=10>@blu@ Double Exp has ended");
+							World.sendMessageNonDiscord("<img=10>@blu@ Double Exp has ended");
 						}
 
 					}, 43200000);
@@ -2061,12 +2061,12 @@ public class DialogueOptions {
 					int chance = RandomUtility.exclusiveRandom(1000);
 					if (chance >= 900) {
 						player.getInventory().add(3824, 1);
-						World.sendFilteredMessage("<img=10>@blu@[WORLD]<img=10> " + player.getUsername().toString()
+						World.sendMessageNonDiscord("<img=10>@blu@[WORLD]<img=10> " + player.getUsername().toString()
 								+ " @red@Has just received a Vote Mystery Box!");
 					}
 					if (chance >= 990) {
 						player.getInventory().add(19936, 1);
-						World.sendFilteredMessage("<img=10>@blu@[WORLD]<img=10> " + player.getUsername().toString()
+						World.sendMessageNonDiscord("<img=10>@blu@[WORLD]<img=10> " + player.getUsername().toString()
 								+ " @red@Has just received a $10 Bond from voting!");
 					}
 					player.getClickDelay().reset();

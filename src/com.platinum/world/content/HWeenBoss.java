@@ -88,7 +88,7 @@ public class HWeenBoss extends NPC {
 		setCurrent(instance);
 		// System.out.print("spawned.");
 
-		World.sendFilteredMessage("<img=392><shad=200><col=000000>[<col=b96900>HALLOWEEN<col=000000>]<col=b96900>Killer Pumpkin has respawned " + location.getLocation() + "");
+		World.sendMessageNonDiscord("<img=392><shad=200><col=000000>[<col=b96900>HALLOWEEN<col=000000>]<col=b96900>Killer Pumpkin has respawned " + location.getLocation() + "");
 	}
 
 	/**
@@ -163,7 +163,7 @@ public class HWeenBoss extends NPC {
 					new GroundItem(superrare, pos, player.getUsername(), false, 150, true, 200));
 			String itemName = (superrare.getDefinition().getName());
 			Misc.anOrA(itemName);
-			World.sendFilteredMessage(
+			World.sendMessageNonDiscord(
 					"<img=392><col=000000>" + player.getUsername() + " received<col=b96900>[ " + itemName + "<col=b96900>]<col=000000> from the Killer Pumpkin!");
 			return;
 		}
@@ -173,7 +173,7 @@ public class HWeenBoss extends NPC {
 					new GroundItem(rare, pos, player.getUsername(), false, 150, true, 200));
 			String itemName = rare.getDefinition().getName();
 			Misc.anOrA(itemName);
-			World.sendFilteredMessage(
+			World.sendMessageNonDiscord(
 					"<img=392><col=000000>" + player.getUsername() + " received<col=b96900>[ " + itemName + "<col=b96900>]<col=000000> from the Killer Pumpkin!");
 			return;
 		}
@@ -181,7 +181,7 @@ public class HWeenBoss extends NPC {
 			GroundItemManager.spawnGroundItem(player,
 					new GroundItem(common, pos, player.getUsername(), false, 150, true, 200));
 			String itemName = (common.getDefinition().getName());
-			World.sendFilteredMessage(
+			World.sendMessageNonDiscord(
 					"<img=392><col=000000>" + player.getUsername() + " received<col=b96900>[ " + itemName + "<col=b96900>]<col=000000> from the Killer Pumpkin!");
 			return;
 		}

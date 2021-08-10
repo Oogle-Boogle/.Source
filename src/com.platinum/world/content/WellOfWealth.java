@@ -154,7 +154,7 @@ public class WellOfWealth {
 		}
 		MONEY_IN_WELL += amount;
 		if(amount > 24999999) {
-			World.sendFilteredMessage("@red@[Well of Wealth]@bla@"+player.getUsername()+" has donated "+Misc.insertCommasToNumber(""+amount+"")+" coins to the Well of Wealth!");
+			World.sendMessageNonDiscord("@red@[Well of Wealth]@bla@"+player.getUsername()+" has donated "+Misc.insertCommasToNumber(""+amount+"")+" coins to the Well of Wealth!");
 		}
 		DialogueManager.sendStatement(player, "Thank you for your donation.");
 		Achievements.finishAchievement(player, AchievementData.FILL_WELL_OF_GOODWILL_1M);
@@ -164,14 +164,14 @@ public class WellOfWealth {
 			STATE = WellState.FULL;
 			START_TIMER = System.currentTimeMillis();
 	
-			World.sendFilteredMessage("@red@[Well of Wealth]@bla@Is now granting everyone 1 hour of x2 Easier Drop Rates");
+			World.sendMessageNonDiscord("@red@[Well of Wealth]@bla@Is now granting everyone 1 hour of x2 Easier Drop Rates");
 		}
 	}
 
 	public static void updateState() {
 		if (STATE == WellState.FULL) {
 			if(getMinutesRemaining() <= 0) {
-				World.sendFilteredMessage("<img=10> <col=6666FF>The Well of Wealth is no longer granting x2 Easier Drop Rates");
+				World.sendMessageNonDiscord("<img=10> <col=6666FF>The Well of Wealth is no longer granting x2 Easier Drop Rates");
 				//World.getPlayers().forEach(p -> p.getPacketSender().sendString(39164, "@or2@Well of Wealth: @yel@N/A"));
 				setDefaults();
 			}

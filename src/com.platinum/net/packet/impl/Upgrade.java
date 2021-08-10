@@ -246,7 +246,7 @@ public class Upgrade {
 			if (random == 1) {
 				p.getPacketSender().sendMessage("" + random);
 				if (!ItemDefinition.forId(itemId).getName().toLowerCase().contains("monster")) {
-					World.sendFilteredMessage("<shad=0>@bla@[@gr3@Upgrade@bla@]@gr3@ " + p.getUsername()
+					World.sendMessageNonDiscord("<shad=0>@bla@[@gr3@Upgrade@bla@]@gr3@ " + p.getUsername()
 							+ " @bla@ has upgraded his @gr2@" + ItemDefinition.forId(itemId).getName() + "@bla@ !");
 				}
 				p.getInventory().add(UpgItem.addEndItem(itemId), 1);

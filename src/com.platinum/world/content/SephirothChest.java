@@ -81,7 +81,7 @@ public class SephirothChest {
 				player.getInventory().add(rareDrop, 4);
 			} else {
 				player.getInventory().add(rareDrop, 1);
-				World.sendMessage("@blu@[SEPHIROTH CHEST]: " + player.getUsername() + " has received " + ItemDefinition.forId(rareDrop).getName() + " from the Sephiroth chest!");
+				World.sendMessageDiscord("@blu@[SEPHIROTH CHEST]: " + player.getUsername() + " has received " + ItemDefinition.forId(rareDrop).getName() + " from the Sephiroth chest!");
 			}
 		} else if (random >= 196 && random <= 200) {
 			int ultraDrops = getRandomItem(ultraLoots);
@@ -91,7 +91,7 @@ public class SephirothChest {
 				player.getInventory().add(ultraDrops, 4);
 			} else {
 				player.getInventory().add(ultraDrops, 1);
-				World.sendFilteredMessage("@blu@[SEPHIROTH CHEST]: " + player.getUsername() + " has received " + ItemDefinition.forId(ultraDrops).getName() + " from the Sephiroth chest!");
+				World.sendMessageNonDiscord("@blu@[SEPHIROTH CHEST]: " + player.getUsername() + " has received " + ItemDefinition.forId(ultraDrops).getName() + " from the Sephiroth chest!");
 			}
 		}
 	}

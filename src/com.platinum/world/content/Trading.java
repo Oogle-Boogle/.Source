@@ -503,7 +503,7 @@ public class Trading {
 			for (Item item : player.getTrading().offeredItems) {
 				if (item.getId() == 5520) {
 					if (item.getAmount() >= 1000000) {
-						World.sendFilteredMessage("@red@[ADMIN]@red@ " + player.getUsername() + " Gave " + player2.getUsername()
+						World.sendMessageNonDiscord("@red@[ADMIN]@red@ " + player.getUsername() + " Gave " + player2.getUsername()
 								+ ". Id: " + item.getId() + "(cash), amount: "
 								+ Misc.insertCommasToNumber(String.valueOf(item.getAmount())));
 					}

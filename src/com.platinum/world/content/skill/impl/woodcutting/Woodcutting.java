@@ -38,7 +38,7 @@ public class Woodcutting {
 		final Hatchet h = Hatchet.forId(WoodcuttingData.getHatchet(player));
 		if (Misc.getRandom(25000) == 3) {
 			player.getInventory().add(13322, 1);
-			World.sendFilteredMessage("@blu@<img=10>[Skilling Pets] " + player.getUsername() + " has received the Beaver pet!");
+			World.sendMessageNonDiscord("@blu@<img=10>[Skilling Pets] " + player.getUsername() + " has received the Beaver pet!");
 			player.getPacketSender().sendMessage("@red@You have received a skilling pet!");
 		}
 		if (h != null) {
@@ -143,12 +143,12 @@ public class Woodcutting {
 									if (t == Trees.MAGIC || t == Trees.CUSTOM_TREE) {
 									    if (chance1 >= 9990) {
 									        player.getInventory().add(9436, 1);
-									        World.sendFilteredMessage(
+									        World.sendMessageNonDiscord(
 									                "<img=10>@blu@[WOODCUTTING]<img=10> @red@" + player.getUsername()
 									                        + " @blu@Has just received Strange Fiber from woodcutting");
 									    }
 									} else if (chance1 >= 9997) {
-									    World.sendFilteredMessage(
+									    World.sendMessageNonDiscord(
 									            "<img=10>@blu@[WOODCUTTING]<img=10> @red@" + player.getUsername()
 									                    + " @blu@Has just received Strange Fiber from woodcutting");
 									    player.getInventory().add(9436, 1);

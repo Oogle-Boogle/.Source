@@ -55,7 +55,7 @@ public class Mining {
 						final int delay = o.getTicks() - MiningData.getReducedTimer(player, p);
 						if (Misc.getRandom(15000) == 3) {
 							player.getInventory().add(13321, 1);
-							World.sendFilteredMessage("@blu@<img=10>[Skilling Pets] " + player.getUsername()
+							World.sendMessageNonDiscord("@blu@<img=10>[Skilling Pets] " + player.getUsername()
 									+ " has received the Rock Golem pet!");
 							player.getPacketSender().sendMessage("@red@You have received a skilling pet!");
 						}
@@ -97,7 +97,7 @@ public class Mining {
 										player.getPacketSender().sendMessage("You've found a gem!");
 										if (gemId == 6571) {
 											String s = o == Ores.Runite ? "Runite ore" : "Crashed star";
-											World.sendFilteredMessage("<img=10><col=009966> " + player.getUsername()
+											World.sendMessageNonDiscord("<img=10><col=009966> " + player.getUsername()
 													+ " has just received an Uncut Onyx from mining a " + s + "!");
 										}
 									}

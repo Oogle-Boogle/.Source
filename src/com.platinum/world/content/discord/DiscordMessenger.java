@@ -4,6 +4,7 @@ import ca.momoperes.canarywebhooks.DiscordMessage;
 import ca.momoperes.canarywebhooks.WebhookClient;
 import ca.momoperes.canarywebhooks.WebhookClientBuilder;
 import ca.momoperes.canarywebhooks.embed.DiscordEmbed;
+import com.platinum.GameSettings;
 import org.json.simple.JSONObject;
 
 import java.awt.*;
@@ -17,12 +18,15 @@ public class DiscordMessenger extends JSONObject {
     private static final long serialVersionUID = 6042467462151070915L;
 
     private static String rareDrop = "https://discord.com/api/webhooks/872972884337893406/D_TjB54LzBNU8tsETEqJeFjs9-Go5pFPZJzv7Ri2GVOJWR9HgyvGOeUQRegw-Q2zwzZm";
+    private static String staffAlerts = "https://discord.com/api/webhooks/874745409644429333/cPRGyuxMeH9HMBIuu823xVjiZNVZVz_uMhceY-Ldap227PsbcDET3mKnML9NReK8v_UW";
+    private static String newPlayers = "https://discord.com/api/webhooks/874748406348808262/AUhJ0lYQZeeUwp9p6DYATRzGNRbHivpSvHnmp0Xw84WAgRyZgxqjLTMQPr5e_5aOMv8M";
+    private static String inGameMessages = "https://discord.com/api/webhooks/874751825478316032/j8N30FwirZP87CVoi5qvYf999s6q-IAQ0oAkELJ-42ZB2LDve3SSUeuAP1AjNEqNbR8W";
 
 
     public static void sendRareDrop(String player, String msg) {
-       /* if (GameSettings.DEVELOPERSERVER) {
+        if (GameSettings.DEVELOPERSERVER) {
             return;
-        }*/
+        }
         try {
 
             String webhook = rareDrop;
@@ -42,6 +46,102 @@ public class DiscordMessenger extends JSONObject {
             DiscordMessage message = new DiscordMessage.Builder("") // The content of the message
                     .withEmbed(embed) // Add our embed object
                     .withUsername("Rare Drop Alert!") // Override the username of the bot
+                    .build(); // Build the message
+
+            client.sendPayload(message);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void sendStaffMessage(String msg) {
+        if (GameSettings.DEVELOPERSERVER) {
+            return;
+        }
+        try {
+
+            String webhook = staffAlerts;
+
+            WebhookClient client = new WebhookClientBuilder()
+                    .withURI(new URI(webhook))
+                    .build(); // Create the webhook client
+
+            @SuppressWarnings("unused")
+            DiscordEmbed embed = new DiscordEmbed.Builder()
+                    .withTitle("Staff Alert!") // The title of the embed element
+                    .withURL("https://platinum-ps.net") // The URL of the embed element
+                    .withColor(Color.RED) // The color of the embed. You can leave this at null for no color
+                    .withDescription(msg) // The description of the embed object
+                    .build(); // Build the embed element
+
+            DiscordMessage message = new DiscordMessage.Builder("") // The content of the message
+                    .withEmbed(embed) // Add our embed object
+                    .withUsername("In Game Staff Alert!") // Override the username of the bot
+                    .build(); // Build the message
+
+            client.sendPayload(message);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void sendNewPlayer(String msg) {
+        if (GameSettings.DEVELOPERSERVER) {
+            return;
+        }
+        try {
+
+            String webhook = newPlayers;
+
+            WebhookClient client = new WebhookClientBuilder()
+                    .withURI(new URI(webhook))
+                    .build(); // Create the webhook client
+
+            @SuppressWarnings("unused")
+            DiscordEmbed embed = new DiscordEmbed.Builder()
+                    .withTitle("New Player!") // The title of the embed element
+                    .withURL("https://platinum-ps.net") // The URL of the embed element
+                    .withColor(Color.RED) // The color of the embed. You can leave this at null for no color
+                    .withDescription(msg) // The description of the embed object
+                    .build(); // Build the embed element
+
+            DiscordMessage message = new DiscordMessage.Builder("") // The content of the message
+                    .withEmbed(embed) // Add our embed object
+                    .withUsername("In Game Staff Alert!") // Override the username of the bot
+                    .build(); // Build the message
+
+            client.sendPayload(message);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void sendInGameMessage(String msg) {
+        if (GameSettings.DEVELOPERSERVER) {
+            return;
+        }
+        try {
+
+            String webhook = inGameMessages;
+
+            WebhookClient client = new WebhookClientBuilder()
+                    .withURI(new URI(webhook))
+                    .build(); // Create the webhook client
+
+            @SuppressWarnings("unused")
+            DiscordEmbed embed = new DiscordEmbed.Builder()
+                    .withTitle("In Game Bot!") // The title of the embed element
+                    .withURL("https://platinum-ps.net") // The URL of the embed element
+                    .withColor(Color.RED) // The color of the embed. You can leave this at null for no color
+                    .withDescription(msg) // The description of the embed object
+                    .build(); // Build the embed element
+
+            DiscordMessage message = new DiscordMessage.Builder("") // The content of the message
+                    .withEmbed(embed) // Add our embed object
+                    .withUsername("In Game Bot!") // Override the username of the bot
                     .build(); // Build the message
 
             client.sendPayload(message);

@@ -94,7 +94,7 @@ public class DungeonMinigameChest {
 				player.getInventory().add(ultraDrops, 1);
 			} else {
 				player.getInventory().add(ultraDrops, 1);
-				World.sendFilteredMessage("@blu@[DUNGEON CHEST]: " + player.getUsername() + " has received " + ItemDefinition.forId(ultraDrops).getName() + " from the Dungeon chest!");
+				World.sendMessageNonDiscord("@blu@[DUNGEON CHEST]: " + player.getUsername() + " has received " + ItemDefinition.forId(ultraDrops).getName() + " from the Dungeon chest!");
 				player.moveTo(new Position(3039, 2847, 0));
 			}
 		}

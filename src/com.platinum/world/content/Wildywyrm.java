@@ -108,7 +108,7 @@ public class Wildywyrm extends NPC {
 		setCurrent(instance);
 		// System.out.print("spawned.");
 
-		World.sendFilteredMessage("<img=10> @blu@[WildyWyrm]@red@ A WildyWyrm has spawned at " + location.getLocation() + "!");
+		World.sendMessageNonDiscord("<img=10> @blu@[WildyWyrm]@red@ A WildyWyrm has spawned at " + location.getLocation() + "!");
 		World.getPlayers().forEach(
 				p -> p.getPacketSender().sendString(26707, "@or2@WildyWyrm: @gre@" + location.getLocation() + ""));
 
@@ -174,7 +174,7 @@ public class Wildywyrm extends NPC {
 	public static void giveLoot(Player player, NPC npc, Position pos) {
 		int chance = Misc.getRandom(10);
 		int superrare = SUPERRARELOOT[Misc.getRandom(SUPERRARELOOT.length - 1)];
-		World.sendFilteredMessage("<col=FF0000>" + player.getUsername() + " received a loot from the Wildywyrm!");
+		World.sendMessageNonDiscord("<col=FF0000>" + player.getUsername() + " received a loot from the Wildywyrm!");
 
 		// player.getPacketSender().sendMessage("chance: "+chance);
 		GroundItemManager.spawnGroundItem(player, new GroundItem(new Item(10835, 75 + Misc.getRandom(100)), pos,

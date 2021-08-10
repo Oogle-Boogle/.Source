@@ -571,10 +571,10 @@ public class NPCDeathTask extends Task {
 			}
 
 			if (killer.currentBossWave <= 4) {
-				World.sendFilteredMessage("@bla@[@blu@" + killer.getUsername() + "@bla@]@red@ has just completed wave " + (killer.getCurrentBossWave()) + " at ::boss!");
+				World.sendMessageNonDiscord("@bla@[@blu@" + killer.getUsername() + "@bla@]@red@ has just completed wave " + (killer.getCurrentBossWave()) + " at ::boss!");
 			}
 			if (killer.currentBossWave == 5) {
-				World.sendFilteredMessage("@bla@[@blu@" + killer.getUsername() + "@bla@]@red@ has just killed completed the final wave at ::boss!");
+				World.sendMessageNonDiscord("@bla@[@blu@" + killer.getUsername() + "@bla@]@red@ has just killed completed the final wave at ::boss!");
 			}
 
 			TaskManager.submit(new Task(2, killer, false) {

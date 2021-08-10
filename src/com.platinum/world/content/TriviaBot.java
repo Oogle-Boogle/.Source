@@ -70,7 +70,7 @@ public class TriviaBot
 				p.getPointsHandler().incrementTriviaPoints(10);
 				p.getPointsHandler().refreshPanel();
 				firstPlace = p.getUsername();
-				World.sendFilteredMessage("<col=AD096E>[Trivia] </col>" + firstPlace + "@bla@ answered first and received 10 points!");
+				World.sendMessageNonDiscord("<col=AD096E>[Trivia] </col>" + firstPlace + "@bla@ answered first and received 10 points!");
 				currentQuestion = "";
 				didSend = false;
 				botTimer = TIMER;
@@ -98,7 +98,7 @@ public class TriviaBot
 					didSend = true;
 					currentQuestion = TRIVIA_DATA[i][0];
 					currentAnswer = TRIVIA_DATA[i][1];
-					World.sendFilteredMessage(currentQuestion);
+					World.sendMessageNonDiscord(currentQuestion);
 				}
 			}
 		}

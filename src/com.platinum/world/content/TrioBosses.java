@@ -102,14 +102,14 @@ public class TrioBosses {
 	 * Gives loot from chest
 	 */
 	public static void giveReward(Player player) {
-			World.sendFilteredMessage("@or3@[Halloween Event]@bla@ "+player.getUsername()+ " has opened a chest!");
+			World.sendMessageNonDiscord("@or3@[Halloween Event]@bla@ "+player.getUsername()+ " has opened a chest!");
 			if (Misc.getRandom(20) == 5) {
 			/*
 			 * Give a rare Loot
 			 */
 			int rareDrops = getRandomItem(rareLoots);
 			player.getInventory().add(rareDrops, 1);
-			World.sendFilteredMessage("@or3@[Halloween Event]@bla@ "+player.getUsername()+ " has recieved a rare holiday item!");
+			World.sendMessageNonDiscord("@or3@[Halloween Event]@bla@ "+player.getUsername()+ " has recieved a rare holiday item!");
 
 		} else {
 			/*

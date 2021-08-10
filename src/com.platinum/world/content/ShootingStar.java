@@ -70,7 +70,7 @@ public class ShootingStar {
 				LAST_LOCATION = locationData;
 				CRASHED_STAR = new CrashedStar(new GameObject(38660, locationData.spawnPos), locationData);
 				CustomObjects.spawnGlobalObject(CRASHED_STAR.starObject);
-				World.sendFilteredMessage("<img=381><col=30043e>[<col=2999ad>AFK<col=30043e>]<col=2999ad>A star has just crashed west of home or "+locationData.clue+"");
+				World.sendMessageNonDiscord("<img=381><col=30043e>[<col=2999ad>AFK<col=30043e>]<col=2999ad>A star has just crashed west of home or "+locationData.clue+"");
 				World.getPlayers().forEach(p -> p.getPacketSender().sendString(26623, "@or2@Crashed star: @gre@"+ShootingStar.CRASHED_STAR.getStarLocation().playerPanelFrame+""));
 				timer.reset();
 			}

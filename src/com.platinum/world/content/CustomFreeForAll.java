@@ -121,7 +121,7 @@ public class CustomFreeForAll {
 
 	public static void startEvent(String type) {
 		if (!eventRunning) {
-			World.sendFilteredMessage(
+			World.sendMessageNonDiscord(
 					"@or2@[Custom FFA] A " + type + " Custom FFA event has been started! Type ::customffa to join!");
 			if (type == "pure") {
 				pure = true;
@@ -229,7 +229,7 @@ public class CustomFreeForAll {
 		if (waitTimer > 0) {
 			waitTimer--;
 			if (waitTimer % 100 == 0 && waitTimer > 0)
-				World.sendFilteredMessage(
+				World.sendMessageNonDiscord(
 						"@or2@[Custom FFA] " + waitTimer + " seconds until FFA starts!" + " Join now @ ::customffa");
 		}
 		if (waitTimer <= 0 && PLAYERS_IN_LOBBY > 1) {
@@ -296,7 +296,7 @@ public class CustomFreeForAll {
 			p.sendMessage("Gj you were the winner!");
 			p.setExperienceLocked(false);
 		}
-		World.sendFilteredMessage("@or2@[Custom FFA] " + winner + " Has won the game");
+		World.sendMessageNonDiscord("@or2@[Custom FFA] " + winner + " Has won the game");
 		if (winner.equalsIgnoreCase("@red@Red Team")) {
 			initialRedTeam.forEach(x -> {
 				//System.out.println("Initial red team player name: " + x);

@@ -148,8 +148,8 @@ public class StartScreen {
                 player.getUpdateFlag().flag(Flag.APPEARANCE);
                 PlayerPunishment.addIpToStarterList1(player.getHostAddress());
                 PlayerPunishment.addIpToStarter1(player.getHostAddress());
-                World.sendFilteredMessage("<col=008FB2><shad=200>[<img=40>NEW PLAYER<img=40>]: " + player.getUsername() + " has logged into Platinum for the first time!");
-                World.sendFilteredMessage(
+                World.sendMessageNonDiscord("<col=008FB2><shad=200>[<img=40>NEW PLAYER<img=40>]: " + player.getUsername() + " has logged into Platinum for the first time!");
+                World.sendMessageNonDiscord(
                         "<img=10> <col=008FB2><shad=200>Please give him/her a super warm welcome <3");
                 
             } else if (PlayerPunishment.hasRecieved1stStarter(player.getHostAddress()) && !PlayerPunishment
@@ -166,8 +166,8 @@ public class StartScreen {
                 player.getUpdateFlag().flag(Flag.APPEARANCE);
                 PlayerPunishment.addIpToStarterList2(player.getHostAddress());
                 PlayerPunishment.addIpToStarter2(player.getHostAddress());
-                World.sendFilteredMessage("<col=008FB2><shad=200>[<img=10>NEW PLAYER<img=10>]: " + player.getUsername() + " has logged into Platinum for the first time!");
-                World.sendFilteredMessage(
+                World.sendMessageNonDiscord("<col=008FB2><shad=200>[<img=10>NEW PLAYER<img=10>]: " + player.getUsername() + " has logged into Platinum for the first time!");
+                World.sendMessageNonDiscord(
                         "<img=10> <col=008FB2><shad=200>Please give him/her a super warm welcome <3");
                 
             } else if (PlayerPunishment.hasRecieved1stStarter(player.getHostAddress()) && PlayerPunishment
@@ -180,8 +180,8 @@ public class StartScreen {
                 player.setNewPlayer(false);
                 player.getUpdateFlag().flag(Flag.APPEARANCE);
                 player.getPacketSender().sendMessage("You've recieved to many starters.");
-                World.sendFilteredMessage("<col=008FB2><shad=200>[<img=10>NEW PLAYER<img=10>]: " + player.getUsername() + " has logged into Platinum for the first time!");
-                World.sendFilteredMessage(
+                World.sendMessageNonDiscord("<col=008FB2><shad=200>[<img=10>NEW PLAYER<img=10>]: " + player.getUsername() + " has logged into Platinum for the first time!");
+                World.sendMessageNonDiscord(
                         "<img=10> <col=008FB2><shad=200>Please give him/her a super warm welcome <3");
                 
             } else if (PlayerPunishment.hasRecieved1stStarter(player.getHostAddress()) && !PlayerPunishment
@@ -198,8 +198,8 @@ public class StartScreen {
                 player.getUpdateFlag().flag(Flag.APPEARANCE);
                 PlayerPunishment.addIpToStarterList2(player.getHostAddress());
                 PlayerPunishment.addIpToStarter2(player.getHostAddress());
-                World.sendFilteredMessage("<col=008FB2><shad=200>[<img=10>NEW PLAYER<img=10>]: " + player.getUsername() + " has logged into Platinum for the first time!");
-                World.sendFilteredMessage(
+                World.sendMessageNonDiscord("<col=008FB2><shad=200>[<img=10>NEW PLAYER<img=10>]: " + player.getUsername() + " has logged into Platinum for the first time!");
+                World.sendMessageNonDiscord(
                         "<img=10> <col=008FB2><shad=200>Please give him/her a super warm welcome <3");
                 
             }

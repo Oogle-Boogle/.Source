@@ -164,7 +164,7 @@ public class SkillManager {
 			String skillName = Misc.formatText(skill.toString().toLowerCase());
 			player.getPacketSender()
 					.sendMessage("Well done! You've achieved the highest possible Experience in this skill!");
-			World.sendMessage("@red@[Player News] @bla@" + player.getUsername() + " has just achieved Maximum Exp in "
+			World.sendMessageDiscord("@red@[Player News] @bla@" + player.getUsername() + " has just achieved Maximum Exp in "
 					+ skillName + "!");
 			Achievements.finishAchievement(player, AchievementData.REACH_MAX_EXP_IN_A_SKILL);
 		}

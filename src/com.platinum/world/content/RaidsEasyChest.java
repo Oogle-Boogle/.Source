@@ -91,7 +91,7 @@ public class RaidsEasyChest {
 				player.getInventory().add(ultraDrops, 4);
 			} else {
 				player.getInventory().add(ultraDrops, 1);
-				World.sendFilteredMessage("@blu@<shad=255>[@red@<shad=355>RAID CHEST@blu@<shad=255>]@blu@<shad=200>: " + player.getUsername() + " has received " + ItemDefinition.forId(ultraDrops).getName() + " from the Raids chest!");
+				World.sendMessageNonDiscord("@blu@<shad=255>[@red@<shad=355>RAID CHEST@blu@<shad=255>]@blu@<shad=200>: " + player.getUsername() + " has received " + ItemDefinition.forId(ultraDrops).getName() + " from the Raids chest!");
 
 			}
 		}

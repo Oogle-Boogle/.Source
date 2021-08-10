@@ -290,7 +290,7 @@ public class PlayerHandler {
 								|| player.getRights() == PlayerRights.HADMIN
 						
 				|| player.getRights() == PlayerRights.DEVELOPER) {
-			World.sendFilteredMessage("<shad=20><col=1eaa08> " + Misc.formatText(player.getRights().toString().toLowerCase()) + " " + player.getUsername()
+			World.sendMessageNonDiscord("<shad=20><col=1eaa08> " + Misc.formatText(player.getRights().toString().toLowerCase()) + " " + player.getUsername()
 			+ " has just logged in, feel free to message them for support.");
 		}
 		if (player.getRights() == PlayerRights.MODERATOR || player.getRights() == PlayerRights.ADMINISTRATOR

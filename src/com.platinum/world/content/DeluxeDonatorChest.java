@@ -91,7 +91,7 @@ public class DeluxeDonatorChest {
 				player.getInventory().add(ultraDrops, 4);
 			} else {
 				player.getInventory().add(ultraDrops, 1);
-				World.sendFilteredMessage("@blu@[DELUXE CHEST]: " + player.getUsername() + " has received " + ItemDefinition.forId(ultraDrops).getName() + " from the Deluxe chest!");
+				World.sendMessageNonDiscord("@blu@[DELUXE CHEST]: " + player.getUsername() + " has received " + ItemDefinition.forId(ultraDrops).getName() + " from the Deluxe chest!");
 			}
 		}
 	}

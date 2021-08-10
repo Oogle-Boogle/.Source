@@ -548,7 +548,7 @@ public class NPCDrops {
 			
 			String discordmessage = itemMessage + " from " + npcName + " worth " + Misc.currency(item.getDefinition().getValue()) + "!";
 			NpcGain.RareDropXP(player);
-			World.sendFilteredMessage("<col=089915><shad=1>" + player.getUsername()
+			World.sendMessageNonDiscord("<col=089915><shad=1>" + player.getUsername()
 			+ "  has just received <img=386><col=991608> " + itemMessage + " <img=386><col=089915> from <col=bb1313> " + npcName + "!");
 			DiscordMessenger.sendRareDrop(Misc.formatPlayerName(player.getUsername()), discordmessage);
 		}
@@ -665,7 +665,7 @@ public class NPCDrops {
 			String message = "<img=382><col=eaeaea>[<col=FF0000>RARE DROP<col=eaeaea>]<img=382><col=eaeaea> " + toGive.getUsername() + " has just received <img=386><col=07b481>" + itemMessage
 					+ "<img=386><col=eaeaea> from <col=FF0000>" + npcName + "!";
 			String discordmessage = itemMessage + " from " + npcName + " worth " + Misc.currency(drop.getValue()) + "!";
-			World.sendFilteredMessage(message);
+			World.sendMessageNonDiscord(message);
 			DiscordMessenger.sendRareDrop(Misc.formatPlayerName(toGive.getUsername()), discordmessage);
 
 			

@@ -5,7 +5,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Collectors;
@@ -46,7 +45,7 @@ public final class LotterySystem {
 			final int index = ThreadLocalRandom.current().nextInt(lines.size());
 			String winner = lines.get(index);
 			writeUser(winner + "," + getTotalPrizepool(), LOTTERY_WINNERS);
-			World.sendFilteredMessage("<img=10>@blu@[LOTTERY SYSTEM]<img=10> @red@" + winner + " @blu@Has won the lottery!");
+			World.sendMessageNonDiscord("<img=10>@blu@[LOTTERY SYSTEM]<img=10> @red@" + winner + " @blu@Has won the lottery!");
 			Files.write(LOTTERY_DATA, "".getBytes()); // Clear file
 		} catch (IOException e) {
 			e.printStackTrace();

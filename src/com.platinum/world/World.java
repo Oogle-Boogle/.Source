@@ -89,21 +89,17 @@ public class World {
 		return op.isPresent() ? op.get() : null;
 	}
 
-	public static void sendMessage(String message) {
+	public static void sendMessageDiscord(String message) {
 		players.forEach(p -> p.getPacketSender().sendMessage(message));
-		if (message.contains("[Yell]")) {
-			DiscordMessenger.sendYellMessage(message);
-		} else if (message.contains("[New Player]")) {
+		 if (message.contains("[New Player]")) {
 			DiscordMessenger.sendNewPlayer(message);
-		} else {
+		 } else {
 			DiscordMessenger.sendInGameMessage(message);
 		}
 	}
 
-	public static void sendFilteredMessage(String message) {
-		/*players.stream().filter(p -> p != null ).forEach(p -> p.getPacketSender().sendMessage(message));*/
+	public static void sendMessageNonDiscord(String message) {
 		players.forEach(p -> p.getPacketSender().sendMessage(message));
-
 	}
 
 	public static void sendStaffMessage(String message) {
