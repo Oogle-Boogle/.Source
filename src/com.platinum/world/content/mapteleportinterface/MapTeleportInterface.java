@@ -9,6 +9,15 @@ import com.platinum.world.entity.impl.player.Player;
 public class MapTeleportInterface {
 
     public static boolean processButton(Player p, int ButtonID) {
+
+        final int VIEWING_ORB = 9391;
+        final int MAP_INTERFACE_ID = 23500;
+
+        /** Handles clicking the viewing orb **/
+        if (ButtonID == VIEWING_ORB)
+            p.getPacketSender().sendInterface(MAP_INTERFACE_ID);
+
+        /** Handles teleporting based on the button clicked **/
         TeleportType tpType = p.getSpellbook().getTeleportType();
         Position POS;
 

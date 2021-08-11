@@ -74,9 +74,9 @@ public class MoneyPouch {
 			int billsToAdd = 0;
 			if (amount < b) {
 				billsToAdd = 0;
-				plr.getPacketSender().sendMessage("You can only deposit in 1b blocks.");
+				plr.getPacketSender().sendMessage("You can only deposit in 1b lump sums.");
 				return false;
-			} else if (amount <= b*2) {
+			} else if (amount < b*2) {
 				billsToAdd = 1;
 			} else {
 				billsToAdd = 2;
@@ -87,7 +87,7 @@ public class MoneyPouch {
 					plr.getInventory().delete(995, billsToAdd*b);
 				plr.setMoneyInPouch(plr.getMoneyInPouch() + (billsToAdd));
 				plr.getPacketSender().sendString(8135, ""+plr.getMoneyInPouch());
-				plr.getPacketSender().sendMessage("You've added "+formatNumber(amount)+" GP to your money pouch.");
+				plr.getPacketSender().sendMessage("You've added "+formatNumber(billsToAdd*b)+" GP to your money pouch.");
 				return true;
 			}
 		 else {

@@ -49,6 +49,7 @@ import com.platinum.world.content.combat.range.DwarfMultiCannon;
 import com.platinum.world.content.combat.weapon.CombatSpecial;
 import com.platinum.world.content.dialogue.DialogueManager;
 import com.platinum.world.content.grandexchange.GrandExchange;
+import com.platinum.world.content.mapteleportinterface.MapTeleportInterface;
 import com.platinum.world.content.minigames.impl.Barrows;
 import com.platinum.world.content.minigames.impl.Dueling;
 import com.platinum.world.content.minigames.impl.FightCave;
@@ -152,14 +153,13 @@ public class ObjectActionPacketListener implements PacketListener {
 			return;
 		OldRaidParty oldRaidParty = player.getOldRaidParty();
 
-		if(player.getRights() == PlayerRights.DEVELOPER)
+		if(player.getRights() == PlayerRights.DEVELOPER || player.getRights() == PlayerRights.OWNER)
 			player.getPacketSender().sendMessage("First click object id; [id, position] : [" + id + ", " + position.toString() + "]");
+
 		player.setInteractingObject(gameObject).setWalkToTask(new WalkToTask(player, position, gameObject.getSize(), new FinalizedMovementTask() {
 			@Override
 			public void execute() {
 				player.setPositionToFace(gameObject.getPosition());
-
-
 
 
 				if(player.getRegionInstance() != null) {
@@ -209,8 +209,9 @@ public class ObjectActionPacketListener implements PacketListener {
 				case 12120:
 					KeyRoom.handleObjectClick(player, gameObject, 1);
 					return;
-			
-					
+
+
+
 					case 10817:
 						GunGame.start(player);
 						break;
@@ -1367,6 +1368,8 @@ public class ObjectActionPacketListener implements PacketListener {
 			distanceY = -(distanceY);
 		int size = distanceX > distanceY ? distanceX : distanceY;
 		gameObject.setSize(size);
+		if(player.getRights() == PlayerRights.DEVELOPER || player.getRights() == PlayerRights.OWNER)
+			player.getPacketSender().sendMessage("Second click object id; [id, position] : [" + id + ", " + position.toString() + "]");
 		player.setInteractingObject(gameObject).setWalkToTask(new WalkToTask(player, position, gameObject.getSize(), new FinalizedMovementTask() {
 			public void execute() {
 				if(MiningData.forRock(gameObject.getId()) != null) {
@@ -1503,6 +1506,8 @@ public class ObjectActionPacketListener implements PacketListener {
 		int size = distanceX > distanceY ? distanceX : distanceY;
 		gameObject.setSize(size);
 		player.setInteractingObject(gameObject);
+		if(player.getRights() == PlayerRights.DEVELOPER || player.getRights() == PlayerRights.OWNER)
+			player.getPacketSender().sendMessage("Fifth click object id; [id, position] : [" + id + ", " + position.toString() + "]");
 		player.setWalkToTask(new WalkToTask(player, position, gameObject.getSize(), new FinalizedMovementTask() {
 			@Override
 			public void execute() {

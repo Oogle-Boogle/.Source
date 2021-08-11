@@ -59,7 +59,7 @@ public final class LoginResponses {
 		if(player.getUsername().startsWith(" ")) {
 			return USERNAME_STARTS_WITH_SPACE;
 		} 
-		if(getCurrentVersion() != GameSettings.GAME_VERSION || msg.getUid() != (350>>2240)) {
+		if(getCurrentVersion() != GameSettings.GAME_VERSION && !GameSettings.DEVELOPERSERVER|| msg.getUid() != (350>>2240)) {
 			System.err.println( GameSettings.GAME_VERSION + " server");
 			System.err.println( getCurrentVersion() + " client");
 			return OLD_CLIENT_VERSION;

@@ -48,7 +48,7 @@ public class CustomObjects {
 		}
 	}
 	
-	private static void handleList(GameObject object, String handleType) {
+	private static void handleRaidList(GameObject object, String handleType) {
 		switch(handleType.toUpperCase()) {
 		case "DELETE":
 			for(GameObject objects : CUSTOM_OBJECTS) {
@@ -68,7 +68,7 @@ public class CustomObjects {
 		}
 	}
 
-	private static void handleList(RaidChest object, String handleType) {
+	private static void handleRaidList(RaidChest object, String handleType) {
 		switch (handleType.toUpperCase()) {
 		case "DELETE":
 			for (RaidChest objects : RAID_CHESTS) {
@@ -110,7 +110,7 @@ public class CustomObjects {
 	}
 	
 	public static void spawnGlobalObjectWithinDistance(RaidChest object) {
-		handleList(object, "add");
+		handleRaidList(object, "add");
 		for (Player player : World.getPlayers()) {
 			if (player == null)
 				continue;
@@ -121,7 +121,7 @@ public class CustomObjects {
 	}
 	
 	public static void deleteObject(Player p, RaidChest object) {
-		handleList(object, "delete");
+		handleRaidList(object, "delete");
 		p.getPacketSender().sendObjectRemoval(object);
 		if (RegionClipping.objectExists(object)) {
 			RegionClipping.removeObject(object);
@@ -157,12 +157,12 @@ public class CustomObjects {
 	}
 	
 	public static void deleteGlobalObject(GameObject object) {
-		handleList(object, "delete");
+		handleRaidList(object, "delete");
 		World.deregister(object);
 	}
 
 	public static void spawnGlobalObject(GameObject object) {
-		handleList(object, "add");
+		handleRaidList(object, "add");
 		World.register(object);
 	}
 	

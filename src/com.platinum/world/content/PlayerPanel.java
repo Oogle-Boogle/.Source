@@ -88,7 +88,7 @@ public class PlayerPanel {
 			refreshCurrentTab(player);
 			return;
 		}
-		String[] Messages = new String[] { "  ", "<img=16>@blu@Player Information", "",
+		String[] Messages = new String[] { "  ", "<img=35>@blu@ Player Information", "",
 				"@whi@-@gre@Server Time:",
 				"@bla@*@whi@"+Misc.getCurrentServerTime(),
 		"@whi@-@gre@Time Played:",
@@ -124,7 +124,7 @@ public class PlayerPanel {
 
 	private static void sendSecondTab(Player player) {
 
-		String[] Messages = new String[] { "  ", "<img=16>@red@World And Events", "",
+		String[] Messages = new String[] { "  ", "<img=35>@red@ World And Events", "",
 				"@whi@-@gre@Evil Tree:",
 			 "@bla@*@whi@"	+(EvilTrees.getLocation() != null ? EvilTrees.getLocation().playerPanelFrame : "N/A"),
 			 
@@ -163,7 +163,7 @@ public class PlayerPanel {
 
 	private static void sendThirdTab(Player player) {
 
-		String[] Messages = new String[] { "  ", "<img=16>@whi@ Points & Statistics", "",
+		String[] Messages = new String[] { "  ", "<img=35>@whi@ Points & Statistics", "",
 				
 				"@whi@-@gre@Loyalty Points: ",
 			 "@bla@*@whi@"+player.getPointsHandler().getLoyaltyPoints(),
@@ -236,7 +236,7 @@ public class PlayerPanel {
 
 	private static void sendForthTab(Player player) {
 
-		String[] Messages = new String[] { " ", "<img=16>@gre@Slayer Information", "",
+		String[] Messages = new String[] { " ", "<img=35>@gre@ Slayer Information", "",
 
 				"@whi@-@gre@Master: ",
 			 "@bla@*@whi@"	 +player.getSlayer().getSlayerMaster(),
