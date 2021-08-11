@@ -61,7 +61,7 @@ public class TheSeph extends NPC {
 	 */
 	public static void initialize() {
 
-		TaskManager.submit(new Task(6000, false) { // 6000
+		TaskManager.submit(new Task(10800, false) { // 6000
 
 			@Override
 			public void execute() {

@@ -570,11 +570,6 @@ public class CommandPacketListener implements PacketListener {
 					player.getSpellbook().getTeleportType());
 		}
 
-		if (command[0].equalsIgnoreCase("shops")) {
-			TeleportHandler.teleportPlayer(player, new Position(3039, 2861, 0),
-					player.getSpellbook().getTeleportType());
-		}
-
 		
 
 		if (command[0].equalsIgnoreCase("entergiveaway")) {
@@ -1173,7 +1168,7 @@ public class CommandPacketListener implements PacketListener {
 		}
 
 		if (command[0].equalsIgnoreCase("home")) {
-			TeleportHandler.teleportPlayer(player, new Position(3039, 2847), player.getSpellbook().getTeleportType());
+			TeleportHandler.teleportPlayer(player, new Position(1901, 5221), player.getSpellbook().getTeleportType());
 		}
 
 		if (command[0].equalsIgnoreCase("duel")) {

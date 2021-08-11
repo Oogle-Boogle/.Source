@@ -141,7 +141,7 @@ public class GameSettings {
 	 * 
 	 * The default position
 	 */
-	public static final Position DEFAULT_POSITION = new Position(3039, 2847);
+	public static final Position DEFAULT_POSITION = new Position(1901, 5221);
 
 	
 	public static final int MAX_STARTERS_PER_IP = 2;

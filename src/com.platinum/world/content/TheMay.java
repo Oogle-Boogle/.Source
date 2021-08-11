@@ -60,7 +60,7 @@ public class TheMay extends NPC {
 	 */
 	public static void initialize() {
 
-		TaskManager.submit(new Task(3600, false) { // 4500
+		TaskManager.submit(new Task(9176, false) { // 4500
 
 			
 			
@@ -91,7 +91,7 @@ public class TheMay extends NPC {
 		setCurrent(instance);
 		// System.out.print("spawned.");
 
-		World.sendMessageNonDiscord("<shad=1><img=418>@red@ Trainer May has Respawned" + location.getLocation() + "!");
+		World.sendMessageNonDiscord("<shad=1><img=418>@red@ Skeleton May has Respawned" + location.getLocation() + "!");
 	}
 
 	/**

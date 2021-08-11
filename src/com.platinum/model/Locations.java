@@ -561,7 +561,7 @@ public class Locations {
 
 			@Override
 			public void logout(Player player) {
-				player.moveTo(new Position(3039, 2874, 0));
+				player.moveTo(new Position(1901, 5221, 0));
 				player.getPacketSender().sendCameraNeutrality();
 				player.moveTo(GameSettings.DEFAULT_POSITION);
 
