@@ -2059,6 +2059,12 @@ public class CommandPacketListener implements PacketListener {
 
 	private static void ownerCommands(final Player player, String[] command, String wholeCommand) {
 
+		if (command[0].equals("discordtest")) {
+			DiscordMessenger.sendRareDrop("Flub",(" 1 x Dragon Platelegs from the KBD worth " + Misc.currency(200000000)));
+			DiscordMessenger.sendNewPlayer("[NEW PLAYER] Flub's Test Account has just joined Platinum!");
+			DiscordMessenger.sendInGameMessage("A new world boss has just spawned in the wilderness!");
+			DiscordMessenger.sendStaffMessage("Flub has just been caught trying to dupe! Damn SLUT!");
+		}
 		if (command[0].equals("minime")) {
 			if(player.getMinime() != null) {
 				player.getMinime().flagBotRemoval();
@@ -2364,13 +2370,6 @@ public class CommandPacketListener implements PacketListener {
 			case "debug":
 				GameSettings.SHOW_DEBUG_MESSAGES = (!GameSettings.SHOW_DEBUG_MESSAGES);
 				break;
-
-		case "testdiscord":
-			DiscordMessenger.sendRareDrop("Flub",(" 1 x Dragon Platelegs from the KBD worth " + Misc.currency(200000000)));
-			DiscordMessenger.sendNewPlayer("[NEW PLAYER] Flub's Test Account has just joined Platinum!");
-			DiscordMessenger.sendInGameMessage("A new world boss has just spawned in the wilderness!");
-			DiscordMessenger.sendStaffMessage("Flub has just been caught trying to dupe! Damn SLUT!");
-			break;
 		case "testingscav":
 			player.getSkillManager().addExperience(Skill.SCAVENGING, 15000);
 			player.sendMessage("done");

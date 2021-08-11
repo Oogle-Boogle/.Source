@@ -20,6 +20,7 @@ import com.platinum.model.input.impl.EnterSyntaxToBankSearchFor;
 import com.platinum.model.input.impl.EnterSyntaxToItemSearchFor;
 import com.platinum.model.input.impl.EnterSyntaxToNpcSearchFor;
 import com.platinum.model.input.impl.PosInput;
+import com.platinum.world.content.mapteleportinterface.MapTeleportInterface;
 import com.platinum.world.content.preset.Presets;
 import com.platinum.model.input.impl.SearchForItemInput;
 import com.platinum.net.packet.Packet;
@@ -2328,6 +2329,10 @@ public class ButtonClickPacketListener implements PacketListener {
 
 
     private boolean checkHandlers(Player player, int id) {
+
+        if (MapTeleportInterface.processButton(player, id)) {
+            return true;
+        }
 
         if (GlobalPerks.getInstance().handleButton(player, id)) {
             return true;
