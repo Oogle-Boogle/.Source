@@ -19,7 +19,7 @@ import com.platinum.world.entity.impl.player.PlayerLoading;
 public final class LoginResponses {
 	
 	final static String CACHE_PATH = System.getProperty("user.home") + File.separator + ".Plat" + File.separator;
-	final static String VERSION_FILE = CACHE_PATH + "/data/client_version.txt";
+	final static String VERSION_FILE = CACHE_PATH + "client_version.txt";
 	@SuppressWarnings("resource")
 	public static long getCurrentVersion() {
 		try {
