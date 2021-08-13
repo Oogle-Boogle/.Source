@@ -1227,6 +1227,29 @@ public class CommandPacketListener implements PacketListener {
 			}
 		}
 		if (wholeCommand.toLowerCase().startsWith("yell")) {
+			String primaryRights = player.getRights().ordinal() > 0 ? "<img=" + player.getRights().ordinal() + ">" : "";
+			String secondaryRights = player.getSecondaryPlayerRights().ordinal() > 0 ? "<zmg=" + player.getSecondaryPlayerRights().ordinal() + ">" : "";
+			String irn;
+			switch (player.getGameMode()) {
+				default:
+				case NORMAL:
+					irn = "";
+					break;
+				case IRONMAN:
+					irn = "<irn=1193>";
+					break;
+				case HARDCORE_IRONMAN:
+					irn = "<irn=1192>";
+					break;
+				case GROUP_IRONMAN:
+					irn = "<irn=1036>";
+					break;
+			}
+			// If the player is not an ironman, prefix is primary + secondary
+			// If the player IS an ironman, prefix is ironman + secondary
+			String rankIcons = irn.isEmpty() ? primaryRights + secondaryRights : irn + secondaryRights;
+			//System.out.println("RANK ICONS FOR CC " + rankIcons);
+
 			if (!GameSettings.YELL_STATUS) {
 				player.getPacketSender().sendMessage("Yell is currently unavailable");
 				return;
@@ -1245,95 +1268,79 @@ public class CommandPacketListener implements PacketListener {
 
 			player.getLastYell().reset();
 			if (player.getRights() == PlayerRights.VIP_DONATOR) {
-				World.sendMessageNonDiscord("<shad=2><col=5b5e63>"+ " <img="+ player.getRights().ordinal() + ">"
-						+ "<zmg=" + player.getSecondaryPlayerRights().ordinal() + ">"+"[VIP Donator]</shad>@bla@" + player.getUsername()
+				World.sendMessageNonDiscord("<shad=2><col=5b5e63>"+ rankIcons +"[VIP Donator]</shad>@bla@" + player.getUsername()
 						+ ":@bla@" + yellMessage + "</col>");
 				return;
 			}
 
 			if (player.getRights() == PlayerRights.OWNER) {
-				World.sendMessageNonDiscord(player.getRights().getYellPrefix() + "<img=" + player.getRights().ordinal()
-						+ ">" + "<zmg=" + player.getSecondaryPlayerRights().ordinal() + ">" +"[<col=ff0000>" + player.getRights().getCustomYellPrefix(true) + "]</col> @bla@"
+				World.sendMessageNonDiscord(player.getRights().getYellPrefix() + rankIcons +"[<col=ff0000>" + player.getRights().getCustomYellPrefix(true) + "]</col> @bla@"
 						+ player.getUsername() + ":" + yellMessage);
 				return;
 			}
 			
 			if (player.getRights() == PlayerRights.DEVELOPER) {
-				World.sendMessageNonDiscord("" + player.getRights().getYellPrefix() + "<img=" + player.getRights().ordinal()
-						+ ">" + "<zmg=" + player.getSecondaryPlayerRights().ordinal() + ">" +"@red@ [Developer] @bla@" + player.getUsername() + ":" + yellMessage);
+				World.sendMessageNonDiscord("" + player.getRights().getYellPrefix() + rankIcons +"@red@ [Developer] @bla@" + player.getUsername() + ":" + yellMessage);
 				return;
 			}
 			if (player.getRights() == PlayerRights.COMMUNITY_MANAGER) {
-				World.sendMessageNonDiscord("" + player.getRights().getYellPrefix() + "<img=" + player.getRights().ordinal()
-						+ ">" + "<zmg=" + player.getSecondaryPlayerRights().ordinal() + ">" + "@cya@ [Manager] @bla@" + player.getUsername() + ":" + yellMessage);
+				World.sendMessageNonDiscord("" + player.getRights().getYellPrefix() + rankIcons + "@cya@ [Manager] @bla@" + player.getUsername() + ":" + yellMessage);
 				return;
 			}
 			if (player.getRights() == PlayerRights.SUPPORT) {
-				World.sendMessageNonDiscord("" + player.getRights().getYellPrefix() + "<img=" + player.getRights().ordinal()
-						+ ">" + "<zmg=" + player.getSecondaryPlayerRights().ordinal() + ">" + "@blu@ [Support] @bla@" + player.getUsername() + ":" + yellMessage);
+				World.sendMessageNonDiscord("" + player.getRights().getYellPrefix() + rankIcons + "@blu@ [Support] @bla@" + player.getUsername() + ":" + yellMessage);
 				return;
 			}
 
 			if (player.getRights() == PlayerRights.MODERATOR) {
-				World.sendMessageNonDiscord(player.getRights().getYellPrefix() + "<img=" + player.getRights().ordinal() + ">"
-						+ "<zmg=" + player.getSecondaryPlayerRights().ordinal() + ">" + "[<col=6600CC>"
+				World.sendMessageNonDiscord(player.getRights().getYellPrefix() + rankIcons + "[<col=6600CC>"
 						+ player.getRights().getCustomYellPrefix(false) + "]</col> @bla@" + player.getUsername() + ":"
 						+ yellMessage);
 				return;
 			}
 			if (player.getRights() == PlayerRights.ADMINISTRATOR) {
-				World.sendMessageNonDiscord(player.getRights().getYellPrefix() + "<img=" + player.getRights().ordinal()
-						+ ">" + "<zmg=" + player.getSecondaryPlayerRights().ordinal() + ">" + "@or2@ [Administrator] @bla@" + player.getUsername() + ":" + yellMessage);
+				World.sendMessageNonDiscord(player.getRights().getYellPrefix() + rankIcons + "@or2@ [Administrator] @bla@" + player.getUsername() + ":" + yellMessage);
 				return;
 			}
 			if (player.getRights() == PlayerRights.DELUXE_DONATOR) {
-				World.sendMessageNonDiscord(player.getRights().getYellPrefix() + "<img=" + player.getRights().ordinal() + ">" +
-						"<zmg=" + player.getSecondaryPlayerRights().ordinal() + ">" + " [<col=8600CC>"
+				World.sendMessageNonDiscord(player.getRights().getYellPrefix() + rankIcons + " [<col=8600CC>"
 						+ player.getRights().getCustomYellPrefix(false) + "]</col> @bla@" + player.getUsername() + ":"
 						+ yellMessage);
 				return;
 			}
 			if (player.getRights() == PlayerRights.UBER_DONATOR) {
-				World.sendMessageNonDiscord("" + player.getRights().getYellPrefix() + "<img=" + player.getRights().ordinal()
-						+ ">" + "<zmg=" + player.getSecondaryPlayerRights().ordinal() + ">" + "<col=0EBFE9><shad=1> [Uber]</shad></col> @bla@" + player.getUsername() + ":" + yellMessage);
+				World.sendMessageNonDiscord("" + player.getRights().getYellPrefix() + rankIcons + "<col=0EBFE9><shad=1> [Uber]</shad></col> @bla@" + player.getUsername() + ":" + yellMessage);
 				return;
 			}
 			if (player.getRights() == PlayerRights.LEGENDARY_DONATOR) {
-				World.sendMessageNonDiscord("" + player.getRights().getYellPrefix() + "<img=" + player.getRights().ordinal()
-						+ ">" + "<zmg=" + player.getSecondaryPlayerRights().ordinal() + ">" + "<col=697998><shad=1> [Legendary]</shad></col> @bla@" + player.getUsername() + ":"
+				World.sendMessageNonDiscord("" + player.getRights().getYellPrefix() + rankIcons + "<col=697998><shad=1> [Legendary]</shad></col> @bla@" + player.getUsername() + ":"
 						+ yellMessage);
 				return;
 			}
 			if (player.getRights() == PlayerRights.EXTREME_DONATOR) {
-				World.sendMessageNonDiscord("" + player.getRights().getYellPrefix() + "<img=" + player.getRights().ordinal()
-						+ ">" + "<zmg=" + player.getSecondaryPlayerRights().ordinal() + ">" + "<col=D9D919><shad=1> [Extreme]</shad></col> @bla@" + player.getUsername() + ":"
+				World.sendMessageNonDiscord("" + player.getRights().getYellPrefix() + rankIcons + "<col=D9D919><shad=1> [Extreme]</shad></col> @bla@" + player.getUsername() + ":"
 						+ yellMessage);
 				return;
 			}
 			if (player.getRights() == PlayerRights.SUPER_DONATOR) {
-				World.sendMessageNonDiscord("" + player.getRights().getYellPrefix() + "<img=" + player.getRights().ordinal()
-						+ ">" + "<zmg=" + player.getSecondaryPlayerRights().ordinal() + ">" + "<col=787878><shad=1> [Super]</shad></col> @bla@" + player.getUsername() + ":"
+				World.sendMessageNonDiscord("" + player.getRights().getYellPrefix() + rankIcons + "<col=787878><shad=1> [Super]</shad></col> @bla@" + player.getUsername() + ":"
 						+ yellMessage);
 				return;
 			}
 			if (player.getRights() == PlayerRights.DONATOR) {
-				World.sendMessageNonDiscord("" + player.getRights().getYellPrefix() + "<img=" + player.getRights().ordinal()
-						+ ">" + "<zmg=" + player.getSecondaryPlayerRights().ordinal() + ">" + "<col=FF7F00><shad=1> [Donator]</shad></col> @bla@" + player.getUsername() + ":"
+				World.sendMessageNonDiscord("" + player.getRights().getYellPrefix() + rankIcons + "<col=FF7F00><shad=1> [Donator]</shad></col> @bla@" + player.getUsername() + ":"
 						+ yellMessage);
 				return;
 			}
 			if (player.getRights() == PlayerRights.PLAYER) {
 				World.sendMessageNonDiscord("" + player.getRights().getYellPrefix()
-						+ (player.getRights().ordinal() > 0 ? "<img=" + player.getRights().ordinal() + ">" : "")
-						+ (player.getSecondaryPlayerRights().ordinal() > 0 ? "<zmg=" + player.getRights().ordinal() + ">" : "")
-						+ (player.getGameMode() == GameMode.IRONMAN || player.getGameMode() == GameMode.HARDCORE_IRONMAN ? "<irn="+(1191+player.getGameMode().ordinal())+">" : "")
+						+  rankIcons
 						+ "<col=FF7F00><shad=1> [PLAYER]</shad></col> @whi@" + player.getUsername() + ":"
 						+ yellMessage);
 				return;
 			}
 			if (player.getRights() == PlayerRights.YOUTUBER) {
-				World.sendMessageNonDiscord("" + player.getRights().getYellPrefix() + "<img=" + player.getRights().ordinal()
-						+ ">" + "<zmg=" + player.getSecondaryPlayerRights().ordinal() + ">" + "@red@ [Youtuber] @bla@" + player.getUsername() + ":" + yellMessage);
+				World.sendMessageNonDiscord("" + player.getRights().getYellPrefix() + rankIcons + "@red@ [Youtuber] @bla@" + player.getUsername() + ":" + yellMessage);
 				return;
 			}
 			// TO-DO

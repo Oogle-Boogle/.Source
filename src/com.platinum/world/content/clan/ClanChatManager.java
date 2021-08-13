@@ -231,7 +231,7 @@ public class ClanChatManager {
 				int childId = 29344;
 				for (Player others : clan.getMembers()) {
 					if (others != null) {
-						int img = others.getRights().ordinal();
+						/*int img = others.getRights().ordinal();
 						//int img2 = others.getSecondaryPlayerRights().ordinal();
 						if (!others.getRights().isStaff() && !others.getRights().isMember()) {
 							if (others.getGameMode() == GameMode.IRONMAN) {
@@ -239,9 +239,30 @@ public class ClanChatManager {
 							} else if (others.getGameMode() == GameMode.HARDCORE_IRONMAN) {
 								img = 32;
 							}
+						}*/
+						String primaryRights = others.getRights().ordinal() > 0 ? "<img=" + others.getRights().ordinal() + ">" : "";
+						String secondaryRights = others.getSecondaryPlayerRights().ordinal() > 0 ? "<zmg=" + others.getSecondaryPlayerRights().ordinal() + ">" : "";
+						String irn;
+						switch (others.getGameMode()) {
+							default:
+							case NORMAL:
+								irn = "";
+								break;
+							case IRONMAN:
+								irn = "<irn=1193>";
+								break;
+							case HARDCORE_IRONMAN:
+								irn = "<irn=1192>";
+								break;
+							case GROUP_IRONMAN:
+								irn = "<irn=1036>";
+								break;
 						}
+						// If the player is not an ironman, prefix is primary + secondary
+						// If the player IS an ironman, prefix is ironman + secondary
+						String prefix = irn.isEmpty() ? primaryRights + secondaryRights : irn + secondaryRights;
 						
-						String prefix = img >= 0 ? ("<img=" + (img) + "> ") : "";
+						//String prefix = img >= 0 ? ("<img=" + (img) + "> ") : "";
 						member.getPacketSender().sendString(childId, prefix + others.getUsername());
 						childId++;
 					}
@@ -293,25 +314,47 @@ public class ClanChatManager {
 				if (memberPlayer.getRelations().getIgnoreList().contains(player.getLongUsername()))
 					continue;
 
-				int irn = 0;
-				if (!player.getRights().isStaff() && !player.getRights().isMember()) {
+				//int irn = 0;
+				/*if (!player.getRights().isStaff() && !player.getRights().isMember()) {
 					if (player.getGameMode() == GameMode.IRONMAN) {
 						irn = 1193;
 					} else if (player.getGameMode() == GameMode.HARDCORE_IRONMAN) {
 						irn = 1192;
 					}
+				}*/
+
+
+				//int img = player.getRights().ordinal();
+				//int img2 = player.getSecondaryPlayerRights().ordinal();
+
+				String primaryRights = player.getRights().ordinal() > 0 ? "<img=" + player.getRights().ordinal() + ">" : "";
+				String secondaryRights = player.getSecondaryPlayerRights().ordinal() > 0 ? "<zmg=" + player.getSecondaryPlayerRights().ordinal() + ">" : "";
+				String irn;
+				switch (player.getGameMode()) {
+					default:
+					case NORMAL:
+						irn = "";
+						break;
+					case IRONMAN:
+						irn = "<irn=1193>";
+						break;
+					case HARDCORE_IRONMAN:
+						irn = "<irn=1192>";
+						break;
+					case GROUP_IRONMAN:
+						irn = "<irn=1036>";
+						break;
 				}
+				// If the player is not an ironman, prefix is primary + secondary
+				// If the player IS an ironman, prefix is ironman + secondary
+				String prefix = irn.isEmpty() ? primaryRights + secondaryRights : irn + secondaryRights;
 
-
-				int img = player.getRights().ordinal();
-				int img2 = player.getSecondaryPlayerRights().ordinal();
-				String rankImg = img > 0 ? "<img=" + img + ">" : "";
-				String secondImg = img2 > 0 ? "<zmg=" + img2 + ">" : "";
+				//String rankImg = img > 0 ? "<img=" + img + ">" : "";
+				//String secondImg = img2 > 0 ? "<zmg=" + img2 + ">" : "";
 				memberPlayer.getPacketSender()
 						.sendMessage("@clan:A@" + bracketColor + "[" + clanNameColor + clan.getName() + bracketColor
 								+ "]" + nameColor + ""
-								+ (player.getGameMode() == GameMode.IRONMAN || player.getGameMode() == GameMode.HARDCORE_IRONMAN ? "<irn="+irn+">" : rankImg)
-								+ "" + secondImg + "" + NameUtils.capitalize(player.getUsername())
+								+ prefix + "" + NameUtils.capitalize(player.getUsername())
 								+ ": " + chatColor + NameUtils.capitalize(message));
 			}
 		}

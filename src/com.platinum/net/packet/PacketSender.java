@@ -1476,7 +1476,7 @@ public class PacketSender {
 		return this;
 	}
 
-	public PacketSender sendPrivateMessage(long name, PlayerRights rights, SecondaryPlayerRights rights2, byte[] message, int size)  {
+	public PacketSender sendPrivateMessage(long name, PlayerRights rights, SecondaryPlayerRights rights2, GameMode gameMode, byte[] message, int size)  {
 		if (player.isMiniMe) {
 			return this;
 		}

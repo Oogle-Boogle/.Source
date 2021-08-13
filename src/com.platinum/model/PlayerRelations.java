@@ -266,7 +266,7 @@ public class PlayerRelations {
 		if (status == PrivateChatStatus.OFF) 
 			setStatus(PrivateChatStatus.FRIENDS_ONLY, true);
 		
-		friend.getPacketSender().sendPrivateMessage(player.getLongUsername(), player.getRights(), player.getSecondaryPlayerRights(), message, size);
+		friend.getPacketSender().sendPrivateMessage(player.getLongUsername(), player.getRights(), player.getSecondaryPlayerRights(), player.getGameMode(), message, size);
 	}
 
 
