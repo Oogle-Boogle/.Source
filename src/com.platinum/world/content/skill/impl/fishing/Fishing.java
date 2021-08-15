@@ -144,7 +144,7 @@ public class Fishing {
 		p.performAnimation(new Animation(s.getAnim()));
 		if(Misc.getRandom(16000) == 3) {
 			p.getInventory().add(13320, 1);
-			World.sendMessageNonDiscord("@blu@<img=10>[Skilling Pets] "+p.getUsername()+" has received the Heron pet!");
+			World.sendMessageNonDiscord("@blu@<img=11>[Skilling Pets] "+p.getUsername()+" has received the Heron pet!");
 			p.getPacketSender().sendMessage("@red@You have received a skilling pet!");
 		}
 		p.setCurrentTask(new Task(2, p, false) {

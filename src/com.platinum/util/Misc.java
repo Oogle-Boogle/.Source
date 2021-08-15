@@ -94,9 +94,9 @@ public class Misc {
 		string = string.replaceAll("@sup@", "");
 		string = string.replaceAll("@str@", "~~");
 		string = string.replaceAll("@end@", "~~");
-		string = string.replaceAll("<img=10>", ":information_source:");
-		string = string.replaceAll("<img=101>", ":star:");
-		string = string.replaceAll("<img=7>", ":moneybag:");
+		string = string.replaceAll("<img=11>", ":information_source:");
+		//string = string.replaceAll("<img=111>", ":star:");
+		//string = string.replaceAll("<img=7>", ":moneybag:");
 		string = string.replaceAll("@sta@", "");
 		string = string.replaceAll("@com@", "");
 		string = string.replaceAll("@unc@", "");

@@ -139,7 +139,7 @@ public class Plant {
 					Achievements.finishAchievement(player, AchievementData.HARVEST_A_CROP);
 					if(Misc.getRandom(3500) == 3) {
 						player.getInventory().add(13323, 1);
-						World.sendMessageNonDiscord("@blu@<img=10>[Skilling Pets] "+player.getUsername()+" has received the Tangleroot pet!");
+						World.sendMessageNonDiscord("@blu@<img=11>[Skilling Pets] "+player.getUsername()+" has received the Tangleroot pet!");
 						player.getPacketSender().sendMessage("@red@You have received a skilling pet!");
 					} 
 					if (harvested == 3 && player.getInventory().contains(18336) && Misc.getRandom(4) == 0) {
@@ -224,7 +224,7 @@ public class Plant {
 					stage++;
 					player.getFarming().doConfig();
 					if (stage >= Plants.values()[plant].stages) {
-						player.getPacketSender().sendMessage("<img=10> <shad=996699>A seed which you planted has finished growing!");
+						player.getPacketSender().sendMessage("<img=11> <shad=996699>A seed which you planted has finished growing!");
 						return;
 					}
 				}

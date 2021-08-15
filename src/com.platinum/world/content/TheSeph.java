@@ -167,7 +167,7 @@ public class TheSeph extends NPC {
 			String itemName = (superrare.getDefinition().getName());
 			String itemMessage = Misc.anOrA(itemName) + " " + itemName;
 			World.sendMessageNonDiscord(
-					"<img=382><col=FF0000>" + player.getUsername() + " received<col=eaeaea><img=386>[ " + itemMessage + "<col=eaeaea>]<img=386><col=FF0000> from Sephiroth!");
+					"<img=11><col=FF0000>" + player.getUsername() + " received<col=eaeaea><img=11>[ " + itemMessage + "<col=eaeaea>]<img=11><col=FF0000> from Sephiroth!");
 			return;
 		}
 
@@ -177,7 +177,7 @@ public class TheSeph extends NPC {
 			String itemName = rare.getDefinition().getName();
 			String itemMessage = Misc.anOrA(itemName) + " " + itemName;
 			World.sendMessageNonDiscord(
-					"<img=382><col=FF0000>" + player.getUsername() + " received<col=eaeaea><img=386>[ " + itemMessage + "<col=eaeaea>]<img=386><col=FF0000> from Sephiroth!");
+					"<img=11><col=FF0000>" + player.getUsername() + " received<col=eaeaea><img=11>[ " + itemMessage + "<col=eaeaea>]<img=11><col=FF0000> from Sephiroth!");
 			return;
 		}
 		if (chance >= 0) {

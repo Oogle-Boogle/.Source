@@ -260,8 +260,10 @@ public class ClanChatManager {
 						}
 						// If the player is not an ironman, prefix is primary + secondary
 						// If the player IS an ironman, prefix is ironman + secondary
-						String prefix = irn.isEmpty() ? primaryRights + secondaryRights : irn + secondaryRights;
-						
+						String prefix = others.getGameMode() == GameMode.NORMAL ? primaryRights + secondaryRights : irn + secondaryRights;
+						System.out.println("TOP CLAN CHAT PREFIX WAS " + prefix);
+
+
 						//String prefix = img >= 0 ? ("<img=" + (img) + "> ") : "";
 						member.getPacketSender().sendString(childId, prefix + others.getUsername());
 						childId++;
@@ -347,7 +349,9 @@ public class ClanChatManager {
 				}
 				// If the player is not an ironman, prefix is primary + secondary
 				// If the player IS an ironman, prefix is ironman + secondary
-				String prefix = irn.isEmpty() ? primaryRights + secondaryRights : irn + secondaryRights;
+				String prefix = player.getGameMode() == GameMode.NORMAL ? primaryRights + secondaryRights : irn + secondaryRights;
+
+				System.out.println("CLAN CHAT PREFIX WAS " + prefix);
 
 				//String rankImg = img > 0 ? "<img=" + img + ">" : "";
 				//String secondImg = img2 > 0 ? "<zmg=" + img2 + ">" : "";

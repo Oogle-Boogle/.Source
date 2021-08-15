@@ -170,7 +170,7 @@ public class WellOfGoodwill {
 	public static void updateState() {
 		if (STATE == WellState.FULL) {
 			if(getMinutesRemaining() <= 0) {
-				World.sendMessageNonDiscord("<img=10> <col=6666FF>The Well of Goodwill is no longer granting bonus experience.");
+				World.sendMessageNonDiscord("<img=11> <col=6666FF>The Well of Goodwill is no longer granting bonus experience.");
 				World.getPlayers().forEach(p -> p.getPacketSender().sendString(39167, "@or2@Well of Goodwill: @yel@N/A"));
 				setDefaults();
 			}

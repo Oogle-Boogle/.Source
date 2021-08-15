@@ -88,7 +88,7 @@ public class Bork extends NPC {
 		setCurrent(instance);
 		// System.out.print("spawned.");
 
-		World.sendMessageNonDiscord("<img=9><col=bababa><shad=10>[<col=0999ad>UBER BOSS<col=bababa>]<col=0999ad>Bork <col=00a745>has <shad=10>respawned <img=385> ::uberboss");
+		World.sendMessageNonDiscord("<img=11><col=bababa><shad=10>[<col=0999ad>UBER BOSS<col=bababa>]<col=0999ad>Bork <col=00a745>has <shad=10>respawned <img=11> ::uberboss");
 	}
 
 
@@ -167,7 +167,7 @@ public class Bork extends NPC {
 			String itemName = (new Item(superrare).getDefinition().getName());
 			String itemMessage = Misc.anOrA(itemName) + " " + itemName;
 			World.sendMessageNonDiscord(
-					"<img=382><col=FF0000>" + player.getUsername() + " received<col=eaeaea>[ " + itemMessage + "<col=eaeaea>]<col=FF0000> from the Uber Boss!");
+					"<img=11><col=FF0000>" + player.getUsername() + " received<col=eaeaea>[ " + itemMessage + "<col=eaeaea>]<col=FF0000> from the Uber Boss!");
 			return;
 		}
 
@@ -177,7 +177,7 @@ public class Bork extends NPC {
 			String itemName = (new Item(rare).getDefinition().getName());
 			String itemMessage = Misc.anOrA(itemName) + " " + itemName;
 			World.sendMessageNonDiscord(
-					"<img=382><col=FF0000>" + player.getUsername() + " received<col=eaeaea>[ " + itemMessage + "<col=eaeaea>]<col=FF0000> from the Uber Boss!");
+					"<img=11><col=FF0000>" + player.getUsername() + " received<col=eaeaea>[ " + itemMessage + "<col=eaeaea>]<col=FF0000> from the Uber Boss!");
 			return;
 		}
 		if (chance >= 1) {
@@ -185,7 +185,7 @@ public class Bork extends NPC {
 					new GroundItem(new Item(common, 1), pos, player.getUsername(), false, 150, true, 200));
 			String itemName = (new Item(common).getDefinition().getName());
 			World.sendMessageNonDiscord(
-					"<img=382><col=FF0000>" + player.getUsername() + " received<col=eaeaea>[ " + itemName + "<col=eaeaea>]<col=FF0000> from the Uber Boss!");
+					"<img=11><col=FF0000>" + player.getUsername() + " received<col=eaeaea>[ " + itemName + "<col=eaeaea>]<col=FF0000> from the Uber Boss!");
 			return;
 		}
 

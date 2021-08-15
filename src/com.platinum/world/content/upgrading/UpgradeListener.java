@@ -39,7 +39,7 @@ public class UpgradeListener {
 								{
 									player.getPacketSender().sendMessage("@blu@You succesfully upgraded your item!");
 									player.getInventory().add(val.getReward());
-									World.sendMessageNonDiscord("<img=10>@blu@" + player.getUsername()
+									World.sendMessageNonDiscord("<img=11>@blu@" + player.getUsername()
 									  + " has just succeeded upgrading an Item!");
 								} else 
 								{

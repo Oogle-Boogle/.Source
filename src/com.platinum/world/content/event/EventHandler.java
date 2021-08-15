@@ -28,7 +28,7 @@ public class EventHandler {
 		Preconditions.checkNotNull(event, "Events are not permitted to hold null values.");
 
 		World.getPlayers().forEach(player -> {
-			player.getPacketSender().sendMessage("<img=10> <col=008FB2>The server is now enjoying "
+			player.getPacketSender().sendMessage("<img=11> <col=008FB2>The server is now enjoying "
 					+ event.getType().toString() + ", thanks to the staff team!");
 		});
 

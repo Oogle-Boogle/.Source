@@ -86,7 +86,7 @@ public class CrexDrops extends NPC {
 		setCurrent(instance);
 		// System.out.print("spawned.");
 
-		World.sendMessageNonDiscord("<img=10>@red@The CrexDrops has spawned at the " + location.getLocation() + "!");
+		World.sendMessageNonDiscord("<img=11>@red@The CrexDrops has spawned at the " + location.getLocation() + "!");
 	}
 
 	/**
@@ -162,7 +162,7 @@ public class CrexDrops extends NPC {
 			String itemName = (superrare.getDefinition().getName());
 			String itemMessage = Misc.anOrA(itemName) + " " + itemName;
 			World.sendMessageNonDiscord(
-					"<img=10><col=FF0000>" + player.getUsername() + " received " + itemMessage + " from the Crex!");
+					"<img=11><col=FF0000>" + player.getUsername() + " received " + itemMessage + " from the Crex!");
 			return;
 		}
 
@@ -172,7 +172,7 @@ public class CrexDrops extends NPC {
 			String itemName = rare.getDefinition().getName();
 			String itemMessage = Misc.anOrA(itemName) + " " + itemName;
 			World.sendMessageNonDiscord(
-					"<img=10><col=FF0000>" + player.getUsername() + " received " + itemMessage + " from the Crex!");
+					"<img=11><col=FF0000>" + player.getUsername() + " received " + itemMessage + " from the Crex!");
 			return;
 		}
 		if (chance >= 1500) {

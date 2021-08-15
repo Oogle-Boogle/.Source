@@ -90,7 +90,7 @@ public class TheRick extends NPC {
 		setCurrent(instance);
 		// System.out.print("spawned.");
 
-		World.sendMessageNonDiscord("<shad=1><img=418>@red@[Medium Boss] Rick has Respawned" + location.getLocation() + "!");
+		World.sendMessageNonDiscord("<shad=1><img=11>@red@[Medium Boss] Rick has Respawned" + location.getLocation() + "!");
 	}
 
 	/**
@@ -167,7 +167,7 @@ public class TheRick extends NPC {
 			String itemName = (superrare.getDefinition().getName());
 			String itemMessage = Misc.anOrA(itemName) + " " + itemName;
 			World.sendMessageNonDiscord(
-					"<img=382><col=FF0000>" + player.getUsername() + " received<col=eaeaea><img=386>[ " + itemMessage + "<col=eaeaea>]<img=386><col=FF0000> from Rick!");
+					"<img=11><col=FF0000>" + player.getUsername() + " received<col=eaeaea><img=11>[ " + itemMessage + "<col=eaeaea>]<img=11><col=FF0000> from Rick!");
 			return;
 		}
 
@@ -177,7 +177,7 @@ public class TheRick extends NPC {
 			String itemName = rare.getDefinition().getName();
 			String itemMessage = Misc.anOrA(itemName) + " " + itemName;
 			World.sendMessageNonDiscord(
-					"<img=382><col=FF0000>" + player.getUsername() + " received<col=eaeaea><img=386>[ " + itemMessage + "<col=eaeaea>]<img=386><col=FF0000> from Rick!");
+					"<img=11><col=FF0000>" + player.getUsername() + " received<col=eaeaea><img=11>[ " + itemMessage + "<col=eaeaea>]<img=11><col=FF0000> from Rick!");
 			return;
 		}
 		if (chance >= 0) {

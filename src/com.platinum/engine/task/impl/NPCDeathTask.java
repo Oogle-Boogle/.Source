@@ -175,7 +175,7 @@ public class NPCDeathTask extends Task {
 							killer.setBossPoints(killer.getBossPoints() + 2);
 						}
 						
-						killer.sendMessage("<img=0>You now have @red@" + killer.getBossPoints() + " Boss Points!");
+						killer.sendMessage("<img=11>You now have @red@" + killer.getBossPoints() + " Boss Points!");
 						killer.incrementTotalBossKills(1);
 					}
 
@@ -194,13 +194,13 @@ public class NPCDeathTask extends Task {
 					if (npc.getId() == 2436) {
 						killer.setRuneUnityPoints(killer.getRuneUnityPoints() + 5);
 						killer.sendMessage(
-								"<img=0>You now have @red@" + killer.getRuneUnityPoints() + " Platinum Points!");
+								"<img=11>You now have @red@" + killer.getRuneUnityPoints() + " Platinum Points!");
 					}
 					if (npc.getId() == 604 || npc.getId() == 605 || npc.getId() == 609 || npc.getId() == 600
 							|| npc.getId() == 603 || npc.getId() == 610 || npc.getId() == 607 || npc.getId() == 608
 							|| npc.getId() == 611) {
 						killer.setAmongPoints(killer.getAmongPoints() + 1);
-						killer.sendMessage("<img=0>You now have @red@" + killer.getAmongPoints() + " Among Points!");
+						killer.sendMessage("<img=11>You now have @red@" + killer.getAmongPoints() + " Among Points!");
 					}
 					if (npc.getId() == 9855 && killer.getEquipment().contains(5131)) {
 						killer.getPointsHandler().incrementMiniGamePoints1(1);

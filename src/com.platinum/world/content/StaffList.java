@@ -90,27 +90,7 @@ public class StaffList {
 	}
 
 	public static String getPrefix(Player player) {
-		String crown = "";
-		switch (player.getRights()) {
-		case MODERATOR:
-			crown = "<img=1>";
-			break;
-		case SUPPORT:
-			crown = "<img=10>";
-			break;
-		case ADMINISTRATOR:
-			crown = "<img=2>";
-			break;
-		case OWNER:
-			crown = "<img=3>";
-			break;
-		case DEVELOPER:
-			crown = "<img=4>";
-			break;
-		default:
-			break;
-		}
-		return crown;
+		return "<img=" + player.getRights().ordinal() + ">";
 	}
 
 }

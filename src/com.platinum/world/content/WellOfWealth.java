@@ -171,7 +171,7 @@ public class WellOfWealth {
 	public static void updateState() {
 		if (STATE == WellState.FULL) {
 			if(getMinutesRemaining() <= 0) {
-				World.sendMessageNonDiscord("<img=10> <col=6666FF>The Well of Wealth is no longer granting x2 Easier Drop Rates");
+				World.sendMessageNonDiscord("<img=11> <col=6666FF>The Well of Wealth is no longer granting x2 Easier Drop Rates");
 				//World.getPlayers().forEach(p -> p.getPacketSender().sendString(39164, "@or2@Well of Wealth: @yel@N/A"));
 				setDefaults();
 			}

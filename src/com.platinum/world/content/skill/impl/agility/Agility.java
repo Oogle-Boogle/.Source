@@ -38,7 +38,7 @@ public class Agility {
 			}
 			if(Misc.getRandom(7000) == 3) {
 				p.getInventory().add(13325, 1);
-				World.sendMessageNonDiscord("@blu@<img=10>[Skilling Pets] "+p.getUsername()+" has received the Giant Squirrel pet!");
+				World.sendMessageNonDiscord("@blu@<img=11>[Skilling Pets] "+p.getUsername()+" has received the Giant Squirrel pet!");
 				p.getPacketSender().sendMessage("@red@You have received a skilling pet!");
 			}
 			agilityObject.cross(p);

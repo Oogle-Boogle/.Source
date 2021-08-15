@@ -319,7 +319,7 @@ public class Achievements {
 			return;
 		player.getAchievementAttributes().getCompletion()[achievement.ordinal()] = true;
 		player.getPacketSender().sendString(achievement.interfaceFrame, ("@gre@") + achievement.interfaceLine)
-				.sendMessage("<img=10> <col=339900>You have completed the achievement "
+				.sendMessage("<img=11> <col=339900>You have completed the achievement "
 						+ Misc.formatText(achievement.toString().toLowerCase() + "."))
 				.sendString(45001, "Achievements: " + player.getPointsHandler().getAchievementPoints() + "/"
 						+ AchievementData.values().length);

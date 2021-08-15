@@ -161,11 +161,11 @@ public class ServerTimeUpdateTask extends Task {
 
 		if(tick >= 6 && (Locations.PLAYERS_IN_WILD >= 5 || Locations.PLAYERS_IN_DUEL_ARENA >= 5 || PestControl.TOTAL_PLAYERS >= 5)) {
 			if(Locations.PLAYERS_IN_WILD > Locations.PLAYERS_IN_DUEL_ARENA && Locations.PLAYERS_IN_WILD > PestControl.TOTAL_PLAYERS || RandomUtility.getRandom(3) == 1 && Locations.PLAYERS_IN_WILD >= 2) {
-				World.sendMessageNonDiscord("<img=10> @blu@[Hotspot]@bla@ There are currently "+Locations.PLAYERS_IN_WILD+" players roaming the Wilderness!");
+				World.sendMessageNonDiscord("<img=11> @blu@[Hotspot]@bla@ There are currently "+Locations.PLAYERS_IN_WILD+" players roaming the Wilderness!");
 			} else if(Locations.PLAYERS_IN_DUEL_ARENA > Locations.PLAYERS_IN_WILD && Locations.PLAYERS_IN_DUEL_ARENA > PestControl.TOTAL_PLAYERS) {
-				World.sendMessageNonDiscord("<img=10> @blu@[Hotspot]@bla@ There are currently "+Locations.PLAYERS_IN_DUEL_ARENA+" players at the Duel Arena!");
+				World.sendMessageNonDiscord("<img=11> @blu@[Hotspot]@bla@ There are currently "+Locations.PLAYERS_IN_DUEL_ARENA+" players at the Duel Arena!");
 			} else if(PestControl.TOTAL_PLAYERS > Locations.PLAYERS_IN_WILD && PestControl.TOTAL_PLAYERS > Locations.PLAYERS_IN_DUEL_ARENA) {
-				World.sendMessageNonDiscord("<img=10> @blu@[Hotspot]@bla@ There are currently "+PestControl.TOTAL_PLAYERS+" players at Pest Control!");
+				World.sendMessageNonDiscord("<img=11> @blu@[Hotspot]@bla@ There are currently "+PestControl.TOTAL_PLAYERS+" players at Pest Control!");
 			}
 			tick = 0;
 		}

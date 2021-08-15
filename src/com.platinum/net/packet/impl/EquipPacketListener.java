@@ -197,7 +197,7 @@ public class EquipPacketListener implements PacketListener {
 						if (equipmentSlot == Equipment.WEAPON_SLOT) {
 							resetWeapon(player);
 						} else if (equipmentSlot == Equipment.RING_SLOT && item.getId() == 2570) {
-							player.getPacketSender().sendMessage("<img=10> <col=996633>Warning! The Ring of Life special effect does not work in the Wilderness or").sendMessage("<col=996633> Duel Arena.");
+							player.getPacketSender().sendMessage("<img=11> <col=996633>Warning! The Ring of Life special effect does not work in the Wilderness or").sendMessage("<col=996633> Duel Arena.");
 						}
 
 						if (player.getEquipment().get(Equipment.WEAPON_SLOT).getId() != 4153) {

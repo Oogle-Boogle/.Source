@@ -251,13 +251,13 @@ public class PlayerHandler {
 		Lottery.onLogin(player);
 		Locations.login(player);
 		
-		player.getPacketSender().sendMessage("<img=383><col=368a24><shad=555>Welcome To Platinum! - We Currently Have A Active Invite Event!");
+		player.getPacketSender().sendMessage("<img=11><col=368a24><shad=555>Welcome To Platinum! - We Currently Have A Active Invite Event!");
 		player.getPacketSender()
-				.sendMessage("<img=384> <col=187518><shad=555>Join Discord to stay up to date with information");
+				.sendMessage("<img=11> <col=187518><shad=555>Join Discord to stay up to date with information");
 		player.getPacketSender()
-				.sendMessage("<img=385> <col=7838a3><shad=555>For any questions contact <col=dddddd><shad=111><img=3>Wisdom or Nike<img=3>");
+				.sendMessage("<img=11> <col=7838a3><shad=555>For any questions contact <col=dddddd><shad=111><img=3>Wisdom or Nike<img=3>");
 		player.getPacketSender()
-		.sendMessage("<img=392><shad=20><col=b96900>Report all Bugs, also all suggestions help alot! <img=392>");
+		.sendMessage("<img=11><shad=20><col=b96900>Report all Bugs, also all suggestions help alot! <img=392>");
 
 
 		

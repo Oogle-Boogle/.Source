@@ -549,7 +549,7 @@ public class NPCDrops {
 			String discordmessage = itemMessage + " from " + npcName + " worth " + Misc.currency(item.getDefinition().getValue()) + "!";
 			NpcGain.RareDropXP(player);
 			World.sendMessageNonDiscord("<col=089915><shad=1>" + player.getUsername()
-			+ "  has just received <img=386><col=991608> " + itemMessage + " <img=386><col=089915> from <col=bb1313> " + npcName + "!");
+			+ "  has just received <img=11><col=991608> " + itemMessage + " <img=11><col=089915> from <col=bb1313> " + npcName + "!");
 			DiscordMessenger.sendRareDrop(Misc.formatPlayerName(player.getUsername()), discordmessage);
 		}
 		
@@ -662,8 +662,8 @@ public class NPCDrops {
 			int npcId = npc.getId();
 			int playerKills = player.getNpcKillCount(npcId);
 			
-			String message = "<img=382><col=eaeaea>[<col=FF0000>RARE DROP<col=eaeaea>]<img=382><col=eaeaea> " + toGive.getUsername() + " has just received <img=386><col=07b481>" + itemMessage
-					+ "<img=386><col=eaeaea> from <col=FF0000>" + npcName + "!";
+			String message = "<img=11><col=eaeaea>[<col=FF0000>RARE DROP<col=eaeaea>]<img=11><col=eaeaea> " + toGive.getUsername() + " has just received <img=11><col=07b481>" + itemMessage
+					+ "<img=11><col=eaeaea> from <col=FF0000>" + npcName + "!";
 			String discordmessage = itemMessage + " from " + npcName + " worth " + Misc.currency(drop.getValue()) + "!";
 			World.sendMessageNonDiscord(message);
 			DiscordMessenger.sendRareDrop(Misc.formatPlayerName(toGive.getUsername()), discordmessage);
@@ -673,7 +673,7 @@ public class NPCDrops {
 			if (ccAnnounce) {
 				ClanChatManager.sendMessage(player.getCurrentClanChat(),
 						"<col=16777215>[<col=255>Lootshare<col=16777215>]<col=3300CC> " + toGive.getUsername()
-								+ "  has just received <img=386><col=07b481> " + itemMessage + "<img=386><col=eaeaea> from <col=FF0000>" + npcName + "!");
+								+ "  has just received <img=11><col=07b481> " + itemMessage + "<img=11><col=eaeaea> from <col=FF0000>" + npcName + "!");
 			}
 
 			PlayerLogs.log(toGive.getUsername(),
@@ -695,7 +695,7 @@ public class NPCDrops {
 	public static void clueDrop(Player player, int combat, Position pos) {
 		if (Misc.inclusiveRandom(1, 40) == 15|| Misc.inclusiveRandom(1, 40) == -15) {
 			player.getInventory().add(19626, 1);
-			player.getPacketSender().sendMessage("@or2@<img=382><shad=1>You have recieved a Mysterious scroll!");
+			player.getPacketSender().sendMessage("@or2@<img=11><shad=1>You have recieved a Mysterious scroll!");
 		}
 	}
 
@@ -709,7 +709,7 @@ public class NPCDrops {
 		GroundItemManager.spawnGroundItem(player,
 				new GroundItem(new Item(3912, 1), pos, player.getUsername(), false, 150, true, 200));
 
-		player.sendMessage("@or2@<img=382><shad=1>You Earned a Event box, Congratulations ");
+		player.sendMessage("@or2@<img=11><shad=1>You Earned a Event box, Congratulations ");
 	}
 
 	public static class ItemDropAnnouncer {

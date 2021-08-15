@@ -114,7 +114,7 @@ public class GlobalPerks {
     private void end() {
         active = false;
         contributions.put(activePerk, 0);
-        World.sendMessageNonDiscord("<img=10>[WORLD]<img=10> @red@Perk " + StringUtils.usToSpace(activePerk.toString()) + " has ended");
+        World.sendMessageNonDiscord("<img=11>[WORLD]<img=11> @red@Perk " + StringUtils.usToSpace(activePerk.toString()) + " has ended");
         activePerk = null;
         resetInterface();
     }

@@ -91,7 +91,7 @@ public class TheMay extends NPC {
 		setCurrent(instance);
 		// System.out.print("spawned.");
 
-		World.sendMessageNonDiscord("<shad=1><img=418>@red@ Skeleton May has Respawned" + location.getLocation() + "!");
+		World.sendMessageNonDiscord("<shad=1><img=11>@red@ Skeleton May has Respawned" + location.getLocation() + "!");
 	}
 
 	/**
@@ -169,7 +169,7 @@ public class TheMay extends NPC {
 			String itemName = (superrare.getDefinition().getName());
 			String itemMessage = Misc.anOrA(itemName) + " " + itemName;
 			World.sendMessageNonDiscord(
-					"<img=386><col=FF0000>" + player.getUsername() + " received " + itemMessage + " from Trainer May");
+					"<img=11><col=FF0000>" + player.getUsername() + " received " + itemMessage + " from Trainer May");
 			return;
 		}
 
@@ -179,7 +179,7 @@ public class TheMay extends NPC {
 			String itemName = rare.getDefinition().getName();
 			String itemMessage = Misc.anOrA(itemName) + " " + itemName;
 			World.sendMessageNonDiscord(
-					"<img=386><col=FF0000>" + player.getUsername() + " received " + itemMessage + " from Trainer May");
+					"<img=11><col=FF0000>" + player.getUsername() + " received " + itemMessage + " from Trainer May");
 			return;
 		}
 		if (chance >= 0) {

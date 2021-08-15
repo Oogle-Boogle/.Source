@@ -20,17 +20,17 @@ public class Reminders {
 	 * Random Message Data
 	 */
 	private static final String[][] MESSAGE_DATA = { 
-			{"<img=383><col=eaeaea>[<col=60148a>SERVER<col=eaeaea>]<col=60148a> Join 'Help' CC For Help/Tips!"},
-			{"<img=383><col=eaeaea>[<col=60148a>SERVER<col=eaeaea>]<col=60148a> Use the command ::drop (npcname) for drop tables"},
-			{"<img=383><col=eaeaea>[<col=60148a>SERVER<col=eaeaea>]<col=60148a> Use the ::help command to ask staff for help"},
-			{"<img=383><col=eaeaea>[<col=60148a>SERVER<col=eaeaea>]<col=60148a>Remember to spread the word and invite your friends to play!"},
-			{"<img=383><col=eaeaea>[<col=60148a>SERVER<col=eaeaea>]<col=60148a> Donate to help the server grow! ::store"},
-			{"<img=383><col=eaeaea>[<col=60148a>SERVER<col=eaeaea>]<col=60148a>Use ::commands to find a list of commands"},
-			{"<img=383><col=eaeaea>[<col=60148a>SERVER<col=eaeaea>]<col=60148a> Toggle your client settings to your preference in the wrench tab!"},
-			{"<img=383><col=eaeaea>[<col=60148a>SERVER<col=eaeaea>]<col=60148a> Use the command ::drop (npcname) for drop tables"},
-			{"<img=383><col=eaeaea>[<col=60148a>SERVER<col=eaeaea>]<col=60148a>Did you know you can get paid to make videos? PM Wisdom or Nike"},
-			{"<img=383><col=eaeaea>[<col=60148a>SERVER<col=eaeaea>]<col=60148a>Use the command ::drop (npcname) for drop tables"},
-			{"<img=383><col=eaeaea>[<col=60148a>SERVER<col=eaeaea>]<col=60148a>Make sure you ::vote everyday for amazing Rewards!"},
+			{"<img=11><col=eaeaea>[<col=60148a>SERVER<col=eaeaea>]<col=60148a> Join 'Help' CC For Help/Tips!"},
+			{"<img=11><col=eaeaea>[<col=60148a>SERVER<col=eaeaea>]<col=60148a> Use the command ::drop (npcname) for drop tables"},
+			{"<img=11><col=eaeaea>[<col=60148a>SERVER<col=eaeaea>]<col=60148a> Use the ::help command to ask staff for help"},
+			{"<img=11><col=eaeaea>[<col=60148a>SERVER<col=eaeaea>]<col=60148a>Remember to spread the word and invite your friends to play!"},
+			{"<img=11><col=eaeaea>[<col=60148a>SERVER<col=eaeaea>]<col=60148a> Donate to help the server grow! ::store"},
+			{"<img=11><col=eaeaea>[<col=60148a>SERVER<col=eaeaea>]<col=60148a>Use ::commands to find a list of commands"},
+			{"<img=11><col=eaeaea>[<col=60148a>SERVER<col=eaeaea>]<col=60148a> Toggle your client settings to your preference in the wrench tab!"},
+			{"<img=11><col=eaeaea>[<col=60148a>SERVER<col=eaeaea>]<col=60148a> Use the command ::drop (npcname) for drop tables"},
+			{"<img=11><col=eaeaea>[<col=60148a>SERVER<col=eaeaea>]<col=60148a>Did you know you can get paid to make videos? PM Wisdom or Nike"},
+			{"<img=11><col=eaeaea>[<col=60148a>SERVER<col=eaeaea>]<col=60148a>Use the command ::drop (npcname) for drop tables"},
+			{"<img=11><col=eaeaea>[<col=60148a>SERVER<col=eaeaea>]<col=60148a>Make sure you ::vote everyday for amazing Rewards!"},
 			
 		
 	};
