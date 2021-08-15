@@ -1476,15 +1476,11 @@ public class PacketSender {
 		return this;
 	}
 
-	public PacketSender sendPrivateMessage(long name, PlayerRights rights, SecondaryPlayerRights rights2, GameMode gameMode, byte[] message, int size)  {
-		if (player.isMiniMe) {
-			return this;
-		}
+	public PacketSender sendPrivateMessage(long name, PlayerRights rights, byte[] message, int size) {
 		PacketBuilder out = new PacketBuilder(196, PacketType.BYTE);
 		out.putLong(name);
 		out.putInt(player.getRelations().getPrivateMessageId());
 		out.put(rights.ordinal());
-		out.put(rights2.ordinal());
 		out.putBytes(message, size);
 		player.getSession().queueMessage(out);
 		return this;
