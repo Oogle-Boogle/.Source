@@ -675,7 +675,7 @@ public class Player extends Character {
 	}
 
 	public void addNpcKillCount(int npcId) {
-		int amount = GlobalPerks.getInstance().getActivePerk() == GlobalPerks.Perk.NPC_KILLS ? 2 : 1;
+		int amount = GlobalPerks.getInstance().getActivePerk() == GlobalPerks.Perk.x2_NPC_KILLS ? 2 : 1;
 		npcKillCountMap.merge(npcId, amount, Integer::sum);
 	}
 

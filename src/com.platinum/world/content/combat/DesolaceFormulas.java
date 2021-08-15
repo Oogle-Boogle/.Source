@@ -112,7 +112,7 @@ public class DesolaceFormulas {
                      * case 6604: base *= 1.05; break; }
                      */
                 }
-                if (GlobalPerks.getInstance().getActivePerk() == GlobalPerks.Perk.DAMAGE) {
+                if (GlobalPerks.getInstance().getActivePerk() == GlobalPerks.Perk.x2_DAMAGE) {
                     base *= 2;
                 }
             }
@@ -483,7 +483,7 @@ public class DesolaceFormulas {
 
         damage *= damageMultiplier;
 
-        if (GlobalPerks.getInstance().getActivePerk() == GlobalPerks.Perk.DAMAGE) {
+        if (GlobalPerks.getInstance().getActivePerk() == GlobalPerks.Perk.x2_DAMAGE) {
             damage *= 2;
         }
 

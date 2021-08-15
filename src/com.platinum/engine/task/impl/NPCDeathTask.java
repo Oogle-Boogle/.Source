@@ -171,7 +171,7 @@ public class NPCDeathTask extends Task {
 						} else if (killer.getOldRaidParty() != null && npc instanceof RaidNpc) {
 							NpcGain.RaidNPCBossXP(killer, npc);
 						}
-						if (GlobalPerks.getInstance().getActivePerk() == GlobalPerks.Perk.BOSS_POINTS) {
+						if (GlobalPerks.getInstance().getActivePerk() == GlobalPerks.Perk.x2_BOSS_POINTS) {
 							killer.setBossPoints(killer.getBossPoints() + 2);
 						}
 						

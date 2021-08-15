@@ -124,7 +124,7 @@ public class SkillManager {
 			experience *= 1.15; // 15
 		}
 
-		if (GameSettings.TRIPLE_EXP || GlobalPerks.getInstance().getActivePerk() == GlobalPerks.Perk.XP) {
+		if (GameSettings.TRIPLE_EXP || GlobalPerks.getInstance().getActivePerk() == GlobalPerks.Perk.x3_XP) {
 			experience *= 3;
 		}
 
