@@ -16,11 +16,11 @@ import java.util.stream.Stream;
 public class GlobalPerks {
 
     public enum Perk {
-    	SLAYER_POINTS(0, 3500, 1225),
-        DAMAGE(1, 5000, 1226),
-        NPC_KILLS(2, 7000, 1227),
-        BOSS_POINTS(3, 7000, 1228),
-        XP(4, 5000, 1229),
+    	x2_SLAYER_POINTS(0, 3500, 1225),
+        x2_DAMAGE(1, 5000, 1226),
+        x2_NPC_KILLS(2, 7000, 1227),
+        x2_BOSS_POINTS(3, 7000, 1228),
+        x3_XP(4, 5000, 1229),
         DOUBLE_DROPS(5, 10000, 1229);
 
         private final int index;
@@ -108,13 +108,14 @@ public class GlobalPerks {
         currentTime = TIME;
         active = true;
         activePerk = perk;
+        World.sendMessageNonDiscord("<img=11>@bla@[@whi@Server Perks@bla@]<img=11> @red@ " + StringUtils.usToSpace(activePerk.toString()) + " has Started");
         updateOverlay();
     }
 
     private void end() {
         active = false;
         contributions.put(activePerk, 0);
-        World.sendMessageNonDiscord("<img=11>[WORLD]<img=11> @red@Perk " + StringUtils.usToSpace(activePerk.toString()) + " has ended");
+        World.sendMessageNonDiscord("<img=11>[Server Perks]<img=11> @red@Perk " + StringUtils.usToSpace(activePerk.toString()) + " has ended");
         activePerk = null;
         resetInterface();
     }

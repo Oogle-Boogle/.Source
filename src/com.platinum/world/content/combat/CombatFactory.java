@@ -773,7 +773,7 @@ public final class CombatFactory {
 				}
 			}
 
-			if (GlobalPerks.getInstance().getActivePerk() == GlobalPerks.Perk.DAMAGE) {
+			if (GlobalPerks.getInstance().getActivePerk() == GlobalPerks.Perk.x2_DAMAGE) {
 				maxHit *= 2;
 			}
 		}

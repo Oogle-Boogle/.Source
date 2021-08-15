@@ -187,7 +187,7 @@ public class Slayer {
             pointsReceived += pointsReceived + 2;
         }
 
-        if (GlobalPerks.getInstance().getActivePerk() == GlobalPerks.Perk.SLAYER_POINTS) {
+        if (GlobalPerks.getInstance().getActivePerk() == GlobalPerks.Perk.x2_SLAYER_POINTS) {
             pointsReceived *= 2;
         }
 
