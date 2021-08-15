@@ -1,4 +1,4 @@
-package com.platinum.model.container.impl;
+/*package com.platinum.model.container.impl;
 
 import com.platinum.model.Item;
 import com.platinum.model.container.ItemContainer;
@@ -13,13 +13,13 @@ import com.platinum.world.entity.impl.player.Player;
  * @author relex lawl
  */
 
-public class EquipmentWings extends ItemContainer {
+/*public class EquipmentWings extends ItemContainer {
 
 	/**
 	 * The Equipment constructor.
 	 * @param player	The player who's equipment is being represented.
 	 */
-	public EquipmentWings(Player player) {
+	/*public EquipmentWings(Player player) {
 		super(player);
 	}
 
@@ -50,18 +50,18 @@ public class EquipmentWings extends ItemContainer {
 	/**
 	 * The equipment inventory interface id.
 	 */
-	public static final int INVENTORY_INTERFACE_ID = -16162;
+	/*public static final int INVENTORY_INTERFACE_ID = -16162;
 
 
 	/**
 	 * The arrows slot.
 	 */
-	public static final int WING = 0;
+	/*public static final int WING = 0;
 
 	/**
 	 * The arrows slot.
 	 */
-	public static final int AURA = 1;
+	/*public static final int AURA = 1;
 
 	public boolean properEquipmentForWilderness() {
 		int count = 0;
@@ -78,7 +78,7 @@ public class EquipmentWings extends ItemContainer {
 	 * @param s		The item type to search for
 	 * @return		The amount of item with the type that was found
 	 */
-	public static int getItemCount(Player p, String s, boolean inventory) {
+	/*public static int getItemCount(Player p, String s, boolean inventory) {
 		int count = 0;
 		for(Item t : p.getEquipment().getItems()) {
 			if(t == null || t.getId() < 1 || t.getAmount() < 1)
@@ -95,4 +95,4 @@ public class EquipmentWings extends ItemContainer {
 			}
 		return count;
 	}
-}
+}*/

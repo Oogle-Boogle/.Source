@@ -16,6 +16,7 @@ import com.platinum.world.content.Sounds;
 import com.platinum.world.content.Sounds.Sound;
 import com.platinum.world.content.combat.magic.Autocasting;
 import com.platinum.world.content.combat.weapon.CombatSpecial;
+import com.platinum.world.content.minigames.impl.Dueling;
 import com.platinum.world.content.minigames.impl.Dueling.DuelRule;
 import com.platinum.world.content.skill.SkillManager;
 import com.platinum.world.entity.impl.player.Player;
@@ -42,12 +43,6 @@ public class EquipPacketListener implements PacketListener {
 			player.getPacketSender().sendInterfaceRemoval();
 			// return;
 		}
-			if (player.getInterfaceId() > 0 && player.getInterfaceId() != 21172 /* EQUIP SCREEN */) {
-				player.getPacketSender().sendInterfaceRemoval();
-				//return;
-			}
-			switch (interfaceId) {
-				case Inventory.INTERFACE_ID:
 		switch (interfaceId) {
 			case Inventory.INTERFACE_ID:
 
@@ -61,79 +56,38 @@ public class EquipPacketListener implements PacketListener {
 					/*
 					 * Making sure item exists and that id is consistent.
 					 */
-					if(id == 6639) {
-						if(player.getMinime() != null) {
-							player.getMinime().flagBotRemoval();
-						} else {
-							MiniMe.create(player);
-							player.getPacketSender()
-									.sendMessage("You Summon Yourself");
-
-						}
-						return;
-					}
 					if (item != null && id == item.getId()) {
-						if (!meetsEquipLevelReqs(player.getSkillManager(), player, item, true)) {
-							return;
+						for (Skill skill : Skill.values()) {
+							if (skill == Skill.CONSTRUCTION)
+								continue;
+							if (item.getDefinition().getRequirement()[skill.ordinal()] > player.getSkillManager()
+									.getMaxLevel(skill)) {
+								StringBuilder vowel = new StringBuilder();
+								if (skill.getName().startsWith("a") || skill.getName().startsWith("e")
+										|| skill.getName().startsWith("i") || skill.getName().startsWith("o")
+										|| skill.getName().startsWith("u")) {
+									vowel.append("an ");
+								} else {
+									vowel.append("a ");
+								}
+								player.getPacketSender().sendMessage("You need " + vowel.toString()
+										+ Misc.formatText(skill.getName()) + " level of at least "
+										+ item.getDefinition().getRequirement()[skill.ordinal()] + " to wear this.");
+								return;
+							}
 						}
 
 						int equipmentSlot = item.getDefinition().getEquipmentSlot();
-
-						if(item.getDefinition().getEquipmentSlot() == 14) {
-							equipmentSlot = 0;
-							Item equipItem = player.getEquipmentWings().forSlot(equipmentSlot).copy();
-
-							if (equipItem.getId() != -1) {
-								if (player.getInventory().contains(equipItem.getId())) {
-									player.getInventory().delete(item);
-									player.getInventory().add(equipItem);
-								} else
-									player.getInventory().setItem(slot, equipItem);
-								player.getEquipmentWings().setItem(0, item);
-							} else {
-								player.getInventory().setItem(slot, new Item(-1, 0));
-								player.getEquipmentWings().setItem(0, item);
-							}
-
-							player.setCastSpell(null);
-							BonusManager.update(player);
-							player.getEquipmentWings().refreshItems();
-							player.getInventory().refreshItems();
-							player.getUpdateFlag().flag(Flag.APPEARANCE);
-							Sounds.sendSound(player, Sound.EQUIP_ITEM);
-							return;
-						}
-						if(item.getDefinition().getEquipmentSlot() == 15) {
-							equipmentSlot = 1;
-							Item equipItem = player.getEquipmentWings().forSlot(equipmentSlot).copy();
-
-							if (equipItem.getId() != -1) {
-								if (player.getInventory().contains(equipItem.getId())) {
-									player.getInventory().delete(item);
-									player.getInventory().add(equipItem);
-								} else
-									player.getInventory().setItem(slot, equipItem);
-								player.getEquipmentWings().setItem(1, item);
-							} else {
-								player.getInventory().setItem(slot, new Item(-1, 0));
-								player.getEquipmentWings().setItem(1, item);
-							}
-
-							player.setCastSpell(null);
-							BonusManager.update(player);
-							player.getEquipmentWings().refreshItems();
-							player.getInventory().refreshItems();
-							player.getUpdateFlag().flag(Flag.APPEARANCE);
-							Sounds.sendSound(player, Sound.EQUIP_ITEM);
-							return;
-						}
 						Item equipItem = player.getEquipment().forSlot(equipmentSlot).copy();
 						if (player.getLocation() == Location.DUEL_ARENA) {
 							for (int i = 10; i < player.getDueling().selectedDuelRules.length; i++) {
 								if (player.getDueling().selectedDuelRules[i]) {
 									DuelRule duelRule = DuelRule.forId(i);
-									if (equipmentSlot == duelRule.getEquipmentSlot() || duelRule == DuelRule.NO_SHIELD && item.getDefinition().isTwoHanded()) {
-										player.getPacketSender().sendMessage("The rules that were set do not allow this item to be equipped.");
+									if (equipmentSlot == duelRule.getEquipmentSlot()
+											|| duelRule == Dueling.DuelRule.NO_SHIELD
+											&& item.getDefinition().isTwoHanded()) {
+										player.getPacketSender().sendMessage(
+												"The rules that were set do not allow this item to be equipped.");
 										return;
 									}
 								}
@@ -145,21 +99,26 @@ public class EquipPacketListener implements PacketListener {
 								}
 							}
 						}
-						if (player.hasStaffOfLightEffect() && equipItem.getDefinition().getName().toLowerCase().contains("staff of light")) {
+						if (player.hasStaffOfLightEffect()
+								&& equipItem.getDefinition().getName().toLowerCase().contains("staff of light")) {
 							player.setStaffOfLightEffect(-1);
-							player.getPacketSender().sendMessage("You feel the spirit of the Staff of Light begin to fade away...");
+							player.getPacketSender()
+									.sendMessage("You feel the spirit of the Staff of Light begin to fade away...");
 						}
 						if (equipItem.getDefinition().isStackable() && equipItem.getId() == item.getId()) {
-							int amount = equipItem.getAmount() + item.getAmount() <= Integer.MAX_VALUE ? equipItem.getAmount() + item.getAmount() : Integer.MAX_VALUE;
+							int amount = equipItem.getAmount() + item.getAmount() <= Integer.MAX_VALUE
+									? equipItem.getAmount() + item.getAmount()
+									: Integer.MAX_VALUE;
 							player.getInventory().delete(item);
 							player.getEquipment().getItems()[equipmentSlot].setAmount(amount);
 							equipItem.setAmount(amount);
 							player.getEquipment().refreshItems();
-							player.getEquipmentWings().refreshItems();
 						} else {
-							if (item.getDefinition().isTwoHanded() && item.getDefinition().getEquipmentSlot() == Equipment.WEAPON_SLOT) {
+							if (item.getDefinition().isTwoHanded()
+									&& item.getDefinition().getEquipmentSlot() == Equipment.WEAPON_SLOT) {
 								int slotsNeeded = 0;
-								if (player.getEquipment().isSlotOccupied(Equipment.SHIELD_SLOT) && player.getEquipment().isSlotOccupied(Equipment.WEAPON_SLOT)) {
+								if (player.getEquipment().isSlotOccupied(Equipment.SHIELD_SLOT)
+										&& player.getEquipment().isSlotOccupied(Equipment.WEAPON_SLOT)) {
 									slotsNeeded++;
 								}
 								if (player.getInventory().getFreeSlots() >= slotsNeeded) {
@@ -174,14 +133,18 @@ public class EquipPacketListener implements PacketListener {
 									player.getInventory().full();
 									return;
 								}
-							} else if (equipmentSlot == Equipment.SHIELD_SLOT && player.getEquipment().getItems()[Equipment.WEAPON_SLOT].getDefinition().isTwoHanded()) {
-								player.getInventory().setItem(slot, player.getEquipment().getItems()[Equipment.WEAPON_SLOT]);
+							} else if (equipmentSlot == Equipment.SHIELD_SLOT
+									&& player.getEquipment().getItems()[Equipment.WEAPON_SLOT].getDefinition()
+									.isTwoHanded()) {
+								player.getInventory().setItem(slot,
+										player.getEquipment().getItems()[Equipment.WEAPON_SLOT]);
 								player.getEquipment().setItem(Equipment.WEAPON_SLOT, new Item(-1));
 								player.getEquipment().setItem(Equipment.SHIELD_SLOT, item);
 								resetWeapon(player);
 								player.sendElementalMessage = true;
 							} else {
-								if (item.getDefinition().getEquipmentSlot() == equipItem.getDefinition().getEquipmentSlot() && equipItem.getId() != -1) {
+								if (item.getDefinition().getEquipmentSlot() == equipItem.getDefinition()
+										.getEquipmentSlot() && equipItem.getId() != -1) {
 									if (player.getInventory().contains(equipItem.getId())) {
 										player.getInventory().delete(item);
 										player.getInventory().add(equipItem);
@@ -197,7 +160,9 @@ public class EquipPacketListener implements PacketListener {
 						if (equipmentSlot == Equipment.WEAPON_SLOT) {
 							resetWeapon(player);
 						} else if (equipmentSlot == Equipment.RING_SLOT && item.getId() == 2570) {
-							player.getPacketSender().sendMessage("<img=11> <col=996633>Warning! The Ring of Life special effect does not work in the Wilderness or").sendMessage("<col=996633> Duel Arena.");
+							player.getPacketSender().sendMessage(
+									"<img=10> <col=996633>Warning! The Ring of Life special effect does not work in the Wilderness or")
+									.sendMessage("<col=996633> Duel Arena.");
 						}
 
 						if (player.getEquipment().get(Equipment.WEAPON_SLOT).getId() != 4153) {
@@ -210,7 +175,6 @@ public class EquipPacketListener implements PacketListener {
 						player.setCastSpell(null);
 						BonusManager.update(player);
 						player.getEquipment().refreshItems();
-						player.getEquipmentWings().refreshItems();
 						player.getInventory().refreshItems();
 						player.getUpdateFlag().flag(Flag.APPEARANCE);
 						Sounds.sendSound(player, Sound.EQUIP_ITEM);
@@ -218,28 +182,6 @@ public class EquipPacketListener implements PacketListener {
 				}
 				break;
 		}
-	}
-}
-
-	public static boolean meetsEquipLevelReqs(SkillManager skillManager, Player player, Item item, boolean message)
-	{
-		for (Skill skill : Skill.values) {
-			if (skill == Skill.PVM)
-				continue;
-			if (item.getDefinition().getRequirement()[skill.ordinal()] > skillManager.getMaxLevel(skill)) {
-				StringBuilder vowel = new StringBuilder();
-				if (message) {
-					if (skill.getName().startsWith("a") || skill.getName().startsWith("e") || skill.getName().startsWith("i") || skill.getName().startsWith("o") || skill.getName().startsWith("u")) {
-						vowel.append("an ");
-					} else {
-						vowel.append("a ");
-					}
-					player.getPacketSender().sendMessage("You need " + vowel.toString() + Misc.formatText(skill.getName()) + " level of at least " + item.getDefinition().getRequirement()[skill.ordinal()] + " to wear this.");
-				}
-				return false;
-			}
-		}
-		return true;
 	}
 	public static void resetWeapon(Player player) {
 		Item weapon = player.getEquipment().get(Equipment.WEAPON_SLOT);

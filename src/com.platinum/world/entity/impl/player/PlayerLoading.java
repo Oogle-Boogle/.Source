@@ -444,10 +444,6 @@ public class PlayerLoading {
 			if (reader.has("bh-rank")) {
 				player.getAppearance().setBountyHunterSkull(reader.get("bh-rank").getAsInt());
 			}
-			if (reader.has("equipmentWings")) {
-				player.getEquipmentWings()
-						.setItems(builder.fromJson(reader.get("equipmentWings").getAsJsonArray(), Item[].class));
-			}
 
 			if (reader.has("gender")) {
 				player.getAppearance().setGender(Gender.valueOf(reader.get("gender").getAsString()));

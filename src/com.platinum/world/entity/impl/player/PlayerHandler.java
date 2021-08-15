@@ -131,7 +131,7 @@ public class PlayerHandler {
 		}
 		player.getInventory().refreshItems();
 		player.getEquipment().refreshItems();
-		player.getEquipmentWings().refreshItems();
+		//player.getEquipmentWings().refreshItems();
 
 		WeaponAnimations.assign(player, player.getEquipment().get(Equipment.WEAPON_SLOT));
 		WeaponInterfaces.assign(player, player.getEquipment().get(Equipment.WEAPON_SLOT));

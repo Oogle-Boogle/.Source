@@ -283,9 +283,9 @@ public class ItemDefinition {
 		BODY(Equipment.BODY_SLOT),
 		PLATEBODY(Equipment.BODY_SLOT),
 		LEGS(Equipment.LEG_SLOT),
-		WEAPON(Equipment.WEAPON_SLOT),
-		WING(Equipment.WINGS_SLOT),
-		AURA(Equipment.AURA_SLOT);
+		WEAPON(Equipment.WEAPON_SLOT);
+		//WING(Equipment.WINGS_SLOT),
+		//AURA(Equipment.AURA_SLOT);
 		
 		private EquipmentType(int slot) {
 			this.slot = slot;

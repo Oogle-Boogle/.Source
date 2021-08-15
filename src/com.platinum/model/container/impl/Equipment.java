@@ -103,12 +103,12 @@ public class Equipment extends ItemContainer {
 	 */
 	public static final int AMMUNITION_SLOT = 13;
 
-	public static final int WINGS_SLOT = 14;
+	//public static final int WINGS_SLOT = 14;
 
 	/**
 	 * The wings slot.
 	 */
-	public static final int AURA_SLOT = 15;
+	//public static final int AURA_SLOT = 15;
 
 
 	public boolean wearingNexAmours() {

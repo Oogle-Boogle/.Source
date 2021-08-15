@@ -192,7 +192,7 @@ public class PlayerSaving {
 			object.addProperty("veng-cast", new Boolean(player.hasVengeance()));
 			object.addProperty("last-veng", new Long(player.getLastVengeance().elapsed()));
 			object.addProperty("fight-type", player.getFightType().name());
-			object.add("equipmentWings", builder.toJsonTree(player.getEquipmentWings().getItems()));
+			//object.add("equipmentWings", builder.toJsonTree(player.getEquipmentWings().getItems()));
 			object.addProperty("sol-effect", new Integer(player.getStaffOfLightEffect()));
 			object.addProperty("skull-timer", new Integer(player.getSkullTimer()));
 			object.addProperty("fuse-combination-timer", new Long(player.getFuseCombinationTimer()));

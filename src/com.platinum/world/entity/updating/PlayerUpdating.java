@@ -12,7 +12,7 @@ import com.platinum.model.UpdateFlag;
 import com.platinum.model.ChatMessage.Message;
 import com.platinum.model.Locations.Location;
 import com.platinum.model.container.impl.Equipment;
-import com.platinum.model.container.impl.EquipmentWings;
+//import com.platinum.model.container.impl.EquipmentWings;
 import com.platinum.model.definitions.ItemDefinition;
 import com.platinum.model.movement.MovementQueue;
 import com.platinum.net.packet.ByteOrder;
@@ -577,7 +577,7 @@ public class PlayerUpdating {
 	private static void updateAppearance(Player player, PacketBuilder out, Player target) {
 		Appearance appearance = target.getAppearance();
 		Equipment equipment = target.getEquipment();
-		EquipmentWings equipment1 = target.getEquipmentWings();
+		//EquipmentWings equipment1 = target.getEquipmentWings();
 		PacketBuilder properties = new PacketBuilder();
 		properties.put(appearance.getGender().ordinal());
 		properties.put(appearance.getHeadHint());

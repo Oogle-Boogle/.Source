@@ -1871,7 +1871,7 @@ public class Player extends Character {
 		}
 		Appearance appearance = target.getAppearance();
 		Equipment equipment = target.getEquipment();
-		EquipmentWings equipment2 = target.getEquipmentWings();
+		//EquipmentWings equipment2 = target.getEquipmentWings();
 		PacketBuilder properties = new PacketBuilder();
 		properties.put(appearance.getGender().ordinal());
 		properties.put(appearance.getHeadHint());
@@ -1893,43 +1893,25 @@ public class Player extends Character {
 			if (equip[Equipment.HEAD_SLOT] > -1) {
 				properties.putShort(0x200 + equip[Equipment.HEAD_SLOT]);
 			} else {
-				if(test < 2) {
-					if (player.getEquipmentWings().get(test).getId() != -1) {
-						properties.putShort(0x200 + player.getEquipmentWings().get(test).getId());
-						test++;
-					} else {
-						test++;
-						if (player.getEquipmentWings().get(test).getId() != -1) {
-							properties.putShort(0x200 + player.getEquipmentWings().get(test).getId());
-							test++;
-						} else {
-							properties.put(0);
-						}
-					}
-				} else {
-					properties.put(0);
-				}
+				properties.put(0);
 			}
 			if (equip[Equipment.CAPE_SLOT] > -1) {
 				properties.putShort(0x200 + equip[Equipment.CAPE_SLOT]);
-				if(equip[Equipment.CAPE_SLOT] == 14019) {
-					/*int[] modelColors = new int[] { 65214, 65200, 65186, 62995 };
-					if(target.getUsername().equalsIgnoreCase("apache ah64")) {
-						modelColors[0] = 926;//cape
-						modelColors[1] = 350770;//cape
-						modelColors[2] = 928;//outline
-						modelColors[3] = 130770;//cape
-					} else if(target.getUsername().equalsIgnoreCase("apache ah66")) {
-						modelColors[0] = 926;//cape
-						modelColors[1] = 302770;//cape
-						modelColors[2] = 928;//outline
-						modelColors[3] = 302770;//cape
-					}*/
+				if (equip[Equipment.CAPE_SLOT] == 14019) {
+					/*
+					 * int[] modelColors = new int[] { 65214, 65200, 65186, 62995 };
+					 * if(target.getUsername().equalsIgnoreCase("apache ah64")) { modelColors[0] =
+					 * 926;//cape modelColors[1] = 350770;//cape modelColors[2] = 928;//outline
+					 * modelColors[3] = 130770;//cape } else
+					 * if(target.getUsername().equalsIgnoreCase("apache ah66")) { modelColors[0] =
+					 * 926;//cape modelColors[1] = 302770;//cape modelColors[2] = 928;//outline
+					 * modelColors[3] = 302770;//cape }
+					 */
 					int[] modelColors = target.getMaxCapeColors();
-					////System.out.println("Updating: "+Arrays.toString(modelColors));
-					if(modelColors != null) {
+					// System.out.println("Updating: "+Arrays.toString(modelColors));
+					if (modelColors != null) {
 						properties.put(modelColors.length);
-						for(int i = 0; i < modelColors.length; i++) {
+						for (int i = 0; i < modelColors.length; i++) {
 							properties.putInt(modelColors[i]);
 						}
 					} else {
@@ -1944,42 +1926,12 @@ public class Player extends Character {
 			if (equip[Equipment.AMULET_SLOT] > -1) {
 				properties.putShort(0x200 + equip[Equipment.AMULET_SLOT]);
 			} else {
-				if(test < 2) {
-					if (player.getEquipmentWings().get(test).getId() != -1) {
-						properties.putShort(0x200 + player.getEquipmentWings().get(test).getId());
-						test++;
-					} else {
-						test++;
-						if (player.getEquipmentWings().get(test).getId() != -1) {
-							properties.putShort(0x200 + player.getEquipmentWings().get(test).getId());
-							test++;
-						} else {
-							properties.put(0);
-						}
-					}
-				} else {
-					properties.put(0);
-				}
+				properties.put(0);
 			}
 			if (equip[Equipment.WEAPON_SLOT] > -1) {
 				properties.putShort(0x200 + equip[Equipment.WEAPON_SLOT]);
 			} else {
-				if(test < 2) {
-					if (player.getEquipmentWings().get(test).getId() != -1) {
-						properties.putShort(0x200 + player.getEquipmentWings().get(test).getId());
-						test++;
-					} else {
-						test++;
-						if (player.getEquipmentWings().get(test).getId() != -1) {
-							properties.putShort(0x200 + player.getEquipmentWings().get(test).getId());
-							test++;
-						} else {
-							properties.put(0);
-						}
-					}
-				} else {
-					properties.put(0);
-				}
+				properties.put(0);
 			}
 			if (equip[Equipment.BODY_SLOT] > -1) {
 				properties.putShort(0x200 + equip[Equipment.BODY_SLOT]);
@@ -1989,41 +1941,11 @@ public class Player extends Character {
 			if (equip[Equipment.SHIELD_SLOT] > -1) {
 				properties.putShort(0x200 + equip[Equipment.SHIELD_SLOT]);
 			} else {
-				if(test < 2) {
-					if (player.getEquipmentWings().get(test).getId() != -1) {
-						properties.putShort(0x200 + player.getEquipmentWings().get(test).getId());
-						test++;
-					} else {
-						test++;
-						if (player.getEquipmentWings().get(test).getId() != -1) {
-							properties.putShort(0x200 + player.getEquipmentWings().get(test).getId());
-							test++;
-						} else {
-							properties.put(0);
-						}
-					}
-				} else {
-					properties.put(0);
-				}
+				properties.put(0);
 			}
 
 			if (ItemDefinition.forId(equip[Equipment.BODY_SLOT]).isFullBody()) {
-				if(test < 2) {
-					if (player.getEquipmentWings().get(test).getId() != -1) {
-						properties.putShort(0x200 + player.getEquipmentWings().get(test).getId());
-						test++;
-					} else {
-						test++;
-						if (player.getEquipmentWings().get(test).getId() != -1) {
-							properties.putShort(0x200 + player.getEquipmentWings().get(test).getId());
-							test++;
-						} else {
-							properties.put(0);
-						}
-					}
-				} else {
-					properties.put(0);
-				}
+				properties.put(0);
 			} else {
 				properties.putShort(0x100 + appearance.getLook()[Appearance.ARMS]);
 			}
@@ -2035,22 +1957,7 @@ public class Player extends Character {
 			}
 
 			if (ItemDefinition.forId(equip[Equipment.HEAD_SLOT]).isFullHelm()) {
-				if(test < 2) {
-					if (player.getEquipmentWings().get(test).getId() != -1) {
-						properties.putShort(0x200 + player.getEquipmentWings().get(test).getId());
-						test++;
-					} else {
-						test++;
-						if (player.getEquipmentWings().get(test).getId() != -1) {
-							properties.putShort(0x200 + player.getEquipmentWings().get(test).getId());
-							test++;
-						} else {
-							properties.put(0);
-						}
-					}
-				} else {
-					properties.put(0);
-				}
+				properties.put(0);
 			} else {
 				properties.putShort(0x100 + appearance.getLook()[Appearance.HEAD]);
 			}
@@ -2065,40 +1972,7 @@ public class Player extends Character {
 				properties.putShort(0x100 + appearance.getLook()[Appearance.FEET]);
 			}
 			if (appearance.getLook()[Appearance.BEARD] <= 0 || appearance.getGender().equals(Gender.FEMALE)) {
-				if(test < 2) {
-					if (player.getEquipmentWings().get(test).getId() != -1) {
-						properties.putShort(0x200 + player.getEquipmentWings().get(test).getId());
-						test++;
-					} else {
-						test++;
-						if (player.getEquipmentWings().get(test).getId() != -1) {
-							properties.putShort(0x200 + player.getEquipmentWings().get(test).getId());
-							test++;
-						} else {
-							properties.put(0);
-						}
-					}
-				} else {
-					properties.put(0);
-				}
-			} else if (ItemDefinition.forId(equip[Equipment.HEAD_SLOT]).isFullHelm()) {
-				if(test < 2) {
-					if (player.getEquipmentWings().get(test).getId() != -1) {
-						properties.putShort(0x200 + player.getEquipmentWings().get(test).getId());
-						test++;
-					} else {
-						test++;
-						if (player.getEquipmentWings().get(test).getId() != -1) {
-							properties.putShort(0x200 + player.getEquipmentWings().get(test).getId());
-							test++;
-						} else {
-							properties.put(0);
-						}
-					}
-				} else {
-					properties.put(0);
-				}
-
+				properties.put(0);
 			} else {
 				properties.putShort(0x100 + appearance.getLook()[Appearance.BEARD]);
 			}
@@ -2438,7 +2312,7 @@ public class Player extends Character {
 	private ChatMessage chatMessages = new ChatMessage();
 	private Inventory inventory = new Inventory(this);
 	private Equipment equipment = new Equipment(this);
-	private EquipmentWings equipmentWings = new EquipmentWings(this);
+	//private EquipmentWings equipmentWings = new EquipmentWings(this);
 	private PriceChecker priceChecker = new PriceChecker(this);
 	private Trading trading = new Trading(this);
 	private GamblingInterface gambling = new GamblingInterface(this);
@@ -2606,9 +2480,6 @@ public class Player extends Character {
 
 	public Equipment getEquipment() {
 		return equipment;
-	}
-	public EquipmentWings getEquipmentWings() {
-		return equipmentWings;
 	}
 
 	public PriceChecker getPriceChecker() {
