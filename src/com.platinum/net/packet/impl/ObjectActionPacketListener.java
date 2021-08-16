@@ -50,15 +50,7 @@ import com.platinum.world.content.combat.weapon.CombatSpecial;
 import com.platinum.world.content.dialogue.DialogueManager;
 import com.platinum.world.content.grandexchange.GrandExchange;
 import com.platinum.world.content.mapteleportinterface.MapTeleportInterface;
-import com.platinum.world.content.minigames.impl.Barrows;
-import com.platinum.world.content.minigames.impl.Dueling;
-import com.platinum.world.content.minigames.impl.FightCave;
-import com.platinum.world.content.minigames.impl.FightPit;
-import com.platinum.world.content.minigames.impl.FreeForAll;
-import com.platinum.world.content.minigames.impl.LastManStanding;
-import com.platinum.world.content.minigames.impl.Nomad;
-import com.platinum.world.content.minigames.impl.RecipeForDisaster;
-import com.platinum.world.content.minigames.impl.WarriorsGuild;
+import com.platinum.world.content.minigames.impl.*;
 import com.platinum.world.content.minigames.impl.Dueling.DuelRule;
 import com.platinum.world.content.minigames.impl.gungame.GunGame;
 import com.platinum.world.content.raids.Raid3;
@@ -1136,7 +1128,8 @@ public class ObjectActionPacketListener implements PacketListener {
 					}
 					break;
 				case 14315:
-					player.sendMessage("Currently Pest Control is Disabled, we're fixing some stuff");
+					PestControl.boardBoat(player);
+					//player.sendMessage("Currently Pest Control is Disabled, we're fixing some stuff");
 					break;
 					//PestControl.boardBoat(player);
 				case 14314:

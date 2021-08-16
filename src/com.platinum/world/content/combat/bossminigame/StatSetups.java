@@ -2,9 +2,7 @@ package com.platinum.world.content.combat.bossminigame;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-/**
- /@Author Flub
- */
+
 @Getter
 @RequiredArgsConstructor
 public enum StatSetups {
@@ -15,7 +13,7 @@ public enum StatSetups {
         //First
         FROST_DRAGON(80, 80, 80, 1, 15, 990, 700),
         BLACK_DRAGON(90, 80,    80, 50, 99, 990, 700),
-        KBD_WAVE_ONE(80, 80, 80, 1, 1, 990, 990),
+        KBD_WAVE_ONE(80, 80, 80, 1, 1, 990, 770),
         //Second Wave
         TORMENTED_DEMON(80, 80, 80, 80, 80, 880, 700),
         CHAOS_ELEMENTAL(80, 80, 80, 80, 99, 990, 700),
