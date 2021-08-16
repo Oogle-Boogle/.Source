@@ -37,6 +37,7 @@ import com.platinum.world.content.combat.weapon.CombatSpecial;
 import com.platinum.world.content.discord.DiscordMessenger;
 import com.platinum.world.content.dropchecker.NPCDropTableChecker;
 import com.platinum.world.content.droppreview.SLASHBASH;
+import com.platinum.world.content.event.SpecialEvents;
 import com.platinum.world.content.fuser.CombineEnum;
 import com.platinum.world.content.fuser.CombineHandler;
 import com.platinum.world.content.grandexchange.GrandExchange;
@@ -808,8 +809,10 @@ public class CommandPacketListener implements PacketListener {
 							player.getPacketSender()
 							  .sendMessage("@red@ you get double vote because of your x2 vote pet!!!!"
 							  );
-								  
-								  } 
+							}
+							int votePts = SpecialEvents.getDay() == SpecialEvents.MONDAY ? 2 : 1;
+							player.getPointsHandler().setVotingPoints(player.getPointsHandler().getVotingPoints() + (votePts * reward[0].give_amount));
+
 						player.getInventory().add(reward[0].reward_id, reward[0].give_amount);
 						player.getPacketSender().sendMessage(
 								"Thank you for voting! You now have " + reward[0].vote_points + " vote points.");

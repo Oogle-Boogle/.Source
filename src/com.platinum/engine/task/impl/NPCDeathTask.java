@@ -51,6 +51,12 @@ public class NPCDeathTask extends Task {
 
 	int[] justiciarIds = new int[] { 9903, 8133 };
 
+
+	// Add Boss NPC's here!
+	private Set<Integer> BOSSES = new HashSet<>(Arrays.asList(
+			1999, 2882, 2881, 2883, 7134, 6766, 5666, 7286, 4540, 6222, 6260, 6247, 6203, 8349, 50, 2001, 11558, 1158, 8133, 3200, 13447, 8549, 3851, 1382, 8133, 13447, 2000, 2009, 2006, 499, 2042, 3
+	));
+
 	/**
 	 * The NPCDeathTask constructor.
 	 * 
@@ -171,11 +177,13 @@ public class NPCDeathTask extends Task {
 						} else if (killer.getOldRaidParty() != null && npc instanceof RaidNpc) {
 							NpcGain.RaidNPCBossXP(killer, npc);
 						}
-						if (GlobalPerks.getInstance().getActivePerk() == GlobalPerks.Perk.x2_BOSS_POINTS) {
-							killer.setBossPoints(killer.getBossPoints() + 2);
+
+						if (BOSSES.contains(npc.getId())) {
+							int points = GlobalPerks.getInstance().getActivePerk() == GlobalPerks.Perk.x2_BOSS_POINTS ? 2 : 1;
+							killer.setBossPoints(killer.getBossPoints() + points);
+							killer.sendMessage("<img=0>You now have @red@" + killer.getBossPoints() + " Boss Points!");
 						}
-						
-						killer.sendMessage("<img=11>You now have @red@" + killer.getBossPoints() + " Boss Points!");
+
 						killer.incrementTotalBossKills(1);
 					}
 
