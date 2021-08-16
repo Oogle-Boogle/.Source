@@ -496,6 +496,15 @@ public class PlayerLoading {
 			if (reader.has("fuse-combination-timer")) {
 				player.setFuseCombinationTimer(reader.get("fuse-combination-timer").getAsLong());
 			}
+			if (reader.has("fuse-item-selected")) {
+				player.setFuseItemSelected(reader.get("fuse-item-selected").getAsInt());
+			}
+			if (reader.has("claimed-fuse-item")) {
+				player.setClaimedFuseItem(reader.get("claimed-fuse-item").getAsBoolean());
+			}
+			if (reader.has("fuse-in-progress")) {
+				player.setFuseInProgress(reader.get("fuse-in-progress").getAsBoolean());
+			}
 			if (reader.has("accept-aid")) {
 				player.setAcceptAid(reader.get("accept-aid").getAsBoolean());
 			}

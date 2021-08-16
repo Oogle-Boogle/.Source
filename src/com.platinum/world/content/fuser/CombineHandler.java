@@ -14,12 +14,15 @@ public class CombineHandler {
         long minute = (durationInMillis / (1000 * 60)) % 60;
         long hour = (durationInMillis / (1000 * 60 * 60)) % 24;
 
-        if (durationInMillis <= 0) {
+        if (durationInMillis <= 0 && player.isClaimedFuseItem() && !player.isFuseInProgress()) {
+            return "@gre@Start!";
+        } else if (durationInMillis <= 0 && !player.isClaimedFuseItem()) {
             return "@gre@Claim!";
         } else {
             return String.format("@red@%02d:%02d", hour, minute);
         }
     }
+
 
     public static void openInterface(CombineEnum combine, Player player){
         player.combineIndex = combine.ordinal();
