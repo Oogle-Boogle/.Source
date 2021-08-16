@@ -3134,6 +3134,18 @@ public class Player extends Character {
 
 	@Setter
 	@Getter
+	public int fuseItemSelected = 0;
+
+	@Setter
+	@Getter
+	public boolean claimedFuseItem = true;
+
+	@Setter
+	@Getter
+	public boolean fuseInProgress = false;
+
+	@Setter
+	@Getter
 	private Stopwatch instanceTimer = new Stopwatch();
 
 	public int getWalkableInterfaceId() {

@@ -692,14 +692,28 @@ public class ButtonClickPacketListener implements PacketListener {
                     CombineHandler.openInterface((CombineEnum.values()[player.combineIndex]), player);
         			break;
         		case -12832:
-        			 if (!CombineEnum.checkRequirements(CombineEnum.values()[player.combineIndex], player)) {
-                         player.getPacketSender().sendMessage("You don't meet the requirements!");
-                         return;
-                     }
-                     CombineEnum.removeRequirements(CombineEnum.values()[player.combineIndex], player);
-                     player.getInventory().add(new Item(CombineEnum.values()[player.combineIndex].getEndItem(), 1));
-                     World.sendMessageNonDiscord("<shad=0>@red@ [News] " + player.getUsername() + "@cya@ has Fused together a " + ItemDefinition.forId(CombineEnum.values()[player.combineIndex].getEndItem()).getName() + "!");
-                     player.setFuseCombinationTimer(System.currentTimeMillis() + (CombineEnum.values()[player.combineIndex].getTimer()));
+                    if (!player.isClaimedFuseItem() && (CombineEnum.values()[player.combineIndex].getEndItem() != player.getFuseItemSelected())) { // If player has not claimed their outstanding fuse
+                        player.getPacketSender().sendMessage("@red@You haven't claimed your @blu@" + ItemDefinition.forId(player.getFuseItemSelected()).getName() + "@red@ yet!");
+                        return;
+                    }
+                    if (!CombineEnum.checkRequirements(CombineEnum.values()[player.combineIndex], player)
+                            && !player.isFuseInProgress()
+                            && player.isClaimedFuseItem()) { // If player doesn't have the required items & doens't have a fuse in progress.
+                        player.getPacketSender().sendMessage("@red@You don't meet the requirements to fuse this item!");
+                        return;
+                    }
+                    if (player.isFuseInProgress() || !player.isClaimedFuseItem() && player.getFuseItemSelected() > 0) {
+                        if (player.getFuseItemSelected() == CombineEnum.values()[player.combineIndex].getEndItem()) {
+                            CombineEnum.claimItem(player);
+                        } else {
+                            player.getPacketSender().sendMessage("@red@You have not finished fusing your @blu@" + ItemDefinition.forId(player.getFuseItemSelected()).getName() + "@red@ yet!");
+                            return;
+                        }
+                        return;
+                    }
+
+        			 CombineEnum.removeRequirements(CombineEnum.values()[player.combineIndex], player); //Taking the required items from the player
+        			 CombineEnum.startFuser(player, CombineEnum.values()[player.combineIndex]); //Setting the selected item
         		break;
 
             case -15333:

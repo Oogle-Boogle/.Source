@@ -2,6 +2,7 @@ package com.platinum.world.content.fuser;
 
 import com.platinum.model.Item;
 import com.platinum.model.definitions.ItemDefinition;
+import com.platinum.world.World;
 import com.platinum.world.entity.impl.player.Player;
 import lombok.Data;
 import lombok.Getter;
@@ -66,7 +67,7 @@ public enum CombineEnum {
 
     public static boolean checkRequirements(CombineEnum combine, Player player) {
         if (!(System.currentTimeMillis() >= player.getFuseCombinationTimer())) {
-            player.sendMessage("Please wait @red@" + CombineHandler.timeLeft(player) + "@bla@ before your next fusion.");
+            player.sendMessage("You have @red@" + CombineHandler.timeLeft(player) + "@bla@ until you can claim this item.");
             player.getPA().closeAllWindows();
             return false;
         }
@@ -79,6 +80,16 @@ public enum CombineEnum {
 
         return false; //TODO Check this because it can let things slip through.. prob set to false by default
     }
+
+    public static void startFuser(Player player, CombineEnum chosenItem) {
+        player.setFuseCombinationTimer(System.currentTimeMillis() + (chosenItem.getTimer()));
+        player.setClaimedFuseItem(false);
+        player.setFuseInProgress(true);
+        player.setFuseItemSelected(chosenItem.getEndItem());
+        player.getPacketSender().sendString(43541, CombineHandler.timeLeft(player));
+    }
+
+
     public static void removeRequirements(CombineEnum combine, Player player){
       Item[] reqs = combine.getRequirements();
       for(Item req : reqs) {
@@ -87,5 +98,22 @@ public enum CombineEnum {
               player.sendMessage("@bla@ Removed "+req.getAmount()+"x "+ ItemDefinition.forId(req.getId()).getName() + " From your inventory!");
           }
       }
+    }
+
+    public static void claimItem(Player player) {
+        if (System.currentTimeMillis() >= player.getFuseCombinationTimer()){
+            player.setFuseInProgress(false);
+        }
+        if (!player.isClaimedFuseItem() && !player.isFuseInProgress() && player.getFuseItemSelected() > 0){ //If the player has an unclaimed item, and a fuse is not in progress
+            if (player.getInventory().getFreeSlots() <= 1){
+                player.getPacketSender().sendMessage("You need 1 free slot to claim your fused item!");
+                return;
+            }
+            player.getInventory().addItem(player.getFuseItemSelected(), 1);
+            World.sendMessageDiscord("<shad=0>@red@ [News] " + player.getUsername() + "@cya@ has Fused a " + ItemDefinition.forId(player.getFuseItemSelected()).getName() + "!");
+            player.setClaimedFuseItem(true);
+            player.setFuseInProgress(false);
+            player.setFuseItemSelected(0);
+        }
     }
 }

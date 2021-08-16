@@ -196,6 +196,9 @@ public class PlayerSaving {
 			object.addProperty("sol-effect", new Integer(player.getStaffOfLightEffect()));
 			object.addProperty("skull-timer", new Integer(player.getSkullTimer()));
 			object.addProperty("fuse-combination-timer", new Long(player.getFuseCombinationTimer()));
+			object.addProperty("fuse-item-selected", new Integer(player.getFuseItemSelected()));
+			object.addProperty("claimed-fuse-item", new Boolean(player.isClaimedFuseItem()));
+			object.addProperty("fuse-in-progress", new Boolean(player.isFuseInProgress()));
 			object.addProperty("accept-aid", new Boolean(player.isAcceptAid()));
 			object.addProperty("poison-damage", new Integer(player.getPoisonDamage()));
 			object.addProperty("poison-immunity", new Integer(player.getPoisonImmunity()));

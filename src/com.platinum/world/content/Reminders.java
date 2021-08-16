@@ -3,6 +3,7 @@ package com.platinum.world.content;
 import com.platinum.util.Misc;
 import com.platinum.util.Stopwatch;
 import com.platinum.world.World;
+import com.platinum.world.content.fuser.CombineEnum;
 
 /*
  * @author Bas
@@ -47,7 +48,6 @@ public class Reminders {
 				
 			currentMessage = MESSAGE_DATA[Misc.getRandom(MESSAGE_DATA.length - 1)][0];
 			World.sendMessageNonDiscord(currentMessage);
-			World.savePlayers();
 					
 				}
 				
