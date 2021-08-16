@@ -157,6 +157,8 @@ public class PlayerSaving {
 			object.addProperty("preset4", new Boolean(Player.preset4));
 			object.addProperty("preset5", new Boolean(Player.preset5));
 
+			object.addProperty("dungeon-points", new Integer(player.getDungeonPoints()));
+
 			object.addProperty("pk-points", new Integer(player.getPointsHandler().getPkPoints()));
 			object.addProperty("donation-points", new Integer(player.getPointsHandler().getDonationPoints()));
 			object.addProperty("bravek-tasks-completed", player.getBravekTasksCompleted());

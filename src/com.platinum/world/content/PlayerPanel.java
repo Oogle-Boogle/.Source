@@ -183,6 +183,9 @@ public class PlayerPanel {
  "@whi@-@gre@Donation Points: ",
  "@bla@*@whi@"	+player.getPointsHandler().getDonationPoints(),
 
+ "@whi@-@gre@Dungeon Points: ",
+ "@bla@*@whi@"	+player.getDungeonPoints(),
+
  "@whi@-@gre@Raid Points: ",
  "@bla@*@whi@"	+player.getPointsHandler().getRaidPoints(),
 

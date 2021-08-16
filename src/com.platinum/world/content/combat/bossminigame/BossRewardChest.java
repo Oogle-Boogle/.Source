@@ -111,6 +111,13 @@ public class BossRewardChest {
         }
     }
 
+    /** Awards between 0 - 10 dungeon points. **/
+    private static void awardDungeonPoints(Player player) {
+        int dungeonPoints = Misc.random(0, 10);
+        player.setDungeonPoints(player.getDungeonPoints() + dungeonPoints);
+        player.getPacketSender().sendMessage("You were awarded " + dungeonPoints + " dungeon points. You now have: " + player.getDungeonPoints());
+    }
+
     /** This code runs if the player decides to open the chest.
      * It will decide what reward to give the player,
      * and also add it to their inventory.
@@ -119,7 +126,7 @@ public class BossRewardChest {
      */
     public static void pickReward(Player player) {
 
-
+        awardDungeonPoints(player);
 
         //System.out.println("Getting Chance modifiers from getChances");
 

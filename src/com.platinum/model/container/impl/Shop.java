@@ -442,7 +442,8 @@ public class Shop extends ItemContainer {
 				return this;
 			value = (int) obj[0];
 			currencyName = (String) obj[1];
-			if (id == PKING_REWARDS_STORE) {
+			if (id == DUNGEON_POINTS_STORE) {
+				playerCurrencyAmount = player.getDungeonPoints();
 			} else if (id == LOYALTYPOINT_STORE) {
 				playerCurrencyAmount = player.getPointsHandler().getLoyaltyPoints();
 			} else if (id == VOTING_REWARDS_STORE) {
@@ -461,7 +462,6 @@ public class Shop extends ItemContainer {
 				playerCurrencyAmount = player.getPointsHandler().getTriviaPoints();
 			} else if (id == BOSS_POINT_STORE) {
 				playerCurrencyAmount = player.getBossPoints();
-
 			} else if (id == DONATOR_STORE_2) {
 				playerCurrencyAmount = player.getPointsHandler().getDonationPoints();
 			} else if (id == DONATOR_STORE_3) {
@@ -537,7 +537,9 @@ public class Shop extends ItemContainer {
 							player.getInventory().delete(currency.getId(), value, false);
 						}
 					} else {
-						if (id == PKING_REWARDS_STORE) {
+						if (id == DUNGEON_POINTS_STORE) {
+							player.setDungeonPoints(player.getDungeonPoints() - value);
+						} else if (id == PKING_REWARDS_STORE) {
 							player.getPointsHandler().setPkPoints(-value, true);
 						} else if (id == LOYALTYPOINT_STORE) {
 							player.getPointsHandler().setLoyaltyPoints(-value, true);
@@ -596,7 +598,9 @@ public class Shop extends ItemContainer {
 							player.getInventory().delete(currency.getId(), value * canBeBought, false);
 						}
 					} else {
-						if (id == PKING_REWARDS_STORE) {
+						if (id == DUNGEON_POINTS_STORE) {
+							player.setDungeonPoints(player.getDungeonPoints() -value * canBeBought);
+						} else if (id == PKING_REWARDS_STORE) {
 							player.getPointsHandler().setPkPoints(-value * canBeBought, true);
 						} else if (id == LOYALTYPOINT_STORE) {
 							player.getPointsHandler().setLoyaltyPoints(-value * canBeBought, true);
@@ -761,13 +765,13 @@ public class Shop extends ItemContainer {
 	}
 
 	public static boolean shopBuysItem(int shopId, Item item) {
-		if (shopId == GENERAL_STORE || shopId ==SELL_FOR_TAXBAGS_SHOP)
+		if (shopId == GENERAL_STORE || shopId == SELL_FOR_TAXBAGS_SHOP)
 			return true;
 		if (shopId == DUNGEONEERING_STORE || shopId == BOSS_POINT_STORE || shopId == SANTAS_STORE || shopId == RAIDSTORE
 				|| shopId == SKILLING_STORE || shopId == STARTER_STORE || shopId == TRIVIA_STORE
 				|| shopId == DONATOR_STORE_1 || shopId == DONATOR_STORE_2 || shopId == VOID_STORE
 				|| shopId == DONATOR_STORE_3 || shopId == PKING_REWARDS_STORE || shopId == VOTING_REWARDS_STORE
-				|| shopId == RECIPE_FOR_DISASTER_STORE || shopId == DBZ_TOKEN_SHOP
+				|| shopId == DUNGEON_POINTS_STORE || shopId == RECIPE_FOR_DISASTER_STORE || shopId == DBZ_TOKEN_SHOP
 				|| shopId == AGILITY_TICKET_STORE || shopId == TOKEN_STORE || shopId == SUIC_NUMBER_ONE_TOKEN_STORE
 				|| shopId == GRAVEYARD_STORE || shopId == TOKKUL_EXCHANGE_STORE || shopId == PRESTIGE_STORE
 				|| shopId == STARDUST_STORE || shopId == AMONG_REWARDS_STORE ||  shopId == BLOOD_MONEY_STORE || shopId == SLAYER_STORE || shopId == GAMBLING_STORE
@@ -824,7 +828,16 @@ public class Shop extends ItemContainer {
 		}
 
 		public static Object[] getCustomShopData(int shop, int item) {
-			if (shop == VOTING_REWARDS_STORE) {
+
+			if (shop == DUNGEON_POINTS_STORE) {
+				switch (item) {
+					case 9999: //ITEM BS
+						return new Object[] { 5, "Dungeon Points" };
+					case 14808: //scroll of praise
+						return new Object[] { 50, "Dungeon Points" };
+				}
+				return new Object[] { 100, "Dungeon Points" }; //Default if you forget to set a value
+			} else if (shop == VOTING_REWARDS_STORE) {
 				switch (item) {
 				
                 case 3092: //Custom infernal Cape
@@ -2161,6 +2174,8 @@ public class Shop extends ItemContainer {
 	/*
 	 * Declared shops
 	 */
+	private static final int DUNGEON_POINTS_STORE = 999; //TODO CHANGE ME TO NEW ID
+
 
 	public static final int DONATOR_STORE_1 = 48;
 	public static final int DONATOR_STORE_2 = 49;

@@ -1715,6 +1715,11 @@ public class Player extends Character {
 	private int bossPoints;
 	private int customPoints;
 
+
+	@Getter
+	@Setter
+	private int dungeonPoints;
+
 	public int getBossPoints() {
 		return bossPoints;
 	}

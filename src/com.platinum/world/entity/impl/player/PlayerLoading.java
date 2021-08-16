@@ -277,7 +277,9 @@ public class PlayerLoading {
 			if (reader.has("slayer-points")) {
 				player.getPointsHandler().setSlayerPoints(reader.get("slayer-points").getAsInt(), false);
 			}
-
+			if (reader.has("dungeon-points")) {
+				player.setDungeonPoints((reader.get("dungeon-points").getAsInt()));
+			}
 			if (reader.has("pk-points")) {
 				player.getPointsHandler().setPkPoints(reader.get("pk-points").getAsInt(), false);
 			}
