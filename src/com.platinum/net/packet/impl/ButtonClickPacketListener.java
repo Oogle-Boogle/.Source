@@ -1497,6 +1497,10 @@ public class ButtonClickPacketListener implements PacketListener {
                 KillsTracker.open(player);
                 break;
 
+            case 10004:
+                player.getPacketSender().sendInterface(23500);
+                break;
+
             case 11014:
                 player.getPacketSender().sendInterface(64530);
                 break;
