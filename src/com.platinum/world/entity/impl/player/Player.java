@@ -2023,7 +2023,7 @@ public class Player extends Character {
 				|| weaponId == 14006 || weaponId == 19468 || weaponId == 16137 || weaponId == 6483) {
 			return 1;
 		}
-		if (weaponId == 3951 || weaponId == 14559 || weaponId == 5131 || weaponId == 6197 || weaponId == 5132
+		if (weaponId == 3951 || weaponId == 14559 || weaponId == 5131 || weaponId == 3651 || weaponId == 6197 || weaponId == 5132
 				|| weaponId == 923 || weaponId == 3063 || weaponId == 19720 || weaponId == 18957 || weaponId == 15653
 				|| weaponId == 5089 || weaponId == 5173 || weaponId == 5195 || weaponId == 15656 || weaponId == 5129) {
 			return 2;
