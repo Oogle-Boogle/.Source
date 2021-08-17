@@ -177,14 +177,16 @@ public class NPCDeathTask extends Task {
 							NpcGain.RaidNPCBossXP(killer, npc);
 						}
 
-						if (BOSSES.contains(npc.getId())) {
-							int points = GlobalPerks.getInstance().getActivePerk() == GlobalPerks.Perk.x2_BOSS_POINTS ? 2 : 1;
-							killer.setBossPoints(killer.getBossPoints() + points);
-							killer.sendMessage("<img=0>You now have @red@" + killer.getBossPoints() + " Boss Points!");
-						}
-
 						killer.incrementTotalBossKills(1);
 					}
+
+					if (BOSSES.contains(npc.getId())) {
+						int points = GlobalPerks.getInstance().getActivePerk() == GlobalPerks.Perk.x2_BOSS_POINTS ? 2 : 1;
+						killer.setBossPoints(killer.getBossPoints() + points);
+						String pnts = killer.getBossPoints() == 1 ? "Point" : "Points"; //Proper grammar lol xD
+						killer.sendMessage("<img=0>You now have @red@" + killer.getBossPoints() + " Boss " + pnts + "!");
+					}
+
 
 					if (npc.getId() == 9280) {
 						if (killer.getSummoning().getFamiliar().getSummonNpc().getId() == 3032) {
