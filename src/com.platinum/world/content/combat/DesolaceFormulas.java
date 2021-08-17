@@ -112,11 +112,9 @@ public class DesolaceFormulas {
                      * case 6604: base *= 1.05; break; }
                      */
                 }
-                if (GlobalPerks.getInstance().getActivePerk() == GlobalPerks.Perk.x2_DAMAGE) {
-                    base *= 2;
-                }
+
             }
-            maxHit = (base *= 10);
+            maxHit = (GlobalPerks.getInstance().getActivePerk() == GlobalPerks.Perk.x2_DAMAGE) ? (base *= 10)*2 : (base *= 10);
         }
         if (victim.isPlayer()) {
             Player p = (Player) victim;
@@ -388,7 +386,9 @@ public class DesolaceFormulas {
 
         attackLevel *= plr.isSpecialActivated() ? plr.getCombatSpecial().getAccuracyBonus() : 1;
 
-        return (int) (attackLevel + (plr.getBonusManager().getAttackBonus()[3] * 2));
+
+
+            return (int) (attackLevel + (plr.getBonusManager().getAttackBonus()[3] * 2));
     }
 
     /**
@@ -488,7 +488,7 @@ public class DesolaceFormulas {
         }
 
         if (maxHit > 0) {
-            if (damage > maxHit) {
+            if (damage > maxHit && GlobalPerks.getInstance().getActivePerk() !=GlobalPerks.Perk.x2_DAMAGE) {
                 damage = maxHit;
             }
         }

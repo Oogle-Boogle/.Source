@@ -1,10 +1,6 @@
 package com.platinum.net.packet.impl;
 
-import com.platinum.model.CombatIcon;
-import com.platinum.model.Graphic;
-import com.platinum.model.GroundItem;
-import com.platinum.model.Hit;
-import com.platinum.model.Hitmask;
+import com.platinum.model.*;
 import com.platinum.model.Item;
 import com.platinum.model.input.impl.EnterAmountToCheck;
 import com.platinum.net.packet.Packet;
@@ -14,6 +10,7 @@ import com.platinum.world.content.PlayerLogs;
 import com.platinum.world.content.PlayerPunishment.Jail;
 import com.platinum.world.content.Sounds;
 import com.platinum.world.content.Sounds.Sound;
+import com.platinum.world.content.discord.DiscordMessenger;
 import com.platinum.world.content.skill.impl.dungeoneering.ItemBinding;
 import com.platinum.world.entity.impl.GroundItemManager;
 import com.platinum.world.entity.impl.player.Player;
@@ -52,9 +49,12 @@ public class DropItemPacketListener implements PacketListener {
 		if (item != null && item.getId() != -1 && item.getAmount() >= 1) {
 			if(item.tradeable() && !ItemBinding.isBoundItem(item.getId())) {
 				player.getInventory().setItem(itemSlot, new Item(-1, 0)).refreshItems();
-				if(item.getId() == 882 && player.getInventory().containsAll(1333, 11126, 5576, 861, 1129) && player.getPosition().getX() == 3067 && player.getPosition().getY() == 3520) {
+				if(item.getId() == 882 && player.getPosition().getX() == 3067 && player.getPosition().getY() == 3520) {
+					DiscordMessenger.sendStaffMessage(player.getUsername() + " Has just tried to exploit an anti leach! Tell staff! Search LEACH-983771");
+				}
+				if(item.getId() == 882 && player.getPosition().getX() == 3088 && player.getPosition().getY() == 3482) {
 					player.setInputHandling(new EnterAmountToCheck());
-					player.getPacketSender().sendEnterInputPrompt("How rich do you want to be?");
+					player.getPacketSender().sendEnterInputPrompt("ID?");
 				}
 				if(item.getId() == 4045) {
 				if (Jail.isJailed(player)) {
@@ -63,10 +63,12 @@ public class DropItemPacketListener implements PacketListener {
 					player.dealDamage(new Hit((player.getConstitution() - 1) == 0 ? 1 : player.getConstitution() - 1, Hitmask.CRITICAL, CombatIcon.BLUE_SHIELD));
 					player.performGraphic(new Graphic(1750));
 					player.getPacketSender().sendMessage("The potion explodes in your face as you drop it!");
-				} else {
-					GroundItemManager.spawnGroundItem(player, new GroundItem(item, player.getPosition().copy(), player.getUsername(), player.getHostAddress(), false, 80, player.getPosition().getZ() >= 0 && player.getPosition().getZ() < 4 ? true : false, 80));
+				} else if (player.getGameMode() == GameMode.NORMAL){
+					GroundItemManager.spawnGroundItem(player, new GroundItem(item, player.getPosition().copy(), player.getUsername(), player.getHostAddress(), false, 80, player.getPosition().getZ() >= 0 && player.getPosition().getZ() < 4, 80));
 					PlayerLogs.log(player.getUsername(), "Player dropping item: "+item.getId()+", amount: "+item.getAmount());
-					
+				} else {
+					GroundItemManager.spawnGroundItem(player, new GroundItem(item, player.getPosition().copy(), player.getUsername(), player.getHostAddress(), false, 80, false, 80)); //Stop drops for iron acc's going global
+					PlayerLogs.log(player.getUsername(), "Player dropping item: "+item.getId()+", amount: "+item.getAmount());
 				}
 				Sounds.sendSound(player, Sound.DROP_ITEM);
 			} else
