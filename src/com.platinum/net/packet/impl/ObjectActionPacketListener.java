@@ -1333,6 +1333,7 @@ public class ObjectActionPacketListener implements PacketListener {
 				case 4483:
 				case 3193:
 				case 2213:
+				case 11402:
 				case 11758:
 				case 14367:
 				case 42192:
