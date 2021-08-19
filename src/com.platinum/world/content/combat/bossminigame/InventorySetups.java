@@ -15,7 +15,7 @@ public class InventorySetups {
     public static final Item[] KBD_WAVE_ONE = new Item[]{new Item(2434, 3), new Item(2452, 1), new Item(7946, 2)};
     public static final Item[] TORMENTED_DEMON = new Item[]{new Item(2434, 3), new Item(562, 80), new Item(560, 100), new Item(555, 100)};
     public static final Item[] CHAOS_ELEMENTAL = new Item[]{new Item(2434, 3), new Item(7946, 6)};
-    public static final Item[] DAGANNOTH_PRIME = new Item[]{new Item(890,100), new Item(2434,3), new Item(379, 10)};
+    public static final Item[] DAGANNOTH_PRIME = new Item[]{new Item(11212,100), new Item(2434,3), new Item(379, 10)};
     public static final Item[] DAGANNOTH_SUPREME = new Item[]{new Item(2434, 3), new Item(385, 7)};
     public static final Item[] BARREL_CHEST = new Item[]{new Item(557, 120), new Item(556,100), new Item(560, 80), new Item(2434, 3)};
     public static final Item[] CERBERUS = new Item[]{new Item(2434, 3), new Item(7946, 7)};

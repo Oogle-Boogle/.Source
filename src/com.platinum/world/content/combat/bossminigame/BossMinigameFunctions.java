@@ -224,7 +224,7 @@ public class BossMinigameFunctions {
     }
 
     public static void restoreOldStats(Player player) {
-        if (player.bossGameLevels != null) {
+        if (player.bossGameLevels != null && player.bossGameSkillXP != null && player.bossGameMaxLevels != null) {
             player.getSkillManager().getSkills().level = player.bossGameLevels;
             player.getSkillManager().getSkills().experience = player.bossGameSkillXP;
             player.getSkillManager().getSkills().maxLevel = player.bossGameMaxLevels;

@@ -684,7 +684,7 @@ public class SkillManager {
 	/**
 	 * The maximum amount of skills in the game.
 	 */
-	public static final int MAX_SKILLS = 27;
+	public static final int MAX_SKILLS = Skill.values().length; // Think this should be 26
 
 	/**
 	 * The maximum amount of experience you can achieve in a skill.
