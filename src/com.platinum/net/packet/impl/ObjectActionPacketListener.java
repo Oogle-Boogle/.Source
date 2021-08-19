@@ -201,6 +201,9 @@ public class ObjectActionPacketListener implements PacketListener {
 				case 12120:
 					KeyRoom.handleObjectClick(player, gameObject, 1);
 					return;
+					case 9391:
+						player.getPacketSender().sendInterface(23500);
+						break;
 
 
 
@@ -1336,6 +1339,7 @@ public class ObjectActionPacketListener implements PacketListener {
 				case 75:
 				case 9075:
 					case 3045:
+					case 49018:
 					player.getBank(player.getCurrentBankTab()).open();
 					break;
 				}

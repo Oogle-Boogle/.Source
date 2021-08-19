@@ -59,9 +59,9 @@ public enum SlayerTasks {
 	 */
 
 	LUKE_SKYWALKER(SlayerMaster.BRAVEK, 601, "Find Skywalker at ::sw", 2500, new Position(2915, 3414)),
-	STORM_TROOPER(SlayerMaster.BRAVEK, 1069, "Find Storm troopers t ::Sw", 2500, new Position(2915, 3413)),
-	NEX(SlayerMaster.BRAVEK, 3154, "Find nex at ::nex", 2500, new Position(2787, 4699)),
-	VADER(SlayerMaster.BRAVEK, 11, "Find Vader at starwars layer 2!", 2500, new Position(3358, 2909));
+	STORM_TROOPER(SlayerMaster.BRAVEK, 1069, "Find Storm troopers t ::Sw", 2500, new Position(2915, 3413));
+	//NEX(SlayerMaster.BRAVEK, 3154, "Find nex at ::nex", 2500, new Position(2787, 4699));
+	//VADER(SlayerMaster.BRAVEK, 11, "Find Vader at starwars layer 2!", 2500, new Position(3358, 2909));
 
 
 	private SlayerTasks(SlayerMaster taskMaster, int npcId, String npcLocation, int XP, Position taskPosition) {
