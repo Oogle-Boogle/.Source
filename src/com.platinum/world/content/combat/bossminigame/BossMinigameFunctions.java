@@ -224,7 +224,7 @@ public class BossMinigameFunctions {
     }
 
     public static void restoreOldStats(Player player) {
-        if (player.bossGameLevels != null) {
+        if (player.bossGameLevels != null && player.bossGameSkillXP != null && player.bossGameMaxLevels != null) {
             player.getSkillManager().getSkills().level = player.bossGameLevels;
             player.getSkillManager().getSkills().experience = player.bossGameSkillXP;
             player.getSkillManager().getSkills().maxLevel = player.bossGameMaxLevels;
@@ -255,12 +255,12 @@ public class BossMinigameFunctions {
             case 2:
                 chosenBoss = new NPC(RandomNPCData.randomThirdWaveID(), new Position(x, y, z)).setSpawnedFor(player);
                 break;
-            /*case 3:
+            case 3:
                 chosenBoss = new NPC(RandomNPCData.randomFourthWaveID(), new Position(x, y, z)).setSpawnedFor(player);
                 break;
             case 4:
                 chosenBoss = new NPC(RandomNPCData.randomFifthWaveID(), new Position(x, y, z)).setSpawnedFor(player);
-                break;*/
+                break;
         }
         return chosenBoss;
     }

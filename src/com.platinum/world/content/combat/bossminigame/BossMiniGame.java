@@ -35,72 +35,74 @@ public class BossMiniGame {
         Prayerbook newPrayerBook = Prayerbook.NORMAL;
 
 
-        /** SWITCHES TO MATCH STATS / INVENTORY WITH BOSS **/
+        /** SWITCHES TO MATCH STATS / INVENTORY WITH BOSS
+         *
+         * You Need to put a case for each ID that you list in RandomNPCData.java**/
 
 
         switch (chosenBoss.getId()) { // First Wave
-            case 8949:// Frost Dragon
+            case 53:// Frost Dragon
                 gear = EquipmentSetups.FROST_DRAGON;
                 stats = StatSetups.FROST_DRAGON;
                 inventory = InventorySetups.FROST_DRAGON;
                 break;
-            case 9231:// Black Dragon
+            case 54:// Black Dragon <-- Wtf lol that should be the ID of the boss xD black dragon is a boss
                 gear = EquipmentSetups.BLACK_DRAGON;
                 stats = StatSetups.BLACK_DRAGON;
                 inventory = InventorySetups.BLACK_DRAGON;
                 break;
-            case 6203:// King Black Dragon (KBD) nope
+            case 50:// King Black Dragon (KBD) nope
                 gear = EquipmentSetups.KBD_WAVE_ONE;
                 stats = StatSetups.KBD_WAVE_ONE;
                 inventory = InventorySetups.KBD_WAVE_ONE;
                 break;
-            case 6595:// Tormented Demon
+            case 3200:// Tormented Demon
                 gear = EquipmentSetups.TORMENTED_DEMON;
                 stats = StatSetups.TORMENTED_DEMON;
                 inventory = InventorySetups.TORMENTED_DEMON;
                 changeSpellBook = true;
                 newSpellBook = MagicSpellbook.ANCIENT;
                 break;
-            case 6599:// Chaos Elemental
+            case 2882:// Chaos Elemental
                 gear = EquipmentSetups.CHAOS_ELEMENTAL;
                 stats = StatSetups.CHAOS_ELEMENTAL;
                 inventory = InventorySetups.CHAOS_ELEMENTAL;
                 break;
-            case 6603:// Dagganoth Prime
+            case 2881:// Dagganoth Prime
                 gear = EquipmentSetups.DAGANNOTH_PRIME;
                 stats = StatSetups.DAGANNOTH_PRIME;
                 inventory = InventorySetups.DAGANNOTH_PRIME;
                 break;
-            case 9:// Dagannoth Supreme
+            case 2883:// Dagannoth Supreme
                 gear = EquipmentSetups.DAGANNOTH_SUPREME;
                 stats = StatSetups.DAGANNOTH_SUPREME;
                 inventory = InventorySetups.DAGANNOTH_SUPREME;
                 break;
-            case 6313:// Barrelchest
+            case 499:// Barrelchest
                 gear = EquipmentSetups.BARRELCHEST;
                 stats = StatSetups.BARREL_CHEST;
                 inventory = InventorySetups.BARREL_CHEST;
                 changeSpellBook = true;
                 newSpellBook = MagicSpellbook.NORMAL;
                 break;
-            case 6314:// Cerberus
+            case 7286:// Cerberus
                 gear = EquipmentSetups.CERBERUS;
                 stats = StatSetups.CERBERUS;
                 inventory = InventorySetups.CERBERUS;
                 break;
-            case 9864:// Dagannoth Rex
+            case 9939:// Dagannoth Rex
                 gear = EquipmentSetups.DAGANNOTH_REX;
                 stats = StatSetups.DAGANNOTH_REX;
                 inventory = InventorySetups.DAGANNOTH_REX;
                 changeSpellBook = true;
                 newSpellBook = MagicSpellbook.ANCIENT;
                 break;
-            case 175:// Crazy Level 2 Man
+            case 2001:// Crazy Level 2 Man
                 gear = EquipmentSetups.CRAZY_LVL2_MAN;
                 stats = StatSetups.CRAZY_LVL2_MAN;
                 inventory = InventorySetups.CRAZY_LVL2_MAN;
                 break;
-            case 176:// Scorpia
+            case 7553:// Scorpia
                 gear = EquipmentSetups.SCORPIA;
                 stats = StatSetups.SCORPIA;
                 inventory = InventorySetups.SCORPIA;

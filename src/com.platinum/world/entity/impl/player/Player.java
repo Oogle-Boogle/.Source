@@ -2817,9 +2817,9 @@ public class Player extends Character {
 	public int currentDailyNPCKills = 0;//Counts the current Kills.
 
 	/** Flub adding Boss Minigame Values **/
-	public int[] bossGameLevels = new int[25];
-	public int[] bossGameSkillXP = new int[25];
-	public int[] bossGameMaxLevels = new int[25];
+	public int[] bossGameLevels = new int[Skill.values().length];
+	public int[] bossGameSkillXP = new int[Skill.values().length];
+	public int[] bossGameMaxLevels = new int[Skill.values().length];
 
 	@Setter
 	public int currentBossWave = 0;

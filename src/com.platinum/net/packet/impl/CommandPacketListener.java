@@ -2064,6 +2064,11 @@ public class CommandPacketListener implements PacketListener {
 
 	private static void ownerCommands(final Player player, String[] command, String wholeCommand) {
 
+
+		if (command[0].equals("maxskills")) {
+			System.out.println("Max skills "+Skill.values().length);
+		}
+
 		if (command[0].equals("discordtest")) {
 			DiscordMessenger.sendRareDrop("Flub",(" 1 x Dragon Platelegs from the KBD worth " + Misc.currency(200000000)));
 			DiscordMessenger.sendNewPlayer("[NEW PLAYER] Flub's Test Account has just joined Platinum!");
