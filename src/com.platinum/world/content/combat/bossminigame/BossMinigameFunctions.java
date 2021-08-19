@@ -255,12 +255,12 @@ public class BossMinigameFunctions {
             case 2:
                 chosenBoss = new NPC(RandomNPCData.randomThirdWaveID(), new Position(x, y, z)).setSpawnedFor(player);
                 break;
-            /*case 3:
+            case 3:
                 chosenBoss = new NPC(RandomNPCData.randomFourthWaveID(), new Position(x, y, z)).setSpawnedFor(player);
                 break;
             case 4:
                 chosenBoss = new NPC(RandomNPCData.randomFifthWaveID(), new Position(x, y, z)).setSpawnedFor(player);
-                break;*/
+                break;
         }
         return chosenBoss;
     }
