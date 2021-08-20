@@ -1,5 +1,7 @@
 package com.platinum.model;
 
+import com.google.common.collect.ImmutableSet;
+import com.google.common.collect.Sets;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
@@ -19,7 +21,7 @@ public enum SecondaryPlayerRights {
 
     SUPER_DONATOR(20, "><col=6600CC>", 1, 1.5),
 
-    EXTREME_DONOR(20, "><col=>", 1, 1.5),
+    EXTREME_DONATOR(20, "><col=>", 1, 1.5),
 
     LEGENDARY_DONATOR(30, "<col=FFFF64>", 1, 1.5),
 
@@ -39,5 +41,12 @@ public enum SecondaryPlayerRights {
     private double useMeForSomethingOne;
     private double useMeForSomethingTwo;
 
+
+    private static final ImmutableSet<SecondaryPlayerRights> MEMBERS = Sets.immutableEnumSet(DONATOR, SUPER_DONATOR, EXTREME_DONATOR, LEGENDARY_DONATOR, UBER_DONATOR, DELUXE_DONATOR);
+
+
+    public boolean isSecondaryMember() {
+        return MEMBERS.contains(this);
+    }
 
 }
