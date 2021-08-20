@@ -353,6 +353,13 @@ public class CommandPacketListener implements PacketListener {
 
 	private static void playerCommands(final Player player, String[] command, String wholeCommand) {
 
+		if (command[0].contains("bug")) {
+			String bugReport = (wholeCommand.substring(command[0].length() + 1)+" ");
+			//String location = ("Loc: "+player.getPosition());
+			System.out.println(" Bug : "+bugReport);
+			DiscordMessenger.sendBug(bugReport,player);
+		}
+
 		if (command[0].equalsIgnoreCase("serverperks")) {
 			GlobalPerks.getInstance().open(player);
 		}
@@ -2064,6 +2071,10 @@ public class CommandPacketListener implements PacketListener {
 
 	private static void ownerCommands(final Player player, String[] command, String wholeCommand) {
 
+
+		if (command[0].equals("raidinstance")) {
+			System.out.println("Raid instance " + player.getCustomRaid().toString());
+		}
 
 		if (command[0].equals("maxskills")) {
 			System.out.println("Max skills "+Skill.values().length);

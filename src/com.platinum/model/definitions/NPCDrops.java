@@ -304,6 +304,9 @@ public class NPCDrops {
 		NPCDrops drops = NPCDrops.forId(npc.getId());
 		if (drops == null)
 			return;
+		if (npc.getLocation() == Location.RAIDS)
+			return;
+
 		final boolean goGlobal = p.getPosition().getZ() >= 0 && p.getPosition().getZ() < 4;
 		final Position npcPos = npc.getPosition().copy();
 		if (drops.getDropList().length > 0 && p.getPosition().getZ() >= 0 && p.getPosition().getZ() < 4) {
@@ -454,12 +457,12 @@ public class NPCDrops {
 		}
 		boolean isWearingCollector = DropUtils.hasCollItemEquipped(player);
 		
-		if (isWearingCollector && !player.getBlockedCollectorsList().contains(item.getId())) {
+		if (isWearingCollector && !player.getBlockedCollectorsList().contains(item.getId()) && player.getInventory().getFreeSlots() > 0) {
+
 			player.getInventory().add(item);
 
-			player.sendMessage("@red@Your Collector Necklace has picked up @blu@" + item.getAmount() + "x "
-					+ item.getDefinition().getName() + " @red@and added them to your "
-					+ (player.getInventory().getFreeSlots() <= 0 ? "bank" : "inventory"));
+			player.sendMessage("@red@Your Collector has picked up @blu@" + item.getAmount() + "x "
+					+ item.getDefinition().getName() + " @red@and added them to your inventory!");
 
 		} else {
 			GroundItemManager.spawnGroundItem(player,
