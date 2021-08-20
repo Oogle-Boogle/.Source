@@ -63,13 +63,9 @@ public class DropItemPacketListener implements PacketListener {
 					player.dealDamage(new Hit((player.getConstitution() - 1) == 0 ? 1 : player.getConstitution() - 1, Hitmask.CRITICAL, CombatIcon.BLUE_SHIELD));
 					player.performGraphic(new Graphic(1750));
 					player.getPacketSender().sendMessage("The potion explodes in your face as you drop it!");
-				} else if (player.getGameMode() == GameMode.NORMAL){
-					GroundItemManager.spawnGroundItem(player, new GroundItem(item, player.getPosition().copy(), player.getUsername(), player.getHostAddress(), false, 80, player.getPosition().getZ() >= 0 && player.getPosition().getZ() < 4, 80));
-					PlayerLogs.log(player.getUsername(), "Player dropping item: "+item.getId()+", amount: "+item.getAmount());
-				} else {
-					GroundItemManager.spawnGroundItem(player, new GroundItem(item, player.getPosition().copy(), player.getUsername(), player.getHostAddress(), false, 80, false, 80)); //Stop drops for iron acc's going global
-					PlayerLogs.log(player.getUsername(), "Player dropping item: "+item.getId()+", amount: "+item.getAmount());
 				}
+				GroundItemManager.spawnGroundItem(player, new GroundItem(item, player.getPosition().copy(), player.getUsername(), player.getHostAddress(), false, 80, (player.getPosition().getZ() >= 0 && player.getPosition().getZ() < 4) && player.getGameMode() == GameMode.NORMAL, 80));
+				PlayerLogs.log(player.getUsername(), "Player dropping item: "+item.getId()+", amount: "+item.getAmount());
 				Sounds.sendSound(player, Sound.DROP_ITEM);
 			} else
 				destroyItemInterface(player, item);

@@ -11,6 +11,7 @@ import com.platinum.world.entity.impl.player.Player;
 
 import java.security.SecureRandom;
 import java.util.*;
+import java.util.concurrent.atomic.AtomicReference;
 
 public class CustomRaid {
 
@@ -39,7 +40,11 @@ public class CustomRaid {
 
     private final int OVERLAY_ID = 27800;
 
-    private final Position RAID_LOBBY_POSITION = new Position(3037, 5212);
+    private final Position INSIDE_RAID_ARENA = new Position(3037, 5212);
+
+
+    private final Position RAID_LOBBY = new Position(3037, 5233, 0);
+
 
     public void open(Player player) {
         player.getPacketSender().sendInterface(27680);
@@ -184,7 +189,10 @@ public class CustomRaid {
         if (currentWave == 0) {
             player.getRaidParty()
                     .getMembers()
-                    .forEach(member -> member.sendMessage("Starting first wave in 3 seconds"));
+                    .forEach(member -> {
+                        member.sendMessage("Starting first wave in 3 seconds");
+                        member.getPacketSender().sendInterfaceRemoval();
+                    });
         } else {
             player.getRaidParty()
                     .getMembers()
@@ -206,6 +214,11 @@ public class CustomRaid {
     }
 
     public void handleFinish(boolean onOwnerLeave) {
+        if (!player.isInRaid() || player.getPosition().getZ() == 0){
+            player.sendMessage("Raid has finished");
+            player.moveTo(RAID_LOBBY);
+            return;
+        }
         //System.out.println("finished: " + onOwnerLeave);
         waves.values()
                 .stream()
@@ -215,7 +228,7 @@ public class CustomRaid {
         player.getRaidParty()
                 .getMembers()
                 .forEach(member -> {
-                    member.moveTo(RAID_LOBBY_POSITION);
+                    member.moveTo(RAID_LOBBY);
                     member.setInRaid(false);
                     currentWave = 0;
                     count = 0;
@@ -268,7 +281,7 @@ public class CustomRaid {
             damageMap.remove(player.getUsername());
             player.getRaidParty().getMembers().forEach(this::updateOverlay);
             player.getRaidParty().leave(player);
-            player.moveTo(RAID_LOBBY_POSITION);
+            player.moveTo(RAID_LOBBY);
             player.getPacketSender().sendWalkableInterface(OVERLAY_ID, false);
         }
     }
