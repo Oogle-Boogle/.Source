@@ -25,9 +25,9 @@ public class TheMay extends NPC {
 	public static Item[] COMMONLOOT = { new Item(10835, 500), new Item(2572, 1), new Item(19138, 1), new Item(19139, 1), new Item(5130, 1), new Item(6199, 1),new Item(19132, 1),new Item(19131, 1),new Item(19133, 1),new Item(19722, 1),new Item(19721, 1),
 			new Item(19468, 1), new Item(10835, 500),new Item(15418, 1), new Item(19723, 2),
 			new Item(18940, 1), new Item(10835, 500),new Item(18941, 1), new Item(18942, 2),
-			new Item(4772, 1), new Item(4771, 1),new Item(4770, 1), new Item(19004, 2) };
+			new Item(4772, 1), new Item(4771, 1),new Item(4770, 1) };
 
-	public static Item[] RARELOOT = { new Item(5131, 1),new Item(4770, 1),new Item(4771, 1),new Item(4772, 1),new Item(5131, 1),new Item(15012,1),new Item(19004, 1), new Item(19935, 1), new Item(4799, 1),new Item(4800, 1), new Item(4801, 1), new Item(5131, 1), new Item(3988, 1), new Item(10835, 1000), new Item(3973, 1)};
+	public static Item[] RARELOOT = { new Item(5131, 1),new Item(4770, 1),new Item(4771, 1),new Item(4772, 1),new Item(5131, 1),new Item(15012,1),new Item(19935, 1), new Item(4799, 1),new Item(4800, 1), new Item(4801, 1), new Item(5131, 1), new Item(3988, 1), new Item(10835, 1000), new Item(3973, 1)};
 
 	public static Item[] SUPERRARELOOT = { new Item(4742, 1), new Item(16429, 1), new Item(15493, 1), new Item(15494, 1), new Item(15495, 1),new Item(19886, 1),new Item(19936, 1),new Item(19936, 1),new Item(4742, 1) };
 	

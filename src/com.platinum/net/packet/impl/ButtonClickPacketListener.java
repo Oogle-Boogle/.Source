@@ -1591,7 +1591,7 @@ public class ButtonClickPacketListener implements PacketListener {
                         .getTeleportType());
                 break;
             case 8666:
-                TeleportHandler.teleportPlayer(player, new Position(3015, 2844), player.getSpellbook()
+                TeleportHandler.teleportPlayer(player, new Position(1899, 5221), player.getSpellbook()
                         .getTeleportType());
                 break;
 

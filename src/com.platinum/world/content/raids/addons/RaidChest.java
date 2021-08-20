@@ -80,13 +80,13 @@ public class RaidChest extends GameObject {
 			if (Misc.inclusiveRandom(0, 100) > 95) {
 				Item reward = rewards[Misc.inclusiveRandom(rewards.length - 1)];
 				player.getInventory().add(reward);
-				player.getInventory().add(new Item(7629, Misc.inclusiveRandom(50, 100)));
+				player.getInventory().add(new Item(19864, Misc.inclusiveRandom(50, 100)));
 				player.getOldRaidParty().sendMessageToMembers("@blu@" + player.getUsername() + " has received x"
 						+ reward.getAmount() + " " + reward.getDefinition().getName() + " from the Raid 2 chest!",
 						true);
 			} else {
 				player.sendMessage("You got unlucky and only received some cash and tickets..");
-				player.getInventory().add(new Item(7629, Misc.inclusiveRandom(50, 100)));
+				player.getInventory().add(new Item(19864, Misc.inclusiveRandom(50, 100)));
 			}
 			if (checkForLastPerson()) {
 				World.deregister(this);

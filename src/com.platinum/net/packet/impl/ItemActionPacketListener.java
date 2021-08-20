@@ -367,17 +367,7 @@ public class ItemActionPacketListener implements PacketListener {
 				player.sendMessage("Failed to open store.. shop doesn't exist in the list!");
 			}
 			break;
-			
-		case 7629:
-			try {
-				ShopManager.getShops().get(57).open(player);
-				player.getPacketSender().sendMessage("This store is pretty cool");
-				player.sendMessage("If you have any suggestions on what should be added");
-				player.sendMessage("Make sure to make a suggestion and i will consider it.");
-			} catch (Exception i) {
-				player.sendMessage("Failed to open store.. shop doesn't exist in the list!");
-			}
-			break;
+
 			case 732:
 				try {
 					ShopManager.getShops().get(51).open(player);
@@ -1378,16 +1368,6 @@ public class ItemActionPacketListener implements PacketListener {
 				player.getPacketSender().sendMessage("Your Bandos Items Has been Upgraded");
 			} else {
 				player.getPacketSender().sendMessage("@red@You Need 250 Upgrade Tokens To Do This");
-			}
-			break;
-		case 7629:
-			try {
-				ShopManager.getShops().get(57).open(player);
-				player.getPacketSender().sendMessage("To get PVM Tickets keep killing NPCS");
-				player.sendMessage("If you have any suggestions on what should be added");
-				player.sendMessage("Make sure to make a suggestion and i will consider it.");
-			} catch (Exception i) {
-				player.sendMessage("Failed to open store.. shop doesn't exist in the list!");
 			}
 			break;
 		case 894:
