@@ -2,6 +2,7 @@ package com.platinum.world.content;
 
 import com.platinum.util.Misc;
 import com.platinum.util.RandomUtility;
+import com.platinum.world.World;
 import com.platinum.world.entity.impl.player.Player;
 
 public class SupremeMysteryBox {
@@ -9,25 +10,12 @@ public class SupremeMysteryBox {
 	/*
 	 * Rewards
 	 */
-	public static final int [] shitRewards = {19935,19936, 5082,5083,5084,15656,15045,926,931,5211,930,5210};
-	public static final int [] goodRewards = {19886,9492,9493,9494,9495,19159,19160,19161,19163,19164,19165,19166,19691,19692,19693,19694,19695,19696,19618 };
+	public static final int [] shitRewards = {5082,5083,5084,15656,15045,926,931,5211,930,5210};
+	public static final int [] mediumRewards = {19886,9492,9493,9494,9495,19159,19160,19161,19163,19164,19165,19166,19691,19692,19693,19694,19695,19696,19618 };
 	public static final int [] bestRewards = {19727,19728,19729,19730,19731,19732,5171,19938,19620};
 	
 	
-	public static void example(Player player) {
-		int chance = RandomUtility.random(40);
-		
-		if (chance >= 0 && chance <= 25) {
-			player.getInventory().add(shitRewards[Misc.getRandom(shitRewards.length - 1)], 1);
-		} else if (chance >= 26 && chance <= 35) {
-			player.getInventory().add(goodRewards[Misc.getRandom(goodRewards.length - 1)], 1); //
-		} else if (chance >= 34 && chance <= 40) {
-			player.getInventory().add(bestRewards[Misc.getRandom(bestRewards.length - 1)], 1);
-		}
-		
-		
-	}
-	
+
 	/*
 	 * Handles opening obv
 	 */
@@ -36,40 +24,39 @@ public class SupremeMysteryBox {
 			player.getPacketSender().sendMessage("You need at least 3 inventory spaces");
 			return;
 		}
-			// Opens the box, gives the reward, deletes the box from the inventory, and sends a message to the player.
 		player.getInventory().delete(15374, 1);
-		example(player);
+		openSupremeBox(player); //Notice how it's used here okay...
 		player.getPacketSender().sendMessage("Congratulations on your reward!");
 	}
-	
-	/*
-	 * Gives the reward base on misc Random chance
-	 */
-	public static void giveReward(Player player) {
-		/*
-		 * 1/3 Chance for a good reward
-		 */
-		if (RandomUtility.RANDOM.nextInt(3) == 2) {
-			
-		} else {
-			player.getInventory().add(shitRewards[Misc.getRandom(shitRewards.length - 1)], 1);
 
+	/**
+	 *
+	 * You can right click, choose 'Refactor'
+	 *
+	 * Then 'Rename'
+	 *
+	 * Instantly renames it, across every single file that it's used, ahh thats a good tip to know
+	 *
+	 *
+	 * It works for literally anything. Say 'goodRewards' needed to be changed
+	 *
+	 * Works perfectly, that will help alot then, thanks brother
+	 *
+	 */
+
+	public static void openSupremeBox(Player player) {  // <- na mate. so a trick for you now.. if something has a shit name
+		int chance = Misc.getRandom(100);
+		if (chance >= 0 && chance <= 50) {
+			player.getInventory().add(shitRewards[Misc.getRandom(shitRewards.length - 1)], 1);
+			player.sendMessage("You got a common reward");
+		} else if(chance >=51 && chance <=84) {
+			player.getInventory().add(mediumRewards[Misc.getRandom(mediumRewards.length - 1)], 1);
+			player.sendMessage("You got a uncommon reward");
+		} else if(chance >=85) {
+			player.getInventory().add(bestRewards[Misc.getRandom(bestRewards.length - 1)], 1);
+			World.sendMessageNonDiscord("<img=11>@blu@[Supreme Mystery Box] @red@"+player.getUsername().toString() + " @blu@Has just received a rare reward.");
 		}
 	}
-		public static void givebestReward(Player player) {
-			if (RandomUtility.RANDOM.nextInt(4) == 2) {
-				
-			} else {
-				player.getInventory().add(shitRewards[Misc.getRandom(shitRewards.length - 1)], 1);
-		}
-		}
-		
-		// just do it like this its much easier sec ill add a new method for u
-		/*
-		 * S
-		 * M
-		 * D
-		 */
 
 		public void process() {
 			// TODO Auto-generated method stub

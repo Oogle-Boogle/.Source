@@ -76,7 +76,7 @@ public class DefaultMagicCombatStrategy implements CombatStrategy {
 		if(equipment == 19727 || equipment == 18891) {
 			player.setCastSpell(CombatSpells.TIER9.getSpell());
 		} 
-		if(equipment == 13995 || equipment == 8664) {
+		if(equipment == 13995 || equipment == 8664 || equipment == 3282) {
 			player.setCastSpell(CombatSpells.DRAGONLAVA.getSpell());
 		} 
 		if (player.getCastSpell() == null) {
@@ -129,7 +129,7 @@ public class DefaultMagicCombatStrategy implements CombatStrategy {
 				player.setCastSpell(CombatSpells.TIER9.getSpell());
 				player.setAutocast(true);
 			} 
-			if(equipment == 13995 || equipment == 8664) {
+			if(equipment == 13995 || equipment == 8664 || equipment == 3282) {
 				player.setCastSpell(CombatSpells.DRAGONLAVA.getSpell());
 				player.setAutocast(true);
 			} 

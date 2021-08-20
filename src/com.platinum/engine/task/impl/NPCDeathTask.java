@@ -156,8 +156,6 @@ public class NPCDeathTask extends Task {
 					
 					if (Tier1to3.contains(npc.getId())) {
 						killer.getInventory().addItem(19864, 1);
-						killer.getInventory().addItem(7629, 1);
-						killer.sendMessage("@blu@You received 1x PVM ticket for killing an T1 - T3 NPC");
 						killer.sendMessage("@blu@You received 1x Starter ticket for killing an T1 - T3 NPC");
 						// taxbag
 						int chance = RandomUtility.inclusiveRandom(0, 100);

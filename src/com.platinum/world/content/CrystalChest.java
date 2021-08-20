@@ -114,7 +114,6 @@ public class CrystalChest {
 			{new Item(5161, 1)},
 			{new Item(5157, 1)},
 			{new Item(5160, 1)},
-			{new Item(19004, 1)},
 			{new Item(19138, 1)},
 			{new Item(19139, 1)},
 			{new Item(3662, 1)},
