@@ -279,8 +279,8 @@ public class TeleportInterface {
 		BOX_ZONE(50601, "Box Zone", "Box Zone", "Box Zone For Starters!", "", "", "", 197,
 				new int[] { 3344, 3409, 0 }, 4000),
 		
-		TOKEN_ZONE(50602, "Token Zone", "Earn Tokens", "to be used at", "the Token shop","", "", 729, 
-				new int[] { 2526, 2841, 0 }, 4000),
+		//TOKEN_ZONE(50602, "Token Zone", "Earn Tokens", "to be used at", "the Token shop","", "", 729,
+				//new int[] { 2526, 2841, 0 }, 4000),
 		//DBZ_ZONE(50603, "DBZ Zone", "This place drops DBZ Tokens!", "Multi Area", "", "", "", 100,
 				//new int[] { 2141, 5535, 3 }),
 		

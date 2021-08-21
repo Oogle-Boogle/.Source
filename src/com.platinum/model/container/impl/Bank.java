@@ -339,7 +339,7 @@ public class Bank extends ItemContainer {
 			Item weapon = p.getEquipment().get(Equipment.WEAPON_SLOT);
 
 			Autocasting.resetAutocast(p, true);
-			p.getPacketSender().sendMessage("Autocast spell cleared.");
+			//p.getPacketSender().sendMessage("Autocast spell cleared.");
 			WeaponInterfaces.assign(p, p.getEquipment().get(Equipment.WEAPON_SLOT));
 			BonusManager.update(p);
 			p.setStaffOfLightEffect(-1);
