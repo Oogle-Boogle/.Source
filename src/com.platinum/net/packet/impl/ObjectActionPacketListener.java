@@ -56,6 +56,7 @@ import com.platinum.world.content.minigames.impl.gungame.GunGame;
 import com.platinum.world.content.raids.Raid3;
 import com.platinum.world.content.raids.OldRaidParty;
 import com.platinum.world.content.raids.addons.RaidChest;
+import com.platinum.world.content.skill.impl.AfkSkilling;
 import com.platinum.world.content.skill.impl.agility.Agility;
 import com.platinum.world.content.skill.impl.construction.Construction;
 import com.platinum.world.content.skill.impl.crafting.Flax;
@@ -195,6 +196,57 @@ public class ObjectActionPacketListener implements PacketListener {
 					return;
 				}
 				switch(id) {
+
+					/** AFK Objects **/
+					case 28750:
+						player.getPacketSender().sendRichPresenceState("AFK Hunting");
+						AfkSkilling.afkSkilling(player, 250, Skill.HUNTER, 827);
+						break;
+					case 49522:
+						player.getPacketSender().sendRichPresenceState("AFK Fishing");
+						AfkSkilling.afkSkilling(player, 250, Skill.FISHING, 623);
+						break;
+					case 8381:
+						player.getPacketSender().sendRichPresenceState("AFK Woodcutting");
+						AfkSkilling.afkSkilling(player, 250, Skill.WOODCUTTING, 10227);
+						break;
+					case 15931:
+						player.getPacketSender().sendRichPresenceState("AFK Fletching");
+						AfkSkilling.afkSkilling(player, 250, Skill.FLETCHING, 1248);
+						break;
+					case 40951:
+						player.getPacketSender().sendRichPresenceState("AFK Thieving");
+						AfkSkilling.afkSkilling(player, 250, Skill.THIEVING, 881);
+						break;
+					case 36959:
+						player.getPacketSender().sendRichPresenceState("AFK Combat");
+						AfkSkilling.afkCombat(player, 250);
+						break;
+					case 619:
+						player.getPacketSender().sendRichPresenceState("AFK Herblore");
+						AfkSkilling.afkSkilling(player, 250, Skill.HERBLORE, 363);
+						break;
+					case 61334:
+						player.getPacketSender().sendRichPresenceState("AFK Crafting");
+						AfkSkilling.afkSkilling(player, 250, Skill.CRAFTING, 896);
+						break;
+					case 565:
+						player.getPacketSender().sendRichPresenceState("AFK Praying");
+						AfkSkilling.afkSkilling(player, 250, Skill.PRAYER, 645);
+						break;
+					case 50051:
+						player.getPacketSender().sendRichPresenceState("AFK Farming");
+						AfkSkilling.afkSkilling(player, 250, Skill.FARMING, 2275);
+						break;
+					case 9682:
+						player.getPacketSender().sendRichPresenceState("AFK Cooking");
+						AfkSkilling.afkSkilling(player, 250, Skill.COOKING, 896);
+						break;
+
+
+
+
+
 
 				case 2466:
 				case 2467:

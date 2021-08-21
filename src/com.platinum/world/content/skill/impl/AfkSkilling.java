@@ -13,11 +13,14 @@ public class AfkSkilling {
 
     /** Should the player be eligable to receive XP when AFKing a Skill? **/
 
-    public static boolean canEarnAfkXP(Player player, int skillid) {
-       return player.getRights().isMember() || player.getSecondaryPlayerRights().isSecondaryMember() || player.getRights().isStaff() || player.getSkillManager().getMaxLevel(Skill.forId(skillid)) >= 80;
+    public static boolean canEarnAfkXP(Player player, Skill skill) {
+       return player.getRights().isMember()
+               || player.getSecondaryPlayerRights().isSecondaryMember()
+               || player.getRights().isStaff()
+               || player.getSkillManager().getMaxLevel(skill) >= 80;
     }
 
-    public static void afkSkilling(Player player, int req, int xp, int skillid, int anim) {
+    public static void afkSkilling(Player player, int xp, Skill skill, int anim) {
 
         if (player.getCombatBuilder().isBeingAttacked()) {
             player.getPacketSender().sendMessage("You must wait a few seconds after being out of combat before doing this.");
@@ -31,8 +34,8 @@ public class AfkSkilling {
                 }
                 player.performAnimation(new Animation(anim));
 
-                if (canEarnAfkXP(player, skillid)) {
-                    player.getSkillManager().addExperience(Skill.forId(skillid), xp);
+                if (canEarnAfkXP(player, skill)) {
+                    player.getSkillManager().addExperience(skill, xp);
                 }
                 player.getInventory().add(afkToken, 1);
             }
@@ -46,16 +49,13 @@ public class AfkSkilling {
         TaskManager.submit(player.getCurrentTask());
     }
 
-    public static void afkCombat(Player player, int req, int xp, int skillid) {
+    public static void afkCombat(Player player, int xp) {
 
-        if (player.getSkillManager().getMaxLevel(Skill.forId(skillid)) < req) {
-            player.getPacketSender().sendMessage("You need to be level " + req + " in " + Skill.forId(skillid).getName() + " to AFK here.");
-            return;
-        }
         if (player.getCombatBuilder().isBeingAttacked()) {
             player.getPacketSender().sendMessage("You must wait a few seconds after being out of combat before doing this.");
             return;
         }
+
         player.setCurrentTask(new Task(2, player, true) {
             @Override
             public void execute() {
@@ -66,47 +66,27 @@ public class AfkSkilling {
 
                 if (player.getFightType().getStyle() == FightStyle.AGGRESSIVE) {
                     player.getPacketSender().sendRichPresenceState("AFK Strength Training");
-                    player.getPacketSender().sendSmallImageKey("strength");
-                    player.getPacketSender().sendRichPresenceSmallPictureText("Lvl: " + player.getSkillManager().getCurrentLevel(Skill.STRENGTH));
-                    if (canEarnAfkXP(player, skillid)) {
-                        if ((player.getRights().isMember() || player.getRights().isStaff())) {
-                            player.getSkillManager().addExperience(Skill.STRENGTH, xp * 2);
-                        } else
-                            player.getSkillManager().addExperience(Skill.STRENGTH, xp);
+                    if (player.getSkillManager().getMaxLevel(Skill.STRENGTH) >= 80) {
+                        player.getSkillManager().addExperience(Skill.STRENGTH, xp);
                     }
                 } else if (player.getFightType().getStyle() == FightStyle.CONTROLLED) {
                     player.getPacketSender().sendRichPresenceState("AFK Combat Training");
-                    player.getPacketSender().sendSmallImageKey("attack");
-                    player.getPacketSender().sendRichPresenceSmallPictureText("Lvl: " + player.getSkillManager().getCurrentLevel(Skill.ATTACK));
-                    if (canEarnAfkXP(player,skillid)) {
-                        if ((player.getRights().isMember() || player.getRights().isStaff())) {
-                            player.getSkillManager().addExperience(Skill.ATTACK, (xp * 2) / 3);
-                            player.getSkillManager().addExperience(Skill.STRENGTH, (xp * 2) / 3);
-                            player.getSkillManager().addExperience(Skill.STRENGTH, (xp * 2) / 3);
-                        } else
-                            player.getSkillManager().addExperience(Skill.ATTACK, xp / 3);
+                    if (player.getSkillManager().getMaxLevel(Skill.ATTACK) >= 80
+                    && player.getSkillManager().getMaxLevel(Skill.STRENGTH) >= 80
+                    && player.getSkillManager().getMaxLevel(Skill.DEFENCE) >= 80) {
+                        player.getSkillManager().addExperience(Skill.ATTACK, xp / 3);
                         player.getSkillManager().addExperience(Skill.STRENGTH, xp / 3);
                         player.getSkillManager().addExperience(Skill.DEFENCE, xp / 3);
                     }
                 } else if (player.getFightType().getStyle() == FightStyle.DEFENSIVE) {
                     player.getPacketSender().sendRichPresenceState("AFK Defence Training");
-                    player.getPacketSender().sendSmallImageKey("defence");
-                    player.getPacketSender().sendRichPresenceSmallPictureText("Lvl: " + player.getSkillManager().getCurrentLevel(Skill.DEFENCE));
-                    if (canEarnAfkXP(player,skillid)) {
-                        if ((player.getRights().isMember() || player.getRights().isStaff())) {
-                            player.getSkillManager().addExperience(Skill.DEFENCE, xp * 2);
-                        } else
-                            player.getSkillManager().addExperience(Skill.DEFENCE, xp);
+                   if (player.getSkillManager().getMaxLevel(Skill.DEFENCE) >= 80) {
+                        player.getSkillManager().addExperience(Skill.DEFENCE, xp);
                     }
                 } else if (player.getFightType().getStyle() == FightStyle.ACCURATE) {
                     player.getPacketSender().sendRichPresenceState("AFK Attack Training");
-                    player.getPacketSender().sendSmallImageKey("attack");
-                    player.getPacketSender().sendRichPresenceSmallPictureText("Lvl: " + player.getSkillManager().getCurrentLevel(Skill.ATTACK));
-                    if (canEarnAfkXP(player, skillid)) {
-                        if ((player.getRights().isMember() || player.getRights().isStaff())) {
-                            player.getSkillManager().addExperience(Skill.ATTACK, xp * 2);
-                        } else
-                            player.getSkillManager().addExperience(Skill.ATTACK, xp);
+                    if (player.getSkillManager().getMaxLevel(Skill.ATTACK) >= 80) {
+                        player.getSkillManager().addExperience(Skill.ATTACK, xp);
                     }
                 }
                 player.getInventory().add(afkToken, 1);
