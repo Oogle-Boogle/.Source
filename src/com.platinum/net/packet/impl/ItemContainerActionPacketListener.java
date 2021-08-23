@@ -357,7 +357,11 @@ public class ItemContainerActionPacketListener implements PacketListener {
 
 		case 19313:
 			if (player.getInterfaceId() == 19307 && player.getGroupIronmanGroup() != null) {
-				player.getGroupIronmanGroup().removeItem(player, id, 5);
+				if (player.withdrawAsNote()) {
+					player.getGroupIronmanGroup().removeItem(player, Item.getNoted(id), 5);
+				} else {
+					player.getGroupIronmanGroup().removeItem(player, id, 5);
+				}
 			}
 			break;
 		case Bank.INTERFACE_ID:
@@ -507,7 +511,11 @@ public class ItemContainerActionPacketListener implements PacketListener {
 
 		case 19313:
 			if (player.getInterfaceId() == 19307 && player.getGroupIronmanGroup() != null) {
-				player.getGroupIronmanGroup().removeItem(player, id, 10);
+				if (player.withdrawAsNote()) {
+					player.getGroupIronmanGroup().removeItem(player, Item.getNoted(id), 10);
+				} else {
+					player.getGroupIronmanGroup().removeItem(player, id, 10);
+				}
 			}
 			break;
 		case Dueling.INTERFACE_REMOVAL_ID:
@@ -651,7 +659,11 @@ public class ItemContainerActionPacketListener implements PacketListener {
 			break;
 		case 19313:
 			if (player.getInterfaceId() == 19307 && player.getGroupIronmanGroup() != null) {
-				player.getGroupIronmanGroup().removeItem(player, id);
+				if (player.withdrawAsNote()) {
+					player.getGroupIronmanGroup().removeItem(player, Item.getNoted(id));
+				} else {
+					player.getGroupIronmanGroup().removeItem(player, id);
+				}
 			}
 			break;
 		case Dueling.INTERFACE_REMOVAL_ID:
