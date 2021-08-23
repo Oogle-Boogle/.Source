@@ -182,7 +182,12 @@ public class ItemContainerActionPacketListener implements PacketListener {
 
 		case 19313:
 			if (player.getInterfaceId() == 19307 && player.getGroupIronmanGroup() != null) {
-				player.getGroupIronmanGroup().removeItem(player, id, 1);
+				System.out.println("Removing item from GIM");
+				if (player.withdrawAsNote()) {
+					player.getGroupIronmanGroup().removeItem(player, Item.getNoted(id), 1);
+				} else {
+					player.getGroupIronmanGroup().removeItem(player, id, 1);
+				}
 			}
 			break;
 		case Equipment.INVENTORY_INTERFACE_ID:
