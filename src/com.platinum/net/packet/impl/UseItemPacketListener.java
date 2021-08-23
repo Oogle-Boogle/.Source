@@ -349,7 +349,7 @@ public class UseItemPacketListener implements PacketListener {
 			return;
 		} else if (target.isMiniMe && target.getMinimeOwner() == player) {
 			int amount = player.getInventory().getAmount(itemId);
-			target.getMiniMeData().addItem(itemId, amount);
+			target.getMiniMeData().addItem(itemId, amount); //todo FINISH THIS STUFF
 			return;
 		}
 		switch (itemId) {
