@@ -33,7 +33,7 @@ public class TriviaBot
 					{ "<col=6666FF> [ Platinum Trivia ]:</col> @red@What country has the world's largest population?", "china" },
 					{ "<col=6666FF> [ Platinum Trivia ]:</col> @red@What is the cube root of 729?", "9" },
 					{ "<col=6666FF> [ Platinum Trivia ]:</col> @red@What is the spiciest pepper in the world?", "carolina reaper" },
-					{ "<col=6666FF> [ Platinum Trivia ]:</col> @red@Who is the founder of Amazon?", "jeff bazos" },
+					{ "<col=6666FF> [ Platinum Trivia ]:</col> @red@Who is the founder of Amazon?", "Jeff Bezos" },
 					{ "<col=6666FF> [ Platinum Trivia ]:</col> @red@What skill allows you to make armour and weapons?", "smithing" },
 					{ "<col=6666FF> [ Platinum Trivia ]:</col> @red@What rank is Wisdom?", "owner" },
 					{ "<col=6666FF> [ Platinum Trivia ]:</col> @red@What is the name of this server?", "platinum" },
