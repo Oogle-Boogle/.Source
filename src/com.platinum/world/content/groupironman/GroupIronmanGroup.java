@@ -1,6 +1,7 @@
 package com.platinum.world.content.groupironman;
 
 import com.platinum.model.Item;
+import com.platinum.model.definitions.ItemDefinition;
 import com.platinum.util.NameUtils;
 import com.platinum.world.World;
 import com.platinum.world.entity.impl.player.Player;
@@ -134,10 +135,15 @@ public class GroupIronmanGroup {
 
     public void addItem(Player player, int id, int amount) {
         if (!player.getInventory().contains(id, amount)) {
-            return;
+            amount = player.getInventory().getAmount(id);
         }
 
         player.getInventory().delete(id, amount);
+
+        if (ItemDefinition.forId(id).isNoted()){
+            id = Item.getUnNoted(id);
+        }
+
         if (bank.containsKey(id)) {
             long newAmount = (long) bank.get(id) + (long) amount;
             //System.out.println("New amount = " + newAmount);
@@ -154,6 +160,9 @@ public class GroupIronmanGroup {
     }
 
     public void removeItem(Player player, int id, int amount) {
+        if (bank.containsKey(id) && bank.get(id) < amount) {
+          amount = bank.get(id);
+        }
         if (bank.containsKey(id) && bank.get(id) >= amount) {
             int amountInBank = bank.get(id);
             int invAmount = player.getInventory().getAmount(id);
@@ -168,6 +177,9 @@ public class GroupIronmanGroup {
                     bank.remove(id);
                 } else {
                     bank.put(id, bank.get(id) - amount);
+                }
+                if (Item.getNoted(id) > 1 && player.withdrawAsNote()){
+                    id = Item.getNoted(id);
                 }
                 player.getInventory().add(id, amount);
                 player.getInventory().refreshItems();
@@ -186,6 +198,9 @@ public class GroupIronmanGroup {
             }
             if (bank.get(id) >= amountInBank) {
                 bank.remove(id);
+                if (Item.getNoted(id) > 1 && player.withdrawAsNote()){
+                    id = Item.getNoted(id);
+                }
                 player.getInventory().add(id, amountInBank);
                 player.getInventory().refreshItems();
             }
@@ -197,6 +212,11 @@ public class GroupIronmanGroup {
 
     public void openBank(Player player) {
         player.getPacketSender().sendInterface(BANK_STARTING_POINT);
+        if (player.withdrawAsNote()) {
+            player.getPacketSender().sendToggle(888, 1);
+        } else {
+            player.getPacketSender().sendToggle(888, 0);
+        }
         updateBank();
     }
 

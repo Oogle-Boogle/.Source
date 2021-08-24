@@ -182,12 +182,7 @@ public class ItemContainerActionPacketListener implements PacketListener {
 
 		case 19313:
 			if (player.getInterfaceId() == 19307 && player.getGroupIronmanGroup() != null) {
-				System.out.println("Removing item from GIM");
-				if (player.withdrawAsNote()) {
-					player.getGroupIronmanGroup().removeItem(player, Item.getNoted(id), 1);
-				} else {
-					player.getGroupIronmanGroup().removeItem(player, id, 1);
-				}
+				player.getGroupIronmanGroup().removeItem(player, id, 1);
 			}
 			break;
 		case Equipment.INVENTORY_INTERFACE_ID:
@@ -357,11 +352,7 @@ public class ItemContainerActionPacketListener implements PacketListener {
 
 		case 19313:
 			if (player.getInterfaceId() == 19307 && player.getGroupIronmanGroup() != null) {
-				if (player.withdrawAsNote()) {
-					player.getGroupIronmanGroup().removeItem(player, Item.getNoted(id), 5);
-				} else {
-					player.getGroupIronmanGroup().removeItem(player, id, 5);
-				}
+				player.getGroupIronmanGroup().removeItem(player, id, 5);
 			}
 			break;
 		case Bank.INTERFACE_ID:
@@ -501,7 +492,7 @@ public class ItemContainerActionPacketListener implements PacketListener {
 				player.getGambling().gambleItem(id, 10, slot);
 			}
 			if (player.getInterfaceId() == 19307 && player.getGroupIronmanGroup() != null) {
-				player.getGroupIronmanGroup().addItem(player, id, 10);
+				player.getGroupIronmanGroup().addItem(player, item1.getId(), 10);
 			}
 			break;
 		case Trading.INTERFACE_REMOVAL_ID:
@@ -511,11 +502,7 @@ public class ItemContainerActionPacketListener implements PacketListener {
 
 		case 19313:
 			if (player.getInterfaceId() == 19307 && player.getGroupIronmanGroup() != null) {
-				if (player.withdrawAsNote()) {
-					player.getGroupIronmanGroup().removeItem(player, Item.getNoted(id), 10);
-				} else {
-					player.getGroupIronmanGroup().removeItem(player, id, 10);
-				}
+				player.getGroupIronmanGroup().removeItem(player, id, 10);
 			}
 			break;
 		case Dueling.INTERFACE_REMOVAL_ID:
@@ -659,11 +646,7 @@ public class ItemContainerActionPacketListener implements PacketListener {
 			break;
 		case 19313:
 			if (player.getInterfaceId() == 19307 && player.getGroupIronmanGroup() != null) {
-				if (player.withdrawAsNote()) {
-					player.getGroupIronmanGroup().removeItem(player, Item.getNoted(id));
-				} else {
-					player.getGroupIronmanGroup().removeItem(player, id);
-				}
+				player.getGroupIronmanGroup().removeItem(player, id);
 			}
 			break;
 		case Dueling.INTERFACE_REMOVAL_ID:

@@ -716,6 +716,16 @@ public class ButtonClickPacketListener implements PacketListener {
         			 CombineEnum.startFuser(player, CombineEnum.values()[player.combineIndex]); //Setting the selected item
         		break;
 
+            case 19314:
+                player.setNoteWithdrawal(!player.withdrawAsNote());
+                System.out.println("Writhdrawing as note? "+player.withdrawAsNote());
+                if (player.withdrawAsNote()) {
+                    player.getPacketSender().sendToggle(888, 1);
+                } else {
+                    player.getPacketSender().sendToggle(888, 0);
+                }
+                break;
+
             case -15333:
                 player.getPacketSender()
                         .sendString(1, "https://discord.gg/b2DdncwcnB");
