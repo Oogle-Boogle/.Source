@@ -532,7 +532,7 @@ public class CommandPacketListener implements PacketListener {
 		}
 
 		if (wholeCommand.equals("afk")) {
-			TeleportHandler.teleportPlayer(player, new Position(2919, 4063), player.getSpellbook().getTeleportType());
+			TeleportHandler.teleportPlayer(player, new Position(1876, 5217), player.getSpellbook().getTeleportType());
 		}
 		
 		if (command[0].equalsIgnoreCase("fuser")) {

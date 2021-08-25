@@ -836,7 +836,6 @@ public class ItemActionPacketListener implements PacketListener {
 				player.getInventory().add(896, 1);
 				player.getInventory().add(2577, 1);
 				player.getInventory().add(10835, 1);
-				player.getInventory().add(989, 1);
 				player.getInventory().add(15243, 125);
 				player.getInventory().add(5161, 1);
 			} else {
@@ -983,10 +982,10 @@ public class ItemActionPacketListener implements PacketListener {
 			}
 			
 
-			int[] rewards = { 10835, 10835, 10835, 10835, 10835, 10835, 10835, 10835, 10835, 15373, 15012, 536, 536, 536, 989, 989, 989,
-					19864, 19864, 19864, 2572,11133,7629,7629,1543,4691,4691,4691,4691,10835,10835,10835,10835,10835,10835,10835,10835,10835 };
-			int[] rewardsAmount = { 15, 16, 14, 14, 22, 17, 34, 12, 21,1, 1, 15, 10, 20, 1, 2, 3, 10, 25,
-					50, 1,1,5,3,1,3,5,10,25,3,3,3,2,2,2,1,1,1 };
+			int[] rewards = { 10835, 10835, 10835, 10835, 10835, 10835, 10835, 10835, 10835, 15373, 15012, 536, 536, 536, //14
+					19864, 19864, 19864, 2572,11133,10835,10835,10835,10835,10835,10835,10835,10835,10835 };
+			int[] rewardsAmount = { 15, 16, 14, 14, 22, 17, 34, 12, 21,1, 1, 15, 10, 20, 10, 25, //16
+					50, 1,1,3,3,3,2,2,2,1,1,1 };
 			int rewardPos = Misc.getRandom(rewards.length - 1);
 			player.getInventory().add(rewards[rewardPos],
 					(int) ((rewardsAmount[rewardPos] * 0.5) + (Misc.getRandom(rewardsAmount[rewardPos]))));
@@ -1738,10 +1737,7 @@ public class ItemActionPacketListener implements PacketListener {
 			player.getInventory().delete(12164, 1);
 			player.sendMessage("5K Total NPC Killcount has been Added to your account");
 			break;
-			
-		case 1543:
-			   KeysEvent.openChest(player);
-			   break;
+
 			
 			//END IMBUED BOOTS
 			

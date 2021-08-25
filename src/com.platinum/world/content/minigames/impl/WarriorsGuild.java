@@ -27,8 +27,8 @@ public class WarriorsGuild {
 	/*
 	 * The armors required to animate an NPC
 	 */
-	private static final int[][] ARMOR_DATA = {{1075, 1117, 1155, 7629}, {1067, 1115, 1153, 4279}, {1069, 1119, 1157, 4280}, {1077, 1125, 1165, 4281}, {1071, 1121, 1159, 4282}, {1073, 1123, 1161, 4283}, {1079, 1127, 1163, 4284}};
-	private static final int[] ANIMATED_ARMOUR_NPCS = {7629, 4279, 4280, 4281, 4282, 4283, 4284};
+	private static final int[][] ARMOR_DATA = {{1075, 1117, 1155}, {1067, 1115, 1153, 4279}, {1069, 1119, 1157, 4280}, {1077, 1125, 1165, 4281}, {1071, 1121, 1159, 4282}, {1073, 1123, 1161, 4283}, {1079, 1127, 1163, 4284}};
+	private static final int[] ANIMATED_ARMOUR_NPCS = {4279, 4280, 4281, 4282, 4283, 4284};
 	private static final int[] TOKEN_REWARDS = {5, 10, 15, 20, 26, 32, 40};
 	/*
 	 * The available defenders which players can receive from this minigame.

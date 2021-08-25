@@ -28,7 +28,7 @@ import com.platinum.util.Misc;
 import com.platinum.util.RandomUtility;
 import com.platinum.world.World;
 import com.platinum.world.clip.region.RegionClipping;
-import com.platinum.world.content.CrystalChest;
+//import com.platinum.world.content.CrystalChest;
 import com.platinum.world.content.CustomObjects;
 import com.platinum.world.content.DeluxeDonatorChest;
 import com.platinum.world.content.DungeonMinigameChest;
@@ -1352,9 +1352,9 @@ public class ObjectActionPacketListener implements PacketListener {
 					player.lastSpecialClaim = System.currentTimeMillis() + 1800000;
 					break;
 					
-				case 172:
+				/*case 172:
 					CrystalChest.handleChest(player, gameObject);
-					break;
+					break;*/
 				case 2403:
 					SephirothChest.openChest(player);
 					break;

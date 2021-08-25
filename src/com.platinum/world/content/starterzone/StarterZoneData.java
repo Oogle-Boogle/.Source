@@ -4,7 +4,7 @@ import com.platinum.model.Item;
 
 public enum StarterZoneData
 {
-	BOMBY_MINION(0, 1265, 10, new Item(995), new Item(989), new Item(773)),
+	BOMBY_MINION(0, 1265, 10, new Item(995), new Item(773)),
 	DONUT_HOMER(1, 2437, 25, new Item(7104), new Item(21013, 1), new Item(11559, 5)),
 	ALIEN(2, 1677, 50, new Item(5022, 10000), new Item(7118, 2), new Item(21013,1)),
 	BOWSER(3, 1880, 75, new Item(20102), new Item(7120), new Item(455, 2)),

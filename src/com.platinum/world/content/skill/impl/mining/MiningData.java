@@ -6,7 +6,7 @@ import com.platinum.world.entity.impl.player.Player;
 
 public class MiningData {
 
-	public static final int[] RANDOM_GEMS = {10835,4691};
+	public static final int[] RANDOM_GEMS = {10835};
 
 	public static enum Pickaxe {
 

@@ -7,7 +7,7 @@ import com.platinum.model.Item;
 public enum DissolveData {
 
 
-	CRYSTAL_KEY(new Item(989, 1), new Item(1543, 1), 15, 200),
+	//CRYSTAL_KEY(new Item(989, 1), new Item(1543, 1), 15, 200),
 	STARTER_BOX(new Item(15373, 1), new Item(6199, 1), 25, 250),
 	BLESSED_AMULET(new Item(15418, 1), new Item(9503, 1), 40, 300),
 	ROW(new Item(2572, 1), new Item(20054, 1), 33, 750),

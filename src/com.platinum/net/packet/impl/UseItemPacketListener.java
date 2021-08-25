@@ -22,7 +22,7 @@ import com.platinum.util.Misc;
 import com.platinum.util.RandomUtility;
 import com.platinum.world.World;
 import com.platinum.world.clip.region.RegionClipping;
-import com.platinum.world.content.ItemForging;
+//import com.platinum.world.content.ItemForging;
 import com.platinum.world.content.dialogue.DialogueManager;
 import com.platinum.world.content.minigames.impl.WarriorsGuild;
 import com.platinum.world.content.raids.OldRaidParty;
@@ -161,7 +161,7 @@ public class UseItemPacketListener implements PacketListener {
 		if (usedWith.getId() == 1733 || itemUsedWith.getId() == 1733)
 			LeatherMaking.craftLeatherDialogue(player, usedWith.getId(), itemUsedWith.getId());
 		Herblore.handleSpecialPotion(player, itemUsedWith.getId(), usedWith.getId());
-		ItemForging.forgeItem(player, itemUsedWith.getId(), usedWith.getId());
+		//ItemForging.forgeItem(player, itemUsedWith.getId(), usedWith.getId());
 		if (player.getRights() == PlayerRights.DEVELOPER)
 			player.getPacketSender().sendMessage(
 					"ItemOnItem - [usedItem, usedWith] : [" + usedWith.getId() + ", " + itemUsedWith + "]");

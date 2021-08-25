@@ -15,7 +15,7 @@ public class NpcTasks {
 	public enum NpcTaskData {
 
 		KILL_50_JOKER("Kill 50 Jokers", 65607, "Some Gear", new int[] { 0, 50 }, "Kill 50 jokers @ ::starterzone", "", "",
-				"", new Item[] { new Item(15373, 1),new Item(989, 2), new Item(19864, 20) }), // 14484 is itemid, 1 is amount
+				"", new Item[] { new Item(15373, 1),new Item(19864, 20) }), // 14484 is itemid, 1 is amount
 
 		KILL_100_FROST_DRAGONS("Kill 100 Frost Dragons", 65608, "Some Gear", new int[] { 1, 100 }, "Kill 100 Frost dragons",
 				"Find them in starter teleports", "", "",
@@ -28,7 +28,7 @@ public class NpcTasks {
 				new Item[] { new Item(6199, 1), new Item(10835, 100) }),
 		KILL_300_DEFENDERS("Kill 300 Defenders", 65611, "Decent Gear", new int[] { 4, 300 },
 				"Kill 50 300 Defenders", "Find them in medium teleports", "Mass Boss", "",
-				new Item[] { new Item(6199, 2),new Item(1543, 2), new Item(10835, 150) }),
+				new Item[] { new Item(6199, 2),new Item(10835, 150) }),
 		KILL_250_DEMONIC_OLMS("Kill 250 Demonic Olms", 65612, "Decent Gear", new int[] { 5, 250 }, "Kill 250 Demonic Olms",
 				"Find them in the medium teleports", "Mass Boss", "",
 				new Item[] { new Item(6199, 2), new Item(10835, 250), new Item(19864, 50),new Item(1543, 2), }),

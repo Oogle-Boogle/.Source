@@ -1,4 +1,4 @@
-package com.platinum.world.content;
+/*package com.platinum.world.content;
 
 import com.platinum.model.Animation;
 import com.platinum.model.GameObject;
@@ -126,4 +126,4 @@ public class CrystalChest {
 			
 		};
 	
-}
+}*/

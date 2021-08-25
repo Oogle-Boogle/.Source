@@ -884,7 +884,6 @@ public class Shop extends ItemContainer {
 					
 					
 				case 2577:
-				case 989:
 				case 3082:
 					return new Object[] { 5, "Tax Bags" };
 					
@@ -1560,9 +1559,6 @@ public class Shop extends ItemContainer {
 				case 10720:
 				case 14006:
 					return new Object[] { 100, "Starter Tickets" };
-					
-				case 989:
-					return new Object[] { 50, "Starter Tickets" };
 				case 15243:
 					return new Object[] { 1, "Starter Tickets" };
 				case 1543:
@@ -1643,7 +1639,6 @@ public class Shop extends ItemContainer {
 					return new Object[] { 1500, "Boss Points" };
 				case 18965:
 					return new Object[] { 53000, "Boss Points" };
-				case 989:
 				case 18782:
 					return new Object[] { 65, "Boss Points" };
 				case 3667:

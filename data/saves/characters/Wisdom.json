@@ -1,5 +1,5 @@
 {
-  "total-play-time-ms": 333826340,
+  "total-play-time-ms": 540630451,
   "username": "Wisdom",
   "placeholders": false,
   "password": "Ashleigh0502",
@@ -583,19 +583,19 @@
   ],
   "raid-points": 0,
   "among-points": 0,
-  "boss-points": 49,
+  "boss-points": 77,
   "lms-points": 0,
   "minions-kc": 0,
   "olm-kc": 0,
-  "boss-kills": 49,
+  "boss-kills": 50,
   "starter-zone-map": {},
   "custom-boss-points": 0,
-  "platinum-points": 249,
+  "platinum-points": 284,
   "loyalty-title": "NONE",
   "crashGameBalance": 0,
   "position": {
-    "x": 2334,
-    "y": 4644,
+    "x": 2340,
+    "y": 3611,
     "z": 0
   },
   "online-status": "ON",
@@ -608,7 +608,7 @@
   "has-pin": false,
   "has-used-boss-tier-tp": true,
   "should-give-boss-reward": false,
-  "currentBossWave": 2,
+  "currentBossWave": 0,
   "hercules-kc": 0,
   "lucario-kc": 0,
   "hades-kc": 0,
@@ -638,16 +638,16 @@
   "breaker-kc": 0,
   "apollo-kc": 0,
   "minutes-bonus-exp": -1,
-  "total-gained-exp": 568236122,
+  "total-gained-exp": 568996915,
   "prestige-points": 0,
-  "achievement-points": 15,
+  "achievement-points": 18,
   "dung-tokens": 0,
   "custom-pest-control-points": 0,
-  "loyalty-points": 77942,
-  "total-loyalty-points": 77942.0,
+  "loyalty-points": 116151,
+  "total-loyalty-points": 116151.0,
   "voting-points": 0,
-  "slayer-points": 4,
-  "npc-kills": 15287,
+  "slayer-points": 14,
+  "npc-kills": 15339,
   "presetItems": [
     0,
     0,
@@ -1113,6 +1113,7 @@
   "preset3": false,
   "preset4": false,
   "preset5": false,
+  "dungeon-points": 0,
   "pk-points": 0,
   "donation-points": 0,
   "bravek-tasks-completed": 0,
@@ -1143,98 +1144,14 @@
   "auto-retaliate": true,
   "xp-locked": false,
   "veng-cast": false,
-  "last-veng": 1324126995,
-  "fight-type": "UNARMED_KICK",
-  "equipmentWings": [
-    {
-      "id": -1,
-      "amount": 0,
-      "slot": 0
-    },
-    {
-      "id": -1,
-      "amount": 0,
-      "slot": 0
-    },
-    {
-      "id": -1,
-      "amount": 0,
-      "slot": 0
-    },
-    {
-      "id": -1,
-      "amount": 0,
-      "slot": 0
-    },
-    {
-      "id": -1,
-      "amount": 0,
-      "slot": 0
-    },
-    {
-      "id": -1,
-      "amount": 0,
-      "slot": 0
-    },
-    {
-      "id": -1,
-      "amount": 0,
-      "slot": 0
-    },
-    {
-      "id": -1,
-      "amount": 0,
-      "slot": 0
-    },
-    {
-      "id": -1,
-      "amount": 0,
-      "slot": 0
-    },
-    {
-      "id": -1,
-      "amount": 0,
-      "slot": 0
-    },
-    {
-      "id": -1,
-      "amount": 0,
-      "slot": 0
-    },
-    {
-      "id": -1,
-      "amount": 0,
-      "slot": 0
-    },
-    {
-      "id": -1,
-      "amount": 0,
-      "slot": 0
-    },
-    {
-      "id": -1,
-      "amount": 0,
-      "slot": 0
-    },
-    {
-      "id": -1,
-      "amount": 0,
-      "slot": 0
-    },
-    {
-      "id": -1,
-      "amount": 0,
-      "slot": 0
-    },
-    {
-      "id": -1,
-      "amount": 0,
-      "slot": 0
-    }
-  ],
-  "sol-effect": 0,
+  "last-veng": 1516924134,
+  "fight-type": "SWORD_LUNGE",
+  "sol-effect": -1,
   "skull-timer": 0,
   "fuse-combination-timer": -1,
+  "fuse-item-selected": 0,
+  "claimed-fuse-item": true,
+  "fuse-in-progress": false,
   "accept-aid": false,
   "poison-damage": 0,
   "poison-immunity": 0,
@@ -1256,16 +1173,16 @@
   "summon-npc": -1,
   "summon-death": -1,
   "process-farming": false,
-  "clanchat": "null",
+  "clanchat": "Help",
   "autocast": false,
   "autocast-spell": -1,
   "dfs-charges": 0,
   "coins-gambled": 0,
-  "slayer-master": "VANNAKA",
+  "slayer-master": "SUMONA",
   "slayer-task": "NO_TASK",
-  "prev-slayer-task": "YOSEMITE_SAM",
+  "prev-slayer-task": "HEATED_PYRO",
   "task-amount": 0,
-  "task-streak": 1,
+  "task-streak": 2,
   "duo-partner": "null",
   "double-slay-xp": false,
   "recoil-deg": 0,
@@ -1352,12 +1269,12 @@
     {
       "npcId": 4455,
       "item": 532,
-      "amount": 30
+      "amount": 33
     },
     {
       "npcId": 4455,
       "item": 19864,
-      "amount": 26
+      "amount": 27
     },
     {
       "npcId": 4462,
@@ -1470,7 +1387,7 @@
       120,
       120,
       120,
-      30926,
+      101901,
       120,
       1200,
       120,
@@ -1530,34 +1447,99 @@
       1000000000,
       1000000000,
       1000000000,
-      13034431,
+      13037017,
       1000000000,
-      104273167,
-      104280333,
-      104273167,
-      104273167,
+      104275753,
+      104284643,
+      104275753,
+      104274891,
       104273425,
-      104274284,
+      104276008,
       104273167,
       104273167,
+      104608485,
+      104273167,
+      104277477,
+      104455702,
+      104277477,
       104273167,
       104273167,
-      104273167,
-      104295168,
-      104273167,
+      104280925,
       104273167,
       104273167,
-      104273167,
-      104273167,
-      104273167,
-      104280649,
-      104304197
+      104280821,
+      104537072
     ]
   },
   "inventory": [
     {
-      "id": -1,
-      "amount": 0,
+      "id": 14462,
+      "amount": 1,
+      "slot": 0
+    },
+    {
+      "id": 14496,
+      "amount": 1,
+      "slot": 0
+    },
+    {
+      "id": 11796,
+      "amount": 1,
+      "slot": 0
+    },
+    {
+      "id": 11797,
+      "amount": 1,
+      "slot": 0
+    },
+    {
+      "id": 11039,
+      "amount": 1,
+      "slot": 0
+    },
+    {
+      "id": 11040,
+      "amount": 1,
+      "slot": 0
+    },
+    {
+      "id": 11041,
+      "amount": 1,
+      "slot": 0
+    },
+    {
+      "id": 11042,
+      "amount": 1,
+      "slot": 0
+    },
+    {
+      "id": 3460,
+      "amount": 1,
+      "slot": 0
+    },
+    {
+      "id": 3455,
+      "amount": 1,
+      "slot": 0
+    },
+    {
+      "id": 3456,
+      "amount": 1,
+      "slot": 0
+    },
+    {
+      "id": 3457,
+      "amount": 1,
+      "slot": 0
+    },
+    {
+      "id": 3458,
+      "amount": 1,
+      "slot": 0
+    },
+    {
+      "id": 3459,
+      "amount": 1,
       "slot": 0
     },
     {
@@ -1611,73 +1593,8 @@
       "slot": 0
     },
     {
-      "id": -1,
-      "amount": 0,
-      "slot": 0
-    },
-    {
-      "id": -1,
-      "amount": 0,
-      "slot": 0
-    },
-    {
-      "id": -1,
-      "amount": 0,
-      "slot": 0
-    },
-    {
-      "id": -1,
-      "amount": 0,
-      "slot": 0
-    },
-    {
-      "id": -1,
-      "amount": 0,
-      "slot": 0
-    },
-    {
-      "id": -1,
-      "amount": 0,
-      "slot": 0
-    },
-    {
-      "id": -1,
-      "amount": 0,
-      "slot": 0
-    },
-    {
-      "id": -1,
-      "amount": 0,
-      "slot": 0
-    },
-    {
-      "id": -1,
-      "amount": 0,
-      "slot": 0
-    },
-    {
-      "id": -1,
-      "amount": 0,
-      "slot": 0
-    },
-    {
-      "id": -1,
-      "amount": 0,
-      "slot": 0
-    },
-    {
-      "id": -1,
-      "amount": 0,
-      "slot": 0
-    },
-    {
-      "id": -1,
-      "amount": 0,
-      "slot": 0
-    },
-    {
-      "id": -1,
-      "amount": 0,
+      "id": 11043,
+      "amount": 1,
       "slot": 0
     },
     {
@@ -1698,8 +1615,43 @@
   ],
   "equipment": [
     {
+      "id": 15493,
+      "amount": 1,
+      "slot": 0
+    },
+    {
       "id": -1,
       "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": 13265,
+      "amount": 1,
+      "slot": 0
+    },
+    {
+      "id": 15494,
+      "amount": 1,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": 15495,
+      "amount": 1,
       "slot": 0
     },
     {
@@ -1723,43 +1675,8 @@
       "slot": 0
     },
     {
-      "id": -1,
-      "amount": 0,
-      "slot": 0
-    },
-    {
-      "id": -1,
-      "amount": 0,
-      "slot": 0
-    },
-    {
-      "id": -1,
-      "amount": 0,
-      "slot": 0
-    },
-    {
-      "id": -1,
-      "amount": 0,
-      "slot": 0
-    },
-    {
-      "id": -1,
-      "amount": 0,
-      "slot": 0
-    },
-    {
-      "id": -1,
-      "amount": 0,
-      "slot": 0
-    },
-    {
-      "id": -1,
-      "amount": 0,
-      "slot": 0
-    },
-    {
-      "id": -1,
-      "amount": 0,
+      "id": 773,
+      "amount": 1,
       "slot": 0
     },
     {
@@ -2016,7 +1933,7 @@
     },
     {
       "id": 13267,
-      "amount": 1,
+      "amount": 2,
       "slot": 0
     },
     {
@@ -2046,11 +1963,46 @@
     },
     {
       "id": 19156,
-      "amount": 1,
+      "amount": 2,
       "slot": 0
     },
     {
       "id": 13994,
+      "amount": 1,
+      "slot": 0
+    },
+    {
+      "id": 13266,
+      "amount": 1,
+      "slot": 0
+    },
+    {
+      "id": 15566,
+      "amount": 1,
+      "slot": 0
+    },
+    {
+      "id": 3282,
+      "amount": 1,
+      "slot": 0
+    },
+    {
+      "id": 13268,
+      "amount": 1,
+      "slot": 0
+    },
+    {
+      "id": 13269,
+      "amount": 1,
+      "slot": 0
+    },
+    {
+      "id": 13270,
+      "amount": 1,
+      "slot": 0
+    },
+    {
+      "id": 773,
       "amount": 1,
       "slot": 0
     }
@@ -2101,7 +2053,7 @@
     false,
     false,
     false,
-    false,
+    true,
     false,
     false
   ],
@@ -2119,7 +2071,7 @@
     },
     {
       "item": 532,
-      "amount": 55,
+      "amount": 67,
       "rareDrop": false
     },
     {
@@ -2129,7 +2081,7 @@
     },
     {
       "item": 19864,
-      "amount": 860,
+      "amount": 880,
       "rareDrop": false
     },
     {
@@ -2215,6 +2167,8 @@
     true,
     true,
     true,
+    true,
+    true,
     false,
     false,
     false,
@@ -2235,9 +2189,7 @@
     false,
     false,
     false,
-    false,
-    false,
-    false,
+    true,
     false,
     true,
     false,
@@ -2301,12 +2253,12 @@
     0,
     0,
     4988763,
-    4046934,
+    4049561,
     4873777,
     0,
     0,
     0,
-    280,
+    327,
     0,
     0,
     0,
@@ -2376,10 +2328,10 @@
     0,
     1,
     0,
-    9,
+    10,
     0,
     2,
-    1,
+    2,
     0,
     1,
     1,
@@ -2400,7 +2352,7 @@
     3,
     2,
     2,
-    0,
+    28,
     2,
     2,
     0,
@@ -2511,19 +2463,19 @@
   "roulette-bet-amount": 0,
   "npc-kc-data": {
     "51": 1,
-    "4455": 30,
+    "4455": 32,
     "4462": 21,
     "131": 3,
-    "3224": 7,
-    "3225": 5,
-    "3226": 4,
-    "177": 2,
+    "3224": 9,
+    "3225": 7,
+    "3226": 6,
+    "177": 4,
     "2042": 5,
     "2043": 5,
     "2044": 3,
-    "527": 1,
+    "527": 2,
     "9277": 1,
-    "1999": 1,
+    "1999": 2,
     "9903": 1,
     "9247": 1,
     "9203": 2,
@@ -2540,10 +2492,16 @@
     "4457": 8,
     "8949": 1,
     "3154": 117,
-    "15": 9,
+    "15": 10,
     "6311": 5,
     "8493": 3,
-    "6599": 1
+    "6599": 1,
+    "50": 1,
+    "3200": 2,
+    "54": 1,
+    "2881": 1,
+    "172": 28,
+    "5361": 1
   },
   "savedKeyCount1": 0,
   "savedKeyCount2": 0,

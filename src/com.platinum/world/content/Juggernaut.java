@@ -24,7 +24,7 @@ import com.platinum.world.entity.impl.player.Player;
 
 public class Juggernaut extends NPC {
 
-	public static int[] COMMONLOOT = {989,6199,15373,19131,19132,19133};
+	public static int[] COMMONLOOT = {6199,15373,19131,19132,19133};
 	public static int[] RARELOOT = {17904,17919,17906,17907,14444,14445,14446,19935,19714,19715,19716,19717,19718,19719,3641};
 	public static int[] SUPERRARELOOT = {19714,19715,19716,19717,19718,19719,3641};
 

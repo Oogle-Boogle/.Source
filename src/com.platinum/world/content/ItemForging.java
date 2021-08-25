@@ -1,4 +1,4 @@
-package com.platinum.world.content;
+/*package com.platinum.world.content;
 
 import com.platinum.model.Graphic;
 import com.platinum.model.Item;
@@ -8,10 +8,7 @@ import com.platinum.util.Misc;
 import com.platinum.world.content.Achievements.AchievementData;
 import com.platinum.world.entity.impl.player.Player;
 
-/**
- * Handles item forging, such as Spirit shields making etc.
- * @author Gabriel Hannason and Samy
- */
+
 public class ItemForging {
 
 	public static void forgeItem(final Player p, final int item1, final int item2) {
@@ -46,9 +43,9 @@ public class ItemForging {
 			p.getPacketSender().sendMessage("You make "+Misc.anOrA(itemName)+" "+itemName+".");
 			p.getClickDelay().reset();
 			p.getSkillManager().addExperience(skill, data.skillRequirement[2]);
-			if(data == ItemForgeData.ARMADYL_GODSWORD || data == ItemForgeData.BANDOS_GODSWORD || data == ItemForgeData.ZAMORAK_GODSWORD || data == ItemForgeData.SARADOMIN_GODSWORD) {
-				Achievements.finishAchievement(p, AchievementData.ASSEMBLE_A_GODSWORD);
-				Achievements.doProgress(p, AchievementData.ASSEMBLE_5_GODSWORDS);
+			//if(data == ItemForgeData.ARMADYL_GODSWORD || data == ItemForgeData.BANDOS_GODSWORD || data == ItemForgeData.ZAMORAK_GODSWORD || data == ItemForgeData.SARADOMIN_GODSWORD) {
+				//Achievements.finishAchievement(p, AchievementData.ASSEMBLE_A_GODSWORD);
+				//Achievements.doProgress(p, AchievementData.ASSEMBLE_5_GODSWORDS);
 			}
 			return;
 		} else {
@@ -57,9 +54,7 @@ public class ItemForging {
 		}
 	}
 
-	/**
-	 ** The enum holding all our data
-	 */
+
 	private static enum ItemForgeData {
 		BLESSED_SPIRIT_SHIELD(new Item[] {new Item(13754), new Item(13734)}, new Item(13736), new int[] {1, -1, 0}),
 		FORGER(new Item[] {new Item(9906, 1), new Item(11789, 5)}, new Item(16139), new int[] {1, -1, 0}),
@@ -72,7 +67,7 @@ public class ItemForging {
 		DRAGON_PLATEBY(new Item[] {new Item(14472), new Item(14474), new Item(14476)}, new Item(14479), new int[] {13, 92, 120000}),
 		DRAGONFIRE_SHIELD(new Item[] {new Item(11286), new Item(1540)}, new Item(11283), new int[] {13, 82, 36000}),
 
-		CRYSTAL_KEY(new Item[] {new Item(985), new Item(987)}, new Item(989), new int[] {1, -1, 0}),
+		//CRYSTAL_KEY(new Item[] {new Item(985), new Item(987)}, new Item(989), new int[] {1, -1, 0}),
 		
 
 		GODSWORD_BLADE(new Item[] {new Item(11710), new Item(11712), new Item(11714)}, new Item(11690), new int[] {1, -1, 0}),
@@ -190,4 +185,4 @@ public class ItemForging {
 			return null;
 		}
 	}
-}
+}*/

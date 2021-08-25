@@ -112,7 +112,6 @@ public class ClueScrolls {
 			{new Item(2625, 1)},//Rune (T)
 			{new Item(2627, 1)},//Rune (T)
 			{new Item(2629, 1)},//Rune (T)
-			{new Item(1543, 1)},//Red Key
 			{new Item(2653, 1)},//Zamorak Rune Equip
 			{new Item(2655, 1)},//Zamorak Rune Equip
 			{new Item(2657, 1)},//Zamorak Rune Equip

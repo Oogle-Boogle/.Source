@@ -36,14 +36,12 @@ public class EnterReferral extends Input {
             	player.getInventory().add(3082, 1);
             	player.getInventory().add(15373, 1);
             	player.getInventory().add(16432, 200);
-            	player.getInventory().add(989, 2);
             	player.getInventory().add(2572, 1);
             	player.sendMessage("@red@Congratz! Because you used the code " + username + " You have gotten a reward!");
             	
             } else if(Arrays.stream(merkCode).anyMatch(username::equalsIgnoreCase)) {
             	player.getInventory().add(3082, 1);
             	player.getInventory().add(15373, 1);
-            	player.getInventory().add(989, 1);
                 player.getInventory().add(16432, 200);
             	player.getInventory().add(2572, 1);
             	player.getInventory().add(537, 100);

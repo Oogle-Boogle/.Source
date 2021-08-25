@@ -11,7 +11,7 @@ public class VoteMbox {
 	* Array of all the available rewards
 	*/
 
-	public static final int[] badRewards = {10835,989,15373,18950,1543,2572,18392};
+	public static final int[] badRewards = {10835,15373,18950,2572,18392};
     public static final int[] goodRewards = {19935,18380,18381,18382,18383,18384,18385,3937,3938,3939,3944,3945,3946,3947,3948};
     public static final int[] bestRewards = {20054,15332,5185,5163,19886};
 	

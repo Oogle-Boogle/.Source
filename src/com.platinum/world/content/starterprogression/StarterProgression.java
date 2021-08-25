@@ -13,8 +13,8 @@ public class StarterProgression {
 	private final int STARTING_POINT = 42001;
 
 	private static final Item[][] REWARDS = { 
-			{ new Item(10835, 50), new Item(15373, 1), new Item(989, 2) },
-			{ new Item(10835, 100), new Item(15373, 1), new Item(989, 4) },
+			{ new Item(10835, 50), new Item(15373, 1), new Item(2572, 1) },
+			{ new Item(10835, 100), new Item(15373, 1), new Item(2572, 1) },
 			{ new Item(10835, 200), new Item(15373, 2), new Item(2572, 1) },
 			{ new Item(10835, 300), new Item(15373, 2), new Item(3082, 1) },
 			{ new Item(10835, 400), new Item(15373, 3), new Item(14006, 1) },
