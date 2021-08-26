@@ -15,9 +15,9 @@ public class DonationChests {
     public static final int highTierChestID = 2;
 
     // TODO Rename & change ID's
-    public static final int lowTierKeyID = 0;
-    public static final int mediumTierKeyID = 1;
-    public static final int highTierKeyID = 2;
+    public static final int lowTierKeyID = 3459;
+    public static final int mediumTierKeyID = 3455;
+    public static final int highTierKeyID = 3458;
 
     // TODO Rename & change ID's
     public static final int[] lowTierItems = {123, 456, 789};
