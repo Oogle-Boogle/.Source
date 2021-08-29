@@ -16,7 +16,7 @@ public class ItemColorCustomization implements PacketListener {
 		//System.out.println(itemId);
 		
 		switch(itemId) {
-        case 14019:
+        /*case 14019:
         case 14022:
             
             int[] colors = new int[size];
@@ -41,7 +41,7 @@ public class ItemColorCustomization implements PacketListener {
             player.getPacketSender().sendInterfaceRemoval();
             player.setCurrentCape(-1);
             
-            break;
+            break;*/
             
         }
         

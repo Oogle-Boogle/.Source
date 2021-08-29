@@ -466,7 +466,7 @@ public class DialogueOptions {
 				player.getClickDelay().reset();
 
 				break;
-			case 13:
+			/*case 13:
 				player.getPacketSender().sendInterfaceRemoval();
 				for (AchievementData d : AchievementData.values()) {
 					if (!player.getAchievementAttributes().getCompletion()[d.ordinal()]) {
@@ -487,7 +487,7 @@ public class DialogueOptions {
 					player.getInventory().delete(995, 100000000);
 				player.getInventory().add(14022, 1);
 				player.getPacketSender().sendMessage("You've purchased an Completionist cape.");
-				break;
+				break;*/
 			case 14:
 				TeleportHandler.teleportPlayer(player, new Position(3184 + Misc.getRandom(1), 5471 + Misc.getRandom(1)),
 						player.getSpellbook().getTeleportType());
@@ -1138,7 +1138,7 @@ public class DialogueOptions {
 				TeleportHandler.teleportPlayer(player, new Position(2440, 3090),
 						player.getSpellbook().getTeleportType());
 				break;
-			case 13:
+			/*case 13:
 				player.getPacketSender().sendInterfaceRemoval();
 				for (AchievementData d : AchievementData.values()) {
 					if (!player.getAchievementAttributes().getCompletion()[d.ordinal()]) {
@@ -1159,7 +1159,7 @@ public class DialogueOptions {
 					player.getInventory().delete(995, 100000000);
 				player.getInventory().add(14022, 1);
 				player.getPacketSender().sendMessage("You've purchased an Completionist cape.");
-				break;
+				break;*/
 			case 14:
 				TeleportHandler.teleportPlayer(player, new Position(2871, 5318, 2),
 						player.getSpellbook().getTeleportType());
