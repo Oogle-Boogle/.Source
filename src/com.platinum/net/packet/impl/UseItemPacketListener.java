@@ -25,6 +25,7 @@ import com.platinum.world.clip.region.RegionClipping;
 //import com.platinum.world.content.ItemForging;
 import com.platinum.world.content.dialogue.DialogueManager;
 import com.platinum.world.content.minigames.impl.WarriorsGuild;
+import com.platinum.world.content.minimes.MiniMeFunctions;
 import com.platinum.world.content.raids.OldRaidParty;
 import com.platinum.world.content.skill.SkillManager;
 import com.platinum.world.content.skill.impl.cooking.Cooking;
@@ -345,11 +346,12 @@ public class UseItemPacketListener implements PacketListener {
 		if (target == null)
 			return;
 		if (target.isMiniMe && target.getMinimeOwner() != player) {
-			player.sendMessage("@red@This is someone's else mini-me!");
+			player.sendMessage("@red@This is not your minime!");
 			return;
 		} else if (target.isMiniMe && target.getMinimeOwner() == player) {
 			int amount = player.getInventory().getAmount(itemId);
-			target.getMiniMeData().addItem(itemId, amount); //todo FINISH THIS STUFF
+			//target.getInventory().addItem(itemId, amount);
+			MiniMeFunctions.handleItemOnPlayer(itemId, amount, player);
 			return;
 		}
 		switch (itemId) {

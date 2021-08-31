@@ -18,10 +18,8 @@ import com.platinum.world.content.combat.magic.Autocasting;
 import com.platinum.world.content.combat.weapon.CombatSpecial;
 import com.platinum.world.content.minigames.impl.Dueling;
 import com.platinum.world.content.minigames.impl.Dueling.DuelRule;
-import com.platinum.world.content.skill.SkillManager;
 import com.platinum.world.entity.impl.player.Player;
 import com.platinum.world.content.combat.magic.CombatSpells;
-import com.platinum.world.entity.impl.player.MiniMe;
 
 /**
  * This packet listener manages the equip action a player executes when wielding

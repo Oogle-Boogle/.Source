@@ -45,6 +45,7 @@ import com.platinum.world.content.grandexchange.GrandExchangeOffers;
 import com.platinum.world.content.guidesInterface.GuideBook;
 import com.platinum.world.content.minigames.impl.FreeForAll;
 import com.platinum.world.content.minigames.impl.LastManStanding;
+import com.platinum.world.content.minimes.MiniMeData;
 import com.platinum.world.content.serverperks.GlobalPerks;
 import com.platinum.world.content.skill.SkillManager;
 import com.platinum.world.content.skill.impl.herblore.Decanting;
@@ -53,7 +54,7 @@ import com.platinum.world.content.transportation.TeleportHandler;
 import com.platinum.world.content.transportation.TeleportType;
 import com.platinum.world.entity.impl.npc.NPC;
 import com.platinum.world.entity.impl.npc.minigame.KeyRoom;
-import com.platinum.world.entity.impl.player.MiniMe;
+import com.platinum.world.content.minimes.MiniMeFunctions;
 import com.platinum.world.entity.impl.player.Player;
 import com.platinum.world.entity.impl.player.PlayerHandler;
 import com.platinum.world.entity.impl.player.PlayerSaving;
@@ -352,6 +353,36 @@ public class CommandPacketListener implements PacketListener {
 	
 
 	private static void playerCommands(final Player player, String[] command, String wholeCommand) {
+
+		/** Mini me commands **/
+
+		if (wholeCommand.equalsIgnoreCase("minime")) {
+			if (player.getMinime() != null) {
+				player.getMinime().flagBotRemoval();
+			} else {
+				MiniMeFunctions.create(player);
+				player.getPacketSender().sendMessage("You Summon Your Minime!");
+			}
+		}
+
+		if (command[0].equalsIgnoreCase("minime") && wholeCommand.length() > command[0].length()) {
+			// Handle other commands
+			switch (command[1]) {
+				case "follow":
+					MiniMeFunctions.startFollowing(player);
+					break;
+				case "unfollow":
+				case "stopfollow":
+					MiniMeFunctions.stopFollowing(player);
+					break;
+				case "save":
+					MiniMeData.save(player.getMinime());
+					break;
+			}
+
+		}
+
+
 
 		if (command[0].contains("bug")) {
 			String bugReport = (wholeCommand.substring(command[0].length() + 1)+" ");
@@ -2071,6 +2102,10 @@ public class CommandPacketListener implements PacketListener {
 
 	private static void ownerCommands(final Player player, String[] command, String wholeCommand) {
 
+		if (command[0].equals("checktieritems")) {
+			DonationChests.checkItems();
+		}
+
 
 		if (command[0].equals("raidinstance")) {
 			System.out.println("Raid instance " + player.getCustomRaid().toString());
@@ -2086,15 +2121,7 @@ public class CommandPacketListener implements PacketListener {
 			DiscordMessenger.sendInGameMessage("A new world boss has just spawned in the wilderness!");
 			DiscordMessenger.sendStaffMessage("Flub has just been caught trying to dupe! Damn SLUT!");
 		}
-		if (command[0].equals("minime")) {
-			if(player.getMinime() != null) {
-				player.getMinime().flagBotRemoval();
-			} else {
-				MiniMe.create(player);
-				player.getPacketSender()
-						.sendMessage("You Summon Yourself!");
-			}
-		}
+
 
 		if (wholeCommand.equals("afk")) {
 			World.sendMessageNonDiscord("<img=11> <col=FF0000><shad=0>" + player.getUsername()

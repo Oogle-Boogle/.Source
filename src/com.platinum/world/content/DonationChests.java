@@ -28,7 +28,18 @@ public class DonationChests {
     9492, 9493, 9494, 9495, 9104, 19935, 14494, 14492, 14490, 2760, 19727, 19730, 19731, 19732, 19728, 6485, 19729, 19106, 13206, 13202, 13203, 13204, 13205, 13207, 11143, 11144, 11145, 11146, 11147,
     4797, 4794, 4795, 19127, 19128, 19129, 8664, 4796, 18931, 15374, 13992, 13994, 13993, 13995, 13991, 14448, 14447, 9496, 9497, 9498, 19155, 10905, 19741, 19742, 19743, 19744, 19154, 20427, 19936, 19937};
 
-
+    /** Used to check all items are valid **/
+    public static void checkItems() {
+        for (int lowTierItem : lowTierItems) {
+            System.out.println("[LOW] Item ID: " + lowTierItem + " Name: " + ItemDefinition.forId(lowTierItem));
+        }
+        for (int mediumTierItem : mediumTierItems) {
+            System.out.println("[MED] Item ID: " + mediumTierItem + " Name: " + ItemDefinition.forId(mediumTierItem));
+        }
+        for (int highTierItem : highTierItems) {
+            System.out.println("[HIGH] Item ID: " + highTierItem + " Name: " + ItemDefinition.forId(highTierItem));
+        }
+    }
     /** Handles clicking each chest **/
     public static void handleChestClick(int ButtonID, Player player) {
 

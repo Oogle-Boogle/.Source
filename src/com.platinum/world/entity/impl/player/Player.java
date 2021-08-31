@@ -289,10 +289,6 @@ public class Player extends Character {
 
 	@Getter
 	@Setter
-	private MiniMeData miniMeData;
-
-	@Getter
-	@Setter
 	public Player minime, minimeOwner;
 
 	public boolean isMiniMe = false;

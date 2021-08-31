@@ -12,6 +12,7 @@ import com.platinum.world.content.minigames.impl.FightPit;
 import com.platinum.world.content.minigames.impl.FreeForAll;
 import com.platinum.world.content.minigames.impl.LastManStanding;
 import com.platinum.world.content.minigames.impl.PestControl;
+import com.platinum.world.content.minimes.MiniMeData;
 import com.platinum.world.content.serverperks.GlobalPerks;
 import com.platinum.world.entity.Entity;
 import com.platinum.world.entity.EntityHandler;
@@ -90,8 +91,8 @@ public class World {
 	}
 
 	public static void sendMessageDiscord(String message) {
-		players.forEach(p -> p.getPacketSender().sendMessage(message));
-		 if (message.contains("[New Player]")) {
+		players.stream().filter(p -> p != null && (!p.isMiniMe)).forEach(p -> p.getPacketSender().sendMessage(message));
+		if (message.contains("[New Player]")) {
 			DiscordMessenger.sendNewPlayer(message);
 		 } else {
 			DiscordMessenger.sendInGameMessage(message);
@@ -99,7 +100,8 @@ public class World {
 	}
 
 	public static void sendMessageNonDiscord(String message) {
-		players.forEach(p -> p.getPacketSender().sendMessage(message));
+		players.stream().filter(p -> p != null && (!p.isMiniMe)).forEach(p -> p.getPacketSender().sendMessage(message));
+
 	}
 
 	public static void sendStaffMessage(String message) {
@@ -142,6 +144,7 @@ public class World {
 
 	public static void savePlayers() {
 		players.forEach(p -> p.save());
+		players.forEach(MiniMeData::save);
 	}
 
 	public static CharacterList<Player> getPlayers() {
