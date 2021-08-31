@@ -31,13 +31,13 @@ public class DonationChests {
     /** Used to check all items are valid **/
     public static void checkItems() {
         for (int lowTierItem : lowTierItems) {
-            System.out.println("[LOW] Item ID: " + lowTierItem + " Name: " + ItemDefinition.forId(lowTierItem));
+            System.out.println("[LOW] Item ID: " + lowTierItem + " Name: " + ItemDefinition.forId(lowTierItem).getName());
         }
         for (int mediumTierItem : mediumTierItems) {
-            System.out.println("[MED] Item ID: " + mediumTierItem + " Name: " + ItemDefinition.forId(mediumTierItem));
+            System.out.println("[MED] Item ID: " + mediumTierItem + " Name: " + ItemDefinition.forId(mediumTierItem).getName());
         }
         for (int highTierItem : highTierItems) {
-            System.out.println("[HIGH] Item ID: " + highTierItem + " Name: " + ItemDefinition.forId(highTierItem));
+            System.out.println("[HIGH] Item ID: " + highTierItem + " Name: " + ItemDefinition.forId(highTierItem).getName());
         }
     }
     /** Handles clicking each chest **/
