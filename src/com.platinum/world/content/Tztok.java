@@ -59,7 +59,7 @@ public class Tztok extends NPC {
 	 */
 	public static void initialize() {
 
-		TaskManager.submit(new Task( 1500, false) { // 6000
+		TaskManager.submit(new Task( 2500, false) { // 6000
 
 			@Override
 			public void execute() {
