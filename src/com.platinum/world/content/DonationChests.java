@@ -10,9 +10,9 @@ import com.platinum.world.entity.impl.player.Player;
 public class DonationChests {
 
     // TODO Rename & change ID's
-    public static final int lowTierChestID = 0;
-    public static final int mediumTierChestID = 1;
-    public static final int highTierChestID = 2;
+    public static final int lowTierChestID = 172;
+    public static final int mediumTierChestID = 6420;
+    public static final int highTierChestID = 6421;
 
     // TODO Rename & change ID's
     public static final int lowTierKeyID = 3459;

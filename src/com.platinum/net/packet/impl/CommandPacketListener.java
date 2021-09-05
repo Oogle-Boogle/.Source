@@ -689,7 +689,7 @@ public class CommandPacketListener implements PacketListener {
 			player.getPacketSender().sendMessage(player.getPosition().toString());
 		}
 		
-		if (command[0].equalsIgnoreCase("lms")) {
+		/*if (command[0].equalsIgnoreCase("lms")) {
 			LastManStanding.enterLobby(player);
 		}
 
@@ -713,7 +713,7 @@ public class CommandPacketListener implements PacketListener {
 				player.sendMessage("You need a LMS key to use this command.");
 				return;
 			}
-		}
+		}*/
 		if (command[0].equalsIgnoreCase("chests")) {
 			TeleportHandler.teleportPlayer(player, new Position(2331, 3682, 0),
 					player.getSpellbook().getTeleportType());
