@@ -40,7 +40,7 @@ public enum FightType {
     DAGGER_SLASH(13048, 43, 2, BonusManager.ATTACK_STAB, FightStyle.AGGRESSIVE),
     DAGGER_BLOCK(13049, 43, 3, BonusManager.ATTACK_STAB, FightStyle.DEFENSIVE),
     SWORD_STAB(15072, 43, 0, BonusManager.ATTACK_STAB, FightStyle.ACCURATE),
-    SWORD_LUNGE(12310, 43, 1, BonusManager.ATTACK_STAB, FightStyle.AGGRESSIVE),
+    SWORD_LUNGE(12310, 43, 1, BonusManager.ATTACK_STAB, FightStyle.CONTROLLED),
     SWORD_SLASH(12310, 43, 2, BonusManager.ATTACK_SLASH, FightStyle.AGGRESSIVE),
     SWORD_BLOCK(12310, 43, 3, BonusManager.ATTACK_STAB, FightStyle.DEFENSIVE),
     SCIMITAR_CHOP(15071, 43, 0, BonusManager.ATTACK_SLASH, FightStyle.ACCURATE),
