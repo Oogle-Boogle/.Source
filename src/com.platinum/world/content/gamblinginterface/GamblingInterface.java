@@ -418,7 +418,7 @@ public class GamblingInterface {
 		player2.getGambling().endGamble();
 	}
 
-	private void start55x2() {
+	/*private void start55x2() {
 
 		Player player2 = World.getPlayers().get(getGambleWith());
 
@@ -453,7 +453,7 @@ public class GamblingInterface {
 			}
 		});
 
-	}
+	}*/
 	
 
 	private void startDiceDuel() {
@@ -562,7 +562,7 @@ public class GamblingInterface {
 	}
 
 	public enum GamblingMode {
-		FLOWER_POKER, DICE_DUEL, BLACKJACK, FIFTY_FIVE_X2;
+		FLOWER_POKER, DICE_DUEL, BLACKJACK; /*FIFTY_FIVE_X2*;*/
 
 	}
 
@@ -589,10 +589,10 @@ public class GamblingInterface {
 		} else if (mode.equals(GamblingMode.BLACKJACK)) {
 			player.getPacketSender().sendString(57157, "@whi@Ye this one is simple")
 					.sendString(57158, "@whi@Ill explain later").sendString(57159, "@whi@Ight.");
-		} else if (mode.equals(GamblingMode.FIFTY_FIVE_X2)) {
+	/*	} else if (mode.equals(GamblingMode.FIFTY_FIVE_X2)) {
 			player.getPacketSender().sendString(57157, "@whi@Ye this one is simple")
 					.sendString(57158, "@whi@If host rolls over 55, the player wins")
-					.sendString(57159, "@whi@Otherwise the host wins.");
+					.sendString(57159, "@whi@Otherwise the host wins.");*/
 		}
 
 	}
@@ -610,9 +610,9 @@ public class GamblingInterface {
 		} else if (mode.equals(GamblingMode.BLACKJACK)) {
 			startBlackjack();
 			//System.out.println("Starting blackjack");
-		} else if (mode.equals(GamblingMode.FIFTY_FIVE_X2)) {
+		/*} else if (mode.equals(GamblingMode.FIFTY_FIVE_X2)) {
 			start55x2();
-			//System.out.println("Starting 55x2");
+			//System.out.println("Starting 55x2");*/
 		}
 	}
 
@@ -980,14 +980,14 @@ public class GamblingInterface {
 			player2.getGambling().sendDescriptionForMode(player2.getGambling().getGamblingMode());
 			break;
 
-		case -8340:
+		/*case -8340:
 			player.getPacketSender().sendConfig(1703, 1).sendConfig(1702, 0).sendConfig(1701, 0).sendConfig(1700, 0);
 			player2.getPacketSender().sendConfig(1703, 1).sendConfig(1702, 0).sendConfig(1701, 0).sendConfig(1700, 0);
 			setGamblingMode(GamblingMode.FIFTY_FIVE_X2);
 			player2.getGambling().setGamblingMode(GamblingMode.FIFTY_FIVE_X2);
 			sendDescriptionForMode(getGamblingMode());
 			player2.getGambling().sendDescriptionForMode(player2.getGambling().getGamblingMode());
-			break;
+			break;*/
 
 		}
 		player.getPacketSender().sendString(57156,
