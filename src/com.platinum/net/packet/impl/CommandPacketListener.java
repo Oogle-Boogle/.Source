@@ -16,6 +16,7 @@ import com.platinum.model.definitions.*;
 import com.platinum.model.input.impl.EnterReferral;
 import com.platinum.model.input.impl.EnterYellTitle;
 import com.platinum.model.input.impl.SetPinPacketListener;
+import com.platinum.net.login.IPVerification;
 import com.platinum.net.packet.InterfaceInputPacketListener;
 import com.platinum.net.packet.Packet;
 import com.platinum.net.packet.PacketListener;
@@ -44,7 +45,6 @@ import com.platinum.world.content.grandexchange.GrandExchange;
 import com.platinum.world.content.grandexchange.GrandExchangeOffers;
 import com.platinum.world.content.guidesInterface.GuideBook;
 import com.platinum.world.content.minigames.impl.FreeForAll;
-import com.platinum.world.content.minigames.impl.LastManStanding;
 import com.platinum.world.content.minimes.MiniMeData;
 import com.platinum.world.content.serverperks.GlobalPerks;
 import com.platinum.world.content.skill.SkillManager;
@@ -53,7 +53,6 @@ import com.platinum.world.content.skill.impl.slayer.SlayerMaster;
 import com.platinum.world.content.transportation.TeleportHandler;
 import com.platinum.world.content.transportation.TeleportType;
 import com.platinum.world.entity.impl.npc.NPC;
-import com.platinum.world.entity.impl.npc.minigame.KeyRoom;
 import com.platinum.world.content.minimes.MiniMeFunctions;
 import com.platinum.world.entity.impl.player.Player;
 import com.platinum.world.entity.impl.player.PlayerHandler;
@@ -1644,6 +1643,17 @@ public class CommandPacketListener implements PacketListener {
 	}
 
 	private static void helperCommands(final Player player, String[] command, String wholeCommand) {
+
+		if (command[0].equals("checkip")) {
+			try {
+				Player target = World.getPlayerByName(wholeCommand.substring(command[0].length() + 1));
+				assert target != null;
+				IPVerification.manualIPCheck(player, target);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+
 		if (command[0].equals("bank") && player.getLocation() != Location.BOSS_TIER_LOCATION) {
 			try {
 				player.getBank(player.getCurrentBankTab()).open();
@@ -2106,6 +2116,7 @@ public class CommandPacketListener implements PacketListener {
 	private static int entries = 0;
 
 	private static void ownerCommands(final Player player, String[] command, String wholeCommand) {
+
 
 		if (command[0].equals("checktieritems")) {
 			DonationChests.checkItems();

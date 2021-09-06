@@ -163,18 +163,20 @@ public final class LoginResponses {
 	 * from an ip address has exceeded {@link org.desolace.net.NetworkConstants.MAXIMUM_CONNECTIONS}.
 	 */
 	public static final int LOGIN_CONNECTION_LIMIT = 9;
-	
+
 	/**
-	 * This login opcode is used when a connection
-	 * has received a bad session id.
+	 * This is activated if the user is using a VPN,
+	 * Proxy or has a high fraud score
 	 */
-	public static final int LOGIN_BAD_SESSION_ID = 10;
+	public static final int LOGIN_REJECT_VPN = 10;
 	
 	/**
 	 * This login opcode is used when the login procedure
 	 * has rejected the session.
 	 */
 	public static final int LOGIN_REJECT_SESSION = 11;
+
+
 	
 	/**
 	 * This login opcode is used when a non-member player

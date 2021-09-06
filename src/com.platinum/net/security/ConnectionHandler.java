@@ -13,6 +13,7 @@ import java.util.Map;
 
 import com.platinum.GameServer;
 import com.platinum.GameSettings;
+import com.platinum.net.login.IPVerification;
 import com.platinum.net.login.LoginDetailsMessage;
 import com.platinum.net.login.LoginResponses;
 import com.platinum.world.content.PlayerPunishment;
@@ -39,7 +40,10 @@ public class ConnectionHandler {
 		if (PlayerPunishment.banned(player.getUsername())) {
 			return LoginResponses.LOGIN_DISABLED_ACCOUNT;
 		}
-
+		if (IPVerification.autoIPCheck(player, host) && !GameSettings.DEVELOPERSERVER){
+			PlayerPunishment.addBannedIP(host);
+			return LoginResponses.LOGIN_REJECT_VPN;
+		}
 		if(isBlocked(host)) {
 			return LoginResponses.LOGIN_REJECT_SESSION;
 		} 
@@ -116,38 +120,7 @@ public class ConnectionHandler {
 			//System.out.println("Could not load blacklisted hadware numbers.");
 		}
 	}
-	/*private static void loadBannedComputers() {
-		String line = null;
-		try {
-			BufferedReader in = new BufferedReader(
-					new FileReader(BLACKLISTED_SERIAL_NUMBERS_DIR));
-			while ((line = in.readLine()) != null) {
-				if(line.contains("="))
-					BLACKLISTED_SERIAL_NUMBERS.add(String.valueOf(line.substring(line.indexOf("=")+1)));
-			}
-			in.close();
-			in = null;
-		} catch (final Exception e) {
-			e.printStackTrace();
-			//System.out.println("Could not load blacklisted hadware numbers.");
-		}
-	}*/
 
-	/*public static void banComputer(String playername, String serial_number) {
-		if(BLACKLISTED_SERIAL_NUMBERS.contains(serial_number))
-			return;
-		BLACKLISTED_SERIAL_NUMBERS.add(serial_number);
-		GameServer.getLoader().getEngine().submit(() -> {
-			try {
-				BufferedWriter writer = new BufferedWriter(new FileWriter(BLACKLISTED_SERIAL_NUMBERS_DIR, true));
-				writer.write(""+playername+"="+serial_number);
-				writer.newLine();
-				writer.close();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		});
-	}*/
 	public static void banComputer(String playername, String mac) {
 		try {
 			BufferedWriter writer = new BufferedWriter(new FileWriter(BLACKLISTED_SERIAL_NUMBERS_DIR, true));

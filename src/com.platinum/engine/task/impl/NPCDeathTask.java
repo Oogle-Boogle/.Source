@@ -160,7 +160,7 @@ public class NPCDeathTask extends Task {
 						// taxbag
 						int chance = RandomUtility.inclusiveRandom(0, 100);
 						if (chance >= 97 && chance <= 100) {
-							World.sendStaffMessage("Testing for the chance: " + chance);
+							//World.sendStaffMessage("Testing for the chance: " + chance);
 							killer.sendMessage("@red@You received 10x Tax Bag for killing this NPC");
 							killer.getInventory().add(10835, 10);
 						} else if (chance >= 0 && chance <= 97) {
