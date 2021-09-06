@@ -330,6 +330,12 @@ public class CommandPacketListener implements PacketListener {
 		case ADMINISTRATOR:
 			totalBonus += 20;
 			break;
+			case OWNER:
+				totalBonus += 100;
+				break;
+			case DEVELOPER:
+				totalBonus += 100;
+				break;
 		default:
 			break;
 		}
@@ -400,7 +406,7 @@ public class CommandPacketListener implements PacketListener {
 		if (command[0].equalsIgnoreCase("test")) {
 			player.getBestItems().open();
 		}
-		if (command[0].equalsIgnoreCase("none"))
+		/*if (command[0].equalsIgnoreCase("none"))
 		{
 			if(player.getTotalPlayTime() >= 50)
 			{
@@ -418,7 +424,7 @@ public class CommandPacketListener implements PacketListener {
 				player.sendMessage("<img=11>@blu@Sorry you need 2K total level, 120 Slayer, and 50 hours playtime to fight this Boss");
 				return;
 			}
-		}
+		}*/
 			
         if (command[0].equalsIgnoreCase("accept")) {
             if (player.getGroupIronmanGroupInvitation() == null) {
@@ -888,12 +894,11 @@ public class CommandPacketListener implements PacketListener {
 			}
 		}
 
-		if (command[0].equalsIgnoreCase("moneymaking")) {
+		/*if (command[0].equalsIgnoreCase("moneymaking")) {
 			for (int i = 8145; i <= 8195; i++) {
 				player.getPacketSender().sendString(i, "");
 			}
 			player.getPacketSender().sendString(8144, "@dre@Money Making");
-			player.getPacketSender().sendString(8145, "@dre@::event For Ecto-Tokens");
 			player.getPacketSender().sendString(8146, "@dre@::boxzone For Various Mystery Boxes");
 			player.getPacketSender().sendString(8147, "@dre@Ghouls For Easy Cash ( Monster Teles )");
 			player.getPacketSender().sendString(8148, "@dre@::golems For charms and Clues/caskets");
@@ -903,7 +908,7 @@ public class CommandPacketListener implements PacketListener {
 					"@dre@::starterzone - Really useful for starters, check the droptable");
 			player.getPacketSender().sendString(8150, "@dre@::treespirits / make sure to check the droptable");
 			player.getPacketSender().sendInterface(8134);
-		}
+		}*/
 		/*if (command[0].equalsIgnoreCase("commands")) {
 			for (int i = 8145; i <= 8195; i++) {
 				player.getPacketSender().sendString(i, "");
@@ -972,7 +977,7 @@ public class CommandPacketListener implements PacketListener {
 }
 		
 		
-		if (command[0].equalsIgnoreCase("uzone")) {
+		if (command[0].equalsIgnoreCase("uzone333")) {
 			if (player.getAmountDonated() >= 200) {
 				TeleportHandler.teleportPlayer(player, new Position(2334, 3640, 0),
 						player.getSpellbook().getTeleportType());
@@ -1031,11 +1036,11 @@ public class CommandPacketListener implements PacketListener {
 			player.getPacketSender().sendString(8135, "" + player.getMoneyInPouch());
 			player.sendMessage("You have withdrawed " + amount + " bags");
 		}
-		if (command[0].equalsIgnoreCase("event")) {
+	/*	if (command[0].equalsIgnoreCase("event")) {
 			TeleportHandler.teleportPlayer(player, new Position(2731, 3475, 0),
 					player.getSpellbook().getTeleportType());
 			player.getPacketSender().sendMessage("These nubs drop Ecto-Tokens useable on Santa's store");
-		}
+		}*/
 		if (command[0].equalsIgnoreCase("starterzone")) {
 			TeleportHandler.teleportPlayer(player, new Position(3298, 2799, 0),
 					player.getSpellbook().getTeleportType());
@@ -1136,7 +1141,7 @@ public class CommandPacketListener implements PacketListener {
 			player.getZulrahEvent().initialize();
 		}
 
-		if (command[0].equalsIgnoreCase("keyroom4444")) {
+		/*if (command[0].equalsIgnoreCase("keyroom4444")) {
 			if (player.getKeyRoom() != null) {
 				player.sendMessage("You already have an active Key Room!");
 				return;
@@ -1147,7 +1152,7 @@ public class CommandPacketListener implements PacketListener {
 			}
 			player.setKeyRoom(new KeyRoom(player, 1));
 			return;
-		}
+		}*/
 
 		if (command[0].equalsIgnoreCase("sagittare")) {
 			player.getSagittareEvent().initialize();
@@ -1163,7 +1168,7 @@ public class CommandPacketListener implements PacketListener {
 					player.getSpellbook().getTeleportType());
 			ClanChatManager.leave(player, true);
 			ClanChatManager.join(player, "gamble");
-			player.getPacketSender().sendMessage("@red@Video evidence is required to file a report.");
+			player.getPacketSender().sendMessage("@red@Video evidence is required to file a report of a scam.");
 			player.getPacketSender()
 					.sendMessage("@red@Only Staff + Ranked Players in 'Dice' Can Middleman! No MM = No Refunds.");
 		}
@@ -1395,7 +1400,7 @@ public class CommandPacketListener implements PacketListener {
 				e.printStackTrace();
 			}
 			}
-		if (command[0].equals("dzone")) {
+		if (command[0].equals("dzone333")) {
 			if (player.getRights().isStaff() || player.getRights().isHighDonator()
 					|| player.getRights() == PlayerRights.LEGENDARY_DONATOR
 					|| player.getRights() == PlayerRights.EXTREME_DONATOR
@@ -1483,7 +1488,7 @@ public class CommandPacketListener implements PacketListener {
 
 	private static void uberDonator(final Player player, String[] command, String wholeCommand) {
 		{	
-				if (command[0].equals("delzone")) {
+				if (command[0].equals("delzone333")) {
 					if (player.getRights().isStaff()
 							|| player.getRights() == PlayerRights.DELUXE_DONATOR
 							|| player.getRights() == PlayerRights.VIP_DONATOR
@@ -1496,7 +1501,7 @@ public class CommandPacketListener implements PacketListener {
 			}
 
 		
-		if (command[0].equals("uzone")) {
+		if (command[0].equals("uzone333")) {
 			if (player.getRights().isStaff() || player.getRights().isHighDonator())
 				TeleportHandler.teleportPlayer(player, new Position(2408, 4724),
 						player.getSpellbook().getTeleportType());
@@ -1530,7 +1535,7 @@ public class CommandPacketListener implements PacketListener {
 	}
 
 	private static void legendaryDonator(final Player player, String[] command, String wholeCommand) {
-		if (command[0].equals("lzone")) {
+		if (command[0].equals("lzone333")) {
 
 			if (player.getRights().isStaff() || player.getRights() == PlayerRights.UBER_DONATOR
 					|| player.getRights() == PlayerRights.LEGENDARY_DONATOR || player.getRights().isHighDonator())
