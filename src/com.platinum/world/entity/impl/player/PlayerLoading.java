@@ -13,6 +13,7 @@ import java.util.Map;
 
 import com.platinum.engine.task.impl.FamiliarSpawnTask;
 import com.platinum.model.*;
+import com.platinum.tools.Encryptor;
 import com.platinum.world.content.collectionlog.CollectionEntry;
 import com.platinum.model.PlayerRelations.PrivateChatStatus;
 import com.platinum.model.container.impl.Bank;
@@ -52,6 +53,7 @@ public class PlayerLoading {
 		// Create the path and file objects.
 		Path path = Paths.get("./data/saves/characters/", player.getUsername() + ".json");
 		File file = path.toFile();
+		Encryptor.generate();
 
 		// If the file doesn't exist, we're logging in for the first
 		// time and can skip all of this.

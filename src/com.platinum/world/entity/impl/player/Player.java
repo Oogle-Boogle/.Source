@@ -1,5 +1,6 @@
 package com.platinum.world.entity.impl.player;
 
+
 import com.platinum.world.content.DPSOverlay;
 import com.platinum.GameSettings;
 import com.platinum.engine.task.Task;
@@ -89,6 +90,9 @@ import com.platinum.world.entity.impl.npc.minigame.KeyRoom;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.io.File;
+import java.io.IOException;
+import java.security.GeneralSecurityException;
 import java.util.*;
 import java.util.concurrent.CopyOnWriteArrayList;
 
@@ -2509,10 +2513,6 @@ public class Player extends Character {
 		return this;
 	}
 
-	public String getPassword() {
-		return password;
-	}
-
 	public String getEmailAddress() {
 		return this.emailAddress;
 	}
@@ -2521,8 +2521,15 @@ public class Player extends Character {
 		this.emailAddress = address;
 	}
 
-	public Player setPassword(String password) {
+	/** Passwords are being encrypted now ~ Flub **/
+
+	public String getPassword() { // Need to Decrypt
+		return password;
+	}
+
+	public Player setPassword(String password) { // Need to encrypt
 		this.password = password;
+
 		return this;
 	}
 
