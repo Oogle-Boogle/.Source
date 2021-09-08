@@ -81,6 +81,7 @@ public final class LoginDecoder extends FrameDecoder {
 				return null;
 			}
 			int clientVersion = buffer.readShort();
+			//System.out.println("Client version = " + clientVersion);
 			int memory =  buffer.readByte();
 			if (memory != 0 && memory != 1) {
 				//System.out.println("Unhandled memory byte value");

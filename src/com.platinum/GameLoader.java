@@ -73,7 +73,7 @@ public final class GameLoader {
 	private void executeServiceLoad() {
 		if (GameSettings.MYSQL_ENABLED) {
 		}
-		serviceLoader.execute(() -> Panel.main());
+		//serviceLoader.execute(() -> Panel.main());
 		serviceLoader.execute(() -> ConnectionHandler.init());
 		serviceLoader.execute(() -> PlayerPunishment.init());
 		serviceLoader.execute(() -> RegionClipping.init());

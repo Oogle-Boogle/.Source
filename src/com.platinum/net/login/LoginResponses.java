@@ -17,25 +17,10 @@ import com.platinum.world.entity.impl.player.Player;
 import com.platinum.world.entity.impl.player.PlayerLoading;
 
 public final class LoginResponses {
-	
-	final static String CACHE_PATH = System.getProperty("user.home") + File.separator + ".Plat" + File.separator;
-	final static String VERSION_FILE = CACHE_PATH + "client_version.txt";
-	@SuppressWarnings("resource")
-	public static long getCurrentVersion() {
-		try {
-			File versionDir = new File(VERSION_FILE);
 
-			if (!versionDir.exists()) {
-				versionDir.createNewFile();
-				return -1;
-			}
 
-			return Long.parseLong(new BufferedReader(new InputStreamReader(new FileInputStream(VERSION_FILE))).readLine());
-		} catch (Exception e) {
-			return -1;
-		}
-	}
 	public static final int getResponse(Player player, LoginDetailsMessage msg) throws IOException {
+
 		if (World.getPlayers().isFull()) {
 			return LOGIN_WORLD_FULL;
 		} 
@@ -59,9 +44,7 @@ public final class LoginResponses {
 		if(player.getUsername().startsWith(" ")) {
 			return USERNAME_STARTS_WITH_SPACE;
 		} 
-		if(getCurrentVersion() != GameSettings.GAME_VERSION && !GameSettings.DEVELOPERSERVER|| msg.getUid() != (350>>2240)) {
-			System.err.println( GameSettings.GAME_VERSION + " server");
-			System.err.println( getCurrentVersion() + " client");
+		if(msg.getClientVersion() != GameSettings.GAME_VERSION && !GameSettings.DEVELOPERSERVER || msg.getUid() != (350>>2240)) {
 			return OLD_CLIENT_VERSION;
 		}
 		if(World.getPlayerByName(player.getUsername()) != null) {
