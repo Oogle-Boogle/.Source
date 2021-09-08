@@ -96429,7 +96429,7 @@
     "poisonous": false,
     "respawn": 10,
     "maxHit": 850,
-    "hitpoints": 100000,
+    "hitpoints": 300000,
     "attackSpeed": 6,
     "attackAnim": 422,
     "defenceAnim": 404,
