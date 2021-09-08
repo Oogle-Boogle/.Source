@@ -1200,7 +1200,7 @@ public class ObjectActionPacketListener implements PacketListener {
 					}
 					break;
 				case 15638:
-					player.moveTo(new Position(3039, 2847, 0));
+					player.moveTo(new Position(1901, 5221, 0));
 					break;
 				case 15644:
 				case 15641:
