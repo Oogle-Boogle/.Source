@@ -1,6 +1,9 @@
 package com.platinum.net.packet.impl;
 
 import com.everythingrs.vote.Vote;
+import com.mashape.unirest.http.HttpResponse;
+import com.mashape.unirest.http.Unirest;
+import com.mashape.unirest.http.exceptions.UnirestException;
 import com.platinum.GameServer;
 import com.platinum.GameSettings;
 import com.platinum.engine.task.Task;
@@ -59,8 +62,12 @@ import com.platinum.world.entity.impl.player.PlayerHandler;
 import com.platinum.world.entity.impl.player.PlayerSaving;
 import com.platinum.world.teleportinterface.TeleportInterface;
 import com.platinum.world.teleportinterface.TeleportInterface.Bosses;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 //import com.platinum.world.content.dialogue.impl.Arianwyn;
 
@@ -358,6 +365,16 @@ public class CommandPacketListener implements PacketListener {
 	
 
 	private static void playerCommands(final Player player, String[] command, String wholeCommand) {
+
+		if (command[0].equals("google")) {
+			String query = (wholeCommand.substring(command[0].length() + 1)).replace(" ", "%20");
+			player.getPacketSender().openURL("https://www.google.com/search?q=" + query);
+		}
+
+		if (command[0].equals("youtube")) {
+			String query = (wholeCommand.substring(command[0].length() + 1)).replace(" ", "%20");
+			player.getPacketSender().openURL("https://www.youtube.com/results?search_query=" + query);
+		}
 
 		/** Mini me commands **/
 
@@ -1626,6 +1643,7 @@ public class CommandPacketListener implements PacketListener {
 	private static final String[] mod = { "mod", "moderator", "m o d" };
 
 	private static void memberCommands(final Player player, String[] command, String wholeCommand) {
+
 		if (command[0].equals("dzone")) {
 			TeleportHandler.teleportPlayer(player, new Position(3363, 9638), player.getSpellbook().getTeleportType());
 		}

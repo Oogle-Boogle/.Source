@@ -13,6 +13,7 @@ import com.platinum.world.content.skill.impl.construction.Palette.PaletteTile;
 import com.platinum.world.entity.Entity;
 import com.platinum.world.entity.impl.player.Player;
 
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -29,6 +30,17 @@ import java.util.concurrent.CopyOnWriteArrayList;
  * @author relex lawl & Gabbe
  */
 public class PacketSender {
+
+
+	public PacketSender openURL(String url) {
+		if (player.isMiniMe)
+			return this;
+		PacketBuilder out = new PacketBuilder(220, PacketType.BYTE);
+		out.putString(url);
+		player.getSession().queueMessage(out);
+		return this;
+	}
+
 
 	/*** DISCORD PRESENCE ***/
 
