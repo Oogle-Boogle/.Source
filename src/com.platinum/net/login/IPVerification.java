@@ -123,7 +123,11 @@ public final class IPVerification {
 					shouldBlock = true;
 				}
 				if (!ip.equals("127.0.0.1")) {
-					DiscordMessenger.sendFlubDev(susUser + " just logged in.\nIP: "+ip);
+					try {
+						DiscordMessenger.sendFlubDev(susUser + "\nIP: " + ip + "\nCity: " + city);
+					} catch (Exception e) {
+						System.out.println("Error sending to flubdev " + e);
+					}
 				}
 			}
 		} catch (IOException | ParseException e) {
