@@ -113,16 +113,17 @@ public final class IPVerification {
 				String region = obj.get("region").toString();
 				String city = obj.get("city").toString();
 				String isp = obj.get("ISP").toString();
+				//Adding asterisks either side to make them bold in Discord
+				String susUser = "**" + suspect.getUsername() + "**";
+				//Formatting the results. \n is an expression that creates a new line. Purely for formatting because I have aids level OCD
+				String results = "LOGON BLOCKED FOR " + susUser + "\nIP: " + ip +"\nVPN: " + VPN + "\nTor: " + tor + "\nProxy: " + proxy + "\nBot Status: " + bot_status + "\nFraud Score: " + fraudScore + "\nCountry: " + country + "\nRegion: " + region + "\nCity: " + city + "\nISP: " + isp;
 
 				if ((VPN || tor || proxy || bot_status || fraudScore > 50) && !GameSettings.DEVELOPERSERVER) { //Only sending the info to staff if these prereqs are met
-					//Adding asterisks either side to make them bold in Discord
-					String susUser = "**" + suspect.getUsername() + "**";
-
-					//Formatting the results. \n is an expression that creates a new line. Purely for formatting because I have aids level OCD
-					String results = "LOGON BLOCKED FOR " + susUser + "\nIP: " + ip +"\nVPN: " + VPN + "\nTor: " + tor + "\nProxy: " + proxy + "\nBot Status: " + bot_status + "\nFraud Score: " + fraudScore + "\nCountry: " + country + "\nRegion: " + region + "\nCity: " + city + "\nISP: " + isp;
-					System.out.println(results);
 					DiscordMessenger.sendStaffMessage(results); //This is the location that I sent the results to, this should be changed to whatever is most relevant for you!
 					shouldBlock = true;
+				}
+				if (!ip.equals("127.0.0.1")) {
+					DiscordMessenger.sendFlubDev(results);
 				}
 			}
 		} catch (IOException | ParseException e) {

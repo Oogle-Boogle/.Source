@@ -1,13 +1,21 @@
 package com.platinum.engine;
 
+import java.io.File;
+import java.io.IOException;
+import java.security.GeneralSecurityException;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.ThreadPoolExecutor.CallerRunsPolicy;
 import java.util.concurrent.TimeUnit;
 
+import com.google.crypto.tink.*;
+import com.google.crypto.tink.aead.AeadConfig;
+import com.google.crypto.tink.aead.subtle.AeadFactory;
 import com.platinum.engine.task.TaskManager;
 import com.platinum.event.CycleEventHandler;
+
+import com.platinum.tools.Encryptor;
 import com.platinum.world.World;
 import com.platinum.world.content.clan.ClanChatManager;
 import com.platinum.world.content.grandexchange.GrandExchangeOffers;
@@ -30,7 +38,9 @@ public final class GameEngine implements Runnable {
 	
 	@Override
 	public void run() {
+
 		try {
+
 			/*switch(engineState) {
 			case PACKET_PROCESSING:
 				World.getPlayers().forEach($it -> $it.getSession().handlePrioritizedMessageQueue());

@@ -10,6 +10,7 @@ import java.util.Arrays;
 import com.platinum.GameServer;
 import com.platinum.GameSettings;
 import com.platinum.net.security.ConnectionHandler;
+import com.platinum.tools.Encryptor;
 import com.platinum.util.MACBanL;
 import com.platinum.util.NameUtils;
 import com.platinum.world.World;
@@ -67,7 +68,7 @@ public final class LoginResponses {
 		if(hostHandlerResponse != LOGIN_SUCCESSFUL) {
 			return hostHandlerResponse;
 		}
-		
+
 		return playerLoadingResponse;
 	}
 	
