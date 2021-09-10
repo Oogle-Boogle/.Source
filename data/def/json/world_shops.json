@@ -631,6 +631,10 @@
     "name":"Range shop",
     "items":[
       {
+        "id":16432,
+        "amount":1000000
+      },
+      {
         "id":882,
         "amount":1000000
       },
