@@ -100,7 +100,7 @@ public class GameSettings {
 	 * other words how many clients can be logged in at once per connection.
 	 * (0 is counted too)
 	 */
-	public static final int CONNECTION_AMOUNT = 5;
+	public static final int CONNECTION_AMOUNT = 2;
 
 	/**
 	 * The throttle interval for incoming connections accepted by the
