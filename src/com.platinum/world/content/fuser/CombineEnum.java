@@ -110,7 +110,7 @@ public enum CombineEnum {
                 return;
             }
             player.getInventory().addItem(player.getFuseItemSelected(), 1);
-            World.sendMessageDiscord("<shad=0>@red@ [News] " + player.getUsername() + "@cya@ has Fused a " + ItemDefinition.forId(player.getFuseItemSelected()).getName() + "!");
+            World.sendMessageDiscord("[News] " + player.getUsername() + "has Fused a " + ItemDefinition.forId(player.getFuseItemSelected()).getName() + "!");
             player.setClaimedFuseItem(true);
             player.setFuseInProgress(false);
             player.setFuseItemSelected(0);
