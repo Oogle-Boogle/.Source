@@ -488,26 +488,26 @@ public class NPCDrops {
 		}
 		
 		if (npc.getId() == 9993|| npc.getId() == 9277 || npc.getId() == 9944 || npc.getId() == 9273|| npc.getId() == 9247)
-		if (Misc.inclusiveRandom(1, 1000) == 47|| Misc.inclusiveRandom(1, 1000) == -47) {
+		if (Misc.random(1000) <= 47) { // 47 / 1000
 			player.sendMessage("@blu@[RARE DROP]: You get some Tokens for Frankenstiens Minigame");
 			player.giveItem(8851, 100);
 		}
 		
 		if (npc.getId() == 9932 || npc.getId() == 224 || npc.getId() == 1999 || npc.getId() == 9993|| npc.getId() == 9277 || npc.getId() == 9944 || npc.getId() == 9273|| npc.getId() == 9247)
 		if (npc.getId() == 3263 || npc.getId() == 2783 || npc.getId() == 1982|| npc.getId() == 9994)
-		if (Misc.inclusiveRandom(1, 1000) == 48|| Misc.inclusiveRandom(1, 1000) == -48) {
+		if (Misc.random(1000) <= 48) { // 48 / 1000
 			player.sendMessage("@blu@[RARE DROP]: You get some Tokens for Frankenstiens Minigame");
 			player.giveItem(8851, 70);
 		}
 		if (npc.getId() == 9932 || npc.getId() == 224 || npc.getId() == 1999 || npc.getId() == 9993|| npc.getId() == 9277 || npc.getId() == 9944 || npc.getId() == 9273|| npc.getId() == 9247)
 			if (npc.getId() == 3263 || npc.getId() == 2783 || npc.getId() == 1982|| npc.getId() == 9994)
-		if (Misc.inclusiveRandom(1, 1000) == 49|| Misc.inclusiveRandom(1, 1000) == -49) {
+		if (Misc.random(1000) <= 49) { // 49 / 1000
 			player.sendMessage("You get some Tokens for Frankenstiens Minigame");
 			player.giveItem(8851, 30);
 		}
 		if (npc.getId() == 9932 || npc.getId() == 224 || npc.getId() == 1999 || npc.getId() == 9993|| npc.getId() == 9277 || npc.getId() == 9944 || npc.getId() == 9273|| npc.getId() == 9247)
 			if (npc.getId() == 3263 || npc.getId() == 2783 || npc.getId() == 1982|| npc.getId() == 9994)
-		if (Misc.inclusiveRandom(1, 1000) == 50|| Misc.inclusiveRandom(1, 1000) == -50) {
+		if (Misc.random(1000) <= 50) { // 50 / 1000 {
 			player.sendMessage("You get some Tokens for Frankenstiens Minigame");
 			player.giveItem(8851, 10);
 		}
