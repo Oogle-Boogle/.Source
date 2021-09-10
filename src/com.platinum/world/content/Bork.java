@@ -15,6 +15,7 @@ import com.platinum.model.Item;
 import com.platinum.model.Position;
 import com.platinum.util.Misc;
 import com.platinum.world.content.combat.CombatBuilder.CombatDamageCache;
+import com.platinum.world.content.discord.DiscordMessenger;
 import com.platinum.world.content.skill.impl.pvm.NpcGain;
 import com.platinum.world.World;
 import com.platinum.world.content.combat.CombatFactory;
@@ -161,26 +162,28 @@ public class Bork extends NPC {
 		GroundItemManager.spawnGroundItem(player,
 				new GroundItem(new Item(10835, 100), pos, player.getUsername(), false, 150, true, 200));
 
-		if (chance >= 950) {
+		if (chance >= 92) {
 			GroundItemManager.spawnGroundItem(player,
 					new GroundItem(new Item(superrare), pos, player.getUsername(), false, 150, true, 200));
 			String itemName = (new Item(superrare).getDefinition().getName());
 			String itemMessage = Misc.anOrA(itemName) + " " + itemName;
 			World.sendMessageNonDiscord(
 					"<img=11><col=FF0000>" + player.getUsername() + " received<col=eaeaea>[ " + itemMessage + "<col=eaeaea>]<col=FF0000> from the Uber Boss!");
+			DiscordMessenger.sendRareDrop(player.getUsername(), " received[ " + itemMessage + "from Bork!");
 			return;
 		}
 
-		if (chance >= 500) {
+		if (chance >= 70) {
 			GroundItemManager.spawnGroundItem(player,
 					new GroundItem(new Item(rare), pos, player.getUsername(), false, 150, true, 200));
 			String itemName = (new Item(rare).getDefinition().getName());
 			String itemMessage = Misc.anOrA(itemName) + " " + itemName;
 			World.sendMessageNonDiscord(
 					"<img=11><col=FF0000>" + player.getUsername() + " received<col=eaeaea>[ " + itemMessage + "<col=eaeaea>]<col=FF0000> from the Uber Boss!");
+			DiscordMessenger.sendRareDrop(player.getUsername(), " received[ " + itemMessage + "from Bork!");
 			return;
 		}
-		if (chance >= 1) {
+		if (chance >= 0) {
 			GroundItemManager.spawnGroundItem(player,
 					new GroundItem(new Item(common, 1), pos, player.getUsername(), false, 150, true, 200));
 			String itemName = (new Item(common).getDefinition().getName());

@@ -15,6 +15,7 @@ import com.platinum.model.Item;
 import com.platinum.model.Position;
 import com.platinum.util.Misc;
 import com.platinum.world.content.combat.CombatBuilder.CombatDamageCache;
+import com.platinum.world.content.discord.DiscordMessenger;
 import com.platinum.world.content.skill.impl.pvm.NpcGain;
 import com.platinum.world.World;
 import com.platinum.world.content.combat.CombatFactory;
@@ -59,7 +60,7 @@ public class Tztok extends NPC {
 	 */
 	public static void initialize() {
 
-		TaskManager.submit(new Task( 2501, false) { // 6000
+		TaskManager.submit(new Task( 4000, false) { // 6000
 
 			@Override
 			public void execute() {
@@ -167,6 +168,7 @@ public class Tztok extends NPC {
 			String itemMessage = Misc.anOrA(itemName) + " " + itemName;
 			World.sendMessageNonDiscord(
 					"<img=11><col=FF0000>" + player.getUsername() + " received<col=eaeaea><img=11>[ " + itemMessage + "<col=eaeaea>]<img=11><col=FF0000>from the World Boss!");
+			DiscordMessenger.sendRareDrop(player.getUsername(), " received[ " + itemMessage + "from the World Boss!");
 			return;
 		}
 
@@ -177,6 +179,7 @@ public class Tztok extends NPC {
 			String itemMessage = Misc.anOrA(itemName) + " " + itemName;
 			World.sendMessageNonDiscord(
 					"<img=11><col=FF0000>" + player.getUsername() + " received<img=11><col=eaeaea>[ " + itemMessage + "<col=eaeaea>]<img=11><col=FF0000> from the World Boss!");
+			DiscordMessenger.sendRareDrop(player.getUsername(), " received[ " + itemMessage + "from the World Boss!");
 			return;
 		}
 		if (chance >= 0) {

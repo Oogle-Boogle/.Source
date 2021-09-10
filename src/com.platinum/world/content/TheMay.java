@@ -14,6 +14,7 @@ import com.platinum.model.Item;
 import com.platinum.model.Position;
 import com.platinum.util.Misc;
 import com.platinum.world.content.combat.CombatBuilder.CombatDamageCache;
+import com.platinum.world.content.discord.DiscordMessenger;
 import com.platinum.world.content.skill.impl.pvm.NpcGain;
 import com.platinum.world.World;
 import com.platinum.world.content.combat.CombatFactory;
@@ -170,6 +171,7 @@ public class TheMay extends NPC {
 			String itemMessage = Misc.anOrA(itemName) + " " + itemName;
 			World.sendMessageNonDiscord(
 					"<img=11><col=FF0000>" + player.getUsername() + " received " + itemMessage + " from Trainer May");
+			DiscordMessenger.sendRareDrop(player.getUsername(), " received[ " + itemMessage + "from Trainer May!");
 			return;
 		}
 
@@ -180,6 +182,7 @@ public class TheMay extends NPC {
 			String itemMessage = Misc.anOrA(itemName) + " " + itemName;
 			World.sendMessageNonDiscord(
 					"<img=11><col=FF0000>" + player.getUsername() + " received " + itemMessage + " from Trainer May");
+			DiscordMessenger.sendRareDrop(player.getUsername(), " received[ " + itemMessage + "from Trainer May!");
 			return;
 		}
 		if (chance >= 0) {
