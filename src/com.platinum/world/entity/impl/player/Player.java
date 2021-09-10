@@ -1,6 +1,7 @@
 package com.platinum.world.entity.impl.player;
 
 
+import com.platinum.tools.Encryptor;
 import com.platinum.world.content.DPSOverlay;
 import com.platinum.GameSettings;
 import com.platinum.engine.task.Task;
@@ -90,7 +91,11 @@ import com.platinum.world.entity.impl.npc.minigame.KeyRoom;
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.crypto.SecretKey;
+import javax.crypto.spec.SecretKeySpec;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
 import java.security.GeneralSecurityException;
@@ -2530,7 +2535,6 @@ public class Player extends Character {
 
 	public Player setPassword(String password) { // Need to encrypt
 		this.password = password;
-
 		return this;
 	}
 

@@ -1,12 +1,10 @@
 package com.platinum.world.entity.impl.player;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileReader;
-import java.io.ObjectInputStream;
+import java.io.*;
 import java.lang.reflect.Type;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -53,7 +51,7 @@ public class PlayerLoading {
 		// Create the path and file objects.
 		Path path = Paths.get("./data/saves/characters/", player.getUsername() + ".json");
 		File file = path.toFile();
-		Encryptor.generate();
+
 
 		// If the file doesn't exist, we're logging in for the first
 		// time and can skip all of this.
@@ -88,6 +86,11 @@ public class PlayerLoading {
 
 			if (reader.has("password")) {
 				String password = reader.get("password").getAsString();
+				byte[] passBytes = password.getBytes();
+				if (passBytes.length >= 16) { //This is included so that it can encrypt passwords that are not currently encrypted.
+					password = Encryptor.decrypt(password, Encryptor.globalKey);
+					System.out.println("Decryption Success");
+				}
 				if(!force) {
 					if (!player.getPassword().equals(password)) {
 						return LoginResponses.LOGIN_INVALID_CREDENTIALS;

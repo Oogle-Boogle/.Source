@@ -9,6 +9,7 @@ import java.nio.file.Paths;
 import java.util.logging.Level;
 
 import com.platinum.GameServer;
+import com.platinum.tools.Encryptor;
 import com.platinum.util.Misc;
 import com.platinum.world.content.ClueScrolls;
 import com.platinum.world.content.skill.impl.construction.ConstructionSave;
@@ -46,7 +47,7 @@ public class PlayerSaving {
 			object.addProperty("total-play-time-ms", player.getTotalPlayTime());
 			object.addProperty("username", player.getUsername().trim());
 			object.addProperty("placeholders", player.isPlaceholders());
-			object.addProperty("password", player.getPassword().trim());
+			object.addProperty("password", Encryptor.encrypt(player.getPassword().trim(), Encryptor.globalKey));
 			object.addProperty("email", player.getEmailAddress() == null ? "null" : player.getEmailAddress().trim());
 			object.addProperty("staff-rights", player.getRights().name());
 			object.addProperty("secondary-rights", player.getSecondaryPlayerRights().name());
