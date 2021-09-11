@@ -284,7 +284,7 @@ public class TeleportInterface {
 		//DBZ_ZONE(50603, "DBZ Zone", "This place drops DBZ Tokens!", "Multi Area", "", "", "", 100,
 				//new int[] { 2141, 5535, 3 }),
 		
-		EVENTBOSS(50603, "World boss Event", "THIS NPC Spawns", "Every Hour", "Multiple People ", "May be Required!", "", 2745,
+		EVENTBOSS(50602, "World boss Event", "THIS NPC Spawns", "Every Hour", "Multiple People ", "May be Required!", "", 2745,
 				new int[] { 2409, 4679, 0 });
 		
 		//AMONG(50605, "Among Us", "Among Us Points", "", "", "", "", 600,

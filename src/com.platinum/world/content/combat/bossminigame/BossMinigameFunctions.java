@@ -25,11 +25,11 @@ import static com.platinum.model.RegionInstance.RegionInstanceType.BOSS_TIER_ARE
  */
 public class BossMinigameFunctions {
 
-    public static final int STAIRS_ENTRY_ID = 12131;
+    public static final int STAIRS_ENTRY_ID = 22945;
 
     public static final int EXIT_CAVE_ID = 5858;
 
-    public static final Position STAIRS = new Position(2333, 4646);
+    public static final Position STAIRS = new Position(1861, 5245);
     public static final Position ARENA_ENTRANCE = new Position(2807, 10105);
     public static final Position ARENA_CENTRE = new Position(2776, 10089);
     public static int stairsX = STAIRS.getX();
