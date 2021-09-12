@@ -777,7 +777,7 @@ public final class CombatFactory {
 				maxHit *= 2;
 			}
 		}
-		maxHit *= 10;
+		maxHit *= 10; //WISDOM CHANGE THIS FOR RANGED
 		return maxHit;
 	}
 
