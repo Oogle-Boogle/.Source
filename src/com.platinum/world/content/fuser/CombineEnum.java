@@ -85,21 +85,24 @@ public enum CombineEnum {
         return player.getInventory().contains(reqs); //TODO Check this because it can let things slip through.. prob set to false by default
     }
 
-    public static void startFuser(Player player, CombineEnum chosenItem) {
+    public static void handlerFuser(Player player, CombineEnum chosenItem) {
+
+        if (player.isFuseInProgress() && player.getFuseCombinationTimer() > 0) {
+            player.getPacketSender()
+                    .sendMessage("@red@You have not finished fusing your @blu@"
+                            + ItemDefinition.forId(player.getFuseItemSelected()).getName()
+                            + "@red@ yet!");
+            return;
+        }
 
         if (!player.isClaimedFuseItem() && player.getFuseItemSelected() > 0) {
             player.getPacketSender()
                     .sendMessage("@red@You haven't claimed your @blu@"
                     + ItemDefinition.forId(player.getFuseItemSelected()).getName()
                     + "@red@ yet!");
+            return;
         }
 
-        if (player.isFuseInProgress() && player.getFuseCombinationTimer() > 0) {
-            player.getPacketSender()
-                    .sendMessage("@red@You have not finished fusing your @blu@"
-                    + ItemDefinition.forId(player.getFuseItemSelected()).getName()
-                    + "@red@ yet!");
-        }
         if (checkRequirements(chosenItem, player)) {
             removeRequirements(chosenItem, player);
             player.setFuseCombinationTimer(System.currentTimeMillis() + (chosenItem.getTimer()));

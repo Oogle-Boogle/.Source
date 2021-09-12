@@ -6,12 +6,10 @@ import com.platinum.GameSettings;
 import com.platinum.engine.task.TaskManager;
 import com.platinum.engine.task.impl.AutorelFixTask;
 import com.platinum.model.Locations.Location;
-import com.platinum.model.Item;
 import com.platinum.model.PlayerRights;
 import com.platinum.model.Position;
 import com.platinum.model.container.impl.Bank;
 import com.platinum.model.container.impl.Bank.BankSearchAttributes;
-import com.platinum.model.definitions.ItemDefinition;
 import com.platinum.model.definitions.NpcDefinition;
 import com.platinum.model.definitions.WeaponInterfaces.WeaponInterface;
 import com.platinum.model.input.impl.ChangeInstanceAmount;
@@ -692,13 +690,7 @@ public class ButtonClickPacketListener implements PacketListener {
                     CombineHandler.openInterface((CombineEnum.values()[player.combineIndex]), player);
         			break;
         		case -12832:
-                    if ((player.isFuseInProgress()
-                            || !player.isClaimedFuseItem()
-                            && player.getFuseItemSelected() > 0)
-                            && player.getFuseItemSelected() == CombineEnum.values()[player.combineIndex].getEndItem()) {
-                        CombineEnum.claimItem(player);
-                    } else
-        			 CombineEnum.startFuser(player, CombineEnum.values()[player.combineIndex]); //Setting the selected item
+                    CombineEnum.handlerFuser(player, CombineEnum.values()[player.combineIndex]); //Setting the selected item
         		break;
 
             case 19314:
