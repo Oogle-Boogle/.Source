@@ -18,7 +18,7 @@ public class SephirothChest {
 	// We roll for random on scale of 1 - 200
 	
 	// if random is 121 - 185, they get this table
-	public static int rareLoots[] = { 13266,13267,13268,13270,19158,19936,19935,3912,15374};
+	public static int rareLoots[] = { 13266,13267,13268,13270,19158,19936,19935,15374};
 
 	//if random is 186 to 200, they get this table
 	public static int ultraLoots[] = { 13265,13999 };
@@ -27,7 +27,7 @@ public class SephirothChest {
 	//public static int amazingLoots[] = { 5022 };
 
 	// if roll is 1 - 120, they get this table 
-	public static int commonLoots[] = { 10835,3912 };
+	public static int commonLoots[] = { 10835 };
 
 	public static int getRandomItem(int[] array) {
 		return array[Misc.getRandom(array.length - 1)];
