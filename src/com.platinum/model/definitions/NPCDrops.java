@@ -155,6 +155,7 @@ public class NPCDrops {
 		public int getId() {
 			return id;
 		}
+		public final int PLAT_TOKEN = 10835;
 
 		/**
 		 * Gets the chance.
@@ -446,9 +447,9 @@ public class NPCDrops {
 					BonesData.forId(item.getId()).getBuryingXP());
 			return;
 		}
-		
+
 		player.handleCollectedItem(npc.getId(), item);
-		
+
 		Familiar pet = player.getSummoning().getFamiliar();
 		if (pet != null && PetPerkData.hasLootEffect(pet.getSummonNpc().getId())) {
 			player.getBank(0).add(item.getId(), item.getAmount());
@@ -456,7 +457,7 @@ public class NPCDrops {
 			return;
 		}
 		boolean isWearingCollector = DropUtils.hasCollItemEquipped(player);
-		
+
 		if (isWearingCollector && !player.getBlockedCollectorsList().contains(item.getId()) && player.getInventory().getFreeSlots() > 0) {
 
 			player.getInventory().add(item);
@@ -476,7 +477,6 @@ public class NPCDrops {
 		}
 		int itemId = item.getId();
 		int amount = item.getAmount();
-		
 
 
 		if (player.getInventory().contains(6821)) {
@@ -486,34 +486,8 @@ public class NPCDrops {
 			player.getPacketSender().sendMessage("@or2@Your drop has been converted to coins!");
 			player.getInventory().add(995, formula);
 		}
-		
-		if (npc.getId() == 9993|| npc.getId() == 9277 || npc.getId() == 9944 || npc.getId() == 9273|| npc.getId() == 9247)
-		if (Misc.random(1000) <= 100) { // 47 / 1000
-			player.sendMessage("@blu@[RARE DROP]: You get some Tokens for Frankenstiens Minigame");
-			player.giveItem(8851, 100);
-		}
-		
-		if (npc.getId() == 9932 || npc.getId() == 224 || npc.getId() == 1999 || npc.getId() == 9993|| npc.getId() == 9277 || npc.getId() == 9944 || npc.getId() == 9273|| npc.getId() == 9247)
-		if (npc.getId() == 3263 || npc.getId() == 2783 || npc.getId() == 1982|| npc.getId() == 9994)
-		if (Misc.random(1000) <= 110) { // 48 / 1000
-			player.sendMessage("@blu@[RARE DROP]: You get some Tokens for Frankenstiens Minigame");
-			player.giveItem(8851, 70);
-		}
-		if (npc.getId() == 9932 || npc.getId() == 224 || npc.getId() == 1999 || npc.getId() == 9993|| npc.getId() == 9277 || npc.getId() == 9944 || npc.getId() == 9273|| npc.getId() == 9247)
-			if (npc.getId() == 3263 || npc.getId() == 2783 || npc.getId() == 1982|| npc.getId() == 9994)
-		if (Misc.random(1000) <= 120) { // 49 / 1000
-			player.sendMessage("You get some Tokens for Frankenstiens Minigame");
-			player.giveItem(8851, 30);
-		}
-		if (npc.getId() == 9932 || npc.getId() == 224 || npc.getId() == 1999 || npc.getId() == 9993|| npc.getId() == 9277 || npc.getId() == 9944 || npc.getId() == 9273|| npc.getId() == 9247)
-			if (npc.getId() == 3263 || npc.getId() == 2783 || npc.getId() == 1982|| npc.getId() == 9994)
-		if (Misc.random(1000) <= 150) { // 50 / 1000 {
-			player.sendMessage("You get some Tokens for Frankenstiens Minigame");
-			player.giveItem(8851, 10);
-		}
-		
-		
-		
+
+
 		
 		if ( itemId == 6914 || itemId == 7158 || itemId == 6889 || itemId == 15019
 				|| itemId == 11235 || itemId == 15020 || itemId == 15018 || itemId == 15220 || itemId == 6735|| itemId == 4770 || itemId == 4772 || itemId == 4771 || itemId == 3988

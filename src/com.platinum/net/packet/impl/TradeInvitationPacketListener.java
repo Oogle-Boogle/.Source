@@ -6,6 +6,7 @@ import com.platinum.model.Locations;
 import com.platinum.model.Locations.Location;
 import com.platinum.net.packet.Packet;
 import com.platinum.net.packet.PacketListener;
+import com.platinum.util.Misc;
 import com.platinum.world.World;
 import com.platinum.world.entity.impl.player.Player;
 
@@ -20,6 +21,12 @@ public class TradeInvitationPacketListener implements PacketListener {
 
 	@Override
 	public void handleMessage(Player player, Packet packet) {
+		if (Misc.getMinutesPlayed(player) <= 30) {
+			player.sendMessage("You need to have played atleast 30 minutes to trade items.");
+			return;
+		}
+		player.getPacketSender().sendInterfaceRemoval();
+		player.getCombatBuilder().cooldown(false);
 		if (player.getConstitution() <= 0)
 			return;
 		if(player.isTeleporting())

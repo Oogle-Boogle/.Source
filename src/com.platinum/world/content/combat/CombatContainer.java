@@ -113,7 +113,7 @@ public class CombatContainer {
 
 		// No hit for this turn, but we still need to calculate accuracy.
 		if (hitAmount == 0) {
-			accurate = checkAccuracy ? CombatFactory.rollAccuracy(attacker, victim, combatType) : true;
+			accurate = !checkAccuracy || CombatFactory.rollAccuracy(attacker, victim, combatType);
 			return new CombatHit[] {};
 		}
 		if (attacker.isPlayer()) {
@@ -140,7 +140,7 @@ public class CombatContainer {
 		// hit and accuracy calculations.
 		CombatHit[] array = new CombatHit[hitAmount];
 		for (int i = 0; i < array.length; i++) {
-			boolean accuracy = checkAccuracy ? CombatFactory.rollAccuracy(attacker, victim, combatType) : true;
+			boolean accuracy = !checkAccuracy || CombatFactory.rollAccuracy(attacker, victim, combatType);
 			array[i] = new CombatHit(CombatFactory.getHit(attacker, victim, combatType), accuracy);
 			if (array[i].isAccurate()) {
 				accurate = true;

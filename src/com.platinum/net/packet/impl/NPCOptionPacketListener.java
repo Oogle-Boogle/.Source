@@ -222,7 +222,7 @@ public class NPCOptionPacketListener implements PacketListener {
 					int chance = RandomUtility.exclusiveRandom(100);
 					int rankChance = RandomUtility.exclusiveRandom(100);
 					int[] noobRewards = { 5147, 5130, 4635, 19935, 14691 };
-					int[] betterRewards = { 4769, 5140, 5139, 5165, 5141, 5275, 5276, 5134, 3914, 3912,
+					int[] betterRewards = { 4769, 5140, 5139, 5165, 5141, 5275, 5276, 5134, 3914,
 							18768 };
 					int[] bestRewards = { 19101, 5143, 5144, 5145, 5146, 5142, 5156, 5133, 19103};
 					if (!player.getInventory().contains(19100, 1)) {
@@ -975,7 +975,7 @@ public class NPCOptionPacketListener implements PacketListener {
 					break;
 				case 9641:
 					int[] itemList = { 4769, 5140, 5139, 5165, 5141, 5147, 19101, 5144, 5145, 5146, 5142, 5143, 5156,
-							5275, 5276, 5130, 5134, 5133, 4635, 19935, 3914, 3912, 19103, 14691, 18768,};
+							5275, 5276, 5130, 5134, 5133, 4635, 19935, 3914, 19103, 14691, 18768,};
 					player.getPacketSender().sendInterface(65000);
 					for (int i = 0; i < itemList.length; i++)
 						player.getPacketSender().sendItemOnInterface(65002, itemList[i], i, 1);

@@ -185,6 +185,61 @@ public class NPCDeathTask extends Task {
 						killer.sendMessage("<img=0>You now have @red@" + killer.getBossPoints() + " Boss " + pnts + "!");
 					}
 
+					final int PLAT_TOKEN = 10835;
+
+					// 1b coin drops
+					if (npc.getId() == 170 || npc.getId() == 169 || npc.getId() == 184 || npc.getId() == 12239 || npc.getId() == 3154 || npc.getId() == 33 || npc.getId() == 292 || npc.getId() == 5957 || npc.getId() == 5958
+							|| npc.getId() == 5959 || npc.getId() == 185 || npc.getId() == 6311) {
+
+						if (Misc.random(1000) <= 25) { // 47 / 1000
+							killer.sendMessage("@blu@[RARE DROP]: You get some Tokens for Frankenstiens Minigame");
+							killer.giveItem(8851, 100);
+						}
+
+						int easyAmount = Misc.random(50);
+						if ((killer.getInventory().contains(PLAT_TOKEN) || killer.getInventory().getFreeSlots() > 0)) {
+							killer.getInventory().addItem(PLAT_TOKEN, easyAmount);
+							killer.sendMessage("@bla@[Platinum Tokens]: You get " + easyAmount + " Platinum 1b coins.");
+						} else {
+							killer.sendMessage("You do not have room to collect your tokens. Please free up atleast 1 space.");
+						}
+					}
+
+					if (npc.getId() == 17 || npc.getId() == 422 || npc.getId() == 3253 || npc.getId() == 15 || npc.getId() == 9994 || npc.getId() == 9932 || npc.getId() == 224 || npc.getId() == 1999
+							|| npc.getId() == 16 || npc.getId() == 9993 || npc.getId() == 9277 || npc.getId() == 9944 || npc.getId() == 9273 || npc.getId() == 9903 || npc.getId() == 3034
+							|| npc.getId() == 9247 || npc.getId() == 8493 || npc.getId() == 9203 || npc.getId() == 172) {
+
+						if (Misc.random(1000) <= 50) { // 48 / 1000
+							killer.sendMessage("@blu@[RARE DROP]: You get some Tokens for Frankenstiens Minigame");
+							killer.giveItem(8851, 70);
+						}
+
+						int easyAmount = Misc.random(30);
+						if ((killer.getInventory().contains(PLAT_TOKEN) || killer.getInventory().getFreeSlots() > 0)) {
+							killer.getInventory().addItem(PLAT_TOKEN, easyAmount);
+							killer.sendMessage("@bla@[Platinum Tokens]: You get " + easyAmount + " Platinum 1b Coins.");
+						} else {
+							killer.sendMessage("You do not have room to collect your tokens. Please free up atleast 1 space.");
+						}
+					}
+
+					if (npc.getId() == 4455 || npc.getId() == 4457 || npc.getId() == 4459 || npc.getId() == 4456 || npc.getId() == 4462 || npc.getId() == 4409) {
+
+						if (Misc.random(1000) <= 50) { // 50 / 1000 {
+							killer.sendMessage("You get some Tokens for Frankenstiens Minigame");
+							killer.giveItem(8851, 10);
+						}
+
+
+						int easyAmount = Misc.random(10);
+						if ((killer.getInventory().contains(PLAT_TOKEN) || killer.getInventory().getFreeSlots() > 0)) {
+							killer.getInventory().addItem(PLAT_TOKEN, easyAmount);
+							killer.sendMessage("@bla@[Platinum Tokens]: You get " + easyAmount + " Platinum 1b Coins.");
+						} else {
+							killer.sendMessage("You do not have room to collect your tokens. Please free up atleast 1 space.");
+						}
+					}
+
 
 					if (npc.getId() == 9280) {
 						if (killer.getSummoning().getFamiliar().getSummonNpc().getId() == 3032) {

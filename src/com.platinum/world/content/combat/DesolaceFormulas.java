@@ -453,48 +453,12 @@ public class DesolaceFormulas {
             return damage;
         }
 
-        Player p = (Player) c;
-        double damageMultiplier = 1;
-
-        switch (p.getEquipment().getItems()[Equipment.WEAPON_SLOT].getId()) {
-            case 1:
-                damageMultiplier += .25;
-                break;
-        }
-
-        boolean specialAttack = p.isSpecialActivated();
-
-        int maxHit = -1;
-
-        if (specialAttack) {
-            switch (p.getEquipment().getItems()[Equipment.WEAPON_SLOT].getId()) {
-                case 1:
-                    damage = maxHit = 750;
-                    break;
-
-            }
-        } else {
-            damageMultiplier += 0.25;
-        }
-
-        if (p.getEquipment().getItems()[Equipment.AMULET_SLOT].getId() == 1) {
-            damageMultiplier += .10;
-        }
-
-        damage *= damageMultiplier;
 
         if (GlobalPerks.getInstance().getActivePerk() == GlobalPerks.Perk.x2_DAMAGE) {
             damage *= 2;
         }
 
-        if (maxHit > 0) {
-            if (damage > maxHit && GlobalPerks.getInstance().getActivePerk() !=GlobalPerks.Perk.x2_DAMAGE) {
-                damage = maxHit;
-            }
-        }
-
-
-        return (int) damage;
+        return damage;
     }
 
     public static int getAttackDelay(Player plr) {

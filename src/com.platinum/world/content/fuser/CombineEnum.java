@@ -73,20 +73,45 @@ public enum CombineEnum {
         }
 
 
+
         Item[] reqs = combine.getRequirements();
-        for (Item req : reqs) {
-            return player.getInventory().contains(req.getId()) && player.getInventory().getAmount(req.getId()) >= req.getAmount();
+        if (player.getInventory().contains(reqs)){
+            System.out.println("True! Had all items");
+        } else {
+            System.out.println("FALSE! Had all items");
+
         }
 
-        return false; //TODO Check this because it can let things slip through.. prob set to false by default
+        return player.getInventory().contains(reqs); //TODO Check this because it can let things slip through.. prob set to false by default
     }
 
-    public static void startFuser(Player player, CombineEnum chosenItem) {
-        player.setFuseCombinationTimer(System.currentTimeMillis() + (chosenItem.getTimer()));
-        player.setClaimedFuseItem(false);
-        player.setFuseInProgress(true);
-        player.setFuseItemSelected(chosenItem.getEndItem());
-        player.getPacketSender().sendString(43541, CombineHandler.timeLeft(player));
+    public static void handlerFuser(Player player, CombineEnum chosenItem) {
+
+        if (player.isFuseInProgress() && player.getFuseCombinationTimer() > 0) {
+            player.getPacketSender()
+                    .sendMessage("@red@You have not finished fusing your @blu@"
+                            + ItemDefinition.forId(player.getFuseItemSelected()).getName()
+                            + "@red@ yet!");
+            return;
+        }
+
+        if (!player.isClaimedFuseItem() && player.getFuseItemSelected() > 0) {
+            player.getPacketSender()
+                    .sendMessage("@red@You haven't claimed your @blu@"
+                    + ItemDefinition.forId(player.getFuseItemSelected()).getName()
+                    + "@red@ yet!");
+            return;
+        }
+
+        if (checkRequirements(chosenItem, player)) {
+            removeRequirements(chosenItem, player);
+            player.setFuseCombinationTimer(System.currentTimeMillis() + (chosenItem.getTimer()));
+            player.setClaimedFuseItem(false);
+            player.setFuseInProgress(true);
+            player.setFuseItemSelected(chosenItem.getEndItem());
+            player.getPacketSender().sendString(43541, CombineHandler.timeLeft(player));
+        } else
+            player.sendMessage("You don't meet the requirements for this item!");
     }
 
 

@@ -1605,7 +1605,6 @@ public class Shop extends ItemContainer {
 				case 18357:
 				case 19040:
 					return new Object[] { 750, "Boss Points" };
-				case 3912:
 				case 15374:
 				case 5130:
 					return new Object[] { 15000, "Boss Points" };
@@ -1692,7 +1691,6 @@ public class Shop extends ItemContainer {
 				case 3638: //Advanced Box Pet
 									return new Object[] { 6000, "Loyalty Points" };
 				case 3824: //Vote mystery Box
-				case 3912: //Taxbag Box
 				case 6183: //Donation Box
 									return new Object[] { 10000, "Loyalty Points" };
 				}
@@ -1769,8 +1767,6 @@ public class Shop extends ItemContainer {
 					return new Object[] { 40, "Donation Points" };
 					case 3640: //supreme pet box
 					return new Object[] { 50, "Donation Points" };
-					case 3912: //taxbag box
-					return new Object[] { 15, "Donation Points" };
 					case 3988: //extreme box
 					return new Object[] { 30, "Donation Points" };
 					case 4635: //infernal Mystery Box
@@ -1814,8 +1810,6 @@ public class Shop extends ItemContainer {
 					return new Object[] { 40000, "Colorful Tokens" };
 				case 19936:
 					return new Object[] { 75000, "Colorful Tokens" };
-				case 3912:
-					return new Object[] { 2500, "Colorful Tokens" };
 
 				}
 			} else if (shop == SUIC_NUMBER_ONE_TOKEN_STORE) {
@@ -2132,8 +2126,6 @@ public class Shop extends ItemContainer {
 				case 19103:
 				case 19886:
 					return new Object[] { 2500, "Slayer points" };
-				case 3912:
-					return new Object[] { 500, "Slayer points" };
 				case 18782:
 					return new Object[] { 50, "Slayer points" };
 				case 15374:

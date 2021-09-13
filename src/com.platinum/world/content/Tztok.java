@@ -166,6 +166,7 @@ public class Tztok extends NPC {
 					new GroundItem(new Item(superrare), pos, player.getUsername(), false, 150, true, 200));
 			String itemName = (new Item(superrare).getDefinition().getName());
 			String itemMessage = Misc.anOrA(itemName) + " " + itemName;
+			DiscordMessenger.sendRareDrop(player.getUsername(), " received<col=eaeaea><img=11>[ " + itemMessage + "<col=eaeaea>]<img=11><col=FF0000>from the World Boss!");
 			World.sendMessageNonDiscord(
 					"<img=11><col=FF0000>" + player.getUsername() + " received<col=eaeaea><img=11>[ " + itemMessage + "<col=eaeaea>]<img=11><col=FF0000>from the World Boss!");
 			DiscordMessenger.sendRareDrop(player.getUsername(), " received[ " + itemMessage + "from the World Boss!");
