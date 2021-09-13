@@ -35,16 +35,6 @@
     "id":48,
     "name":"Donation Store 1",
     "items":[
-      {
-       			 "id": 19935,
-          "amount": 100
-        },
-	{	          "id": 19936,
-          "amount": 100
-        },
-	{	          "id": 19938,
-          "amount": 100
-        },
 	{	          "id": 5185,
           "amount": 100
         },
