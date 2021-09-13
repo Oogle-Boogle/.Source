@@ -2439,9 +2439,9 @@ public class ButtonClickPacketListener implements PacketListener {
         if (PouchMaking.pouchInterface(player, id)) {
             return true;
         }
-    //    if (TeleportInterface.handleButton(player, id)) {
-       //     return true;
-     //   }
+        if (TeleportInterface.handleButton(player, id)) {
+            return true;
+        }
         if (LoyaltyProgramme.handleButton(player, id)) {
             return true;
         }
