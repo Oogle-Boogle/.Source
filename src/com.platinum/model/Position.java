@@ -183,6 +183,25 @@ public class Position {
 	}
 
 	/**
+	 * Gets the X map region chunk relative to this position.
+	 *
+	 * @return the X region chunk.
+	 */
+	public int getChunkX() {
+		return (x >> 6);
+	}
+
+	/**
+	 * Gets the Y map region chunk relative to this position.
+	 *
+	 * @return the Y region chunk.
+	 */
+	public int getChunkY() {
+		return (y >> 6);
+	}
+
+
+	/**
 	 * Checks if this location is within range of another.
 	 * @param other The other location.
 	 * @return <code>true</code> if the location is in range,
@@ -193,6 +212,14 @@ public class Position {
 			return false;
 		int deltaX = other.x - x, deltaY = other.y - y;
 		return deltaX <= 14 && deltaX >= -15 && deltaY <= 14 && deltaY >= -15;
+	}
+	/**
+	 * Gets the region id relative to this position.
+	 *
+	 * @return the region id.
+	 */
+	public int getRegionId() {
+		return ((getChunkX() << 8) + getChunkY());
 	}
 
 	/**

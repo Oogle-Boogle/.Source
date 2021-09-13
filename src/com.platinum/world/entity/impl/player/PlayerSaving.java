@@ -17,7 +17,7 @@ import com.google.common.collect.Multiset.Entry;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
-
+import java.util.List;
 
 public class PlayerSaving {
 
@@ -344,6 +344,10 @@ public class PlayerSaving {
 			
             object.addProperty("group-owner-name", player.getGroupOwnerName());
             object.addProperty("is-gim",player.isGim());
+			List<String> teleNames = player.getTeleportInterface().getFavourites();
+			if (teleNames != null) {
+				object.add("favourite-teles", builder.toJsonTree(teleNames));
+			}
 
 			writer.write(builder.toJson(object));
 			writer.close();

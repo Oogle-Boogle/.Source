@@ -112,6 +112,9 @@ public class PlayerLoading {
 				Map<Integer, Integer> data = builder.fromJson(reader.get("starter-zone-map"), new TypeToken<Map<Integer, Integer>>() {}.getType());
 				player.starterZone.loadData(data);
 			}
+			if (reader.has("favourite-teles")) {
+				player.getTeleportInterface().setFavourites(builder.fromJson(reader.get("favourite-teles").getAsJsonArray(), String[].class));
+			}
 	
 			if(reader.has("crashGameBalance"))
                 player.addToCrashBalance(reader.get("crashGameBalance").getAsLong());

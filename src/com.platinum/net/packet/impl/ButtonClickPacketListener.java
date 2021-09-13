@@ -1635,6 +1635,7 @@ public class ButtonClickPacketListener implements PacketListener {
             case 10003:
                 TeleportInterface.sendBossData(player, Bosses.STARTER);
                 TeleportInterface.sendBossTab(player);
+                //player.getTeleportInterface().open();
                 break;
 
             case -4934:
@@ -2397,7 +2398,9 @@ public class ButtonClickPacketListener implements PacketListener {
                 return true;
 
         }
-
+        if (player.getTeleportInterface().handleButton(id)) {
+            return true;
+        }
 
         if (player.getDropSimulator().handleButton(id)) {
             return true;
@@ -2410,6 +2413,10 @@ public class ButtonClickPacketListener implements PacketListener {
         if (player.getCollectionLog().handleButton(id)) {
             return true;
         }
+        if (player.getTeleportInterface().handleButton(id)) {
+            return true;
+        }
+
 
         if (player.isPlayerLocked() && id != 2458 && id != -12780 && id != -12779 && id != -12778 && id != -29767) {
             return true;
@@ -2455,9 +2462,9 @@ public class ButtonClickPacketListener implements PacketListener {
         if (PouchMaking.pouchInterface(player, id)) {
             return true;
         }
-        if (TeleportInterface.handleButton(player, id)) {
-            return true;
-        }
+    //    if (TeleportInterface.handleButton(player, id)) {
+       //     return true;
+     //   }
         if (LoyaltyProgramme.handleButton(player, id)) {
             return true;
         }

@@ -29,6 +29,7 @@ import com.platinum.world.entity.impl.npc.NPC;
 import org.jboss.netty.bootstrap.ServerBootstrap;
 import org.jboss.netty.channel.socket.nio.NioServerSocketChannelFactory;
 import org.jboss.netty.util.HashedWheelTimer;
+import com.platinum.world.content.teleport.TeleportData;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -107,6 +108,7 @@ public final class GameLoader {
 		serviceLoader.execute(() -> DropSimulator.initializeNpcs());
 		serviceLoader.execute(StarterProgression::loadTasks);
         serviceLoader.execute(GroupIronmanGroup::loadGroups);
+		serviceLoader.execute(() -> TeleportData.loadDrops());
 		serviceLoader.execute(GlobalPerks.getInstance()::load);
 
 	}

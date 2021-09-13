@@ -90,6 +90,7 @@ import com.platinum.world.entity.impl.npc.NPC;
 import com.platinum.world.entity.impl.npc.minigame.KeyRoom;
 import lombok.Getter;
 import lombok.Setter;
+import com.platinum.world.content.teleport.TeleportInterface;
 
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
@@ -105,7 +106,11 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public class Player extends Character {
 
 
+	private final TeleportInterface teleportInterface = new TeleportInterface(this);
 
+	public TeleportInterface getTeleportInterface() {
+		return teleportInterface;
+	}
 
 
 	private int perkIndex = 0;

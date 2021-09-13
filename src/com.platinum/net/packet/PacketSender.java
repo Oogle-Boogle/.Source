@@ -53,6 +53,23 @@ public class PacketSender {
 		player.getSession().queueMessage(out);
 		return this;
 	}
+	//new teleport
+
+	public PacketSender setScrollBar(int interfaceId, int amount) {
+		PacketBuilder out = new PacketBuilder(79);
+		out.putShort(interfaceId, ByteOrder.LITTLE);
+		out.putShort(amount, ValueType.A);
+		player.getSession().queueMessage(out);
+		return this;
+	}
+	public PacketSender sendScrollMaxChange(int id, int newMax) {
+		PacketBuilder out = new PacketBuilder(80);
+		out.putShort(newMax);
+		out.putShort(id);
+		player.getSession().queueMessage(out);
+		return this;
+	}
+//end
 
 	public PacketSender sendRichPresenceState(String state) {//SENDS STATE FOR DISCORD PRESENCE
 		if (player.isMiniMe)
@@ -1812,6 +1829,14 @@ public class PacketSender {
 		out.putShort(item + 1);
 		out.put(255);
 		out.putInt(slot);
+		player.getSession().queueMessage(out);
+		return this;
+	}
+	public PacketSender sendNpcInterfaceWithZoom(int interfaceId, int npcId, int zoom) {
+		PacketBuilder out = new PacketBuilder(190);
+		out.putShort(interfaceId);
+		out.putShort(npcId + 1);
+		out.putShort(zoom);
 		player.getSession().queueMessage(out);
 		return this;
 	}
