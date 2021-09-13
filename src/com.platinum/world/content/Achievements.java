@@ -101,7 +101,7 @@ public class Achievements {
 		COMPLETE_ALL_HARD_TASKS(Difficulty.ELITE, "Complete All Hard Tasks", 45104, new int[]{47, 32}, "", "", "", "", "", "", new Item(10835, 2000), new Item(15373, 5), new Item(12845, 2)),
 		CUT_AN_ONYX_STONE(Difficulty.ELITE, "Cut An Onyx Stone", 45105, null, "", "", "", "", "", "", new Item(10835, 2), new Item(6199, 1), new Item(8851, 15)),
 		REACH_MAX_EXP_IN_A_SKILL(Difficulty.ELITE, "Reach Max Exp In A Skill", 45106, null, "", "", "", "", "", "", new Item(10835, 25), new Item(6199, 2), new Item(15373, 1)),
-		DEFEAT_10000_MONSTERS(Difficulty.ELITE, "Defeat 10,000 Monsters", 45108, new int[]{49, 10000}, "", "", "", "", "", "", new Item(10835, 5000), new Item(15373, 4), new Item(19938, 1)),
+		DEFEAT_10000_MONSTERS(Difficulty.ELITE, "Defeat 10,000 Monsters", 45108, new int[]{49, 10000}, "", "", "", "", "", "", new Item(10835, 5000), new Item(15373, 4), new Item(12847, 2)),
 		DEFEAT_500_BOSSES(Difficulty.ELITE, "Defeat 500 Boss Monsters", 45109, new int[]{50, 500}, "", "", "", "", "", "", new Item(10835, 1000), new Item(6199, 5), new Item(19864, 25)),
 		;
 		
