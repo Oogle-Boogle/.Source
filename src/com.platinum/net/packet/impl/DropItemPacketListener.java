@@ -40,12 +40,6 @@ public class DropItemPacketListener implements PacketListener {
 		if(item.getId() != id) {
 			return;
 		}
-		if (Misc.getMinutesPlayed(player) <= 30) {
-			player.sendMessage("You need to have played atleast 30 minutes to drop items.");
-			return;
-		}
-		player.getPacketSender().sendInterfaceRemoval();
-		player.getCombatBuilder().cooldown(false);
 		if (item != null && item.getId() != -1 && item.getAmount() >= 1) {
 			if(item.tradeable() && !ItemBinding.isBoundItem(item.getId())) {
 				player.getInventory().setItem(itemSlot, new Item(-1, 0)).refreshItems();

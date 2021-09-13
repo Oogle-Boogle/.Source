@@ -277,7 +277,7 @@ public class TeleportInterface {
 	public enum Minigames {
 		
 		BOX_ZONE(50601, "Box Zone", "Box Zone", "Box Zone For Starters!", "", "", "", 197,
-				new int[] { 3344, 3409, 0 }, 4000),
+				new int[] { 3379, 3424, 0 }, 4000),
 		
 		//TOKEN_ZONE(50602, "Token Zone", "Earn Tokens", "to be used at", "the Token shop","", "", 729,
 				//new int[] { 2526, 2841, 0 }, 4000),
