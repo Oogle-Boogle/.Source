@@ -376,12 +376,20 @@ public class DropUtils {
 			break;
 		case SUPPORT:
 		case MODERATOR:
+		totalBonus += 10;
+		break;
 		case ADMINISTRATOR:
+		totalBonus += 20;
+			break;
 		case DEVELOPER:
+		totalBonus += 100;
+			break;
 		case COMMUNITY_MANAGER:
 		case YOUTUBER:
+		totalBonus += 20;
+			break;
 		case OWNER:
-			totalBonus += 20;
+			totalBonus += 100;
 			break;
 		default:
 			break;
