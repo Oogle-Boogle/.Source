@@ -95,6 +95,8 @@ public class Mining {
 														* Math.random())];
 										player.getInventory().add(gemId, 1);
 										player.getPacketSender().sendMessage("You have found fuser Material!");
+										World.sendMessageNonDiscord("<img=11>@bla@ " + player.getUsername()
+												+ " has just received a Fuser Ingredient from mining" + "!");
 										if (gemId == 6571) {
 											String s = o == Ores.Runite ? "Runite ore" : "Crashed star";
 											World.sendMessageNonDiscord("<img=11><col=009966> " + player.getUsername()
