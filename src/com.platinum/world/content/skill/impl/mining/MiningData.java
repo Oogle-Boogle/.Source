@@ -7,7 +7,7 @@ import com.platinum.world.entity.impl.player.Player;
 
 public class MiningData {
 
-	public static final int[] FuserIngredients = {Misc.random(12845,12847)};
+	public static final int[] FuserIngredients = {12845};
 
 	public static enum Pickaxe {
 
