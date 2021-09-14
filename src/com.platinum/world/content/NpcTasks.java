@@ -31,7 +31,7 @@ public class NpcTasks {
 				new Item[] { new Item(6199, 2),new Item(10835, 150) }),
 		KILL_250_DEMONIC_OLMS("Kill 250 Demonic Olms", 65612, "Decent Gear", new int[] { 5, 250 }, "Kill 250 Demonic Olms",
 				"Find them in the medium teleports", "Mass Boss", "",
-				new Item[] { new Item(6199, 2), new Item(10835, 250), new Item(19864, 50),new Item(1543, 2), }),
+				new Item[] { new Item(6199, 2), new Item(10835, 250), new Item(19864, 50)}),
 		KILL_50_CEREBRUS("Kill 50 Cerebrus", 65613, "Desent Gear", new int[] { 6, 50 },
 				"Kill 50 Cerebrus", "Find them in medium teleports", "Mass Boss", "",
 				new Item[] { new Item(10835, 100), new Item(19864, 100), new Item(6199, 1) }),
