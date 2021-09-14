@@ -866,7 +866,7 @@ public class ObjectActionPacketListener implements PacketListener {
 					
 				case 26301:
 					player.performAnimation(new Animation(828));
-					player.moveTo(new Position(2318, 3677, 0)); 
+					player.moveTo(new Position(1901, 5221, 0)); 
 					player.sendMessage("@red@You manage to escape the dungeon");
 				break;
 				
