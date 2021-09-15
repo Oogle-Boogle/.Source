@@ -3823,6 +3823,10 @@ public class Player extends Character {
 		this.currentTask = currentTask;
 	}
 
+	@Getter
+	@Setter
+	public boolean afkSkilling;
+
 	public int getSelectedSkillingItem() {
 		return selectedSkillingItem;
 	}
