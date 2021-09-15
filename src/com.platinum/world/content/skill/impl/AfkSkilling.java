@@ -26,11 +26,18 @@ public class AfkSkilling {
             player.getPacketSender().sendMessage("You must wait a few seconds after being out of combat before doing this.");
             return;
         }
+
+        if (player.getInteractingObject() != null) {
+            player.getPacketSender().sendMessage("You're busy!");
+            return;
+        }
+
         player.setCurrentTask(new Task(2, player, true) {
             @Override
             public void execute() {
                 if (player.getInteractingObject() != null) {
                     player.setPositionToFace(player.getInteractingObject().getPosition().copy());
+                    player.setInteractingObject(player.getInteractingObject());
                 }
                 player.performAnimation(new Animation(anim));
 
@@ -44,6 +51,7 @@ public class AfkSkilling {
             public void stop() {
                 setEventRunning(false);
                 player.performAnimation(new Animation(65535));
+                player.setInteractingObject(null);
             }
         });
         TaskManager.submit(player.getCurrentTask());
@@ -96,6 +104,7 @@ public class AfkSkilling {
             public void stop() {
                 setEventRunning(false);
                 player.performAnimation(new Animation(65535));
+                player.setInteractingObject(null);
             }
         });
         TaskManager.submit(player.getCurrentTask());

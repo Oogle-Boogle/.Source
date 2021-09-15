@@ -5,6 +5,8 @@ import com.platinum.world.content.transportation.TeleportHandler;
 import com.platinum.world.content.transportation.TeleportType;
 import com.platinum.world.entity.impl.player.Player;
 
+import static sun.audio.AudioPlayer.player;
+
 
 public class MapTeleportInterface {
 

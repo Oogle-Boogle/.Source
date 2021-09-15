@@ -100,6 +100,7 @@ public class BossRewardChest {
         if (player.getCurrentBossWave() <= 4) {
             DialogueManager.start(player, 174);
             player.getPacketSender().sendString(988, "It's time to roll a random number!");
+            player.getPacketSender().sendString(989, "");
             player.getPacketSender().sendString(990, "Number needed: Crap: @blu@" + (chanceOfShitReward + "+") + "@bla@, Medium: @blu@" + (chanceOfMediumReward + "+") + (player.currentBossWave > 1 ? ("@bla@, Rare: @blu@" + (chanceOfRareReward + "+") + "@bla@") : ""));
             player.setDialogueActionId(85);
         } else {
@@ -141,7 +142,8 @@ public class BossRewardChest {
         if (chance < chanceOfShitReward) { //No Reward for you Mr
             player.getPacketSender().sendMessage("Sorry! Better luck next time..");
             //System.out.println("["+player.getUsername()+"] No Reward");
-
+            player.getPacketSender().sendInterfaceRemoval();
+            BossMinigameFunctions.resetProgress(player);
         }
 
         if (chance >= chanceOfShitReward && chance < chanceOfMediumReward) { //Player deserves a shit reward for this roll
@@ -149,6 +151,8 @@ public class BossRewardChest {
             player.getInventory().add(shitReward);
             rewardGiven = shitReward;
             //System.out.println("["+player.getUsername()+"] Shit Reward selected:  " + shitReward.getAmount() + " x " + shitReward.getDefinition().getName());
+            player.getPacketSender().sendInterfaceRemoval();
+            BossMinigameFunctions.resetProgress(player);
         }
 
         if (chance >= chanceOfMediumReward && chance < chanceOfRareReward) {
@@ -156,6 +160,8 @@ public class BossRewardChest {
             player.getInventory().add(mediumReward);
             rewardGiven = mediumReward;
             //System.out.println("["+player.getUsername()+"] Medium Reward selected:  " + mediumReward.getAmount() + " x " + mediumReward.getDefinition().getName());
+            player.getPacketSender().sendInterfaceRemoval();
+            BossMinigameFunctions.resetProgress(player);
         }
 
         if (chance >= chanceOfRareReward) {
@@ -163,11 +169,15 @@ public class BossRewardChest {
                 Item mediumReward = BossRewardChestData.MEDIUM_REWARDS[Misc.getRandom(BossRewardChestData.MEDIUM_REWARDS.length - 1)];
                 player.getInventory().add(mediumReward);
                 //System.out.println("["+player.getUsername()+"] Rare on wave 1 Reward selected:  " + mediumReward.getAmount() + " x " + mediumReward.getDefinition().getName());
+                player.getPacketSender().sendInterfaceRemoval();
+                BossMinigameFunctions.resetProgress(player);
             } else if (player.getCurrentBossWave() >= 2) {
                 Item rareReward = BossRewardChestData.RARE_REWARDS[Misc.getRandom(BossRewardChestData.RARE_REWARDS.length - 1)];
                 player.getInventory().add(rareReward);
                 rewardGiven = rareReward;
                 //System.out.println("["+player.getUsername()+"] Rare Reward selected:  " + rareReward.getAmount() + " x " + rareReward.getDefinition().getName());
+                player.getPacketSender().sendInterfaceRemoval();
+                BossMinigameFunctions.resetProgress(player);
             }
         }
 
