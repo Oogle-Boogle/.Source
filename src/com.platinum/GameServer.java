@@ -3,6 +3,7 @@ package com.platinum;
 import com.platinum.engine.task.impl.ServerTimeUpdateTask;
 import com.platinum.util.MACBanL;
 import com.platinum.util.ShutdownHook;
+import com.platinum.world.content.discord.DiscordMessenger;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
@@ -47,6 +48,7 @@ public class GameServer {
 				logger.info("Launching the - DEVELOPER DEVELOPER DEVELOPER DEVELOPER - server!");
 			} else {
 				logger.info("Launching the - LIVE LIVE LIVE LIVE - server!");
+				DiscordMessenger.sendGeneralChat("Platinum has been updated!", "Checkout out update log for more information!");
 			}
 			logger.info("Server Host Name is " + serverHost);
 

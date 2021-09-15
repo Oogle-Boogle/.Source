@@ -2408,6 +2408,7 @@ public class CommandPacketListener implements PacketListener {
 						continue;
 					}
 					players.getPacketSender().sendSystemUpdate(time);
+					DiscordMessenger.sendGeneralChat("Platinum is updating!", "We'll be back shortly!");
 				}
 				TaskManager.submit(new Task(time) {
 					@Override
