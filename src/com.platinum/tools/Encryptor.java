@@ -15,7 +15,7 @@ public class Encryptor {
 	private static SecretKeySpec secretKey;
 	private static byte[] key;
 
-	public static String globalKey = "uHyowSN7^QmDss!!PP";
+	public static String globalKey = "uHyowSN7^QmDss!!PP"; // NEVER FUCKING CHANGE THIS
 
 	public static void setKey(String myKey)
 	{
