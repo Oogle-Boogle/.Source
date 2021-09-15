@@ -1,9 +1,9 @@
 package com.platinum.world.content.discord;
 
-import ca.momoperes.canarywebhooks.DiscordMessage;
-import ca.momoperes.canarywebhooks.WebhookClient;
-import ca.momoperes.canarywebhooks.WebhookClientBuilder;
-import ca.momoperes.canarywebhooks.embed.DiscordEmbed;
+import com.platinum.discordshit.DiscordMessage;
+import com.platinum.discordshit.WebhookClient;
+import com.platinum.discordshit.WebhookClientBuilder;
+import com.platinum.discordshit.embed.DiscordEmbed;
 import com.platinum.GameSettings;
 import com.platinum.util.Misc;
 import com.platinum.world.entity.impl.player.Player;
