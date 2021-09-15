@@ -14,6 +14,7 @@ import com.platinum.world.content.minigames.impl.LastManStanding;
 import com.platinum.world.content.minigames.impl.PestControl;
 import com.platinum.world.content.minimes.MiniMeData;
 import com.platinum.world.content.serverperks.GlobalPerks;
+import com.platinum.world.content.skillingboss.SkillBossHandler;
 import com.platinum.world.entity.Entity;
 import com.platinum.world.entity.EntityHandler;
 import com.platinum.world.entity.impl.CharacterList;
@@ -184,6 +185,7 @@ public class World {
 		ShootingStar.sequence();
 		EvilTrees.sequence();
 		TriviaBot.sequence();
+		SkillBossHandler.sequence();
 		// ShopRestocking.sequence();
 		FreeForAll.sequence();
 		CustomFreeForAll.sequence();

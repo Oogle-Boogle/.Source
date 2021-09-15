@@ -23,6 +23,8 @@ import com.platinum.world.content.raids.OldRaidParty;
 import com.platinum.world.content.raids.RaidNpc;
 import com.platinum.world.content.serverperks.GlobalPerks;
 import com.platinum.world.content.skill.impl.pvm.NpcGain;
+import com.platinum.world.content.skillingboss.SkillBossConfig;
+import com.platinum.world.content.skillingboss.SkillBossHandler;
 import com.platinum.world.entity.impl.npc.NPC;
 import com.platinum.world.entity.impl.player.Player;
 import com.platinum.world.entity.impl.player.PlayerSaving;
@@ -96,7 +98,8 @@ public class NPCDeathTask extends Task {
 				killer = npc.getCombatBuilder().getKiller(npc.getId() != 2745 && npc.getId() != 25
 						&& npc.getId() != 6309 && npc.getId() != 8548 && npc.getId() != 8949 && npc.getId() != 6593
 						&& npc.getId() != 9993 && npc.getId() != 9903 && npc.getId() != 2005 && npc.getId() != 421
-						&& npc.getId() != 6313 && npc.getId() != 9913 && npc.getId() != 422 && npc.getId() != 7286);
+						&& npc.getId() != 6313 && npc.getId() != 9913 && npc.getId() != 422 && npc.getId() != 7286
+						&& npc.getId() != SkillBossConfig.npcID);
 
 				if (!(npc.getId() >= 6142 && npc.getId() <= 6145) && !(npc.getId() > 5070 && npc.getId() < 5081))
 					npc.performAnimation(new Animation(npc.getDefinition().getDeathAnimation()));
@@ -584,6 +587,9 @@ public class NPCDeathTask extends Task {
 						}
 						if (npc.getId() == 8548) {
 							DailyNpc.handleDrop(npc);
+						}
+						if (npc.getId() == SkillBossConfig.npcID) {
+							SkillBossHandler.calculateDamage(SkillBossHandler.npc);
 						}
 						if (npc.getId() == 2005) {
 							TheMay.handleDrop(npc);
