@@ -4,15 +4,12 @@ import com.platinum.model.Item;
 import com.platinum.model.definitions.ItemDefinition;
 import com.platinum.world.World;
 import com.platinum.world.entity.impl.player.Player;
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
-import static com.platinum.world.content.DonationDeals.timeLeft;
-
 public enum CombineEnum {
 
-    OP_INVESTOR(new Item[] {new Item(10835,10000),new Item(12845,15),new Item(12846,15),
+    OP_INVESTOR(new Item[] {new Item(10835,30000),new Item(12845,15),new Item(12846,15),
     		new Item(12847,15) },6482,100, 3600000),
     
     AURA(new Item[] {new Item(10835,7500),new Item(12845,12),
@@ -32,6 +29,9 @@ public enum CombineEnum {
     
     PERFECT_NECKLACE(new Item[] {new Item(10835,50000),new Item(12845,25),
     		new Item(12846,25),new Item(12847,50) },774,100, 3600000);
+
+
+
 
     CombineEnum(Item[] requirements, int endItem, int chance, long timer) {
         this.requirements = requirements;
