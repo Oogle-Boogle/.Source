@@ -589,7 +589,7 @@ public class CommandPacketListener implements PacketListener {
 		}
 		
 		if (command[0].equalsIgnoreCase("fuser")) {
-			CombineHandler.openInterface(CombineEnum.OP_INVESTOR,player);
+			CombineHandler.openInterface(CombineEnum.AURA,player);
 		}
 
 		if (command[0].equalsIgnoreCase("teleportinterface")) {

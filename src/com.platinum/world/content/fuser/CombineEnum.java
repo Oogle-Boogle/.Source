@@ -9,8 +9,6 @@ import lombok.Setter;
 
 public enum CombineEnum {
 
-    OP_INVESTOR(new Item[] {new Item(10835,30000),new Item(12845,15),new Item(12846,15),
-    		new Item(12847,15) },6482,100, 3600000),
     
     AURA(new Item[] {new Item(10835,7500),new Item(12845,12),
     		new Item(12846,12),new Item(12847,12) },19156,100, 3600000),
@@ -23,12 +21,26 @@ public enum CombineEnum {
     
     PERMENANT_DR(new Item[] {new Item(10835,10000),new Item(12845,10),
     		new Item(12846,10),new Item(12847,10) },5197,100, 3600000),
+
+    SULPHUR_HELMET(new Item[] {new Item(10835,50000),new Item(12845,20),
+            new Item(12846,20),new Item(12847,20) },3322,100, 3600000),
+
+    SULPHUR_PLATEBODY(new Item[] {new Item(10835,50000),new Item(12845,20),
+            new Item(12846,20),new Item(12847,20) },3313,100, 3600000),
+
+    SULPHUR_PLATELEGS(new Item[] {new Item(10835,50000),new Item(12845,20),
+            new Item(12846,20),new Item(12847,20) },3314,100, 3600000),
+
+    SULPHUR_GLOVES(new Item[] {new Item(10835,50000),new Item(12845,20),
+            new Item(12846,20),new Item(12847,20) },3318,100, 3600000),
+
+    SULPHUR_BOOTS(new Item[] {new Item(10835,50000),new Item(12845,20),
+            new Item(12846,20),new Item(12847,20) },3315,100, 3600000),
     
     COLLECTOR(new Item[] {new Item(10835,5000),new Item(12845,5),
-    		new Item(12846,5), new Item(12847,5) },19886,100, 3600000),
-    
-    PERFECT_NECKLACE(new Item[] {new Item(10835,50000),new Item(12845,25),
-    		new Item(12846,25),new Item(12847,50) },774,100, 3600000);
+    		new Item(12846,5), new Item(12847,5) },19886,100, 3600000);
+
+
 
 
 
