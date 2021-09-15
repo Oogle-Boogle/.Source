@@ -81,7 +81,7 @@ public class Woodcutting {
 										}
 									}
 									cycle = 0;
-									BirdNests.dropNest(player);
+									//BirdNests.dropNest(player);
 									this.stop();
 									if (object.getId() == 11434) {
 										if (EvilTrees.SPAWNED_TREE == null || EvilTrees.SPAWNED_TREE.getTreeObject()

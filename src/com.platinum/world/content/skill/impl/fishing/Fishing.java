@@ -12,6 +12,8 @@ import com.platinum.world.content.Achievements;
 import com.platinum.world.content.StarterTasks;
 import com.platinum.world.content.Achievements.AchievementData;
 import com.platinum.world.content.StarterTasks.StarterTaskData;
+import com.platinum.world.content.fuser.CombineHandler;
+import com.platinum.world.content.fuser.RandomRewards;
 import com.platinum.world.entity.impl.player.Player;
 
 public class Fishing {
@@ -167,12 +169,7 @@ public class Fishing {
 					if(def.endsWith("s"))
 						def = def.substring(0, def.length()-1);
 					p.getPacketSender().sendMessage("You catch "+Misc.anOrA(def)+" "+def.toLowerCase().replace("_", " ")+".");
-					Object fusionID = 12847;
-					if (Misc.getRandom(10) == 1) {
-					p.getInventory().add((Integer) fusionID, 1);
-					p.getPacketSender().sendMessage("You notice a black stone at the bottom of the lake!");
-					World.sendMessageNonDiscord("<img=11>@bla@ " + p.getUsername()
-							+ " has just received a Black Fusion Stone from fishing" + "!");}
+
 					if (s.getBait() != -1)
 						p.getInventory().delete(s.getBait(), 1);
 					
