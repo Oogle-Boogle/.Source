@@ -16,7 +16,6 @@ import com.platinum.world.content.aoesystem.AOESystem;
 import com.platinum.world.content.combat.CombatFactory;
 import com.platinum.world.content.combat.bossminigame.BossMinigameFunctions;
 import com.platinum.world.content.combat.pvp.BountyHunter;
-import com.platinum.world.content.customraids.CustomRaid;
 import com.platinum.world.content.dialogue.DialogueManager;
 import com.platinum.world.content.minigames.impl.Barrows;
 import com.platinum.world.content.minigames.impl.FightCave;
@@ -92,7 +91,7 @@ public class Locations {
 			public void logout(Player player) {
 
 				if (player.getRegionInstance() == null) {
-					player.moveTo(BossMinigameFunctions.STAIRS);
+					player.moveTo(BossMinigameFunctions.ENTRY_DOOR);
 					BossMinigameFunctions.restoreOldStats(player);
 				} else {
 					BossMinigameFunctions.handleExit(player);

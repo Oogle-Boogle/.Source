@@ -26,16 +26,14 @@ import static com.platinum.model.RegionInstance.RegionInstanceType.BOSS_TIER_ARE
 public class BossMinigameFunctions {
 
     public static final int STAIRS_ENTRY_ID = 22945;
-
     public static final int EXIT_CAVE_ID = 5858;
-
-    public static final Position STAIRS = new Position(1861, 5245);
+    public static final Position ENTRY_DOOR = new Position(1861, 5244);
     public static final Position ARENA_ENTRANCE = new Position(2807, 10105);
     public static final Position ARENA_CENTRE = new Position(2776, 10089);
-    public static int stairsX = STAIRS.getX();
-    public static int stairsY = STAIRS.getY();
-    public static int entranceX = 2807;
-    public static int entranceY = 10105;
+    public static int DOOR_X = ENTRY_DOOR.getX();
+    public static int DOOR_Y = ENTRY_DOOR.getY();
+    public static int INSIDE_CAVE_X = 2807;
+    public static int INSIDE_CAVE_Y = 10105;
 
     public static MagicSpellbook currentSpellBook = MagicSpellbook.NORMAL;
     public static Prayerbook currentPrayerBook = Prayerbook.NORMAL;
@@ -89,7 +87,7 @@ public class BossMinigameFunctions {
                 player.getPacketSender().sendInterfaceRemoval();
                 player.performAnimation(new Animation(1746));
                 if (player.getLocation() != BOSS_TIER_LOCATION) {
-                    player.moveTo(new Position(entranceX, entranceY, player.getIndex() * 4));
+                    player.moveTo(new Position(INSIDE_CAVE_X, INSIDE_CAVE_Y, player.getIndex() * 4));
                     player.setRegionInstance(new RegionInstance(player, BOSS_TIER_ARENA));
                     BossMiniGame.StartBossMinigame(player);
                     if (player.getSummoning().getFamiliar() != null) {
@@ -162,7 +160,7 @@ public class BossMinigameFunctions {
         player.getInventory().deleteAll();
         player.getEquipment().deleteAll();
         player.getEquipment().refreshItems();
-        player.moveTo(STAIRS);
+        player.moveTo(ENTRY_DOOR);
         player.getUpdateFlag().flag(Flag.ANIMATION);
         Autocasting.resetAutocast(player, true);
         PrayerHandler.deactivateAll(player);
@@ -192,12 +190,12 @@ public class BossMinigameFunctions {
            // //System.out.println("DESTROYING INSTANCE FOR " + player.getUsername());
 
             int z = 0;
-            Position nonInstance = new Position(stairsX, stairsY, z);
+            Position nonInstance = new Position(DOOR_X, DOOR_Y, z);
             player.moveTo(nonInstance);//Moves player to height 0
             ////System.out.println("Sending " + player.getUsername() + " to height 0");
         } else {
             int z = 0;
-            Position nonInstance = new Position(stairsX, stairsY, z);
+            Position nonInstance = new Position(DOOR_X, DOOR_Y, z);
             player.moveTo(nonInstance);//Moves player to height 0
         }
 

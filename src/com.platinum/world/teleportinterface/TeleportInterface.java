@@ -2,6 +2,7 @@ package com.platinum.world.teleportinterface;
 
 import com.platinum.model.Position;
 import com.platinum.model.definitions.NPCDrops;
+import com.platinum.world.content.combat.bossminigame.BossMinigameFunctions;
 import com.platinum.world.content.transportation.TeleportHandler;
 import com.platinum.world.entity.impl.player.Player;
 
@@ -335,7 +336,7 @@ public class TeleportInterface {
 		PESTCONTROL(50602, "Pest control", "Pest Control", "Earn points to use", "at the pest control shop", "", "", 3789, new int[] { 2657, 2648, 0 }),
 		BARROWSMINIGAME(50603, "Barrows", "Barrows", "Dig your way for some", " fancy diamonds!", "", "", 2025, new int[] { 3564, 3289, 0 }),
 		DUNGEON(50604, "Dungeons Minigame", "Dungeons Minigame", "Do you have what it", " takes to survive?", "", "", 499, new int[] { 3309, 9808, 8 }),
-		CHALLENGER(50605, "challenging minigame", "challenging minigame", "only for the toughest", "are you tough?", "", "", 50, new int[] { 2333, 4646, 0});
+		CHALLENGER(50605, "Challenging Minigame", "Challenging Minigame", "only for the toughest", "are you tough?", "", "", 50, new int[] {BossMinigameFunctions.DOOR_X, BossMinigameFunctions.DOOR_Y, 0});
 		//HALLOWEEN(50602, "Trios Minigame", "Earn all 3 Keys", "to be used at", "the Trio Chest!","", "", 75, 
 			//	new int[] { 3107, 3427, 0 }, 0);
 		Cities(int textId, String name, String description1, String description2, String description3,

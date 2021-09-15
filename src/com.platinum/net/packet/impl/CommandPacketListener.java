@@ -2400,6 +2400,7 @@ public class CommandPacketListener implements PacketListener {
 			}
 		}
 		if (command[0].equals("update")) {
+			DiscordMessenger.sendGeneralChat("Platinum is updating!", "We'll be back shortly!");
 			int time = Integer.parseInt(command[1]);
 			if (time > 0) {
 				GameServer.setUpdating(true);
@@ -2408,7 +2409,6 @@ public class CommandPacketListener implements PacketListener {
 						continue;
 					}
 					players.getPacketSender().sendSystemUpdate(time);
-					DiscordMessenger.sendGeneralChat("Platinum is updating!", "We'll be back shortly!");
 				}
 				TaskManager.submit(new Task(time) {
 					@Override
