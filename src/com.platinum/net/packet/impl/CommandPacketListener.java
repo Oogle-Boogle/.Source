@@ -2120,6 +2120,7 @@ public class CommandPacketListener implements PacketListener {
 	private static int entries = 0;
 
 	private static void ownerCommands(final Player player, String[] command, String wholeCommand) {
+
 		if (command[0].equals("fly")) {
 			if (player.getCharacterAnimations().getStandingAnimation() != 1501) {
 				player.performAnimation(new Animation(1500));

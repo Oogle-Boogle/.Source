@@ -9,9 +9,7 @@
     </content>
     <orderEntry type="jdk" jdkName="adopt-openjdk-1.8" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="lib" level="project" />
     <orderEntry type="library" name="projectlombok.lombok" level="project" />
-    <orderEntry type="library" name="apache.httpcomponents.httpclient" level="project" />
-    <orderEntry type="library" name="apache.httpcomponents.httpclient.cache" level="project" />
+    <orderEntry type="library" name="lib" level="project" />
   </component>
 </module>

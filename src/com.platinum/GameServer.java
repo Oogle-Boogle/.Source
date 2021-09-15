@@ -52,10 +52,9 @@ public class GameServer {
 			}
 			logger.info("Server Host Name is " + serverHost);
 
-			logger.info("Initializing the loader...");
 			loader.init();
 			loader.finish();
-			logger.info("The loader has finished loading utility tasks.");
+			//logger.info("The loader has finished loading utility tasks.");
 			ServerTimeUpdateTask.start_configuration_process();
 			MACBanL.init();
 			if (GameSettings.CONFIGURATION_TIME == 5) {

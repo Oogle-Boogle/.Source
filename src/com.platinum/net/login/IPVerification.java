@@ -2,7 +2,9 @@ package com.platinum.net.login;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
+import java.nio.channels.ClosedChannelException;
 import java.util.Scanner;
 
 import com.platinum.GameServer;
@@ -125,13 +127,6 @@ public final class IPVerification {
 						&& !ip.contains("com.sg")) { //Only sending the info to staff if these prereqs are met
 					DiscordMessenger.sendStaffMessage(results); //This is the location that I sent the results to, this should be changed to whatever is most relevant for you!
 					shouldBlock = true;
-				}
-				if (!ip.equals("127.0.0.1")) {
-					try {
-						DiscordMessenger.sendFlubDev(susUser + "\nIP: " + ip + "\nCity: " + city);
-					} catch (Exception e) {
-						System.out.println("Error sending to flubdev " + e);
-					}
 				}
 			}
 		} catch (IOException | ParseException e) {
