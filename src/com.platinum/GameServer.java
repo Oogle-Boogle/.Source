@@ -48,7 +48,7 @@ public class GameServer {
 				logger.info("Launching the - DEVELOPER DEVELOPER DEVELOPER DEVELOPER - server!");
 			} else {
 				logger.info("Launching the - LIVE LIVE LIVE LIVE - server!");
-				DiscordMessenger.sendGeneralChat("Platinum has been updated!", "Checkout out the update log for more information!");
+				DiscordMessenger.sendGeneralChat("Platinum has been updated!", "Check out out the update log for more information!");
 			}
 			logger.info("Server Host Name is " + serverHost);
 
