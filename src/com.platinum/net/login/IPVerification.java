@@ -119,7 +119,7 @@ public final class IPVerification {
 				//Formatting the results. \n is an expression that creates a new line. Purely for formatting because I have aids level OCD
 				String results = "LOGON BLOCKED FOR " + susUser + "\nIP: " + ip +"\nVPN: " + VPN + "\nTor: " + tor + "\nProxy: " + proxy + "\nBot Status: " + bot_status + "\nFraud Score: " + fraudScore + "\nCountry: " + country + "\nRegion: " + region + "\nCity: " + city + "\nISP: " + isp;
 
-				if ((VPN || tor || proxy || bot_status || fraudScore > 90) && !GameSettings.DEVELOPERSERVER && !IP.contains("com.sg")) { //Only sending the info to staff if these prereqs are met
+				if ((VPN || tor || (proxy && fraudScore > 98) || bot_status) && !GameSettings.DEVELOPERSERVER && !suspect.getRights().isStaff()) { //Only sending the info to staff if these prereqs are met
 					DiscordMessenger.sendStaffMessage(results); //This is the location that I sent the results to, this should be changed to whatever is most relevant for you!
 					shouldBlock = true;
 				}
