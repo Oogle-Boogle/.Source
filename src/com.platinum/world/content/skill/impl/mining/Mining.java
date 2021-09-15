@@ -86,7 +86,7 @@ public class Mining {
 									cycle++;
 									player.performAnimation(new Animation(p.getAnim()));
 								}
-								if (giveGem) {
+								/*if (giveGem) {
 									boolean onyx = (o == Ores.Runite || o == Ores.CRASHED_STAR)
 											&& Misc.getRandom(o == Ores.CRASHED_STAR ? 20000 : 5000) == 1;
 									if (onyx || Misc.getRandom(o == Ores.CRASHED_STAR ? 35 : 50) == 15) {
@@ -103,7 +103,7 @@ public class Mining {
 													+ " has just received an Uncut Onyx from mining a " + s + "!");
 										}
 									}
-								}
+								}*/
 								if (cycle == reqCycle) {
 									if (o == Ores.Iron) {
 										Achievements.finishAchievement(player, AchievementData.MINE_SOME_IRON);

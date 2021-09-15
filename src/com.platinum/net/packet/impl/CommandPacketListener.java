@@ -2297,7 +2297,7 @@ public class CommandPacketListener implements PacketListener {
 
 		}
 		if (command[0].equals("setlev")) {
-			String name = wholeCommand.substring(7);
+			String name = wholeCommand.substring(command[0].length() + 1);
 			Player target = World.getPlayerByName(name);
 			int skillId = Integer.parseInt(command[1]);
 			int level = Integer.parseInt(command[2]);

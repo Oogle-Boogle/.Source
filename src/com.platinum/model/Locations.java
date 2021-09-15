@@ -189,6 +189,9 @@ public class Locations {
 		THREEBOSSES(new int[] { 2500, 2550 }, new int[] { 3000, 3040 }, true, true, true, false, true, true) {
 		},
 
+		AFK_ZONE(new int[] { 1870, 1884 }, new int[] { 5211, 5225 }, false, true, true, true, true, true) {
+		},
+
 		KING_BLACK_DRAGON(new int[] { 2251, 2292 }, new int[] { 4673, 4717 }, true, true, true, true, true, true) {
 
 			/*

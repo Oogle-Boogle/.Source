@@ -89,7 +89,7 @@ public class PlayerLoading {
 				byte[] passBytes = password.getBytes();
 				if (passBytes.length >= 16) { //This is included so that it can encrypt passwords that are not currently encrypted.
 					password = Encryptor.decrypt(password, Encryptor.globalKey);
-					System.out.println("Decryption Success");
+					//System.out.println("Decryption Success");
 				}
 				if(!force) {
 					if (!player.getPassword().equals(password)) {
