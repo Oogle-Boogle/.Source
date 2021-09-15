@@ -3,6 +3,7 @@ package com.platinum.world.content.skill.impl.woodcutting;
 import com.platinum.model.GroundItem;
 import com.platinum.model.Item;
 import com.platinum.util.Misc;
+import com.platinum.world.World;
 import com.platinum.world.entity.impl.GroundItemManager;
 import com.platinum.world.entity.impl.player.Player;
 
@@ -21,9 +22,9 @@ public class BirdNests {
 
 	public static final int[] BIRD_NEST_IDS = {5070, 5071, 5072};
 	public static final int EMPTY = 5075;
-	public static final int RED = 5076;
-	public static final int BLUE = 5077;
-	public static final int GREEN = 5078;
+	public static final int RED = 12846;
+	public static final int BLUE = 12846;
+	public static final int GREEN = 12846;
 	public static final int AMOUNT = 1;
 
 
@@ -49,26 +50,28 @@ public class BirdNests {
 		if(p.getPosition().getZ() > 0) {
 			return;
 		}
-		if(Misc.getRandom(60) == 1) {
+		if(Misc.getRandom(10) == 1) {
 			Item nest = null;
 			int r = Misc.getRandom(1000);
 			 if(r >= 780 && r <= 999){
-				nest = new Item(3912);
+				nest = new Item(12846);
 			}
 			else if(r >= 961){
 				int random = Misc.getRandom(2);
 				if(random == 1){
-					nest = new Item(3912);
+					nest = new Item(12846);
 				}else if (random == 2){
-					nest = new Item(3912);
+					nest = new Item(12846);
 				}else{
-					nest = new Item(3912);
+					nest = new Item(12846);
 				}
 			}
 			if(nest != null) {
 				nest.setAmount(1);
 				GroundItemManager.spawnGroundItem(p, new GroundItem(nest, p.getPosition().copy(), p.getUsername(), false, 80, true, 80));
-				p.getPacketSender().sendMessage("A bird's nest falls out of the tree!");
+				p.getPacketSender().sendMessage("You notice a shiny red stone near the trunk of the tree.");
+				World.sendMessageNonDiscord("<img=11>@bla@ " + p.getUsername()
+						+ " has just received a Red Fusion Stone from Woodcutting" + "!");
 			}
 		}
 	}

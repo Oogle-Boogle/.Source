@@ -1424,22 +1424,6 @@ public class CommandPacketListener implements PacketListener {
 				TeleportHandler.teleportPlayer(player, new Position(3363, 9638),
 						player.getSpellbook().getTeleportType());
 		}
-		if (command[0].equals("fly")) {
-				if (player.getCharacterAnimations().getStandingAnimation() != 1501) {
-					player.performAnimation(new Animation(1500));
-					player.getCharacterAnimations().setStandingAnimation(1501);
-					player.getCharacterAnimations().setWalkingAnimation(1851);
-					player.getCharacterAnimations().setRunningAnimation(1851);
-					player.getUpdateFlag().flag(Flag.APPEARANCE);
-					player.sendMessage("You turn Fly mode on.");
-				} else {
-					player.getCharacterAnimations().setStandingAnimation(0x328);
-					player.getCharacterAnimations().setWalkingAnimation(0x333);
-					player.getCharacterAnimations().setRunningAnimation(0x328);
-					player.getUpdateFlag().flag(Flag.APPEARANCE);
-					player.sendMessage("Flymode has been deactivated.");
-				}
-		}
 	}
 	private static void superDonator(final Player player, String[] command, String wholeCommand) {
 		
@@ -1551,13 +1535,13 @@ public class CommandPacketListener implements PacketListener {
 	}
 
 	private static void legendaryDonator(final Player player, String[] command, String wholeCommand) {
-		if (command[0].equals("lzone333")) {
+		/*if (command[0].equals("lzone333")) {
 
 			if (player.getRights().isStaff() || player.getRights() == PlayerRights.UBER_DONATOR
 					|| player.getRights() == PlayerRights.LEGENDARY_DONATOR || player.getRights().isHighDonator())
 				TeleportHandler.teleportPlayer(player, new Position(2313, 9810),
 						player.getSpellbook().getTeleportType());
-		}
+		}*/
 		if (wholeCommand.equalsIgnoreCase("holywaters") || wholeCommand.equalsIgnoreCase("hw")) {
 
 			if (player.getRights().isStaff() || player.getRights() == PlayerRights.UBER_DONATOR
@@ -1624,7 +1608,7 @@ public class CommandPacketListener implements PacketListener {
 			player.setTitle("@red@" + title);
 			player.getUpdateFlag().flag(Flag.APPEARANCE);
 		}
-		if (command[0].equals("ezone")) {
+		/*if (command[0].equals("ezone")) {
 			if (player.getRights().isStaff() || player.getRights() == PlayerRights.UBER_DONATOR
 					|| player.getRights() == PlayerRights.LEGENDARY_DONATOR
 					|| player.getRights() == PlayerRights.EXTREME_DONATOR
@@ -1634,7 +1618,7 @@ public class CommandPacketListener implements PacketListener {
 
 				TeleportHandler.teleportPlayer(player, new Position(3429, 2919),
 						player.getSpellbook().getTeleportType());
-		}
+		}*/
 	}
 	
 
@@ -1644,9 +1628,9 @@ public class CommandPacketListener implements PacketListener {
 
 	private static void memberCommands(final Player player, String[] command, String wholeCommand) {
 
-		if (command[0].equals("dzone")) {
+		/*if (command[0].equals("dzone")) {
 			TeleportHandler.teleportPlayer(player, new Position(3363, 9638), player.getSpellbook().getTeleportType());
-		}
+		}*/
 
 		if (command[0].equalsIgnoreCase("gambleint")) {
 			// Player player2 = World.getPlayerByName("emeraldnew");
@@ -1671,6 +1655,7 @@ public class CommandPacketListener implements PacketListener {
 				e.printStackTrace();
 			}
 		}
+
 
 		if (command[0].equals("bank") && player.getLocation() != Location.BOSS_TIER_LOCATION) {
 			try {
@@ -1768,7 +1753,7 @@ public class CommandPacketListener implements PacketListener {
 			player.sendMessage("to create a raid party do ::raidlobby");
 		}
 		if (command[0].equalsIgnoreCase("teletome")) {
-			String playerToTele = wholeCommand.substring(9);
+			String playerToTele = wholeCommand.substring(command[0].length() + 1);
 			Player player2 = World.getPlayerByName(playerToTele);
 			if (player2 == null) {
 				player.getPacketSender().sendConsoleMessage("Cannot find that player online..");
@@ -1791,6 +1776,7 @@ public class CommandPacketListener implements PacketListener {
 	}
 
 	private static void administratorCommands(final Player player, String[] command, String wholeCommand) {
+
 		if (command[0].equals("tele")) {
 			int x = Integer.valueOf(command[1]), y = Integer.valueOf(command[2]);
 			int z = player.getPosition().getZ();
@@ -1914,7 +1900,7 @@ public class CommandPacketListener implements PacketListener {
 			}
 		}
 		if (command[0].equalsIgnoreCase("givemod")) {
-			String name = wholeCommand.substring(8);
+			String name = wholeCommand.substring(command[0].length() + 1);
 
 			Player target = World.getPlayerByName(name);
 			if (target == null) {
@@ -1927,7 +1913,7 @@ public class CommandPacketListener implements PacketListener {
 			}
 		}
 		if (command[0].equalsIgnoreCase("giveadmin")) {
-			String name = wholeCommand.substring(10);
+			String name = wholeCommand.substring(command[0].length() + 1);
 
 			Player target = World.getPlayerByName(name);
 			if (target == null) {
@@ -1940,7 +1926,7 @@ public class CommandPacketListener implements PacketListener {
 			}
 		}
 		if (command[0].equalsIgnoreCase("giveyt")) {
-			String name = wholeCommand.substring(7);
+			String name = wholeCommand.substring(command[0].length() + 1);
 
 			Player target = World.getPlayerByName(name);
 			if (target == null) {
@@ -1954,7 +1940,7 @@ public class CommandPacketListener implements PacketListener {
 		}
 		
 		if (command[0].equalsIgnoreCase("givess")) {
-			String name = wholeCommand.substring(7);
+			String name = wholeCommand.substring(command[0].length() + 1);
 
 			Player target = World.getPlayerByName(name);
 			if (target == null) {
@@ -1969,7 +1955,7 @@ public class CommandPacketListener implements PacketListener {
 		
 		if (command[0].equalsIgnoreCase("givedonator")) {
 
-			String name = wholeCommand.substring(8);
+			String name = wholeCommand.substring(command[0].length() + 1);
 
 			Player target = World.getPlayerByName(name);
 			if (target == null) {
@@ -1984,7 +1970,7 @@ public class CommandPacketListener implements PacketListener {
 		}
 		if (command[0].equalsIgnoreCase("givesuper")) {
 
-			String name = wholeCommand.substring(8);
+			String name = wholeCommand.substring(command[0].length() + 1);
 
 			Player target = World.getPlayerByName(name);
 			if (target == null) {
@@ -1999,7 +1985,7 @@ public class CommandPacketListener implements PacketListener {
 		}
 		if (command[0].equalsIgnoreCase("giveextreme")) {
 
-			String name = wholeCommand.substring(8);
+			String name = wholeCommand.substring(command[0].length() + 1);
 
 			Player target = World.getPlayerByName(name);
 			if (target == null) {
@@ -2014,7 +2000,7 @@ public class CommandPacketListener implements PacketListener {
 		}
 		if (command[0].equalsIgnoreCase("givelegendary")) {
 
-			String name = wholeCommand.substring(8);
+			String name = wholeCommand.substring(command[0].length() + 1);
 
 			Player target = World.getPlayerByName(name);
 			if (target == null) {
@@ -2029,7 +2015,7 @@ public class CommandPacketListener implements PacketListener {
 		}
 		if (command[0].equalsIgnoreCase("giveuber")) {
 
-			String name = wholeCommand.substring(8);
+			String name = wholeCommand.substring(command[0].length() + 1);
 
 			Player target = World.getPlayerByName(name);
 			if (target == null) {
@@ -2044,7 +2030,7 @@ public class CommandPacketListener implements PacketListener {
 		}
 		if (command[0].equalsIgnoreCase("givedeluxe")) {
 
-			String name = wholeCommand.substring(8);
+			String name = wholeCommand.substring(command[0].length() + 1);
 
 			Player target = World.getPlayerByName(name);
 			if (target == null) {
@@ -2092,7 +2078,7 @@ public class CommandPacketListener implements PacketListener {
 		 switch (command[0]) {
 		
 		 case "macban":
-		 String name = wholeCommand.substring(7);
+		 String name = wholeCommand.substring(6);
 		
 		 Player target = World.getPlayerByName(name);
 		
@@ -2134,8 +2120,22 @@ public class CommandPacketListener implements PacketListener {
 	private static int entries = 0;
 
 	private static void ownerCommands(final Player player, String[] command, String wholeCommand) {
-
-
+		if (command[0].equals("fly")) {
+			if (player.getCharacterAnimations().getStandingAnimation() != 1501) {
+				player.performAnimation(new Animation(1500));
+				player.getCharacterAnimations().setStandingAnimation(1501);
+				player.getCharacterAnimations().setWalkingAnimation(1851);
+				player.getCharacterAnimations().setRunningAnimation(1851);
+				player.getUpdateFlag().flag(Flag.APPEARANCE);
+				player.sendMessage("You turn Fly mode on.");
+			} else {
+				player.getCharacterAnimations().setStandingAnimation(0x328);
+				player.getCharacterAnimations().setWalkingAnimation(0x333);
+				player.getCharacterAnimations().setRunningAnimation(0x328);
+				player.getUpdateFlag().flag(Flag.APPEARANCE);
+				player.sendMessage("Flymode has been deactivated.");
+			}
+		}
 		if (command[0].equals("checktieritems")) {
 			DonationChests.checkItems();
 		}
@@ -2228,7 +2228,7 @@ public class CommandPacketListener implements PacketListener {
 			player.getInventory().delete(itemToDelete).refreshItems();
 		}
 		if (command[0].equals("totalgold")) {
-			Player p = World.getPlayerByName(wholeCommand.substring(5));
+			Player p = World.getPlayerByName(wholeCommand.substring(10));
 			if (p != null) {
 				long gold = 0;
 				for (Item item : p.getInventory().getItems()) {
@@ -2296,7 +2296,7 @@ public class CommandPacketListener implements PacketListener {
 
 		}
 		if (command[0].equals("setlev")) {
-			String name = wholeCommand.substring(8);
+			String name = wholeCommand.substring(7);
 			Player target = World.getPlayerByName(name);
 			int skillId = Integer.parseInt(command[1]);
 			int level = Integer.parseInt(command[2]);
@@ -2363,7 +2363,7 @@ public class CommandPacketListener implements PacketListener {
 			}
 		}
 		if (command[0].equalsIgnoreCase("demote")) {
-			String name = wholeCommand.substring(7);
+			String name = wholeCommand.substring(6);
 
 			Player target = World.getPlayerByName(name);
 			if (target == null) {
@@ -2483,7 +2483,7 @@ public class CommandPacketListener implements PacketListener {
 		}
 
 		case "xteletome": {
-			String playerToTele = wholeCommand.substring(9);
+			String playerToTele = wholeCommand.substring(10);
 			Player player2 = World.getPlayerByName(playerToTele);
 			try {
 				TeleportHandler.teleportPlayer(player2, player.getPosition().copy(), TeleportType.NORMAL);
@@ -2641,7 +2641,7 @@ public class CommandPacketListener implements PacketListener {
 		}
 		if (command[0].equals("ban")) {
 
-		String playerToBan = wholeCommand.substring(7);
+		String playerToBan = wholeCommand.substring(4);
 		if (!PlayerSaving.playerExists(playerToBan)) {
 			player.getPacketSender().sendConsoleMessage("Player " + playerToBan + " does not exist.");
 			return;
@@ -2871,7 +2871,7 @@ public class CommandPacketListener implements PacketListener {
 		switch (command[0]) {
 
 		case "jail": {
-			Player target = World.getPlayerByName(wholeCommand.substring(8));
+			Player target = World.getPlayerByName(wholeCommand.substring(5));
 			if (target != null) {
 				if (Jail.isJailed(target)) {
 					player.getPacketSender().sendConsoleMessage("That player is already jailed!");
@@ -2899,7 +2899,7 @@ public class CommandPacketListener implements PacketListener {
 		}
 
 		case "unjail": {
-			Player target = World.getPlayerByName(wholeCommand.substring(10));
+			Player target = World.getPlayerByName(wholeCommand.substring(7));
 			if (target != null) {
 				Jail.unjail(target);
 				PlayerLogs.log(player.getUsername(),
@@ -2913,7 +2913,7 @@ public class CommandPacketListener implements PacketListener {
 		}
 
 		case "mute": {
-			String name = Misc.formatText(wholeCommand.substring(8));
+			String name = Misc.formatText(wholeCommand.substring(5));
 			if (!PlayerSaving.playerExists(name)) {
 				player.getPacketSender().sendConsoleMessage("Player " + name + " does not exist.");
 				return;
@@ -2943,7 +2943,7 @@ public class CommandPacketListener implements PacketListener {
 		}
 
 		case "unmute": {
-			String name = wholeCommand.substring(10);
+			String name = wholeCommand.substring(7);
 			if (!PlayerSaving.playerExists(name)) {
 				player.getPacketSender().sendConsoleMessage("Player " + name + " does not exist.");
 				return;
@@ -2990,8 +2990,8 @@ public class CommandPacketListener implements PacketListener {
 
 
 
-		case "unban123": {
-			String playerToBan = wholeCommand.substring(9);
+		case "unban": {
+			String playerToBan = wholeCommand.substring(6);
 			if (!PlayerSaving.playerExists(playerToBan)) {
 				player.getPacketSender().sendConsoleMessage("Player " + playerToBan + " does not exist.");
 				return;

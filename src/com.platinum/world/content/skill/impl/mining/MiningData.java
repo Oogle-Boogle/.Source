@@ -2,11 +2,12 @@ package com.platinum.world.content.skill.impl.mining;
 
 import com.platinum.model.Skill;
 import com.platinum.model.container.impl.Equipment;
+import com.platinum.util.Misc;
 import com.platinum.world.entity.impl.player.Player;
 
 public class MiningData {
 
-	public static final int[] RANDOM_GEMS = {10835};
+	public static final int[] FuserIngredients = {12845};
 
 	public static enum Pickaxe {
 

@@ -355,7 +355,7 @@ public class PestControl {
 	}
 
 	public static int getDefaultPortalConstitution() {
-		return 550000 + (PLAYERS_IN_BOAT * 190);
+		return 15550000 + (PLAYERS_IN_BOAT * 190);
 	}
 
 	/**

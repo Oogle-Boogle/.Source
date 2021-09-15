@@ -91,10 +91,12 @@ public class Mining {
 											&& Misc.getRandom(o == Ores.CRASHED_STAR ? 20000 : 5000) == 1;
 									if (onyx || Misc.getRandom(o == Ores.CRASHED_STAR ? 35 : 50) == 15) {
 										int gemId = onyx ? 6571
-												: MiningData.RANDOM_GEMS[(int) (MiningData.RANDOM_GEMS.length
+												: MiningData.FuserIngredients[(int) (MiningData.FuserIngredients.length
 														* Math.random())];
 										player.getInventory().add(gemId, 1);
-										player.getPacketSender().sendMessage("You've found a gem!");
+										player.getPacketSender().sendMessage("You have found a Blue Fusion Stone!");
+										World.sendMessageNonDiscord("<img=11>@bla@ " + player.getUsername()
+												+ " has just received a Blue Fusion Stone from mining" + "!");
 										if (gemId == 6571) {
 											String s = o == Ores.Runite ? "Runite ore" : "Crashed star";
 											World.sendMessageNonDiscord("<img=11><col=009966> " + player.getUsername()

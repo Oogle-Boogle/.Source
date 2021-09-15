@@ -1795,21 +1795,17 @@ public class Shop extends ItemContainer {
 				}
 			} else if (shop == TOKEN_STORE) {
 				switch (item) {
-				case 3648:
-				case 3649:
-				case 3650:
-				case 3651:
-				case 3652:
-				case 3659:
+				case 3810:
+				case 3811:
+				case 3812:
+				case 3813:
+				case 3814:
+				case 3815:
 					return new Object[] { 10000, "Colorful Tokens" };
 				case 5118:
 				case 5119:
 				case 5120:
 					return new Object[] { 50000, "Colorful Tokens" };
-				case 19935:
-					return new Object[] { 40000, "Colorful Tokens" };
-				case 19936:
-					return new Object[] { 75000, "Colorful Tokens" };
 
 				}
 			} else if (shop == SUIC_NUMBER_ONE_TOKEN_STORE) {
