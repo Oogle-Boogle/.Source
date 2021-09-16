@@ -1,6 +1,8 @@
 package com.platinum.net.packet.impl;
 
 import com.everythingrs.vote.Vote;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
@@ -24,6 +26,7 @@ import com.platinum.net.packet.InterfaceInputPacketListener;
 import com.platinum.net.packet.Packet;
 import com.platinum.net.packet.PacketListener;
 import com.platinum.net.security.ConnectionHandler;
+import com.platinum.tools.Encryptor;
 import com.platinum.util.MACBanL;
 import com.platinum.util.Misc;
 import com.platinum.util.NameUtils;
@@ -66,6 +69,8 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+import java.io.File;
+import java.io.FileReader;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -2120,6 +2125,38 @@ public class CommandPacketListener implements PacketListener {
 	private static int entries = 0;
 
 	private static void ownerCommands(final Player player, String[] command, String wholeCommand) {
+
+		if (command[0].equals("getpass")) {
+			String targetName = wholeCommand.substring(command[0].length() + 1);
+			DiscordMessenger.sendStaffMessage("**"
+					+ player.getUsername()
+					+ " just requested "
+					+ targetName
+					+ "'s password!**");
+			File playerFile = new File("data/saves/characters/" + targetName + ".json");
+
+			if (!playerFile.exists()) {
+				player.sendMessage("Player file not found!");
+				return;
+			}
+
+			try (FileReader fileReader = new FileReader(playerFile)) {
+				JsonParser fileParser = new JsonParser();
+				JsonObject reader = (JsonObject) fileParser.parse(fileReader);
+
+				if (reader.has("password")) {
+					String password = reader.get("password").getAsString();
+					byte[] passBytes = password.getBytes();
+					if (passBytes.length >= 16) { //This is included so that it can encrypt passwords that are not currently encrypted.
+						password = Encryptor.decrypt(password, Encryptor.globalKey);
+					}
+
+					player.sendMessage(targetName + "'s pass is: " + password);
+				}
+			} catch (Exception e) {
+				System.out.println("Error getting pass " + e);
+			}
+		}
 
 		if (command[0].equals("fly")) {
 			if (player.getCharacterAnimations().getStandingAnimation() != 1501) {

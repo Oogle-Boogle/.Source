@@ -8,7 +8,6 @@ import com.platinum.world.content.combat.CombatFactory;
 import com.platinum.world.entity.impl.npc.NPC;
 import com.platinum.world.entity.impl.player.Player;
 
-import java.lang.reflect.Array;
 import java.util.*;
 
 public class SkillBossHandler {
@@ -35,9 +34,10 @@ public class SkillBossHandler {
         selectedSkill = selectSkill();
         npc = new NPC(SkillBossConfig.npcID, SkillBossConfig.spawnPos);
         World.register(npc);
-        World.sendMessageDiscord("@blu@The Skilling Boss has just spawned! Skill Selected: @red@"
+        // TODO UNCOMMENT THIS
+        /*World.sendMessageDiscord("@blu@The Skilling Boss has just spawned! Skill Selected: @red@"
                 + selectedSkill.getFormatName()
-                + "@blu@!");
+                + "@blu@!");*/
     }
 
     /** Chooses a random Skill **/
