@@ -2209,7 +2209,7 @@
   },
   {
     "id": 33,
-    "name": "(X) Storm Breaker",
+    "name": "(T5) Storm Breaker",
     "examine": "He interrupts you while praying to Emerald",
     "combat": 200,
     "size": 1,
@@ -2219,7 +2219,7 @@
     "poisonous": false,
     "respawn": 5,
     "maxHit": 550,
-    "hitpoints": 825000,
+    "hitpoints": 600000,
     "attackSpeed": 3,
     "attackAnim": 422,
     "defenceAnim": 404,
