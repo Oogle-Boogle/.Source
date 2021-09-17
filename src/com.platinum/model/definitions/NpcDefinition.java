@@ -146,6 +146,8 @@ public class NpcDefinition {
 					definitions[index].setSlayerLevel(reader.get("slayerLevel")
 							.getAsInt());
 				}
+				else if (reader.has("multi"))
+					definitions[index].setMulti(reader.get("multi").getAsBoolean());
 			}
 
 			@Override
@@ -164,11 +166,18 @@ public class NpcDefinition {
 		return definitions;
 	}
 
+	private boolean multi = false;
 	/**
 	 * Gets the id of the npc.
 	 * 
 	 * @return the id.
 	 */
+	public void setMulti(Boolean multi) { this.multi = multi; }
+
+	public boolean isMulti() {
+		return this.multi;
+	}
+
 	public int getId() {
 		return id;
 	}

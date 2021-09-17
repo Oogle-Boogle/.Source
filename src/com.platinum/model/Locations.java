@@ -69,6 +69,24 @@ public class Locations {
 	public static int PLAYERS_IN_DUEL_ARENA;
 
 	public enum Location {
+		EVENTARENA(new int[] { 2899,  2919 }, new int[] {2715, 2735 }, true, true, true, true, true, true) {
+			@Override
+			public void login(Player player) {
+				if(!GameSettings.EventArena) {
+					player.moveTo(GameSettings.DEFAULT_POSITION.copy());
+					player.sendMessage("@whi@[Event Arena] You have been moved to home because the zone is closed.");
+				}
+				player.sendMessage("@whi@[Event Arena] Welcome to the content zone!");
+			}
+			@Override
+			public void process(Player player) {
+				if(!GameSettings.EventArena) {
+					player.moveTo(GameSettings.DEFAULT_POSITION.copy());
+					player.sendMessage("@whi@[Event Arena] Sorry the content zone just closed!");
+				}
+			}
+
+		},
 
 		/** Flub's Boss Minigame **/
 		BOSS_TIER_ENTRANCE(new int[]{2332, 2333}, new int[]{4645, 4646}, true, false, false, false, false, false) {

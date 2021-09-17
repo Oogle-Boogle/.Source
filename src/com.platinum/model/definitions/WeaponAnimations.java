@@ -289,6 +289,8 @@ public final class WeaponAnimations {
 		if (weaponName.contains("halberd")) {
 			return 440;
 		}
+		if(weaponId == 1413)
+			return 440;
 		if (weaponName.startsWith("dragon dagger")) {
 			if(prop.contains("slash"))
 				return 377;

@@ -63,6 +63,7 @@ import com.platinum.world.content.invansionminigame.InvasionGame;
 import com.platinum.world.content.minigames.Minigame;
 import com.platinum.world.content.minigames.MinigameAttributes;
 import com.platinum.world.content.minigames.impl.Dueling;
+import com.platinum.world.content.partyroom.PartyRoomManager;
 import com.platinum.world.content.pos.PlayerOwnedShopManager;
 import com.platinum.world.content.raids.OldRaidParty;
 import com.platinum.world.content.roulette.Roulette;
@@ -2036,7 +2037,7 @@ public class Player extends Character {
 		}
 		if (weaponId == 3951 || weaponId == 14559 || weaponId == 5131 || weaponId == 3651 || weaponId == 6197 || weaponId == 5132
 				|| weaponId == 923 || weaponId == 3063 || weaponId == 19720 || weaponId == 18957 || weaponId == 15653
-				|| weaponId == 5089 || weaponId == 5173 || weaponId == 5195 || weaponId == 15656 || weaponId == 5129) {
+				|| weaponId == 5089 || weaponId == 5173 || weaponId == 5195 || weaponId == 15656 || weaponId == 5129 || weaponId == 1413) {
 			return 2;
 		}
 		if (weaponId == 13265 || weaponId == 19618 || weaponId == 19163 || weaponId == 9492 || weaponId == 2760
@@ -4522,6 +4523,12 @@ public class Player extends Character {
 
 	public void setNPCKills(int NPCKills) {
 		this.npcKills = NPCKills;
+	}
+
+	private final PartyRoomManager partyRoom = new PartyRoomManager(this);
+
+	public PartyRoomManager getPartyRoom() {
+		return partyRoom;
 	}
 
 	/**

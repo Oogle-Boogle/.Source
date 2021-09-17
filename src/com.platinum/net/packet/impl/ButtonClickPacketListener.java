@@ -19,6 +19,7 @@ import com.platinum.model.input.impl.EnterSyntaxToItemSearchFor;
 import com.platinum.model.input.impl.EnterSyntaxToNpcSearchFor;
 import com.platinum.model.input.impl.PosInput;
 import com.platinum.world.content.mapteleportinterface.MapTeleportInterface;
+import com.platinum.world.content.partyroom.PartyRoomManager;
 import com.platinum.world.content.preset.Presets;
 import com.platinum.model.input.impl.SearchForItemInput;
 import com.platinum.net.packet.Packet;
@@ -340,6 +341,10 @@ public class ButtonClickPacketListener implements PacketListener {
                                 .sendToggle(3310, 1);
                     });
                 }
+                break;
+
+                case 2246:
+                PartyRoomManager.sendConfirmation(player);
                 break;
 
 

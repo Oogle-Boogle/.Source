@@ -252,6 +252,16 @@ public enum CombatSpecial {
                             true);
                 }
             },
+    SULPHUR_SCYTHE(new int[]{1413}, 30, 1.50, 1.08, CombatType.MELEE, WeaponInterface.HALBERD) {
+        @Override
+        public CombatContainer container(Player player, Character target) {
+            player.performAnimation(new Animation(1203));
+            player.performGraphic(new Graphic(282, GraphicHeight.HIGH));
+
+            return new CombatContainer(player, target, 2, CombatType.MELEE,
+                    true);
+        }
+    },
     DRAGON_LONGSWORD(new int[]{1305}, 25, 1.15, 1.20, CombatType.MELEE, WeaponInterface.LONGSWORD) {
                 @Override
                 public CombatContainer container(Player player, Character target) {

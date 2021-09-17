@@ -53,6 +53,7 @@ import com.platinum.world.content.dialogue.impl.Mandrith;
 import com.platinum.world.content.minigames.impl.Graveyard;
 import com.platinum.world.content.minigames.impl.Nomad;
 import com.platinum.world.content.minigames.impl.RecipeForDisaster;
+import com.platinum.world.content.partyroom.PartyRoomManager;
 import com.platinum.world.content.raids.Raid1;
 import com.platinum.world.content.raids.Raid2;
 import com.platinum.world.content.raids.Raid3;
@@ -1471,6 +1472,14 @@ public class DialogueOptions {
 			}
 		} else if (id == FIRST_OPTION_OF_TWO) {
 			switch (player.getDialogueActionId()) {
+				case PartyRoomManager.DIALOGUE_ACTION_ID:
+					player.getPacketSender().sendInterfaceRemoval();
+					PartyRoomManager.sendBalloons(player);
+					break;
+				case PartyRoomManager.DIALOGUE_ACTION_ID + 1:
+					PartyRoomManager.open(player);
+					PartyRoomManager.accept(player);
+					break;
 				case 85:
 				case 86:
 					BossRewardChest.pickReward(player);
@@ -1662,6 +1671,10 @@ public class DialogueOptions {
 			}
 		} else if (id == SECOND_OPTION_OF_TWO) {
 			switch (player.getDialogueActionId()) {
+				case PartyRoomManager.DIALOGUE_ACTION_ID:
+					player.getPacketSender().sendInterfaceRemoval();
+					PartyRoomManager.sendWhiteKnights(player);
+					break;
 				case 85:
 					player.getPacketSender().sendMessage("Okay.. onto the next wave! Good luck!");
 					player.getPacketSender().sendInterfaceRemoval();
@@ -1684,26 +1697,27 @@ public class DialogueOptions {
 				}
 
 				break;
-			case 4:
-			case 16:
-			case 20:
-			case 23:
-			case 33:
-			case 37:
-			case 39:
-			case 42:
-			case 44:
-			case 46:
-			case 57:
-			case 71:
-			case 72:
-			case 73:
-			case 74:
-			case 76:
-			case 78:
-			case 709:
-				player.getPacketSender().sendInterfaceRemoval();
-				break;
+				case 4:
+				case 16:
+				case 20:
+				case 23:
+				case 33:
+				case 37:
+				case 39:
+				case 42:
+				case 44:
+				case 46:
+				case 57:
+				case 71:
+				case 72:
+				case 73:
+				case 74:
+				case 76:
+				case 78:
+				case 709:
+				case PartyRoomManager.DIALOGUE_ACTION_ID + 1:
+					player.getPacketSender().sendInterfaceRemoval();
+					break;
 			case 7:
 			case 8:
 				player.getPacketSender().sendInterfaceRemoval();
