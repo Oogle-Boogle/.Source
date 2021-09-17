@@ -53,6 +53,7 @@ import com.platinum.world.content.mapteleportinterface.MapTeleportInterface;
 import com.platinum.world.content.minigames.impl.*;
 import com.platinum.world.content.minigames.impl.Dueling.DuelRule;
 import com.platinum.world.content.minigames.impl.gungame.GunGame;
+import com.platinum.world.content.partyroom.PartyRoomManager;
 import com.platinum.world.content.raids.Raid3;
 import com.platinum.world.content.raids.OldRaidParty;
 import com.platinum.world.content.raids.addons.RaidChest;
@@ -245,7 +246,22 @@ public class ObjectActionPacketListener implements PacketListener {
 
 
 
-
+					case 115:
+					case 116:
+					case 117:
+					case 118:
+					case 119:
+					case 120:
+					case 121:
+					case 122:
+						PartyRoomManager.burstBalloon(player, gameObject);
+						break;
+					case PartyRoomManager.LEVER:
+						PartyRoomManager.sendLever(player);
+						break;
+					case PartyRoomManager.CHEST:
+						PartyRoomManager.open(player);
+						break;
 
 
 				case 2466:

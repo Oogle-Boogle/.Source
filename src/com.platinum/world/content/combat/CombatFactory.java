@@ -926,6 +926,11 @@ public final class CombatFactory {
 					return false;
 				}
 			}
+			if (npc.getId() == 5886 && !GameSettings.EventArena)
+			{
+				((Player)entity).sendMessage("@red@[Disabled] Event Arena is currently DISABLED");
+				return false;
+			}
 			if(npc.getLocation() != Location.DUNGEONEERING && npc.getDefinition().getSlayerLevel() > ((Player)entity).getSkillManager().getCurrentLevel(Skill.SLAYER)) {
 				((Player)entity).getPacketSender().sendMessage("You need a Slayer level of at least "+npc.getDefinition().getSlayerLevel()+" to attack this creature.");
 				entity.getCombatBuilder().reset(true);

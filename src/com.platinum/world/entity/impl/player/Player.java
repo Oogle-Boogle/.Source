@@ -63,6 +63,7 @@ import com.platinum.world.content.invansionminigame.InvasionGame;
 import com.platinum.world.content.minigames.Minigame;
 import com.platinum.world.content.minigames.MinigameAttributes;
 import com.platinum.world.content.minigames.impl.Dueling;
+import com.platinum.world.content.partyroom.PartyRoomManager;
 import com.platinum.world.content.pos.PlayerOwnedShopManager;
 import com.platinum.world.content.raids.OldRaidParty;
 import com.platinum.world.content.roulette.Roulette;
@@ -4522,6 +4523,12 @@ public class Player extends Character {
 
 	public void setNPCKills(int NPCKills) {
 		this.npcKills = NPCKills;
+	}
+
+	private final PartyRoomManager partyRoom = new PartyRoomManager(this);
+
+	public PartyRoomManager getPartyRoom() {
+		return partyRoom;
 	}
 
 	/**

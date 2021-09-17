@@ -2,11 +2,17 @@ package com.platinum.world.content.combat.strategy.impl;
 
 import com.platinum.engine.task.Task;
 import com.platinum.engine.task.TaskManager;
+import com.platinum.model.Animation;
+import com.platinum.model.CombatIcon;
 import com.platinum.model.Graphic;
+import com.platinum.model.Hit;
+import com.platinum.model.Hitmask;
 import com.platinum.model.Locations;
+import com.platinum.model.Position;
 import com.platinum.model.Projectile;
 import com.platinum.model.Skill;
 import com.platinum.util.Misc;
+import com.platinum.world.World;
 import com.platinum.world.content.combat.CombatContainer;
 import com.platinum.world.content.combat.CombatType;
 import com.platinum.world.content.combat.strategy.CombatStrategy;
@@ -28,38 +34,30 @@ public class Sire implements CombatStrategy {
 
 	@Override
 	public boolean customContainerAttack(Character entity, Character victim) {
-		NPC sire = (NPC)entity;
-		if(sire.isChargingAttack() || victim.getConstitution() <= 0) {
+		NPC Sire = (NPC)entity;
+		if(Sire.isChargingAttack() || victim.getConstitution() <= 0) {
 			return true;
 		}
-			if(Misc.getRandom(10) <= 2) {
-				Player p = (Player)victim;
-				int lvl = p.getSkillManager().getCurrentLevel(Skill.CONSTITUTION);
-				lvl *= 0.9;
-				p.getSkillManager().setCurrentLevel(Skill.CONSTITUTION, p.getSkillManager().getCurrentLevel(Skill.CONSTITUTION) - lvl <= 0 ?  1 : lvl);
-				p.getPacketSender().sendMessage("The sire has gained some health, Draining your hitpoints!");
-				victim.performGraphic(new Graphic(1176));
-		}
-		if(Locations.goodDistance(sire.getPosition().copy(), victim.getPosition().copy(), 3) && Misc.getRandom(5) <= 3) {
-			sire.getCombatBuilder().setContainer(new CombatContainer(sire, victim, 1, 1, CombatType.MAGIC, true));
-			if(Misc.getRandom(10) <= 2) {
-				victim.performGraphic(new Graphic(1847));
-				new Projectile(sire, victim, 2183, 44, 3, 43, 40, 0).sendProjectile();
-			}
+		if(Locations.goodDistance(Sire.getPosition().copy(), victim.getPosition().copy(), 5)&& Misc.getRandom(10) > 8 ) {
+			Sire.getCombatBuilder().setContainer(new CombatContainer(Sire, victim, 1, 1, CombatType.MAGIC, true));
 		} else {
-			sire.setChargingAttack(true);
-			sire.getCombatBuilder().setContainer(new CombatContainer(sire, victim, 1, 3, CombatType.MAGIC, true));
-			TaskManager.submit(new Task(1, sire, false) {
-				int tick = 0;
+			final int x = Sire.getPosition().getX(), y = Sire.getPosition().getY();
+			TaskManager.submit(new Task(4) {
 				@Override
-				public void execute() {
-					if(tick == 0) {
-						new Projectile(sire, victim, 146, 44, 3, 41, 40, 0).sendProjectile();
-					} else if(tick == 1) {
-						sire.setChargingAttack(false);
-						stop();
+				protected void execute() {
+					for(Player p : World.getPlayers())
+					{
+						if(p != null)
+						{
+
+						if(p.getPosition().distanceToPoint(x, y) <= 15)
+						{
+							p.performGraphic(new Graphic(1176));
+							p.dealDamage(new Hit(Misc.random(200,750), Hitmask.CRITICAL, CombatIcon.MAGIC));
+						}
+						}
 					}
-					tick++;
+					this.stop();
 				}
 			});
 		}

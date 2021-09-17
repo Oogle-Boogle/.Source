@@ -27,6 +27,10 @@ import com.google.common.collect.Iterables;
 
 public abstract class ItemContainer {
 
+    public ItemContainer() {
+
+    }
+
 	/**
 	 * The amount of items the container can hold, such as 28 for inventory.
 	 */
@@ -992,6 +996,25 @@ public abstract class ItemContainer {
 			add(addItem);
 		}
 	}
+	public int getWealth() {
+		int wealth = 0;
+		for (Item item : getValidItems()) {
+			wealth += item.getDefinition().getValue();
+		}
+		return wealth;
+	}
+
+	public boolean slotContainsItem(int slot, int id) {
+		if ((slot > capacity()) || (slot < 0)) {
+			return false;
+		}
+
+		if (items[slot] == null) {
+			return false;
+		}
+
+		return items[slot].getId() == id;
+	}
 
 	/**
 	 * Deletes a set of items from the inventory.
@@ -1007,5 +1030,8 @@ public abstract class ItemContainer {
 
 			delete(deleteItem);
 		}
+	}
+
+	public void addItemSet(List<Item> validItems) {
 	}
 }

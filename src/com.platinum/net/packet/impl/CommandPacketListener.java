@@ -371,6 +371,17 @@ public class CommandPacketListener implements PacketListener {
 
 	private static void playerCommands(final Player player, String[] command, String wholeCommand) {
 
+		if(command[0].equalsIgnoreCase("eventarena")) {
+			if(!GameSettings.EventArena) {
+				player.getPA().sendMessage("@blu@Event Arena is disabled now, try again later.");
+				return;
+			}
+			TeleportHandler.teleportPlayer(player, new Position(2909, 2709, 0), TeleportType.NORMAL);
+		}
+		if(command[0].equalsIgnoreCase("partyroom")) {
+			TeleportHandler.teleportPlayer(player, new Position(2540, 4780), player.getSpellbook().getTeleportType());
+			player.getPA().sendMessage("You have been teleported to Party Room!");
+		}
 		if (command[0].equals("google")) {
 			String query = (wholeCommand.substring(command[0].length() + 1)).replace(" ", "%20");
 			player.getPacketSender().openURL("https://www.google.com/search?q=" + query);
@@ -1791,6 +1802,10 @@ public class CommandPacketListener implements PacketListener {
 			Position position = new Position(x, y, z);
 			player.moveTo(position);
 			player.getPacketSender().sendConsoleMessage("Teleporting to " + position.toString());
+		}
+		if(command[0].equalsIgnoreCase("togglezone")) {
+			GameSettings.EventArena = !GameSettings.EventArena;
+			World.sendMessageNonDiscord("@blu@[Event Arena] @red@" + player.getUsername() + " @blu@has @red@" + (GameSettings.EventArena ? "activated" : "disabled") + " @blu@the zone!");
 		}
 		if (command[0].equals("checkequip")) {
 			Player player2 = World.getPlayerByName(wholeCommand.substring(11));

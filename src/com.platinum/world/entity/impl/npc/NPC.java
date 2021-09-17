@@ -63,6 +63,12 @@ public class NPC extends Character {
 		this.constitution = defaultConstitution;
 		setLocation(Location.getLocation(this));
 	}
+	public void setAttackDistance(int distance){
+		this.distance = distance;
+	}
+	public int getAttackDistance(){
+		return distance;
+	}
 
 	private int attackbonus;
 	public void sequence() {
@@ -310,6 +316,8 @@ public class NPC extends Character {
 	private boolean healed, chargingAttack;
 	private boolean findNewTarget;
 	public int totalAttacks;
+	private int distance;
+
 
 	public static void removalTask(NPC npc, int cycles) {
 		World.register(npc);
@@ -466,6 +474,9 @@ public class NPC extends Character {
 				}
 			}
 		}
+	}
+	public static NPC of(int id, Position position) {
+		return new NPC(id, position);
 	}
 
 	public boolean isKeyRoomNpc() {

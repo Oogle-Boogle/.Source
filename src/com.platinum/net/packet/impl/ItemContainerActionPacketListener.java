@@ -9,6 +9,7 @@ import com.platinum.model.container.impl.Shop.ShopManager;
 import com.platinum.model.definitions.ItemDefinition;
 import com.platinum.model.definitions.WeaponAnimations;
 import com.platinum.model.definitions.WeaponInterfaces;
+import com.platinum.model.input.EnterAmount;
 import com.platinum.model.input.Input;
 import com.platinum.model.input.impl.EnterAmountToBank;
 import com.platinum.model.input.impl.EnterAmountToBuyFromShop;
@@ -34,6 +35,7 @@ import com.platinum.world.content.grandexchange.GrandExchange;
 import com.platinum.world.content.grandexchange.GrandExchangeOffer;
 import com.platinum.world.content.minigames.impl.Dueling;
 import com.platinum.world.content.minigames.impl.Dueling.DuelRule;
+import com.platinum.world.content.partyroom.PartyRoomManager;
 import com.platinum.world.content.skill.impl.smithing.EquipmentMaking;
 import com.platinum.world.content.skill.impl.smithing.SmithingData;
 import com.platinum.world.content.transportation.JewelryTeleporting;
@@ -124,6 +126,12 @@ public class ItemContainerActionPacketListener implements PacketListener {
 		case -23927:
 			player.getMysteryBox().reward();
 			break;
+			case PartyRoomManager.INVENTORY_ITEMS:
+				PartyRoomManager.deposit(player, new Item(id), slot);
+				break;
+			case PartyRoomManager.DEPOSIT_INVENTORY:
+				PartyRoomManager.withdraw(player, new Item(id), slot);
+				break;
 
 		case -12026:
 			//System.out.println("ItemContainer one!!!");
@@ -349,6 +357,11 @@ public class ItemContainerActionPacketListener implements PacketListener {
 				return;
 			}
 			break;
+			case PartyRoomManager.INVENTORY_ITEMS:
+				PartyRoomManager.deposit(player, new Item(id, 5), slot);
+				break;
+			case PartyRoomManager.DEPOSIT_INVENTORY:
+				PartyRoomManager.withdraw(player, new Item(id, 5), slot);
 
 		case 19313:
 			if (player.getInterfaceId() == 19307 && player.getGroupIronmanGroup() != null) {
@@ -439,7 +452,13 @@ public class ItemContainerActionPacketListener implements PacketListener {
 		int slot = packet.readShortA();
 		Item item1 = new Item(id);
 		switch (interfaceId) {
-		case 32621:
+			case PartyRoomManager.INVENTORY_ITEMS:
+				PartyRoomManager.deposit(player, new Item(id, 10), slot);
+				break;
+			case PartyRoomManager.DEPOSIT_INVENTORY:
+				PartyRoomManager.withdraw(player, new Item(id, 10), slot);
+				break;
+			case 32621:
 			player.getPlayerOwnedShopManager().handleBuy(slot, id, 1);
 			break;
 		case -31915:
@@ -595,7 +614,13 @@ public class ItemContainerActionPacketListener implements PacketListener {
 		int interfaceId = packet.readShort();
 		int id = packet.readShortA();
 		switch (interfaceId) {
-		case 32621:
+			case PartyRoomManager.INVENTORY_ITEMS:
+				PartyRoomManager.deposit(player, new Item(id, player.getInventory().getAmount(id)), slot);
+				break;
+			case PartyRoomManager.DEPOSIT_INVENTORY:
+				PartyRoomManager.withdraw(player, new Item(id, player.getPartyRoom().getDeposit().getAmount(id)), slot);
+				break;
+			case 32621:
 			player.setInputHandling(new Input() {
 
 				@Override
@@ -736,7 +761,27 @@ public class ItemContainerActionPacketListener implements PacketListener {
 		//System.out.println("Data id: " + id);
 		//System.out.println("Data int id: " + interfaceId);
 		switch (interfaceId) {
-		case Trading.INTERFACE_ID:
+			case PartyRoomManager.INVENTORY_ITEMS:
+				player.setInputHandling(new EnterAmount() {
+
+					@Override
+					public void handleAmount(Player player, int amount) {
+						PartyRoomManager.deposit(player, new Item(id, amount), slot);
+					}
+				});
+				player.getPacketSender().sendEnterAmountPrompt("How many would you like to deposit?");
+				break;
+			case PartyRoomManager.DEPOSIT_INVENTORY:
+				player.setInputHandling(new EnterAmount() {
+
+					@Override
+					public void handleAmount(Player player, int amount) {
+						PartyRoomManager.withdraw(player, new Item(id, amount), slot);
+					}
+				});
+				player.getPacketSender().sendEnterAmountPrompt("How many would you like to withdraw?");
+				break;
+			case Trading.INTERFACE_ID:
 			if (player.getTrading().inTrade()) {
 				player.setInputHandling(new EnterAmountToTrade(id, slot));
 				player.getPacketSender().sendEnterAmountPrompt("How many would you like to trade?");
