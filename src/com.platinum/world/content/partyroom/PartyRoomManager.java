@@ -43,7 +43,7 @@ public class PartyRoomManager {
     private static final Graphic BALLOON_POP = new Graphic(524);
 
     private static final PartyRoomBoundary[] BALLOON_BOUNDARIES = {
-        new PartyRoomBoundary(new Position(2538, 4776, 0), new Position(2546, 4787, 0)),
+        new PartyRoomBoundary(new Position(3348, 3332, 0), new Position(3367, 3348, 0)),
     };
 
     private static final String[] WHITE_KNIGHT_SHOUT = {

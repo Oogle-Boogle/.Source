@@ -379,7 +379,7 @@ public class CommandPacketListener implements PacketListener {
 			TeleportHandler.teleportPlayer(player, new Position(2909, 2709, 0), TeleportType.NORMAL);
 		}
 		if(command[0].equalsIgnoreCase("partyroom")) {
-			TeleportHandler.teleportPlayer(player, new Position(2540, 4780), player.getSpellbook().getTeleportType());
+			TeleportHandler.teleportPlayer(player, new Position(3354, 3342), player.getSpellbook().getTeleportType());
 			player.getPA().sendMessage("You have been teleported to Party Room!");
 		}
 		if (command[0].equals("google")) {
