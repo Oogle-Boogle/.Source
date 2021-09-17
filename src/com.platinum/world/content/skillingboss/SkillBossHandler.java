@@ -5,6 +5,7 @@ import com.platinum.util.Misc;
 import com.platinum.world.World;
 import com.platinum.world.content.combat.CombatBuilder;
 import com.platinum.world.content.combat.CombatFactory;
+import com.platinum.world.content.discord.DiscordMessenger;
 import com.platinum.world.entity.impl.npc.NPC;
 import com.platinum.world.entity.impl.player.Player;
 
@@ -16,16 +17,28 @@ public class SkillBossHandler {
 
     public static NPC npc;
 
-    /** Runs every second
-     * Checks the timer
-     * Spawns Boss After Delay
-     */
-    public static void sequence() { //Runs every tick
-        if (SkillBossConfig.spawnTimer > 0)
-            SkillBossConfig.spawnTimer--;
-        else {
-            SkillBossConfig.spawnTimer = SkillBossConfig.timeDelay;
+    public static void handleServerXP(long XP) {
+
+        if (SkillBossConfig.serverXPCounter < SkillBossConfig.requiredServerXP) {
+            SkillBossConfig.serverXPCounter += XP;
+        } else {
             spawnSkillBoss();
+            SkillBossConfig.serverXPCounter = 0;
+        }
+    }
+
+   /** Check the total XP **/
+    public static void sequence() { //Runs every tick
+        if (SkillBossConfig.xpUpdateTimer > 0 && SkillBossConfig.serverXPCounter < SkillBossConfig.requiredServerXP) {
+            SkillBossConfig.xpUpdateTimer--;
+            System.out.println(SkillBossConfig.xpUpdateTimer);
+        } else {
+            SkillBossConfig.xpUpdateTimer += SkillBossConfig.timeDelay;
+            long remainder = SkillBossConfig.requiredServerXP - SkillBossConfig.serverXPCounter;
+            World.sendMessageDiscord("The global XP counter is currently: "
+                    + Misc.formatAmount(SkillBossConfig.serverXPCounter)
+                    + "! We need " + Misc.formatAmount(remainder)
+                    + " until the skilling boss spawns!");
         }
     }
 
@@ -34,10 +47,14 @@ public class SkillBossHandler {
         selectedSkill = selectSkill();
         npc = new NPC(SkillBossConfig.npcID, SkillBossConfig.spawnPos);
         World.register(npc);
-        // TODO UNCOMMENT THIS
-        /*World.sendMessageDiscord("@blu@The Skilling Boss has just spawned! Skill Selected: @red@"
+
+        World.sendMessageNonDiscord("@blu@The Skilling Boss has just spawned! Skill Selected: @red@"
                 + selectedSkill.getFormatName()
-                + "@blu@!");*/
+                + "@blu@!");
+
+        DiscordMessenger.sendInGameMessage("The Skilling Boss has just spawned! Skill Selected: "
+                + selectedSkill.getFormatName()
+                + "!");
     }
 
     /** Chooses a random Skill **/

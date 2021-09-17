@@ -25,6 +25,8 @@ import com.platinum.world.content.event.SpecialEvents;
 import com.platinum.world.content.fuser.RandomRewards;
 import com.platinum.world.content.serverperks.GlobalPerks;
 import com.platinum.world.content.skill.impl.summoning.Familiar;
+import com.platinum.world.content.skillingboss.SkillBossConfig;
+import com.platinum.world.content.skillingboss.SkillBossHandler;
 import com.platinum.world.entity.impl.player.Player;
 
 /**
@@ -149,6 +151,8 @@ public class SkillManager {
                 : skills.maxLevel[skill.ordinal()];
 
         RandomRewards.giveReward(skill, player);
+
+        SkillBossHandler.handleServerXP(experience);
         /*
          * Adds the experience to the skill's experience.
          */

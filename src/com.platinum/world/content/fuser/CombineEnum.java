@@ -94,7 +94,7 @@ public enum CombineEnum {
 
         }
 
-        return player.getInventory().contains(reqs); //TODO Check this because it can let things slip through.. prob set to false by default
+        return player.getInventory().contains(reqs);
     }
 
     public static void handlerFuser(Player player, CombineEnum chosenItem) {
@@ -137,7 +137,8 @@ public enum CombineEnum {
       }
     }
 
-    public static void claimItem(Player player) {
+    // OLD AND SHIT
+    /*public static void claimItem(Player player) {
         if (System.currentTimeMillis() >= player.getFuseCombinationTimer()){
             player.setFuseInProgress(false);
         }
@@ -152,5 +153,5 @@ public enum CombineEnum {
             player.setFuseInProgress(false);
             player.setFuseItemSelected(0);
         }
-    }
+    }*/
 }
