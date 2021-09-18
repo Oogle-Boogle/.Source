@@ -99,7 +99,6 @@ public class CombatRangedAmmo {
 		DRAGONMINIGUN(new int[] {5131}, new AmmunitionData[] {AmmunitionData.HAND_CANNON_SHOT}, RangedWeaponType.HAND_CANNON),
 		JOKERSBOW(new int[] {3082}, new AmmunitionData[] {AmmunitionData.BATHEUS_ARROW}, RangedWeaponType.SHORTBOW),
 		HERBALBOW(new int[] {9492}, new AmmunitionData[] {AmmunitionData.HERBALAMMO}, RangedWeaponType.SHORTBOW),
-		ICY_CROSSBOW(new int[]{4734}, new AmmunitionData[] {AmmunitionData.KATAGON_ARROW}, RangedWeaponType.CROSSBOW),
 		
 		HANDCANNON(new int[] {15241}, new AmmunitionData[] {AmmunitionData.HAND_CANNON_SHOT}, RangedWeaponType.HAND_CANNON),
 		MINIGUN(new int[] {896}, new AmmunitionData[] {AmmunitionData.HAND_CANNON_SHOT}, RangedWeaponType.HAND_CANNON),
