@@ -52,7 +52,7 @@ import com.platinum.world.entity.impl.player.Player;
 /**
  * A static factory class containing all miscellaneous methods related to, and
  * used for combat.
- * 
+ *
  * @author lare96
  * @author Scu11
  * @author Graham
@@ -99,7 +99,7 @@ public final class CombatFactory {
 
 	/**
 	 * Determines if the entity is wearing full veracs.
-	 * 
+	 *
 	 * @param entity
 	 *            the entity to determine this for.
 	 * @return true if the player is wearing full veracs.
@@ -108,12 +108,12 @@ public final class CombatFactory {
 		return entity.isNpc() ? ((NPC) entity).getDefinition().getName().equals(
 				"Verac the Defiled")
 				: ((Player) entity).getEquipment().containsAll(4753, 4757, 4759,
-						4755);
+				4755);
 	}
 
 	/**
 	 * Determines if the entity is wearing full dharoks.
-	 * 
+	 *
 	 * @param entity
 	 *            the entity to determine this for.
 	 * @return true if the player is wearing full dharoks.
@@ -122,12 +122,12 @@ public final class CombatFactory {
 		return entity.isNpc() ? ((NPC) entity).getDefinition().getName().equals(
 				"Dharok the Wretched")
 				: ((Player) entity).getEquipment().containsAll(4716, 4720, 4722,
-						4718);
+				4718);
 	}
 
 	/**
 	 * Determines if the entity is wearing full karils.
-	 * 
+	 *
 	 * @param entity
 	 *            the entity to determine this for.
 	 * @return true if the player is wearing full karils.
@@ -136,12 +136,12 @@ public final class CombatFactory {
 		return entity.isNpc() ? ((NPC) entity).getDefinition().getName().equals(
 				"Karil the Tainted")
 				: ((Player) entity).getEquipment().containsAll(4732, 4736, 4738,
-						4734);
+				4734);
 	}
 
 	/**
 	 * Determines if the entity is wearing full ahrims.
-	 * 
+	 *
 	 * @param entity
 	 *            the entity to determine this for.
 	 * @return true if the player is wearing full ahrims.
@@ -150,12 +150,12 @@ public final class CombatFactory {
 		return entity.isNpc() ? ((NPC) entity).getDefinition().getName().equals(
 				"Ahrim the Blighted")
 				: ((Player) entity).getEquipment().containsAll(4708, 4712, 4714,
-						4710);
+				4710);
 	}
 
 	/**
 	 * Determines if the entity is wearing full torags.
-	 * 
+	 *
 	 * @param entity
 	 *            the entity to determine this for.
 	 * @return true if the player is wearing full torags.
@@ -164,12 +164,12 @@ public final class CombatFactory {
 		return entity.isNpc() ? ((NPC) entity).getDefinition().getName().equals(
 				"Torag the Corrupted")
 				: ((Player) entity).getEquipment().containsAll(4745, 4749, 4751,
-						4747);
+				4747);
 	}
 
 	/**
 	 * Determines if the entity is wearing full guthans.
-	 * 
+	 *
 	 * @param entity
 	 *            the entity to determine this for.
 	 * @return true if the player is wearing full guthans.
@@ -178,12 +178,12 @@ public final class CombatFactory {
 		return entity.isNpc() ? ((NPC) entity).getDefinition().getName().equals(
 				"Guthan the Infested")
 				: ((Player) entity).getEquipment().containsAll(4724, 4728, 4730,
-						4726);
+				4726);
 	}
 
 	/**
 	 * Determines if the player is wielding a crystal bow.
-	 * 
+	 *
 	 * @param player
 	 *            the player to determine for.
 	 * @return true if the player is wielding a crystal bow.
@@ -204,7 +204,7 @@ public final class CombatFactory {
 	}
 	/**
 	 * Determines if the player is wielding a dark bow.
-	 * 
+	 *
 	 * @param player
 	 *            the player to determine for.
 	 * @return true if the player is wielding a dark bow.
@@ -219,7 +219,7 @@ public final class CombatFactory {
 
 	/**
 	 * Determines if the player has arrows equipped.
-	 * 
+	 *
 	 * @param player
 	 *            the player to determine for.
 	 * @return true if the player has arrows equipped.
@@ -232,13 +232,13 @@ public final class CombatFactory {
 
 		return !(!item.getDefinition().getName().endsWith("arrow") && !item.getDefinition().getName().endsWith(
 				"arrowp") && !item.getDefinition().getName().endsWith(
-						"arrow(p+)") && !item.getDefinition().getName().endsWith(
-								"arrow(p++)"));
+				"arrow(p+)") && !item.getDefinition().getName().endsWith(
+				"arrow(p++)"));
 	}
 
 	/**
 	 * Determines if the player has bolts equipped.
-	 * 
+	 *
 	 * @param player
 	 *            the player to determine for.
 	 * @return true if the player has bolts equipped.
@@ -255,7 +255,7 @@ public final class CombatFactory {
 	 * Attempts to poison the argued {@link Character} with the argued
 	 * {@link PoisonType}. This method will have no effect if the entity is
 	 * already poisoned.
-	 * 
+	 *
 	 * @param entity
 	 *            the entity that will be poisoned, if not already.
 	 * @param poisonType
@@ -286,7 +286,7 @@ public final class CombatFactory {
 	 * Attempts to poison the argued {@link Character} with the argued
 	 * {@link PoisonType}. This method will have no effect if the entity is
 	 * already poisoned.
-	 * 
+	 *
 	 * @param entity
 	 *            the entity that will be poisoned, if not already.
 	 * @param poisonType
@@ -300,7 +300,7 @@ public final class CombatFactory {
 	 * Attempts to put the skull icon on the argued player, including the effect
 	 * where the player loses all item upon death. This method will have no
 	 * effect if the argued player is already skulled.
-	 * 
+	 *
 	 * @param player
 	 *            the player to attempt to skull to.
 	 */
@@ -322,7 +322,7 @@ public final class CombatFactory {
 	/**
 	 * Calculates the combat level difference for wilderness player vs. player
 	 * combat.
-	 * 
+	 *
 	 * @param combatLevel
 	 *            the combat level of the first person.
 	 * @param otherCombatLevel
@@ -330,7 +330,7 @@ public final class CombatFactory {
 	 * @return the combat level difference.
 	 */
 	public static int combatLevelDifference(int combatLevel,
-			int otherCombatLevel) {
+											int otherCombatLevel) {
 		if (combatLevel > otherCombatLevel) {
 			return (combatLevel - otherCombatLevel);
 		} else if (otherCombatLevel > combatLevel) {
@@ -350,7 +350,7 @@ public final class CombatFactory {
 
 	/**
 	 * Generates a random {@link Hit} based on the argued entity's stats.
-	 * 
+	 *
 	 * @param entity
 	 *            the entity to generate the random hit for.
 	 * @param victim
@@ -361,23 +361,23 @@ public final class CombatFactory {
 	 */
 	public static Hit getHit(Character entity, Character victim, CombatType type) {
 		switch (type) {
-		case MELEE:
-			return new Hit(RandomUtility.inclusiveRandom(1, DesolaceFormulas.calculateMaxMeleeHit(entity, victim)), Hitmask.RED2, CombatIcon.MELEE);
-		case RANGED:
-			return new Hit(RandomUtility.inclusiveRandom(1, CombatFactory.calculateMaxRangedHit(entity, victim)), Hitmask.RED, CombatIcon.RANGED);
-		case MAGIC:
-			return new Hit(RandomUtility.inclusiveRandom(1, DesolaceFormulas.getMagicMaxhit(entity)), Hitmask.LIGHT_YELLOW, CombatIcon.MAGIC);
-		case DRAGON_FIRE:
-			return new Hit(RandomUtility.inclusiveRandom(0, CombatFactory.calculateMaxDragonFireHit(entity, victim)), Hitmask.RED, CombatIcon.MAGIC);
-		default:
-			throw new IllegalArgumentException("Invalid combat type: " + type);
+			case MELEE:
+				return new Hit(RandomUtility.inclusiveRandom(1, DesolaceFormulas.calculateMaxMeleeHit(entity, victim)), Hitmask.RED2, CombatIcon.MELEE);
+			case RANGED:
+				return new Hit(RandomUtility.inclusiveRandom(1, CombatFactory.calculateMaxRangedHit(entity, victim)), Hitmask.RED, CombatIcon.RANGED);
+			case MAGIC:
+				return new Hit(RandomUtility.inclusiveRandom(1, DesolaceFormulas.getMagicMaxhit(entity, victim)), Hitmask.LIGHT_YELLOW, CombatIcon.MAGIC);
+			case DRAGON_FIRE:
+				return new Hit(RandomUtility.inclusiveRandom(0, CombatFactory.calculateMaxDragonFireHit(entity, victim)), Hitmask.RED, CombatIcon.MAGIC);
+			default:
+				throw new IllegalArgumentException("Invalid combat type: " + type);
 		}
 	}
 
 	/**
 	 * A flag that determines if the entity's attack will be successful based on
 	 * the argued attacker's and victim's stats.
-	 * 
+	 *
 	 * @param attacker
 	 *            the attacker who's hit is being calculated for accuracy.
 	 * @param victim
@@ -393,14 +393,14 @@ public final class CombatFactory {
 			Player p1 = (Player)attacker;
 			Player p2 = (Player)victim;
 			switch(type) {
-			case MAGIC:
-				int mageAttk = DesolaceFormulas.getMagicAttack(p1);
-				return Misc.getRandom(DesolaceFormulas.getMagicDefence(p2)) < Misc.getRandom((mageAttk / 2)) + Misc.getRandom((int) (mageAttk/2.1));
-			case MELEE:
-				int def = 1 + DesolaceFormulas.getMeleeDefence(p2);
-				return Misc.getRandom(def) < Misc.getRandom(1 + DesolaceFormulas.getMeleeAttack(p1)) + (def/4.5);
-			case RANGED:
-				return Misc.getRandom(10 + DesolaceFormulas.getRangedDefence(p2)) < Misc.getRandom(15 + DesolaceFormulas.getRangedAttack(p1));
+				case MAGIC:
+					int mageAttk = DesolaceFormulas.getMagicAttack(p1);
+					return Misc.getRandom(DesolaceFormulas.getMagicDefence(p2)) < Misc.getRandom((mageAttk / 2)) + Misc.getRandom((int) (mageAttk/2.1));
+				case MELEE:
+					int def = 1 + DesolaceFormulas.getMeleeDefence(p2);
+					return Misc.getRandom(def) < Misc.getRandom(1 + DesolaceFormulas.getMeleeAttack(p1)) + (def/4.5);
+				case RANGED:
+					return Misc.getRandom(10 + DesolaceFormulas.getRangedDefence(p2)) < Misc.getRandom(15 + DesolaceFormulas.getRangedAttack(p1));
 			}
 		} else if(attacker.isPlayer() && victim.isNpc() && type != CombatType.MAGIC) {
 			Player p1 = (Player)attacker;
@@ -411,11 +411,11 @@ public final class CombatFactory {
 				int mageAttk = DesolaceFormulas.getMagicAttack(p1);
 				return Misc.getRandom(n.getDefinition().getDefenceMage()) < Misc.getRandom((mageAttk / 2)) + Misc.getRandom((int) (mageAttk/2.1));
 			 */
-			case MELEE:
-				int def = 1 + n.getDefinition().getDefenceMelee();
-				return Misc.getRandom(def) < Misc.getRandom(5 + DesolaceFormulas.getMeleeAttack(p1)) + (def/4);
-			case RANGED:
-				return Misc.getRandom(5 + n.getDefinition().getDefenceRange()) < Misc.getRandom(5 + DesolaceFormulas.getRangedAttack(p1));
+				case MELEE:
+					int def = 1 + n.getDefinition().getDefenceMelee();
+					return Misc.getRandom(def) < Misc.getRandom(5 + DesolaceFormulas.getMeleeAttack(p1)) + (def/4);
+				case RANGED:
+					return Misc.getRandom(5 + n.getDefinition().getDefenceRange()) < Misc.getRandom(5 + DesolaceFormulas.getRangedAttack(p1));
 			}
 		}
 
@@ -582,7 +582,7 @@ public final class CombatFactory {
 	/**
 	 * Calculates the maximum melee hit for the argued {@link Character} without
 	 * taking the victim into consideration.
-	 * 
+	 *
 	 * @param entity
 	 *            the entity to calculate the maximum hit for.
 	 * @param victim
@@ -641,21 +641,21 @@ public final class CombatFactory {
 		}
 
 		switch (player.getFightType().getStyle()) {
-		case AGGRESSIVE:
-			combatStyleBonus = 3;
-			break;
-		case CONTROLLED:
-			combatStyleBonus = 1;
-			break;
+			case AGGRESSIVE:
+				combatStyleBonus = 3;
+				break;
+			case CONTROLLED:
+				combatStyleBonus = 1;
+				break;
 		}
 
 		if (EquipmentBonus.wearingVoid(player, CombatType.MELEE)) {
 			otherBonusMultiplier = 1.1;
 		}
 
-		
-		
-		
+
+
+
 		if (strengthLevel <= 10 || attackLevel <= 10) {
 			otherBonusMultiplier = 1.8;
 		}
@@ -674,7 +674,7 @@ public final class CombatFactory {
 		if (CombatFactory.fullDharoks(player)) {
 			maxHit += (player.getSkillManager().getMaxLevel(Skill.CONSTITUTION) - player.getSkillManager().getCurrentLevel(Skill.CONSTITUTION)) * 0.35;
 		}
-		
+
 		if (victim.isNpc()) {
 			NPC npc = (NPC) victim;
 			if (npc.getDefenceWeakened()[0]) {
@@ -701,7 +701,7 @@ public final class CombatFactory {
 	/**
 	 * Calculates the maximum ranged hit for the argued {@link Character} without
 	 * taking the victim into consideration.
-	 * 
+	 *
 	 * @param entity
 	 *            the entity to calculate the maximum hit for.
 	 * @param victim
@@ -731,25 +731,14 @@ public final class CombatFactory {
 		double otherBonusMultiplier = 1;
 
 
-		int rangedStrength = ((int) player.getBonusManager().getAttackBonus()[4] / 10);
-		if(player.getRangedWeaponData() != null)
-			rangedStrength += (RangedWeaponData.getAmmunitionData(player).getStrength());
-		int rangeLevel = player.getSkillManager().getCurrentLevel(Skill.RANGED);
-		int combatStyleBonus = 0;
-
-		switch (player.getFightType().getStyle()) {
-		case ACCURATE:
-			combatStyleBonus = 3;
-			break;
-		}
+		double rangedStrength = ((int) player.getBonusManager().getAttackBonus()[4]);
+		double effectiveRangeDamage = DesolaceFormulas.getEffectiveRangedStrength(player);
+		double baseDamage = (13 + effectiveRangeDamage + (rangedStrength / 8) + ((effectiveRangeDamage * rangedStrength) / 65)) / 11;
 
 		if (EquipmentBonus.wearingVoid(player, CombatType.RANGED)) {
 			otherBonusMultiplier = 1.1;
 		}
 
-
-		int effectiveRangeDamage = (int) ((rangeLevel * prayerMultiplier * otherBonusMultiplier) + combatStyleBonus);
-		double baseDamage = 1.3 + (effectiveRangeDamage / 10) + (rangedStrength / 80) + ((effectiveRangeDamage * rangedStrength) / 640);
 
 		if (player.isSpecialActivated()) {
 			specialMultiplier = player.getCombatSpecial().getStrengthBonus();
@@ -851,7 +840,7 @@ public final class CombatFactory {
 
 	/**
 	 * A series of checks performed before the entity attacks the victim.
-	 * 
+	 *
 	 * @param builder
 	 *            the builder to perform the checks with.
 	 * @return true if the entity passed the checks, false if they did not.
@@ -872,8 +861,8 @@ public final class CombatFactory {
 				return false;
 			}
 		}
-		
-		
+
+
 
 		if(victim.isNpc() && entity.isPlayer()) {
 			NPC npc = (NPC)victim;
@@ -963,7 +952,7 @@ public final class CombatFactory {
 		if(!(entity.isNpc() && ((NPC)entity).isSummoningNpc())) {
 			boolean allowAttack = false;
 			if (victim.getCombatBuilder().getLastAttacker() != null && !Location.inMulti(entity) && victim.getCombatBuilder().isBeingAttacked() && !victim.getCombatBuilder().getLastAttacker().equals(entity)) {
-				
+
 				if(victim.getCombatBuilder().getLastAttacker().isNpc()) {
 					NPC npc = (NPC)victim.getCombatBuilder().getLastAttacker();
 					if(npc.isSummoningNpc()) {
@@ -976,7 +965,7 @@ public final class CombatFactory {
 						}
 					}
 				}
-				
+
 				if(!allowAttack) {
 					if (entity.isPlayer())
 						((Player) entity).getPacketSender().sendMessage(
@@ -1023,7 +1012,7 @@ public final class CombatFactory {
 
 	/**
 	 * Checks if the entity is close enough to attack.
-	 * 
+	 *
 	 * @param builder
 	 *            the builder used to perform the check.
 	 * @return true if the entity is close enough to attack, false otherwise.
@@ -1094,7 +1083,7 @@ public final class CombatFactory {
 
 	/**
 	 * Applies combat prayer effects to the calculated hits.
-	 * 
+	 *
 	 * @param container
 	 *            the combat container that holds the hits.
 	 * @param builder
@@ -1126,7 +1115,7 @@ public final class CombatFactory {
 					}
 				});
 			}
-			
+
 			if(builder.getCharacter().isNpc()) {
 				NPC attacker = (NPC) builder.getCharacter();
 				// Except for verac of course :)
@@ -1241,7 +1230,7 @@ public final class CombatFactory {
 
 	/**
 	 * Gives experience for the total amount of damage dealt in a combat hit.
-	 * 
+	 *
 	 * @param builder
 	 *            the attacker's combat builder.
 	 * @param container
@@ -1250,7 +1239,7 @@ public final class CombatFactory {
 	 *            the total amount of damage dealt.
 	 */
 	protected static void giveExperience(CombatBuilder builder,
-			CombatContainer container, int damage) {
+										 CombatContainer container, int damage) {
 
 		// This attack does not give any experience.
 		if (container.getExperience().length == 0 && container.getCombatType() != CombatType.MAGIC) {
@@ -1277,7 +1266,7 @@ public final class CombatFactory {
 
 	/**
 	 * Handles various armor effects for the attacker and victim.
-	 * 
+	 *
 	 * @param builder
 	 *            the attacker's combat builder.
 	 * @param container
@@ -1314,15 +1303,15 @@ public final class CombatFactory {
 						t2.getUpdateFlag().flag(Flag.APPEARANCE);
 					}
 				}
-           
-                /** RING OF LIFE **/
-                else if(t2.getEquipment().getItems()[Equipment.RING_SLOT].getId() == 2570 && t2.getLocation() != Location.DUEL_ARENA && t2.getLocation() != Location.WILDERNESS) {
-                    if (t2.getSkillManager().getCurrentLevel(Skill.CONSTITUTION) <= t2.getSkillManager().getMaxLevel(Skill.CONSTITUTION) * .1) {
-                        t2.getEquipment().delete(t2.getEquipment().getItems()[Equipment.RING_SLOT]);
-                        TeleportHandler.teleportPlayer(t2, GameSettings.DEFAULT_POSITION.copy(), TeleportType.RING_TELE);
-                        t2.getPacketSender().sendMessage("Your Ring of Life tried to teleport you away, but was destroyed in the process.");
-                    }
-                }
+
+				/** RING OF LIFE **/
+				else if(t2.getEquipment().getItems()[Equipment.RING_SLOT].getId() == 2570 && t2.getLocation() != Location.DUEL_ARENA && t2.getLocation() != Location.WILDERNESS) {
+					if (t2.getSkillManager().getCurrentLevel(Skill.CONSTITUTION) <= t2.getSkillManager().getMaxLevel(Skill.CONSTITUTION) * .1) {
+						t2.getEquipment().delete(t2.getEquipment().getItems()[Equipment.RING_SLOT]);
+						TeleportHandler.teleportPlayer(t2, GameSettings.DEFAULT_POSITION.copy(), TeleportType.RING_TELE);
+						t2.getPacketSender().sendMessage("Your Ring of Life tried to teleport you away, but was destroyed in the process.");
+					}
+				}
 				//WeaponPoison.handleWeaponPoison(((Player)attacker), t2);
 			}
 		}
@@ -1364,7 +1353,7 @@ public final class CombatFactory {
                     Skills.refresh(victim, Skills.AGILITY);
                     return;
                 }
-            }*/			
+            }*/
 		}
 	}
 
@@ -1372,7 +1361,7 @@ public final class CombatFactory {
 
 	/**
 	 * Handles various prayer effects for the attacker and victim.
-	 * 
+	 *
 	 * @param builder
 	 *            the attacker's combat builder.
 	 * @param container
@@ -1444,7 +1433,7 @@ public final class CombatFactory {
 					}
 				}
 			}
-			if(CurseHandler.isActivated(p, CurseHandler.SOUL_SPLIT) && damage > 0) {		
+			if(CurseHandler.isActivated(p, CurseHandler.SOUL_SPLIT) && damage > 0) {
 				final int form = (int) (damage / 8);
 				new Projectile(attacker, target, 2263, 44, 3, 43, 31, 0).sendProjectile();
 				TaskManager.submit(new Task(1, p, false) {
@@ -1671,17 +1660,17 @@ public final class CombatFactory {
 			@Override
 			public void execute() {
 				switch(ticks) {
-				case 3:
-					new Projectile(player, target, 1166, 44, 3, 43, 31, 0).sendProjectile();
-					break;
-				case 4:
-					Hit h = new Hit(50 + Misc.getRandom(150), Hitmask.RED, CombatIcon.MAGIC);
-					target.dealDamage(h);
-					target.performGraphic(new Graphic(1167, GraphicHeight.HIGH));
-					target.getCombatBuilder().addDamage(player, h.getDamage());
-					target.getLastCombat().reset();
-					stop();
-					break;
+					case 3:
+						new Projectile(player, target, 1166, 44, 3, 43, 31, 0).sendProjectile();
+						break;
+					case 4:
+						Hit h = new Hit(50 + Misc.getRandom(150), Hitmask.RED, CombatIcon.MAGIC);
+						target.dealDamage(h);
+						target.performGraphic(new Graphic(1167, GraphicHeight.HIGH));
+						target.getCombatBuilder().addDamage(player, h.getDamage());
+						target.getLastCombat().reset();
+						stop();
+						break;
 				}
 				ticks++;
 			}
@@ -1691,7 +1680,7 @@ public final class CombatFactory {
 	}
 
 	public static boolean properLocation(Player player, Player player2) {
-	//	//System.out.println("Is in same team properLocation: " + CustomFreeForAll.isInSameTeam(player, player2));
+		//	//System.out.println("Is in same team properLocation: " + CustomFreeForAll.isInSameTeam(player, player2));
 		if (player.inFFA && player2.inFFA || player.inLMS && player2.inLMS)
 			return true;
 		if(player.inCustomFFA && player2.inCustomFFA) {

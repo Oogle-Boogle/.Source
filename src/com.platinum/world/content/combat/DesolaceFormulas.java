@@ -3,6 +3,7 @@ package com.platinum.world.content.combat;
 import com.platinum.model.Graphic;
 import com.platinum.model.Skill;
 import com.platinum.model.container.impl.Equipment;
+import com.platinum.model.definitions.ItemDefinition;
 import com.platinum.util.Misc;
 import com.platinum.util.RandomUtility;
 import com.platinum.world.content.PetPerkData;
@@ -388,7 +389,7 @@ public class DesolaceFormulas {
 
 
 
-            return (int) (attackLevel + (plr.getBonusManager().getAttackBonus()[3] * 2));
+        return (int) (attackLevel + (plr.getBonusManager().getAttackBonus()[3] * 2));
     }
 
     /**
@@ -431,7 +432,7 @@ public class DesolaceFormulas {
      * @param player The player to calculate magic max hit for
      * @return The player's magic max hit damage
      */
-    public static int getMagicMaxhit(Character c) {
+    public static int getMagicMaxhit(Character c, Character victim) {
         int damage = 0;
         CombatSpell spell = c.getCurrentlyCasting();
         if (spell != null) {
@@ -461,8 +462,46 @@ public class DesolaceFormulas {
         return damage;
     }
 
+    public static double getEffectiveMagicStrength(Player p) {
+        return (p.getSkillManager().getCurrentLevel(Skill.MAGIC)) * getMagicStrength(p);
+    }
+
+    public static double getMagicStrength(Player p) {
+        if (p.getPrayerActive()[4] || p.getCurseActive()[12])
+            return 1.05;
+        else if (p.getPrayerActive()[12])
+            return 1.1;
+        else if (p.getPrayerActive()[20])
+            return 1.15;
+        else if (p.getPrayerActive()[27])
+            return 1.22;
+        else if (p.getCurseActive()[19])
+            return 1.30;
+        return 1;
+    }
+
+    public static double getEffectiveRangedStrength(Player p) {
+        return (p.getSkillManager().getCurrentLevel(Skill.RANGED)) * getRangedStrength(p);
+    }
+
+    public static double getRangedStrength(Player p) {
+        if (p.getPrayerActive()[3] || p.getCurseActive()[11])
+            return 1.05;
+        else if (p.getPrayerActive()[11])
+            return 1.1;
+        else if (p.getPrayerActive()[19])
+            return 1.15;
+        else if (p.getPrayerActive()[26])
+            return 1.22;
+        else if (p.getCurseActive()[19])
+            return 1.30;
+        return 1;
+    }
+
+
     public static int getAttackDelay(Player plr) {
         int id = plr.getEquipment().getItems()[Equipment.WEAPON_SLOT].getId();
+        String s = ItemDefinition.forId(id).getName().toLowerCase();
         if (id == -1)
             return 5;// unarmed
         RangedWeaponData rangedData = plr.getRangedWeaponData();
