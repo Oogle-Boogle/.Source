@@ -995,6 +995,9 @@ public class CommandPacketListener implements PacketListener {
 		if (command[0].equals("changebravek")) {
 			SlayerMaster.changeSlayerMaster(player, SlayerMaster.BRAVEK);
 		}
+		if (command[0].equals("location")) {
+			player.getPacketSender().sendMessage("current location: " + player.getLocation());
+		}
 
 		
 		if (command[0].equalsIgnoreCase("uberboss")) {
@@ -2915,7 +2918,6 @@ public class CommandPacketListener implements PacketListener {
 				GameSettings.DOUBLE_BOSSPOINTS = true;
 				World.sendMessageNonDiscord("@blu@Double Boss points has been enabled!");
 			}
-
 		}
 	}
 

@@ -743,6 +743,11 @@
 	    "item-id": 3928,
 	    "interface": "HALBERD"
 	  },
+  {
+    "hash": 3920 ,
+    "item-id": 3920,
+    "interface": "STAFF"
+  },
 	  {
     "hash": 4214,
     "item-id": 4214,
