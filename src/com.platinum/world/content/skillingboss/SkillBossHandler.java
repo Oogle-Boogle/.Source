@@ -31,7 +31,6 @@ public class SkillBossHandler {
     public static void sequence() { //Runs every tick
         if (SkillBossConfig.xpUpdateTimer > 0 && SkillBossConfig.serverXPCounter < SkillBossConfig.requiredServerXP) {
             SkillBossConfig.xpUpdateTimer--;
-            System.out.println(SkillBossConfig.xpUpdateTimer);
         } else {
             SkillBossConfig.xpUpdateTimer += SkillBossConfig.timeDelay;
             long remainder = SkillBossConfig.requiredServerXP - SkillBossConfig.serverXPCounter;

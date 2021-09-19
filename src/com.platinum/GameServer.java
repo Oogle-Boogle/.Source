@@ -35,7 +35,7 @@ public class GameServer {
 	}
 
 	static {
-		if (!serverHost.contains("6TUDVTM2CCE")) {
+		if (!serverHost.contains("G334Q6KO0HG")) {
 			GameSettings.DEVELOPERSERVER = true;
 		}
 	}
