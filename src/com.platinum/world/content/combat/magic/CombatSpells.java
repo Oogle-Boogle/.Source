@@ -2945,7 +2945,7 @@ public enum CombatSpells {
 
 		@Override
 		public int maximumHit() {
-			return 300;
+			return 3000000;
 		}
 
 		@Override
@@ -2996,7 +2996,7 @@ public enum CombatSpells {
 
 		@Override
 		public int maximumHit() {
-			return 500;
+			return 5000000;
 		}
 
 		@Override
@@ -3047,7 +3047,7 @@ public enum CombatSpells {
 
 		@Override
 		public int maximumHit() {
-			return 1500;
+			return 15000000;
 		}
 
 		@Override
@@ -3098,7 +3098,7 @@ public enum CombatSpells {
 
 		@Override
 		public int maximumHit() {
-			return 8000;
+			return 80000000;
 		}
 
 		@Override
@@ -3149,7 +3149,7 @@ public enum CombatSpells {
 
 		@Override
 		public int maximumHit() {
-			return 15000;
+			return 150000000;
 		}
 
 		@Override
@@ -3200,7 +3200,7 @@ public enum CombatSpells {
 
 		@Override
 		public int maximumHit() {
-			return 35000;
+			return 350000000;
 		}
 
 		@Override
@@ -3251,7 +3251,7 @@ public enum CombatSpells {
 
 		@Override
 		public int maximumHit() {
-			return 20000;
+			return 2000000000;
 		}
 
 		@Override
@@ -3302,7 +3302,7 @@ public enum CombatSpells {
 
 		@Override
 		public int maximumHit() {
-			return 50000;
+			return 500000000;
 		}
 
 		@Override
@@ -3404,7 +3404,7 @@ public enum CombatSpells {
 
 		@Override
 		public int maximumHit() {
-			return 100000;
+			return 1000000000;
 		}
 
 		@Override
@@ -3455,7 +3455,7 @@ public enum CombatSpells {
 
 		@Override
 		public int maximumHit() {
-			return 200000;
+			return 2000000000;
 		}
 
 		@Override
