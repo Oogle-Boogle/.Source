@@ -743,6 +743,11 @@
 	    "item-id": 3928,
 	    "interface": "HALBERD"
 	  },
+  {
+    "hash": 3920 ,
+    "item-id": 3920,
+    "interface": "STAFF"
+  },
 	  {
     "hash": 4214,
     "item-id": 4214,
@@ -945,6 +950,11 @@
     "hash": 1231,
     "item-id": 1231,
     "interface": "DAGGER"
+  },
+  {
+    "hash": 22196,
+    "item-id": 22196,
+    "interface": "SWORD"
   },
   {
     "hash": 1233,

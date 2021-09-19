@@ -122,12 +122,12 @@ public class CombatContainer {
  			}
 		}
 		if (attacker.isPlayer()) {
-			if (((Player)attacker).getEquipment().containsAny( 3951, 3069, 14559, 5131, 6197, 5132, 923, 3063, 19720, 18957, 15653, 5089, 5173, 5195, 15656, 5129, 3941, 1413)) {
+			if (((Player)attacker).getEquipment().containsAny( 8655, 3951, 3069, 14559, 5131, 6197, 5132, 923, 3063, 19720, 18957, 15653, 5089, 5173, 5195, 15656, 5129, 3941, 1413, 3920)) {
 				hitAmount = 2; //Client doesn't support more than 4
  			}
 		}
 		if (attacker.isPlayer()) {
-			if (((Player)attacker).getEquipment().containsAny( 19618, 3651, 19163, 9492, 2760, 19727, 4059, 6320, 13207, 8664, 4796, 18931, 13995, 18891, 10905, 19154, 20431, 20427 )) {
+			if (((Player)attacker).getEquipment().containsAny( 19618, 3651, 19163, 9492, 2760, 19727, 4059, 6320, 13207, 8664, 4796, 18931, 13995, 18891, 10905, 19154, 20431, 20427, 22196 )) {
 				hitAmount = 3; //Client doesn't support more than 4
  			}
 		}

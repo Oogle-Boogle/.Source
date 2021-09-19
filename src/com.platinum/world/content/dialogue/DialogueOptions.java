@@ -1697,27 +1697,27 @@ public class DialogueOptions {
 				}
 
 				break;
-				case 4:
-				case 16:
-				case 20:
-				case 23:
-				case 33:
-				case 37:
-				case 39:
-				case 42:
-				case 44:
-				case 46:
-				case 57:
-				case 71:
-				case 72:
-				case 73:
-				case 74:
-				case 76:
-				case 78:
-				case 709:
+			case 4:
+			case 16:
+			case 20:
+			case 23:
+			case 33:
+			case 37:
+			case 39:
+			case 42:
+			case 44:
+			case 46:
+			case 57:
+			case 71:
+			case 72:
+			case 73:
+			case 74:
+			case 76:
+			case 78:
+			case 709:
 				case PartyRoomManager.DIALOGUE_ACTION_ID + 1:
-					player.getPacketSender().sendInterfaceRemoval();
-					break;
+				player.getPacketSender().sendInterfaceRemoval();
+				break;
 			case 7:
 			case 8:
 				player.getPacketSender().sendInterfaceRemoval();

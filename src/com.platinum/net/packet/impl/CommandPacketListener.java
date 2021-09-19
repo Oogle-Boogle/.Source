@@ -646,8 +646,15 @@ public class CommandPacketListener implements PacketListener {
 			TeleportHandler.teleportPlayer(player, new Position(2596, 5727, 0),
 					player.getSpellbook().getTeleportType());
 		}
+		if (command[0].equalsIgnoreCase("assassin")) {
+			TeleportHandler.teleportPlayer(player, new Position(3100, 5532, 0),
+					player.getSpellbook().getTeleportType());
+			player.getPacketSender().sendMessage("You have enetered the Assassins Den!");
 
-		
+		}
+
+
+
 
 		if (command[0].equalsIgnoreCase("entergiveaway")) {
 			if (!GameSettings.IS_GIVEAWAY) {
@@ -995,18 +1002,12 @@ public class CommandPacketListener implements PacketListener {
 		if (command[0].equals("changebravek")) {
 			SlayerMaster.changeSlayerMaster(player, SlayerMaster.BRAVEK);
 		}
+		if (command[0].equals("location")) {
+			player.getPacketSender().sendMessage("current location: " + player.getLocation());
+		}
 
 		
-		if (command[0].equalsIgnoreCase("uberboss")) {
-			if (player.getAmountDonated() >= 200) {
-				TeleportHandler.teleportPlayer(player, new Position(3100, 5532, 0),
-						player.getSpellbook().getTeleportType());
-				player.getPacketSender().sendMessage("Welcome to Bork the UBER Boss!");
-			} else {
-				player.sendMessage("@red@nah fam, try again when ya got 200 donated");
-				return;
-			}
-}
+
 		
 		
 		if (command[0].equalsIgnoreCase("uzone333")) {
@@ -2915,7 +2916,6 @@ public class CommandPacketListener implements PacketListener {
 				GameSettings.DOUBLE_BOSSPOINTS = true;
 				World.sendMessageNonDiscord("@blu@Double Boss points has been enabled!");
 			}
-
 		}
 	}
 

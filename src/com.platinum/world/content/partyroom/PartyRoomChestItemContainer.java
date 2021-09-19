@@ -9,15 +9,7 @@ import com.platinum.world.entity.impl.player.Player;
 public class PartyRoomChestItemContainer extends ItemContainer {
 
 
-	private static final int MAIN_CONTAINER_SIZE = 216;
-
-    public PartyRoomChestItemContainer(Player player) {
-        super(player);
-    }
-
-    public PartyRoomChestItemContainer() {
-        super();
-    }
+    private static final int MAIN_CONTAINER_SIZE = 216;
 
     @Override
     public int capacity() {

@@ -362,7 +362,7 @@ public class ItemContainerActionPacketListener implements PacketListener {
 				break;
 			case PartyRoomManager.DEPOSIT_INVENTORY:
 				PartyRoomManager.withdraw(player, new Item(id, 5), slot);
-
+				break;
 		case 19313:
 			if (player.getInterfaceId() == 19307 && player.getGroupIronmanGroup() != null) {
 				player.getGroupIronmanGroup().removeItem(player, id, 5);

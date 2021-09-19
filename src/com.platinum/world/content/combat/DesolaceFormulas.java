@@ -265,26 +265,6 @@ public class DesolaceFormulas {
         return 0;
     }
 
-    public static double getEffectiveStr(Player plr) {
-        return ((plr.getSkillManager()
-                .getCurrentLevel(Skill.STRENGTH)) * getPrayerStr(plr)) + getStyleBonus(plr);
-    }
-
-    public static double getPrayerStr(Player plr) {
-        if (plr.getPrayerActive()[1] || plr.getCurseActive()[CurseHandler.LEECH_STRENGTH])
-            return 1.05;
-        else if (plr.getPrayerActive()[6])
-            return 1.1;
-        else if (plr.getPrayerActive()[14])
-            return 1.15;
-        else if (plr.getPrayerActive()[24])
-            return 1.18;
-        else if (plr.getPrayerActive()[25])
-            return 1.23;
-        else if (plr.getCurseActive()[CurseHandler.TURMOIL])
-            return 1.24;
-        return 1;
-    }
 
     /**
      * Calculates a player's Ranged attack (level). Credits: Dexter Morgan
@@ -360,10 +340,10 @@ public class DesolaceFormulas {
     }
 
     public static int getMagicAttack(Player plr) {
-        boolean voidEquipment = EquipmentBonus.wearingVoid(plr, CombatType.MAGIC);
+        boolean HasVoid = EquipmentBonus.wearingVoid(plr, CombatType.MAGIC);
         int attackLevel = plr.getSkillManager().getCurrentLevel(Skill.MAGIC);
-        if (voidEquipment)
-            attackLevel += plr.getSkillManager().getCurrentLevel(Skill.MAGIC) * 0.2;
+        if (HasVoid)
+            attackLevel += plr.getSkillManager().getCurrentLevel(Skill.MAGIC) * 2.0;
         if (plr.getPrayerActive()[PrayerHandler.MYSTIC_WILL] || plr.getCurseActive()[CurseHandler.SAP_MAGE]) {
             attackLevel *= 1.05;
         } else if (plr.getPrayerActive()[PrayerHandler.MYSTIC_LORE]) {
@@ -388,8 +368,9 @@ public class DesolaceFormulas {
 
 
 
-            return (int) (attackLevel + (plr.getBonusManager().getAttackBonus()[3] * 2));
+        return (int) (attackLevel + (plr.getBonusManager().getAttackBonus()[3] * 2));
     }
+
 
     /**
      * Calculates a player's magic defence level
@@ -431,21 +412,15 @@ public class DesolaceFormulas {
      * @param player The player to calculate magic max hit for
      * @return The player's magic max hit damage
      */
-    public static int getMagicMaxhit(Character c) {
+    public static int getMagicMaxhit(Character c, Character victim) {
         int damage = 0;
         CombatSpell spell = c.getCurrentlyCasting();
-        if (spell != null) {
-            if (spell.maximumHit() > 0)
-                damage += spell.maximumHit();
-            else {
-                if (c.isNpc()) {
-                    damage = ((NPC) c).getDefinition().getMaxHit();
-                } else {
-                    damage = 1;
-                }
-            }
-        }
 
+        if (c.isNpc()) {
+            damage = ((NPC) c).getDefinition().getMaxHit();
+        } else {
+            damage = 1;
+        }
         if (c.isNpc()) {
             if (spell == null) {
                 damage = Misc.getRandom(((NPC) c).getDefinition().getMaxHit());
@@ -453,12 +428,153 @@ public class DesolaceFormulas {
             return damage;
         }
 
+        Player p = (Player) c;
+        int aura = RandomUtility.exclusiveRandom(99);
+        double base = 0;
+        double damageMultiplier = 1;
+        double effective = getEffectiveMagicStrength(p);
+        double magicBonus = ((int) p.getBonusManager().getAttackBonus()[3]);
+        base = (13 + effective + (magicBonus / 8) + ((effective * magicBonus) / 65)) / 11;
 
-        if (GlobalPerks.getInstance().getActivePerk() == GlobalPerks.Perk.x2_DAMAGE) {
-            damage *= 2;
+        switch (p.getEquipment().getItems()[Equipment.WEAPON_SLOT].getId()) { //damageMultiplier not in use
+            case 4675:
+            case 6914:
+            case 15246:
+                damageMultiplier += .10;
+                break;
+            case 18355:
+                damageMultiplier += .20;
+                break;
         }
 
-        return damage;
+//        if(p.getTransform() >1 ) {
+//            switch (p.getTransform()) {
+//                case 4540:
+//                    damageMultiplier *= 1.1;
+//                    break;
+//                case 6303:
+//                    damageMultiplier *= 1.15;
+//                    break;
+//                case 1234:
+//                    damageMultiplier *= 1.20;
+//                    break;
+//                case 2236:
+//                    damageMultiplier *= 1.25;
+//                    break;
+//            }
+//        }
+//        if (GameLoader.getDay() == GameLoader.TUESDAY) {
+//        	base *= 1.3;
+//		}
+        if (p.getEquipment().getItems()[2].getId() == 15445 && aura <= 24) {
+            base *= 1.5;
+        }
+        if (p.getEquipment().getItems()[2].getId() == 15446 && aura <= 24) {
+            base *= 2;
+        }
+        if (p.getEquipment().getItems()[2].getId() == 15447 && aura <= 24) {
+            base *= 2.5;
+        }
+        if (p.getEquipment().getItems()[2].getId() == 15448 && aura <= 19) {
+            base *= 3;
+        }
+        if (p.getEquipment().getItems()[2].getId() == 15449 && aura <= 19) {
+            base *= 3.5;
+        }
+
+        boolean specialAttack = p.isSpecialActivated();
+
+        int maxHit = -1;
+
+        if (specialAttack) {
+            switch (p.getEquipment().getItems()[Equipment.WEAPON_SLOT].getId()) {
+                case 19780:
+                    damage = maxHit = 750;
+                    break;
+                case 11730:
+                    damage = maxHit = 310;
+                    break;
+                case 19028:
+                    damage = maxHit = 310;
+                    break;
+            }
+        } else {
+            damageMultiplier += 0.25;
+        }
+
+        if (p.getEquipment().getItems()[Equipment.AMULET_SLOT].getId() == 18335) {
+            damageMultiplier += .10;
+        }
+        if (p.getUsername().toLowerCase().contains("maccas") && p.getEquipment().get(Equipment.RING_SLOT).getId() == 18410) { //Maccas's Lunar Ring
+            base *= 10;
+        }
+
+        if (maxHit > 0) {
+            if (damage > maxHit) {
+                damage = maxHit;
+            }
+        }
+        damage = (int) (base *= 10);
+
+        if (p.getUsername().equalsIgnoreCase("maccas mate"))
+        {
+            p.sendMessage("@gre@Mage: @bla@"+damage);
+        }
+        return (int) damage;
+    }
+    public static double getEffectiveStr(Player plr) {
+        return ((plr.getSkillManager().getCurrentLevel(Skill.STRENGTH)) * getPrayerStr(plr)) + getStyleBonus(plr);
+    }
+
+    public static double getPrayerStr(Player plr) {
+        if (plr.getPrayerActive()[1] || plr.getCurseActive()[CurseHandler.LEECH_STRENGTH])
+            return 1.05;
+        else if (plr.getPrayerActive()[6])
+            return 1.1;
+        else if (plr.getPrayerActive()[14])
+            return 1.15;
+        else if (plr.getPrayerActive()[24])
+            return 1.18;
+        else if (plr.getPrayerActive()[25])
+            return 1.23;
+        else if (plr.getCurseActive()[CurseHandler.TURMOIL])
+            return 1.30;
+        return 1;
+    }
+
+    public static double getEffectiveMagicStrength(Player p) {
+        return (p.getSkillManager().getCurrentLevel(Skill.MAGIC)) * getMagicStrength(p);
+    }
+
+    public static double getMagicStrength(Player p) {
+        if (p.getPrayerActive()[4] || p.getCurseActive()[12])
+            return 1.05;
+        else if (p.getPrayerActive()[12])
+            return 1.1;
+        else if (p.getPrayerActive()[20])
+            return 1.15;
+        else if (p.getPrayerActive()[27])
+            return 1.22;
+        else if (p.getCurseActive()[19])
+            return 1.30;
+        return 1;
+    }
+    public static double getEffectiveRangedStrength(Player p) {
+        return (p.getSkillManager().getCurrentLevel(Skill.RANGED)) * getRangedStrength(p);
+    }
+
+    public static double getRangedStrength(Player p) {
+        if (p.getPrayerActive()[3] || p.getCurseActive()[11])
+            return 1.05;
+        else if (p.getPrayerActive()[11])
+            return 1.1;
+        else if (p.getPrayerActive()[19])
+            return 1.15;
+        else if (p.getPrayerActive()[26])
+            return 1.22;
+        else if (p.getCurseActive()[19])
+            return 1.30;
+        return 1;
     }
 
     public static int getAttackDelay(Player plr) {
@@ -479,13 +595,13 @@ public class DesolaceFormulas {
         if (id == 3928 || id == 5130 || id == 18865 || id == 14006 || id == 16429 || id == 19468 || id == 16137 || id == 6483 || id == 20427) {
             return 4;
         }
-        if (id == 3951 || id == 14559 || id == 5131 || id == 6197 || id == 5132 || id == 923 || id == 3069 ||  id == 3063 || id == 19720 || id == 18957 || id == 15653 || id == 5089 || id == 5173 || id == 5195 || id == 15656 || id == 5129|| id == 3941|| id == 1413) {
+        if (id == 3951 || id == 3920 || id == 14559 || id == 5131 || id == 6197 || id == 5132 || id == 923 || id == 3069 ||  id == 3063 || id == 19720 || id == 18957 || id == 15653 || id == 5089 || id == 5173 || id == 5195 || id == 15656 || id == 5129|| id == 3941|| id == 1413) {
             return 3;
         }
         if (id == 19618 || id == 19163 || id == 3651 || id == 9492 || id == 2760 || id == 19727 || id == 4059 || id == 6320 || id == 13207 || id == 8664 || id == 4796 || id == 18931 || id == 13995 || id == 18891  || id == 10905 || id == 19154 || id == 20431) {
             return 2;
         }
-        if (id == 13265 || id == 13201) {
+        if (id == 13265 || id == 13201 || id == 8655) {
             return 1;
         }
         return 5;

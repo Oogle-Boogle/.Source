@@ -71,14 +71,17 @@ public class DefaultMagicCombatStrategy implements CombatStrategy {
 			player.setCastSpell(CombatSpells.TIER7.getSpell());
 		}
 		if(equipment == 5129) {
-			player.setCastSpell(CombatSpells.TIER7.getSpell());
+			player.setCastSpell(CombatSpells.Tier8.getSpell());
 		}
 		if(equipment == 19727 || equipment == 18891) {
 			player.setCastSpell(CombatSpells.TIER9.getSpell());
 		} 
-		if(equipment == 13995 || equipment == 8664 || equipment == 3282) {
+		if(equipment == 13995 || equipment == 8664 || equipment == 8656) {
 			player.setCastSpell(CombatSpells.DRAGONLAVA.getSpell());
-		} 
+		}
+		if(equipment == 3920 ) {
+			player.setCastSpell(CombatSpells.DEMI.getSpell());
+		}
 		if (player.getCastSpell() == null) {
 			return false;
 		}

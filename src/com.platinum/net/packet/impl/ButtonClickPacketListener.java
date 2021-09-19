@@ -207,6 +207,9 @@ public class ButtonClickPacketListener implements PacketListener {
 
 
         switch (id) {
+            case 2246:
+                PartyRoomManager.sendConfirmation(player);
+                break;
 
             case 58954:
                 player.getInstanceTimer().reset(); //Starts the timer
@@ -341,10 +344,6 @@ public class ButtonClickPacketListener implements PacketListener {
                                 .sendToggle(3310, 1);
                     });
                 }
-                break;
-
-                case 2246:
-                PartyRoomManager.sendConfirmation(player);
                 break;
 
 

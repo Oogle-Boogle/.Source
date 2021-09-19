@@ -39,6 +39,12 @@ public enum CombineEnum {
 
     SULPHUR_SCYTHE(new Item[] {new Item(10835,55000),new Item(12845,25),
             new Item(12846,25),new Item(12847,25) },1413,100, 3600000),
+
+    DEMI_STAFF(new Item[] {new Item(10835,65000),new Item(12845,25),
+            new Item(12846,25),new Item(12847,25) },3920,100, 3600000),
+
+    SULPHUR_BOW(new Item[] {new Item(10835,65000),new Item(12845,25),
+            new Item(12846,25),new Item(12847,25) },8665,100, 3600000),
     
     COLLECTOR(new Item[] {new Item(10835,5000),new Item(12845,5),
     		new Item(12846,5), new Item(12847,5) },19886,100, 3600000);
