@@ -127,7 +127,7 @@ public class CombatContainer {
  			}
 		}
 		if (attacker.isPlayer()) {
-			if (((Player)attacker).getEquipment().containsAny( 19618, 3651, 19163, 9492, 2760, 19727, 4059, 6320, 13207, 8664, 4796, 18931, 13995, 18891, 10905, 19154, 20431, 20427 )) {
+			if (((Player)attacker).getEquipment().containsAny( 19618, 3651, 19163, 9492, 2760, 19727, 4059, 6320, 13207, 8664, 4796, 18931, 13995, 18891, 10905, 19154, 20431, 20427, 22196 )) {
 				hitAmount = 3; //Client doesn't support more than 4
  			}
 		}

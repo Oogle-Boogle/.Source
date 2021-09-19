@@ -42,7 +42,9 @@ public class CombatPoisonEffect extends Task {
         BLOWPIPE(50),
         BLUDGEON(60),
         EXTRA(70),
-        SUPER(120);
+        SUPER(120),
+        BOSS(150),
+        ASSASSIN(15000);
 
         /** The starting damage for this poison type. */
         private int damage;
@@ -141,6 +143,7 @@ public class CombatPoisonEffect extends Task {
             types.put(1259, PoisonType.MILD);
             types.put(1257, PoisonType.MILD);
             types.put(3094, PoisonType.MILD);
+            types.put(1231, PoisonType.ASSASSIN);
 
             types.put(5621, PoisonType.EXTRA);
             types.put(5620, PoisonType.EXTRA);

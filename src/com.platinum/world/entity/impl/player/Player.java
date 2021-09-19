@@ -2081,6 +2081,7 @@ public class Player extends Character {
 				|| weaponId == 8655
 				|| weaponId == 8664
 				|| weaponId == 9492
+				|| weaponId == 22196
 		) {
 			return 3;
 		}

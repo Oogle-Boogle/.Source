@@ -182,7 +182,7 @@ public class NPC extends Character {
 	public void poisonVictim(Character victim, CombatType type) {
 		if (getDefinition().isPoisonous()) {
 			CombatFactory.poisonEntity(victim,
-					type == CombatType.RANGED || type == CombatType.MAGIC ? PoisonType.MILD : PoisonType.EXTRA);
+					type == CombatType.RANGED || type == CombatType.MAGIC ? PoisonType.BOSS : PoisonType.EXTRA);
 		}
 
 	}

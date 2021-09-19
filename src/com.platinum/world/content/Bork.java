@@ -25,16 +25,14 @@ import com.platinum.world.entity.impl.player.Player;
 
 public class Bork extends NPC {
 
-	public static int[] COMMONLOOT = { 2572,19137,19138,19139,6041,5130,
-			18865,19132,19131,19133,6199,18940,18941,18942,2749,2750,2751,2752,2753,2754,2755,19721,19132,19131,19133,6199,18940,18941,18942,2749,2750,2751,2752,2753,2754,2755,19721,19722,19723,18892,15418,19468};
-	public static int[] RARELOOT = { 19935,5131,4771,4772,4770,19935,5131,4771,4772,4770, 4799 ,4800,4801,5079,3973,3951,15012
-			,5131,4770,4771,4772,3988,6193,6194,6195,6196,6197,6198};
-	public static int[] SUPERRARELOOT = { 15374,19936,3815,3814,3813,3812,3811,3810,3069,19886};
+	public static int[] COMMONLOOT = { };
+	public static int[] RARELOOT = { };
+	public static int[] SUPERRARELOOT = { };
 
 	/**
 	 * 
 	 */
-	public static final int NPC_ID = 7134;
+	public static final int NPC_ID = 9944;
 
 	/**
 	 * add your maps to that folder open me your client.java in client
@@ -60,7 +58,7 @@ public class Bork extends NPC {
 	 */
 	public static void initialize() {
 
-		TaskManager.submit(new Task( 1500, false) { // 6000
+		TaskManager.submit(new Task( 12000, false) { // 6000
 
 			@Override
 			public void execute() {
@@ -89,7 +87,7 @@ public class Bork extends NPC {
 		setCurrent(instance);
 		// System.out.print("spawned.");
 
-		World.sendMessageNonDiscord("<img=11><col=bababa><shad=10>[<col=0999ad>UBER BOSS<col=bababa>]<col=0999ad>Bork <col=00a745>has <shad=10>respawned <img=11> ::uberboss");
+		World.sendMessageNonDiscord("<img=11><col=bababa><shad=10>[<col=0999ad>UBER BOSS<col=bababa>]<col=0999ad>Assassin <col=00a745>has <shad=10>respawned <img=11> ::assassin");
 	}
 
 
@@ -168,8 +166,8 @@ public class Bork extends NPC {
 			String itemName = (new Item(superrare).getDefinition().getName());
 			String itemMessage = Misc.anOrA(itemName) + " " + itemName;
 			World.sendMessageNonDiscord(
-					"<img=11><col=FF0000>" + player.getUsername() + " received<col=eaeaea>[ " + itemMessage + "<col=eaeaea>]<col=FF0000> from the Uber Boss!");
-			DiscordMessenger.sendRareDrop(player.getUsername(), " received[ " + itemMessage + "from Bork!");
+					"<img=11><col=FF0000>" + player.getUsername() + " received<col=eaeaea>[ " + itemMessage + "<col=eaeaea>]<col=FF0000> from the Assassin!");
+			DiscordMessenger.sendRareDrop(player.getUsername(), " received[ " + itemMessage + "from the Assassin!");
 			return;
 		}
 
@@ -179,8 +177,8 @@ public class Bork extends NPC {
 			String itemName = (new Item(rare).getDefinition().getName());
 			String itemMessage = Misc.anOrA(itemName) + " " + itemName;
 			World.sendMessageNonDiscord(
-					"<img=11><col=FF0000>" + player.getUsername() + " received<col=eaeaea>[ " + itemMessage + "<col=eaeaea>]<col=FF0000> from the Uber Boss!");
-			DiscordMessenger.sendRareDrop(player.getUsername(), " received[ " + itemMessage + "from Bork!");
+					"<img=11><col=FF0000>" + player.getUsername() + " received<col=eaeaea>[ " + itemMessage + "<col=eaeaea>]<col=FF0000> from the Assassin!");
+			DiscordMessenger.sendRareDrop(player.getUsername(), " received[ " + itemMessage + "from the Assassin!");
 			return;
 		}
 		if (chance >= 0) {
@@ -188,7 +186,7 @@ public class Bork extends NPC {
 					new GroundItem(new Item(common, 1), pos, player.getUsername(), false, 150, true, 200));
 			String itemName = (new Item(common).getDefinition().getName());
 			World.sendMessageNonDiscord(
-					"<img=11><col=FF0000>" + player.getUsername() + " received<col=eaeaea>[ " + itemName + "<col=eaeaea>]<col=FF0000> from the Uber Boss!");
+					"<img=11><col=FF0000>" + player.getUsername() + " received<col=eaeaea>[ " + itemName + "<col=eaeaea>]<col=FF0000> from the Assassin!");
 			return;
 		}
 
