@@ -29,6 +29,8 @@ import com.platinum.world.content.minigames.impl.RecipeForDisaster;
 import com.platinum.world.content.minigames.impl.WarriorsGuild;
 import com.platinum.world.content.minigames.impl.gungame.GunGame;
 import com.platinum.world.content.skill.impl.dungeoneering.Dungeoneering;
+import com.platinum.world.content.skillingboss.SkillBossConfig;
+import com.platinum.world.content.skillingboss.SkillBossHandler;
 import com.platinum.world.entity.Entity;
 import com.platinum.world.entity.impl.Character;
 import com.platinum.world.entity.impl.npc.NPC;
@@ -208,6 +210,41 @@ public class Locations {
 		},
 
 		AFK_ZONE(new int[] { 1870, 1884 }, new int[] { 5211, 5225 }, false, true, true, true, true, true) {
+		},
+
+		SKILLING_BOSS(new int[] { 1856, 1867 }, new int[] { 5214, 5229 }, true, true, true, false, true, true) {
+
+			@Override
+			public void logout(Player player) {
+				if (player.getPosition().getZ() == 4) {
+					player.moveTo(player.getPosition().getX(), player.getPosition().getY(), 0);
+				}
+			}
+
+			@Override
+			public void leave(Player player) {
+				if (player.getPosition().getZ() == 4) {
+					player.moveTo(player.getPosition().getX(), player.getPosition().getY(), 0);
+				}
+			}
+
+			@Override
+			public void enter(Player player) {
+				if (World.getNpcs().contains(SkillBossHandler.npc)) {
+					player.moveTo(player.getPosition().getX(), player.getPosition().getY(), 4);
+				}
+			}
+
+			@Override
+			public boolean handleKilledNPC(Player killer, NPC npc) {
+				if (npc == SkillBossHandler.npc) {
+					SkillBossHandler.calculateDamage(SkillBossHandler.npc);
+					World.deregister(SkillBossHandler.npc);
+					return true;
+				}
+				return false;
+			}
+
 		},
 
 		KING_BLACK_DRAGON(new int[] { 2251, 2292 }, new int[] { 4673, 4717 }, true, true, true, true, true, true) {

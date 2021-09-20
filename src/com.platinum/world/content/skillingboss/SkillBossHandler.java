@@ -16,27 +16,27 @@ public class SkillBossHandler {
 
     private static Skill selectedSkill;
 
-    public static NPC npc;
+    public static NPC npc = new NPC(SkillBossConfig.npcID, SkillBossConfig.spawnPos);;
 
     public static void handleServerXP(long XP) {
-        System.out.println("XP to add is: "
-                + XP
-                + " Formatted: "
-                + formatNumber(XP));
+        if (World.getNpcs().contains(npc)) {
+            return;
+        }
 
-        System.out.println("Current serverXpCOunter = "
-                + SkillBossConfig.serverXPCounter
-                + " Formatted: "
-                + formatNumber(SkillBossConfig.serverXPCounter));
+        if (System.currentTimeMillis() > SkillBossConfig.xpUpdateTimer && SkillBossConfig.serverXPCounter < SkillBossConfig.requiredServerXP) {
+            SkillBossConfig.resetTimer();
 
+            long remainder = SkillBossConfig.requiredServerXP - SkillBossConfig.serverXPCounter;
+
+            World.sendMessageDiscord("Global XP is currently: "
+                    + formatNumber(SkillBossConfig.serverXPCounter)
+                    + "! We need " + formatNumber(remainder)
+                    + " until the skilling boss spawns!");
+
+        }
 
         if (SkillBossConfig.serverXPCounter < SkillBossConfig.requiredServerXP) {
             SkillBossConfig.serverXPCounter += XP;
-
-            System.out.println("NEW UPDATED serverXpCOunter = "
-                    + SkillBossConfig.serverXPCounter
-                    + " Formatted: "
-                    + formatNumber(SkillBossConfig.serverXPCounter));
         } else {
             SkillBossConfig.serverXPCounter = 0;
             spawnSkillBoss();
@@ -47,29 +47,11 @@ public class SkillBossHandler {
         return NumberFormat.getInstance().format(number);
     }
 
-   /** Check the total XP **/
-    public static void sequence() { //Runs every tick
-        if (SkillBossConfig.xpUpdateTimer > 0 && SkillBossConfig.serverXPCounter < SkillBossConfig.requiredServerXP) {
-            SkillBossConfig.xpUpdateTimer--;
-        } else {
-            SkillBossConfig.xpUpdateTimer = SkillBossConfig.timeDelay;
-            long remainder = SkillBossConfig.requiredServerXP - SkillBossConfig.serverXPCounter;
-
-            System.out.println("Sequence serverXpCOunter = " + SkillBossConfig.serverXPCounter + " Formatted: " + formatNumber(SkillBossConfig.serverXPCounter));
-            System.out.println("Remainder = " + remainder + " Formatted: " + formatNumber(remainder));
-
-            World.sendMessageDiscord("Global XP is currently: "
-                    + formatNumber(SkillBossConfig.serverXPCounter)
-                    + "! We need " + formatNumber(remainder)
-                    + " until the skilling boss spawns!");
-        }
-    }
-
     /** Spawns the Skilling Boss **/
     private static void spawnSkillBoss() {
         selectedSkill = selectSkill();
-        npc = new NPC(SkillBossConfig.npcID, SkillBossConfig.spawnPos);
         World.register(npc);
+
 
         World.sendMessageNonDiscord("@blu@The Skilling Boss has just spawned! Skill Selected: @red@"
                 + selectedSkill.getFormatName()
@@ -87,6 +69,7 @@ public class SkillBossHandler {
         return Skill.values()[Misc.exclusiveRandom(Skill.values().length)];
     }
 
+    /** After the NPC is killed, we calculate the damage **/
     public static void calculateDamage(NPC npc) {
 
         if (npc.getCombatBuilder().getDamageMap().size() == 0) {

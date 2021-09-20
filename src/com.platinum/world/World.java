@@ -185,7 +185,6 @@ public class World {
 		ShootingStar.sequence();
 		EvilTrees.sequence();
 		TriviaBot.sequence();
-		SkillBossHandler.sequence();
 		// ShopRestocking.sequence();
 		FreeForAll.sequence();
 		CustomFreeForAll.sequence();
