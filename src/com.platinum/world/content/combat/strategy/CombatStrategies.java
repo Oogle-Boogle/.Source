@@ -181,7 +181,7 @@ public class CombatStrategies {
 		STRATEGIES.put(9647, new InfernalWizardCombat());
 		STRATEGIES.put(8675, new OlmMinionsCombat());
 		STRATEGIES.put(6593, new SuicsBoss());
-		STRATEGIES.put(9944, new Assassin());
+		STRATEGIES.put(9944, new AssassinStrategy());
 		
 		
 		

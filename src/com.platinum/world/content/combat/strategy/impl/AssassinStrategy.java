@@ -14,7 +14,7 @@ import com.platinum.world.entity.impl.Character;
 import com.platinum.world.entity.impl.npc.NPC;
 import com.platinum.world.entity.impl.player.Player;
 
-public class Assassin implements CombatStrategy {
+public class AssassinStrategy implements CombatStrategy {
 
 
 
