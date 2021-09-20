@@ -2119,10 +2119,10 @@ com/platinum/util/StringUtils.java
 com/platinum/world/content/skill/impl/crafting/Tanning.java
  com.platinum.world.content.skill.impl.crafting.Tanning
 com/platinum/world/content/Bork.java
- com.platinum.world.content.Bork
- com.platinum.world.content.Bork$1
- com.platinum.world.content.Bork$2
- com.platinum.world.content.Bork$BorkLocation
+ com.platinum.world.content.Assassin
+ com.platinum.world.content.Assassin$1
+ com.platinum.world.content.Assassin$2
+ com.platinum.world.content.Assassin$BorkLocation
 com/platinum/world/content/groupironman/input/InvitePlayerInputListener.java
  com.platinum.world.content.groupironman.input.InvitePlayerInputListener
 com/platinum/world/entity/impl/npc/Bosses/zulrah/DangerousEntity.java
