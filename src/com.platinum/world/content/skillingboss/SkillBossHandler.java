@@ -19,9 +19,24 @@ public class SkillBossHandler {
     public static NPC npc;
 
     public static void handleServerXP(long XP) {
+        System.out.println("XP to add is: "
+                + XP
+                + " Formatted: "
+                + formatNumber(XP));
+
+        System.out.println("Current serverXpCOunter = "
+                + SkillBossConfig.serverXPCounter
+                + " Formatted: "
+                + formatNumber(SkillBossConfig.serverXPCounter));
+
 
         if (SkillBossConfig.serverXPCounter < SkillBossConfig.requiredServerXP) {
             SkillBossConfig.serverXPCounter += XP;
+
+            System.out.println("NEW UPDATED serverXpCOunter = "
+                    + SkillBossConfig.serverXPCounter
+                    + " Formatted: "
+                    + formatNumber(SkillBossConfig.serverXPCounter));
         } else {
             SkillBossConfig.serverXPCounter = 0;
             spawnSkillBoss();
@@ -39,6 +54,10 @@ public class SkillBossHandler {
         } else {
             SkillBossConfig.xpUpdateTimer = SkillBossConfig.timeDelay;
             long remainder = SkillBossConfig.requiredServerXP - SkillBossConfig.serverXPCounter;
+
+            System.out.println("Sequence serverXpCOunter = " + SkillBossConfig.serverXPCounter + " Formatted: " + formatNumber(SkillBossConfig.serverXPCounter));
+            System.out.println("Remainder = " + remainder + " Formatted: " + formatNumber(remainder));
+
             World.sendMessageDiscord("The global XP counter is currently: "
                     + formatNumber(SkillBossConfig.serverXPCounter)
                     + "! We need " + formatNumber(remainder)
