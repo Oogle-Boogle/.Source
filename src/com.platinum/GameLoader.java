@@ -98,7 +98,7 @@ public final class GameLoader {
 		serviceLoader.execute(() -> PlayerOwnedShopManager.loadShops());
 		serviceLoader.execute(() -> MonsterDrops.initialize());
 		serviceLoader.execute(() -> Tztok.initialize());
-		serviceLoader.execute(() -> Bork.initialize());
+		serviceLoader.execute(() -> Assassin.initialize());
 		serviceLoader.execute(() -> Onslaught.initialize());
 		serviceLoader.execute(() -> TheRick.initialize());
 		serviceLoader.execute(() -> TheMay.initialize());

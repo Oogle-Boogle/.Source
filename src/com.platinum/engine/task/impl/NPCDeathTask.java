@@ -604,7 +604,7 @@ public class NPCDeathTask extends Task {
 							Tztok.handleDrop(npc);
 						}
 						if (npc.getId() == 7134) {
-							Bork.handleDrop(npc);
+							Assassin.handleDrop(npc);
 						} else {
 							NPCDrops.dropItems(killer, npc); //todo check
 						}
