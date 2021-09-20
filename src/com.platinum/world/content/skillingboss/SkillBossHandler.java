@@ -16,10 +16,10 @@ public class SkillBossHandler {
 
     private static Skill selectedSkill;
 
-    public static NPC npc = new NPC(SkillBossConfig.npcID, SkillBossConfig.spawnPos);;
+    public static NPC skillBoss = new NPC(SkillBossConfig.npcID, SkillBossConfig.spawnPos);;
 
     public static void handleServerXP(long XP) {
-        if (World.getNpcs().contains(npc)) {
+        if (World.getNpcs().contains(skillBoss)) {
             return;
         }
 
@@ -50,7 +50,7 @@ public class SkillBossHandler {
     /** Spawns the Skilling Boss **/
     private static void spawnSkillBoss() {
         selectedSkill = selectSkill();
-        World.register(npc);
+        World.register(skillBoss);
 
 
         World.sendMessageNonDiscord("@blu@The Skilling Boss has just spawned! Skill Selected: @red@"
@@ -194,7 +194,7 @@ public class SkillBossHandler {
         }
 
         World.sendMessageDiscord("[Skill Boss] " + winners);
-        World.deregister(npc);
+        World.deregister(skillBoss);
 
     }
 

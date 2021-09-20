@@ -588,9 +588,6 @@ public class NPCDeathTask extends Task {
 						if (npc.getId() == 8548) {
 							DailyNpc.handleDrop(npc);
 						}
-						if (npc.getId() == SkillBossConfig.npcID) {
-							SkillBossHandler.calculateDamage(SkillBossHandler.npc);
-						}
 						if (npc.getId() == 2005) {
 							TheMay.handleDrop(npc);
 						}

@@ -230,16 +230,15 @@ public class Locations {
 
 			@Override
 			public void enter(Player player) {
-				if (World.getNpcs().contains(SkillBossHandler.npc)) {
+				if (World.getNpcs().contains(SkillBossHandler.skillBoss)) {
 					player.moveTo(player.getPosition().getX(), player.getPosition().getY(), 4);
 				}
 			}
 
 			@Override
 			public boolean handleKilledNPC(Player killer, NPC npc) {
-				if (npc == SkillBossHandler.npc) {
-					SkillBossHandler.calculateDamage(SkillBossHandler.npc);
-					World.deregister(SkillBossHandler.npc);
+				if (npc == SkillBossHandler.skillBoss) {
+					SkillBossHandler.calculateDamage(SkillBossHandler.skillBoss);
 					return true;
 				}
 				return false;
