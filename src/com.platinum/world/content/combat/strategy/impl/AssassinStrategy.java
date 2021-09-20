@@ -6,6 +6,7 @@ import com.platinum.model.Animation;
 import com.platinum.model.Graphic;
 import com.platinum.model.Locations;
 import com.platinum.util.Misc;
+import com.platinum.world.World;
 import com.platinum.world.content.combat.CombatContainer;
 import com.platinum.world.content.combat.CombatHitTask;
 import com.platinum.world.content.combat.CombatType;
@@ -16,6 +17,11 @@ import com.platinum.world.entity.impl.player.Player;
 
 public class AssassinStrategy implements CombatStrategy {
 
+    private static void attackAll(Character entity, Character victim) {
+
+
+
+    }
 
 
     @Override
@@ -32,42 +38,29 @@ public class AssassinStrategy implements CombatStrategy {
     @Override
     public boolean customContainerAttack(Character entity, Character victim) {
         NPC assassin = (NPC)entity;
-        Animation attack_anim = assassin.getAnimation();
+        Animation attackAnim = new Animation(422);
+        Animation spinAnim = new Animation(2107);
         @SuppressWarnings("unused")
         Graphic graphic1 = assassin.getGraphic();
-        if(assassin.isChargingAttack() || assassin.getConstitution() <= 0) {
+
+        if(assassin.getConstitution() <= 0) {
             return true;
         }
-        CombatType style = Misc.getRandom(4) <= 1 && Locations.goodDistance(assassin.getPosition(), victim.getPosition(), 1) ? CombatType.MELEE : CombatType.MELEE;
-        if(style == CombatType.MELEE) {
 
-            assassin.performAnimation(new Animation(assassin.getDefinition().getAttackAnimation()));
-            assassin.getCombatBuilder().setContainer(new CombatContainer(assassin, victim, 1, 1, CombatType.MELEE, true));
-        } else {
-            assassin.performAnimation(attack_anim);
-            assassin.setChargingAttack(true);
+        if (Misc.random(3) == 1) {
             Player target = (Player)victim;
             for (Player t : Misc.getCombinedPlayerList(target)) {
-                if(t == null)
+                if(t == null || t.getLocation() != Locations.Location.ASSASSIN)
                     continue;
-                if(t.getPosition().distanceToPoint(assassin.getPosition().getX(), assassin.getPosition().getY()) > 20)
-                    continue;
-                new CombatHitTask(assassin.getCombatBuilder(), new CombatContainer(assassin, t, 1, CombatType.MELEE, true)).handleAttack();
-
-            }
-            TaskManager.submit(new Task(2, target, false) {
-                @Override
-                public void execute() {
-                    for (Player t : Misc.getCombinedPlayerList(target)) {
-                        if(t == null)
-                            continue;
-                        assassin.getCombatBuilder().setVictim(t);
-                        new CombatHitTask(assassin.getCombatBuilder(), new CombatContainer(assassin, t, 1, CombatType.MELEE, true)).handleAttack();
-                    }
-                    assassin.setChargingAttack(false);
-                    stop();
+                if (Locations.goodDistance(t.getPosition(), assassin.getPosition(), 2)) {
+                    assassin.getCombatBuilder().setVictim(t);
+                    new CombatHitTask(assassin.getCombatBuilder(), new CombatContainer(assassin, t, 1, CombatType.MELEE, true)).handleAttack();
+                    assassin.performAnimation(spinAnim);
                 }
-            });
+            }
+        } else {
+            assassin.performAnimation(attackAnim);
+            assassin.getCombatBuilder().setContainer(new CombatContainer(assassin, victim, 1, 1, CombatType.MELEE, true));
         }
         return true;
     }

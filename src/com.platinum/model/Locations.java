@@ -260,7 +260,7 @@ public class Locations {
 		},
 		UNHOLY_CURSEBEARER(new int[] { 3047, 3070 }, new int[] { 4390, 4370 }, true, true, true, true, true, true) {
 		},
-		BORK(new int[] { 3080, 3120 }, new int[] { 5520, 5550 }, true, true, true, true, true, true) {
+		ASSASSIN(new int[] { 3080, 3120 }, new int[] { 5520, 5550 }, true, true, true, true, true, true) {
 
 			/*
 			 * @Override public void enter(Player player) {

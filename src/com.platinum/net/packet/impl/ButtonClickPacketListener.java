@@ -1173,7 +1173,7 @@ public class ButtonClickPacketListener implements PacketListener {
                 if (player.getLocation() == Location.GODWARS_DUNGEON) {
                     GWD.nextItem(player);
                 }
-                if (player.getLocation() == Location.BORK) {
+                if (player.getLocation() == Location.ASSASSIN) {
                     BORKS.nextItem(player);
                 }
                 if (player.getLocation() == Location.LIZARDMAN) {
@@ -1232,7 +1232,7 @@ public class ButtonClickPacketListener implements PacketListener {
                 if (player.getLocation() == Location.GODWARS_DUNGEON) {
                     GWD.previousItem(player);
                 }
-                if (player.getLocation() == Location.BORK) {
+                if (player.getLocation() == Location.ASSASSIN) {
                     BORKS.previousItem(player);
                 }
                 if (player.getLocation() == Location.LIZARDMAN) {

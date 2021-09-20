@@ -37,7 +37,7 @@ public class Assassin extends NPC {
 	/**
 	 * add your maps to that folder open me your client.java in client
 	 */
-	public static final BorkLocation[] LOCATIONS = { new BorkLocation(3100, 5534, 0, "") };
+	public static final assassinLocations[] LOCATIONS = { new assassinLocations(3100, 5534, 0, "") };
 
 	/**
 	 * 
@@ -78,7 +78,7 @@ public class Assassin extends NPC {
 			return;
 		}
 
-		BorkLocation location = Misc.randomElement(LOCATIONS);
+		assassinLocations location = Misc.randomElement(LOCATIONS);
 		Assassin instance = new Assassin(location.copy());
 
 		// //System.out.println(instance.getPosition());
@@ -246,7 +246,7 @@ public class Assassin extends NPC {
 	 * @author Levi <levi.patton69 @ skype>
 	 *
 	 */
-	public static class BorkLocation extends Position {
+	public static class assassinLocations extends Position {
 
 		/**
 		 * 
@@ -260,7 +260,7 @@ public class Assassin extends NPC {
 		 * @param z
 		 * @param location
 		 */
-		public BorkLocation(int x, int y, int z, String location) {
+		public assassinLocations(int x, int y, int z, String location) {
 			super(x, y, z);
 			setLocation(location);
 		}
