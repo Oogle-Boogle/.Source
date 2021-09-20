@@ -164,25 +164,25 @@ public class SkillBossHandler {
                         break;
                     case 1:
                         sec = "2nd: " + username + dmg;
-                        xpReward = topFiveDmg[t] / 25;
+                        xpReward = topFiveDmg[t] / 2;
                         topFive[t].getPacketSender().sendString(301, "@bla@Second Place!")
                                 .sendString(4444, "@gre@" + Misc.formatAmount(xpReward));
                         break;
                     case 2:
                         thi = "3rd: " + username + dmg;
-                        xpReward = topFiveDmg[t] / 50;
+                        xpReward = topFiveDmg[t] / 3;
                         topFive[t].getPacketSender().sendString(301, "@bla@Third Place!")
                                 .sendString(4444, "@gre@" + Misc.formatAmount(xpReward));
                         break;
                     case 3:
                         fou = "4th: " + username + dmg;
-                        xpReward = topFiveDmg[t] / 75;
+                        xpReward = topFiveDmg[t] / 4;
                         topFive[t].getPacketSender().sendString(301, "@bla@Fourth Place!")
                                 .sendString(4444, "@gre@" + Misc.formatAmount(xpReward));
                         break;
                     case 4:
                         fif = "5th: " + username + dmg;
-                        xpReward = topFiveDmg[t] / 100;
+                        xpReward = topFiveDmg[t] / 5;
                         topFive[t].getPacketSender().sendString(301, "@bla@Fifth Place!")
                                 .sendString(4444, "@gre@" + Misc.formatAmount(xpReward));
                         break;
