@@ -48,7 +48,7 @@ public class AssassinStrategy implements CombatStrategy {
             assassin.setChargingAttack(true);
             Player target = (Player)victim;
             for (Player t : Misc.getCombinedPlayerList(target)) {
-                if(t == null) //|| t.getLocation() != Location.TREASURE_ISLAND || t.isTeleporting())
+                if(t == null)
                     continue;
                 if(t.getPosition().distanceToPoint(assassin.getPosition().getX(), assassin.getPosition().getY()) > 20)
                     continue;
@@ -59,7 +59,7 @@ public class AssassinStrategy implements CombatStrategy {
                 @Override
                 public void execute() {
                     for (Player t : Misc.getCombinedPlayerList(target)) {
-                        if(t == null)// || t.getLocation() != Location.TREASURE_ISLAND)
+                        if(t == null)
                             continue;
                         assassin.getCombatBuilder().setVictim(t);
                         new CombatHitTask(assassin.getCombatBuilder(), new CombatContainer(assassin, t, 1, CombatType.MELEE, true)).handleAttack();
