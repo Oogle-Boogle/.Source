@@ -22,8 +22,8 @@ public class SkillBossHandler {
         if (SkillBossConfig.serverXPCounter < SkillBossConfig.requiredServerXP) {
             SkillBossConfig.serverXPCounter += XP;
         } else {
-            spawnSkillBoss();
             SkillBossConfig.serverXPCounter = 0;
+            spawnSkillBoss();
         }
     }
 
@@ -32,11 +32,11 @@ public class SkillBossHandler {
         if (SkillBossConfig.xpUpdateTimer > 0 && SkillBossConfig.serverXPCounter < SkillBossConfig.requiredServerXP) {
             SkillBossConfig.xpUpdateTimer--;
         } else {
-            SkillBossConfig.xpUpdateTimer += SkillBossConfig.timeDelay;
+            SkillBossConfig.xpUpdateTimer = SkillBossConfig.timeDelay;
             long remainder = SkillBossConfig.requiredServerXP - SkillBossConfig.serverXPCounter;
             World.sendMessageDiscord("The global XP counter is currently: "
-                    + Misc.formatAmount(SkillBossConfig.serverXPCounter)
-                    + "! We need " + Misc.formatAmount(remainder)
+                    + Misc.formatBigNumberLol(SkillBossConfig.serverXPCounter)
+                    + "! We need " + Misc.formatBigNumberLol(remainder)
                     + " until the skilling boss spawns!");
         }
     }

@@ -237,6 +237,17 @@ public class Misc {
             return Long.toString(j);
     }
 
+	public static final String formatBigNumberLol(long j) {
+		if (j >= 0 && j < 10000)
+			return String.valueOf(j);
+		else if (j >= 10000 && j < 10000000)
+			return j / 1000 + "K";
+		else if (j >= 10000000 && j < 999999999)
+			return j / 1000000 + "M";
+		else
+			return Long.toString(j);
+	}
+
 	public static CombatHit[] concat(CombatHit[] a, CombatHit[] b) {
 		int aLen = a.length;
 		int bLen = b.length;
