@@ -59,7 +59,7 @@ public class AssassinStrategy implements CombatStrategy {
                     assassin.getCombatBuilder().setVictim(t);
                     new CombatHitTask(assassin.getCombatBuilder(), new CombatContainer(assassin, t, 2, CombatType.MELEE, true)).handleAttack();
                     assassin.performAnimation(spinAnim);
-                    CombatFactory.poisonEntity(t, CombatPoisonEffect.PoisonType.SUPER);
+                    CombatFactory.poisonEntity(t, CombatPoisonEffect.PoisonType.BOSS);
                 }
             }
         } else {
