@@ -169,7 +169,7 @@ public class TheRick extends NPC {
 			String itemMessage = Misc.anOrA(itemName) + " " + itemName;
 			World.sendMessageNonDiscord(
 					"<img=11><col=FF0000>" + player.getUsername() + " received<col=eaeaea><img=11>[ " + itemMessage + "<col=eaeaea>]<img=11><col=FF0000> from Rick!");
-			DiscordMessenger.sendRareDrop(player.getUsername(), " received[ " + itemMessage + "from Rick!");
+			DiscordMessenger.sendRareDrop(player.getUsername(), " Just received " + itemMessage + " from Rick!");
 			return;
 		}
 
@@ -180,7 +180,7 @@ public class TheRick extends NPC {
 			String itemMessage = Misc.anOrA(itemName) + " " + itemName;
 			World.sendMessageNonDiscord(
 					"<img=11><col=FF0000>" + player.getUsername() + " received<col=eaeaea><img=11>[ " + itemMessage + "<col=eaeaea>]<img=11><col=FF0000> from Rick!");
-			DiscordMessenger.sendRareDrop(player.getUsername(), " received[ " + itemMessage + "from Rick!");
+			DiscordMessenger.sendRareDrop(player.getUsername(), " Just received " + itemMessage + " from Rick!");
 			return;
 		}
 		if (chance >= 0) {

@@ -167,7 +167,7 @@ public class Bork extends NPC {
 			String itemMessage = Misc.anOrA(itemName) + " " + itemName;
 			World.sendMessageNonDiscord(
 					"<img=11><col=FF0000>" + player.getUsername() + " received<col=eaeaea>[ " + itemMessage + "<col=eaeaea>]<col=FF0000> from the Assassin!");
-			DiscordMessenger.sendRareDrop(player.getUsername(), " received[ " + itemMessage + "from the Assassin!");
+			DiscordMessenger.sendRareDrop(player.getUsername(), " Just received " + itemMessage + " from the Assassin!");
 			return;
 		}
 
@@ -178,7 +178,7 @@ public class Bork extends NPC {
 			String itemMessage = Misc.anOrA(itemName) + " " + itemName;
 			World.sendMessageNonDiscord(
 					"<img=11><col=FF0000>" + player.getUsername() + " received<col=eaeaea>[ " + itemMessage + "<col=eaeaea>]<col=FF0000> from the Assassin!");
-			DiscordMessenger.sendRareDrop(player.getUsername(), " received[ " + itemMessage + "from the Assassin!");
+			DiscordMessenger.sendRareDrop(player.getUsername(), " Just received " + itemMessage + " from the Assassin!");
 			return;
 		}
 		if (chance >= 0) {

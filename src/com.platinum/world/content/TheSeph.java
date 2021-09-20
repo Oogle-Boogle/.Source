@@ -169,7 +169,7 @@ public class TheSeph extends NPC {
 			String itemMessage = Misc.anOrA(itemName) + " " + itemName;
 			World.sendMessageNonDiscord(
 					"<img=11><col=FF0000>" + player.getUsername() + " received<col=eaeaea><img=11>[ " + itemMessage + "<col=eaeaea>]<img=11><col=FF0000> from Sephiroth!");
-			DiscordMessenger.sendRareDrop(player.getUsername(), " received[ " + itemMessage + "from Sephiroth!");
+			DiscordMessenger.sendRareDrop(player.getUsername(), " Just received " + itemMessage + " from Sephiroth!");
 			return;
 		}
 
@@ -180,7 +180,7 @@ public class TheSeph extends NPC {
 			String itemMessage = Misc.anOrA(itemName) + " " + itemName;
 			World.sendMessageNonDiscord(
 					"<img=11><col=FF0000>" + player.getUsername() + " received<col=eaeaea><img=11>[ " + itemMessage + "<col=eaeaea>]<img=11><col=FF0000> from Sephiroth!");
-			DiscordMessenger.sendRareDrop(player.getUsername(), " received[ " + itemMessage + "from Sephiroth!");
+			DiscordMessenger.sendRareDrop(player.getUsername(), " Just received " + itemMessage + " from Sephiroth!");
 			return;
 		}
 		if (chance >= 0) {

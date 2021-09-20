@@ -169,7 +169,7 @@ public class Tztok extends NPC {
 			DiscordMessenger.sendRareDrop(player.getUsername(), " received<col=eaeaea><img=11>[ " + itemMessage + "<col=eaeaea>]<img=11><col=FF0000>from the World Boss!");
 			World.sendMessageNonDiscord(
 					"<img=11><col=FF0000>" + player.getUsername() + " received<col=eaeaea><img=11>[ " + itemMessage + "<col=eaeaea>]<img=11><col=FF0000>from the World Boss!");
-			DiscordMessenger.sendRareDrop(player.getUsername(), " received[ " + itemMessage + "from the World Boss!");
+			DiscordMessenger.sendRareDrop(player.getUsername(), " Just received " + itemMessage + " from the World Boss!");
 			return;
 		}
 
@@ -180,7 +180,7 @@ public class Tztok extends NPC {
 			String itemMessage = Misc.anOrA(itemName) + " " + itemName;
 			World.sendMessageNonDiscord(
 					"<img=11><col=FF0000>" + player.getUsername() + " received<img=11><col=eaeaea>[ " + itemMessage + "<col=eaeaea>]<img=11><col=FF0000> from the World Boss!");
-			DiscordMessenger.sendRareDrop(player.getUsername(), " received[ " + itemMessage + "from the World Boss!");
+			DiscordMessenger.sendRareDrop(player.getUsername(), " Just received " + itemMessage + " from the World Boss!");
 			return;
 		}
 		if (chance >= 0) {

@@ -171,7 +171,7 @@ public class TheMay extends NPC {
 			String itemMessage = Misc.anOrA(itemName) + " " + itemName;
 			World.sendMessageNonDiscord(
 					"<img=11><col=FF0000>" + player.getUsername() + " received " + itemMessage + " from Trainer May");
-			DiscordMessenger.sendRareDrop(player.getUsername(), " received[ " + itemMessage + "from Trainer May!");
+			DiscordMessenger.sendRareDrop(player.getUsername(), " Just received " + itemMessage + " from Trainer May!");
 			return;
 		}
 
@@ -182,7 +182,7 @@ public class TheMay extends NPC {
 			String itemMessage = Misc.anOrA(itemName) + " " + itemName;
 			World.sendMessageNonDiscord(
 					"<img=11><col=FF0000>" + player.getUsername() + " received " + itemMessage + " from Trainer May");
-			DiscordMessenger.sendRareDrop(player.getUsername(), " received[ " + itemMessage + "from Trainer May!");
+			DiscordMessenger.sendRareDrop(player.getUsername(), " Just received " + itemMessage + " from Trainer May!");
 			return;
 		}
 		if (chance >= 0) {
