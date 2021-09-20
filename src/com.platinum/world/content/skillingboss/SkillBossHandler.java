@@ -9,6 +9,7 @@ import com.platinum.world.content.discord.DiscordMessenger;
 import com.platinum.world.entity.impl.npc.NPC;
 import com.platinum.world.entity.impl.player.Player;
 
+import java.text.NumberFormat;
 import java.util.*;
 
 public class SkillBossHandler {
@@ -27,6 +28,10 @@ public class SkillBossHandler {
         }
     }
 
+    public static String formatNumber(long number) {
+        return NumberFormat.getInstance().format(number);
+    }
+
    /** Check the total XP **/
     public static void sequence() { //Runs every tick
         if (SkillBossConfig.xpUpdateTimer > 0 && SkillBossConfig.serverXPCounter < SkillBossConfig.requiredServerXP) {
@@ -35,8 +40,8 @@ public class SkillBossHandler {
             SkillBossConfig.xpUpdateTimer = SkillBossConfig.timeDelay;
             long remainder = SkillBossConfig.requiredServerXP - SkillBossConfig.serverXPCounter;
             World.sendMessageDiscord("The global XP counter is currently: "
-                    + Misc.formatBigNumberLol(SkillBossConfig.serverXPCounter)
-                    + "! We need " + Misc.formatBigNumberLol(remainder)
+                    + formatNumber(SkillBossConfig.serverXPCounter)
+                    + "! We need " + formatNumber(remainder)
                     + " until the skilling boss spawns!");
         }
     }
@@ -54,6 +59,8 @@ public class SkillBossHandler {
         DiscordMessenger.sendInGameMessage("The Skilling Boss has just spawned! Skill Selected: "
                 + selectedSkill.getFormatName()
                 + "!");
+
+
     }
 
     /** Chooses a random Skill **/
