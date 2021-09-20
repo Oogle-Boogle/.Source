@@ -23,7 +23,7 @@ import com.platinum.world.entity.impl.GroundItemManager;
 import com.platinum.world.entity.impl.npc.NPC;
 import com.platinum.world.entity.impl.player.Player;
 
-public class Bork extends NPC {
+public class Assassin extends NPC {
 
 	public static int[] COMMONLOOT = { };
 	public static int[] RARELOOT = { };
@@ -42,13 +42,13 @@ public class Bork extends NPC {
 	/**
 	 * 
 	 */
-	private static Bork current;
+	private static Assassin current;
 
 	/**
 	 * 
 	 * @param position
 	 */
-	public Bork(Position position) {
+	public Assassin(Position position) {
 
 		super(NPC_ID, position);
 	}
@@ -79,7 +79,7 @@ public class Bork extends NPC {
 		}
 
 		BorkLocation location = Misc.randomElement(LOCATIONS);
-		Bork instance = new Bork(location.copy());
+		Assassin instance = new Assassin(location.copy());
 
 		// //System.out.println(instance.getPosition());
 
@@ -229,7 +229,7 @@ public class Bork extends NPC {
 	 * 
 	 * @return
 	 */
-	public static Bork getCurrent() {
+	public static Assassin getCurrent() {
 		return current;
 	}
 
@@ -237,8 +237,8 @@ public class Bork extends NPC {
 	 * 
 	 * @param current
 	 */
-	public static void setCurrent(Bork current) {
-		Bork.current = current;
+	public static void setCurrent(Assassin current) {
+		Assassin.current = current;
 	}
 
 	/**
