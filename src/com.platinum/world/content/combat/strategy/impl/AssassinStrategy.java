@@ -8,8 +8,11 @@ import com.platinum.model.Locations;
 import com.platinum.util.Misc;
 import com.platinum.world.World;
 import com.platinum.world.content.combat.CombatContainer;
+import com.platinum.world.content.combat.CombatFactory;
 import com.platinum.world.content.combat.CombatHitTask;
 import com.platinum.world.content.combat.CombatType;
+import com.platinum.world.content.combat.effect.CombatPoisonEffect;
+import com.platinum.world.content.combat.strategy.CombatStrategies;
 import com.platinum.world.content.combat.strategy.CombatStrategy;
 import com.platinum.world.entity.impl.Character;
 import com.platinum.world.entity.impl.npc.NPC;
@@ -54,8 +57,9 @@ public class AssassinStrategy implements CombatStrategy {
                     continue;
                 if (Locations.goodDistance(t.getPosition(), assassin.getPosition(), 2)) {
                     assassin.getCombatBuilder().setVictim(t);
-                    new CombatHitTask(assassin.getCombatBuilder(), new CombatContainer(assassin, t, 1, CombatType.MELEE, true)).handleAttack();
+                    new CombatHitTask(assassin.getCombatBuilder(), new CombatContainer(assassin, t, 2, CombatType.MELEE, true)).handleAttack();
                     assassin.performAnimation(spinAnim);
+                    CombatFactory.poisonEntity(t, CombatPoisonEffect.PoisonType.SUPER);
                 }
             }
         } else {
