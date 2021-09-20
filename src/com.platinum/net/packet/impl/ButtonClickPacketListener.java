@@ -2361,6 +2361,18 @@ public class ButtonClickPacketListener implements PacketListener {
             return true;
         }
         switch (id) {
+
+            /** Game Mode Selector **/
+            case -11042: // Website Button
+                player.getPacketSender().openURL("https://platinum-ps.net");
+                break;
+            case -12042: // Vote Button
+                player.getPacketSender().openURL("https://pltnm.link/vote");
+                break;
+
+
+
+
             case 2494:
             case 2495:
             case 2496:

@@ -58,7 +58,7 @@ public class SkillBossHandler {
             System.out.println("Sequence serverXpCOunter = " + SkillBossConfig.serverXPCounter + " Formatted: " + formatNumber(SkillBossConfig.serverXPCounter));
             System.out.println("Remainder = " + remainder + " Formatted: " + formatNumber(remainder));
 
-            World.sendMessageDiscord("The global XP counter is currently: "
+            World.sendMessageDiscord("Global XP is currently: "
                     + formatNumber(SkillBossConfig.serverXPCounter)
                     + "! We need " + formatNumber(remainder)
                     + " until the skilling boss spawns!");
