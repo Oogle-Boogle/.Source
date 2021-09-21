@@ -1,6 +1,7 @@
 package com.platinum.world.content;
 
 import java.util.Arrays;
+import com.platinum.model.definitions.NPCDrops;
 
 public class PetPerkData {
 	
@@ -11,13 +12,14 @@ public class PetPerkData {
 		{230, 0, 1.2, 1.0, true, 1.25, 1.2},
 		{6304, 40, 2.0, 2.0, true, 2.0, 2.0},
 		{5960, 0, 1.0, 1.0, true, 2.0, 2.0},
+		{9945, 10, 1.5, 1.5, true, 2.0, 2.0},
 	};
 	
 	public static boolean hasPerks(int petId) {
 		return Arrays.stream(PERK_DATA).anyMatch(x -> (int)x[0] == petId);
 	}
 	
-	public static int getDrBonus(int petId) {
+	public static int getDropRate(int petId) {
 		return (int) Arrays.stream(PERK_DATA).map(bonus -> bonus[1]).filter(bonus -> (int)bonus != 0 && hasPerks(petId)).findFirst().orElse(0);
 	}
 	

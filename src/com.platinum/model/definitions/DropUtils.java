@@ -274,6 +274,14 @@ public class DropUtils {
     		{ 13205, 5 }, // 5.0% DR Tier 10 item
     		{ 13207, 5 }, // 5.0% DR Tier 10 item
 
+			{ 22196, 10 }, // 10% DR Assassin Gear
+			{ 22197, 10 }, // 10% DR Assassin Gear
+			{ 22198, 10 }, // 10% DR Assassin Gear
+			{ 22199, 10 }, // 10% DR Assassin Gear
+			{ 22200, 10 }, // 10% DR Assassin Gear
+			{ 22201, 10 }, // 10% DR Assassin Gear
+			{ 22203, 10 }, // 10% DR Assassin Gear
+
     		{ 15566, 10 }, // Owner Cape 10% DR
     		{ 15454, 10 }, // Collector Lvl 5 10% DR
     		{ 4780, 10 }, // Fate's Collector 10% DR
@@ -327,11 +335,13 @@ public class DropUtils {
 			{3054, 1}, //Nex
 			{6596, 1}, //Bluefire dragon
 			{6604, 1}, //Forest dragon
+			{9945, 10}, // assassin pet
 			
 	};
 	
 	private static final int[][] DR_ITEMS_IN_INVENTORY = {
-			{5197, 10}, //10% scroll inv
+			{18392, 2}, //2% scroll inv
+			{18401, 3}, //3% scroll inv
 	};
 
 	// returns an array in the order of uncapped bonus, capped bonus, total bonus.
