@@ -61,7 +61,7 @@ public class Assassin extends NPC {
 	 */
 	public static void initialize() {
 
-		TaskManager.submit(new Task( 12000, false) { // 6000
+		TaskManager.submit(new Task( 1, false) { // 6000
 
 			@Override
 			public void execute() {
@@ -161,7 +161,7 @@ public class Assassin extends NPC {
 		GroundItemManager.spawnGroundItem(player,
 				new GroundItem(new Item(10835, 100), pos, player.getUsername(), false, 150, true, 200));
 
-		if (chance >= 92) {
+		if (chance >= 95) {
 			GroundItemManager.spawnGroundItem(player,
 					new GroundItem(new Item(superrare), pos, player.getUsername(), false, 150, true, 200));
 			String itemName = (new Item(superrare).getDefinition().getName());
@@ -173,7 +173,7 @@ public class Assassin extends NPC {
 			return;
 		}
 
-		if (chance >= 70) {
+		if (chance >= 85) {
 			GroundItemManager.spawnGroundItem(player,
 					new GroundItem(new Item(rare), pos, player.getUsername(), false, 150, true, 200));
 			String itemName = (new Item(rare).getDefinition().getName());

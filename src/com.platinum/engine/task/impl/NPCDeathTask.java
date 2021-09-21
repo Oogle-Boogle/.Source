@@ -99,7 +99,7 @@ public class NPCDeathTask extends Task {
 						&& npc.getId() != 6309 && npc.getId() != 8548 && npc.getId() != 8949 && npc.getId() != 6593
 						&& npc.getId() != 9993 && npc.getId() != 9903 && npc.getId() != 2005 && npc.getId() != 421
 						&& npc.getId() != 6313 && npc.getId() != 9913 && npc.getId() != 422 && npc.getId() != 7286
-						&& npc.getId() != SkillBossConfig.npcID);
+						&& npc.getId() != 9944 && npc.getId() != SkillBossConfig.npcID);
 
 				if (!(npc.getId() >= 6142 && npc.getId() <= 6145) && !(npc.getId() > 5070 && npc.getId() < 5081))
 					npc.performAnimation(new Animation(npc.getDefinition().getDeathAnimation()));
@@ -600,7 +600,7 @@ public class NPCDeathTask extends Task {
 						if (npc.getId() == 2745) {
 							Tztok.handleDrop(npc);
 						}
-						if (npc.getId() == 7134) {
+						if (npc.getId() == 9944) {
 							Assassin.handleDrop(npc);
 						} else {
 							NPCDrops.dropItems(killer, npc); //todo check
