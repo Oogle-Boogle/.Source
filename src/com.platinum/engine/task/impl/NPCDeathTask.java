@@ -56,7 +56,7 @@ public class NPCDeathTask extends Task {
 
 	// Add Boss NPC's here!
 	private Set<Integer> BOSSES = new HashSet<>(Arrays.asList(
-			422, 8133, 9247, 172, 9203, 8493, 169, 170, 9935, 219, 12239, 3154, 5957, 5958, 7563, 5959, 6311, 33, 185, 1684, 421, 25, 2745, 7134));
+			422, 8133, 9247, 172, 9203, 8493, 169, 170, 9935, 219, 12239, 3154, 5957, 5958, 7563, 5959, 6311, 33, 185, 1684, 421, 25, 2745, 7134, 9944));
 
 	/**
 	 * The NPCDeathTask constructor.
