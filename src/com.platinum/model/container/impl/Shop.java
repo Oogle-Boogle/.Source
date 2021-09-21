@@ -1382,11 +1382,6 @@ public class Shop extends ItemContainer {
 					return new Object[] { 2500, "Stardust" };
 				case 1666:
 					return new Object[] { 3500, "Stardust" };
-				case 19935:
-					return new Object[] { 4000, "Stardust" };
-					
-				case 19936:
-					return new Object[] { 7500, "Stardust" };
 					
 				case 15332:
 					return new Object[] { 450, "Stardust" };
@@ -1609,8 +1604,6 @@ public class Shop extends ItemContainer {
 				case 5130:
 					return new Object[] { 15000, "Boss Points" };
 				case 18989:
-				case 19935:
-					return new Object[] { 8000, "Boss Points" };
 				case 19086:
 				case 19090:
 					return new Object[] { 2000, "Boss Points" };
@@ -1697,12 +1690,6 @@ public class Shop extends ItemContainer {
 				return new Object[] { 100, "Loyalty Points" };
 			} else if (shop == DONATOR_STORE_1) {
 				switch (item) {
-				case 19935: // 5$ bond
-					return new Object[] { 10, "Donation Points" };
-				case 19936: // 10$ bond
-				return new Object[] { 20, "Donation Points" };
-				case 19938: //50$ bond
-					return new Object[] { 100, "Donation Points" };
 				case 5185: //inf overload potion
 				case 14808: //Scroll of praise
 				case 19890: // 2h double drop
@@ -1810,10 +1797,7 @@ public class Shop extends ItemContainer {
 				}
 			} else if (shop == SUIC_NUMBER_ONE_TOKEN_STORE) {
 				switch (item) {
-				case 19935:
-					return new Object[] { 1500, "VIP Gems" };
-				case 19936:
-					return new Object[] { 2750, "VIP Gems" };
+
 				case 7759:
 					return new Object[] { 5000, "VIP Gems" };
 				case 7760:
@@ -1960,10 +1944,6 @@ public class Shop extends ItemContainer {
 				}
 			} else if (shop == TRIVIA_STORE) {
 				switch (item) {
-				case 19935:
-					return new Object[] { 200, "Trivia Points" };
-				case 19936:
-					return new Object[] { 300, "Trivia Points" };
 				case 15648:
 					return new Object[] { 10, "Trivia Points" };
 					
@@ -2003,13 +1983,7 @@ public class Shop extends ItemContainer {
 
 				case 6199:
 					return new Object[] { 500, "Slayer points" };
-				case 19935:
-					return new Object[] { 1250, "Slayer points" };
 				case 19890:
-					return new Object[] { 7500, "Slayer points" };
-				case 19336:
-				case 19337:
-				case 19338:
 					return new Object[] { 7500, "Slayer points" };
 				case 19339:
 				case 19340:
@@ -2037,8 +2011,6 @@ public class Shop extends ItemContainer {
 				switch (item) {
 				case 1042:
 					return new Object[] { 100, "Prestige Points" };
-				case 19935:
-					return new Object[] { 7500, "Prestige points" };
 				case 3072:
 					return new Object[] { 60, "Prestige points" };
 				case 3666:
@@ -2076,8 +2048,6 @@ public class Shop extends ItemContainer {
 
 				case 6199:
 					return new Object[] { 500, "Slayer points" };
-				case 19935:
-					return new Object[] { 1250, "Slayer points" };
 				case 19890:
 					return new Object[] { 7500, "Slayer points" };
 				case 4772:

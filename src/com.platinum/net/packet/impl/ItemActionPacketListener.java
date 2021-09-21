@@ -279,7 +279,7 @@ public class ItemActionPacketListener implements PacketListener {
 
 		case 5120:
 			StarterTasks.updateInterface(player);
-			int[] ids = { 12434, 12435, 12436, 5130, 4646, 4645, 4644, 3286, 19936, 6570, 6183 };
+			int[] ids = { 12434, 12435, 12436, 5130, 4646, 4645, 4644, 3286, 6570, 6183 };
 			for (int i = 0; i < ids.length; i++) {
 				player.getPacketSender().sendItemOnInterface(53205, ids[i], i, 1);
 			}
@@ -1003,7 +1003,7 @@ public class ItemActionPacketListener implements PacketListener {
 		case 19901:
 			int[] bravekCasketRewards = { 3980, 3912, 15454, 15459, 15464, 15449, 15374, 18768, 3069, 3071, 3981, 5133,
 					12434, 12435, 12436, 14012, 14013, 15373, 15372, 15371, 15370, 15369, 15449, 15454, 18782,
-					18782, 18782, 18782, 18782, 18782, 18782, 18989, 14808, 19935, 19936, 14044, 1050, 1419,
+					18782, 18782, 18782, 18782, 18782, 18782, 18989, 14808, 14044, 1050, 1419,
 					15426, 1053, 1055, 1057, 1046, 1048, 1044, 1040, 5130, 5130, 19040, 19040, 20000, 20000, 20001,
 					20001, 20002, 20002, 6500, 6500, 6500, 6500, 6500, 13239, 13239, 13239, 13239, 13293 };
 			if (player.getInventory().contains(19901)) {
@@ -1723,7 +1723,6 @@ public class ItemActionPacketListener implements PacketListener {
 			player.getInventory().add(4060, 1).refreshItems();
 			player.getInventory().add(4061, 1).refreshItems();
 			player.getInventory().add(4062, 1).refreshItems();
-			player.getInventory().add(19938, 5).refreshItems();
 			break;
 			
 		case 12162:

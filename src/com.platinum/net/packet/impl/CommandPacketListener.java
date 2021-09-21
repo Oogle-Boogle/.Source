@@ -352,12 +352,18 @@ public class CommandPacketListener implements PacketListener {
 		}
 
 		// gets the player's familiar if they have one, and sees if it gives a dr bonus
-		/*
-		 * switch(player.getSummoning().getFamiliar().getSummonNpc().getId()) { //TODO:
-		 * case 12315: //emerald pet cappedBonus += 10; break; case 676: //emerald Spider
-		 * cappedBonus += 15; break; case 6315: //HeartWrencher Pet cappedBonus += 20;
-		 * break; }
-		 */
+
+		/* switch(player.getSummoning().getFamiliar().getSummonNpc().getId()) {
+		 case 9945:
+		 cappedBonus += 20;
+		 break; case 676: emerald Spider
+		 cappedBonus += 15;
+		 break;
+		 case 6315:
+			 HeartWrencher Pet
+			 cappedBonus += 20;
+		  break; }*/
+
 		// enforces the cap
 		if (cappedBonus > 200)
 			cappedBonus = 200;

@@ -13,7 +13,7 @@ public class InfernalBox {
 
 	public static final int[] badRewards = { 3984, 3985, 3983, 3986, 19018, 1050, 7671, 19335, 15332, 2572};
     public static final int[] goodRewards = { 3984, 3985, 3983, 3986};
-    public static final int[] bestRewards = { 19936, 4630, 3932, 3975, 14605, 3976, 3090, 6183, 4084, 18979};
+    public static final int[] bestRewards = {  4630, 3932, 3975, 14605, 3976, 3090, 6183, 4084, 18979};
 	
     /*
      * Chances for the 3 array fields

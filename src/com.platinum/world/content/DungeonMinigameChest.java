@@ -19,7 +19,7 @@ public class DungeonMinigameChest {
 	// We roll for random on scale of 1 - 200
 	
 	// if random is 121 - 185, they get this table
-	public static int rareLoots[] = { 19475,4672,4670,4671,4673,6199,19886,3317,19935,5184,11133 };
+	public static int rareLoots[] = { 19475,4672,4670,4671,4673,6199,19886,3317,5184,11133 };
 
 	//if random is 186 to 200, they get this table
 	public static int ultraLoots[] = { 3076,3075,3078,3242,3244,3250,17931 };
@@ -28,7 +28,7 @@ public class DungeonMinigameChest {
 	//public static int amazingLoots[] = { 5022 };
 
 	// if roll is 1 - 120, they get this table 
-	public static int commonLoots[] = { 19475,4672,4670,4671,4673,6199,19886,3317,19935,5184 };
+	public static int commonLoots[] = { 19475,4672,4670,4671,4673,6199,19886,3317,5184 };
 
 	public static int getRandomItem(int[] array) {
 		return array[Misc.getRandom(array.length - 1)];

@@ -325,7 +325,7 @@ public class UseItemPacketListener implements PacketListener {
 	}
 
 	public static boolean isGambleable(Player player, int itemId) {
-		List<Integer> notGambleAbleItems = Arrays.asList(19475, 19476, 19477, 19478, 19936, 19938, 19935, 3820,
+		List<Integer> notGambleAbleItems = Arrays.asList(19475, 19476, 19477, 19478, 3820,
 				3821, 3822, 4773, 3990, 5081);
 		if (notGambleAbleItems.contains(itemId)) {
 			player.sendMessage("This item is not gambleable");

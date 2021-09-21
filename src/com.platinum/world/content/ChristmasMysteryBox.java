@@ -12,8 +12,8 @@ public class ChristmasMysteryBox {
 	*/
 
 	public static final int[] badRewards = { 6199, 6199, 15370, 9470, 19018, 1050, 7671, 19335, 15332, 2572};
-    public static final int[] goodRewards = { 14691, 19935, 15373, 19067, 15426, 14044, 2639, 18782, 14051, 5607, 14050, 14049};
-    public static final int[] bestRewards = { 19936, 14603, 14595, 14602, 14605, 898, 3090, 6183, 4084, 18979};
+    public static final int[] goodRewards = { 14691, 15373, 19067, 15426, 14044, 2639, 18782, 14051, 5607, 14050, 14049};
+    public static final int[] bestRewards = { 14603, 14595, 14602, 14605, 898, 3090, 6183, 4084, 18979};
 	
     /*
      * Chances for the 3 array fields

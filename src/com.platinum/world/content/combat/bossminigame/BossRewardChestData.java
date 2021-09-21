@@ -19,7 +19,6 @@ public class BossRewardChestData {
     public static final Item[] MEDIUM_REWARDS = {new Item(123, 1),
             new Item(10835, 500),
             new Item(10835, 600),
-            new Item(19936, 1),
             new Item(10835, 650)};
 
     public static final Item[] RARE_REWARDS = {new Item(123, 1),

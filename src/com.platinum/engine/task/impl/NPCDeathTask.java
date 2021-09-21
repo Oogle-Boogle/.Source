@@ -344,10 +344,6 @@ public class NPCDeathTask extends Task {
 						NpcTasks.doProgress(killer, NpcTaskData.KILL_500_LORD_VALOR);
 						NpcTasks.doProgress(killer, NpcTaskData.KILL_5000_LORD_VALOR);
 					}
-					if (npc.getId() == 9944) { // Hurricane warriors
-						NpcTasks.doProgress(killer, NpcTaskData.KILL_500_HURRICANE_WARRIORS);
-						NpcTasks.doProgress(killer, NpcTaskData.KILL_3000_HURRICANE_WARRIORS);
-					}
 					if (npc.getId() == 9273) { // Dzanth
 						NpcTasks.doProgress(killer, NpcTaskData.KILL_500_DZANTH);
 						NpcTasks.doProgress(killer, NpcTaskData.KILL_3000_DZANTH);

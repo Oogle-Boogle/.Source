@@ -144,7 +144,6 @@ public class ClueScrolls {
 			{new Item(14050, 1)},//Black Santa
 			{new Item(4084, 1)},//Sled
 			{new Item(10835, 50)},
-			{new Item(19936, 1)},
 			
 	};
 
