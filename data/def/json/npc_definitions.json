@@ -62193,7 +62193,7 @@
 	    "retreats": false,
 	    "poisonous": true,
 	    "respawn": -1,
-	    "maxHit": 1050,
+	    "maxHit": 600,
 	    "hitpoints": 30000000,
 	    "attackSpeed": 3,
 	    "attackAnim": 422,
