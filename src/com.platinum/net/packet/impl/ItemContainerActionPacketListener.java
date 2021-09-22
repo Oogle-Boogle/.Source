@@ -107,7 +107,7 @@ public class ItemContainerActionPacketListener implements PacketListener {
 							data.getReward().getAmount());
 					player.getPacketSender().sendString(62250, "Upgrade Chance: @gre@" + data.getChance() + "%");
 					int bagsRequired = data.getBagsRequired() == 0 ? 0 : data.getBagsRequired();
-					player.getPacketSender().sendString(62203, "Bags required: @gre@" + bagsRequired);
+					player.getPacketSender().sendString(62203, "1b Coins required: @gre@" + bagsRequired);
 				}
 			}
 			break;
@@ -119,7 +119,7 @@ public class ItemContainerActionPacketListener implements PacketListener {
 							data.getReward().getAmount());
 					player.getPacketSender().sendString(63250, "Upgrade Chance: @gre@" + data.getChance() + "%");
 					int bagsRequired = data.getBagsRequired() == 0 ? 0 : data.getBagsRequired();
-					player.getPacketSender().sendString(63203, "Bags required: @gre@" + bagsRequired);
+					player.getPacketSender().sendString(63203, "1b coins required: @gre@" + bagsRequired);
 				}
 			}
 			break;
