@@ -840,11 +840,11 @@ public class CommandPacketListener implements PacketListener {
 			NPCDropTableChecker.getSingleton().open(player);
 		}*/
 		
-		if (command[0].equalsIgnoreCase("npctasks")) {
+/*		if (command[0].equalsIgnoreCase("npctasks")) {
 			NpcTasks.updateInterface(player);
 			player.getPacketSender().sendInterfaceReset();
 			player.getPacketSender().sendInterface(65400);
-		}
+		}*/
 
 		if (command[0].equalsIgnoreCase("rankicons")) {
 			player.getPacketSender().sendInterface(61500);
@@ -1009,7 +1009,7 @@ public class CommandPacketListener implements PacketListener {
 
 		
 		
-		if (command[0].equalsIgnoreCase("uzone333")) {
+/*		if (command[0].equalsIgnoreCase("uzone333")) {
 			if (player.getAmountDonated() >= 200) {
 				TeleportHandler.teleportPlayer(player, new Position(2334, 3640, 0),
 						player.getSpellbook().getTeleportType());
@@ -1018,7 +1018,7 @@ public class CommandPacketListener implements PacketListener {
 				player.sendMessage("@red@nah fam, try again when ya got 200 donated");
 				return;
 			}
-		}
+		}*/
 		if (command[0].equalsIgnoreCase("gaz")) {
 			if (player.getAmountDonated() >= 0) {
 				TeleportHandler.teleportPlayer(player, new Position(3355, 2830, 0),
@@ -1432,14 +1432,14 @@ public class CommandPacketListener implements PacketListener {
 				e.printStackTrace();
 			}
 			}
-		if (command[0].equals("dzone333")) {
+/*		if (command[0].equals("dzone333")) {
 			if (player.getRights().isSeniorStaff() || player.getRights().isHighDonator()
 					|| player.getRights() == PlayerRights.LEGENDARY_DONATOR
 					|| player.getRights() == PlayerRights.EXTREME_DONATOR
 					|| player.getRights() == PlayerRights.SUPER_DONATOR || player.getRights() == PlayerRights.DONATOR)
 				TeleportHandler.teleportPlayer(player, new Position(3363, 9638),
 						player.getSpellbook().getTeleportType());
-		}
+		}*/
 	}
 	private static void superDonator(final Player player, String[] command, String wholeCommand) {
 		
@@ -1504,7 +1504,7 @@ public class CommandPacketListener implements PacketListener {
 
 	private static void uberDonator(final Player player, String[] command, String wholeCommand) {
 		{	
-				if (command[0].equals("delzone333")) {
+				/*if (command[0].equals("delzone333")) {
 					if (player.getRights().isSeniorStaff()
 							|| player.getRights() == PlayerRights.DELUXE_DONATOR
 							|| player.getRights() == PlayerRights.VIP_DONATOR
@@ -1513,15 +1513,15 @@ public class CommandPacketListener implements PacketListener {
 
 						TeleportHandler.teleportPlayer(player, new Position(3221, 2780),
 								player.getSpellbook().getTeleportType());
-				}
+				}*/
 			}
 
 		
-		if (command[0].equals("uzone333")) {
+	/*	if (command[0].equals("uzone333")) {
 			if (player.getRights().isSeniorStaff() || player.getRights().isHighDonator())
 				TeleportHandler.teleportPlayer(player, new Position(2408, 4724),
 						player.getSpellbook().getTeleportType());
-	}
+	}*/
 		if (command[0].equalsIgnoreCase("customtitle")) {
 			String title = wholeCommand.substring(12);
 			if (title.length() < 1 || title.length() > 21) {
