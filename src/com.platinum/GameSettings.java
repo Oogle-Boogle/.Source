@@ -8,6 +8,11 @@ import java.math.BigInteger;
 public class GameSettings {
 
 	/**
+	 * The game version
+	 */
+	public static final int GAME_VERSION = 19;
+
+	/**
 	 * Configuration
 	 */
 
@@ -72,10 +77,7 @@ public class GameSettings {
 	 */
 	public static final int GAME_PORT = 43594;
 
-	/**
-	 * The game version
-	 */
-	public static final int GAME_VERSION = 18;
+
 
 	/**
 	 * The maximum amount of players that can be logged in on a single game
