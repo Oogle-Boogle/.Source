@@ -836,9 +836,9 @@ public class CommandPacketListener implements PacketListener {
 			player.sendMessage("@red@Warning:@blu@ This NPC drains ur prayer and hits hard!");
 		}
 
-		if (command[0].equalsIgnoreCase("drops")) {
+		/*if (command[0].equalsIgnoreCase("drops")) {
 			NPCDropTableChecker.getSingleton().open(player);
-		}
+		}*/
 		
 		if (command[0].equalsIgnoreCase("npctasks")) {
 			NpcTasks.updateInterface(player);
