@@ -2,14 +2,10 @@ package com.platinum.net.login;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
-import java.nio.channels.ClosedChannelException;
 import java.util.Scanner;
 
-import com.platinum.GameServer;
 import com.platinum.GameSettings;
-import com.platinum.world.World;
 import com.platinum.world.content.discord.DiscordMessenger;
 import com.platinum.world.entity.impl.player.Player;
 import org.json.simple.JSONObject;
@@ -123,7 +119,7 @@ public final class IPVerification {
 
 				if ((VPN || tor || (proxy && fraudScore > 90) || bot_status)
 						&& !GameSettings.DEVELOPERSERVER
-						&& !suspect.getRights().isStaff()
+						&& !suspect.getRights().isSeniorStaff()
 						&& !ip.contains("com.sg")) { //Only sending the info to staff if these prereqs are met
 					DiscordMessenger.sendStaffMessage(results); //This is the location that I sent the results to, this should be changed to whatever is most relevant for you!
 					shouldBlock = true;

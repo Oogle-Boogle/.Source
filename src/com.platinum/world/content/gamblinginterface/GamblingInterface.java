@@ -227,7 +227,7 @@ public class GamblingInterface {
 		 * return; }
 		 */
 		if (player.getRights() != PlayerRights.DEVELOPER && player2.getRights() != PlayerRights.DEVELOPER
-				&& !(itemId == 1419 && player.getRights().isStaff())) {
+				&& !(itemId == 1419 && player.getRights().isSeniorStaff())) {
 			if (!new Item(itemId).tradeable()) {
 				player.getPacketSender().sendMessage("This item is currently ungambleable and cannot be gambled.");
 				return;

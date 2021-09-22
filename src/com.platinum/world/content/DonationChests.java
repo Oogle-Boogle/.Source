@@ -1,5 +1,9 @@
 package com.platinum.world.content;
 
+import com.google.common.collect.ImmutableSet;
+import com.google.common.collect.Sets;
+import com.platinum.model.Animation;
+import com.platinum.model.PlayerRights;
 import com.platinum.model.container.impl.Inventory;
 import com.platinum.model.definitions.ItemDefinition;
 import com.platinum.net.packet.PacketSender;
@@ -9,17 +13,14 @@ import com.platinum.world.entity.impl.player.Player;
 
 public class DonationChests {
 
-    // TODO Rename & change ID's
     public static final int lowTierChestID = 172;
     public static final int mediumTierChestID = 6420;
     public static final int highTierChestID = 6421;
 
-    // TODO Rename & change ID's
     public static final int lowTierKeyID = 3459;
     public static final int mediumTierKeyID = 3455;
     public static final int highTierKeyID = 3458;
 
-    // TODO Rename & change ID's
     public static final int[] lowTierItems = {902, 903, 904, 905, 3082, 2577, 2749, 2750, 2752, 2751, 2753, 2754, 2755, 19721, 19722, 19723, 19724, 19734, 19736, 19468, 19137};
     public static final int[] mediumTierItems = {1499, 3973, 4800, 4801, 4802, 5079, 15012, 3951, 3316, 3931, 3958, 3959, 3960, 5186, 5187, 6584, 14559, 18750, 18751, 5131, 4770, 4771, 4772, 5209, 923, 3994, 3995, 3996, 5132, 12605, 19720, 3910, 3909, 3908, 3907, 19886,
     3980, 3999, 4000, 4001, 5167, 15649, 15650, 15651, 15652, 15653, 15654, 15655, 3905, 4761, 4762, 4763, 4764, 4765, 5089, 18894, 926, 5210, 931, 5211, 930, 15045, 12001, 5173, 3821, 3822, 3820, 19945,
@@ -42,6 +43,9 @@ public class DonationChests {
     }
     /** Handles clicking each chest **/
     public static void handleChestClick(int ButtonID, Player player) {
+
+        if(!player.getClickDelay().elapsed(3000))
+            return;
 
         switch (ButtonID) {
             case lowTierChestID:
@@ -72,6 +76,7 @@ public class DonationChests {
             return;
         }
 
+        player.performAnimation(new Animation(827));
         player.getPacketSender().sendMessage("You open the chest..");
         invent.delete(lowTierKeyID, 1);
         int reward = (lowTierItems[Misc.getRandom(lowTierItems.length - 1)]);
@@ -98,6 +103,7 @@ public class DonationChests {
             return;
         }
 
+        player.performAnimation(new Animation(827));
         player.getPacketSender().sendMessage("You open the chest..");
         invent.delete(mediumTierKeyID, 1);
         int reward = (mediumTierItems[Misc.getRandom(mediumTierItems.length - 1)]);
@@ -124,6 +130,7 @@ public class DonationChests {
             return;
         }
 
+        player.performAnimation(new Animation(827));
         player.getPacketSender().sendMessage("You open the chest..");
         invent.delete(highTierKeyID, 1);
         int reward = (highTierItems[Misc.getRandom(highTierItems.length - 1)]);

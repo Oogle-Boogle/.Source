@@ -3,9 +3,6 @@ package com.platinum.net.packet.impl;
 import com.everythingrs.vote.Vote;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import com.mashape.unirest.http.HttpResponse;
-import com.mashape.unirest.http.Unirest;
-import com.mashape.unirest.http.exceptions.UnirestException;
 import com.platinum.GameServer;
 import com.platinum.GameSettings;
 import com.platinum.engine.task.Task;
@@ -65,14 +62,10 @@ import com.platinum.world.entity.impl.player.PlayerHandler;
 import com.platinum.world.entity.impl.player.PlayerSaving;
 import com.platinum.world.teleportinterface.TeleportInterface;
 import com.platinum.world.teleportinterface.TeleportInterface.Bosses;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
 
 import java.io.File;
 import java.io.FileReader;
 import java.util.Arrays;
-import java.util.Scanner;
 
 //import com.platinum.world.content.dialogue.impl.Arianwyn;
 
@@ -1434,7 +1427,7 @@ public class CommandPacketListener implements PacketListener {
 			}
 			}
 		if (command[0].equals("dzone333")) {
-			if (player.getRights().isStaff() || player.getRights().isHighDonator()
+			if (player.getRights().isSeniorStaff() || player.getRights().isHighDonator()
 					|| player.getRights() == PlayerRights.LEGENDARY_DONATOR
 					|| player.getRights() == PlayerRights.EXTREME_DONATOR
 					|| player.getRights() == PlayerRights.SUPER_DONATOR || player.getRights() == PlayerRights.DONATOR)
@@ -1506,7 +1499,7 @@ public class CommandPacketListener implements PacketListener {
 	private static void uberDonator(final Player player, String[] command, String wholeCommand) {
 		{	
 				if (command[0].equals("delzone333")) {
-					if (player.getRights().isStaff()
+					if (player.getRights().isSeniorStaff()
 							|| player.getRights() == PlayerRights.DELUXE_DONATOR
 							|| player.getRights() == PlayerRights.VIP_DONATOR
 
@@ -1519,7 +1512,7 @@ public class CommandPacketListener implements PacketListener {
 
 		
 		if (command[0].equals("uzone333")) {
-			if (player.getRights().isStaff() || player.getRights().isHighDonator())
+			if (player.getRights().isSeniorStaff() || player.getRights().isHighDonator())
 				TeleportHandler.teleportPlayer(player, new Position(2408, 4724),
 						player.getSpellbook().getTeleportType());
 	}
@@ -1561,7 +1554,7 @@ public class CommandPacketListener implements PacketListener {
 		}*/
 		if (wholeCommand.equalsIgnoreCase("holywaters") || wholeCommand.equalsIgnoreCase("hw")) {
 
-			if (player.getRights().isStaff() || player.getRights() == PlayerRights.UBER_DONATOR
+			if (player.getRights().isSeniorStaff() || player.getRights() == PlayerRights.UBER_DONATOR
 					|| player.getRights() == PlayerRights.LEGENDARY_DONATOR
 					|| player.getRights() == PlayerRights.DELUXE_DONATOR)
 				TeleportHandler.teleportPlayer(player, new Position(2318, 9914, 0),
@@ -1663,6 +1656,24 @@ public class CommandPacketListener implements PacketListener {
 
 	private static void helperCommands(final Player player, String[] command, String wholeCommand) {
 
+		if (command[0].equalsIgnoreCase("findnpc")) {
+			String name = wholeCommand.substring(command[0].length() + 1);
+			player.getPacketSender().sendMessage("Finding item id for item - " + name);
+			boolean found = false;
+			for (int i = 0; i < NpcDefinition.getDefinitions().length; i++) {
+				if (NpcDefinition.forId(i) == null || NpcDefinition.forId(i).getName() == null) {
+					continue;
+				}
+				if (NpcDefinition.forId(i).getName().toLowerCase().contains(name)) {
+					player.getPacketSender().sendMessage("Found NPC with name [" + NpcDefinition.forId(i).getName().toLowerCase() + "] - id: " + i);
+					found = true;
+				}
+			}
+			if (!found) {
+				player.getPacketSender().sendMessage("No NPC with name [" + name + "] has been found!");
+			}
+		}
+
 		if (command[0].equals("checkip")) {
 			try {
 				Player target = World.getPlayerByName(wholeCommand.substring(command[0].length() + 1));
@@ -1700,7 +1711,7 @@ public class CommandPacketListener implements PacketListener {
 			if (command.length > 1 && command[1].equals("all")) {
 				for (Player players : World.getPlayers()) {
 					if (players != null) {
-						if (players.getRights().isStaff()) {
+						if (players.getRights().isSeniorStaff()) {
 							TeleportHandler.teleportPlayer(players, new Position(2846, 5147), TeleportType.NORMAL);
 						}
 					}

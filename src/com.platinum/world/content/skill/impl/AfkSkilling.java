@@ -2,7 +2,6 @@ package com.platinum.world.content.skill.impl;
 
 import com.platinum.engine.task.Task;
 import com.platinum.engine.task.TaskManager;
-import com.platinum.engine.task.impl.WalkToTask;
 import com.platinum.model.Animation;
 import com.platinum.model.Skill;
 import com.platinum.world.content.combat.weapon.FightStyle;
@@ -19,7 +18,7 @@ public class AfkSkilling {
     public static boolean canEarnAfkXP(Player player, Skill skill) {
         return player.getRights().isMember()
                 || player.getSecondaryPlayerRights().isSecondaryMember()
-                || player.getRights().isStaff()
+                || player.getRights().isSeniorStaff()
                 || player.getSkillManager().getMaxLevel(skill) >= 80;
     }
 

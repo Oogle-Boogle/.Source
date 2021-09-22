@@ -113,7 +113,7 @@ public class RandomRewards {
 
 
 
-            if (rights.isMember() || rights.isStaff()) {
+            if (rights.isMember() || rights.isSeniorStaff()) {
                 player.getBank(player.getCurrentBankTab()).add(stoneID, amountToGive);
                 player.sendMessage("As an "
                         + rights

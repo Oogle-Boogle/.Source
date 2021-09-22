@@ -1,6 +1,5 @@
 package com.platinum.world.content.partyroom;
 
-import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -8,7 +7,6 @@ import com.platinum.GameSettings;
 import com.platinum.engine.task.Task;
 import com.platinum.engine.task.TaskManager;
 import com.platinum.model.Animation;
-import com.platinum.model.GameMode;
 import com.platinum.model.GameObject;
 import com.platinum.model.Graphic;
 import com.platinum.model.GroundItem;
@@ -95,7 +93,7 @@ public class PartyRoomManager {
     }
 
     public static void sendLever(Player player) {
-        if (player.getRights().isStaff()) {
+        if (player.getRights().isSeniorStaff()) {
             player.setDialogueActionId(DIALOGUE_ACTION_ID);
             DialogueManager.start(player, DIALOGUE);
         } else {
@@ -113,7 +111,7 @@ public class PartyRoomManager {
     }
 
     public static void deposit(Player player, Item item, int slot) {
-        if (!player.getRights().isStaff()) {
+        if (!player.getRights().isSeniorStaff()) {
             player.sendMessage("Only staff members can add items to the chest!");
             return;
         }
@@ -225,7 +223,7 @@ public class PartyRoomManager {
     }
 
     public static void sendBalloons(Player player) {
-        if (!player.getRights().isStaff()) {
+        if (!player.getRights().isSeniorStaff()) {
             if (System.currentTimeMillis() - lastBalloons < BALLOON_INTERVAL * 60_000) {
                 player.getPacketSender().sendMessage("The balloons cannot be pulled right now.");
                 return;

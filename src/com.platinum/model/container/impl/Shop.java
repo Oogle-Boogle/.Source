@@ -462,9 +462,7 @@ public class Shop extends ItemContainer {
 				playerCurrencyAmount = player.getPointsHandler().getTriviaPoints();
 			} else if (id == BOSS_POINT_STORE) {
 				playerCurrencyAmount = player.getBossPoints();
-			} else if (id == DONATOR_STORE_2) {
-				playerCurrencyAmount = player.getPointsHandler().getDonationPoints();
-			} else if (id == DONATOR_STORE_3) {
+			} else if (id == DONATOR_PET_SHOP) {
 				playerCurrencyAmount = player.getPointsHandler().getDonationPoints();
 			} else if (id == PRESTIGE_STORE) {
 				playerCurrencyAmount = player.getPointsHandler().getPrestigePoints();
@@ -559,9 +557,7 @@ public class Shop extends ItemContainer {
 							player.getPointsHandler().setTriviaPoints(-value, true);
 						} else if (id == VOID_STORE) {
 							player.getPointsHandler().setCustompestcontrolpoints(-value, true);
-						} else if (id == DONATOR_STORE_2) {
-							player.getPointsHandler().setDonationPoints(-value, true);
-						} else if (id == DONATOR_STORE_3) {
+						} else if (id == DONATOR_PET_SHOP) {
 							player.getPointsHandler().setDonationPoints(-value, true);
 						} else if (id == PRESTIGE_STORE) {
 							player.getPointsHandler().setPrestigePoints(-value, true);
@@ -618,12 +614,10 @@ public class Shop extends ItemContainer {
 							player.getPointsHandler().setTriviaPoints(-value * canBeBought, true);
 						} else if (id == BOSS_POINT_STORE) {
 							player.setBossPoints(player.getBossPoints() - (value * canBeBought));
-						} else if (id == DONATOR_STORE_2) {
+						} else if (id == DONATOR_PET_SHOP) {
 							player.getPointsHandler().setDonationPoints(-value * canBeBought, true);
 						} else if (id == VOID_STORE) {
 							player.getPointsHandler().setCustompestcontrolpoints(-value * canBeBought, true);
-						} else if (id == DONATOR_STORE_3) {
-							player.getPointsHandler().setDonationPoints(-value * canBeBought, true);
 						} else if (id == PRESTIGE_STORE) {
 							player.getPointsHandler().setPrestigePoints(-value * canBeBought, true);
 						} else if (id == SLAYER_STORE) {
@@ -769,8 +763,8 @@ public class Shop extends ItemContainer {
 			return true;
 		if (shopId == DUNGEONEERING_STORE || shopId == BOSS_POINT_STORE || shopId == SANTAS_STORE || shopId == RAIDSTORE
 				|| shopId == SKILLING_STORE || shopId == STARTER_STORE || shopId == TRIVIA_STORE
-				|| shopId == DONATOR_STORE_1 || shopId == DONATOR_STORE_2 || shopId == VOID_STORE
-				|| shopId == DONATOR_STORE_3 || shopId == PKING_REWARDS_STORE || shopId == VOTING_REWARDS_STORE
+				|| shopId == DONATOR_STORE_1 || shopId == DONATOR_PET_SHOP || shopId == VOID_STORE
+				|| shopId == PKING_REWARDS_STORE || shopId == VOTING_REWARDS_STORE
 				|| shopId == DUNGEON_POINTS_STORE || shopId == RECIPE_FOR_DISASTER_STORE || shopId == DBZ_TOKEN_SHOP
 				|| shopId == AGILITY_TICKET_STORE || shopId == TOKEN_STORE || shopId == SUIC_NUMBER_ONE_TOKEN_STORE
 				|| shopId == GRAVEYARD_STORE || shopId == TOKKUL_EXCHANGE_STORE || shopId == PRESTIGE_STORE
@@ -1697,13 +1691,13 @@ public class Shop extends ItemContainer {
 				return new Object[] { 100, "Loyalty Points" };
 			} else if (shop == DONATOR_STORE_1) {
 				switch (item) {
-				case 19935: // 5$ bond
-					return new Object[] { 10, "Donation Points" };
-				case 19936: // 10$ bond
-				return new Object[] { 20, "Donation Points" };
-				case 19938: //50$ bond
-					return new Object[] { 100, "Donation Points" };
-				case 5185: //inf overload potion
+					case 3459: // Low Key
+						return new Object[] { 1, "Donation Points" };
+					case 3455: // Med Key
+						return new Object[] { 30, "Donation Points" };
+					case 3458: // Top Key
+						return new Object[] { 100, "Donation Points" };
+					case 5185: //inf overload potion
 				case 14808: //Scroll of praise
 				case 19890: // 2h double drop
 			return new Object[] { 25, "Donation Points" };
@@ -1729,7 +1723,7 @@ public class Shop extends ItemContainer {
 					return new Object[] { 75, "Custom Pest Control Points" };
 				}
 				return new Object[] { 100, "Custom Pest Control Points" };
-			} else if (shop == DONATOR_STORE_2) {
+			} else if (shop == DONATOR_PET_SHOP) {
 				switch (item) {
 				case 1647: //Pet MewTwo
 				case 1648: //Pet Antman
@@ -1755,29 +1749,6 @@ public class Shop extends ItemContainer {
 				case 11996: //Pet KBD
 				case 11981: // Pet Blue Dragon
 								return new Object[] { 50, "Donation Points" };
-				}
-				return new Object[] { 100, "Donation Points" };
-			} else if (shop == DONATOR_STORE_3) {
-				switch (item) {
-				case 14691: //pet mystery box
-					return new Object[] { 10, "Donation Points" };
-					case 3638: //advanced pet box
-					return new Object[] { 20, "Donation Points" };
-					case 3639: //extreme pet box
-					return new Object[] { 40, "Donation Points" };
-					case 3640: //supreme pet box
-					return new Object[] { 50, "Donation Points" };
-					case 3988: //extreme box
-					return new Object[] { 30, "Donation Points" };
-					case 4635: //infernal Mystery Box
-					return new Object[] { 25, "Donation Points" };
-					case 6183: // Donation Box
-					return new Object[] { 15, "Donation Points" };
-					case 18768: //Ultra Donation box
-					return new Object[] { 40, "Donation Points" };
-					case 6199: // advanced box
-					case 15374: // Supreme mystery box
-	return new Object[] { 25, "Donation Points" };
 				}
 				return new Object[] { 100, "Donation Points" };
 			} else if (shop == AGILITY_TICKET_STORE) {
@@ -2161,8 +2132,7 @@ public class Shop extends ItemContainer {
 
 
 	public static final int DONATOR_STORE_1 = 48;
-	public static final int DONATOR_STORE_2 = 49;
-	public static final int DONATOR_STORE_3 = 54;
+	public static final int DONATOR_PET_SHOP = 49;
 
 	public static final int TRIVIA_STORE = 50;
 

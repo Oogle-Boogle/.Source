@@ -133,7 +133,7 @@
         "id": 5,
         "type": "OPTION",
         "lines": 3,
-        "line1": "I'd like to know how many funds I have in total",
+        "line1": "I'd like to know how much I have in total",
         "line2": "I'd like to teleport to the Member's Zone",
         "line3": "Cancel",
         "next": -1,

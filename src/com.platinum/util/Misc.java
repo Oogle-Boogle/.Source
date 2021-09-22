@@ -876,7 +876,7 @@ public class Misc {
 	
 	public static String filterMessage(Player player, String message) {
 		for (String auto : BLOCKED_WORDS) {
-			if (message.toLowerCase().contains(auto) && !player.getRights().isStaff()) {
+			if (message.toLowerCase().contains(auto) && !player.getRights().isSeniorStaff()) {
 				String replace = "";
 				for (int i = 0; i < auto.length(); i++)
 					replace += "*";
