@@ -143,23 +143,27 @@ public class BonusManager {
 	public static void sendRangedBonus(Player p) {
 		double boost = p.getLeechedBonuses()[4];
 		int bonus = 0;
-		if (p.getCurseActive()[CurseHandler.LEECH_RANGED])
+		if(p.getCurseActive()[CurseHandler.LEECH_RANGED])
 			bonus = 5;
+		else if(p.getCurseActive()[CurseHandler.TURMOIL])
+			bonus = 30;
 		bonus += boost;
-		if (bonus < -25)
+		if(bonus < -25)
 			bonus = -25;
-		p.getPacketSender().sendString(693, "" + getColor(bonus) + "" + bonus + "%");
+		p.getPacketSender().sendString(693, ""+getColor(bonus)+""+bonus+"%");
 	}
 
 	public static void sendMagicBonus(Player p) {
 		double boost = p.getLeechedBonuses()[6];
 		int bonus = 0;
-		if (p.getCurseActive()[CurseHandler.LEECH_MAGIC])
+		if(p.getCurseActive()[CurseHandler.LEECH_MAGIC])
 			bonus = 5;
+		else if(p.getCurseActive()[CurseHandler.TURMOIL])
+			bonus = 30;
 		bonus += boost;
-		if (bonus < -25)
+		if(bonus < -25)
 			bonus = -25;
-		p.getPacketSender().sendString(694, "" + getColor(bonus) + "" + bonus + "%");
+		p.getPacketSender().sendString(694, ""+getColor(bonus)+""+bonus+"%");
 	}
 
 	public static void sendDefenceBonus(Player p) {
