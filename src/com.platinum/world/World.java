@@ -14,7 +14,6 @@ import com.platinum.world.content.minigames.impl.LastManStanding;
 import com.platinum.world.content.minigames.impl.PestControl;
 import com.platinum.world.content.minimes.MiniMeData;
 import com.platinum.world.content.serverperks.GlobalPerks;
-import com.platinum.world.content.skillingboss.SkillBossHandler;
 import com.platinum.world.entity.Entity;
 import com.platinum.world.entity.EntityHandler;
 import com.platinum.world.entity.impl.CharacterList;
@@ -106,7 +105,7 @@ public class World {
 	}
 
 	public static void sendStaffMessage(String message) {
-		players.stream().filter(p -> p != null && (p.getRights().isStaff())).forEach(p -> p.getPacketSender().sendMessage(message));
+		players.stream().filter(p -> p != null && (p.getRights().isSeniorStaff())).forEach(p -> p.getPacketSender().sendMessage(message));
 		DiscordMessenger.sendStaffMessage(message);
 	}
 

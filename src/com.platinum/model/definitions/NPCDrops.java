@@ -300,6 +300,8 @@ public class NPCDrops {
 	 * @param npc NPC to receive drop FROM.
 	 */
 	public static void dropItems(Player p, NPC npc) {
+
+
 		if (npc.getLocation() == Location.WARRIORS_GUILD)
 			WarriorsGuild.handleDrop(p, npc);
 		NPCDrops drops = NPCDrops.forId(npc.getId());
@@ -307,6 +309,12 @@ public class NPCDrops {
 			return;
 		if (npc.getLocation() == Location.RAIDS)
 			return;
+
+		if ((Misc.random(1000) == 777) && !p.getLocation().equals(Location.BOSS_TIER_LOCATION)) {
+			p.getInventory().add(DonorBonds.fiveBond, 1);
+			p.sendMessage("@red@You've received a $5 bond!");
+			World.sendMessageDiscord(p.getUsername() + " has just received a $5 Bond from " + npc.getDefinition().getName() + "!");
+		}
 
 		final boolean goGlobal = p.getPosition().getZ() >= 0 && p.getPosition().getZ() < 4;
 		final Position npcPos = npc.getPosition().copy();

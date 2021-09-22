@@ -27,7 +27,6 @@ import com.platinum.model.movement.MovementQueue;
 import com.platinum.util.Misc;
 import com.platinum.util.RandomUtility;
 import com.platinum.world.World;
-import com.platinum.world.content.Achievements.AchievementData;
 import com.platinum.world.content.Artifacts;
 import com.platinum.world.content.BankPin;
 import com.platinum.world.content.CustomObjects;
@@ -37,7 +36,7 @@ import com.platinum.world.content.Juggernaut;
 import com.platinum.world.content.Lottery;
 import com.platinum.world.content.LotterySystem;
 import com.platinum.world.content.LoyaltyProgramme;
-import com.platinum.world.content.MemberScrolls;
+import com.platinum.world.content.DonorBonds;
 import com.platinum.world.content.NpcBattles;
 import com.platinum.world.content.PkSets;
 import com.platinum.world.content.PlayerPanel;
@@ -1239,7 +1238,7 @@ public class DialogueOptions {
 				}
 				break;
 			case 5:
-				DialogueManager.start(player, MemberScrolls.getTotalFunds(player));
+				DialogueManager.start(player, DonorBonds.getTotalFunds(player));
 				break;
 			case 8:
 				LoyaltyProgramme.open(player);
@@ -1655,7 +1654,7 @@ public class DialogueOptions {
 				break;
 			case 76:
 				player.getPacketSender().sendInterfaceRemoval();
-				if (player.getRights().isStaff()) {
+				if (player.getRights().isSeniorStaff()) {
 					player.getPacketSender().sendMessage("You cannot change your rank.");
 					return;
 				}
@@ -1782,7 +1781,7 @@ public class DialogueOptions {
 				break;
 
 			case 5:
-				DialogueManager.start(player, MemberScrolls.getTotalFunds(player));
+				DialogueManager.start(player, DonorBonds.getTotalFunds(player));
 				break;
 			case 15:
 				DialogueManager.start(player, 35);

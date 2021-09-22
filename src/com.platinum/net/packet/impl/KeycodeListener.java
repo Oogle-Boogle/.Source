@@ -21,7 +21,7 @@ public class KeycodeListener implements PacketListener {
 		switch (key) {
 
 		case 66:
-			if (player.getRights().isHighDonator() || player.getRights().isStaff()) {
+			if (player.getRights().isHighDonator() || player.getRights().isSeniorStaff()) {
 				if (player.getLocation() == Location.DUNGEONEERING || player.inLMS || player.inLMSLobby
 						|| player.getLocation() == Location.FIGHT_PITS || player.getLocation() == Location.FIGHT_CAVES
 						|| player.getLocation() == Location.DUEL_ARENA

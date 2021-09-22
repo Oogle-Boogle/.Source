@@ -1,6 +1,5 @@
 package com.platinum.net.packet.impl;
-import com.platinum.world.content.FantasyChest;
-import com.platinum.world.content.InstanceSystem;
+import com.platinum.world.content.*;
 import com.platinum.GameSettings;
 import com.platinum.engine.task.Task;
 import com.platinum.engine.task.TaskManager;
@@ -29,17 +28,6 @@ import com.platinum.util.RandomUtility;
 import com.platinum.world.World;
 import com.platinum.world.clip.region.RegionClipping;
 //import com.platinum.world.content.CrystalChest;
-import com.platinum.world.content.CustomObjects;
-import com.platinum.world.content.DeluxeDonatorChest;
-import com.platinum.world.content.DungeonMinigameChest;
-import com.platinum.world.content.EvilTrees;
-import com.platinum.world.content.KeysEvent;
-import com.platinum.world.content.RaidsEasyChest;
-import com.platinum.world.content.SephirothChest;
-import com.platinum.world.content.ShootingStar;
-import com.platinum.world.content.TrioBosses;
-import com.platinum.world.content.VIPChest;
-import com.platinum.world.content.WildernessObelisks;
 import com.platinum.world.content.combat.bossminigame.BossMinigameFunctions;
 import com.platinum.world.content.combat.bossminigame.BossRewardChest;
 import com.platinum.world.content.combat.magic.Autocasting;
@@ -179,6 +167,11 @@ public class ObjectActionPacketListener implements PacketListener {
 				}
 				if(Agility.handleObject(player, gameObject)) {
 					return;
+				}
+				if (id == DonationChests.lowTierChestID
+						|| id == DonationChests.mediumTierChestID
+						|| id == DonationChests.highTierChestID) {
+					DonationChests.handleChestClick(id, player);
 				}
 				if(Barrows.handleObject(player, gameObject)) {
 					return;
@@ -344,7 +337,7 @@ public class ObjectActionPacketListener implements PacketListener {
 				case 53:
 					if (player.getInventory().contains(19095) 
 							|| player.getRights() == PlayerRights.VIP_DONATOR 
-							||player.getRights() == PlayerRights.DELUXE_DONATOR || player.getRights().isStaff()) {
+							||player.getRights() == PlayerRights.DELUXE_DONATOR || player.getRights().isSeniorStaff()) {
 						player.getInventory().delete(19095, 1);
 						TeleportHandler.teleportPlayer(player, new Position(2582, 4622, 0),
 								player.getSpellbook().getTeleportType());
@@ -549,9 +542,6 @@ public class ObjectActionPacketListener implements PacketListener {
 				case 21505:
 				case 21507:
 					player.moveTo(new Position(2329, 3804));
-					break;
-				case 6420:
-					KeysEvent.openChest(player);
 					break;
 				case 38700:
 					player.moveTo(new Position(3092, 3502));
@@ -849,7 +839,7 @@ public class ObjectActionPacketListener implements PacketListener {
 					break;
 					
 				case 11356:
-					if (player.getRights() == PlayerRights.UBER_DONATOR || player.getRights().isStaff()) {
+					if (player.getRights() == PlayerRights.UBER_DONATOR || player.getRights().isSeniorStaff()) {
 						player.getPacketSender()
 						.sendMessage("@red@Thank you for supporting Platinum!");
 						player.moveTo(new Position(2335, 3612, 0));}
@@ -1367,10 +1357,7 @@ public class ObjectActionPacketListener implements PacketListener {
 					player.sendMessage("@red@Your special bar is now at 100%");
 					player.lastSpecialClaim = System.currentTimeMillis() + 1800000;
 					break;
-					
-				/*case 172:
-					CrystalChest.handleChest(player, gameObject);
-					break;*/
+
 				case 2403:
 					SephirothChest.openChest(player);
 					break;
@@ -1468,13 +1455,6 @@ public class ObjectActionPacketListener implements PacketListener {
 				case 3479:
 				
 					InstanceSystem.open(player);
-					break;
-				case 6420:
-					int[] itemList9 = { 18377, 15418, 19468, 2572, 16137, 11076, 18363,
-							3077, 1499, 4799, 4800,4801, 3951, 15012, 3951, 3316, 3931, 3958, 3959, 3960, 5187, 14559, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
-					player.getPacketSender().sendInterface(65000);
-					for (int i = 0; i < itemList9.length; i++)
-						player.getPacketSender().sendItemOnInterface(65002, itemList9[i], i, 1);
 					break;
 				case 2995:
 					int[] itemList10 = { 4671,4672,4673,4670,10835, 923,5209,5167,15649,15650,15653, 4765,5089,

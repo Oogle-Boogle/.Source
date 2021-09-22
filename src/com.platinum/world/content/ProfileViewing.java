@@ -108,7 +108,7 @@ public class ProfileViewing {
 			c.getPA().sendFrame126("Likes: " + p.getLikes(), 36513);
 			other.sendMessage("You have recieved a like from " + Misc.ucFirst(c.getUsername()));
 		} else {
-			if (!c.getRights().isMember() || !c.getRights().isStaff()) {
+			if (!c.getRights().isMember() || !c.getRights().isSeniorStaff()) {
 				c.sendMessage("You need to be at least a donator plus to leave a negative rate.");
 				return;
 			}

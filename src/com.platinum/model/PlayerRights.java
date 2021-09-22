@@ -68,11 +68,12 @@ public enum PlayerRights {
 		this.experienceGainModifier = experienceGainModifier;
 	}
 	
-	private static final ImmutableSet<PlayerRights> STAFF = Sets.immutableEnumSet(ADMINISTRATOR, OWNER, DEVELOPER, HADMIN);
+	private static final ImmutableSet<PlayerRights> SENIOR_STAFF = Sets.immutableEnumSet(ADMINISTRATOR, OWNER, DEVELOPER, HADMIN);
 	private static final ImmutableSet<PlayerRights> MODS = Sets.immutableEnumSet(SUPPORT, MODERATOR);
 	private static final ImmutableSet<PlayerRights> HIGH_RANK_STAFF = Sets.immutableEnumSet(ADMINISTRATOR, OWNER, DEVELOPER, COMMUNITY_MANAGER,HADMIN);
 	private static final ImmutableSet<PlayerRights> HAS_BAN_RIGHTS = Sets.immutableEnumSet(OWNER, DEVELOPER,ADMINISTRATOR, HADMIN);
 	private static final ImmutableSet<PlayerRights> MEMBERS = Sets.immutableEnumSet(DONATOR, SUPER_DONATOR, EXTREME_DONATOR, LEGENDARY_DONATOR, UBER_DONATOR, DELUXE_DONATOR, VIP_DONATOR);
+	private static final ImmutableSet<PlayerRights> ALL_STAFF = Sets.immutableEnumSet(MODERATOR, ADMINISTRATOR, OWNER, DEVELOPER, COMMUNITY_MANAGER, HADMIN);
 	/*
 	 * The yell delay for the rank
 	 * The amount of seconds the player with the specified rank must wait before sending another yell message.
@@ -120,8 +121,12 @@ public enum PlayerRights {
 		return experienceGainModifier;
 	}
 	
+	public boolean isSeniorStaff() {
+		return SENIOR_STAFF.contains(this);
+	}
+
 	public boolean isStaff() {
-		return STAFF.contains(this);
+		return ALL_STAFF.contains(this);
 	}
 	
 	public boolean isMods() {

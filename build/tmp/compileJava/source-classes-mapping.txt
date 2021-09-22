@@ -1810,8 +1810,8 @@ com/platinum/world/content/combat/strategy/impl/BallakPummeler.java
 com/platinum/net/packet/impl/SilencedPacketListener.java
  com.platinum.net.packet.impl.SilencedPacketListener
 com/platinum/world/content/MemberScrolls.java
- com.platinum.world.content.MemberScrolls
- com.platinum.world.content.MemberScrolls$1
+ com.platinum.world.content.DonorBonds
+ com.platinum.world.content.DonorBonds$1
 com/platinum/util/DiscordRewards.java
  com.platinum.util.DiscordRewards
 com/platinum/world/content/skill/impl/construction/sawmill/SawmillOperator.java

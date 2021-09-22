@@ -3,7 +3,6 @@ package com.platinum.world.content;
 import java.util.Arrays;
 import java.util.List;
 
-import com.platinum.GameServer;
 import com.platinum.GameSettings;
 import com.platinum.engine.task.Task;
 import com.platinum.engine.task.TaskManager;
@@ -350,7 +349,7 @@ public class InstanceSystem {
 
 	/** Restores the players HP when leaving the area. **/
 	public static void restoreHP(Player player) {
-		if (player.getRights().isMember() || player.getRights().isStaff()) {
+		if (player.getRights().isMember() || player.getRights().isSeniorStaff()) {
 			if (player.getSkillManager().getCurrentLevel(Skill.CONSTITUTION) < player.getSkillManager().getMaxLevel(Skill.CONSTITUTION)) {
 				player.getSkillManager().setCurrentLevel(Skill.CONSTITUTION, player.getSkillManager().getMaxLevel(Skill.CONSTITUTION), true);
 			}
@@ -359,7 +358,7 @@ public class InstanceSystem {
 
 	/** Restores the players skills when leaving the area. **/
 	public static void restoreStats(Player player) {
-		if (player.getRights().isMember() || player.getRights().isStaff()) {
+		if (player.getRights().isMember() || player.getRights().isSeniorStaff()) {
 			if (player.getSkillManager().getCurrentLevel(Skill.PRAYER) < player.getSkillManager().getMaxLevel(Skill.PRAYER)) {
 				player.getSkillManager().setCurrentLevel(Skill.PRAYER, player.getSkillManager().getMaxLevel(Skill.PRAYER), true);
 			}
@@ -368,7 +367,7 @@ public class InstanceSystem {
 
 	/** Restores the players special attack when leaving the area. **/
 	public static void restoreSpec(Player player) {
-		if (player.getRights().isMember() || player.getRights().isStaff()) {
+		if (player.getRights().isMember() || player.getRights().isSeniorStaff()) {
 			player.setSpecialPercentage(100);
 			CombatSpecial.updateBar(player);
 			player.performGraphic(new Graphic(1302));
