@@ -22,7 +22,7 @@ public class VoteMbox {
 		int chance = RandomUtility.exclusiveRandom(100);
 		if (chance >= 0 && chance <= 70) {
 			player.getInventory().add(badRewards[Misc.getRandom(badRewards.length - 1)], 1);
-			player.sendMessage("You were unlucky and got an tax bag :(");
+			player.sendMessage("You were unlucky and got an Platinum 1b coin :(");
 		} else if(chance >=71 && chance <=95) {
 			player.getInventory().add(goodRewards[Misc.getRandom(goodRewards.length - 1)], 1);
 			player.sendMessage("You got a uncommon reward");

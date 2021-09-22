@@ -95,7 +95,7 @@ public class ItemContainerActionPacketListener implements PacketListener {
 			}
 			int value = (int) ((int) obj[0] * 0.85);
 			String name = item.getDefinition().getName();
-			player.sendMessage("@blu@The shop buys @red@" + name + " for " + value + " Tax Bags");
+			player.sendMessage("@blu@The shop buys @red@" + name + " for " + value + " Platinum 1b coins");
 
 			break;
 

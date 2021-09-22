@@ -59,14 +59,14 @@ public class MoneyPouch {
 				     plr.getInventory().delete(10835, (int)canStore);
 				plr.setMoneyInPouch(plr.getMoneyInPouch() + canStore);
 				plr.getPacketSender().sendString(8135, ""+plr.getMoneyInPouch());
-				plr.getPacketSender().sendMessage("You've added "+canStore + " Taxbags to your money pouch.");
+				plr.getPacketSender().sendMessage("You've added "+canStore + " Platinum 1b coins to your money pouch.");
 				return true;
 			} else {
 				if (!fromTaxBag)
 				    plr.getInventory().delete(10835, amount);
 				plr.setMoneyInPouch(plr.getMoneyInPouch() + amount);
 				plr.getPacketSender().sendString(8135, ""+plr.getMoneyInPouch());
-				plr.getPacketSender().sendMessage("You've added "+formatNumber(amount)+" Taxbags to your money pouch.");
+				plr.getPacketSender().sendMessage("You've added "+formatNumber(amount)+" Platinum 1b coins to your money pouch.");
 				return true;
 			}
 		} else if ((itemID == 995) && validateAmount(plr, amount, fromTaxBag)) {
@@ -113,7 +113,7 @@ public class MoneyPouch {
 				player.setMoneyInPouch(player.getMoneyInPouch() - amount);
 				player.getInventory().add(10835, (int)amount);
 				player.getPacketSender().sendString(8135, "" + player.getMoneyInPouch());
-				player.sendMessage("You withdraw " + formatNumber(amount) + " Taxbags from your pouch.");
+				player.sendMessage("You withdraw " + formatNumber(amount) + " Platinum 1b coins from your pouch.");
 				return;
 			}
 		}
@@ -169,7 +169,7 @@ public class MoneyPouch {
 			player.setMoneyInPouch(player.getMoneyInPouch() - canWithdraw);
 			player.getBank(Bank.getTabForItem(player, 10835)).add(10835, canWithdraw);
 			player.getPacketSender().sendString(8135, ""+player.getMoneyInPouch());
-			player.getPacketSender().sendMessage("You could only withdraw "+canWithdraw+" Taxbags.");
+			player.getPacketSender().sendMessage("You could only withdraw "+canWithdraw+" Platinum 1b coins.");
 		} else {
 			player.getBank(player.getCurrentBankTab()).add(10835, amount);
 			player.setMoneyInPouch(player.getMoneyInPouch() - amount);

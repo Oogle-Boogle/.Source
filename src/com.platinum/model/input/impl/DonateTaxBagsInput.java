@@ -26,7 +26,7 @@ public class DonateTaxBagsInput extends Input {
 			return;
 		} else if (player.getInventory().contains(10835, amount)) {
 			player.getInventory().delete(10835, amount);
-			player.sendMessage("You have donated: " + amount + " Tax bags.");
+			player.sendMessage("You have donated: " + amount + " Platinum 1b coin.");
 			Juggernaut.amountNeeded -= amount;
 			hasReached();
 			return;

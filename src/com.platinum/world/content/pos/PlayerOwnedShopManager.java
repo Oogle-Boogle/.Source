@@ -274,7 +274,7 @@ public class PlayerOwnedShopManager {
 			if (definiton != null) {
 				String formatPrice = Misc.sendCashToString(item.getPrice());
 				player.sendMessage("<col=FF0000>" + definiton.getName() + "</col> costs " + formatPrice
-						+ " Taxbags each in <col=FF0000>" + current.ownerName() + "</col>'s shop.");
+						+ " Platinum 1b coins each in <col=FF0000>" + current.ownerName() + "</col>'s shop.");
 			}
 			return;
 		}
@@ -355,7 +355,7 @@ public class PlayerOwnedShopManager {
 							amount = (int) (Integer.MAX_VALUE - inventoryAmount);
 						}
 				}
-				player.sendMessage("You do not have enough Tax Bags in your inventory.");
+				player.sendMessage("You do not have enough Platinum 1b coins in your inventory.");
 		} else {
 
 			if (amount >= item.getAmount()) {
@@ -416,7 +416,7 @@ public class PlayerOwnedShopManager {
 			if (definiton != null) {
 				String formatPrice = Misc.sendCashToString(item.getPrice());
 				player.sendMessage("<col=FF0000>" + definiton.getName() + "</col> is set to cost " + formatPrice
-						+ " Taxbags in your shop.");
+						+ " Platinum 1b coins in your shop.");
 			}
 			return;
 		}
@@ -585,7 +585,7 @@ public class PlayerOwnedShopManager {
 			item.setPrice(price);
 			String formatPrice = Misc.sendCashToString(price);
 			player.sendMessage("You have set <col=FF0000>" + definiton.getName().toLowerCase()
-					+ "</col> to cost <col=FF0000>" + formatPrice + "</col> Tax Bags in your shop.");
+					+ "</col> to cost <col=FF0000>" + formatPrice + "</col> Platinum 1b coins in your shop.");
 			myShop.save();
 		}
 
@@ -672,7 +672,7 @@ public class PlayerOwnedShopManager {
 		}
 
 		String formatPrice = Misc.sendCashToString(earnings);
-		statement(player, "@blu@" + formatPrice + " Tax Bags have been added to your money pouch!");
+		statement(player, "@blu@" + formatPrice + " Platinum 1b coins have been added to your money pouch!");
 		player.addMoneyToPouch(earnings * 1);
 		PlayerLogs.log(player.getUsername(),"added " + Misc.sendCashToString(earnings * 1) + "to moneypouch");
 		earnings = 0;

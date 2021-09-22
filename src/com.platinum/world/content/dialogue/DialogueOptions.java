@@ -381,7 +381,7 @@ public class DialogueOptions {
 					int chance = RandomUtility.random(40);
 					if (chance >= 0 && chance <= 30) {
 						player.getInventory().add(10835, 1);
-						player.getPacketSender().sendMessage("@red@ Enjoy that trash tax bag :c");
+						player.getPacketSender().sendMessage("@red@ Enjoy that trash Platinum 1b coin :c");
 					} else {
 						if (chance >= 30 && chance <= 40) {
 							player.getInventory().add(5134, 1);
@@ -1108,7 +1108,7 @@ public class DialogueOptions {
 					}, 21600000);
 					player.getPacketSender().sendInterfaceRemoval();
 				} else {
-					player.sendMessage("@blu@You don't have 2000 tax bags in ur inv :(");
+					player.sendMessage("@blu@You don't have 2000 Platinum 1b coins in ur inv :(");
 					player.getPacketSender().sendInterfaceRemoval();
 				}
 				break;
@@ -1234,7 +1234,7 @@ public class DialogueOptions {
 					}, 43200000);
 					player.getPacketSender().sendInterfaceRemoval();
 				} else {
-					player.sendMessage("@blu@You don't have 2500 tax bags in ur inv :(");
+					player.sendMessage("@blu@You don't have 2500 Platinum 1b coins in ur inv :(");
 					player.getPacketSender().sendInterfaceRemoval();
 				}
 				break;
@@ -1347,7 +1347,7 @@ public class DialogueOptions {
 					}, 43200000);
 					player.getPacketSender().sendInterfaceRemoval();
 				} else {
-					player.sendMessage("@blu@You don't have 1250 tax bags in ur inv :(");
+					player.sendMessage("@blu@You don't have 1250 Platinum 1b coins in ur inv :(");
 					player.getPacketSender().sendInterfaceRemoval();
 				}
 				break;
@@ -1961,7 +1961,7 @@ public class DialogueOptions {
 				break;
 
 			case 633:
-				player.sendMessage("I can take " + Juggernaut.amountNeeded + " more tax bags.");
+				player.sendMessage("I can take " + Juggernaut.amountNeeded + " more Platinum 1b coins.");
 				player.getPacketSender().sendInterfaceRemoval();
 				break;
 

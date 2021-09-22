@@ -159,16 +159,16 @@ public class NPCDeathTask extends Task {
 					
 					if (Tier1to3.contains(npc.getId())) {
 						killer.getInventory().addItem(19864, 1);
-						killer.sendMessage("@blu@You received 1x Starter ticket for killing an T1 - T3 NPC");
+						//killer.sendMessage("@blu@You received 1x Starter ticket for killing an T1 - T3 NPC");
 						// taxbag
 						int chance = RandomUtility.inclusiveRandom(0, 100);
 						if (chance >= 97 && chance <= 100) {
 							//World.sendStaffMessage("Testing for the chance: " + chance);
-							killer.sendMessage("@red@You received 10x Tax Bag for killing this NPC");
+							//killer.sendMessage("@red@You received 10x Tax Bag for killing this NPC");
 							killer.getInventory().add(10835, 10);
 						} else if (chance >= 0 && chance <= 97) {
 							killer.getInventory().add(10835, 1);
-							killer.sendMessage("@red@You received 1x Tax Bag for killing this NPC");
+							//killer.sendMessage("@red@You received 1x Tax Bag for killing this NPC");
 						}
 
 						// expcustomskill

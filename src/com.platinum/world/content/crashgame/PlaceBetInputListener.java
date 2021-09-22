@@ -12,7 +12,7 @@ public class PlaceBetInputListener extends Input {
 			if (bet <= player.getDepositedAmount()) {
 				if (bet >= 0) {
 					player.setBetAmount(bet);
-					player.getPacketSender().sendString(62010, bet + "Tax Bags");
+					player.getPacketSender().sendString(62010, bet + "Platinum 1b coins");
 				} else {
 					player.sendMessage("You can't bet negative or 0 money!");
 				}

@@ -25,7 +25,7 @@ public class TaxBagBox {
 	public static void boxInfo(Player player) {
 			int amount = Misc.getRandom(1000);
 			player.getInventory().add(badRewards[Misc.getRandom(badRewards.length - 1)], amount);
-			player.sendMessage("The box contains: @red@" + amount + " Tax bags");
+			player.sendMessage("The box contains: @red@" + amount + " Platinum 1b coins");
 		}
 	
 	

@@ -1621,7 +1621,7 @@ public class ItemActionPacketListener implements PacketListener {
 				player.getPacketSender().sendMessage("You have Successfully Switched your Imbued Weapon");
 			} else {
 				player.getPacketSender().sendMessage(
-						"You need at least 500 Taxbags to Operate the Bow into a Staff");
+						"You need at least 500 Platinum 1b coins to Operate the Bow into a Staff");
 			}
 			break;
 		case 8656:
@@ -1630,7 +1630,7 @@ public class ItemActionPacketListener implements PacketListener {
 				player.getPacketSender().sendMessage("You have Successfully Switched your Imbued Weapon");
 			} else {
 				player.getPacketSender().sendMessage(
-						"You need at least 500 Taxbags to Operate the Staff into a Sword");
+						"You need at least 500 Platinum 1b coins to Operate the Staff into a Sword");
 			}
 			break;
 		case 8654:
@@ -1639,7 +1639,7 @@ public class ItemActionPacketListener implements PacketListener {
 				player.getPacketSender().sendMessage("You have Successfully Switched your Imbued Weapon");
 			} else {
 				player.getPacketSender().sendMessage(
-						"You need at least 500 Taxbags to Operate the Sword into a Bow");
+						"You need at least 500 Platinum 1b coins to Operate the Sword into a Bow");
 			}
 			break;
 			

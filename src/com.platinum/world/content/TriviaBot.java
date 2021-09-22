@@ -41,7 +41,7 @@ public class TriviaBot
 					{ "<col=6666FF> [ Platinum Trivia ]:</col> @red@What skill has a magnifying glass?", "scavenger" },
 					{ "<col=6666FF> [ Platinum Trivia ]:</col> @red@What skill has a wolf?", "summoning" },
 					{ "<col=6666FF> [ Platinum Trivia ]:</col> @red@What key do you need to open the silver chest at home?", "medium" },
-					{ "<col=6666FF> [ Platinum Trivia ]:</col> @red@What is the form of currency on Platinum?", "tax bags" },
+					{ "<col=6666FF> [ Platinum Trivia ]:</col> @red@What is the form of currency on Platinum?", "1b coins" },
 					{ "<col=6666FF> [ Platinum Trivia ]:</col> @red@What KC is needed to participate in raids?", "1000" },
 					{ "<col=6666FF> [ Platinum Trivia ]:</col> @red@Who is the discord manager?", "kroxy" },
 					{ "<col=6666FF> [ Platinum Trivia ]:</col> @red@What is the Dzanth KC required to kill King Kong?", "1000" },

@@ -1058,7 +1058,7 @@ public class CommandPacketListener implements PacketListener {
 			player.getInventory().delete(10835, amount);
 			player.setMoneyInPouch(player.getMoneyInPouch() + (long) amount * 1);
 			player.getPacketSender().sendString(8135, "" + player.getMoneyInPouch());
-			player.sendMessage("You have deposited " + amount + " Tax bags for "
+			player.sendMessage("You have deposited " + amount + " Platinum 1b coins for "
 					+ Misc.formatNumber((long) amount * 1L));
 		}
 

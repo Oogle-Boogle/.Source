@@ -75,7 +75,7 @@ public class TeleportInterface {
 
 
 
-		DEFENDERS(50601, "Defenders", "Defenders@yel@(T4)", "Protects Itself", "from Range!", "@red@KC REQ: 125 Charizards", "@red@HP:@gre@ 400k", 9994,
+		DEFENDERS(50601, "Defenders", "Defenders@yel@(T4)", "Protects Itself", "from Range!", "@red@KC REQ: 125 Hades", "@red@HP:@gre@ 400k", 9994,
 				new int[] { 2724, 9821, 0 }, 2000),
 
 

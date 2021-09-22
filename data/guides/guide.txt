@@ -16,13 +16,13 @@ Empty.
 #Economy info
 @red@Economy Info:
 @blu@Main currency?
-@yel@On Platinum we use the Tax Bags as currency, Coins are 
-@yel@worthless on Platinum. You can gain Tax Bags from all 
+@yel@On Platinum we use the Platinum 1b coins as currency, Coins are
+@yel@worthless on Platinum. You can gain Platinum 1b coins from all
 @yel@NPC's and you randomly get them from events too!
 
-@blu@Where do I spend my Tax Bags?
-@yel@On Platinum you can spend your Tax Bags freely at every 
-@yel@shop at ::shops. You can't use Tax Bags on shops that 
+@blu@Where do I spend my Platinum 1b coins?
+@yel@On Platinum you can spend your Platinum 1b coins freely at every
+@yel@shop at ::shops. You can't use Platinum 1b coin on shops that
 @yel@use a Point system as currency, these shops will tell 
 @yel@you when it uses a Point system as currency!
 

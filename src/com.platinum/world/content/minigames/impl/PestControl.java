@@ -293,7 +293,7 @@ public class PestControl {
 						p.getPointsHandler().setCustompestcontrolpoints(40, true);
 						p.getPacketSender().sendMessage("You've received 40 Custom Pest Control Points and "+p.getSkillManager().getCombatLevel() * 50+" coins.");
 						p.getInventory().add(10835, 1);
-						p.sendMessage("You have recieved a Bulging Tax Bag because your a DEVELOPER");
+						p.sendMessage("You have recieved a Bulging Platinum 1b coin because your a DEVELOPER");
 
 
 					}

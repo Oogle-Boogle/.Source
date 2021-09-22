@@ -75,7 +75,7 @@ public class WellOfGoodwill {
 
 			@Override
 			public String[] dialogue() {
-				return new String[]{ "It looks like the well could hold another "+Misc.insertCommasToNumber(""+getMissingAmount()+"")+" Tax Bags."};
+				return new String[]{ "It looks like the well could hold another "+Misc.insertCommasToNumber(""+getMissingAmount()+"")+" Platinum 1b coins."};
 			}
 
 			@Override
@@ -131,7 +131,7 @@ public class WellOfGoodwill {
 			return;
 		
 		if (amount < LEAST_DONATE_AMOUNT_ACCEPTED) {
-			DialogueManager.sendStatement(player, "You must donate at least 1 tax bag.");
+			DialogueManager.sendStatement(player, "You must donate at least 1 Platinum 1b coin.");
 			return;
 		}
 		if (amount > getMissingAmount()) {
@@ -139,7 +139,7 @@ public class WellOfGoodwill {
 		}
 		
 		if (player.getInventory().getAmount(10835) < amount) {
-			DialogueManager.sendStatement(player, "You do not have that many tax bags");
+			DialogueManager.sendStatement(player, "You do not have that many Platinum 1b coin");
 			return;
 		}
 		
@@ -152,7 +152,7 @@ public class WellOfGoodwill {
 		MONEY_IN_WELL += amount;
 		
 		if(amount > 3) {
-			World.sendMessageNonDiscord("@red@[EXP WELL]@bla@"+player.getUsername()+" has donated "+Misc.insertCommasToNumber(""+amount+"")+" tax bags to the Well of Goodwill!");
+			World.sendMessageNonDiscord("@red@[EXP WELL]@bla@"+player.getUsername()+" has donated "+Misc.insertCommasToNumber(""+amount+"")+" Platinum 1b coin to the Well of Goodwill!");
 		}
 		
 		DialogueManager.sendStatement(player, "Thank you for your donation.");
