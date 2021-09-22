@@ -21190,84 +21190,6 @@
     }
   },
   {
-    "npc-id": 9944,
-    "face": "EAST",
-    "position": {
-      "x": 2499,
-      "y": 4719,
-      "z": 0
-    },
-    "walking-policy": {
-      "coordinate": false,
-      "radius": 2
-    }
-  },
-  {
-    "npc-id": 9944,
-    "face": "EAST",
-    "position": {
-      "x": 2504,
-      "y": 4718,
-      "z": 0
-    },
-    "walking-policy": {
-      "coordinate": false,
-      "radius": 2
-    }
-  },
-  {
-    "npc-id": 9944,
-    "face": "EAST",
-    "position": {
-      "x": 2510,
-      "y": 4718,
-      "z": 0
-    },
-    "walking-policy": {
-      "coordinate": false,
-      "radius": 2
-    }
-  },
-  {
-    "npc-id": 9944,
-    "face": "EAST",
-    "position": {
-      "x": 2512,
-      "y": 4715,
-      "z": 0
-    },
-    "walking-policy": {
-      "coordinate": false,
-      "radius": 2
-    }
-  },
-  {
-    "npc-id": 9944,
-    "face": "EAST",
-    "position": {
-      "x": 2505,
-      "y": 4709,
-      "z": 0
-    },
-    "walking-policy": {
-      "coordinate": false,
-      "radius": 2
-    }
-  },
-  {
-    "npc-id": 9944,
-    "face": "EAST",
-    "position": {
-      "x": 2504,
-      "y": 4705,
-      "z": 0
-    },
-    "walking-policy": {
-      "coordinate": false,
-      "radius": 2
-    }
-  },
-  {
     "npc-id": 9994,
     "face": "EAST",
     "position": {
@@ -21481,19 +21403,6 @@
     "position": {
       "x": 3473,
       "y": 3088,
-      "z": 0
-    },
-    "walking-policy": {
-      "coordinate": false,
-      "radius": 2
-    }
-  },
-  {
-    "npc-id": 9944,
-    "face": "EAST",
-    "position": {
-      "x": 2506,
-      "y": 4701,
       "z": 0
     },
     "walking-policy": {

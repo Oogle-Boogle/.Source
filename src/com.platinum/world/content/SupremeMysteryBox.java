@@ -12,7 +12,7 @@ public class SupremeMysteryBox {
 	 */
 	public static final int [] shitRewards = {5082,5083,5084,15656,15045,926,931,5211,930,5210};
 	public static final int [] mediumRewards = {19886,9492,9493,9494,9495,19159,19160,19161,19163,19164,19165,19166,19691,19692,19693,19694,19695,19696,19618 };
-	public static final int [] bestRewards = {19727,19728,19729,19730,19731,19732,5171,19938,19620};
+	public static final int [] bestRewards = {19727,19728,19729,19730,19731,19732,5171,19620};
 	
 	
 

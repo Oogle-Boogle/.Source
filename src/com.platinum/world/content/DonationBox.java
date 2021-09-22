@@ -12,7 +12,7 @@ public class DonationBox {
 	 * Rewards
 	 */
 	public static final int [] shitRewards = {20250, 12434, 20251, 20252, 20253, 14557, 14558 };
-	public static final int [] goodRewards = {19067, 19936, 18896, 3286, 11605,
+	public static final int [] goodRewards = {19067, 18896, 3286, 11605,
 			3662, 17776, 3664, 3073, 20000, 20001, 20002};
 
 

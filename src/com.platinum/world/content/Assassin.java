@@ -25,9 +25,12 @@ import com.platinum.world.entity.impl.player.Player;
 
 public class Assassin extends NPC {
 
-	public static int[] COMMONLOOT = { };
-	public static int[] RARELOOT = { };
-	public static int[] SUPERRARELOOT = { };
+	public static int[] COMMONLOOT = { 2572,19137,19138,19139,6041,5130,
+			18865,19132,19131,19133,6199,18940,18941,18942,19721,19132,19131,19133,6199,18940,18941,18942,19721,19722,19723,18892,15418,19468 };
+	public static int[] RARELOOT = { 1499, 3973, 4800, 4801, 4802, 5079, 15012, 3951, 3316, 3931, 3958, 3959, 3960, 5186, 5187, 6584, 14559, 18750, 18751, 5131, 4770, 4771, 4772, 5209, 923, 3994, 3995, 3996, 5132, 12605, 19720, 3910, 3909, 3908, 3907, 19886,
+			3980, 3999, 4000, 4001, 5167, 15649, 15650, 15651, 15652, 15653, 15654, 15655, 3905, 4761, 4762, 4763, 4764, 4765, 5089, 18894, 926, 5210, 931, 5211, 930, 15045, 12001, 5173, 3821, 3822, 3820, 19945,
+			20054, 4781, 4782, 4783, 15032, 4785, 5195, 3914, 15656, 5082, 5083, 5084, 5085, 17151, 19619, 19470, 19471, 19472, 19473, 19474, 5129, 5130,3075, 3076, 3078, 3242, 3244, 5198, 5199, 5200 };
+	public static int[] SUPERRARELOOT = { 22196, 22197, 22198, 22199, 22200, 22201, 22203, 5170, 22204};
 
 	/**
 	 * 
@@ -87,14 +90,9 @@ public class Assassin extends NPC {
 		setCurrent(instance);
 		// System.out.print("spawned.");
 
-		World.sendMessageNonDiscord("<img=11><col=bababa><shad=10>[<col=0999ad>UBER BOSS<col=bababa>]<col=0999ad>Assassin <col=00a745>has <shad=10>respawned <img=11> ::assassin");
+		World.sendMessageNonDiscord("<img=11><col=bababa><shad=10>[<col=0999ad>BOSS<col=bababa>]<col=0999ad>Assassin <col=00a745>has <shad=10>respawned <img=11> ::assassin");
 	}
 
-
-	/**
-	 * 
-	 * @param npc
-	 */
 	public static void handleDrop(NPC npc) {
 		World.getPlayers().forEach(p -> p.getPacketSender().sendString(26707, "@or2@WildyWyrm: @gre@N/A"));
 
@@ -148,9 +146,12 @@ public class Assassin extends NPC {
 		}
 
 	}
-
+	/**
+	 * 
+	 * @param npc
+	 */
 	public static void giveLoot(Player player, NPC npc, Position pos) {
-		int chance = Misc.getRandom(1000);
+		int chance = Misc.getRandom(100);
 		int common = COMMONLOOT[Misc.getRandom(COMMONLOOT.length - 1)];
 		@SuppressWarnings("unused")
 		int common1 = COMMONLOOT[Misc.getRandom(COMMONLOOT.length - 1)];
@@ -160,24 +161,25 @@ public class Assassin extends NPC {
 		GroundItemManager.spawnGroundItem(player,
 				new GroundItem(new Item(10835, 100), pos, player.getUsername(), false, 150, true, 200));
 
-		if (chance >= 92) {
+		if (chance >= 95) {
 			GroundItemManager.spawnGroundItem(player,
 					new GroundItem(new Item(superrare), pos, player.getUsername(), false, 150, true, 200));
 			String itemName = (new Item(superrare).getDefinition().getName());
 			String itemMessage = Misc.anOrA(itemName) + " " + itemName;
+			DiscordMessenger.sendRareDrop(player.getUsername(), " received<col=eaeaea><img=11>[ " + itemMessage + "<col=eaeaea>]<img=11><col=FF0000>from the Assassin!");
 			World.sendMessageNonDiscord(
-					"<img=11><col=FF0000>" + player.getUsername() + " received<col=eaeaea>[ " + itemMessage + "<col=eaeaea>]<col=FF0000> from the Assassin!");
+					"<img=11><col=FF0000>" + player.getUsername() + " received<col=eaeaea><img=11>[ " + itemMessage + "<col=eaeaea>]<img=11><col=FF0000>from the Assassin!");
 			DiscordMessenger.sendRareDrop(player.getUsername(), " Just received " + itemMessage + " from the Assassin!");
 			return;
 		}
 
-		if (chance >= 70) {
+		if (chance >= 85) {
 			GroundItemManager.spawnGroundItem(player,
 					new GroundItem(new Item(rare), pos, player.getUsername(), false, 150, true, 200));
 			String itemName = (new Item(rare).getDefinition().getName());
 			String itemMessage = Misc.anOrA(itemName) + " " + itemName;
 			World.sendMessageNonDiscord(
-					"<img=11><col=FF0000>" + player.getUsername() + " received<col=eaeaea>[ " + itemMessage + "<col=eaeaea>]<col=FF0000> from the Assassin!");
+					"<img=11><col=FF0000>" + player.getUsername() + " received<img=11><col=eaeaea>[ " + itemMessage + "<col=eaeaea>]<img=11><col=FF0000> from the Assassin!");
 			DiscordMessenger.sendRareDrop(player.getUsername(), " Just received " + itemMessage + " from the Assassin!");
 			return;
 		}
@@ -186,14 +188,14 @@ public class Assassin extends NPC {
 					new GroundItem(new Item(common, 1), pos, player.getUsername(), false, 150, true, 200));
 			String itemName = (new Item(common).getDefinition().getName());
 			World.sendMessageNonDiscord(
-					"<img=11><col=FF0000>" + player.getUsername() + " received<col=eaeaea>[ " + itemName + "<col=eaeaea>]<col=FF0000> from the Assassin!");
+					"<img=11><col=FF0000>" + player.getUsername() + " received<col=eaeaea><img=11>[<col=07b481> " + itemName + "<col=eaeaea>]<img=11><col=FF0000> from the Assassin!");
 			return;
 		}
 
 	}
 
 	/**
-	 * 
+	 *
 	 * @param npc
 	 * @param player
 	 * @param damage
@@ -204,7 +206,7 @@ public class Assassin extends NPC {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param map
 	 * @return
 	 */

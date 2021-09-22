@@ -24,8 +24,6 @@ public enum DissolveData {
 	STAFF_OF_VALOR(new Item(3951, 1), new Item(19720, 1), 20, 7500),
 	HEATED_BATTLESTAFF(new Item(19720, 1), new Item(5129, 1), 20, 15000),
 	DR_SCROLL(new Item(18392, 1), new Item(18401, 1), 25, 2000),
-	$5(new Item(15375, 2500), new Item(19935, 1), 25, 5000),
-	$5_BOND(new Item(1959, 50), new Item(19935, 1), 25, 5000),
 	REX_HELMET(new Item(3908, 1), new Item(5200, 1), 33, 4000),
 	REX_PLATEBODY(new Item(3910, 1), new Item(5198, 1), 33, 4000),
 	REX_PLATELEGS(new Item(3909, 1), new Item(5199, 1), 33, 4000),

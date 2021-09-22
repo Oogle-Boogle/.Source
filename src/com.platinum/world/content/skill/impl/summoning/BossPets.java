@@ -77,9 +77,9 @@ public class BossPets {
 		FLAREON(-1, 642, 4744),
 		VAPEREON(-1, 644, 4786),
 		SYLVEON(-1, 722, 4787),
-		
-		
-		
+
+
+		PET_ASSASSIN(-1, 9945, 22204),
 		ANTMAN(-1, 811, 1648), 
 		MEWTWO(-1, 810, 1647), 
 		ZORBAK(-1, 815, 1855), 

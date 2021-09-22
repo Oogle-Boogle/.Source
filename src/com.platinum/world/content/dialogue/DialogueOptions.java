@@ -2078,7 +2078,7 @@ public class DialogueOptions {
 								+ " @red@Has just received a Vote Mystery Box!");
 					}
 					if (chance >= 990) {
-						player.getInventory().add(19936, 1);
+						player.getInventory().add(10835, 1);
 						World.sendMessageNonDiscord("<img=11>@blu@[WORLD]<img=11> " + player.getUsername().toString()
 								+ " @red@Has just received a $10 Bond from voting!");
 					}

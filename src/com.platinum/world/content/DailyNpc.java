@@ -24,7 +24,7 @@ import com.platinum.world.entity.impl.player.Player;
 public class DailyNpc extends NPC {
 
 	public static int[] COMMONLOOT = { 10835};
-	public static int[] RARELOOT = {19935,19936};
+	public static int[] RARELOOT = { };
 	public static int[] SUPERRARELOOT = { 13265,13266,19158,13270,13267,13268};
 
 	/**

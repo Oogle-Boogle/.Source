@@ -519,7 +519,6 @@ public class NPCDrops {
 				itemId == 19618|| itemId ==  19691|| itemId ==  19692||  itemId == 19693|| itemId == 19694|| itemId == 19695|| itemId == 19696|| // trinity
 				itemId == 19159||  itemId == 19160|| itemId ==  19161||  itemId == 19163||  itemId == 19164|| itemId ==  19165|| itemId ==  19166||
 				itemId == 9492|| itemId ==  9493||  itemId == 9494||  itemId == 9495||// herbal rouge
-				itemId == 19935|| itemId == 19936|| itemId == 19938|| 
 						itemId == 19727|| itemId == 19728|| itemId == 19729|| itemId == 19730|| itemId == 19731|| itemId == 19732|| itemId == 6485||//supreme
 						itemId == 13202|| itemId == 13203|| itemId == 13204|| itemId == 13205|| itemId == 13206|| itemId == 13207|| itemId == 11143|| itemId == 11144|| itemId == 11145|| itemId == 11146|| itemId == 11147||//storm breaker and apollo
 				itemId == 14494|| itemId ==  14492|| itemId ==  14490||  itemId == 2760||

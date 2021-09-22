@@ -304,7 +304,7 @@ public static void updateSkills(Player player) {
 	player.getSkillManager().updateSkill(Skill.THIEVING);
 	player.getSkillManager().updateSkill(Skill.WOODCUTTING);
 }
-public static final int[] ffaRewards = {19935, 19936, 3932, 19090, 13240, 3980, 14484, 11694, 10835, 6570, 6585};
+public static final int[] ffaRewards = { 3932, 19090, 13240, 3980, 14484, 11694, 10835, 6570, 6585};
 	public static void endGame() {
 		eventRunning = false;
 		gameRunning = false;
