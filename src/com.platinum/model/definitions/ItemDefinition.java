@@ -374,4 +374,5 @@ public class ItemDefinition {
         }
         return -1;
     }
+
 }

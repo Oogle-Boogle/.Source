@@ -9,6 +9,7 @@ import com.platinum.model.Position;
 import com.platinum.model.Locations.Location;
 import com.platinum.world.content.Sounds;
 import com.platinum.world.content.Sounds.Sound;
+import com.platinum.world.content.dialogue.DialogueManager;
 import com.platinum.world.content.skill.impl.dungeoneering.Dungeoneering;
 import com.platinum.world.entity.impl.player.Player;
 
@@ -115,6 +116,11 @@ public class TeleportHandler {
 			}
 		});
 		player.getClickDelay().reset();
+	}
+
+	public static void startTeleportCity(Player player){
+		DialogueManager.start(player, 900);
+		player.setDialogueActionId(900);
 	}
 	
 	public static void teleportPlayer2(final Player player, final Position targetLocation, final TeleportType teleportType) {
