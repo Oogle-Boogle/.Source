@@ -37,7 +37,6 @@ import com.platinum.world.content.combat.range.DwarfMultiCannon;
 import com.platinum.world.content.combat.weapon.CombatSpecial;
 import com.platinum.world.content.dialogue.DialogueManager;
 import com.platinum.world.content.grandexchange.GrandExchange;
-import com.platinum.world.content.mapteleportinterface.MapTeleportInterface;
 import com.platinum.world.content.minigames.impl.*;
 import com.platinum.world.content.minigames.impl.Dueling.DuelRule;
 import com.platinum.world.content.minigames.impl.gungame.GunGame;
@@ -68,6 +67,7 @@ import com.platinum.world.content.skill.impl.woodcutting.WoodcuttingData;
 import com.platinum.world.content.skill.impl.woodcutting.WoodcuttingData.Hatchet;
 import com.platinum.world.content.transportation.TeleportHandler;
 import com.platinum.world.content.transportation.TeleportType;
+import com.platinum.world.content.trickortreat.TrickOrTreatData;
 import com.platinum.world.entity.impl.npc.minigame.KeyRoom;
 import com.platinum.world.entity.impl.player.Player;
 import com.platinum.world.teleportinterface.TeleportInterface;
@@ -190,6 +190,14 @@ public class ObjectActionPacketListener implements PacketListener {
 					return;
 				}
 				switch(id) {
+
+
+					/**
+					 * H'ween teleport
+					 */
+					case TrickOrTreatData.portalID:
+						TeleportHandler.startTeleportCity(player);
+						break;
 
 					/** AFK Objects **/
 					case 28750:

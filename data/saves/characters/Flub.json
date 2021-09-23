@@ -1,11 +1,11 @@
 {
-  "total-play-time-ms": 30469333,
+  "total-play-time-ms": 22680599,
   "username": "Flub",
   "placeholders": false,
-  "password": "titsarecool1",
+  "password": "hqqwNDSngxD2GvfrVy9M1Q\u003d\u003d",
   "email": "null",
   "staff-rights": "OWNER",
-  "secondary-rights": "DONATOR",
+  "secondary-rights": "DEFAULT",
   "game-mode": "NORMAL",
   "last-known-daily-task-npc": 0,
   "daily-NPC-task-kc": 0,
@@ -594,8 +594,8 @@
   "loyalty-title": "NONE",
   "crashGameBalance": 0,
   "position": {
-    "x": 1902,
-    "y": 5221,
+    "x": 3497,
+    "y": 3502,
     "z": 0
   },
   "online-status": "ON",
@@ -643,8 +643,8 @@
   "achievement-points": 0,
   "dung-tokens": 0,
   "custom-pest-control-points": 0,
-  "loyalty-points": 2748,
-  "total-loyalty-points": 2752.0,
+  "loyalty-points": 6034,
+  "total-loyalty-points": 6034.0,
   "voting-points": 0,
   "slayer-points": 0,
   "npc-kills": 0,
@@ -1113,6 +1113,7 @@
   "preset3": false,
   "preset4": false,
   "preset5": false,
+  "dungeon-points": 0,
   "pk-points": 0,
   "donation-points": 0,
   "bravek-tasks-completed": 0,
@@ -1143,98 +1144,14 @@
   "auto-retaliate": false,
   "xp-locked": false,
   "veng-cast": false,
-  "last-veng": 1628899392041,
+  "last-veng": 14300391,
   "fight-type": "UNARMED_PUNCH",
-  "equipmentWings": [
-    {
-      "id": -1,
-      "amount": 0,
-      "slot": 0
-    },
-    {
-      "id": -1,
-      "amount": 0,
-      "slot": 0
-    },
-    {
-      "id": -1,
-      "amount": 0,
-      "slot": 0
-    },
-    {
-      "id": -1,
-      "amount": 0,
-      "slot": 0
-    },
-    {
-      "id": -1,
-      "amount": 0,
-      "slot": 0
-    },
-    {
-      "id": -1,
-      "amount": 0,
-      "slot": 0
-    },
-    {
-      "id": -1,
-      "amount": 0,
-      "slot": 0
-    },
-    {
-      "id": -1,
-      "amount": 0,
-      "slot": 0
-    },
-    {
-      "id": -1,
-      "amount": 0,
-      "slot": 0
-    },
-    {
-      "id": -1,
-      "amount": 0,
-      "slot": 0
-    },
-    {
-      "id": -1,
-      "amount": 0,
-      "slot": 0
-    },
-    {
-      "id": -1,
-      "amount": 0,
-      "slot": 0
-    },
-    {
-      "id": -1,
-      "amount": 0,
-      "slot": 0
-    },
-    {
-      "id": -1,
-      "amount": 0,
-      "slot": 0
-    },
-    {
-      "id": -1,
-      "amount": 0,
-      "slot": 0
-    },
-    {
-      "id": -1,
-      "amount": 0,
-      "slot": 0
-    },
-    {
-      "id": -1,
-      "amount": 0,
-      "slot": 0
-    }
-  ],
   "sol-effect": 0,
   "skull-timer": 0,
   "fuse-combination-timer": 0,
+  "fuse-item-selected": 0,
+  "claimed-fuse-item": true,
+  "fuse-in-progress": false,
   "accept-aid": false,
   "poison-damage": 0,
   "poison-immunity": 0,
@@ -1256,7 +1173,7 @@
   "summon-npc": -1,
   "summon-death": -1,
   "process-farming": false,
-  "clanchat": "Flub",
+  "clanchat": "null",
   "autocast": false,
   "autocast-spell": -1,
   "dfs-charges": 0,
@@ -1475,8 +1392,8 @@
   },
   "inventory": [
     {
-      "id": -1,
-      "amount": 0,
+      "id": 10835,
+      "amount": 1,
       "slot": 0
     },
     {
@@ -1617,8 +1534,8 @@
   ],
   "equipment": [
     {
-      "id": -1,
-      "amount": 0,
+      "id": 5182,
+      "amount": 1,
       "slot": 0
     },
     {
@@ -1945,8 +1862,6 @@
     false,
     false,
     false,
-    false,
-    false,
     false
   ],
   "npc-tasks-progress": [
@@ -2098,5 +2013,6 @@
     false,
     false
   ],
-  "is-gim": false
+  "is-gim": false,
+  "favourite-teles": []
 }

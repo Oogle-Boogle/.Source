@@ -25,6 +25,7 @@ import com.platinum.world.entity.impl.GroundItemManager;
 import com.platinum.world.entity.impl.npc.NPC;
 import com.platinum.world.entity.impl.player.Player;
 
+import java.security.SecureRandom;
 import java.util.*;
 import java.util.Map.Entry;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -310,10 +311,12 @@ public class NPCDrops {
 		if (npc.getLocation() == Location.RAIDS)
 			return;
 
-		if ((Misc.random(1000) == 777) && !p.getLocation().equals(Location.BOSS_TIER_LOCATION)) {
-			p.getInventory().add(DonorBonds.fiveBond, 1);
-			p.sendMessage("@red@You've received a $5 bond!");
-			World.sendMessageDiscord(p.getUsername() + " has just received a $5 Bond from " + npc.getDefinition().getName() + "!");
+		SecureRandom random = new SecureRandom();
+		int randomInt = random.nextInt(2000);
+		if (randomInt == 1 && !p.getLocation().equals(Location.BOSS_TIER_LOCATION)) {
+			p.getPointsHandler().incrementDonationPoints(5);
+			p.sendMessage("@red@You've received a 5 donation points!");
+			World.sendMessageDiscord(p.getUsername() + " has just received a 5 donor points from " + npc.getDefinition().getName() + "!");
 		}
 
 		final boolean goGlobal = p.getPosition().getZ() >= 0 && p.getPosition().getZ() < 4;

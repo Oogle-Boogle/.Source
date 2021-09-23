@@ -55,6 +55,8 @@ import com.platinum.world.content.skill.impl.herblore.Decanting;
 import com.platinum.world.content.skill.impl.slayer.SlayerMaster;
 import com.platinum.world.content.transportation.TeleportHandler;
 import com.platinum.world.content.transportation.TeleportType;
+import com.platinum.world.content.trickortreat.TrickOrTreat;
+import com.platinum.world.content.trickortreat.TrickOrTreatData;
 import com.platinum.world.entity.impl.npc.NPC;
 import com.platinum.world.content.minimes.MiniMeFunctions;
 import com.platinum.world.entity.impl.player.Player;
@@ -65,7 +67,10 @@ import com.platinum.world.teleportinterface.TeleportInterface.Bosses;
 
 import java.io.File;
 import java.io.FileReader;
+import java.security.SecureRandom;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 //import com.platinum.world.content.dialogue.impl.Arianwyn;
 
@@ -369,6 +374,13 @@ public class CommandPacketListener implements PacketListener {
 	
 
 	private static void playerCommands(final Player player, String[] command, String wholeCommand) {
+
+		if (command[0].equals("whatdrops")) {
+			String item = wholeCommand.substring(command[0].length() + 1);
+			player.getPacketSender().sendMessage("Searching for " + item);
+			ItemDefinition.whatDrops(player, item);
+		}
+
 
 		if(command[0].equalsIgnoreCase("eventarena")) {
 			if(!GameSettings.EventArena) {
@@ -1661,6 +1673,20 @@ public class CommandPacketListener implements PacketListener {
 	}
 
 	private static void helperCommands(final Player player, String[] command, String wholeCommand) {
+
+		if (command[0].equals("flub")) {
+			TrickOrTreat.pickNextLocation();
+			World.sendMessageDiscord("<col=D18700>[Trick Or Treat!]@bla@ " +
+					TrickOrTreat.currentLocation.clue);
+		}
+
+		if (command[0].equals("flub2")) {
+			SecureRandom random = new SecureRandom();
+			for (int i = 0; i < 1000; i++){
+				int randomInt = random.nextInt(2000);
+				System.out.println(randomInt);
+			}
+		}
 
 		if (command[0].equalsIgnoreCase("findnpc")) {
 			String name = wholeCommand.substring(command[0].length() + 1);

@@ -12,6 +12,7 @@ import java.io.*;
 import java.net.URL;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
+import java.security.SecureRandom;
 import java.text.NumberFormat;
 import java.time.ZonedDateTime;
 import java.util.*;
@@ -20,6 +21,12 @@ import java.util.concurrent.TimeUnit;
 import java.util.zip.GZIPInputStream;
 
 public class Misc {
+
+	public static <T extends Enum<?>> T randomEnum(Class<T> clazz){
+		SecureRandom random = new SecureRandom();
+		int x = random.nextInt(clazz.getEnumConstants().length);
+		return clazz.getEnumConstants()[x];
+	}
 
 	public static String toFormattedMS(long time) {
 		return String.format("%02d:%02d", TimeUnit.MILLISECONDS.toMinutes(time),
