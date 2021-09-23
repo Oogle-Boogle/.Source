@@ -81,10 +81,10 @@ public class DonationChests {
         invent.delete(lowTierKeyID, 1);
         int reward = (lowTierItems[Misc.getRandom(lowTierItems.length - 1)]);
         invent.add(reward, 1);
-        World.sendMessageNonDiscord("[@red@T1-T3 Chest@red@] @blu@"+player.getUsername()
-                + "@bla@ has just received @blu@1 @bla@x @blu@"
+        World.sendMessageNonDiscord("[T1-T3 Chest] "+player.getUsername()
+                + " has just received 1 x "
                 + ItemDefinition.forId(reward).getName()
-                + "@bla@!");
+                + "!");
     }
 
     /** Medium tier 4-7 rewards **/
@@ -108,10 +108,10 @@ public class DonationChests {
         invent.delete(mediumTierKeyID, 1);
         int reward = (mediumTierItems[Misc.getRandom(mediumTierItems.length - 1)]);
         invent.add(reward, 1);
-        World.sendMessageDiscord("[@red@T4-T7 Chest@red@] @blu@"+player.getUsername()
-                + "@bla@ has just received @blu@1 @bla@x @blu@"
+        World.sendMessageDiscord("[T4-T7 Chest] "+player.getUsername()
+                + " has just received 1x"
                 + ItemDefinition.forId(reward).getName()
-                + "@bla@!");
+                + "!");
     }
 
     /** Top tier 8-10 rewards **/
@@ -135,9 +135,9 @@ public class DonationChests {
         invent.delete(highTierKeyID, 1);
         int reward = (highTierItems[Misc.getRandom(highTierItems.length - 1)]);
         invent.add(reward, 1);
-        World.sendMessageDiscord("[@red@T8-T10 Chest@red@] @blu@"+player.getUsername()
-                + "@bla@ has just received @blu@1 @bla@x @blu@"
+        World.sendMessageDiscord("[T8-T10 Chest] @blu@"+player.getUsername()
+                + " has just received 1x "
                 + ItemDefinition.forId(reward).getName()
-                + "@bla@!");
+                + "!");
     }
 }
