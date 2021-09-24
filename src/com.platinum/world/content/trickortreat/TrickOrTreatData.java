@@ -51,8 +51,6 @@ public class TrickOrTreatData {
 
     public static final int portalID = 38150;
 
-    public static String[] knockResponses = {"Go away!", "What do you want?!", "One second..", "On my way!", "Those damn kids!", "Susan, those kids are back again!"};
-
     public static Item[] shitTreats = {new Item (123,1), new Item(123, 2)};;
 
     public static Item[] mediumTreats = {new Item (123,1), new Item(123, 2)};
