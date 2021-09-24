@@ -351,6 +351,11 @@ public class PlayerHandler {
 				ConnectionHandler.remove(player.getHostAddress());
 				player.setTotalPlayTime(player.getTotalPlayTime() + player.getRecordedLogin().elapsed());
 				player.getPacketSender().sendInterfaceRemoval();
+
+				if (player.getNpcTransformationId() > 1) {
+					player.setNpcTransformationId(-1);
+				}
+				
 				if (player.getCannon() != null) {
 					DwarfMultiCannon.pickupCannon(player, player.getCannon(), true);
 				}
