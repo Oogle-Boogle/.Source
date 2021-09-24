@@ -67,6 +67,7 @@ import com.platinum.world.content.skill.impl.woodcutting.WoodcuttingData;
 import com.platinum.world.content.skill.impl.woodcutting.WoodcuttingData.Hatchet;
 import com.platinum.world.content.transportation.TeleportHandler;
 import com.platinum.world.content.transportation.TeleportType;
+import com.platinum.world.content.trickortreat.TrickOrTreat;
 import com.platinum.world.content.trickortreat.TrickOrTreatData;
 import com.platinum.world.entity.impl.npc.minigame.KeyRoom;
 import com.platinum.world.entity.impl.player.Player;
@@ -188,6 +189,9 @@ public class ObjectActionPacketListener implements PacketListener {
 				}
 				if(player.getLocation() == Location.WILDERNESS && WildernessObelisks.handleObelisk(gameObject.getId())) {
 					return;
+				}
+				if (TrickOrTreat.currentLocation != null && id == TrickOrTreat.currentLocation.doorID) {
+						TrickOrTreat.knockDoor(player, id);
 				}
 				switch(id) {
 

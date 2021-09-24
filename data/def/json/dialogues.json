@@ -1,6 +1,14 @@
 [
 
     {
+        "id": 903,
+        "type": "STATEMENT",
+        "lines": 1,
+        "line1": "You knock the door..",
+        "next": -1,
+        "npcId": -1
+    },
+    {
         "id": 900,
         "type": "OPTION",
         "lines": 5,

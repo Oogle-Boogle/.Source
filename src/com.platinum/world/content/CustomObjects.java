@@ -281,7 +281,7 @@ public class CustomObjects {
 
 			//Flub BossMinigame Stairs
 			{12131, 2334, 4645, 0, 1}, //Boss Minigame Starting Stairs
-			{4126, 2336, 4644, 0 ,1},//Boss Minigame Reward Chest
+			{4126, 2336, 4644, 0, 1},//Boss Minigame Reward Chest
 
 
 			// NEW HOME
@@ -339,7 +339,7 @@ public class CustomObjects {
 
 			{54587, 3016, 2863, 0, 4}, //delete
 			{42611, 3013, 2863, 0, 4}, //delete
-			
+
 			{2644, 3208, 3166, 0, 0},
 
 			{409, 3011, 2841, 0, 1}, //delete

@@ -1,5 +1,5 @@
 {
-  "total-play-time-ms": 22680599,
+  "total-play-time-ms": 29456888,
   "username": "Flub",
   "placeholders": false,
   "password": "hqqwNDSngxD2GvfrVy9M1Q\u003d\u003d",
@@ -594,8 +594,8 @@
   "loyalty-title": "NONE",
   "crashGameBalance": 0,
   "position": {
-    "x": 3497,
-    "y": 3502,
+    "x": 3498,
+    "y": 3499,
     "z": 0
   },
   "online-status": "ON",
@@ -638,13 +638,13 @@
   "breaker-kc": 0,
   "apollo-kc": 0,
   "minutes-bonus-exp": -1,
-  "total-gained-exp": 0,
+  "total-gained-exp": 20386,
   "prestige-points": 0,
   "achievement-points": 0,
   "dung-tokens": 0,
   "custom-pest-control-points": 0,
-  "loyalty-points": 6034,
-  "total-loyalty-points": 6034.0,
+  "loyalty-points": 7645,
+  "total-loyalty-points": 7645.0,
   "voting-points": 0,
   "slayer-points": 0,
   "npc-kills": 0,
@@ -1144,7 +1144,7 @@
   "auto-retaliate": false,
   "xp-locked": false,
   "veng-cast": false,
-  "last-veng": 14300391,
+  "last-veng": 1632422623809,
   "fight-type": "UNARMED_PUNCH",
   "sol-effect": 0,
   "skull-timer": 0,
@@ -1306,9 +1306,9 @@
       1,
       1,
       1,
-      100,
       1,
-      10,
+      1,
+      1,
       1,
       1,
       1,
@@ -1332,10 +1332,10 @@
       1
     ],
     "maxLevel": [
+      29,
       1,
       1,
-      1,
-      100,
+      250,
       1,
       10,
       1,
@@ -1361,10 +1361,10 @@
       1
     ],
     "experience": [
+      12850,
       0,
       0,
-      0,
-      1184,
+      8720,
       0,
       0,
       0,
@@ -1392,63 +1392,63 @@
   },
   "inventory": [
     {
-      "id": 10835,
+      "id": 4563,
+      "amount": 664,
+      "slot": 0
+    },
+    {
+      "id": 123,
       "amount": 1,
       "slot": 0
     },
     {
-      "id": -1,
-      "amount": 0,
+      "id": 592,
+      "amount": 1,
       "slot": 0
     },
     {
-      "id": -1,
-      "amount": 0,
+      "id": 526,
+      "amount": 1,
       "slot": 0
     },
     {
-      "id": -1,
-      "amount": 0,
+      "id": 123,
+      "amount": 1,
       "slot": 0
     },
     {
-      "id": -1,
-      "amount": 0,
+      "id": 123,
+      "amount": 1,
       "slot": 0
     },
     {
-      "id": -1,
-      "amount": 0,
+      "id": 123,
+      "amount": 1,
       "slot": 0
     },
     {
-      "id": -1,
-      "amount": 0,
+      "id": 123,
+      "amount": 1,
       "slot": 0
     },
     {
-      "id": -1,
-      "amount": 0,
+      "id": 123,
+      "amount": 1,
       "slot": 0
     },
     {
-      "id": -1,
-      "amount": 0,
+      "id": 123,
+      "amount": 1,
       "slot": 0
     },
     {
-      "id": -1,
-      "amount": 0,
+      "id": 123,
+      "amount": 1,
       "slot": 0
     },
     {
-      "id": -1,
-      "amount": 0,
-      "slot": 0
-    },
-    {
-      "id": -1,
-      "amount": 0,
+      "id": 123,
+      "amount": 1,
       "slot": 0
     },
     {
@@ -1751,6 +1751,28 @@
     false
   ],
   "achievements-progress": [
+    36,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    36,
     0,
     0,
     0,
@@ -1772,29 +1794,7 @@
     0,
     0,
     0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
+    36,
     0,
     0,
     0,

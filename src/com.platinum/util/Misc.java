@@ -589,6 +589,11 @@ public class Misc {
 		return collection[random(collection.length - 1)];
 	}
 
+	public static Item randomItem(final Item[] collection) {
+		return collection[random(collection.length - 1)];
+	}
+
+
 	public static String random(final String[] collection) {
 		return collection[random(collection.length - 1)];
 	}
