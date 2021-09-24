@@ -58,8 +58,8 @@ public class AssassinStrategy implements CombatStrategy {
                 if (Locations.goodDistance(t.getPosition(), assassin.getPosition(), 2)) {
                     assassin.getCombatBuilder().setVictim(t);
                     new CombatHitTask(assassin.getCombatBuilder(), new CombatContainer(assassin, t, 2, CombatType.MELEE, true)).handleAttack();
-                    assassin.performAnimation(spinAnim);
                     CombatFactory.poisonEntity(t, CombatPoisonEffect.PoisonType.BOSS);
+                    assassin.performAnimation(spinAnim);
                 }
             }
         } else {
