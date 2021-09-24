@@ -61,7 +61,7 @@ public class TrickOrTreatData {
 
     public static Item[] tricks = {new Item(526, 1), new Item(592, 1)};
 
-    public static int[] transformableNpcIDs = {4928, 6099, 5917, 3425, 1697};
+    public static int[] transformableNpcIDs = {4928, 6099, 5917, 3425, 1697, 2862};
 
     public static final int sweets = 4563;
 
