@@ -312,8 +312,8 @@ public class Locations {
 			 * SLASHBASH.closeInterface(player); }
 			 */
 		},
-		BANDOS_AVATAR(new int[] { 2877, 2928 }, new int[] { 4734, 4787 }, true, true, true, true, true, true) {
-			/*
+		/*BANDOS_AVATAR(new int[] { 2877, 2928 }, new int[] { 4734, 4787 }, true, true, true, true, true, true) {
+			*//*
 			 * @Override public void enter(Player player) {
 			 * 
 			 * AVATAR.startPreview(player);
@@ -324,8 +324,8 @@ public class Locations {
 			 * 
 			 * @Override public void onDeath(Player player) { AVATAR.closeInterface(player);
 			 * }
-			 */
-		},
+			 *//*
+		},*/
 		TORM_DEMONS(new int[] { 2520, 2560 }, new int[] { 5730, 5799 }, true, true, true, true, true, true) {
 
 			/*

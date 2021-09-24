@@ -1149,9 +1149,9 @@ public class ButtonClickPacketListener implements PacketListener {
                 if (player.getLocation() == Location.DAGANNOTH_DUNGEON) {
                     DAGS.nextItem(player);
                 }
-                if (player.getLocation() == Location.BANDOS_AVATAR) {
+/*                if (player.getLocation() == Location.BANDOS_AVATAR) {
                     AVATAR.nextItem(player);
-                }
+                }*/
                 if (player.getLocation() == Location.KALPHITE_QUEEN) {
                     KALPH.nextItem(player);
                 }
@@ -1208,9 +1208,9 @@ public class ButtonClickPacketListener implements PacketListener {
                 if (player.getLocation() == Location.DAGANNOTH_DUNGEON) {
                     DAGS.previousItem(player);
                 }
-                if (player.getLocation() == Location.BANDOS_AVATAR) {
+/*                if (player.getLocation() == Location.BANDOS_AVATAR) {
                     AVATAR.previousItem(player);
-                }
+                }*/
                 if (player.getLocation() == Location.KALPHITE_QUEEN) {
                     KALPH.previousItem(player);
                 }
