@@ -182,7 +182,7 @@ public class CombatStrategies {
 		STRATEGIES.put(8675, new OlmMinionsCombat());
 		STRATEGIES.put(6593, new SuicsBoss());
 		STRATEGIES.put(9944, new AssassinStrategy());
-		
+		STRATEGIES.put(2862, new Death());
 		
 		
 	}

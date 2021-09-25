@@ -15,6 +15,7 @@ import com.platinum.world.content.StarterTasks.StarterTaskData;
 import com.platinum.world.content.combat.DailyNPCTask;
 import com.platinum.world.content.combat.TenKMassacre;
 import com.platinum.world.content.combat.bossminigame.BossMinigameFunctions;
+import com.platinum.world.content.combat.strategy.impl.Death;
 import com.platinum.world.content.combat.strategy.impl.HarLakkRiftsplitter;
 import com.platinum.world.content.combat.strategy.impl.KalphiteQueen;
 import com.platinum.world.content.combat.strategy.impl.Nex;
@@ -107,6 +108,9 @@ public class NPCDeathTask extends Task {
 				/** CUSTOM NPC DEATHS **/
 				if (npc.getId() == 13447) {
 					Nex.handleDeath();
+				}
+				if (npc.getId() == 2862) {
+					Death.handleDeath();
 				}
 
 				break;

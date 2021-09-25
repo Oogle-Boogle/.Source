@@ -273,6 +273,9 @@ public class Locations {
 			 * }
 			 */
 		},
+		DEATH(new int[] { 3008, 3071 }, new int[] { 5373, 5312 }, true, true, true, true, true, true) {
+
+		},
 		LIZARDMAN(new int[] { 2700, 2730 }, new int[] { 9800, 9829 }, true, true, true, true, true, true) {
 			/*
 			 * @Override public void enter(Player player) {
