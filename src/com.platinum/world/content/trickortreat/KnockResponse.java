@@ -10,7 +10,7 @@ public enum KnockResponse {
     THREE("Ah lovely, trick or treaters!", DialogueExpression.CALM, true),
     FOUR("STUPID KIDS! LEAVE ME ALONE!", DialogueExpression.VERY_ANGRY, false),
     FIVE("The voices.. They won't stop...... The VOICESSS!!!", DialogueExpression.MANIC_FACE, false),
-    SIX("God damn! More trick or treaters!", DialogueExpression.MIDLY_ANGRY, true),
+    SIX("God damn! More trick or treaters!", DialogueExpression.MIDLY_ANGRY, false),
     SEVEN("Hey! I love halloween.. here are some treats!", DialogueExpression.NORMAL, true);
 
     public String response;

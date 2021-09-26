@@ -16,6 +16,7 @@ import com.platinum.world.content.dialogue.Dialogue;
 import com.platinum.world.content.dialogue.DialogueExpression;
 import com.platinum.world.content.dialogue.DialogueManager;
 import com.platinum.world.content.dialogue.DialogueType;
+import com.platinum.world.content.skill.impl.slayer.SlayerTasks;
 import com.platinum.world.entity.impl.player.Player;
 
 import java.util.ArrayList;
@@ -26,21 +27,27 @@ public class TrickOrTreat {
     public static TrickOrTreatData.LocationData currentLocation = null;
 
     public static void pickNextLocation() {
+        World.getPlayers().forEach(p -> p.setKnockedDoor(false));
         if (currentLocation != null) {
-            GameObject door = new GameObject(currentLocation.doorID, currentLocation.doorPos.copy(), 0, currentLocation.doorDirection);
+            GameObject door = new GameObject(currentLocation.doorID, currentLocation.doorPos, 0, currentLocation.doorDirection);
             World.deregister(currentLocation.npc);
             CustomObjects.deleteGlobalObject(door);
         }
 
         //currentLocation = Misc.randomEnum(TrickOrTreatData.LocationData.class);
         currentLocation = TrickOrTreatData.LocationData.CANIFIS;
-        GameObject door = new GameObject(currentLocation.doorID, currentLocation.doorPos.copy(), 0, currentLocation.doorDirection);
+        GameObject door = new GameObject(currentLocation.doorID, currentLocation.doorPos, 0, currentLocation.doorDirection);
         CustomObjects.spawnGlobalObject(door);
         World.register(currentLocation.npc);
     }
 
     public static void knockDoor(Player player, int doorID) {
+        if (player.isKnockedDoor()) {
+            player.sendMessage("You can't knock again! Wait until the next global message!");
+            return;
+        }
         if (player.getPosition().getDistance(currentLocation.doorPos) <= 1 && doorID == currentLocation.doorID) {
+            player.setKnockedDoor(true);
             player.forceChat("Trick Or Treat!");
             KnockResponse response = Misc.randomEnum(KnockResponse.class);
             currentLocation.npc.forceChat(response.response);
@@ -68,8 +75,8 @@ public class TrickOrTreat {
             };
             DialogueManager.start(player, dialogue);
             if (response.treat) {
-                currentLocation.npc.getMovementQueue().addStep(currentLocation.doorPos);
-                currentLocation.npc.getMovementQueue().setFollowCharacter(player);
+                currentLocation.npc.getMovementQueue().addStep(currentLocation.walkToDoor);
+                currentLocation.npc.setPositionToFace(currentLocation.doorPos);
                 treat(player);
             } else {
                 trick(player);
@@ -185,7 +192,10 @@ public class TrickOrTreat {
         player.setNpcTransformationId(chosenNPC);
         player.getUpdateFlag().flag(Flag.APPEARANCE);
 
-        currentLocation.npc.forceChat("Have fun as a " + NpcDefinition.forId(chosenNPC).getName() + "!");
+        String npcName = NpcDefinition.forId(chosenNPC).getName();
+
+        currentLocation.npc.forceChat("Have fun as a " + npcName + "!");
+        player.sendMessage("@red@You've been transformed into: " + npcName);
 
 
         TaskManager.submit(new Task(Misc.random(150, 400), false) {

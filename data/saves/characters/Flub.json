@@ -1,5 +1,5 @@
 {
-  "total-play-time-ms": 29456888,
+  "total-play-time-ms": 31880095,
   "username": "Flub",
   "placeholders": false,
   "password": "hqqwNDSngxD2GvfrVy9M1Q\u003d\u003d",
@@ -594,8 +594,8 @@
   "loyalty-title": "NONE",
   "crashGameBalance": 0,
   "position": {
-    "x": 3498,
-    "y": 3499,
+    "x": 3499,
+    "y": 3498,
     "z": 0
   },
   "online-status": "ON",
@@ -638,13 +638,13 @@
   "breaker-kc": 0,
   "apollo-kc": 0,
   "minutes-bonus-exp": -1,
-  "total-gained-exp": 20386,
+  "total-gained-exp": 58427,
   "prestige-points": 0,
   "achievement-points": 0,
   "dung-tokens": 0,
   "custom-pest-control-points": 0,
-  "loyalty-points": 7645,
-  "total-loyalty-points": 7645.0,
+  "loyalty-points": 8274,
+  "total-loyalty-points": 8274.0,
   "voting-points": 0,
   "slayer-points": 0,
   "npc-kills": 0,
@@ -1144,7 +1144,7 @@
   "auto-retaliate": false,
   "xp-locked": false,
   "veng-cast": false,
-  "last-veng": 1632422623809,
+  "last-veng": 1632424674958,
   "fight-type": "UNARMED_PUNCH",
   "sol-effect": 0,
   "skull-timer": 0,
@@ -1303,10 +1303,10 @@
   ],
   "skills": {
     "level": [
+      4,
       1,
       1,
-      1,
-      1,
+      4,
       1,
       1,
       1,
@@ -1332,10 +1332,10 @@
       1
     ],
     "maxLevel": [
-      29,
+      39,
       1,
       1,
-      250,
+      350,
       1,
       10,
       1,
@@ -1361,10 +1361,10 @@
       1
     ],
     "experience": [
-      12850,
+      37126,
       0,
       0,
-      8720,
+      22485,
       0,
       0,
       0,
@@ -1393,7 +1393,7 @@
   "inventory": [
     {
       "id": 4563,
-      "amount": 664,
+      "amount": 1054,
       "slot": 0
     },
     {
@@ -1452,68 +1452,68 @@
       "slot": 0
     },
     {
-      "id": -1,
-      "amount": 0,
+      "id": 526,
+      "amount": 1,
       "slot": 0
     },
     {
-      "id": -1,
-      "amount": 0,
+      "id": 123,
+      "amount": 1,
       "slot": 0
     },
     {
-      "id": -1,
-      "amount": 0,
+      "id": 123,
+      "amount": 1,
       "slot": 0
     },
     {
-      "id": -1,
-      "amount": 0,
+      "id": 592,
+      "amount": 1,
       "slot": 0
     },
     {
-      "id": -1,
-      "amount": 0,
+      "id": 123,
+      "amount": 1,
       "slot": 0
     },
     {
-      "id": -1,
-      "amount": 0,
+      "id": 592,
+      "amount": 1,
       "slot": 0
     },
     {
-      "id": -1,
-      "amount": 0,
+      "id": 123,
+      "amount": 1,
       "slot": 0
     },
     {
-      "id": -1,
-      "amount": 0,
+      "id": 123,
+      "amount": 1,
       "slot": 0
     },
     {
-      "id": -1,
-      "amount": 0,
+      "id": 123,
+      "amount": 1,
       "slot": 0
     },
     {
-      "id": -1,
-      "amount": 0,
+      "id": 123,
+      "amount": 1,
       "slot": 0
     },
     {
-      "id": -1,
-      "amount": 0,
+      "id": 526,
+      "amount": 1,
       "slot": 0
     },
     {
-      "id": -1,
-      "amount": 0,
+      "id": 123,
+      "amount": 1,
       "slot": 0
     },
     {
-      "id": -1,
-      "amount": 0,
+      "id": 526,
+      "amount": 1,
       "slot": 0
     },
     {
@@ -1751,7 +1751,7 @@
     false
   ],
   "achievements-progress": [
-    36,
+    70,
     0,
     0,
     0,
@@ -1772,7 +1772,7 @@
     0,
     0,
     0,
-    36,
+    70,
     0,
     0,
     0,
@@ -1794,7 +1794,7 @@
     0,
     0,
     0,
-    36,
+    70,
     0,
     0,
     0,
@@ -2014,5 +2014,6 @@
     false
   ],
   "is-gim": false,
-  "favourite-teles": []
+  "favourite-teles": [],
+  "knockedHweenDoor": true
 }

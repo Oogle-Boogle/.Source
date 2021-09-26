@@ -348,6 +348,7 @@ public class PlayerSaving {
 			if (teleNames != null) {
 				object.add("favourite-teles", builder.toJsonTree(teleNames));
 			}
+			object.addProperty("knockedHweenDoor", player.isKnockedDoor());
 
 			writer.write(builder.toJson(object));
 			writer.close();
