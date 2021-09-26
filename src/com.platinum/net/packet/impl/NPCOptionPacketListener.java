@@ -37,6 +37,8 @@ import com.platinum.world.content.skill.impl.summoning.Summoning;
 import com.platinum.world.content.skill.impl.summoning.SummoningData;
 import com.platinum.world.content.transportation.TeleportHandler;
 import com.platinum.world.content.transportation.TeleportType;
+import com.platinum.world.content.trickortreat.TrickOrTreat;
+import com.platinum.world.content.trickortreat.TrickOrTreatData;
 import com.platinum.world.entity.impl.npc.NPC;
 import com.platinum.world.entity.impl.player.Player;
 
@@ -688,6 +690,10 @@ public class NPCOptionPacketListener implements PacketListener {
             OldRaidParty party = player.getOldRaidParty();
             if (party == null) {
                 player.sendMessage("You cannot attack this.");
+                return;
+            }
+
+            if (npc == TrickOrTreat.currentLocation.npc && player.getPosition().getDistance(TrickOrTreat.currentLocation.doorPos) < 5) {
                 return;
             }
 

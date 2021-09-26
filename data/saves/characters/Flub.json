@@ -1,5 +1,5 @@
 {
-  "total-play-time-ms": 31880095,
+  "total-play-time-ms": 35901618,
   "username": "Flub",
   "placeholders": false,
   "password": "hqqwNDSngxD2GvfrVy9M1Q\u003d\u003d",
@@ -590,12 +590,12 @@
   "boss-kills": 0,
   "starter-zone-map": {},
   "custom-boss-points": 0,
-  "platinum-points": 0,
+  "platinum-points": 3,
   "loyalty-title": "NONE",
   "crashGameBalance": 0,
   "position": {
-    "x": 3499,
-    "y": 3498,
+    "x": 2958,
+    "y": 3384,
     "z": 0
   },
   "online-status": "ON",
@@ -638,16 +638,16 @@
   "breaker-kc": 0,
   "apollo-kc": 0,
   "minutes-bonus-exp": -1,
-  "total-gained-exp": 58427,
+  "total-gained-exp": 204165,
   "prestige-points": 0,
-  "achievement-points": 0,
+  "achievement-points": 1,
   "dung-tokens": 0,
   "custom-pest-control-points": 0,
-  "loyalty-points": 8274,
-  "total-loyalty-points": 8274.0,
+  "loyalty-points": 9350,
+  "total-loyalty-points": 9350.0,
   "voting-points": 0,
   "slayer-points": 0,
-  "npc-kills": 0,
+  "npc-kills": 1,
   "presetItems": [
     0,
     0,
@@ -1144,7 +1144,7 @@
   "auto-retaliate": false,
   "xp-locked": false,
   "veng-cast": false,
-  "last-veng": 1632424674958,
+  "last-veng": 273800207,
   "fight-type": "UNARMED_PUNCH",
   "sol-effect": 0,
   "skull-timer": 0,
@@ -1303,10 +1303,10 @@
   ],
   "skills": {
     "level": [
-      4,
+      2,
       1,
       1,
-      4,
+      2,
       1,
       1,
       1,
@@ -1332,10 +1332,10 @@
       1
     ],
     "maxLevel": [
-      39,
+      52,
       1,
       1,
-      350,
+      470,
       1,
       10,
       1,
@@ -1361,10 +1361,10 @@
       1
     ],
     "experience": [
-      37126,
+      127807,
       0,
       0,
-      22485,
+      77542,
       0,
       0,
       0,
@@ -1392,18 +1392,18 @@
   },
   "inventory": [
     {
+      "id": 592,
+      "amount": 1,
+      "slot": 0
+    },
+    {
+      "id": 592,
+      "amount": 1,
+      "slot": 0
+    },
+    {
       "id": 4563,
-      "amount": 1054,
-      "slot": 0
-    },
-    {
-      "id": 123,
-      "amount": 1,
-      "slot": 0
-    },
-    {
-      "id": 592,
-      "amount": 1,
+      "amount": 198,
       "slot": 0
     },
     {
@@ -1432,88 +1432,88 @@
       "slot": 0
     },
     {
-      "id": 123,
-      "amount": 1,
+      "id": -1,
+      "amount": 0,
       "slot": 0
     },
     {
-      "id": 123,
-      "amount": 1,
+      "id": -1,
+      "amount": 0,
       "slot": 0
     },
     {
-      "id": 123,
-      "amount": 1,
+      "id": -1,
+      "amount": 0,
       "slot": 0
     },
     {
-      "id": 123,
-      "amount": 1,
+      "id": -1,
+      "amount": 0,
       "slot": 0
     },
     {
-      "id": 526,
-      "amount": 1,
+      "id": -1,
+      "amount": 0,
       "slot": 0
     },
     {
-      "id": 123,
-      "amount": 1,
+      "id": -1,
+      "amount": 0,
       "slot": 0
     },
     {
-      "id": 123,
-      "amount": 1,
+      "id": -1,
+      "amount": 0,
       "slot": 0
     },
     {
-      "id": 592,
-      "amount": 1,
+      "id": -1,
+      "amount": 0,
       "slot": 0
     },
     {
-      "id": 123,
-      "amount": 1,
+      "id": -1,
+      "amount": 0,
       "slot": 0
     },
     {
-      "id": 592,
-      "amount": 1,
+      "id": -1,
+      "amount": 0,
       "slot": 0
     },
     {
-      "id": 123,
-      "amount": 1,
+      "id": -1,
+      "amount": 0,
       "slot": 0
     },
     {
-      "id": 123,
-      "amount": 1,
+      "id": -1,
+      "amount": 0,
       "slot": 0
     },
     {
-      "id": 123,
-      "amount": 1,
+      "id": -1,
+      "amount": 0,
       "slot": 0
     },
     {
-      "id": 123,
-      "amount": 1,
+      "id": -1,
+      "amount": 0,
       "slot": 0
     },
     {
-      "id": 526,
-      "amount": 1,
+      "id": -1,
+      "amount": 0,
       "slot": 0
     },
     {
-      "id": 123,
-      "amount": 1,
+      "id": -1,
+      "amount": 0,
       "slot": 0
     },
     {
-      "id": 526,
-      "amount": 1,
+      "id": -1,
+      "amount": 0,
       "slot": 0
     },
     {
@@ -1678,7 +1678,7 @@
     false,
     false,
     false,
-    false,
+    true,
     false,
     false,
     false,
@@ -1751,7 +1751,7 @@
     false
   ],
   "achievements-progress": [
-    70,
+    197,
     0,
     0,
     0,
@@ -1772,7 +1772,7 @@
     0,
     0,
     0,
-    70,
+    197,
     0,
     0,
     0,
@@ -1794,13 +1794,13 @@
     0,
     0,
     0,
-    70,
+    197,
     0,
     0,
     0,
     0,
     0,
-    0,
+    1,
     0,
     0,
     0,
@@ -2001,7 +2001,9 @@
   "lastSpecialPotClaim": 0,
   "roulette-balance": 0,
   "roulette-bet-amount": 0,
-  "npc-kc-data": {},
+  "npc-kc-data": {
+    "5923": 1
+  },
   "savedKeyCount1": 0,
   "savedKeyCount2": 0,
   "savedKeyCount3": 0,

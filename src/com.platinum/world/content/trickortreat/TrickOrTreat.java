@@ -7,7 +7,6 @@ import com.platinum.model.GameObject;
 import com.platinum.model.Item;
 import com.platinum.model.Skill;
 import com.platinum.model.container.impl.Inventory;
-import com.platinum.model.definitions.ItemDefinition;
 import com.platinum.model.definitions.NpcDefinition;
 import com.platinum.util.Misc;
 import com.platinum.world.World;
@@ -16,7 +15,7 @@ import com.platinum.world.content.dialogue.Dialogue;
 import com.platinum.world.content.dialogue.DialogueExpression;
 import com.platinum.world.content.dialogue.DialogueManager;
 import com.platinum.world.content.dialogue.DialogueType;
-import com.platinum.world.content.skill.impl.slayer.SlayerTasks;
+import com.platinum.world.content.discord.DiscordMessenger;
 import com.platinum.world.entity.impl.player.Player;
 
 import java.util.ArrayList;
@@ -28,17 +27,23 @@ public class TrickOrTreat {
 
     public static void pickNextLocation() {
         World.getPlayers().forEach(p -> p.setKnockedDoor(false));
+        World.getPlayers().forEach(p -> p.getPacketSender().sendEntityHintRemoval(true));
         if (currentLocation != null) {
             GameObject door = new GameObject(currentLocation.doorID, currentLocation.doorPos, 0, currentLocation.doorDirection);
             World.deregister(currentLocation.npc);
             CustomObjects.deleteGlobalObject(door);
         }
-
         //currentLocation = Misc.randomEnum(TrickOrTreatData.LocationData.class);
-        currentLocation = TrickOrTreatData.LocationData.CANIFIS;
+        currentLocation = TrickOrTreatData.LocationData.FALADOR;
         GameObject door = new GameObject(currentLocation.doorID, currentLocation.doorPos, 0, currentLocation.doorDirection);
         CustomObjects.spawnGlobalObject(door);
         World.register(currentLocation.npc);
+        World.sendMessageNonDiscord("@blu@[Trick Or Treat] "
+                +currentLocation.npc.getDefinition().getName()
+                +" has spawned! @red@Clue: @blu@" + currentLocation.clue + ". @red@::tot");
+        DiscordMessenger.sendInGameMessage("[Trick Or Treat] "
+                + currentLocation.npc.getDefinition().getName()
+                + " just spawned! Clue: " + currentLocation.clue + ". ::tot");
     }
 
     public static void knockDoor(Player player, int doorID) {
@@ -170,6 +175,7 @@ public class TrickOrTreat {
                     player.getSkillManager().setCurrentLevel(skill, 1);
                 }
                 currentLocation.npc.forceChat("Haha! Enjoy being a noob again!");
+                player.sendMessage("Uh oh! Your stats were set to 1! They'll take a while to regenerate!");
                 break;
             default:
                 if (invent.getFreeSlots() >= 1)

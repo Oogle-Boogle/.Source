@@ -23,10 +23,11 @@ public class TrickOrTreatData {
          * clue = The global message sent to all players
          */
 
-        BURTHORPE(new Position(2926, 3559), new Position(44, 3156), 5244, "North",  new Position(44, 3156), new NPC(5923, new Position(2342, 2342)), "Near the Bla bla"),
-        CAMELOT(new Position(2758, 3479), new Position(44, 3156),5244, "North",  new Position(44, 3156), new NPC(5923, new Position(2342, 2342)), "Near the Bla bla"),
-        CANIFIS(new Position(3493,3483), new Position(3497, 3502),3, "South",  new Position(3497, 3503), new NPC(5923, new Position(3502, 3504)), "Near the Bla bla"),
-        FALADOR(new Position(2965,3380), new Position(44, 3156),5244, "North",  new Position(44, 3156), new NPC(5923, new Position(2342, 2342)), "Near the Bla bla"),
+        BURTHORPE(new Position(2926, 3559), new Position(2921, 3571), 3, "South",  new Position(2921, 3572), new NPC(4905, new Position(2918, 3576)), "He'll bash your metal!"),
+        CAMELOT(new Position(2735, 3483), new Position(2713, 3483),3, "North",  new Position(2713, 3482), new NPC(4239, new Position(2715, 3478)), "The Gordon Ramsey of Camelot!"),
+        CANIFIS(new Position(3493,3483), new Position(3497, 3502),3, "South",  new Position(3497, 3503), new NPC(5923, new Position(3502, 3504)), "The best garments in Canifis!"),
+        FALADOR(new Position(2965,3380), new Position(2958, 3384),11712, "South",  new Position(2958, 3385), new NPC(551, new Position(2958, 3388)), "Sells the worst goods in Falador!"),
+
         FRANKENSTEIN(new Position(3549, 3530), new Position(44, 3156),5244, "North",  new Position(44, 3156), new NPC(5923, new Position(2342, 2342)), "Near the Bla bla"),
         MORTTON(new Position(3488, 3283), new Position(44, 3156),5244, "North",  new Position(44, 3156), new NPC(5923, new Position(2342, 2342)), "Near the Bla bla"),
         RELLEKKA(new Position(2660, 3660), new Position(44, 3156),5244, "North",  new Position(44, 3156), new NPC(5923, new Position(2342, 2342)), "Near the Bla bla"),
