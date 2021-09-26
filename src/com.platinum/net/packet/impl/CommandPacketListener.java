@@ -1280,14 +1280,14 @@ public class CommandPacketListener implements PacketListener {
 			}
 		}
 		if (command[0].equalsIgnoreCase("store")) {
-			player.getPacketSender().sendString(1, "https://platinum.everythingrs.com/services/store");
+			player.getPacketSender().openURL("https://platinum.everythingrs.com/services/store");
 		}
 		if (command[0].equalsIgnoreCase("vote")) {
-			player.getPacketSender().sendString(1, "https://platinum.everythingrs.com/services/vote");
+			player.getPacketSender().openURL("https://platinum.everythingrs.com/services/vote");
 		}
 		
 		if (command[0].equalsIgnoreCase("discord")) {
-			player.getPacketSender().sendString(1, "https://discord.gg/b2DdncwcnB");
+			player.getPacketSender().openURL( "https://discord.gg/b2DdncwcnB");
 		}
 		
 		if (command[0].equalsIgnoreCase("maxhit")) {
