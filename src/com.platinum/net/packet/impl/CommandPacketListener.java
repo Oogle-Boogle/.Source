@@ -1304,7 +1304,7 @@ public class CommandPacketListener implements PacketListener {
 
 		if (command[0].equals("help")) {
 			if (player.getLastYell().elapsed(30000)) {
-				World.sendStaffMessage("<col=FF0066><img=11> [TICKET SYSTEM]<col=6600FF> " + player.getUsername()
+				World.sendStaffMessage("[TICKET SYSTEM] " + player.getUsername()
 						+ " has requested help. Please help them!");
 				player.getLastYell().reset();
 				player.getPacketSender()
@@ -1691,8 +1691,8 @@ public class CommandPacketListener implements PacketListener {
 				player.getPacketSender().sendMessage("Player is not online");
 			} else {
 				target.getSlayer().resetSlayerTask();
-				target.getPacketSender().sendMessage(player + "Has reset your slayer task!");
-				player.getPacketSender().sendMessage("Reset " + target + "Slayer task.");
+				target.getPacketSender().sendMessage(player.getRights() + " " + player.getUsername()  + " Has reset your slayer task!");
+				player.getPacketSender().sendMessage("Reset " + target.getUsername() + "'s Slayer task.");
 			}
 
 		}

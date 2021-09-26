@@ -61,7 +61,7 @@ public class Death extends NPC {
      */
     public static void initialize() {
 
-        TaskManager.submit(new Task( 10, false) { // 6000
+        TaskManager.submit(new Task( 10800, false) { // 6000
 
             @Override
             public void execute() {
