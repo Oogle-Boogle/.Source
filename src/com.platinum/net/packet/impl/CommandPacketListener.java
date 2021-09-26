@@ -384,6 +384,7 @@ public class CommandPacketListener implements PacketListener {
 		if (command[0].equals(("resettask"))) {
 			if (player.getSlayer().getSlayerTask() == SlayerTasks.NO_TASK) {
 				player.getPacketSender().sendMessage("You do not currently have a slayer task");
+				return;
 			}
 			if (player.getInventory().contains(10835, 100)) {
 				player.getPacketSender().sendMessage("You have reset your slayer task for 100 1b coins!");
