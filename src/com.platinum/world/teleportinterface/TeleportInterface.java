@@ -278,7 +278,7 @@ public class TeleportInterface {
 				new int[] { 3379, 3424, 0 }, 4000),
 
 		TOKEN_ZONE(50602, "Token Zone", "Earn Tokens", "to be used at", "the Token shop","", "", 729,
-				new int[] { 2526, 2841, 0 }, 4000),
+				new int[] { 2526, 2851, 0 }, 4000),
 
 		EVENTBOSS(50603, "World boss Event", "THIS NPC Spawns", "Every Hour", "Multiple People ", "May be Required!", "", 2745,
 				new int[] { 2409, 4679, 0 });
