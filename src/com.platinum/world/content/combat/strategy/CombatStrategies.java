@@ -176,7 +176,6 @@ public class CombatStrategies {
 		STRATEGIES.put(9277, new RainbowTextureNPC());
 		STRATEGIES.put(421, new RainbowTextureNPC());
 		STRATEGIES.put(8548, new RainbowTextureNPC());
-		STRATEGIES.put(2005, new Glacor());
 		STRATEGIES.put(9280, new KCMinions());
 		STRATEGIES.put(9647, new InfernalWizardCombat());
 		STRATEGIES.put(8675, new OlmMinionsCombat());

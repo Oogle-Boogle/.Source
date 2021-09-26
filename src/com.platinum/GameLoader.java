@@ -99,6 +99,7 @@ public final class GameLoader {
 		serviceLoader.execute(() -> MonsterDrops.initialize());
 		serviceLoader.execute(() -> Tztok.initialize());
 		serviceLoader.execute(() -> Assassin.initialize());
+		serviceLoader.execute(() -> Death.initialize());
 		serviceLoader.execute(() -> Onslaught.initialize());
 		serviceLoader.execute(() -> TheRick.initialize());
 		serviceLoader.execute(() -> TheMay.initialize());

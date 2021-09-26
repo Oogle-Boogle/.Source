@@ -36,12 +36,11 @@ public class Death extends NPC {
      *
      */
     public static final int NPC_ID = 2862;
-    public static NPC JASON, MYERS, FREDDY;
 
     /**
      * add your maps to that folder open me your client.java in client
      */
-    public static final deathlocations[] LOCATIONS = { new deathlocations(3039, 5344, 0, "") };
+    public static final deathlocations[] LOCATIONS = { new deathlocations(3037, 5344, 0, "") };
 
     /**
      *
@@ -62,7 +61,7 @@ public class Death extends NPC {
      */
     public static void initialize() {
 
-        TaskManager.submit(new Task( 1, false) { // 6000
+        TaskManager.submit(new Task( 10, false) { // 6000
 
             @Override
             public void execute() {
@@ -91,7 +90,7 @@ public class Death extends NPC {
         setCurrent(instance);
         // System.out.print("spawned.");
 
-        World.sendMessageNonDiscord("<img=11><col=bababa><shad=10>[<col=0999ad>BOSS<col=bababa>]<col=0999ad>Death <col=00a745>has <shad=10>respawned <img=11> ::death");
+        World.sendMessageNonDiscord("<img=11><<shad=10>[@or2@BOSS] @bla@ Death @or2@has respawned Use ::death");
     }
     public static void handleDrop(NPC npc) {
         World.getPlayers().forEach(p -> p.getPacketSender().sendString(26707, "@or2@WildyWyrm: @gre@N/A"));

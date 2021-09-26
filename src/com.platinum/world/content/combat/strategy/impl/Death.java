@@ -55,14 +55,13 @@ public class Death implements CombatStrategy {
 		if (Death.isChargingAttack() || Death.getConstitution() <= 0) {
 			return true;
 		}
-		if 	(Misc.random(1000) <= 900 && Death.getConstitution() <= 6000000){
+		if 	(Misc.random(1000) <= 320 && Death.getConstitution() <= 6000000){
 			Death.performGraphic(death_healing_graphic);
 			Death.forceChat("Power of the dark heal me!");
-			victim.forceChat("Aaaaaaaaah!");
-			victim.dealDamage(new Hit(150, Hitmask.RED, CombatIcon.NONE));
-			Death.setConstitution(Death.getConstitution() + Misc.getRandom(10000000));
+			victim.dealDamage(new Hit(150, Hitmask.DARK_RED, CombatIcon.NONE));
+			Death.setConstitution(Death.getConstitution() + Misc.getRandom(5000000));
 		}
-		if (Death.getConstitution() <= 5000000 && !Death.isChargingAttack())
+		if (Death.getConstitution() <= 20000000 && !Death.hasHealed())
 		{
 			int z = victim.getPosition().getZ();
 			int x = victim.getPosition().getX();
@@ -79,7 +78,7 @@ public class Death implements CombatStrategy {
 				World.register(npc);
 				npc.setSpawnedFor(victim.getAsPlayer());
 				npc.getCombatBuilder().attack(victim);
-				Death.setChargingAttack(true);
+				Death.setHealed(true);
 			}
 
 
@@ -101,8 +100,6 @@ public class Death implements CombatStrategy {
 				if (Locations.goodDistance(t.getPosition(), death.getPosition(), 2)) {
 					death.getCombatBuilder().setVictim(t);
 					new CombatHitTask(death.getCombatBuilder(), new CombatContainer(death, t, 2, CombatType.MELEE, true)).handleAttack();
-					CombatFactory.poisonEntity(t, CombatPoisonEffect.PoisonType.BOSS);
-					/*death.performAnimation(spinAnim);*/
 				}
 			}
 		} else {
