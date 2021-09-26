@@ -23,14 +23,14 @@ import com.platinum.world.entity.impl.player.Player;
 public class TrioBosses {
 	
 	//Npc ids that will drop keys
-	public static int skeletonId = 1973;
-	public static int zombieId = 75;
-	public static int ghostId = 103;
+	public static int skeletonId = 0;
+	public static int zombieId = 0;
+	public static int ghostId = 0;
 	
 	//Item ids that will be dropped
-	public static int skeletonKey = 605;
-	public static int ghostKey = 993;
-	public static int zombieKey = 1590;
+	public static int skeletonKey = 0;
+	public static int ghostKey = 0;
+	public static int zombieKey = 0;
 	
 	//useless, just needed to write down obejct id
 	public static int chest = 2079;
