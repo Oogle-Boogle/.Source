@@ -53,6 +53,7 @@ import com.platinum.world.content.serverperks.GlobalPerks;
 import com.platinum.world.content.skill.SkillManager;
 import com.platinum.world.content.skill.impl.herblore.Decanting;
 import com.platinum.world.content.skill.impl.slayer.SlayerMaster;
+import com.platinum.world.content.skill.impl.slayer.SlayerTasks;
 import com.platinum.world.content.transportation.TeleportHandler;
 import com.platinum.world.content.transportation.TeleportType;
 import com.platinum.world.content.trickortreat.TrickOrTreat;
@@ -381,12 +382,16 @@ public class CommandPacketListener implements PacketListener {
 			ItemDefinition.whatDrops(player, item);
 		}
 		if (command[0].equals(("resettask"))) {
+			if (player.getSlayer().getSlayerTask() == SlayerTasks.NO_TASK) {
+				player.getPacketSender().sendMessage("You do not currently have a slayer task");
+			}
 			if (player.getInventory().contains(10835, 100)) {
 				player.getPacketSender().sendMessage("You have reset your slayer task for 100 1b coins!");
 				player.getSlayer().resetSlayerTask();
 				player.getInventory().delete(10835, 100);
-
-			} else {
+			}
+			else
+			{
 				player.getPacketSender().sendMessage("You do not have enough 1b coins to reset this task!");
 				player.getPacketSender().sendMessage("The charge for using this command is 100 1b coins!");
 			}
@@ -1688,14 +1693,20 @@ public class CommandPacketListener implements PacketListener {
 
 			Player target = World.getPlayerByName(name);
 			if (target == null) {
-				player.getPacketSender().sendMessage("Player is not online");
-			} else {
+				player.getPacketSender().sendMessage("Player is not online!");
+			}
+			if (target.getSlayer().getSlayerTask() == SlayerTasks.NO_TASK) {
+				player.getPacketSender().sendMessage("This player does not currently have a slayer task");
+			}
+			else
+			{
 				target.getSlayer().resetSlayerTask();
-				target.getPacketSender().sendMessage(player.getRights() + " " + player.getUsername()  + " Has reset your slayer task!");
+				target.getPacketSender().sendMessage(player.getRights() + " " + player.getUsername() + " Has reset your slayer task!");
 				player.getPacketSender().sendMessage("Reset " + target.getUsername() + "'s Slayer task.");
 			}
 
 		}
+
 		if (command[0].equals("flub")) {
 			TrickOrTreat.pickNextLocation();
 			World.sendMessageDiscord("<col=D18700>[Trick Or Treat!]@bla@ " +
