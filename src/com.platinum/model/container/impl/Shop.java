@@ -1776,7 +1776,7 @@ public class Shop extends ItemContainer {
 				case 5118:
 				case 5119:
 				case 5120:
-					return new Object[] { 50000, "Colorful Tokens" };
+					return new Object[] { 10000, "Colorful Tokens" };
 
 				}
 			} else if (shop == SUIC_NUMBER_ONE_TOKEN_STORE) {
