@@ -327,9 +327,9 @@ public class SkillManager {
             player.getPacketSender().sendMessage("You cannot do this at the moment");
             return this;
         }
-        if (player.getSkillManager().getTotalLevel() < 2475) {
+        if (player.getSkillManager().getTotalLevel() < 1468) {
             player.getPacketSender()
-                    .sendMessage("You must have reached the maximum stats in all skills to prestige");
+                    .sendMessage("You must have atleast a total level of 1468 to prestige!");
             return this;
         }
         if (prestige) {
