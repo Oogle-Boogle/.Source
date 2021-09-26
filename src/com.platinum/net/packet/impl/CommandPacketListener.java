@@ -380,7 +380,17 @@ public class CommandPacketListener implements PacketListener {
 			player.getPacketSender().sendMessage("Searching for " + item);
 			ItemDefinition.whatDrops(player, item);
 		}
+		if (command[0].equals(("resettask"))) {
+			if (player.getInventory().contains(10835, 100)) {
+				player.getPacketSender().sendMessage("You have reset your slayer task for 100 1b coins!");
+				player.getSlayer().resetSlayerTask();
+				player.getInventory().delete(10835, 100);
 
+			} else {
+				player.getPacketSender().sendMessage("You do not have enough 1b coins to reset this task!");
+				player.getPacketSender().sendMessage("The charge for using this command is 100 1b coins!");
+			}
+		}
 
 		if(command[0].equalsIgnoreCase("eventarena")) {
 			if(!GameSettings.EventArena) {
@@ -1673,7 +1683,19 @@ public class CommandPacketListener implements PacketListener {
 	}
 
 	private static void helperCommands(final Player player, String[] command, String wholeCommand) {
+		if (command[0].equalsIgnoreCase("taskreset")) {
+			String name = wholeCommand.substring(command[0].length() + 1);
 
+			Player target = World.getPlayerByName(name);
+			if (target == null) {
+				player.getPacketSender().sendMessage("Player is not online");
+			} else {
+				target.getSlayer().resetSlayerTask();
+				target.getPacketSender().sendMessage(player + "Has reset your slayer task!");
+				player.getPacketSender().sendMessage("Reset " + target + "Slayer task.");
+			}
+
+		}
 		if (command[0].equals("flub")) {
 			TrickOrTreat.pickNextLocation();
 			World.sendMessageDiscord("<col=D18700>[Trick Or Treat!]@bla@ " +

@@ -133,7 +133,7 @@ public class BonusManager {
 		if (p.getCurseActive()[CurseHandler.LEECH_ATTACK]) {
 			bonus = 5;
 		} else if (p.getCurseActive()[CurseHandler.TURMOIL])
-			bonus = 15;
+			bonus = 30;
 		bonus += boost;
 		if (bonus < -25)
 			bonus = -25;
