@@ -276,6 +276,9 @@ public class Locations {
 		DEATH(new int[] { 3021, 3056 }, new int[] { 5325, 5365 }, true, true, true, true, true, true) {
 
 		},
+		DUNGEON_MINIGAME(new int[] { 2463, 2495 }, new int[] { 10153, 10179 }, true, true, true, true, true, true) {
+
+		},
 		LIZARDMAN(new int[] { 2700, 2730 }, new int[] { 9800, 9829 }, true, true, true, true, true, true) {
 			/*
 			 * @Override public void enter(Player player) {
@@ -448,6 +451,7 @@ public class Locations {
 			 */
 
 		},
+
 		DAGANNOTH_DUNGEON(new int[] { 2886, 2938 }, new int[] { 4431, 4477 }, true, true, true, false, true, true) {
 			/*
 			 * @Override public void enter(Player player) {
