@@ -58,10 +58,11 @@ public enum SlayerTasks {
 	 * Extreme - Bravek
 	 */
 
-	LUKE_SKYWALKER(SlayerMaster.BRAVEK, 601, "Find Skywalker at ::sw", 2500, new Position(2915, 3414)),
-	STORM_TROOPER(SlayerMaster.BRAVEK, 1069, "Find Storm troopers t ::Sw", 2500, new Position(2915, 3413));
-	//NEX(SlayerMaster.BRAVEK, 3154, "Find nex at ::nex", 2500, new Position(2787, 4699));
-	//VADER(SlayerMaster.BRAVEK, 11, "Find Vader at starwars layer 2!", 2500, new Position(3358, 2909));
+	NOXIOUS_TROLLS(SlayerMaster.BRAVEK, 5957, "Find noxious trolls in teleports", 2500, new Position(3247, 3033)),
+	AZAZEL_BEAST(SlayerMaster.BRAVEK, 5958, "Find azazel beasts in teleports", 2500, new Position(2463, 3372)),
+	CUSTOM_HELLHOUNDS(SlayerMaster.BRAVEK, 6311, "Find azazel beasts in teleports", 2500, new Position(3178, 3032)),
+	RAVANNA(SlayerMaster.BRAVEK, 5959, "Find azazel beasts in teleports", 2500, new Position(3593, 3493));
+
 
 
 	private SlayerTasks(SlayerMaster taskMaster, int npcId, String npcLocation, int XP, Position taskPosition) {

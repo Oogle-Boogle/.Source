@@ -171,11 +171,30 @@ public class Shop extends ItemContainer {
 					? currency.getDefinition().getName().toLowerCase()
 					: currency.getDefinition().getName().toLowerCase() + "s";
 			/** CUSTOM CURRENCY, CUSTOM SHOP VALUES **/
-					if (id == TOKKUL_EXCHANGE_STORE || id == STARDUST_STORE|| id == RAIDSTORE
-							|| id == AGILITY_TICKET_STORE || id == TOKEN_STORE || id == SUIC_NUMBER_ONE_TOKEN_STORE|| id == GENERAL_STORE
-							|| id == GRAVEYARD_STORE || id == DBZ_TOKEN_SHOP || id == SANTAS_STORE || id == STARTER_STORE  || id == TAX_BAG_SHOP
-							|| id == LOYALTYPOINT_STORE || id == BLOOD_MONEY_STORE || id == BLOOD_MONEY_STORE2 || id == SELL_FOR_TAXBAGS_SHOP
-							|| id == DARKLORD_TOKEN_SHOP || id == WOODCUTTING || id == FIREMAKING_SHOP || id == RAIDS_FISHING_STORE || id == GAMBLING_STORE) {
+					if (id == TOKKUL_EXCHANGE_STORE
+							|| id == STARDUST_STORE
+							|| id == RAIDSTORE
+							|| id == AGILITY_TICKET_STORE
+							|| id == TOKEN_STORE
+							|| id == SUIC_NUMBER_ONE_TOKEN_STORE
+							|| id == GENERAL_STORE
+							|| id == GRAVEYARD_STORE
+							|| id == DBZ_TOKEN_SHOP
+							|| id == SANTAS_STORE
+							|| id == STARTER_STORE
+							|| id == TAX_BAG_SHOP
+							|| id == LOYALTYPOINT_STORE
+							|| id == BLOOD_MONEY_STORE
+							|| id == BLOOD_MONEY_STORE2
+							|| id == SELL_FOR_TAXBAGS_SHOP
+							|| id == DARKLORD_TOKEN_SHOP
+							|| id == WOODCUTTING
+							|| id == FIREMAKING_SHOP
+							|| id == RAIDS_FISHING_STORE
+							|| id == GAMBLING_STORE
+							|| id == HALLOWEEN_SHOP
+					)
+					{
 						Object[] obj = ShopManager.getCustomShopData(id, item.getId());
 				if (obj == null)
 					return;
@@ -244,7 +263,7 @@ public class Shop extends ItemContainer {
 			player.sendMessage("You cannot sell items to this store.");
 			return;
 		}
-		if (id == DARKLORD_TOKEN_SHOP || id == WOODCUTTING || id == RAIDS_FISHING_STORE || id == RAIDSTORE|| id == GENERAL_STORE) {
+		if (id == DARKLORD_TOKEN_SHOP || id == WOODCUTTING || id == RAIDS_FISHING_STORE || id == RAIDSTORE|| id == GENERAL_STORE|| id == HALLOWEEN_SHOP) {
 			player.sendMessage("You cannot sell items to this store.");
 			return;
 		}
@@ -428,11 +447,28 @@ public class Shop extends ItemContainer {
 				}
 			} else {
 				/** CUSTOM CURRENCY, CUSTOM SHOP VALUES **/
-				if (id == TOKKUL_EXCHANGE_STORE || id == STARDUST_STORE|| id == RAIDSTORE
-						|| id == AGILITY_TICKET_STORE || id == TOKEN_STORE || id == SUIC_NUMBER_ONE_TOKEN_STORE
-						|| id == GRAVEYARD_STORE || id == DBZ_TOKEN_SHOP || id == SANTAS_STORE || id == STARTER_STORE  || id == TAX_BAG_SHOP
-						|| id == LOYALTYPOINT_STORE || id == BLOOD_MONEY_STORE || id == BLOOD_MONEY_STORE2 || id == SELL_FOR_TAXBAGS_SHOP
-						|| id == DARKLORD_TOKEN_SHOP || id == AMONG_REWARDS_STORE || id == FIREMAKING_SHOP  || id == WOODCUTTING || id == RAIDS_FISHING_STORE || id == GAMBLING_STORE ) {
+				if (id == TOKKUL_EXCHANGE_STORE
+						|| id == STARDUST_STORE
+						|| id == RAIDSTORE
+						|| id == AGILITY_TICKET_STORE
+						|| id == TOKEN_STORE
+						|| id == SUIC_NUMBER_ONE_TOKEN_STORE
+						|| id == GRAVEYARD_STORE
+						|| id == DBZ_TOKEN_SHOP
+						|| id == SANTAS_STORE
+						|| id == STARTER_STORE
+						|| id == TAX_BAG_SHOP
+						|| id == LOYALTYPOINT_STORE
+						|| id == BLOOD_MONEY_STORE
+						|| id == BLOOD_MONEY_STORE2
+						|| id == SELL_FOR_TAXBAGS_SHOP
+						|| id == DARKLORD_TOKEN_SHOP
+						|| id == AMONG_REWARDS_STORE
+						|| id == FIREMAKING_SHOP
+						|| id == WOODCUTTING
+						|| id == RAIDS_FISHING_STORE
+						|| id == GAMBLING_STORE
+				) {
 					value = (int) ShopManager.getCustomShopData(id, item.getId())[0];
 				}
 			}
@@ -761,15 +797,43 @@ public class Shop extends ItemContainer {
 	public static boolean shopBuysItem(int shopId, Item item) {
 		if (shopId == GENERAL_STORE || shopId == SELL_FOR_TAXBAGS_SHOP)
 			return true;
-		if (shopId == DUNGEONEERING_STORE || shopId == BOSS_POINT_STORE || shopId == SANTAS_STORE || shopId == RAIDSTORE
-				|| shopId == SKILLING_STORE || shopId == STARTER_STORE || shopId == TRIVIA_STORE
-				|| shopId == DONATOR_STORE_1 || shopId == DONATOR_PET_SHOP || shopId == VOID_STORE
-				|| shopId == PKING_REWARDS_STORE || shopId == VOTING_REWARDS_STORE
-				|| shopId == DUNGEON_POINTS_STORE || shopId == RECIPE_FOR_DISASTER_STORE || shopId == DBZ_TOKEN_SHOP
-				|| shopId == AGILITY_TICKET_STORE || shopId == TOKEN_STORE || shopId == SUIC_NUMBER_ONE_TOKEN_STORE
-				|| shopId == GRAVEYARD_STORE || shopId == TOKKUL_EXCHANGE_STORE || shopId == PRESTIGE_STORE
-				|| shopId == STARDUST_STORE || shopId == AMONG_REWARDS_STORE ||  shopId == BLOOD_MONEY_STORE || shopId == SLAYER_STORE || shopId == GAMBLING_STORE
-				|| shopId == CUSTOMSLAYER_POINT_STORE || shopId == CONSUMABLES || shopId == FIREMAKING_SHOP  || shopId == WOODCUTTING || shopId == BLOOD_MONEY_STORE2 || shopId == DARKLORD_TOKEN_SHOP || shopId == RAIDSTORE|| shopId == RAIDS_FISHING_STORE || shopId == FIREMAKING_SHOP  || shopId == WOODCUTTING  || shopId == TAX_BAG_SHOP)
+		if (shopId == DUNGEONEERING_STORE
+				|| shopId == BOSS_POINT_STORE
+				|| shopId == SANTAS_STORE
+				|| shopId == RAIDSTORE
+				|| shopId == SKILLING_STORE
+				|| shopId == STARTER_STORE
+				|| shopId == TRIVIA_STORE
+				|| shopId == DONATOR_STORE_1
+				|| shopId == DONATOR_PET_SHOP
+				|| shopId == VOID_STORE
+				|| shopId == PKING_REWARDS_STORE
+				|| shopId == VOTING_REWARDS_STORE
+				|| shopId == DUNGEON_POINTS_STORE
+				|| shopId == RECIPE_FOR_DISASTER_STORE
+				|| shopId == DBZ_TOKEN_SHOP
+				|| shopId == AGILITY_TICKET_STORE
+				|| shopId == TOKEN_STORE
+				|| shopId == SUIC_NUMBER_ONE_TOKEN_STORE
+				|| shopId == GRAVEYARD_STORE
+				|| shopId == TOKKUL_EXCHANGE_STORE
+				|| shopId == PRESTIGE_STORE
+				|| shopId == STARDUST_STORE
+				|| shopId == AMONG_REWARDS_STORE
+				|| shopId == BLOOD_MONEY_STORE
+				|| shopId == SLAYER_STORE
+				|| shopId == GAMBLING_STORE
+				|| shopId == CUSTOMSLAYER_POINT_STORE
+				|| shopId == CONSUMABLES
+				|| shopId == FIREMAKING_SHOP
+				|| shopId == WOODCUTTING
+				|| shopId == BLOOD_MONEY_STORE2
+				|| shopId == DARKLORD_TOKEN_SHOP
+				|| shopId == RAIDSTORE
+				|| shopId == RAIDS_FISHING_STORE
+				|| shopId == FIREMAKING_SHOP
+				|| shopId == WOODCUTTING
+				|| shopId == TAX_BAG_SHOP)
 			return false;
 		Shop shop = ShopManager.getShops().get(shopId);
 		if (shop != null && shop.getOriginalStock() != null) {
@@ -2042,6 +2106,40 @@ public class Shop extends ItemContainer {
 				case 20002:
 					return new Object[] { 5, "Prestige points" };
 				}
+			} else if (shop == HALLOWEEN_SHOP) {
+				switch(item) {
+					case 10723: // Jack latern mask
+					case 11789:	// reaper hood
+					case 11814: // death wings
+					case 13094:	// hween scythe
+					case 13111:	// bat mask
+					case 14078:	// witch
+					case 14079:	// witch
+					case 14080:	// witch
+					case 1506:	// gas mask
+					case 15352:	// web cloak
+					case 15660:	// chuck doll
+					case 18921:	// goblin mask
+					case 19327:	// bat staff
+					case 3647:	// pet chucky
+					case 3874:	// icy skeleton costume
+					case 3875:	// icy skeleton costume
+					case 3876:	// icy skeleton costume
+					case 4250:	// amulet
+					case 7592:	// zombie
+					case 7593:	// zombie
+					case 7594:	// zombie
+					case 7595:	// zombie
+					case 7596:	// zombie
+					case 934:	// mask of the dead
+					case 9906:	// Ghost buster 500
+					case 9921:	// skeleton costume
+					case 9922:	// skeleton costume
+					case 9923:	// skeleton costume
+					case 9924:	// skeleton costume
+					case 9925:  // skeleton costume
+						return new Object[] { 500, "Sweets" };
+				}
 			} else if (shop == SLAYER_STORE) {
 				switch (item) {
 
@@ -2172,6 +2270,7 @@ public class Shop extends ItemContainer {
 	private static final int SELL_FOR_TAXBAGS_SHOP = 119;
 	private static final int DARKLORD_TOKEN_SHOP = 120;
 	private static final int TAX_BAG_SHOP = 121;
+	private static final int HALLOWEEN_SHOP = 666;
 	
 	private static final int WOODCUTTING = 122;
 	private static final int RAIDS_FISHING_STORE = 123;
