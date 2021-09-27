@@ -71,7 +71,7 @@ public class DungeonMinigameChest {
 				player.getInventory().add(commonDrop, Misc.inclusiveRandom(10, 50));
 			} else {
 				player.getInventory().add(commonDrop, Misc.inclusiveRandom(1, 1));
-				player.moveTo(new Position(3039, 2847, 0));
+				player.moveTo(new Position(1903, 5220, 0));
 			}
 		} else if (random >= 121 && random <= 189) {
 			int rareDrop = getRandomItem(rareLoots);
@@ -84,7 +84,7 @@ public class DungeonMinigameChest {
 					player.getInventory().add(rareDrop, Misc.inclusiveRandom(3, 5));
 				else
 					player.getInventory().add(rareDrop, 1);
-				player.moveTo(new Position(3039, 2847, 0));
+				player.moveTo(new Position(1903, 5220, 0));
 			}
 		} else if (random >= 190 && random <= 200) {
 			int ultraDrops = getRandomItem(ultraLoots);
@@ -95,7 +95,7 @@ public class DungeonMinigameChest {
 			} else {
 				player.getInventory().add(ultraDrops, 1);
 				World.sendMessageNonDiscord("@blu@[DUNGEON CHEST]: " + player.getUsername() + " has received " + ItemDefinition.forId(ultraDrops).getName() + " from the Dungeon chest!");
-				player.moveTo(new Position(3039, 2847, 0));
+				player.moveTo(new Position(1903, 5220, 0));
 			}
 		}
 	}
