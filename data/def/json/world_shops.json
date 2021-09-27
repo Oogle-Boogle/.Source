@@ -213,6 +213,105 @@
 	    ],
 	    "currency":-1
 	  },
+  {
+    "id":666,
+    "name":"Halloween shop",
+    "items":[
+      {
+
+        "id": 10723,
+        "amount": 100
+      },
+      {			  "id": 11789,
+        "amount": 100
+      },
+      {	          "id": 11814,
+        "amount": 100
+      },
+      {	          "id": 13094,
+        "amount": 100
+      },
+      {	          "id": 13111,
+        "amount": 100
+      },
+      {	          "id": 14078,
+        "amount": 100
+      },
+      {	          "id": 14079,
+        "amount": 100
+      },
+      {			  "id": 14080,
+        "amount": 100
+      },
+      {	          "id": 1506,
+        "amount": 100
+      },
+      {	          "id": 15352,
+        "amount": 100
+      },
+      {	          "id": 15660,
+        "amount": 100
+      },
+      {	          "id": 18921,
+        "amount": 100
+      },
+      {	          "id": 19327,
+        "amount": 100
+      },
+      {			  "id": 3647,
+        "amount": 100
+      },
+      {	          "id": 3874,
+        "amount": 100
+      },
+      {	          "id": 3875,
+        "amount": 100
+      },
+      {	          "id": 3876,
+        "amount": 100
+      },
+      {	          "id": 4250,
+        "amount": 100
+      },
+      {	          "id": 7592,
+        "amount": 100
+      },
+      {			  "id": 7593,
+        "amount": 100
+      },
+      {	          "id": 7594,
+        "amount": 100
+      },
+      {	          "id": 7595,
+        "amount": 100
+      },
+      {	          "id": 7596,
+        "amount": 100
+      },
+      {	          "id": 934,
+        "amount": 100
+      },
+      {	          "id": 9906,
+        "amount": 100
+      },
+      {			  "id": 9921,
+        "amount": 100
+      },
+      {	          "id": 9922,
+        "amount": 100
+      },
+      {	          "id": 9923,
+        "amount": 100
+      },
+      {	          "id": 9924,
+        "amount": 100
+      },
+      {	          "id": 9925,
+        "amount": 100
+      }
+    ],
+    "currency": 4563
+  },
 {
     "id":205,
     "name":"Loyalty Points Store",
