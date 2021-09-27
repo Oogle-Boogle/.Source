@@ -485,6 +485,10 @@ public class Player extends Character {
 
 	}
 
+	@Setter
+	@Getter
+	public boolean knockedDoor = false;
+
 	/**
 	 * Invasion minigame
 	 */

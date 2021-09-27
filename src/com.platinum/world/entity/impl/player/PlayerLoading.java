@@ -115,6 +115,10 @@ public class PlayerLoading {
 			if (reader.has("favourite-teles")) {
 				player.getTeleportInterface().setFavourites(builder.fromJson(reader.get("favourite-teles").getAsJsonArray(), String[].class));
 			}
+
+			if (reader.has("knockedHweenDoor")){
+				player.setKnockedDoor(reader.get("knockedHweenDoor").getAsBoolean());
+			}
 	
 			if(reader.has("crashGameBalance"))
                 player.addToCrashBalance(reader.get("crashGameBalance").getAsLong());

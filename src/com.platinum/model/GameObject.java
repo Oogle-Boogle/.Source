@@ -71,6 +71,34 @@ public class GameObject extends Entity {
 		this.face = face;
 	}
 
+	public GameObject(int id, Position position, int type, String face) {
+		super(position);
+		this.id = id;
+		this.type = type;
+		switch (face) {
+			case "NORTH":
+			case "north":
+			case "North":
+				this.face = -1;
+				break;
+			case "EAST":
+			case "east":
+			case "East":
+				this.face = -2;
+				break;
+			case "SOUTH":
+			case "south":
+			case "South":
+				this.face = -3;
+				break;
+			case "WEST":
+			case "west":
+			case "West":
+				this.face = 0;
+				break;
+		}
+	}
+
 	/**
 	 * The object's id.
 	 */

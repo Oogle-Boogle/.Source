@@ -376,6 +376,11 @@ public class CommandPacketListener implements PacketListener {
 
 	private static void playerCommands(final Player player, String[] command, String wholeCommand) {
 
+		if (command[0].equals("tot") && TrickOrTreat.currentLocation != null) {
+			TeleportHandler.teleportPlayer(player, TrickOrTreat.currentLocation.teleportPos, player.getSpellbook().getTeleportType());
+			player.getPacketSender().sendEntityHint(TrickOrTreat.currentLocation.npc);
+		}
+
 		if (command[0].equals("whatdrops")) {
 			String item = wholeCommand.substring(command[0].length() + 1);
 			player.getPacketSender().sendMessage("Searching for " + item);
@@ -1712,8 +1717,7 @@ public class CommandPacketListener implements PacketListener {
 
 		if (command[0].equals("flub")) {
 			TrickOrTreat.pickNextLocation();
-			World.sendMessageDiscord("<col=D18700>[Trick Or Treat!]@bla@ " +
-					TrickOrTreat.currentLocation.clue);
+
 		}
 
 		if (command[0].equals("flub2")) {
