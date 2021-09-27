@@ -915,8 +915,7 @@ public final class CombatFactory {
 					return false;
 				}
 			}
-			if (npc.getId() == 5886 && !GameSettings.EventArena && entity.getLocation() != Location.DUNGEON_MINIGAME)
-			{
+			if (npc.getId() == 5886 && !GameSettings.EventArena && entity.getLocation() != Location.DUNGEON_MINIGAME) {
 				((Player)entity).sendMessage("@red@[Disabled] Event Arena is currently DISABLED");
 				return false;
 			}
