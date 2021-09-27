@@ -120,7 +120,8 @@ public final class IPVerification {
 				if ((VPN || tor || (proxy && fraudScore > 90) || bot_status)
 						&& !GameSettings.DEVELOPERSERVER
 						&& !suspect.getRights().isSeniorStaff()
-						&& !ip.contains("com.sg")) { //Only sending the info to staff if these prereqs are met
+						&& !ip.contains("com.sg")
+						&& !ip.contains("hnremote.net")) { //Only sending the info to staff if these prereqs are met
 					DiscordMessenger.sendStaffMessage(results); //This is the location that I sent the results to, this should be changed to whatever is most relevant for you!
 					shouldBlock = true;
 				}

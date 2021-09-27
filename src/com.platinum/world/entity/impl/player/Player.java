@@ -1633,6 +1633,15 @@ public class Player extends Character {
 	 * santaColors; }
 	 */
 
+
+	@Getter
+	@Setter
+	private String mac;
+	@Getter
+	@Setter
+	private String uuid;
+
+
 	public void setMaxCapeColors(int[] maxCapeColors) {
 		this.maxCapeColors = maxCapeColors;
 	}

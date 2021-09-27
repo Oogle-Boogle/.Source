@@ -2,6 +2,7 @@ package com.platinum.net.login;
 
 import java.nio.channels.Channel;
 
+import lombok.Getter;
 import org.jboss.netty.channel.ChannelHandlerContext;
 
 import com.platinum.net.packet.Packet;
@@ -28,11 +29,7 @@ public final class LoginDetailsMessage {
      * The player's host address
      */
     private final String host;
-    
-    /**
-     * The player's serial number.
-     */
-    private final String serial_number;
+
     
     /**
      * The player's client version.
@@ -43,7 +40,13 @@ public final class LoginDetailsMessage {
      * The player's client uid.
      */
     private final int uid;
-    
+
+    @Getter
+    private final String mac;
+    @Getter
+    private final String uuid;
+
+
     /**
      * Creates a new {@link LoginDetailsMessage}.
      *
@@ -59,11 +62,13 @@ public final class LoginDetailsMessage {
      * @param decryptor
      *            the decryptor for decrypting messages.
      */
-    public LoginDetailsMessage(String username, String password, String host, String serial_number, int clientVersion, int uid) {
+    public LoginDetailsMessage(String username, String password, String uuid, String mac, String host, int clientVersion, int uid) {
+        //System.out.println("LOGIN DETAILS MSG mac " + mac + " uuid " + uuid);
         this.username = username;
         this.password = password;
+        this.mac = mac;
+        this.uuid = uuid;
         this.host = host;
-        this.serial_number = serial_number;
         this.clientVersion = clientVersion;
         this.uid = uid;
     }
@@ -96,15 +101,6 @@ public final class LoginDetailsMessage {
     }
     
     /**
-     * Gets the player's serial number.
-     * 
-     * @return the serial number.
-     */
-    public String getSerialNumber() {
-    	return serial_number;
-    }
-    
-    /**
      * Gets the player's client version.
      * 
      * @return the client version.
@@ -120,4 +116,6 @@ public final class LoginDetailsMessage {
     public int getUid() {
     	return uid;
     }
+
+
 }

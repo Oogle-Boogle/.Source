@@ -102,7 +102,7 @@ public final class LoginDecoder extends FrameDecoder {
 			rsaBuffer = ChannelBuffers.wrappedBuffer(bigInteger.toByteArray());
 			int securityId = rsaBuffer.readByte();
 			if(securityId != 10) {
-				////System.out.println("securityId id != 10.");
+				//System.out.println("securityId id != 10.");
 				channel.close();
 				return null;
 			}
@@ -122,11 +122,17 @@ public final class LoginDecoder extends FrameDecoder {
 			for (int i = 0; i < seed.length; i++) {
 				seed[i] += 50;
 			}
+			//System.out.println("RSA : " + rsaBuffer);
 			int uid = rsaBuffer.readInt();
-			String MAC = Misc.readString(rsaBuffer);
+			//System.out.println("uid = " + uid);
+			//String MAC = Misc.readString(rsaBuffer);
 			String username = Misc.readString(rsaBuffer);
 			String password = Misc.readString(rsaBuffer);
-			String serial = Misc.readString(rsaBuffer);
+			//String serial = Misc.readString(rsaBuffer);
+			String uuid = Misc.readString(rsaBuffer);
+			String mac = Misc.readString(rsaBuffer);
+			//System.out.println("Login Decoder mac " + mac + " uuid " + uuid);
+
 			if (username.length() > 12 || password.length() > 20) {
 				//System.out.println("Username or password length too long");
 				return null;
@@ -134,22 +140,22 @@ public final class LoginDecoder extends FrameDecoder {
 			username = Misc.formatText(username.toLowerCase());
 			channel.getPipeline().replace("encoder", "encoder", new PacketEncoder(new IsaacRandom(seed)));
 			channel.getPipeline().replace("decoder", "decoder", new PacketDecoder(decodingRandom));
-			return login(channel, new LoginDetailsMessage(username, password, ((InetSocketAddress) channel.getRemoteAddress()).getAddress().getHostAddress(), serial, clientVersion, uid), MAC);
+			return login(channel, new LoginDetailsMessage(username, password, uuid, mac, ((InetSocketAddress) channel.getRemoteAddress()).getAddress().getHostAddress(), clientVersion, uid));
 		}
 		return null;
 	}
 
-	public Player login(Channel channel, LoginDetailsMessage msg, String mac) throws IOException {
+	public Player login(Channel channel, LoginDetailsMessage msg) throws IOException {
 		
 		PlayerSession session = new PlayerSession(channel);
 		
 		Player player = new Player(session).setUsername(msg.getUsername())
 		.setLongUsername(NameUtils.stringToLong(msg.getUsername()))
 		.setPassword(msg.getPassword())
-		.setHostAddress(msg.getHost())
-		.setSerialNumber(msg.getSerialNumber());
-		
-		player.setMacAddress(mac);
+		.setHostAddress(msg.getHost());
+
+		player.setMac(msg.getMac());
+		player.setUuid(msg.getUuid());
 
 		session.setPlayer(player);
 		
