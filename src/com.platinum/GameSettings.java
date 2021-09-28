@@ -10,7 +10,7 @@ public class GameSettings {
 	/**
 	 * The game version
 	 */
-	public static final int GAME_VERSION = 20;
+	public static final int GAME_VERSION = 21;
 
 	/**
 	 * Configuration
