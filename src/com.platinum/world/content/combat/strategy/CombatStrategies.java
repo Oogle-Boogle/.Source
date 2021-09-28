@@ -129,7 +129,7 @@ public class CombatStrategies {
 		STRATEGIES.put(8281, new BalanceElemental());
 		STRATEGIES.put(499, new Thermonuclear());
 		STRATEGIES.put(7286, new Skotizo());
-		STRATEGIES.put(5886, new Sire());
+		STRATEGIES.put(175, new Sire());
 		/*
 		 * new npc's. added by ME
 		 */
