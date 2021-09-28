@@ -72,7 +72,7 @@ import com.platinum.world.content.trickortreat.TrickOrTreatData;
 import com.platinum.world.entity.impl.npc.minigame.KeyRoom;
 import com.platinum.world.entity.impl.player.Player;
 import com.platinum.world.teleportinterface.TeleportInterface;
-import com.platinum.world.teleportinterface.TeleportInterface.Bosses;
+import com.platinum.world.teleportinterface.TeleportInterface.Starters;
 
 /**
  * This packet listener is called when a player clicked
@@ -383,7 +383,7 @@ public class ObjectActionPacketListener implements PacketListener {
 						}
 					}
 					else;
-					TeleportInterface.sendBossData(player, Bosses.STARTER);
+					TeleportInterface.sendBossData(player, Starters.STARTER);
 					TeleportInterface.sendBossTab(player);
 					
 					break;

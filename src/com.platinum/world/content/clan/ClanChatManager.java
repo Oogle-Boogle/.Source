@@ -2,6 +2,7 @@ package com.platinum.world.content.clan;
 
 import com.platinum.model.GameMode;
 import com.platinum.model.Item;
+import com.platinum.model.PlayerRights;
 import com.platinum.util.Misc;
 import com.platinum.util.NameUtils;
 import com.platinum.world.entity.impl.npc.NPC;
@@ -231,15 +232,6 @@ public class ClanChatManager {
 				int childId = 29344;
 				for (Player others : clan.getMembers()) {
 					if (others != null) {
-						/*int img = others.getRights().ordinal();
-						//int img2 = others.getSecondaryPlayerRights().ordinal();
-						if (!others.getRights().isStaff() && !others.getRights().isMember()) {
-							if (others.getGameMode() == GameMode.IRONMAN) {
-								img = 33;
-							} else if (others.getGameMode() == GameMode.HARDCORE_IRONMAN) {
-								img = 32;
-							}
-						}*/
 						String primaryRights = others.getRights().ordinal() > 0 ? "<img=" + others.getRights().ordinal() + ">" : "";
 						String secondaryRights = others.getSecondaryPlayerRights().ordinal() > 0 ? "<zmg=" + others.getSecondaryPlayerRights().ordinal() + ">" : "";
 						String irn;
@@ -263,8 +255,14 @@ public class ClanChatManager {
 						String prefix = others.getGameMode() == GameMode.NORMAL ? primaryRights + secondaryRights : irn + secondaryRights;
 						//System.out.println("TOP CLAN CHAT PREFIX WAS " + prefix);
 
+						if (others.getRights().equals(PlayerRights.MODERATOR)) {
+							prefix = "<img=62>";
+						}
+						if (others.getRights().equals(PlayerRights.ADMINISTRATOR)) {
+							prefix = "<img=63>";
+						}
 
-						//String prefix = img >= 0 ? ("<img=" + (img) + "> ") : "";
+
 						member.getPacketSender().sendString(childId, prefix + others.getUsername());
 						childId++;
 					}

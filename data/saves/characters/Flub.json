@@ -1,12 +1,13 @@
 {
-  "total-play-time-ms": 36764407,
+  "total-play-time-ms": 54768080,
   "username": "Flub",
   "placeholders": false,
   "password": "hqqwNDSngxD2GvfrVy9M1Q\u003d\u003d",
   "email": "null",
-  "staff-rights": "OWNER",
+  "staff-rights": "ADMINISTRATOR",
   "secondary-rights": "DEFAULT",
   "game-mode": "NORMAL",
+  "difficulty": "Zezima",
   "last-known-daily-task-npc": 0,
   "daily-NPC-task-kc": 0,
   "progression-task-progress": [
@@ -594,15 +595,15 @@
   "loyalty-title": "NONE",
   "crashGameBalance": 0,
   "position": {
-    "x": 1891,
-    "y": 5221,
+    "x": 1904,
+    "y": 5220,
     "z": 0
   },
   "online-status": "ON",
-  "given-starter": false,
+  "given-starter": true,
   "money-pouch": 0,
   "donated": 0,
-  "referral": false,
+  "referral": true,
   "indragon": false,
   "starterclaimed": false,
   "has-pin": false,
@@ -643,8 +644,8 @@
   "achievement-points": 1,
   "dung-tokens": 0,
   "custom-pest-control-points": 0,
-  "loyalty-points": 9588,
-  "total-loyalty-points": 9588.0,
+  "loyalty-points": 14560,
+  "total-loyalty-points": 14560.0,
   "voting-points": 0,
   "slayer-points": 0,
   "npc-kills": 1,
@@ -1144,7 +1145,7 @@
   "auto-retaliate": false,
   "xp-locked": false,
   "veng-cast": false,
-  "last-veng": 281513817,
+  "last-veng": 322058881,
   "fight-type": "UNARMED_PUNCH",
   "sol-effect": 0,
   "skull-timer": 0,
@@ -1173,7 +1174,7 @@
   "summon-npc": -1,
   "summon-death": -1,
   "process-farming": false,
-  "clanchat": "null",
+  "clanchat": "Flub",
   "autocast": false,
   "autocast-spell": -1,
   "dfs-charges": 0,
@@ -1407,7 +1408,7 @@
       "slot": 0
     },
     {
-      "id": 526,
+      "id": 5182,
       "amount": 1,
       "slot": 0
     },
@@ -1534,8 +1535,8 @@
   ],
   "equipment": [
     {
-      "id": 5182,
-      "amount": 1,
+      "id": -1,
+      "amount": 0,
       "slot": 0
     },
     {
@@ -1751,7 +1752,7 @@
     false
   ],
   "achievements-progress": [
-    197,
+    292,
     0,
     0,
     0,
@@ -1772,7 +1773,7 @@
     0,
     0,
     0,
-    197,
+    292,
     0,
     0,
     0,
@@ -1794,7 +1795,7 @@
     0,
     0,
     0,
-    197,
+    292,
     0,
     0,
     0,

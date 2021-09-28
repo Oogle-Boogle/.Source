@@ -28,6 +28,7 @@ import com.platinum.world.content.raids.OldRaidParty;
 import com.platinum.world.content.raids.Raid1;
 import com.platinum.world.content.raids.Raid2;
 import com.platinum.world.content.raids.Raid3;
+import com.platinum.world.content.skill.SkillManager;
 import com.platinum.world.content.skill.impl.dungeoneering.Dungeoneering;
 import com.platinum.world.content.skill.impl.dungeoneering.DungeoneeringFloor;
 import com.platinum.world.content.skill.impl.herblore.Decanting;
@@ -1477,6 +1478,36 @@ public class DialogueOptions {
             }
         } else if (id == FIRST_OPTION_OF_TWO) {
             switch (player.getDialogueActionId()) {
+
+                case 655:
+                    player.setDifficulty(player.getSelectedDifficulty());
+                    player.getPacketSender().sendMessage("New difficulty :" + player.getDifficulty().toString());
+                    player.getPacketSender().sendInterfaceRemoval();
+                    if (!player.hasReferral) {
+                        player.getPacketSender().sendEnterInputPrompt("How did you hear about Platinum?");
+                        player.setInputHandling(new EnterReferral());
+                    }
+                    break;
+
+                case 656:
+                    if (player.getEquipment().getFreeSlots() != player.getEquipment().capacity()) {
+                        player.getPacketSender().sendMessage("You need to un-equip your items first!");
+                        player.getPacketSender().sendInterfaceRemoval();
+                        return;
+                    } else {
+                        for (Skill skill : Skill.values()) {
+                            int level = skill.equals(Skill.CONSTITUTION) ? 100 : skill.equals(Skill.PRAYER) ? 10 : 1;
+                            player.getSkillManager().setCurrentLevel(skill, level).setMaxLevel(skill, level).setExperience(skill,
+                                    SkillManager.getExperienceForLevel(skill == Skill.CONSTITUTION ? 10 : 1));
+                        }
+                        player.getPacketSender().sendMessage("@red@Your skill levels were reset in order to increase difficulty!");
+                        player.getUpdateFlag().flag(Flag.APPEARANCE);
+                        player.setDifficulty(player.getSelectedDifficulty());
+                        player.getPacketSender().sendInterfaceRemoval();
+                        PlayerPanel.refreshPanel(player);
+                    }
+                    break;
+
                 case PartyRoomManager.DIALOGUE_ACTION_ID:
                     player.getPacketSender().sendInterfaceRemoval();
                     PartyRoomManager.sendBalloons(player);
@@ -1676,6 +1707,12 @@ public class DialogueOptions {
             }
         } else if (id == SECOND_OPTION_OF_TWO) {
             switch (player.getDialogueActionId()) {
+
+                case 655:
+                case 656:
+                    player.getPacketSender().sendInterfaceRemoval();
+                    break;
+
                 case PartyRoomManager.DIALOGUE_ACTION_ID:
                     player.getPacketSender().sendInterfaceRemoval();
                     PartyRoomManager.sendWhiteKnights(player);
@@ -1747,6 +1784,7 @@ public class DialogueOptions {
             }
         } else if (id == FIRST_OPTION_OF_THREE) {
             switch (player.getDialogueActionId()) {
+
 
                 case 633:
                     player.setInputHandling(new DonateTaxBagsInput());

@@ -15,7 +15,7 @@ public class TeleportInterface {
 
 	private final static int CATEGORY_NAME_ID = 50508;
 
-	public enum Bosses {
+	public enum Starters {
 		// this is 1st field etc
 		STARTER(50601, "Starter Zone", "Bugs Bunny@gre@(T1)", "Starter Tasks", "@red@HP:@gre@ 2.5k", "", "", 4455,
 				new int[] { 3795, 3543, 0 }),
@@ -33,8 +33,8 @@ public class TeleportInterface {
 				new int[] { 2095, 3677, 0 }, 3000);
 
 
-		Bosses(int textId, String name, String description1, String description2, String description3,
-			   String description4, String description5, int npcId, int[] teleportCords) {
+		Starters(int textId, String name, String description1, String description2, String description3,
+				 String description4, String description5, int npcId, int[] teleportCords) {
 			this.textId = textId;
 			this.name = name;
 			this.description1 = description1;
@@ -47,8 +47,8 @@ public class TeleportInterface {
 
 		}
 
-		Bosses(int textId, String name, String description1, String description2, String description3,
-			   String description4, String description5, int npcId, int[] teleportCords, int adjustedZoom) {
+		Starters(int textId, String name, String description1, String description2, String description3,
+				 String description4, String description5, int npcId, int[] teleportCords, int adjustedZoom) {
 			this.textId = textId;
 			this.name = name;
 			this.description1 = description1;
@@ -144,7 +144,7 @@ public class TeleportInterface {
 		private int adjustedZoom;
 	}
 
-	public enum Wilderness {
+	public enum Hardened {
 
 
 
@@ -177,8 +177,8 @@ public class TeleportInterface {
 		EXODEN(50610, "Exoden", "Exoden@bla@(T9)", "@red@KC REQ: 3500 Herbal Rogue", "@red@HP:@gre@ 800k", "", "", 12239, new int[] { 2540, 10162, 0 },
 				4000);
 
-		Wilderness(int textId, String name, String description1, String description2, String description3,
-				   String description4, String description5, int npcId, int[] teleportCords) {
+		Hardened(int textId, String name, String description1, String description2, String description3,
+				 String description4, String description5, int npcId, int[] teleportCords) {
 			this.textId = textId;
 			this.name = name;
 			this.description1 = description1;
@@ -191,8 +191,8 @@ public class TeleportInterface {
 
 		}
 
-		Wilderness(int textId, String name, String description1, String description2, String description3,
-				   String description4, String description5, int npcId, int[] teleportCords, int adjustedZoom) {
+		Hardened(int textId, String name, String description1, String description2, String description3,
+				 String description4, String description5, int npcId, int[] teleportCords, int adjustedZoom) {
 			this.textId = textId;
 			this.name = name;
 			this.description1 = description1;
@@ -215,7 +215,7 @@ public class TeleportInterface {
 
 	}
 
-	public enum Zones {
+	public enum Expert {
 
 
 
@@ -234,6 +234,56 @@ public class TeleportInterface {
 				new int[] { 2525, 4776, 0 },3000),
 		HELLHOUND(50607, "Custom Hellhounds", "Hell Hounds@bla@(T10)", "This drops BFG set", "@red@KC REQ: 5000 Luminitous warriors", "@red@HP:@gre@ 1.25m", "", 6311,
 				new int[] { 3176, 3029, 0 },3000);
+
+		Expert(int textId, String name, String description1, String description2, String description3,
+			   String description4, String description5, int npcId, int[] teleportCords) {
+			this.textId = textId;
+			this.name = name;
+			this.description1 = description1;
+			this.description2 = description2;
+			this.description3 = description3;
+			this.description4 = description4;
+			this.description5 = description5;
+			this.npcId = npcId;
+			this.teleportCords = teleportCords;
+
+		}
+
+		Expert(int textId, String name, String description1, String description2, String description3,
+			   String description4, String description5, int npcId, int[] teleportCords, int adjustedZoom) {
+			this.textId = textId;
+			this.name = name;
+			this.description1 = description1;
+			this.description2 = description2;
+			this.description3 = description3;
+			this.description4 = description4;
+			this.description5 = description5;
+			this.npcId = npcId;
+			this.teleportCords = teleportCords;
+			this.adjustedZoom = adjustedZoom;
+
+		}
+
+		private int textId;
+		private String name;
+		private String description1, description2, description3, description4, description5;
+		private int npcId;
+		private int[] teleportCords;
+		private int adjustedZoom;
+	}
+
+	public enum Zones {
+
+		BOX_ZONE(50601, "Box Zone", "Box Zone", "Box Zone For Starters!", "", "", "", 197,
+				new int[] { 3379, 3424, 0 }, 4000),
+
+		TOKEN_ZONE(50602, "Token Zone", "Earn Tokens", "to be used at", "the Token shop","", "", 729,
+				new int[] { 2526, 2851, 0 }, 4000),
+
+		EVENTBOSS(50603, "World boss Event", "THIS NPC Spawns", "Every Hour", "Multiple People ", "May be Required!", "", 2745,
+				new int[] { 2409, 4679, 0 });
+
+
 
 		Zones(int textId, String name, String description1, String description2, String description3,
 			  String description4, String description5, int npcId, int[] teleportCords) {
@@ -273,24 +323,13 @@ public class TeleportInterface {
 	}
 
 	public enum Minigames {
-
-		BOX_ZONE(50601, "Box Zone", "Box Zone", "Box Zone For Starters!", "", "", "", 197,
-				new int[] { 3379, 3424, 0 }, 4000),
-
-		TOKEN_ZONE(50602, "Token Zone", "Earn Tokens", "to be used at", "the Token shop","", "", 729,
-				new int[] { 2526, 2851, 0 }, 4000),
-
-		EVENTBOSS(50603, "World boss Event", "THIS NPC Spawns", "Every Hour", "Multiple People ", "May be Required!", "", 2745,
-				new int[] { 2409, 4679, 0 });
-
-		//DBZ_ZONE(50603, "DBZ Zone", "This place drops DBZ Tokens!", "Multi Area", "", "", "", 100,
-		//new int[] { 2141, 5535, 3 }),
-
-
-		//AMONG(50605, "Among Us", "Among Us Points", "", "", "", "", 600,
-		//new int[] { 2511, 3820, 0 });
-
-
+		FRANKENSTIEN(50601, "Frankenstiens Castle", "Frankenstiens Castle", "This Minigame drops", "Tier 1-7 Defenders", "", "", 4291, new int[] { 2845, 3540, 2 }),
+		PESTCONTROL(50602, "Pest control", "Pest Control", "Earn points to use", "at the pest control shop", "", "", 3789, new int[] { 2657, 2648, 0 }),
+		BARROWSMINIGAME(50603, "Barrows", "Barrows", "Dig your way for some", " fancy diamonds!", "", "", 2025, new int[] { 3564, 3289, 0 }),
+		DUNGEON(50604, "Dungeons Minigame", "Dungeons Minigame", "Do you have what it", " takes to survive?", "", "", 499, new int[] { 3309, 9808, 8 }),
+		CHALLENGER(50605, "Challenging Minigame", "Challenging Minigame", "only for the toughest", "are you tough?", "", "", 50, new int[] {BossMinigameFunctions.DOOR_X, BossMinigameFunctions.DOOR_Y, 0});
+		//HALLOWEEN(50602, "Trios Minigame", "Earn all 3 Keys", "to be used at", "the Trio Chest!","", "", 75, 
+		//	new int[] { 3107, 3427, 0 }, 0);
 		Minigames(int textId, String name, String description1, String description2, String description3,
 				  String description4, String description5, int npcId, int[] teleportCords) {
 			this.textId = textId;
@@ -328,51 +367,6 @@ public class TeleportInterface {
 		private int adjustedZoom;
 	}
 
-	public enum Cities {
-		FRANKENSTIEN(50601, "Frankenstiens Castle", "Frankenstiens Castle", "This Minigame drops", "Tier 1-7 Defenders", "", "", 4291, new int[] { 2845, 3540, 2 }),
-		PESTCONTROL(50602, "Pest control", "Pest Control", "Earn points to use", "at the pest control shop", "", "", 3789, new int[] { 2657, 2648, 0 }),
-		BARROWSMINIGAME(50603, "Barrows", "Barrows", "Dig your way for some", " fancy diamonds!", "", "", 2025, new int[] { 3564, 3289, 0 }),
-		DUNGEON(50604, "Dungeons Minigame", "Dungeons Minigame", "Do you have what it", " takes to survive?", "", "", 499, new int[] { 3309, 9808, 8 }),
-		CHALLENGER(50605, "Challenging Minigame", "Challenging Minigame", "only for the toughest", "are you tough?", "", "", 50, new int[] {BossMinigameFunctions.DOOR_X, BossMinigameFunctions.DOOR_Y, 0});
-		//HALLOWEEN(50602, "Trios Minigame", "Earn all 3 Keys", "to be used at", "the Trio Chest!","", "", 75, 
-		//	new int[] { 3107, 3427, 0 }, 0);
-		Cities(int textId, String name, String description1, String description2, String description3,
-			   String description4, String description5, int npcId, int[] teleportCords) {
-			this.textId = textId;
-			this.name = name;
-			this.description1 = description1;
-			this.description2 = description2;
-			this.description3 = description3;
-			this.description4 = description4;
-			this.description5 = description5;
-			this.npcId = npcId;
-			this.teleportCords = teleportCords;
-
-		}
-
-		Cities(int textId, String name, String description1, String description2, String description3,
-			   String description4, String description5, int npcId, int[] teleportCords, int adjustedZoom) {
-			this.textId = textId;
-			this.name = name;
-			this.description1 = description1;
-			this.description2 = description2;
-			this.description3 = description3;
-			this.description4 = description4;
-			this.description5 = description5;
-			this.npcId = npcId;
-			this.teleportCords = teleportCords;
-			this.adjustedZoom = adjustedZoom;
-
-		}
-
-		private int textId;
-		private String name;
-		private String description1, description2, description3, description4, description5;
-		private int npcId;
-		private int[] teleportCords;
-		private int adjustedZoom;
-	}
-
 	public static void resetOldData() {
 		currentTab = 0;
 		currentClickIndex = 0;
@@ -381,7 +375,7 @@ public class TeleportInterface {
 	public static void handleTeleports(Player player) {
 		switch (currentTab) {
 			case 0:
-				Bosses bossData = Bosses.values()[currentClickIndex];
+				Starters bossData = Starters.values()[currentClickIndex];
 				handleBossTeleport(player, bossData);
 				break;
 			case 1:
@@ -389,25 +383,25 @@ public class TeleportInterface {
 				handleMonsterTeleport(player, monsterData);
 				break;
 			case 2:
-				Wilderness wildyData = Wilderness.values()[currentClickIndex];
+				Hardened wildyData = Hardened.values()[currentClickIndex];
 				handleWildyTeleport(player, wildyData);
 				break;
 			case 3:
-				Zones ZonesData = Zones.values()[currentClickIndex];
-				handleZonesTeleport(player, ZonesData);
+				Expert expertData = Expert.values()[currentClickIndex];
+				handleZonesTeleport(player, expertData);
 				break;
 			case 4:
-				Minigames minigameData = Minigames.values()[currentClickIndex];
+				Zones minigameData = Zones.values()[currentClickIndex];
 				handleMinigameTeleport(player, minigameData);
 				break;
 			case 5:
-				Cities cityData = Cities.values()[currentClickIndex];
+				Minigames cityData = Minigames.values()[currentClickIndex];
 				handleCityTeleport(player, cityData);
 				break;
 		}
 	}
 
-	public static void handleBossTeleport(Player player, Bosses bossData) {
+	public static void handleBossTeleport(Player player, Starters bossData) {
 
 		TeleportHandler.teleportPlayer(player,
 				new Position(bossData.teleportCords[0], bossData.teleportCords[1], bossData.teleportCords[2]),
@@ -421,27 +415,27 @@ public class TeleportInterface {
 				player.getSpellbook().getTeleportType());
 	}
 
-	public static void handleWildyTeleport(Player player, Wilderness wildyData) {
+	public static void handleWildyTeleport(Player player, Hardened wildyData) {
 
 		TeleportHandler.teleportPlayer(player,
 				new Position(wildyData.teleportCords[0], wildyData.teleportCords[1], wildyData.teleportCords[2]),
 				player.getSpellbook().getTeleportType());
 	}
 
-	public static void handleZonesTeleport(Player player, Zones skillData) {
+	public static void handleZonesTeleport(Player player, Expert skillData) {
 
 		TeleportHandler.teleportPlayer(player,
 				new Position(skillData.teleportCords[0], skillData.teleportCords[1], skillData.teleportCords[2]),
 				player.getSpellbook().getTeleportType());
 	}
 
-	public static void handleMinigameTeleport(Player player, Minigames minigameData) {
+	public static void handleMinigameTeleport(Player player, Zones minigameData) {
 
 		TeleportHandler.teleportPlayer(player, new Position(minigameData.teleportCords[0],
 				minigameData.teleportCords[1], minigameData.teleportCords[2]), player.getSpellbook().getTeleportType());
 	}
 
-	public static void handleCityTeleport(Player player, Cities cityData) {
+	public static void handleCityTeleport(Player player, Minigames cityData) {
 
 		TeleportHandler.teleportPlayer(player,
 				new Position(cityData.teleportCords[0], cityData.teleportCords[1], cityData.teleportCords[2]),
@@ -467,9 +461,9 @@ public class TeleportInterface {
 			index = 14935 + buttonID;
 		}
 		if (currentTab == 0) {
-			if (index >= 0 && index < Bosses.values().length) {
+			if (index >= 0 && index < Starters.values().length) {
 				//System.out.println("Handled boss data [As index was 0]");
-				Bosses bossData = Bosses.values()[index];
+				Starters bossData = Starters.values()[index];
 				currentClickIndex = index;
 				sendBossData(player, bossData);
 				sendDrops(player, bossData.npcId);
@@ -485,36 +479,36 @@ public class TeleportInterface {
 			}
 		}
 		if (currentTab == 2) {
-			if (index >= 0 && index < Wilderness.values().length) {
+			if (index >= 0 && index < Hardened.values().length) {
 				//System.out.println("Handled monster data [As index was 1]");
-				Wilderness wildyData = Wilderness.values()[index];
+				Hardened wildyData = Hardened.values()[index];
 				currentClickIndex = index;
 				sendWildyData(player, wildyData);
 				sendDrops(player, wildyData.npcId);
 			}
 		}
 		if (currentTab == 3) {
-			if (index >= 0 && index < Zones.values().length) {
+			if (index >= 0 && index < Expert.values().length) {
 				//System.out.println("Handled monster data [As index was 1]");
-				Zones ZonesData = Zones.values()[index];
+				Expert expertData = Expert.values()[index];
 				currentClickIndex = index;
-				sendZonesData(player, ZonesData);
-				sendDrops(player, ZonesData.npcId);
+				sendZonesData(player, expertData);
+				sendDrops(player, expertData.npcId);
 			}
 		}
 		if (currentTab == 4) {
-			if (index >= 0 && index < Minigames.values().length) {
+			if (index >= 0 && index < Zones.values().length) {
 				//System.out.println("Handled monster data [As index was 1]");
-				Minigames minigamesData = Minigames.values()[index];
+				Zones zonesData = Zones.values()[index];
 				currentClickIndex = index;
-				sendMinigameData(player, minigamesData);
-				sendDrops(player, minigamesData.npcId);
+				sendMinigameData(player, zonesData);
+				sendDrops(player, zonesData.npcId);
 			}
 		}
 		if (currentTab == 5) {
-			if (index >= 0 && index < Cities.values().length) {
+			if (index >= 0 && index < Minigames.values().length) {
 				//System.out.println("Handled monster data [As index was 1]");
-				Cities cityData = Cities.values()[index];
+				Minigames cityData = Minigames.values()[index];
 				currentClickIndex = index;
 				sendCityData(player, cityData);
 				sendDrops(player, cityData.npcId);
@@ -526,7 +520,7 @@ public class TeleportInterface {
 
 	public static int currentClickIndex = 0;
 
-	public static void sendBossData(Player player, Bosses data) {
+	public static void sendBossData(Player player, Starters data) {
 		player.getPacketSender().sendString(51200, data.description1);
 		player.getPacketSender().sendString(51201, data.description2);
 		player.getPacketSender().sendString(51202, data.description3);
@@ -544,7 +538,7 @@ public class TeleportInterface {
 		player.getPacketSender().sendNpcOnInterface(50514, data.npcId, data.adjustedZoom != 0 ? data.adjustedZoom : 0);
 	}
 
-	public static void sendWildyData(Player player, Wilderness data) {
+	public static void sendWildyData(Player player, Hardened data) {
 		player.getPacketSender().sendString(51200, data.description1);
 		player.getPacketSender().sendString(51201, data.description2);
 		player.getPacketSender().sendString(51202, data.description3);
@@ -553,7 +547,7 @@ public class TeleportInterface {
 		player.getPacketSender().sendNpcOnInterface(50514, data.npcId, data.adjustedZoom != 0 ? data.adjustedZoom : 0);
 	}
 
-	public static void sendZonesData(Player player, Zones data) {
+	public static void sendZonesData(Player player, Expert data) {
 		player.getPacketSender().sendString(51200, data.description1);
 		player.getPacketSender().sendString(51201, data.description2);
 		player.getPacketSender().sendString(51202, data.description3);
@@ -562,7 +556,7 @@ public class TeleportInterface {
 		player.getPacketSender().sendNpcOnInterface(50514, data.npcId, data.adjustedZoom != 0 ? data.adjustedZoom : 0);
 	}
 
-	public static void sendMinigameData(Player player, Minigames data) {
+	public static void sendMinigameData(Player player, Zones data) {
 		player.getPacketSender().sendString(51200, data.description1);
 		player.getPacketSender().sendString(51201, data.description2);
 		player.getPacketSender().sendString(51202, data.description3);
@@ -571,7 +565,7 @@ public class TeleportInterface {
 		player.getPacketSender().sendNpcOnInterface(50514, data.npcId, data.adjustedZoom != 0 ? data.adjustedZoom : 0);
 	}
 
-	public static void sendCityData(Player player, Cities data) {
+	public static void sendCityData(Player player, Minigames data) {
 		player.getPacketSender().sendString(51200, data.description1);
 		player.getPacketSender().sendString(51201, data.description2);
 		player.getPacketSender().sendString(51202, data.description3);
@@ -586,7 +580,7 @@ public class TeleportInterface {
 		clearData(player);
 		resetOldData();
 		player.getPacketSender().sendString(CATEGORY_NAME_ID, "@red@Starters");
-		for (Bosses data : Bosses.values()) {
+		for (Starters data : Starters.values()) {
 			player.getPacketSender().sendString(data.textId, data.name);
 		}
 
@@ -601,38 +595,38 @@ public class TeleportInterface {
 		}
 	}
 
-	public static void sendWildyTab(Player player) {
+	public static void sendHardenedTab(Player player) {
 		currentTab = 2;
 		clearData(player);
 		player.getPacketSender().sendString(CATEGORY_NAME_ID, "@red@Hardened ");
-		for (Wilderness data : Wilderness.values()) {
+		for (Hardened data : Hardened.values()) {
+			player.getPacketSender().sendString(data.textId, data.name);
+		}
+	}
+
+	public static void sendExpertTab(Player player) {
+		currentTab = 3;
+		clearData(player);
+		player.getPacketSender().sendString(CATEGORY_NAME_ID, "@red@Expert");
+		for (Expert data : Expert.values()) {
 			player.getPacketSender().sendString(data.textId, data.name);
 		}
 	}
 
 	public static void sendZonesTab(Player player) {
-		currentTab = 3;
+		currentTab = 4;
 		clearData(player);
-		player.getPacketSender().sendString(CATEGORY_NAME_ID, "@red@Expert");
+		player.getPacketSender().sendString(CATEGORY_NAME_ID, "@red@Zones");
 		for (Zones data : Zones.values()) {
 			player.getPacketSender().sendString(data.textId, data.name);
 		}
 	}
 
-	public static void sendMinigamesTab(Player player) {
-		currentTab = 4;
-		clearData(player);
-		player.getPacketSender().sendString(CATEGORY_NAME_ID, "@red@Zones");
-		for (Minigames data : Minigames.values()) {
-			player.getPacketSender().sendString(data.textId, data.name);
-		}
-	}
-
-	public static void sendCitiesTab(Player player) {
+	public static void sendMinigameTab(Player player) {
 		currentTab = 5;
 		clearData(player);
 		player.getPacketSender().sendString(CATEGORY_NAME_ID, "@red@Minigames");
-		for (Cities data : Cities.values()) {
+		for (Minigames data : Minigames.values()) {
 			player.getPacketSender().sendString(data.textId, data.name);
 		}
 	}

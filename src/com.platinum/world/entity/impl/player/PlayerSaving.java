@@ -52,6 +52,7 @@ public class PlayerSaving {
 			object.addProperty("staff-rights", player.getRights().name());
 			object.addProperty("secondary-rights", player.getSecondaryPlayerRights().name());
 			object.addProperty("game-mode", player.getGameMode().name());
+			object.addProperty("difficulty", player.getDifficulty().toString());
 			object.addProperty("last-known-daily-task-npc", player.getCurrentDailyNPC());
 			object.addProperty("daily-NPC-task-kc", player.getCurrentDailyNPCKills());
 			object.add("progression-task-progress",

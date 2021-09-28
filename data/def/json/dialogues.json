@@ -1587,5 +1587,43 @@
         "line2": "Cancel",
         "next": -1,
         "npcId": -1
+    },
+    {
+        "id": 700,
+        "type": "PLAYER_STATEMENT",
+        "anim": "THINKING_STILL",
+        "lines": 3,
+        "line1": "Are you sure you'd like to select",
+        "line2": "easy difficulty?",
+        "line3": "You cannot change to a harder mode without resetting!",
+        "next": 701,
+        "npcId": -1
+    },
+    {
+        "id": 701,
+        "type": "OPTION",
+        "lines": 2,
+        "line1": "Yes - I want to change my difficulty",
+        "line2": "No - Don't change my difficulty",
+        "next": -1,
+        "npcId": -1
+    },
+    {
+        "id": 702,
+        "type": "STATEMENT",
+        "lines": 2,
+        "line1": "To increase difficulty, you must reset your stats!",
+        "line2": "Would you like to continue?",
+        "next": 703,
+        "npcId": -1
+    },
+    {
+        "id": 703,
+        "type": "OPTION",
+        "lines": 2,
+        "line1": "Yes - Reset all of my stats",
+        "line2": "Nope! I've changed my mind!",
+        "next": -1,
+        "npcId": -1
     }
 ]

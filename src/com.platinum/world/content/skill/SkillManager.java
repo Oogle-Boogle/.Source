@@ -3,11 +3,8 @@ package com.platinum.world.content.skill;
 import com.platinum.GameSettings;
 import com.platinum.engine.task.Task;
 import com.platinum.engine.task.TaskManager;
-import com.platinum.model.Flag;
-import com.platinum.model.GameMode;
-import com.platinum.model.Graphic;
+import com.platinum.model.*;
 import com.platinum.model.Locations.Location;
-import com.platinum.model.Skill;
 import com.platinum.model.container.impl.Equipment;
 import com.platinum.model.definitions.DropUtils;
 import com.platinum.model.definitions.WeaponAnimations;
@@ -109,20 +106,32 @@ public class SkillManager {
 
 
         experience *= player.getRights().getExperienceGainModifier();
-        experience *= SpecialEvents.getDoubleEXPWeekend();
-        if (WellOfGoodwill.isActive())
-            experience *= 1.3;
-        if (player.getGameMode() != GameMode.NORMAL) {
-            experience *= 0.6;
+
+
+
+        if ((player.getDifficulty().lowDifficulty())) {
+            if (WellOfGoodwill.isActive())
+                experience *= 1.3;
+            if (GameSettings.BONUS_EXP) {
+                experience *= 1.15; // 15
+            }
+            if (GameSettings.TRIPLE_EXP || GlobalPerks.getInstance().getActivePerk() == GlobalPerks.Perk.x3_XP) {
+                experience *= 3;
+            }
+            experience *= SpecialEvents.getDoubleEXPWeekend();
         }
 
-        if (GameSettings.BONUS_EXP) {
-            experience *= 1.15; // 15
+        /** NEW DIFFICULTIES **/
+        double xpRate = player.getDifficulty().getXpRate();
+        experience *= xpRate;
+
+        if (player.getDifficulty() == Difficulty.Default) {
+            player.moveTo(GameSettings.DEFAULT_POSITION);
+            player.getPacketSender().sendMessage("@red@SELECT A DIFFICULTY TO START EARNING XP");
+            player.getPacketSender().sendInterface(48500);
+            experience *= 0;
         }
 
-        if (GameSettings.TRIPLE_EXP || GlobalPerks.getInstance().getActivePerk() == GlobalPerks.Perk.x3_XP) {
-            experience *= 3;
-        }
 
 
         Familiar pet = player.getSummoning().getFamiliar();
@@ -134,10 +143,8 @@ public class SkillManager {
             }
         }
 
-        if (player.getMinutesBonusExp() != -1) {
+        if ((player.getMinutesBonusExp() > 0) && (player.getDifficulty().lowDifficulty())) {
             if (player.getGameMode() != GameMode.NORMAL) {
-                experience *= 1.10;
-            } else {
                 experience *= 1.30;
             }
         }
@@ -156,15 +163,14 @@ public class SkillManager {
         /*
          * Adds the experience to the skill's experience.
          */
-        this.skills.experience[skill.ordinal()] = this.skills.experience[skill.ordinal()] + experience > MAX_EXPERIENCE
-                ? MAX_EXPERIENCE
-                : this.skills.experience[skill.ordinal()] + experience;
+        this.skills.experience[skill.ordinal()] = this.skills.experience[skill.ordinal()] + experience > MAX_EXPERIENCE ? MAX_EXPERIENCE : this.skills.experience[skill.ordinal()] + experience;
+
+
         if (this.skills.experience[skill.ordinal()] >= MAX_EXPERIENCE) {
             String skillName = Misc.formatText(skill.toString().toLowerCase());
-            player.getPacketSender()
-                    .sendMessage("Well done! You've achieved the highest possible Experience in this skill!");
-            World.sendMessageDiscord("[Player News] " + player.getUsername() + " has just achieved Maximum Exp in "
-                    + skillName + "!");
+            player.getPacketSender().sendMessage("Well done! You've achieved the highest possible Experience in this skill!");
+            World.sendMessageNonDiscord("@red@[Player News] @bla@" + player.getUsername() + " has just achieved Maximum Exp in " + skillName + " @blu@[" + player.getDifficulty().toString().toUpperCase() + "]@bla@!");
+            World.sendMessageDiscord("[Player News] " + player.getUsername() + " has just achieved Maximum Exp in " + skillName + " [" + player.getDifficulty().toString().toUpperCase() + "]!");
             Achievements.finishAchievement(player, AchievementData.REACH_MAX_EXP_IN_A_SKILL);
         }
         /*
@@ -210,6 +216,34 @@ public class SkillManager {
             player.performGraphic(new Graphic(312));
             player.getPacketSender()
                     .sendMessage("You've just advanced " + skillName + " level! You have reached level " + newLevel);
+
+            String difficulty = (player.getDifficulty().toString().toUpperCase());
+            String maxAlertColour = (player.getDifficulty().getMaxAlertColour());
+
+            if (skills.maxLevel[skill.ordinal()] == getMaxAchievingLevel(skill)) {
+
+                player.getPacketSender().sendMessage("Well done! You've achieved level 120 in this skill!");
+
+                World.sendMessageNonDiscord("@red@[Player News] @bla@"
+                        + player.getUsername() + " has just achieved level 120 in "
+                        + skillName
+                        + " on ["
+                        + maxAlertColour
+                        + difficulty
+                        + "@bla@] mode!"
+                );
+
+                if (fullMax(player)) {
+                    World.sendMessageNonDiscord("@red@"
+                            + player.getUsername()
+                            + " has just achieved level 120 in all skills on ["
+                            + maxAlertColour
+                            + difficulty
+                            + "@red@] mode!"
+                    );
+                }
+
+            }
 
             if (player.getSkillManager().getTotalLevel() >= 999) {
                 StarterTasks.finishTask(player, StarterTaskData.REACH_1000_TOTAL);
@@ -362,6 +396,28 @@ public class SkillManager {
         bonusPointsModifier += (experience / MAX_EXP) * 5;
         int totalPoints = (int) (basePoints * bonusPointsModifier);
         return totalPoints;
+    }
+
+    public static boolean softMax(Player p) {
+        for (int i = 0; i < Skill.values().length; i++) {
+            if (i == 21)
+                continue;
+            if (p.getSkillManager().getMaxLevel(i) < (i == 3 || i == 5 ? 990 : 99)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static boolean fullMax(Player p) {
+        for (int i = 0; i < Skill.values().length; i++) {
+            if (i == 21)
+                continue;
+            if (p.getSkillManager().getMaxLevel(i) < (i == 3 || i == 5 ? 1200 : 120)) {
+                return false;
+            }
+        }
+        return true;
     }
 
     /**

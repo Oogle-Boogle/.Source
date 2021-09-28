@@ -1,6 +1,8 @@
 package com.platinum.net.packet.impl;
 
 import com.platinum.model.Appearance;
+import com.platinum.model.Difficulty;
+import com.platinum.model.DifficultyHandler;
 import com.platinum.model.Flag;
 import com.platinum.model.input.impl.EnterReferral;
 import com.platinum.net.packet.Packet;
@@ -62,10 +64,10 @@ public class ChangeAppearancePacketListener implements PacketListener {
 		}
 		player.getPacketSender().sendInterfaceRemoval();
 		player.getAppearance().setCanChangeAppearance(false);
-		if (!player.hasReferral) {
-            player.getPacketSender().sendEnterInputPrompt("Hi :D Where did you find this server from type Nothing if no-one");
-            player.setInputHandling(new EnterReferral());
-        }
+
+		if (player.getDifficulty().equals(Difficulty.Default)) {
+			DifficultyHandler.openInterface(player);
+		}
 	}
 
 	private static final int[][] ALLOWED_COLORS = { 

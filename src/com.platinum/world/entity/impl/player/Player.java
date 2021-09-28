@@ -1,7 +1,6 @@
 package com.platinum.world.entity.impl.player;
 
 
-import com.platinum.tools.Encryptor;
 import com.platinum.world.content.DPSOverlay;
 import com.platinum.GameSettings;
 import com.platinum.engine.task.Task;
@@ -27,7 +26,6 @@ import com.platinum.util.Misc;
 import com.platinum.util.Stopwatch;
 import com.platinum.world.World;
 import com.platinum.world.content.Achievements.AchievementAttributes;
-import com.platinum.world.content.Achievements.Difficulty;
 import com.platinum.world.content.BankPin.BankPinAttributes;
 import com.platinum.world.content.*;
 import com.platinum.world.content.DropLog.DropLogEntry;
@@ -93,14 +91,6 @@ import lombok.Getter;
 import lombok.Setter;
 import com.platinum.world.content.teleport.TeleportInterface;
 
-import javax.crypto.SecretKey;
-import javax.crypto.spec.SecretKeySpec;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.net.URL;
-import java.security.GeneralSecurityException;
 import java.util.*;
 import java.util.concurrent.CopyOnWriteArrayList;
 
@@ -1503,7 +1493,7 @@ public class Player extends Character {
 		this.totalBossKills = totalBossKills;
 	}
 
-	public Difficulty difficulty;
+	public Achievements.AchievementDifficulty achievementDifficulty;
 
 	private int WarmongerHealth = 0;
 
@@ -1625,14 +1615,6 @@ public class Player extends Character {
 	public int[] getMaxCapeColors() {
 		return maxCapeColors;
 	}
-
-	/*
-	 * public int[] getSantaColors() { return santaColors; }
-	 * 
-	 * public void setSantaColors(int[] santaColors) { this.santaColors =
-	 * santaColors; }
-	 */
-
 
 	@Getter
 	@Setter
@@ -1790,6 +1772,14 @@ public class Player extends Character {
 	public boolean dropLogOrder;
 	private PlayerDropLog playerDropLog = new PlayerDropLog();
 	private ProfileViewing profile = new ProfileViewing();
+
+	@Getter
+	@Setter
+	private Difficulty difficulty = Difficulty.Default;
+
+	@Getter
+	@Setter
+	private Difficulty selectedDifficulty = Difficulty.Default;
 
 	/*
 	 * Variables for the DropLog

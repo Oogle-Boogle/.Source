@@ -502,7 +502,7 @@ com/platinum/world/content/Achievements.java
  com.platinum.world.content.Achievements
  com.platinum.world.content.Achievements$AchievementAttributes
  com.platinum.world.content.Achievements$AchievementData
- com.platinum.world.content.Achievements$Difficulty
+ com.platinum.world.content.Achievements$AchievementDifficulty
 com/platinum/net/packet/impl/DuelAcceptancePacketListener.java
  com.platinum.net.packet.impl.DuelAcceptancePacketListener
 com/platinum/util/FrameUpdater.java
@@ -1860,12 +1860,12 @@ com/platinum/world/content/crashgame/HandleCrashAutoCashoutChange.java
  com.platinum.world.content.crashgame.HandleCrashAutoCashoutChange
 com/platinum/world/teleportinterface/TeleportInterface.java
  com.platinum.world.teleportinterface.TeleportInterface
- com.platinum.world.teleportinterface.TeleportInterface$Bosses
- com.platinum.world.teleportinterface.TeleportInterface$Cities
+ com.platinum.world.teleportinterface.TeleportInterface$Starters
  com.platinum.world.teleportinterface.TeleportInterface$Minigames
- com.platinum.world.teleportinterface.TeleportInterface$Monsters
- com.platinum.world.teleportinterface.TeleportInterface$Wilderness
  com.platinum.world.teleportinterface.TeleportInterface$Zones
+ com.platinum.world.teleportinterface.TeleportInterface$Monsters
+ com.platinum.world.teleportinterface.TeleportInterface$Hardened
+ com.platinum.world.teleportinterface.TeleportInterface$Expert
 com/platinum/world/content/droppreview/TDS.java
  com.platinum.world.content.droppreview.TDS
  com.platinum.world.content.droppreview.TDS$1

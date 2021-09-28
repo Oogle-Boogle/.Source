@@ -208,6 +208,10 @@ public class PlayerLoading {
 				player.setGameMode(GameMode.valueOf(reader.get("game-mode").getAsString()));
 			}
 
+			if (reader.has("difficulty")) {
+				player.setDifficulty(Difficulty.valueOf(reader.get("difficulty").getAsString()));
+			}
+
 			if (reader.has("last-known-daily-task-npc")) {
 				player.setCurrentDailyNPC(reader.get("last-known-daily-task-npc").getAsInt());
 			}

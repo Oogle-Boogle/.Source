@@ -1,5 +1,6 @@
 package com.platinum.world.entity.impl.player;
 
+import com.platinum.model.*;
 import com.platinum.world.content.DPSTask;
 import com.platinum.GameServer;
 import com.platinum.GameSettings;
@@ -14,12 +15,6 @@ import com.platinum.engine.task.impl.PlayerSpecialAmountTask;
 import com.platinum.engine.task.impl.PraiseTask;
 import com.platinum.engine.task.impl.PrayerRenewalPotionTask;
 import com.platinum.engine.task.impl.StaffOfLightSpecialAttackTask;
-import com.platinum.model.Flag;
-import com.platinum.model.Item;
-import com.platinum.model.Locations;
-import com.platinum.model.PlayerRights;
-import com.platinum.model.Position;
-import com.platinum.model.Skill;
 import com.platinum.model.container.impl.Bank;
 import com.platinum.model.container.impl.Equipment;
 import com.platinum.model.definitions.NpcDefinition;
@@ -278,8 +273,11 @@ public class PlayerHandler {
 		if (player.newPlayer()) {
 			StartScreen.open(player);
 			player.setPlayerLocked(true);
-		} else {
-			 
+		}
+
+		if (player.getDifficulty().equals(Difficulty.Default) && !player.newPlayer()) {
+			DifficultyHandler.openInterface(player);
+			player.getPacketSender().sendMessage("Please choose a difficulty!");
 		}
 
 		player.getPacketSender().updateSpecialAttackOrb().sendIronmanMode(player.getGameMode().ordinal());

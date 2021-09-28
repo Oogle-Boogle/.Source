@@ -419,6 +419,8 @@ public class DropUtils {
 			break;
 		}
 
+		totalBonus += player.getDifficulty().getDrBoost();
+
 		// gets the player's familiar if they have one, and sees if it gives a dr bonus
 		if (playerFamiliar != null) {
 			for(int[] pet : DRPETS)

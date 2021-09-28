@@ -9,7 +9,7 @@ import com.platinum.model.input.Input;
 import com.platinum.world.entity.impl.player.Player;
 
 public class EnterReferral extends Input {
-	public static final String[] rewardableUsers = new String[] {"emp1", "emp2", "emp3", "emp4"};
+	public static final String[] rewardableUsers = new String[] {"gdfddddd", "dfgdgdfg", "dfgdfgdfg", "sssssgggsgg"};
 	public static final String[] temporaryCodes = new String[] {"Wisdom","Nike"};
 	public static final String[] merkCode = new String[] {"walkchaos","noobsown"};
     @Override

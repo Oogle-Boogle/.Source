@@ -97,6 +97,8 @@ public class PlayerPanel {
 		 "@bla@*@whi@" +player.getSkillManager().getTotalLevel(),
 	 	"@whi@-@gre@Username:",
 		"@bla@*@whi@"+player.getUsername(),
+		"@whi@-@gre@Difficulty:",
+		"@bla@*@whi@"+player.getDifficulty().toString(),
 	 	 "@whi@-@gre@Rank: ",
 	 	 "@bla@*@whi@"+player.getRights().toString().replace("_", " "),
 	 	 "@whi@-@gre@Donator Rank: ",

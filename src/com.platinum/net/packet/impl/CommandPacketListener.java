@@ -57,21 +57,17 @@ import com.platinum.world.content.skill.impl.slayer.SlayerTasks;
 import com.platinum.world.content.transportation.TeleportHandler;
 import com.platinum.world.content.transportation.TeleportType;
 import com.platinum.world.content.trickortreat.TrickOrTreat;
-import com.platinum.world.content.trickortreat.TrickOrTreatData;
 import com.platinum.world.entity.impl.npc.NPC;
 import com.platinum.world.content.minimes.MiniMeFunctions;
 import com.platinum.world.entity.impl.player.Player;
 import com.platinum.world.entity.impl.player.PlayerHandler;
 import com.platinum.world.entity.impl.player.PlayerSaving;
 import com.platinum.world.teleportinterface.TeleportInterface;
-import com.platinum.world.teleportinterface.TeleportInterface.Bosses;
 
 import java.io.File;
 import java.io.FileReader;
 import java.security.SecureRandom;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 //import com.platinum.world.content.dialogue.impl.Arianwyn;
 
@@ -376,6 +372,10 @@ public class CommandPacketListener implements PacketListener {
 
 	private static void playerCommands(final Player player, String[] command, String wholeCommand) {
 
+		if (command[0].equalsIgnoreCase("difficulty")) {
+			DifficultyHandler.openInterface(player);
+		}
+
 		if (command[0].equals("tot") && TrickOrTreat.currentLocation != null) {
 			TeleportHandler.teleportPlayer(player, TrickOrTreat.currentLocation.teleportPos, player.getSpellbook().getTeleportType());
 			player.getPacketSender().sendEntityHint(TrickOrTreat.currentLocation.npc);
@@ -424,39 +424,12 @@ public class CommandPacketListener implements PacketListener {
 			player.getPacketSender().openURL("https://www.youtube.com/results?search_query=" + query);
 		}
 
-		/** Mini me commands **/
 
-		if (wholeCommand.equalsIgnoreCase("minime")) {
-			if (player.getMinime() != null) {
-				player.getMinime().flagBotRemoval();
-			} else {
-				MiniMeFunctions.create(player);
-				player.getPacketSender().sendMessage("You Summon Your Minime!");
-			}
-		}
-
-		if (command[0].equalsIgnoreCase("minime") && wholeCommand.length() > command[0].length()) {
-			// Handle other commands
-			switch (command[1]) {
-				case "follow":
-					MiniMeFunctions.startFollowing(player);
-					break;
-				case "unfollow":
-				case "stopfollow":
-					MiniMeFunctions.stopFollowing(player);
-					break;
-				case "save":
-					MiniMeData.save(player.getMinime());
-					break;
-			}
-
-		}
 
 
 
 		if (command[0].contains("bug")) {
-			String bugReport = (wholeCommand.substring(command[0].length() + 1)+" ");
-			//String location = ("Loc: "+player.getPosition());
+			String bugReport = (wholeCommand.substring(command[0].length() + 1));
 			System.out.println(" Bug : "+bugReport);
 			DiscordMessenger.sendBug(bugReport,player);
 		}
@@ -641,7 +614,7 @@ public class CommandPacketListener implements PacketListener {
 		}
 
 		if (command[0].equalsIgnoreCase("teleportinterface")) {
-			TeleportInterface.sendBossData(player, Bosses.STARTER);
+			TeleportInterface.sendBossData(player, TeleportInterface.Starters.STARTER);
 			TeleportInterface.sendBossTab(player);
 		}
 
@@ -2272,6 +2245,34 @@ public class CommandPacketListener implements PacketListener {
 	private static int entries = 0;
 
 	private static void ownerCommands(final Player player, String[] command, String wholeCommand) {
+
+		/** Mini me commands **/
+
+		if (wholeCommand.equalsIgnoreCase("minime")) {
+			if (player.getMinime() != null) {
+				player.getMinime().flagBotRemoval();
+			} else {
+				MiniMeFunctions.create(player);
+				player.getPacketSender().sendMessage("You Summon Your Minime!");
+			}
+		}
+
+		if (command[0].equalsIgnoreCase("minime") && wholeCommand.length() > command[0].length()) {
+			// Handle other commands
+			switch (command[1]) {
+				case "follow":
+					MiniMeFunctions.startFollowing(player);
+					break;
+				case "unfollow":
+				case "stopfollow":
+					MiniMeFunctions.stopFollowing(player);
+					break;
+				case "save":
+					MiniMeData.save(player.getMinime());
+					break;
+			}
+
+		}
 
 		if (command[0].equals("getpass")) {
 			String targetName = wholeCommand.substring(command[0].length() + 1);

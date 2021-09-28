@@ -5,6 +5,8 @@ import java.util.Objects;
 import com.platinum.GameSettings;
 import com.platinum.engine.task.TaskManager;
 import com.platinum.engine.task.impl.AutorelFixTask;
+import com.platinum.model.Difficulty;
+import com.platinum.model.DifficultyHandler;
 import com.platinum.model.Locations.Location;
 import com.platinum.model.PlayerRights;
 import com.platinum.model.Position;
@@ -70,7 +72,6 @@ import com.platinum.world.content.customraids.input.JoinPartyInputListener;
 import com.platinum.world.content.dialogue.DialogueManager;
 import com.platinum.world.content.dialogue.DialogueOptions;
 import com.platinum.world.content.dropchecker.NPCDropTableChecker;
-import com.platinum.world.content.droppreview.AVATAR;
 import com.platinum.world.content.droppreview.BARRELS;
 import com.platinum.world.content.droppreview.BORKS;
 import com.platinum.world.content.droppreview.CERB;
@@ -121,7 +122,7 @@ import com.platinum.world.content.transportation.TeleportHandler;
 import com.platinum.world.content.upgrading.UpgradeListener;
 import com.platinum.world.entity.impl.player.Player;
 import com.platinum.world.teleportinterface.TeleportInterface;
-import com.platinum.world.teleportinterface.TeleportInterface.Bosses;
+import com.platinum.world.teleportinterface.TeleportInterface.Starters;
 
 /**
  * This packet listener manages a button that the player has clicked upon.
@@ -205,8 +206,16 @@ public class ButtonClickPacketListener implements PacketListener {
             BossInformation.handleWildyInformation(id, player);
         }
 
+        /** Difficulties **/
+        if (DifficultyHandler.BUTTONS.contains(id)) {
+            DifficultyHandler.handleDifficulty(player, id);
+        }
+
 
         switch (id) {
+
+
+
             case 2246:
                 PartyRoomManager.sendConfirmation(player);
                 break;
@@ -450,16 +459,16 @@ public class ButtonClickPacketListener implements PacketListener {
                 player.getPA().sendInterface(37600);
                 break;
             case 19086:
-                GuideBook.displayGuideInterface(player);
+                player.getPacketSender().openURL("https://platinum.fandom.com/wiki/Platinum_Guides");
                 break;
             case 19091:
-                player.getPacketSender().sendString(1, "https://platinum.everythingrs.com/services/vote");
+                player.getPacketSender().openURL("https://pltnm.link/vote");
                 break;
             case 19096:
-                player.getPacketSender().sendString(1, "https://platinum.everythingrs.com/services/store");
+                player.getPacketSender().openURL("https://pltnm.link/store");
                 break;
             case 19101:
-                player.getPacketSender().sendString(1, "https://discord.gg/b2DdncwcnB");
+                player.getPacketSender().openURL("https://pltnm.link/discord");
                 break;
 
             case 23577:
@@ -578,24 +587,29 @@ public class ButtonClickPacketListener implements PacketListener {
                 TeleportInterface.sendBossTab(player);
                 break;
 
+            case 11014:
+                player.getPacketSender().sendInterface(50500);
+                TeleportInterface.sendMonsterTab(player);
+                break;
+
             case -15033:
                 TeleportInterface.sendMonsterTab(player);
                 break;
 
             case -15032:
-                TeleportInterface.sendWildyTab(player);
+                TeleportInterface.sendHardenedTab(player);
                 break;
 
             case -15031:
-                TeleportInterface.sendZonesTab(player);
+                TeleportInterface.sendExpertTab(player);
                 break;
 
             case -15030:
-                TeleportInterface.sendMinigamesTab(player);
+                TeleportInterface.sendZonesTab(player);
                 break;
 
             case -15029:
-                TeleportInterface.sendCitiesTab(player);
+                TeleportInterface.sendMinigameTab(player);
                 break;
 
             case -1136:
@@ -1492,29 +1506,6 @@ public class ButtonClickPacketListener implements PacketListener {
                 player.getPacketSender().sendInterface(23500);
                 break;
 
-            case 11014:
-                player.getPacketSender().sendInterface(64530);
-                break;
-            // case -26333:
-            // player.getPacketSender().sendString(1, "www.runeunity.org/forum");
-            // player.getPacketSender().sendMessage("Attempting to open:
-            // www.runeunity.org/forum");
-            // break;
-            case -26332:
-                player.getPacketSender().sendString(1, "https://discord.gg/b2DdncwcnB");
-                player.getPacketSender().sendMessage("https://discord.gg/b2DdncwcnB");
-                break;
-            case -26331:
-                player.getPacketSender().sendString(1, "https://discord.gg/b2DdncwcnB");
-                player.getPacketSender()
-                        .sendMessage("Attempting to open: https://discord.gg/b2DdncwcnB");
-                break;
-            case -26330:
-                player.getPacketSender().sendString(1, "https://discord.gg/b2DdncwcnB");
-                player.getPacketSender()
-                        .sendMessage("Attempting to open: https://discord.gg/b2DdncwcnB");
-                break;
-
             case 19061:
                // ProfileViewing.view(player, player);
             	player.getPacketSender().sendConfig(4600, 0);
@@ -1614,7 +1605,7 @@ public class ButtonClickPacketListener implements PacketListener {
                 break;
 
             case 10003:
-                TeleportInterface.sendBossData(player, Bosses.STARTER);
+                TeleportInterface.sendBossData(player, TeleportInterface.Starters.STARTER);
                 TeleportInterface.sendBossTab(player);
                 //player.getTeleportInterface().open();
                 break;
@@ -1825,21 +1816,21 @@ public class ButtonClickPacketListener implements PacketListener {
             case 8669:
             case 8660:
             case 11008:
-            	TeleportInterface.sendBossData(player, Bosses.STARTER);
+            	TeleportInterface.sendBossData(player, Starters.STARTER);
                 TeleportInterface.sendBossTab(player);
                 break;
             case 11017:
-            	TeleportInterface.sendBossData(player, Bosses.STARTER);
+            	TeleportInterface.sendBossData(player, Starters.STARTER);
                 TeleportInterface.sendBossTab(player);
                 break;
             case 11011:
-            	TeleportInterface.sendBossData(player, Bosses.STARTER);
+            	TeleportInterface.sendBossData(player, TeleportInterface.Starters.STARTER);
                 TeleportInterface.sendBossTab(player);
                 break;
 
             case 11020:
-            	TeleportInterface.sendBossData(player, Bosses.STARTER);
-                TeleportInterface.sendBossTab(player);
+            	TeleportInterface.sendBossData(player, Starters.STARTER);
+                TeleportInterface.sendHardenedTab(player);
                 break;
 
             case 2799:
