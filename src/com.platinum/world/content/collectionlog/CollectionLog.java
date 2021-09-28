@@ -23,8 +23,8 @@ public class CollectionLog {
     /*
      * Contains NPC Id's that should work with the collection log You can change these as
      */		private List<NpcDefinition> npcs = new ArrayList<>();
-    		private final int[] NPC_LIST = new int[] {420, 842, 174, 3767, 51, 2783, 17, 422, 3263, 15, 1982, 9994, 9932, 224, 1999, 16, 9993, 9277, 9944, 9273, 9903, 8133,
-    				9247, 8493, 9203, 172, 9935, 170, 169, 219, 12239, 3154, 33, 1684, 5957, 5958, 5959, 185, 6311};
+    		private final int[] NPC_LIST = new int[] {17, 422, 3263, 15, 224, 1999, 9932, 9994, 9993, 16, 9277, 9273, 9903, 8133,
+                    8493, 9247, 172, 9203, 9935, 169, 170, 219, 12239, 3154, 5957, 1684, 185, 6311, 5959, 5958};
     		private int textStart = 30560;
     
     /*
