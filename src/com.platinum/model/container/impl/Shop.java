@@ -1758,9 +1758,9 @@ public class Shop extends ItemContainer {
 					case 3459: // Low Key
 						return new Object[] { 1, "Donation Points" };
 					case 3455: // Med Key
-						return new Object[] { 30, "Donation Points" };
+						return new Object[] { 25, "Donation Points" };
 					case 3458: // Top Key
-						return new Object[] { 100, "Donation Points" };
+						return new Object[] { 50, "Donation Points" };
 					case 5185: //inf overload potion
 				case 14808: //Scroll of praise
 				case 19890: // 2h double drop
@@ -1770,9 +1770,9 @@ public class Shop extends ItemContainer {
 				case 5197: // 10% perm dr scroll
 						return new Object[] { 100, "Donation Points" };
 				case 5170: //inf prayer scroll
-					return new Object[] { 500, "Donation Points" };
+					return new Object[] { 45, "Donation Points" };
 				case 13201: //supreme herbal bow
-				return new Object[] { 1000, "Donation Points" };
+				return new Object[] { 200, "Donation Points" };
 				}
 				return new Object[] { 150, "Donation Points" };
 			} else if (shop == VOID_STORE) {
