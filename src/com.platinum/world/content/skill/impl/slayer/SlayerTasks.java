@@ -27,7 +27,6 @@ public enum SlayerTasks {
 	 */
 	HERCULES(SlayerMaster.DURADEL, 2783, "Hercules can be found in the Starter Teleports!", 600, new Position(2783, 4636, 0)),
 	LUCARIO(SlayerMaster.DURADEL, 3263, "Lucario can be found in the Starer Teleports", 600, new Position(2891, 4767)),
-	CHARIZARD(SlayerMaster.DURADEL, 1982, "Charizard can be found in the Starter Teleports", 600, new Position(2205, 3288)),
 	DEFENDERS(SlayerMaster.DURADEL, 9994, "Defenders can be found in the Medium Teleports", 600, new Position(2724, 9821)),
 	GODZILLA(SlayerMaster.DURADEL, 9932, "Godzilla can be found in the Medium Teleports", 600, new Position(2452, 10147)),
 	CERBERUS(SlayerMaster.DURADEL, 1999, "Cerberus can be found in the Medium Teleports", 600, new Position(1240, 1247)),
@@ -38,7 +37,6 @@ public enum SlayerTasks {
 	GODZILLA1(SlayerMaster.KURADEL, 9932, "Godzilla can be found in the Medium Teleports", 1000, new Position(2452, 10147)),
 	CERBERUS1(SlayerMaster.KURADEL, 1999, "Cerberus can be found in the Medium Teleports", 1000, new Position(1240, 1247)),
 	LORD_VALOR(SlayerMaster.KURADEL, 9277, "Lord Valor can be found in the Hardened Teleports", 1000, new Position(2795, 2775)),
-	HURRICANE_WARRIORS(SlayerMaster.KURADEL, 9944, "Hurricane Warriors can be found in the Hardened Teleports", 1000, new Position(1737, 5353)),
 	DZANTH(SlayerMaster.KURADEL, 9273, "Dzanth can be found in the Hardened Teleports", 1000, new Position(2731, 5095)),
 	KING_KONG(SlayerMaster.KURADEL, 9903, "King Kong can be found in the Hardened Teleports.", 1000, new Position(2710, 9441)),
 	CORP_BEAST(SlayerMaster.KURADEL, 8133, "Corp beastcan be found in the Hardened Teleports", 1000, new Position(1761, 5329, 1)),
