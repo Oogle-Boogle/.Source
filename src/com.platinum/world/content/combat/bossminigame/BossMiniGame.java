@@ -56,24 +56,24 @@ public class BossMiniGame {
                 stats = StatSetups.KBD_WAVE_ONE;
                 inventory = InventorySetups.KBD_WAVE_ONE;
                 break;
-            case 3200:// Tormented Demon
+            case 2883:// Tormented Demon
                 gear = EquipmentSetups.TORMENTED_DEMON;
                 stats = StatSetups.TORMENTED_DEMON;
                 inventory = InventorySetups.TORMENTED_DEMON;
                 changeSpellBook = true;
                 newSpellBook = MagicSpellbook.ANCIENT;
                 break;
-            case 2882:// Chaos Elemental
+            case 3200:// Chaos Elemental
                 gear = EquipmentSetups.CHAOS_ELEMENTAL;
                 stats = StatSetups.CHAOS_ELEMENTAL;
                 inventory = InventorySetups.CHAOS_ELEMENTAL;
                 break;
-            case 2881:// Dagganoth Prime
+            case 2882:// Dagganoth Prime
                 gear = EquipmentSetups.DAGANNOTH_PRIME;
                 stats = StatSetups.DAGANNOTH_PRIME;
                 inventory = InventorySetups.DAGANNOTH_PRIME;
                 break;
-            case 2883:// Dagannoth Supreme
+            case 2881:// Dagannoth Supreme
                 gear = EquipmentSetups.DAGANNOTH_SUPREME;
                 stats = StatSetups.DAGANNOTH_SUPREME;
                 inventory = InventorySetups.DAGANNOTH_SUPREME;
@@ -85,24 +85,7 @@ public class BossMiniGame {
                 changeSpellBook = true;
                 newSpellBook = MagicSpellbook.NORMAL;
                 break;
-            case 7286:// Cerberus
-                gear = EquipmentSetups.CERBERUS;
-                stats = StatSetups.CERBERUS;
-                inventory = InventorySetups.CERBERUS;
-                break;
-            case 9939:// Dagannoth Rex
-                gear = EquipmentSetups.DAGANNOTH_REX;
-                stats = StatSetups.DAGANNOTH_REX;
-                inventory = InventorySetups.DAGANNOTH_REX;
-                changeSpellBook = true;
-                newSpellBook = MagicSpellbook.ANCIENT;
-                break;
-            case 2001:// Crazy Level 2 Man
-                gear = EquipmentSetups.CRAZY_LVL2_MAN;
-                stats = StatSetups.CRAZY_LVL2_MAN;
-                inventory = InventorySetups.CRAZY_LVL2_MAN;
-                break;
-            case 7553:// Scorpia
+            case 2001:// Scorpia
                 gear = EquipmentSetups.SCORPIA;
                 stats = StatSetups.SCORPIA;
                 inventory = InventorySetups.SCORPIA;
