@@ -160,7 +160,7 @@ public class TeleportInterface {
 		WIZARDS(50604, "Darkblue Wizards", "Darkblue Wizards@bla@(T7)", "@red@KC REQ: 750 Hulk", "@red@HP:@gre@ 700k", "", "", 9203,
 				new int[] { 2920, 9687, 0 }),
 
-		PYROS(50605, "Heated Pyros", "Heated Pyros@bla@(T7)", "@red@KC REQ: 750 Darkblue wizards", "@red@HP:@gre@ 700k", "", "", 172,
+		PYROS(50605, "Heated Pyros", "Heated Pyros@bla@(T8)", "@red@KC REQ: 750 Darkblue wizards", "@red@HP:@gre@ 700k", "", "", 172,
 				new int[] { 3040, 4838, 0 }),
 
 		PURPLEFIRE_WYRM(50606, "Dark Purple Wyrm", "Dark Purple Wyrm@bla@(T8)", "Its a massboss", "@red@KC REQ: 1000 Pyros", "@red@HP:@gre@ 700k", "", 9935,
@@ -168,7 +168,7 @@ public class TeleportInterface {
 
 		TRINITY(50607, "Trinity", "Trinity@bla@(T8)", "ITS a Massboss", "@red@KC REQ: 1000 Purple Wyrms", "@red@HP:@gre@ 725k", "", 170,
 				new int[] { 2517, 4645, 0 }, 3000),
-		CLOUD(50608, "Cloud", "Cloud@bla@(T8)", "@red@KC REQ: 1000 Trinity", "@red@HP:@gre@ 750k", "", "", 169,
+		CLOUD(50608, "Cloud", "Cloud@bla@(T9)", "@red@KC REQ: 1000 Trinity", "@red@HP:@gre@ 750k", "", "", 169,
 				new int[] { 2539, 5774, 0 }),
 
 		HERBAL(50609, "Herbal Rogue", "Herbal Rogue@bla@(T9)", "@red@KC REQ: 1000 Cloud", "@red@HP:@gre@ 750000(750k)", "", "", 219, new int[] { 2737, 5087, 0 },
