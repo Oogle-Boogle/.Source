@@ -12,10 +12,10 @@ import com.platinum.world.entity.impl.player.Player;
  */
 public class Sire extends MultiBoss7 {
 
-    private final static int NPC_ID = 5886;
+    private final static int NPC_ID = 175;
     private final static int KEY_ITEM_ID = 19933;
 
-    private final static String RECEIVE_DROP_MESSAGE = "You received a key drop from Kekw.";
+    private final static String RECEIVE_DROP_MESSAGE = "You received a key drop from Kid Buu.";
 
     public Sire() {
         super(NPC_ID);

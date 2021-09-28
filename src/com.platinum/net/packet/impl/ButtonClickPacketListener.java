@@ -455,9 +455,9 @@ public class ButtonClickPacketListener implements PacketListener {
              * Roulette
              */
 
-            case 19056:
+/*            case 19056:
                 player.getPA().sendInterface(37600);
-                break;
+                break;*/
             case 19086:
                 player.getPacketSender().openURL("https://platinum.fandom.com/wiki/Platinum_Guides");
                 break;
