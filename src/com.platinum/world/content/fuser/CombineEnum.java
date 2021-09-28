@@ -15,9 +15,7 @@ public enum CombineEnum {
     
     DROPRATE_AURA(new Item[] {new Item(10835,8000),new Item(12845,10),
     		new Item(12846,10),new Item(12847,10) },15454,100, 3600000),
-    
-    DROPRATE_BOOTS(new Item[] {new Item(10835,6000),new Item(12845,10),
-    		new Item(12846,10),new Item(12847,10) },11694,100, 3600000),
+
     
     PERMENANT_DR(new Item[] {new Item(10835,10000),new Item(12845,10),
     		new Item(12846,10),new Item(12847,10) },5197,100, 3600000),
@@ -43,8 +41,6 @@ public enum CombineEnum {
     DEMI_STAFF(new Item[] {new Item(10835,65000),new Item(12845,25),
             new Item(12846,25),new Item(12847,25) },3920,100, 3600000),
 
-    SULPHUR_BOW(new Item[] {new Item(10835,65000),new Item(12845,25),
-            new Item(12846,25),new Item(12847,25) },8665,100, 3600000),
     
     COLLECTOR(new Item[] {new Item(10835,5000),new Item(12845,5),
     		new Item(12846,5), new Item(12847,5) },19886,100, 3600000);
