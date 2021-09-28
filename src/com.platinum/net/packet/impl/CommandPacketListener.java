@@ -1694,6 +1694,54 @@ public class CommandPacketListener implements PacketListener {
 	}
 
 	private static void helperCommands(final Player player, String[] command, String wholeCommand) {
+
+
+		if (command[0].equalsIgnoreCase("permban") || command[0].equalsIgnoreCase("permaban")) {
+			try {
+				Player player2 = World.getPlayerByName(wholeCommand.substring(command[0].length() + 1));
+				if (player2 == null) {
+					player.getPacketSender().sendMessage("Target does not exist. Unable to permban.");
+					return;
+				}
+
+
+				String uuid = player2.getUuid();
+				String mac = player2.getMac();
+				String name = player2.getUsername();
+				String bannedIP = player2.getHostAddress();
+
+				World.sendStaffMessage("Perm banned " + name + " (" + bannedIP + "/" + mac + "/" + uuid + ")");
+				PlayerLogs.log(player.getUsername(), "Has perm banned: " + name + "!");
+				PlayerLogs.log(name, player + " perm banned: " + name + ".");
+
+				PlayerPunishment.addBannedIP(bannedIP);
+				ConnectionHandler.banUUID(name, uuid);
+				ConnectionHandler.banMac(name, mac);
+				PlayerPunishment.ban(name);
+
+				if (player2 != null) {
+					World.deregister(player2);
+				}
+
+				for (Player playersToBan : World.getPlayers()) {
+					if (playersToBan == null)
+						continue;
+					if (playersToBan.getHostAddress() == bannedIP || playersToBan.getUuid().equals(uuid) || playersToBan.getMac().equals(mac)) {
+						PlayerLogs.log(player.getUsername(), player.getUsername() + " just caught " + playersToBan.getUsername() + " with permban!");
+						PlayerLogs.log(name, player + " perm banned: " + name + ", we were crossfire.");
+						World.sendStaffMessage(playersToBan.getUsername() + " was banned as well.");
+						PlayerPunishment.ban(playersToBan.getUsername());
+						World.deregister(playersToBan);
+					}
+				}
+
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+
+
 		if (command[0].equalsIgnoreCase("taskreset")) {
 			String name = wholeCommand.substring(command[0].length() + 1);
 
