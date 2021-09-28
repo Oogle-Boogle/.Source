@@ -29,7 +29,7 @@ public class RaidsEasyChest {
 	//public static int amazingLoots[] = { 5022 };
 
 	// if roll is 1 - 120, they get this table 
-	public static int commonLoots[] = {3064, 19618, 19691, 19692, 19693, 19694, 19696, 19695, 19159, 19160, 19161, 19163, 19164, 19165, 19166,};
+	public static int commonLoots[] = {10835};
 
 	public static int getRandomItem(int[] array) {
 		return array[Misc.getRandom(array.length - 1)];
