@@ -1730,7 +1730,7 @@ public class CommandPacketListener implements PacketListener {
 				target.getSlayer().resetSlayerTask();
 				target.getPacketSender().sendMessage(player.getRights() + " " + player.getUsername() + " Has reset your slayer task!");
 				player.getPacketSender().sendMessage("Reset " + target.getUsername() + "'s Slayer task.");
-				World.sendStaffMessage("[TASK RESET] " + player.getUsername() + " Has reset" + target.getUsername()
+				World.sendStaffMessage("[TASK RESET] " + player.getUsername() + " Has reset " + target.getUsername()
 						+ " 's slayer task!");
 			}
 
