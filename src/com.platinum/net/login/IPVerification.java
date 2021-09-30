@@ -91,8 +91,7 @@ public final class IPVerification {
 			} else {
 				Scanner sc = new Scanner(url.openStream()); //Scanner is a class which reads the results from a website response
 				StringBuilder inline = new StringBuilder(); //Setting a blank string. We will add the responses to the string to build up our results
-				while(sc.hasNext()) //While there are still responses, we add them to the blank string 'inline'
-				{
+				while(sc.hasNext()) {//While there are still responses, we add them to the blank string 'inline'
 					inline.append(sc.nextLine()); //Adding the response to nextline blank string
 				}
 				//System.out.println(inline); //If you want to see the full result in the console, uncomment this line (Good for debugging)
@@ -120,8 +119,7 @@ public final class IPVerification {
 				if ((VPN || tor || (proxy && fraudScore > 90) || bot_status)
 						&& !GameSettings.DEVELOPERSERVER
 						&& !suspect.getRights().isSeniorStaff()
-						&& !ip.contains("com.sg")
-						&& !ip.contains("hnremote.net")) { //Only sending the info to staff if these prereqs are met
+						&& !suspect.getRights().isMember()) { //Only sending the info to staff if these prereqs are met
 					DiscordMessenger.sendStaffMessage(results); //This is the location that I sent the results to, this should be changed to whatever is most relevant for you!
 					shouldBlock = true;
 				}

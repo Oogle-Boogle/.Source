@@ -22,7 +22,6 @@ import com.platinum.world.content.event.SpecialEvents;
 import com.platinum.world.content.fuser.RandomRewards;
 import com.platinum.world.content.serverperks.GlobalPerks;
 import com.platinum.world.content.skill.impl.summoning.Familiar;
-import com.platinum.world.content.skillingboss.SkillBossConfig;
 import com.platinum.world.content.skillingboss.SkillBossHandler;
 import com.platinum.world.entity.impl.player.Player;
 
@@ -105,7 +104,7 @@ public class SkillManager {
         }
 
 
-        experience *= player.getRights().getExperienceGainModifier();
+        experience *= player.getRights().getXpMofifier();
 
 
 

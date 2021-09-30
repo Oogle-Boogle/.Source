@@ -23,6 +23,7 @@ import java.util.List;
 
 public class TrickOrTreat {
 
+    //Todo add calendar check
     public static TrickOrTreatData.LocationData currentLocation = null;
 
     public static void pickNextLocation() {
