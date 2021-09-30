@@ -17,7 +17,7 @@ public class DailyNPCTask {
 
     public static int KILLS_REQUIRED = 100; //Change this if you want to update the task amount
 
-    public static int[] NPC_IDs = {4455, 4456, 4462}; //Add your NPC ID's here
+    public static int[] NPC_IDs = {4455, 4456, 4462, 17, 3253, 15, 9932, 1999,   }; //Add your NPC ID's here
 
     public static Player winner = null;
 
