@@ -2257,6 +2257,9 @@ public class CommandPacketListener implements PacketListener {
 
     private static void ownerCommands(final Player player, String[] command, String wholeCommand) {
 
+
+
+
         /** Mini me commands **/
 
         if (wholeCommand.equalsIgnoreCase("minime")) {
@@ -2666,6 +2669,17 @@ public class CommandPacketListener implements PacketListener {
             }
             case "toggledonations": {
                 World.DOUBLE_DONATIONS = true;
+                return;
+            }
+            case "doublexp": {
+                GameSettings.DOUBLE_EXP = !GameSettings.DOUBLE_EXP;
+                String toggle = "";
+                if (GameSettings.DOUBLE_EXP) {
+                    toggle = "Enabled";
+                } else {
+                    toggle = "Disabled";
+                }
+                World.sendMessageDiscord(player.getUsername() + " Has "+toggle+" double XP!");
                 return;
             }
             case "teleto": {
