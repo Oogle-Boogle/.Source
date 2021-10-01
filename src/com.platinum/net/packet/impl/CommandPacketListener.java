@@ -454,7 +454,7 @@ public class CommandPacketListener implements PacketListener {
         if (command[0].equalsIgnoreCase("progress")) {
             player.getProgressionManager().open();
         }
-        if (command[0].equalsIgnoreCase("test")) {
+        if (command[0].equalsIgnoreCase("Bis")) {
             player.getBestItems().open();
         }
 		/*if (command[0].equalsIgnoreCase("none"))
@@ -868,7 +868,7 @@ public class CommandPacketListener implements PacketListener {
             player.getPacketSender().sendInterface(61500);
         }
 
-        if (command[0].equalsIgnoreCase("war")) {
+/*        if (command[0].equalsIgnoreCase("war")) {
             if (player.getLastZulrah().elapsed(600000)) {
                 TeleportHandler.teleportPlayer(player, new Position(2589, 4440, player.getIndex() * 4),
                         player.getSpellbook().getTeleportType());
@@ -879,7 +879,7 @@ public class CommandPacketListener implements PacketListener {
             } else {
                 player.getPacketSender().sendMessage("You can only teleport here every 10 minutes!");
             }
-        }
+        }*/
 
         if (command[0].startsWith("reward")) {
             if (command.length == 1) {
@@ -984,11 +984,11 @@ public class CommandPacketListener implements PacketListener {
 		}*/
 
 
-        if (command[0].equalsIgnoreCase("trinity")) {
+/*        if (command[0].equalsIgnoreCase("trinity")) {
             TeleportHandler.teleportPlayer(player, new Position(2517, 4645, 0),
                     player.getSpellbook().getTeleportType());
             player.getPacketSender().sendMessage("Welcome to trinity or w.e the npc is called");
-        }
+        }*/
         if (command[0].equalsIgnoreCase("checkpoints")) {
             player.sendMessage("@blu@You currently have: @red@" + player.getPointsHandler().getminiGamePoints1()
                     + " Minigame1 Points");
@@ -1034,7 +1034,7 @@ public class CommandPacketListener implements PacketListener {
                 return;
             }
         }
-        if (command[0].equalsIgnoreCase("miniwrencher")) {
+/*        if (command[0].equalsIgnoreCase("miniwrencher")) {
             TeleportHandler.teleportPlayer(player, new Position(2152, 5105, 0),
                     player.getSpellbook().getTeleportType());
             player.getPacketSender().sendMessage("Yep, thats the little son of wrencher, welcome to miniwrencher.");
@@ -1043,7 +1043,7 @@ public class CommandPacketListener implements PacketListener {
             TeleportHandler.teleportPlayer(player, new Position(3087, 3495, 0),
                     player.getSpellbook().getTeleportType());
             player.getPacketSender().sendMessage("Welcome to Edgeville");
-        }
+        }*/
 
 
         if (command[0].equalsIgnoreCase("depositbags")) {
@@ -1096,7 +1096,7 @@ public class CommandPacketListener implements PacketListener {
             int players = World.getPlayers().size() + 0;
             player.getPacketSender().sendMessage("There are currently " + players + " players online!");
         }
-        if (command[0].equals("platwarriors") || command[0].equals("platwarrior")) {
+/*        if (command[0].equals("platwarriors") || command[0].equals("platwarrior")) {
             TeleportHandler.teleportPlayer(player, new Position(2766, 2799), player.getSpellbook().getTeleportType());
         }
         if (command[0].equalsIgnoreCase("vorago")) {
@@ -1104,11 +1104,11 @@ public class CommandPacketListener implements PacketListener {
         }
         if (command[0].equalsIgnoreCase("ge")) {
             GrandExchange.open(player);
-        }
-        if (command[0].equals("tree")) {
+        }*/
+/*        if (command[0].equals("tree")) {
             player.getPacketSender().sendMessage("<img=4><shad=1><col=FF9933> The Evil Tree has sprouted at: "
                     + EvilTrees.SPAWNED_TREE.getTreeLocation().playerPanelFrame + "");
-        }
+        }*/
         if (wholeCommand.startsWith("profile")) {
             final String[] s = wholeCommand.split(" ");
             if (s.length < 2) {
@@ -1128,7 +1128,7 @@ public class CommandPacketListener implements PacketListener {
             // PotionDecanting.decantPotions(player);
             Decanting.startDecanting(player);
         }
-        if (command[0].equals("skull")) {
+/*        if (command[0].equals("skull")) {
             if (player.getSkullTimer() > 0) {
                 player.setSkullTimer(0);
                 player.setSkullIcon(0);
@@ -1136,7 +1136,7 @@ public class CommandPacketListener implements PacketListener {
             } else {
                 CombatFactory.skullPlayer(player);
             }
-        }
+        }*/
 
         if (wholeCommand.startsWith("droplog")) {
             final String[] s = wholeCommand.split(" ");
@@ -1174,9 +1174,9 @@ public class CommandPacketListener implements PacketListener {
                 TriviaBot.attemptAnswer(player, triviaAnswer);
         }
 
-        if (command[0].equalsIgnoreCase("zulrah")) {
+/*        if (command[0].equalsIgnoreCase("zulrah")) {
             player.getZulrahEvent().initialize();
-        }
+        }*/
 
 		/*if (command[0].equalsIgnoreCase("keyroom4444")) {
 			if (player.getKeyRoom() != null) {
@@ -1191,9 +1191,9 @@ public class CommandPacketListener implements PacketListener {
 			return;
 		}*/
 
-        if (command[0].equalsIgnoreCase("sagittare")) {
+/*        if (command[0].equalsIgnoreCase("sagittare")) {
             player.getSagittareEvent().initialize();
-        }
+        }*/
 
         if (command[0].equalsIgnoreCase("gamble")) {
             if (player.getSummoning().getFamiliar() != null) {
@@ -1215,9 +1215,11 @@ public class CommandPacketListener implements PacketListener {
             player.getPacketSender().sendMessage("Attempting to open: Platinum Forums");
 
         }
+/*
         if (command[0].equals("zombie") || command[0].equals("zombies")) {
             TeleportHandler.teleportPlayer(player, new Position(3503, 3563), player.getSpellbook().getTeleportType());
         }
+*/
 
 
         if (command[0].equalsIgnoreCase("train")) {
@@ -1304,11 +1306,11 @@ public class CommandPacketListener implements PacketListener {
             player.getInventory().resetItems().refreshItems();
         }
 
-        if (command[0].equalsIgnoreCase("[cn]")) {
+/*        if (command[0].equalsIgnoreCase("[cn]")) {
             if (player.getInterfaceId() == 40172) {
                 ClanChatManager.setName(player, wholeCommand.substring(wholeCommand.indexOf(command[1])));
             }
-        }
+        }*/
         if (wholeCommand.toLowerCase().startsWith("yell")) {
             String primaryRights = player.getRights().ordinal() > 0 ? "<img=" + player.getRights().ordinal() + ">" : "";
             String secondaryRights = player.getSecondaryPlayerRights().ordinal() > 0 ? "<zmg=" + player.getSecondaryPlayerRights().ordinal() + ">" : "";
