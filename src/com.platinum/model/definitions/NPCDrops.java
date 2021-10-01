@@ -456,6 +456,26 @@ public class NPCDrops {
 				chance = 20;
 				break;
 		}
+		switch (player.getSecondaryPlayerRights()) {
+			case DONATOR:
+				chance = 1;
+				break;
+			case SUPER_DONATOR:
+				chance = 3;
+				break;
+			case EXTREME_DONATOR:
+				chance = 5;
+				break;
+			case LEGENDARY_DONATOR:
+				chance = 8;
+				break;
+			case UBER_DONATOR:
+				chance = 10;
+				break;
+			case DELUXE_DONATOR:
+				chance = 15;
+				break;
+		}
 		if (random <= chance) {
 			multiplier++;
 		}
@@ -562,8 +582,8 @@ public class NPCDrops {
 			String itemName = item.getDefinition().getName();
 			String itemMessage = Misc.anOrA(itemName) + " " + itemName;
 			String npcName = Misc.formatText(npc.getDefinition().getName());
-			
-			String discordmessage = itemMessage + " from " + npcName + " worth " + Misc.currency(item.getDefinition().getValue()) + "!";
+			String worth = item.getDefinition().getValue() > 0 ? " worth " + Misc.currency(item.getDefinition().getValue()) : "";
+			String discordmessage = itemMessage + " from " + npcName + worth + "!";
 			NpcGain.RareDropXP(player);
 			World.sendMessageNonDiscord("<col=089915><shad=1>" + player.getUsername()
 			+ "  has just received <img=11><col=991608> " + itemMessage + " <img=11><col=089915> from <col=bb1313> " + npcName + "!");
@@ -681,7 +701,8 @@ public class NPCDrops {
 			
 			String message = "<img=11><col=eaeaea>[<col=FF0000>RARE DROP<col=eaeaea>]<img=11><col=eaeaea> " + toGive.getUsername() + " has just received <img=11><col=07b481>" + itemMessage
 					+ "<img=11><col=eaeaea> from <col=FF0000>" + npcName + "!";
-			String discordmessage = itemMessage + " from " + npcName + " worth " + Misc.currency(drop.getValue()) + "!";
+			String worth = item.getDefinition().getValue() > 0 ? " worth " + Misc.currency(item.getDefinition().getValue()) : "";
+			String discordmessage = itemMessage + " from " + npcName + worth + "!";
 			World.sendMessageNonDiscord(message);
 			DiscordMessenger.sendRareDrop(Misc.formatPlayerName(toGive.getUsername()), discordmessage);
 

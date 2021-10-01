@@ -1379,7 +1379,7 @@ public class CommandPacketListener implements PacketListener {
                 return;
             }
 
-            if (player.getRights() == PlayerRights.OWNER) {
+            /*if (player.getRights() == PlayerRights.OWNER) {
                 World.sendMessageNonDiscord(player.getRights().getYellPrefix() + rankIcons + "<col=ff0000>" + player.getRights().getCustomYellPrefix(true) + "</col> @bla@"
                         + player.getUsername() + ":" + yellMessage);
                 return;
@@ -1407,7 +1407,13 @@ public class CommandPacketListener implements PacketListener {
             if (player.getRights() == PlayerRights.ADMINISTRATOR) {
                 World.sendMessageNonDiscord(player.getRights().getYellPrefix() + rankIcons + "@or2@ Administrator @bla@" + player.getUsername() + ":" + yellMessage);
                 return;
+            }*/
+
+            if (player.getRights().isStaff()) {
+                World.sendMessageNonDiscord("<col=7838a3><shad=555>" + player.getRights().getYellPrefix() + rankIcons + "</shad>[" + player.getRights().toString().toUpperCase() + "]" + player.getUsername() + ":" + player.getRights().getYellHexColor() + yellMessage);
+                return;
             }
+
             if (player.getRights() == PlayerRights.DELUXE_DONATOR) {
                 World.sendMessageNonDiscord(player.getRights().getYellPrefix() + rankIcons + " <col=8600CC>"
                         + player.getRights().getCustomYellPrefix(false) + "</col> @bla@" + player.getUsername() + ":"

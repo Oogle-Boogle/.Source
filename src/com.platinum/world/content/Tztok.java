@@ -142,7 +142,7 @@ public class Tztok extends NPC {
 			handleDrop(npc, killer, damage);
 			NpcGain.WorldBossXP(killer);
 
-			if (++count >= 10) {
+			if (++count >= 4) {
 				break;
 			}
 
@@ -166,10 +166,9 @@ public class Tztok extends NPC {
 					new GroundItem(new Item(superrare), pos, player.getUsername(), false, 150, true, 200));
 			String itemName = (new Item(superrare).getDefinition().getName());
 			String itemMessage = Misc.anOrA(itemName) + " " + itemName;
-			DiscordMessenger.sendRareDrop(player.getUsername(), " received<col=eaeaea><img=11>[ " + itemMessage + "<col=eaeaea>]<img=11><col=FF0000>from the World Boss!");
 			World.sendMessageNonDiscord(
 					"<img=11><col=FF0000>" + player.getUsername() + " received<col=eaeaea><img=11>[ " + itemMessage + "<col=eaeaea>]<img=11><col=FF0000>from the World Boss!");
-			DiscordMessenger.sendRareDrop(player.getUsername(), " Just received " + itemMessage + " from the World Boss!");
+			//DiscordMessenger.sendRareDrop(player.getUsername(), " Just received " + itemMessage + " from the World Boss!");
 			return;
 		}
 
@@ -180,7 +179,7 @@ public class Tztok extends NPC {
 			String itemMessage = Misc.anOrA(itemName) + " " + itemName;
 			World.sendMessageNonDiscord(
 					"<img=11><col=FF0000>" + player.getUsername() + " received<img=11><col=eaeaea>[ " + itemMessage + "<col=eaeaea>]<img=11><col=FF0000> from the World Boss!");
-			DiscordMessenger.sendRareDrop(player.getUsername(), " Just received " + itemMessage + " from the World Boss!");
+			//DiscordMessenger.sendRareDrop(player.getUsername(), " Just received " + itemMessage + " from the World Boss!");
 			return;
 		}
 		if (chance >= 0) {
@@ -201,8 +200,8 @@ public class Tztok extends NPC {
 	 * @param damage
 	 */
 	private static void handleDrop(NPC npc, Player player, int damage) {
-		Position pos = npc.getPosition();
-		giveLoot(player, npc, pos);
+			Position pos = npc.getPosition();
+			giveLoot(player, npc, pos);
 	}
 
 	/**

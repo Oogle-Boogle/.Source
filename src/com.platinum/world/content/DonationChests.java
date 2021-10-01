@@ -89,6 +89,28 @@ public class DonationChests {
             default:
                 break;
         }
+        switch (player.getSecondaryPlayerRights()) {
+            case DONATOR:
+                chance = 1;
+                break;
+            case SUPER_DONATOR:
+                chance = 25;
+                break;
+            case EXTREME_DONATOR:
+                chance = 50;
+                break;
+            case LEGENDARY_DONATOR:
+                chance = 55;
+                break;
+            case UBER_DONATOR:
+                chance = 60;
+                break;
+            case DELUXE_DONATOR:
+                chance = 70;
+                break;
+            default:
+                break;
+        }
         return rolled <= chance;
     }
     /** Low tier 1-3 rewards **/

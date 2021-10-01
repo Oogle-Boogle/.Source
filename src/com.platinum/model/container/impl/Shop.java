@@ -437,13 +437,31 @@ public class Shop extends ItemContainer {
 		if (getCurrency().getId() != -1) {
 			playerCurrencyAmount = player.getInventory().getAmount(currency.getId());
 			currencyName = ItemDefinition.forId(currency.getId()).getName().toLowerCase();
+
 			if (currency.getId() == 995) {
-				if (player.getMoneyInPouch() >= value) {
+				if (player.getInventory().contains(995, value)) {
+					player.getInventory().delete(995, value);
+				} else {
 					playerCurrencyAmount = player.getMoneyInPouchAsInt();
-					if (!(player.getInventory().getFreeSlots() == 0
-							&& player.getInventory().getAmount(currency.getId()) == value)) {
-						usePouch = true;
+					int amountRequired = 0;
+					if (value <= 1000000000) {
+						amountRequired = 1;
+					} else if (value <= 2000000000) {
+						amountRequired = 2;
+					} else {
+						amountRequired = 3;
 					}
+
+					if (playerCurrencyAmount >= amountRequired) {
+						player.setMoneyInPouch(player.getMoneyInPouch() - amountRequired);
+						player.getPacketSender().sendString(8135, String.valueOf(player.getMoneyInPouch())); //Update the money pouch
+						int coinsToAdd = (amountRequired * 1000000000) - value;
+						player.getInventory().add(995, coinsToAdd);
+						player.getPacketSender().sendMessage("Your change is " + coinsToAdd);
+					} else {
+						player.getPacketSender().sendMessage("You cannot afford this item.");
+					}
+
 				}
 			} else {
 				/** CUSTOM CURRENCY, CUSTOM SHOP VALUES **/

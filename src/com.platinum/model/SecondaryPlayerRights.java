@@ -15,31 +15,35 @@ import lombok.RequiredArgsConstructor;
 @Getter
 public enum SecondaryPlayerRights {
 
-    DEFAULT(0, "", 0, 0),
+    DEFAULT(0,0,0,0),
 
-    DONATOR(10, "><col=FFF>", 1, 1),
+    DONATOR(1.25,0,1,1),
 
-    SUPER_DONATOR(20, "><col=6600CC>", 1, 1.5),
+    SUPER_DONATOR(1.5,1,1,1),
 
-    EXTREME_DONATOR(20, "><col=>", 1, 1.5),
+    EXTREME_DONATOR(1.8,2,2,2),
 
-    LEGENDARY_DONATOR(30, "<col=FFFF64>", 1, 1.5),
+    LEGENDARY_DONATOR(2.2,3,2,2),
 
-    UBER_DONATOR(40, "<col=B40404>", 1, 1.5),
+    UBER_DONATOR(2.5,4,3,3),
 	
-	DELUXE_DONATOR(0, "<col=8600CC>", 6, 2.5);//10
+	DELUXE_DONATOR(3,5,3,3);
 
-    SecondaryPlayerRights(int exampleCoolPoints, String yellHexColorPrefix, double useMeForSomethingOne, double useMeForSomethingTwo) {
-        this.exampleCoolPoints = exampleCoolPoints;
-        this.yellHexColorPrefix = yellHexColorPrefix;
-        this.useMeForSomethingOne = useMeForSomethingOne;
-        this.useMeForSomethingTwo = useMeForSomethingTwo;
+    SecondaryPlayerRights(double xpModifier, int votePtModifier, int bonusBossPts, int bonusTriviaPts) {
+        this.xpMofifier = xpMofifier;
+        this.votePtModifier = votePtModifier;
+        this.bonusBossPts = bonusBossPts;
+        this.bonusTriviaPts = bonusTriviaPts;
     }
 
-    private int exampleCoolPoints;
-    private String yellHexColorPrefix;
-    private double useMeForSomethingOne;
-    private double useMeForSomethingTwo;
+    @Getter
+    public double xpMofifier;
+    @Getter
+    public int votePtModifier;
+    @Getter
+    public int bonusBossPts;
+    @Getter
+    public int bonusTriviaPts;
 
 
     private static final ImmutableSet<SecondaryPlayerRights> MEMBERS = Sets.immutableEnumSet(DONATOR, SUPER_DONATOR, EXTREME_DONATOR, LEGENDARY_DONATOR, UBER_DONATOR, DELUXE_DONATOR);

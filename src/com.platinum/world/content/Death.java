@@ -138,7 +138,7 @@ public class Death extends NPC {
             handleDrop(npc, killer, damage);
             NpcGain.WorldBossXP(killer);
 
-            if (++count >= 10) {
+            if (++count >= 4) {
                 break;
             }
 
@@ -165,10 +165,10 @@ public class Death extends NPC {
                     new GroundItem(new Item(superrare), pos, player.getUsername(), false, 150, true, 200));
             String itemName = (new Item(superrare).getDefinition().getName());
             String itemMessage = Misc.anOrA(itemName) + " " + itemName;
-            DiscordMessenger.sendRareDrop(player.getUsername(), " received<col=eaeaea><img=11>[ " + itemMessage + "<col=eaeaea>]<img=11><col=FF0000>from the Death!");
+            //DiscordMessenger.sendRareDrop(player.getUsername(), " received<col=eaeaea><img=11>[ " + itemMessage + "<col=eaeaea>]<img=11><col=FF0000>from the Death!");
             World.sendMessageNonDiscord(
                     "<img=11><col=FF0000>" + player.getUsername() + " received<col=eaeaea><img=11>[ " + itemMessage + "<col=eaeaea>]<img=11><col=FF0000>from the Death!");
-            DiscordMessenger.sendRareDrop(player.getUsername(), " Just received " + itemMessage + " from the Death!");
+            //DiscordMessenger.sendRareDrop(player.getUsername(), " Just received " + itemMessage + " from the Death!");
             return;
         }
 
@@ -179,7 +179,7 @@ public class Death extends NPC {
             String itemMessage = Misc.anOrA(itemName) + " " + itemName;
             World.sendMessageNonDiscord(
                     "<img=11><col=FF0000>" + player.getUsername() + " received<img=11><col=eaeaea>[ " + itemMessage + "<col=eaeaea>]<img=11><col=FF0000> from the Death!");
-            DiscordMessenger.sendRareDrop(player.getUsername(), " Just received " + itemMessage + " from the Death!");
+            //DiscordMessenger.sendRareDrop(player.getUsername(), " Just received " + itemMessage + " from the Death!");
             return;
         }
         if (chance >= 0) {

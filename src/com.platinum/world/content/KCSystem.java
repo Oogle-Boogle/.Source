@@ -1,3 +1,4 @@
+/*
 package com.platinum.world.content;
 
 import java.util.ArrayList;
@@ -126,3 +127,4 @@ public class KCSystem {
 	}
 }
 
+*/

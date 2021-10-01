@@ -143,7 +143,7 @@ public class TheRick extends NPC {
 			handleDrop(npc, killer, damage);
 			NpcGain.WorldBossXP(killer);
 
-			if (++count >= 10) {
+			if (++count >= 4) {
 				break;
 			}
 
