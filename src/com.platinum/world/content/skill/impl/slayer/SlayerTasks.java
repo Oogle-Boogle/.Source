@@ -25,7 +25,7 @@ public enum SlayerTasks {
 	/**
 	 * Medium tasks
 	 */
-	HERCULES(SlayerMaster.DURADEL, 2783, "Hercules can be found in the Starter Teleports!", 600, new Position(2783, 4636, 0)),
+	HERCULES(SlayerMaster.DURADEL, 17, "Hercules can be found in the Starter Teleports!", 600, new Position(2783, 4636, 0)),
 	LUCARIO(SlayerMaster.DURADEL, 3263, "Lucario can be found in the Starer Teleports", 600, new Position(2891, 4767)),
 	DEFENDERS(SlayerMaster.DURADEL, 9994, "Defenders can be found in the Medium Teleports", 600, new Position(2724, 9821)),
 	GODZILLA(SlayerMaster.DURADEL, 9932, "Godzilla can be found in the Medium Teleports", 600, new Position(2452, 10147)),
