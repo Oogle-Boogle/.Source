@@ -27,8 +27,8 @@ public class Onslaught extends NPC {
 			new Item(19138, 1), new Item(19133), new Item(19132), new Item(19131), new Item(19139),  new Item(6041), new Item(15373), new Item(15044), new Item(15220) };
 
 	public static Item[] RARELOOT = { 
-			 new Item(18942), new Item(18941), new Item(18940), new Item(922),  new Item(12502),
-			new Item(10835, 200) };
+			 new Item(18942), new Item(18941), new Item(18940), new Item(12502),
+			new Item(10835, 50) };
 
 	public static Item[] SUPERRARELOOT = { new Item(19721, 1),new Item(18865, 1), new Item(19722, 1), new Item(19723, 1), new Item(19734, 1),
 			new Item(19736), new Item(19468), new Item(15418) };
