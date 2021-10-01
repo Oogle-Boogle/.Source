@@ -205,9 +205,8 @@ public class ItemActionPacketListener implements PacketListener {
 			break;
 
 		case 4767:
-			StarterTasks.finishTask(player, StarterTaskData.READ_THE_GUIDE_BOOK);
-			player.sendMessage("@red@You've read the book!");
-			player.getPacketSender().sendInterface(50200);
+			player.getPacketSender().sendString(1, "https://platinum.fandom.com/wiki/Platinum_Guides");
+			player.getPacketSender().sendMessage("Attempting to open: Platinum Wiki");
 			break;
 			
 		case 3988:
