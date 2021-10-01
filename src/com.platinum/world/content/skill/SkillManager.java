@@ -127,6 +127,10 @@ public class SkillManager {
             experience *= SpecialEvents.getDoubleEXPWeekend();
         }
 
+        if (GameSettings.DOUBLE_EXP) {
+            experience *= 2;
+        }
+
 
         Familiar pet = player.getSummoning().getFamiliar();
 
