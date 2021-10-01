@@ -90,7 +90,7 @@ public class Death extends NPC {
         setCurrent(instance);
         // System.out.print("spawned.");
 
-        World.sendMessageNonDiscord("<img=11><<shad=10>[@or2@BOSS] @bla@ Death @or2@has respawned Use ::death");
+        /*World.sendMessageNonDiscord("<img=11><<shad=10>[@or2@BOSS] @bla@ Death @or2@has respawned Use ::death");*/
     }
     public static void handleDrop(NPC npc) {
         World.getPlayers().forEach(p -> p.getPacketSender().sendString(26707, "@or2@WildyWyrm: @gre@N/A"));
