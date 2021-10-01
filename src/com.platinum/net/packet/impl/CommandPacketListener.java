@@ -49,6 +49,7 @@ import com.platinum.world.content.fuser.CombineHandler;
 import com.platinum.world.content.grandexchange.GrandExchange;
 import com.platinum.world.content.grandexchange.GrandExchangeOffers;
 import com.platinum.world.content.guidesInterface.GuideBook;
+import com.platinum.world.content.mapteleportinterface.MapTeleportInterface;
 import com.platinum.world.content.minigames.impl.FreeForAll;
 import com.platinum.world.content.minimes.MiniMeData;
 import com.platinum.world.content.minimes.MiniMeFunctions;
@@ -375,6 +376,10 @@ public class CommandPacketListener implements PacketListener {
 
         if (command[0].equalsIgnoreCase("difficulty")) {
             DifficultyHandler.openInterface(player);
+        }
+
+        if (command[0].equalsIgnoreCase("map")) {
+            player.getPacketSender().sendInterface(MapTeleportInterface.MAP_INTERFACE_ID);
         }
 
         if (command[0].equals("tot") && TrickOrTreat.currentLocation != null) {

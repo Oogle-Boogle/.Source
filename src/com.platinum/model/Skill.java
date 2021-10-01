@@ -158,20 +158,18 @@ public enum Skill {
 			return CONSTITUTION_MODIFIER;
 		case RANGED:
 			return RANGED_MODIFIER;
-		case PRAYER:
-			return PRAYER_MODIFIER;
 		case MAGIC:
 			return MAGIC_MODIFIER;
 		default:
-			return 1;
+			return 20;
 		}
 	}
 
-	public static final int ATTACK_MODIFIER = 60;
-	public static final int DEFENCE_MODIFIER = 60;
-	public static final int STRENGTH_MODIFIER = 60;
+	public static final int ATTACK_MODIFIER = 30;
+	public static final int DEFENCE_MODIFIER = 30;
+	public static final int STRENGTH_MODIFIER = 30;
 	public static final int CONSTITUTION_MODIFIER = 20;
-	public static final int RANGED_MODIFIER = 60;
-	public static final int PRAYER_MODIFIER = 30;
-	public static final int MAGIC_MODIFIER = 60;
+	public static final int RANGED_MODIFIER = 30;
+	//public static final int PRAYER_MODIFIER = 20;
+	public static final int MAGIC_MODIFIER = 30;
 }

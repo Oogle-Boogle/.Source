@@ -668,12 +668,22 @@ public class NPCOptionPacketListener implements PacketListener {
             return;
         }
 
-        //if (!player.getKcSystem().meetsRequirements(player.getKcSystem().getData(npc.getId())) && npc.getId() == player.getSlayer().getSlayerTask().getNpcId() && !player.getRights().isSeniorStaff() && !(npc instanceof RaidNpc) && !npc.isInstancedNPC() && npc.getId() != player.getSlayer().getSlayerMaster().getNpcId()) {
+        if (player.getKcSystem().meetsRequirements(player.getKcSystem().getData(npc.getId()))
+                && npc.getId() == player.getSlayer().getSlayerTask().getNpcId()
+                && !player.getRights().isSeniorStaff()
+                && !(npc instanceof RaidNpc)
+                && !npc.isInstancedNPC()
+                && npc.getId() != player.getSlayer().getSlayerTask().getNpcId()) {
             player.getCombatBuilder().attack(npc);
-        /*} else if (!player.getKcSystem().meetsRequirements(player.getKcSystem().getData(npc.getId())) && !player.getRights().isSeniorStaff() && !(npc instanceof RaidNpc) && !npc.isInstancedNPC() && npc.getId() != player.getSlayer().getSlayerMaster().getNpcId()) {
+        } else if (!player.getKcSystem().meetsRequirements(player.getKcSystem().getData(npc.getId()))
+                && !player.getRights().isSeniorStaff()
+                && !(npc instanceof RaidNpc)
+                && !npc.isInstancedNPC()
+                && npc.getId() != player.getSlayer().getSlayerTask().getNpcId()) {
             player.getKcSystem().sendRequirementsMessage();
             return;
-        }*/
+        }
+
 
         if (player.getCombatBuilder().getStrategy() == null) {
             //System.out.println("player strategy is null");

@@ -696,11 +696,11 @@ public class Player extends Character {
 		return npcKillCountMap.values().stream().mapToInt(Integer::intValue).sum();
 	}
 
-	/*KCSystem kcSystem = new KCSystem(this);
+	KCSystem kcSystem = new KCSystem(this);
 
 	public KCSystem getKcSystem() {
 		return kcSystem;
-	}*/
+	}
 
 	public int getRewardTimer1() {
 		return rewardTimer1;
