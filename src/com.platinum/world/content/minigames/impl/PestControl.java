@@ -245,6 +245,23 @@ public class PestControl {
 				leave(p, false);
 				if (won && p.getMinigameAttributes().getPestControlAttributes().getDamageDealt() >= 50) {
 					int points = SpecialEvents.getDay() == SpecialEvents.THURSDAY ? 20 : 10;
+					switch (p.getRights()) {
+						case EXTREME_DONATOR:
+							points *= 2;
+							break;
+						case LEGENDARY_DONATOR:
+							points *= 3;
+							break;
+						case UBER_DONATOR:
+							points *= 4;
+							break;
+						case DELUXE_DONATOR:
+							points *= 5;
+							break;
+						case VIP_DONATOR:
+							points *= 6;
+							break;
+					}
 					p.getPointsHandler().setCustompestcontrolpoints(points, true);
 					p.getPacketSender().sendMessage("The portals were successfully closed. You've been rewarded for your effort.");
 					if (p.getRights() == PlayerRights.PLAYER || p.getRights() == PlayerRights.YOUTUBER) {

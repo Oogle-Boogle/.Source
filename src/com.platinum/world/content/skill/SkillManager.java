@@ -97,28 +97,12 @@ public class SkillManager {
             player.getPacketSender().sendRichPresenceState("Training " + skill.getFormatName());
         }
 
-
         if (!skill.getName().equalsIgnoreCase("constitution")) {
             player.getPacketSender().sendRichPresenceSmallPictureText("Lvl: " + player.getSkillManager().getMaxLevel(skill));
             player.getPacketSender().sendSmallImageKey(skill.getName().toLowerCase());
         }
 
-
         experience *= player.getRights().getXpMofifier();
-
-
-
-        if ((player.getDifficulty().lowDifficulty())) {
-            if (WellOfGoodwill.isActive())
-                experience *= 1.3;
-            if (GameSettings.BONUS_EXP) {
-                experience *= 1.15; // 15
-            }
-            if (GameSettings.TRIPLE_EXP || GlobalPerks.getInstance().getActivePerk() == GlobalPerks.Perk.x3_XP) {
-                experience *= 3;
-            }
-            experience *= SpecialEvents.getDoubleEXPWeekend();
-        }
 
         /** NEW DIFFICULTIES **/
         double xpRate = player.getDifficulty().getXpRate();
@@ -131,6 +115,17 @@ public class SkillManager {
             experience *= 0;
         }
 
+        if ((player.getDifficulty().lowDifficulty())) {
+            if (WellOfGoodwill.isActive())
+                experience *= 1.3;
+            if (GameSettings.BONUS_EXP) {
+                experience *= 1.15; // 15
+            }
+            if (GameSettings.TRIPLE_EXP || GlobalPerks.getInstance().getActivePerk() == GlobalPerks.Perk.x3_XP) {
+                experience *= 3;
+            }
+            experience *= SpecialEvents.getDoubleEXPWeekend();
+        }
 
 
         Familiar pet = player.getSummoning().getFamiliar();

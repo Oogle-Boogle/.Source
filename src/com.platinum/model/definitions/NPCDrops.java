@@ -312,10 +312,11 @@ public class NPCDrops {
 			return;
 
 		SecureRandom random = new SecureRandom();
-		int randomInt = random.nextInt(2000);
+		int randomInt = random.nextInt(5000);
+		int randomPts = Misc.random(1, 10);
 		if (randomInt == 1 && !p.getLocation().equals(Location.BOSS_TIER_LOCATION)) {
-			p.getPointsHandler().incrementDonationPoints(5);
-			p.sendMessage("@red@You've received a 5 donation points!");
+			p.getPointsHandler().incrementDonationPoints(randomPts);
+			p.sendMessage("@red@You've received " + randomPts + " donation points!");
 			World.sendMessageDiscord(p.getUsername() + " has just received a 5 donor points from " + npc.getDefinition().getName() + "!");
 		}
 
@@ -331,7 +332,6 @@ public class NPCDrops {
 		}
 
 		if (npc.getDefaultConstitution() > 10000) {
-			//System.out.println("DROPPING");
 			dropScratchcard(p, p.getPosition());
 		}
 
@@ -422,11 +422,41 @@ public class NPCDrops {
 		int multiplier = 1;
 
 		if (GameSettings.DOUBLE_DROPS)
-			multiplier += 1;
+			multiplier++;
 		if (player.isDoubleDropsActive())
-			multiplier += 1;
+			multiplier++;
 
 		if (GlobalPerks.getInstance().getActivePerk() == GlobalPerks.Perk.DOUBLE_DROPS) {
+			multiplier++;
+		}
+
+		int random = Misc.random(100);
+		int chance = 0;
+
+		switch (player.getRights()) {
+			case DONATOR:
+				chance = 1;
+				break;
+			case SUPER_DONATOR:
+				chance = 3;
+				break;
+			case EXTREME_DONATOR:
+				chance = 5;
+				break;
+			case LEGENDARY_DONATOR:
+				chance = 8;
+				break;
+			case UBER_DONATOR:
+				chance = 10;
+				break;
+			case DELUXE_DONATOR:
+				chance = 15;
+				break;
+			case VIP_DONATOR:
+				chance = 20;
+				break;
+		}
+		if (random <= chance) {
 			multiplier++;
 		}
 		

@@ -9,29 +9,31 @@ import lombok.Getter;
 public enum PlayerRights {
 
 
-	PLAYER(-1, "", 1, 1, 1),
-	MODERATOR(-1, "><col=6600CC>", 1, 1.5,1),
-	ADMINISTRATOR(-1, "<col=FFFF64>", 1, 1.5,1),
-	OWNER(-1, "<col=B40404>", 1, 1.5,1),
-	DEVELOPER(-1, "<col=fa0505>", 1, 1.5,1),
-	DONATOR(60, "<shad=FF7F00>", 1.5, 1.25,1),
-	SUPER_DONATOR(40, "<col=787878>", 1.5, 1.5,1),
- 	EXTREME_DONATOR(20, "<col=D9D919>", 2, 1.8, 2),
-	LEGENDARY_DONATOR(10, "<shad=697998>", 2.5, 2.2, 3),
-	UBER_DONATOR(0, "<col=0EBFE9>", 3, 2.5, 4),
-	DELUXE_DONATOR(0, "<col=8600CC>", 6, 3, 5),
-	SUPPORT(-1, "@blu@", 1, 1.5, 1),
-	YOUTUBER(30, "<col=CD661D>", 1, 1.1, 1),
-	COMMUNITY_MANAGER(0, "<col=B40404>", 1, 1.5, 1),
-	VIP_DONATOR(0, "<col=8600CC", 10, 4,6),
-	HADMIN(-1, "<col=FFFF64>", 1, 1.5, 1);
+	PLAYER(-1, "", 1, 1, 1, 0, 0),
+	MODERATOR(-1, "><col=6600CC>", 1, 1.5,1, 0, 0),
+	ADMINISTRATOR(-1, "<col=FFFF64>", 1, 1.5,1, 0,0),
+	OWNER(-1, "<col=B40404>", 1, 1.5,1,0,0),
+	DEVELOPER(-1, "<col=fa0505>", 1, 1.5,1,0,0),
+	DONATOR(60, "<shad=FF7F00>", 1.5, 1.25,1,1,1),
+	SUPER_DONATOR(40, "<col=787878>", 1.5, 1.5,1,1,1),
+ 	EXTREME_DONATOR(20, "<col=D9D919>", 2, 1.8, 2,2,2),
+	LEGENDARY_DONATOR(10, "<shad=697998>", 2.5, 2.2, 3,2,2),
+	UBER_DONATOR(0, "<col=0EBFE9>", 3, 2.5, 4,3,3),
+	DELUXE_DONATOR(0, "<col=8600CC>", 6, 3, 5,3,3),
+	SUPPORT(-1, "@blu@", 1, 1.5, 1,0,0),
+	YOUTUBER(30, "<col=CD661D>", 1, 1.1, 1,0,0),
+	COMMUNITY_MANAGER(0, "<col=B40404>", 1, 1.5, 1,0,0),
+	VIP_DONATOR(0, "<col=8600CC", 10, 4,6,4,4),
+	HADMIN(-1, "<col=FFFF64>", 1, 1.5, 1,0,0);
 
-	PlayerRights(int yellDelaySeconds, String yellHexColor, double loyaltyPointsGainModifier, double xpMofifier, int votePtModifier) {
+	PlayerRights(int yellDelaySeconds, String yellHexColor, double loyaltyPointsGainModifier, double xpMofifier, int votePtModifier, int bonusBossPts, int bonusTriviaPts) {
 		this.yellDelay = yellDelaySeconds;
 		this.yellHexColor = yellHexColor;
 		this.loyaltyPtModifier = loyaltyPointsGainModifier;
 		this.xpMofifier = xpMofifier;
 		this.votePtModifier = votePtModifier;
+		this.bonusBossPts = bonusBossPts;
+		this.bonusTriviaPts = bonusTriviaPts;
 	}
 
 	@Getter
@@ -44,6 +46,10 @@ public enum PlayerRights {
 	public double xpMofifier;
 	@Getter
 	public int votePtModifier;
+	@Getter
+	public int bonusBossPts;
+	@Getter
+	public int bonusTriviaPts;
 	
 	private static final ImmutableSet<PlayerRights> SENIOR_STAFF = Sets.immutableEnumSet(ADMINISTRATOR, OWNER, DEVELOPER, HADMIN);
 	private static final ImmutableSet<PlayerRights> MODS = Sets.immutableEnumSet(SUPPORT, MODERATOR);

@@ -61,7 +61,9 @@ public class TriviaBot
 
 			if (answerCount == 0) {
 				answerCount++;
-				p.getPointsHandler().incrementTriviaPoints(10);
+				int pts = 10;
+				pts += p.getRights().getBonusTriviaPts();
+				p.getPointsHandler().incrementTriviaPoints(pts);
 				p.getPointsHandler().refreshPanel();
 				firstPlace = p.getUsername();
 				World.sendMessageNonDiscord("<col=AD096E>[Trivia] </col>" + firstPlace + "@bla@ answered first and received 10 points!");
