@@ -28,7 +28,7 @@ public class TheRick extends NPC {
 			new Item(19721, 1), new Item(19722, 1), new Item(19723, 1), new Item(19724, 1), new Item(19736), new Item(19734), new Item(18380), new Item(18381), new Item(18382), new Item(9006), new Item(3941), new Item(18392) };
 
 	public static Item[] RARELOOT = { new Item(4799), new Item(4800), new Item(4801), new Item(5079), new Item(3951), new Item(3960), new Item(3958), new Item(3959), new Item(5187), new Item(5186), new Item(3316), new Item(3931), new Item(14559),
-			new Item(10835, 500) };
+			new Item(10835, 100) };
 
 	public static Item[] SUPERRARELOOT = { new Item(18950), new Item(4673), new Item(18748), new Item(18751),
 			new Item(5131), new Item(4770), new Item(4771), new Item(4772), new Item(6199), new Item(3988), new Item(6193), new Item(6194), new Item(6195), new Item(6196), new Item(6197), new Item(6198) , new Item(3063) };

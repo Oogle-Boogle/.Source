@@ -1440,12 +1440,10 @@ public class Shop extends ItemContainer {
 					return new Object[] { 2500, "Stardust" };
 				case 1666:
 					return new Object[] { 3500, "Stardust" };
-				case 19935:
-					return new Object[] { 4000, "Stardust" };
-					
+
 				case 19936:
 					return new Object[] { 7500, "Stardust" };
-					
+
 				case 15332:
 					return new Object[] { 450, "Stardust" };
 				case 15373:
@@ -1454,56 +1452,22 @@ public class Shop extends ItemContainer {
 					return new Object[] { 750, "Stardust" };
 				case 11133:
 					return new Object[] { 1250, "Stardust" };
-					
+
 				}
 				return new Object[] { 100, "Stardust Points" };
 			} else if (shop == SKILLING_STORE) {
 				switch (item) {
-				case 454:// Coal ore ( Noted )
-					return new Object[] { 3, "Skilling Points" };
-				case 15369:// Common mbox
-					return new Object[] { 400, "Skilling Points" };
-				case 15370:// Uncommon box
-					return new Object[] { 600, "Skilling Points" };
-				case 15373:
-					return new Object[] { 1250, "Skilling Points" };
-				case 19002:
-					return new Object[] { 1000, "Skilling Points" };
-				case 19780:// Korasi
-					return new Object[] { 100, "Skilling Points" };
-				case 17291:// Blood Necklace
-				case 13738:// Arcane
-					return new Object[] { 125, "Skilling Points" };
-				case 11591:
-				case 11587:
-				case 11589:
-					return new Object[] { 2000, "Skilling Points" };
-				case 18979:
-					return new Object[] { 10000, "Skilling Points" };
-				case 9470:
-					return new Object[] { 475, "Skilling Points" };
-				case 19708:// Blowpipe
-				case 19707:
-				case 19706:
-					return new Object[] { 1500, "Skilling Points" };
-				case 1419:
-					return new Object[] { 2000, "Skilling Points" };
-				case 1438:
-				case 1448:
-				case 1444:
-				case 1440:
-				case 1442: // goldclaws
-				case 1446:
-				case 1454:
-				case 1452:
-				case 1462:
-				case 1458:
-				case 1456:
-				case 1450:
-				case 1460:
-					return new Object[] { 50, "Skilling Points" };
+					case 19706:// Common mbox
+					case 19707:// Uncommon box
+					case 19708:
+						return new Object[]{1500, "Skilling Points"};
+					case 18782:
+						return new Object[]{2000, "Skilling Points"};
+					case 15373:// Korasi
+						return new Object[]{1000, "Skilling Points"};
+					case 6199:// Blood Necklace
+						return new Object[]{5000, "Skilling Points"};
 				}
-				return new Object[] { 150, "Skilling Points" };
 
 			} else if (shop == ENERGY_FRAGMENT_STORE) {
 				switch (item) {
@@ -1630,7 +1594,12 @@ public class Shop extends ItemContainer {
 				case 17908:
 				case 17909:
 				case 11732:
+					case 3928:
 					return new Object[] { 300, "Starter Tickets" };
+					case 18830:
+						return new Object[] { 1, "Starter Tickets" };
+					case 15373:
+						return new Object[] { 200, "Starter Tickets" };
 				}
 			} else if (shop == RAIDSTORE) {
 				switch (item) {
@@ -1656,100 +1625,26 @@ public class Shop extends ItemContainer {
 				
 			} else if (shop == BOSS_POINT_STORE) {
 				switch (item) {
-				case 18349:
-				case 18351:
-				case 18353:
-				case 18355:
-				case 18357:
-				case 19040:
-					return new Object[] { 750, "Boss Points" };
-				case 15374:
-				case 5130:
-					return new Object[] { 15000, "Boss Points" };
-				case 18989:
-				case 19935:
-					return new Object[] { 8000, "Boss Points" };
-				case 19086:
-				case 19090:
-					return new Object[] { 2000, "Boss Points" };
-				case 11730:
-				case 11716:
-				case 15486:
-				case 10550:
-				case 10551:
-				case 10548:
-				case 13263:
-				case 18337:
-					return new Object[] { 250, "Boss Points" };
-				case 6831:
-				case 6833:
-				case 6829:
-				case 14018:
-				case 11587:
-				case 11588:
-					return new Object[] { 2000, "Boss Points" };
-				case 19008:
-					return new Object[] { 5000, "Boss Points" };
-				case 14008:
-				case 14009:
-				case 14010:
-					return new Object[] { 1500, "Boss Points" };
-				case 18965:
-					return new Object[] { 53000, "Boss Points" };
-				case 18782:
-					return new Object[] { 65, "Boss Points" };
-				case 3667:
-				case 17778:
-				case 17779:
-					return new Object[] { 8000, "Boss Points" };
-				case 20012:
-				case 20010:
-				case 20011:
-				case 20020:
-				case 20019:
-				case 20016:
-				case 20017:
-				case 20018:
-				case 20022:
-				case 20021:
-					return new Object[] { 250, "Boss Points" };
-				case 11720:
-				case 11722:
-				case 11724:
-				case 11726:
-					return new Object[] { 200, "Boss Points" };
-				case 20000:
-				case 20001:
-				case 20002:
-				case 19335:
-				case 11718:
-					return new Object[] { 150, "Boss Points" };
-				case 5134:
-					return new Object[] { 4500, "Boss Points" };
+					case 3810:
+					case 3811:
+					case 3812:
+					case 3813:
+					case 3814:
+						return new Object[]{5000, "Boss Points"};
+					case 19886:
+						return new Object[]{750, "Boss Points"};
 				}
-				return new Object[] { 100, "Boss Points" };
 			} else if (shop == LOYALTYPOINT_STORE) {
 				switch (item) {
-				case 1038: // Red Phat
-				case 1040: //Yellow Phat
-				case 1042: // blue Phat
-				case 1044: //green Phat
-				case 1046: //purple Phat
-				case 1048: //white Phat
-				case 1050: // santa hat
-									return new Object[] { 600, "Loyalty Points" };
-				case 3975: //Infernal phat
-				case 3976: //infernal santa
-									return new Object[] { 2500, "Loyalty Points" };
-				case 18750: //5% demonic olm phat
-				case 18751: //5% Demonic Olm Gloves
-				case 18748: // Demonic Olm Cape
-				case 18749: // Demonic Olm Shield
-									return new Object[] { 5000, "Loyalty Points" };
-				case 3638: //Advanced Box Pet
-									return new Object[] { 6000, "Loyalty Points" };
-				case 3824: //Vote mystery Box
-				case 6183: //Donation Box
+				case 18980: // Red Phat
+				case 18981: //Yellow Phat
+				case 18982: // blue Phat
+				case 18979: //green Phat
+				case 19103: //purple Phat
+									return new Object[] { 20000, "Loyalty Points" };
+				case 13101: //Infernal phat
+									return new Object[] { 50000, "Loyalty Points" };
+				case 19747: //5% demonic olm phat
 									return new Object[] { 10000, "Loyalty Points" };
 				}
 				return new Object[] { 100, "Loyalty Points" };
@@ -1845,10 +1740,6 @@ public class Shop extends ItemContainer {
 				}
 			} else if (shop == SUIC_NUMBER_ONE_TOKEN_STORE) {
 				switch (item) {
-				case 19935:
-					return new Object[] { 1500, "VIP Gems" };
-				case 19936:
-					return new Object[] { 2750, "VIP Gems" };
 				case 7759:
 					return new Object[] { 5000, "VIP Gems" };
 				case 7760:
@@ -1995,41 +1886,13 @@ public class Shop extends ItemContainer {
 				}
 			} else if (shop == TRIVIA_STORE) {
 				switch (item) {
-				case 19935:
-					return new Object[] { 200, "Trivia Points" };
-				case 19936:
-					return new Object[] { 300, "Trivia Points" };
-				case 15648:
+				case 19121:
+					case 15648:
 					return new Object[] { 10, "Trivia Points" };
-					
-				case 6483:
+				case 6199:
+					return new Object[] { 50, "Trivia Points" };
+				case 15374:
 					return new Object[] { 300, "Trivia Points" };
-					
-				case 6484:
-					
-				case 6486:
-					return new Object[] { 250, "Trivia Points" };
-					
-					
-				case 6445:
-				case 6447:
-				case 6446:
-				case 6443:
-				case 6444:
-					return new Object[] { 250, "Trivia Points" };
-					
-				case 2771:
-				case 2867:
-				case 2868:
-				case 2870:
-				case 2772:
-				case 2869:
-					return new Object[] { 500, "Trivia Points" };
-					
-				case 15000:
-				case 1419:
-					
-					return new Object[] { 1000, "Trivia Points" };
 									
 				}
 				
@@ -2038,8 +1901,6 @@ public class Shop extends ItemContainer {
 
 				case 6199:
 					return new Object[] { 500, "Slayer points" };
-				case 19935:
-					return new Object[] { 1250, "Slayer points" };
 				case 19890:
 					return new Object[] { 7500, "Slayer points" };
 				case 19336:
@@ -2070,41 +1931,11 @@ public class Shop extends ItemContainer {
 
 			} else if (shop == PRESTIGE_STORE) {
 				switch (item) {
-				case 1042:
-					return new Object[] { 100, "Prestige Points" };
-				case 19935:
-					return new Object[] { 7500, "Prestige points" };
-				case 3072:
-					return new Object[] { 60, "Prestige points" };
-				case 3666:
-					return new Object[] { 200, "Prestige points" };
-				case 3286:
-					return new Object[] { 50, "Prestige points" };
-				case 19007:
-					return new Object[] { 30, "Prestige points" };
-				case 12428:
-					return new Object[] { 45, "Prestige points" };
-				case 11588:
 				case 11587:
+				case 11588:
 				case 11589:
-				case 11591:
+				case 11592:
 					return new Object[] { 75, "Prestige points" };
-				case 15373:
-					return new Object[] { 20, "Prestige points" };
-				case 6183:
-					return new Object[] { 45, "Prestige points" };
-				case 3444:
-					return new Object[] { 70, "Prestige points" };
-				case 10408:
-				case 10410:
-					return new Object[] { 15, "Prestige points" };
-				case 10404:
-				case 10406:
-					return new Object[] { 15, "Prestige points" };
-				case 20000:
-				case 20001:
-				case 20002:
-					return new Object[] { 5, "Prestige points" };
 				}
 			} else if (shop == HALLOWEEN_SHOP) {
 				switch(item) {
@@ -2144,57 +1975,17 @@ public class Shop extends ItemContainer {
 				switch (item) {
 
 				case 6199:
-					return new Object[] { 500, "Slayer points" };
-				case 19935:
-					return new Object[] { 1250, "Slayer points" };
-				case 19890:
-					return new Object[] { 7500, "Slayer points" };
-				case 4772:
-				case 4771:
-				case 4770:
-					return new Object[] { 400, "Slayer points" };
-				case 17896:
-				case 17897:
-				case 17898:
-					return new Object[] { 1500, "Slayer points" };
+					return new Object[] { 300, "Slayer points" };
 				case 19101:
-					return new Object[] { 1000, "Slayer points" };
-				case 3322:
-				case 3315:
-				case 3318:
-					return new Object[] { 2000, "Slayer points" };
-				case 3313:
-				case 3314:
-				case 3312:
-					return new Object[] { 3000, "Slayer points" };
-					
-				case 3810:
-				case 3813:
-				case 3814:
-					return new Object[] { 5000, "Slayer points" };
-
-					case 2:
-						return new Object[] { 1, "Slayer points"};
-					case 6:
-					case 8:
-					case 10:
-					case 12:
-						return new Object[] { 150, "Slayer points"};
-
-				case 3811:
-				case 3812:
-
-				case 3815:
-					return new Object[] { 7500, "Slayer points" };
-					
-				case 19087:
-				case 19103:
+					return new Object[] { 750, "Slayer points" };
 				case 19886:
-					return new Object[] { 2500, "Slayer points" };
-				case 18782:
-					return new Object[] { 50, "Slayer points" };
-				case 15374:
-					return new Object[] { 2500, "Slayer points" };
+				case 3810:
+				case 3811:
+					case 3812:
+					case 3813:
+					case 3814:
+					return new Object[] { 500, "Slayer points" };
+
 				}
 
 			}
