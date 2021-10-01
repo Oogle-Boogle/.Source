@@ -226,15 +226,17 @@ public class Slayer {
             pointsReceived *= 2;
         }
 
-        if (player.getRights() == PlayerRights.DELUXE_DONATOR) {
-            pointsReceived *= 1.3;
+        switch (player.getRights()) {
+            case LEGENDARY_DONATOR:
+            case UBER_DONATOR:
+            case DELUXE_DONATOR:
+                pointsReceived *= 2;
+                break;
+            case VIP_DONATOR:
+                pointsReceived *= 3;
+                break;
         }
-        if (player.getRights() == PlayerRights.VIP_DONATOR) {
-            pointsReceived *= 1.5;
-        }
-        if (player.getRights() == PlayerRights.UBER_DONATOR) {
-            pointsReceived *= 1.1;
-        }
+
 
         if (player.getSlayer().getTaskStreak() == 5) {
             player.getPointsHandler().setSlayerPoints(per5, true);

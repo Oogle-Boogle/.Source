@@ -60,6 +60,37 @@ public class DonationChests {
         }
     }
 
+    private static boolean shouldSaveKey(Player player) {
+        int rolled = Misc.random(100);
+        int chance = 0;
+
+        switch (player.getRights()) {
+            case DONATOR:
+                chance = 1;
+                break;
+            case SUPER_DONATOR:
+                chance = 25;
+                break;
+            case EXTREME_DONATOR:
+                chance = 50;
+                break;
+            case LEGENDARY_DONATOR:
+                chance = 55;
+                break;
+            case UBER_DONATOR:
+                chance = 60;
+                break;
+            case DELUXE_DONATOR:
+                chance = 70;
+                break;
+            case VIP_DONATOR:
+                chance = 80;
+                break;
+            default:
+                break;
+        }
+        return rolled <= chance;
+    }
     /** Low tier 1-3 rewards **/
     private static void lowTierReward(Player player) {
 
@@ -78,7 +109,11 @@ public class DonationChests {
 
         player.performAnimation(new Animation(827));
         player.getPacketSender().sendMessage("You open the chest..");
-        invent.delete(lowTierKeyID, 1);
+        if (shouldSaveKey(player)) {
+            player.getPacketSender().sendMessage("Your key was saved due to your donor rank!");
+        } else {
+            invent.delete(lowTierKeyID, 1);
+        }
         int reward = (lowTierItems[Misc.getRandom(lowTierItems.length - 1)]);
         invent.add(reward, 1);
         World.sendMessageNonDiscord("[T1-T3 Chest] "+player.getUsername()
@@ -105,7 +140,11 @@ public class DonationChests {
 
         player.performAnimation(new Animation(827));
         player.getPacketSender().sendMessage("You open the chest..");
-        invent.delete(mediumTierKeyID, 1);
+        if (shouldSaveKey(player)) {
+            player.getPacketSender().sendMessage("Your key was saved due to your donor rank!");
+        } else {
+            invent.delete(mediumTierKeyID, 1);
+        }
         int reward = (mediumTierItems[Misc.getRandom(mediumTierItems.length - 1)]);
         invent.add(reward, 1);
         World.sendMessageDiscord("[T4-T7 Chest] "+player.getUsername()
@@ -132,7 +171,11 @@ public class DonationChests {
 
         player.performAnimation(new Animation(827));
         player.getPacketSender().sendMessage("You open the chest..");
-        invent.delete(highTierKeyID, 1);
+        if (shouldSaveKey(player)) {
+            player.getPacketSender().sendMessage("Your key was saved due to your donor rank!");
+        } else {
+            invent.delete(highTierKeyID, 1);
+        }
         int reward = (highTierItems[Misc.getRandom(highTierItems.length - 1)]);
         invent.add(reward, 1);
         World.sendMessageDiscord("[T8-T10 Chest] @blu@"+player.getUsername()

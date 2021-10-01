@@ -187,6 +187,7 @@ public class NPCDeathTask extends Task {
 
 					if (BOSSES.contains(npc.getId())) {
 						int points = GlobalPerks.getInstance().getActivePerk() == GlobalPerks.Perk.x2_BOSS_POINTS ? 2 : 1;
+						points += killer.getRights().getBonusBossPts();
 						killer.setBossPoints(killer.getBossPoints() + points);
 						String pnts = killer.getBossPoints() == 1 ? "Point" : "Points"; //Proper grammar lol xD
 						killer.sendMessage("<img=0>You now have @red@" + killer.getBossPoints() + " Boss " + pnts + "!");

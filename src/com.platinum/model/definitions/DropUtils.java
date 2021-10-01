@@ -364,42 +364,25 @@ public class DropUtils {
 		// adds the bonus from player's rank
 		switch (player.getRights()) {
 		case DONATOR:
-			totalBonus += 2.5;
+			totalBonus += 2;
 			break;
 		case SUPER_DONATOR:
-			totalBonus += 5.0;
+			totalBonus += 5;
 			break;
 		case EXTREME_DONATOR:
-			totalBonus += 7.5;
-			break;
-		case LEGENDARY_DONATOR:
 			totalBonus += 10;
 			break;
-		case UBER_DONATOR:
-			totalBonus += 12.5;
-			break;
-		case DELUXE_DONATOR:
+		case LEGENDARY_DONATOR:
 			totalBonus += 15;
 			break;
+		case UBER_DONATOR:
+			totalBonus += 20;
+			break;
+		case DELUXE_DONATOR:
+			totalBonus += 30;
+			break;
 		case VIP_DONATOR:
-			totalBonus += 17.5;
-			break;
-		case SUPPORT:
-		case MODERATOR:
-		totalBonus += 10;
-		break;
-		case ADMINISTRATOR:
-		totalBonus += 20;
-			break;
-		case DEVELOPER:
-		totalBonus += 100;
-			break;
-		case COMMUNITY_MANAGER:
-		case YOUTUBER:
-		totalBonus += 20;
-			break;
-		case OWNER:
-			totalBonus += 100;
+			totalBonus += 40;
 			break;
 		default:
 			break;
