@@ -37,6 +37,8 @@ import com.platinum.world.content.combat.CombatFactory;
 import com.platinum.world.content.combat.DailyNPCTask;
 import com.platinum.world.content.combat.DesolaceFormulas;
 import com.platinum.world.content.combat.bossminigame.BossMinigameFunctions;
+import com.platinum.world.content.combat.prayer.CurseHandler;
+import com.platinum.world.content.combat.prayer.PrayerHandler;
 import com.platinum.world.content.combat.weapon.CombatSpecial;
 import com.platinum.world.content.discord.DiscordMessenger;
 import com.platinum.world.content.dropchecker.NPCDropTableChecker;
@@ -1214,6 +1216,25 @@ public class CommandPacketListener implements PacketListener {
             player.getPacketSender().sendString(1, "https://discord.gg/b2DdncwcnB");
             player.getPacketSender().sendMessage("Attempting to open: Platinum Forums");
 
+        }
+        if (wholeCommand.equalsIgnoreCase("prayer")) {
+            if (player.lastPrayerSwitch > System.currentTimeMillis()) {
+                player.sendMessage("You can only use this command once every 15minutes!");
+                player.sendMessage("You still need to wait another " + player.getTimeRemaining(player.lastPrayerSwitch));
+                return;
+            }
+            if (player.getPrayerbook() == Prayerbook.NORMAL) {
+                player.getPacketSender().sendMessage("You sense a surge of power flow through your body!");
+                player.setPrayerbook(Prayerbook.CURSES);
+                player.lastPrayerSwitch = System.currentTimeMillis() + 900000;// 15mins
+            } else {
+                player.getPacketSender().sendMessage("You sense a surge of purity flow through your body!");
+                player.setPrayerbook(Prayerbook.NORMAL);
+                player.lastPrayerSwitch = System.currentTimeMillis() + 900000;// 15mins
+            }
+            player.getPacketSender().sendTabInterface(GameSettings.PRAYER_TAB, player.getPrayerbook().getInterfaceId());
+            PrayerHandler.deactivateAll(player);
+            CurseHandler.deactivateAll(player);
         }
 /*
         if (command[0].equals("zombie") || command[0].equals("zombies")) {

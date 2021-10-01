@@ -99,6 +99,7 @@ public class Player extends Character {
 
 	private final TeleportInterface teleportInterface = new TeleportInterface(this);
 
+
 	public TeleportInterface getTeleportInterface() {
 		return teleportInterface;
 	}
@@ -4338,6 +4339,8 @@ public class Player extends Character {
 	public long lastDonationClaim;
 
 	public long lastHpRestore;
+
+	public long lastPrayerSwitch;
 
 	public long lastPrayerRestore;
 
