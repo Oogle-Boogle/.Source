@@ -117,22 +117,22 @@ public class CombatContainer {
 			return new CombatHit[] {};
 		}
 		if (attacker.isPlayer()) {
-			if (((Player)attacker).getEquipment().containsAny( 3082, 16429, 3928, 5130, 6483, 18865, 14006, 19468, 16137 )) {
+			if (((Player)attacker).getEquipment().containsAny( 3082,14006,3928,18865,18468,16137,3951,14559,7806)) {
 				hitAmount = 1; //Client doesn't support more than 4
  			}
 		}
 		if (attacker.isPlayer()) {
-			if (((Player)attacker).getEquipment().containsAny( 8655, 3951, 3069, 14559, 5131, 6197, 5132, 923, 3063, 19720, 18957, 15653, 5089, 5173, 5195, 15656, 5129, 3941, 1413, 3920)) {
+			if (((Player)attacker).getEquipment().containsAny( 5131,6197,923,5130,19720,13207,5132,15653,5089,5173,5195,15656)) {
 				hitAmount = 2; //Client doesn't support more than 4
  			}
 		}
 		if (attacker.isPlayer()) {
-			if (((Player)attacker).getEquipment().containsAny( 19618, 3651, 19163, 9492, 2760, 19727, 4059, 6320, 13207, 8664, 4796, 18931, 13995, 18891, 10905, 19154, 20431, 20427, 22196 )) {
+			if (((Player)attacker).getEquipment().containsAny( 5129,19618,19163,9492,2760,19727,4796,8664,18931,13995,10905,19154,8656,20427 )) {
 				hitAmount = 3; //Client doesn't support more than 4
  			}
 		}
 		if (attacker.isPlayer()) {
-			if (((Player)attacker).getEquipment().containsAny( 13265, 13201 )) {
+			if (((Player)attacker).getEquipment().containsAny( 6320,1413,3920,22196 )) {
 				hitAmount = 4; //Client doesn't support more than 4
  			}
 		}
