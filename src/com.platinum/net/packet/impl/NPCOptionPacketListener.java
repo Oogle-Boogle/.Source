@@ -670,21 +670,18 @@ public class NPCOptionPacketListener implements PacketListener {
 
         /** Comment this out if it's fucked **/
 
-        if (!player.getKcSystem().meetsRequirements(player.getKcSystem().getData(npc.getId()))
-                && npc.getId() == player.getSlayer().getSlayerTask().getNpcId()
+         if (!player.getKcSystem().meetsRequirements(player.getKcSystem().getData(npc.getId()))
                 && !player.getRights().isSeniorStaff()
                 && !(npc instanceof RaidNpc)
                 && !npc.isInstancedNPC()
-                && npc.getId() != player.getSlayer().getSlayerMaster().getNpcId()) {
-            player.getCombatBuilder().attack(npc);
-        } else if (!player.getKcSystem().meetsRequirements(player.getKcSystem().getData(npc.getId()))
-                && !player.getRights().isSeniorStaff()
-                && !(npc instanceof RaidNpc)
-                && !npc.isInstancedNPC()
-                && npc.getId() != player.getSlayer().getSlayerMaster().getNpcId()) {
+                && npc.getId() != player.getSlayer().getSlayerTask().getNpcId()) {
             player.getKcSystem().sendRequirementsMessage();
             return;
         }
+         else {
+            player.getCombatBuilder().attack(npc);
+        }
+
 
         /** Stop the comment here **/
 

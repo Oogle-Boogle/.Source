@@ -121,7 +121,6 @@ public class KCSystem {
 			int killedAmount = player.getNpcKillCount(kcData.getKey());
 			messages.add("Requirements needed: @red@" + amount + " @blu@of @red@" + name + "@blu@ - Killed: @red@"
 					+ killedAmount);
-			messages.add("@red@This does not apply in Raids or whilst doing slayer.");
 		}
 		for (String reqs : messages) {
 			player.sendMessage(reqs);

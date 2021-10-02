@@ -151,7 +151,7 @@ public class Slayer {
             case SUMONA:
                 pointsReceived = 5 + Misc.random(3);
                 break;
-/*            case BRAVEK:
+            case BRAVEK:
                 if (player.getBravekDifficulty() == null) {
                     pointsReceived = 15 + Misc.random(10);
                 } else {
@@ -181,7 +181,7 @@ public class Slayer {
                         player.sendMessage("Do ::checkpoints to check how many points you have overall!");
                     }
                 }
-                break;*/
+                break;
         }
         if (Skillcape_Data.SLAYER.isWearingCape(player)) {
             pointsReceived += pointsReceived + 2;

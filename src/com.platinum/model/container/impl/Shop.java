@@ -182,11 +182,7 @@ public class Shop extends ItemContainer {
 							|| id == DBZ_TOKEN_SHOP
 							|| id == SANTAS_STORE
 							|| id == STARTER_STORE
-							|| id == TAX_BAG_SHOP
 							|| id == LOYALTYPOINT_STORE
-							|| id == BLOOD_MONEY_STORE
-							|| id == BLOOD_MONEY_STORE2
-							|| id == SELL_FOR_TAXBAGS_SHOP
 							|| id == DARKLORD_TOKEN_SHOP
 							|| id == WOODCUTTING
 							|| id == FIREMAKING_SHOP
@@ -241,15 +237,6 @@ public class Shop extends ItemContainer {
 			player.getPacketSender().sendMessage("This item cannot be sold.");
 			return;
 		}
-
-		if (id == BLOOD_MONEY_STORE) {
-			player.getPacketSender().sendMessage("You cannot sell items to this store.");
-			return;
-		}
-		if (id == BLOOD_MONEY_STORE2) {
-			player.getPacketSender().sendMessage("You cannot sell items to this store.");
-			return;
-		}
 		
 		if (id == CONSUMABLES) {
 			player.sendMessage("You cannot sell items to this store.");
@@ -263,7 +250,7 @@ public class Shop extends ItemContainer {
 			player.sendMessage("You cannot sell items to this store.");
 			return;
 		}
-		if (id == DARKLORD_TOKEN_SHOP || id == WOODCUTTING || id == RAIDS_FISHING_STORE || id == RAIDSTORE|| id == GENERAL_STORE|| id == HALLOWEEN_SHOP) {
+		if (id == WOODCUTTING || id == RAIDS_FISHING_STORE || id == RAIDSTORE|| id == GENERAL_STORE|| id == HALLOWEEN_SHOP) {
 			player.sendMessage("You cannot sell items to this store.");
 			return;
 		}
@@ -475,11 +462,7 @@ public class Shop extends ItemContainer {
 						|| id == DBZ_TOKEN_SHOP
 						|| id == SANTAS_STORE
 						|| id == STARTER_STORE
-						|| id == TAX_BAG_SHOP
 						|| id == LOYALTYPOINT_STORE
-						|| id == BLOOD_MONEY_STORE
-						|| id == BLOOD_MONEY_STORE2
-						|| id == SELL_FOR_TAXBAGS_SHOP
 						|| id == DARKLORD_TOKEN_SHOP
 						|| id == AMONG_REWARDS_STORE
 						|| id == FIREMAKING_SHOP
@@ -838,14 +821,12 @@ public class Shop extends ItemContainer {
 				|| shopId == PRESTIGE_STORE
 				|| shopId == STARDUST_STORE
 				|| shopId == AMONG_REWARDS_STORE
-				|| shopId == BLOOD_MONEY_STORE
 				|| shopId == SLAYER_STORE
 				|| shopId == GAMBLING_STORE
 				|| shopId == CUSTOMSLAYER_POINT_STORE
 				|| shopId == CONSUMABLES
 				|| shopId == FIREMAKING_SHOP
 				|| shopId == WOODCUTTING
-				|| shopId == BLOOD_MONEY_STORE2
 				|| shopId == DARKLORD_TOKEN_SHOP
 				|| shopId == RAIDSTORE
 				|| shopId == RAIDS_FISHING_STORE
@@ -1303,176 +1284,21 @@ public class Shop extends ItemContainer {
 				case 15084:
 					return new Object[] { 100000, "Tax Bags" };
 				}
-			} else if (shop == BLOOD_MONEY_STORE) {
-				switch (item) {
-				case 11614:
-					return new Object[] { 10000, "Blood Money" };
-				case 15492:
-					return new Object[] { 20000, "Blood Money" };
-				case 18967:
-					return new Object[] { 8500, "Blood Money" };
-				case 15373:
-					return new Object[] { 5000, "Blood Money" };
-				case 15243:
-					return new Object[] { 15000, "Blood Money" };
-				case 19024:
-				case 19025:
-				case 19026:
-				case 19027:
-					return new Object[] { 7500, "Blood Money" };
-				case 13740:
-					return new Object[] { 10000, "Blood Money" };
-				case 19002:
-					return new Object[] { 12500, "Blood Money" };
-				case 3445:
-					return new Object[] { 30000, "Blood Money" };
-				case 20250:
-					return new Object[] { 15000, "Blood Money" };
-				case 18931:
-					return new Object[] { 35000, "Blood Money" };
-				case 18963:
-				case 18964:
-				case 18972:
-					return new Object[] { 100000, "Blood Money" };
-				}
 				return new Object[] { 70000, "Blood Money" };
-			} else if (shop == DARKLORD_TOKEN_SHOP) {
-				switch(item) {
-					
-				case 3941:
-				case 3974:
-					return new Object[] { 10, "Claw Tokens" };
-					
-				case 18380:
-				case 18381:
-				case 18382:
-				case 9006:
-
-					return new Object[] { 3, "Claw Tokens" };
-				case 5162:
-					return new Object[] { 20, "Claw Tokens" };	
-				case 18392:
-					return new Object[] { 5, "Claw Tokens" };
-				}
-				
-			} else if (shop == WOODCUTTING) {
-				switch(item) {
-					
-				case 1351:
-					return new Object[] { 1, "tax Bags" };
-				case 1353:
-					return new Object[] { 2, "tax Bags" };
-				case 1355:
-					return new Object[] { 5, "tax Bags" };
-				case 1357:
-					return new Object[] { 7, "tax Bags" };
-				case 1359:
-					return new Object[] { 12, "tax Bags" };
-				case 1361:
-					return new Object[] { 25, "tax Bags" };
-				case 946:
-					return new Object[] { 10, "tax bags" };
-				
-				}
-			} else if (shop == FIREMAKING_SHOP) {
-				switch(item) {
-					
-				case 590:
-					return new Object[] { 1, "tax Bags" };
-				case 13661:
-					return new Object[] { 500, "tax Bags" };
-				
-				}
-				
 			} else if (shop == RAIDS_FISHING_STORE) {
 				switch(item) {
-					
-				case 4777:
-					return new Object[] { 25, "Fish tokens" };
-				case 19479:
-					return new Object[] { 20, "Fish tokens" };
-				case 18950:
-					return new Object[] { 13, "Fish tokens" };
-				case 19886:
-					return new Object[] { 18, "Fish tokens" };
-				case 5185:
-					return new Object[] { 12, "Fish tokens" };
 
-				
+					case 4777:
+						return new Object[]{25, "Fish tokens"};
+					case 19479:
+						return new Object[]{20, "Fish tokens"};
+					case 18950:
+						return new Object[]{13, "Fish tokens"};
+					case 19886:
+						return new Object[]{18, "Fish tokens"};
+					case 5185:
+						return new Object[]{12, "Fish tokens"};
 				}
-			} else if (shop == BLOOD_MONEY_STORE2) {
-				switch (item) {
-				case 20555:
-				case 12284:
-				case 4706:
-					return new Object[] { 100000, "Blood Money" };
-				case 13848:// brawlers
-				case 13849:
-				case 13850:
-				case 13851:
-				case 13852:
-				case 13853:
-				case 13854:
-				case 13855:
-				case 13856:
-				case 13857:
-					return new Object[] { 3000, "Blood Money" };
-				case 12936:
-				case 12282:
-				case 20998:
-					return new Object[] { 600000, "Blood Money" };
-				case 15273:
-				case 4451:
-					return new Object[] { 50, "Blood Money" };
-				case 6585:
-				case 11732:
-				case 6920:
-				case 2577:
-					return new Object[] { 10000, "Blood Money" };
-				case 4153:
-					return new Object[] { 5000, "Blood Money" };
-				case 11924:
-				case 11926:
-					return new Object[] { 40000, "Blood Money" };
-				case 6914:
-				case 6889:
-				case 6918:
-				case 6916:
-				case 6924:
-					return new Object[] { 30000, "Blood Money" };
-				}
-				return new Object[] { 60000, "Blood Money" };
-			} else if (shop == STARDUST_STORE) {
-				switch (item) {
-				case 19089:
-				case 19092:
-				case 19091:
-				case 19094:
-				case 19090:
-				case 19093:
-					return new Object[] { 2000, "Stardust" };
-				case 17933:
-					return new Object[] { 3000, "Stardust" };
-				case 6666:
-				case 19055:
-					return new Object[] { 2500, "Stardust" };
-				case 1666:
-					return new Object[] { 3500, "Stardust" };
-
-				case 19936:
-					return new Object[] { 7500, "Stardust" };
-
-				case 15332:
-					return new Object[] { 450, "Stardust" };
-				case 15373:
-					return new Object[] { 350, "Stardust" };
-				case 2572:
-					return new Object[] { 750, "Stardust" };
-				case 11133:
-					return new Object[] { 1250, "Stardust" };
-
-				}
-				return new Object[] { 100, "Stardust Points" };
 			} else if (shop == SKILLING_STORE) {
 				switch (item) {
 					case 19706:// Common mbox
@@ -1485,16 +1311,6 @@ public class Shop extends ItemContainer {
 						return new Object[]{1000, "Skilling Points"};
 					case 6199:// Blood Necklace
 						return new Object[]{5000, "Skilling Points"};
-				}
-
-			} else if (shop == ENERGY_FRAGMENT_STORE) {
-				switch (item) {
-				case 5509:
-					return new Object[] { 400, "energy fragments" };
-				case 5510:
-					return new Object[] { 750, "energy fragments" };
-				case 5512:
-					return new Object[] { 1100, "energy fragments" };
 				}
 			} else if (shop == DBZ_TOKEN_SHOP) {
 				switch (item) {
@@ -1535,53 +1351,6 @@ public class Shop extends ItemContainer {
 					return new Object[] { 1500, "DBZ Tokens" };
 				}
 				return new Object[] { 10000, "DBZ Tokens" };
-			} else if (shop == TAX_BAG_SHOP) {
-				switch (item) {
-				
-				
-				case 19886: // col neck
-					return new Object[] {5000, PREFIX};
-				case 4770: // crimson pieces
-				case 4771:
-				case 4772:
-					return new Object[] {1500, PREFIX};
-				case 4802: // defenders sword
-					return new Object[] {2500, PREFIX};
-					
-				case 3316: // greywave ss
-					return new Object[] {750, PREFIX};
-				case 18865: // lit sword
-					return new Object[] {8000, PREFIX};
-				case 3286: // egyptian g
-					return new Object[] {20, PREFIX};
-				case 3943: // Text neck
-					return new Object[] {2500, PREFIX};
-				case 3958: // rex (reg)
-				case 3959:
-				case 3960:
-					return new Object[] {1000, PREFIX};
-				case 4764: //Suic nr1 gloves/boots
-				case 4765:
-					return new Object[] {1000, PREFIX};
-				case 3064: // defenders ss
-					return new Object[] {200, PREFIX};
-					
-				case 5131: // dmg
-					return new Object[] {6000, PREFIX};
-					
-				case 5133: // suics mg
-					return new Object[] {4500, PREFIX};
-				case 5132: // vortexs mg
-					return new Object[] {3500, PREFIX};
-					
-				case 16140: // 100% ammy(ruby)
-					return new Object[] {5000, PREFIX};
-					
-				case 20054: // 100% ring(devotion)
-					return new Object[] {3000, PREFIX};
-
-				}
-
 			} else if (shop == STARTER_STORE) {
 				switch (item) {
 				case 902:
@@ -1684,8 +1453,6 @@ public class Shop extends ItemContainer {
 						return new Object[] { 100, "Donation Points" };
 				case 5170: //inf prayer scroll
 					return new Object[] { 45, "Donation Points" };
-				case 13201: //supreme herbal bow
-				return new Object[] { 200, "Donation Points" };
 				}
 				return new Object[] { 150, "Donation Points" };
 			} else if (shop == VOID_STORE) {
@@ -1700,34 +1467,6 @@ public class Shop extends ItemContainer {
 					return new Object[] { 75, "Custom Pest Control Points" };
 				}
 				return new Object[] { 100, "Custom Pest Control Points" };
-			} else if (shop == DONATOR_PET_SHOP) {
-				switch (item) {
-				case 1647: //Pet MewTwo
-				case 1648: //Pet Antman
-				case 1855: //Pet Zorbak
-				case 2756: //Stoned Toad Pet
-				case 2757: //Drakkon Pet
-				case 2758: //Galvek Pet
-				case 2759: //Vasa Nistirio Pet
-				case 2762: // Supreme Darkbeast pet
-				case 2763: // Eternal Dragon Pet
-				case 2764: // Leo the Lion Pet
-				case 3647: // Killer chucky pet
-				case 3695: //Pet rock
-				case 3957: //hulk pet
-				case 5127: // Goku Pet
-				case 5128: //Vegeta Pet
-				case 5155: //Custom Vorago Pet
-				case 5156: // Custom Olm pet
-				case 5157: // pet Bulbasaur
-				case 5160: //Pet Charmander
-				case 5161: // pet joker
-				case 5162: //Pet Charizard
-				case 11996: //Pet KBD
-				case 11981: // Pet Blue Dragon
-								return new Object[] { 50, "Donation Points" };
-				}
-				return new Object[] { 100, "Donation Points" };
 			} else if (shop == AGILITY_TICKET_STORE) {
 				switch (item) {
 				case 14936:
@@ -1754,39 +1493,6 @@ public class Shop extends ItemContainer {
 				case 5119:
 				case 5120:
 					return new Object[] { 10000, "Colorful Tokens" };
-
-				}
-			} else if (shop == SUIC_NUMBER_ONE_TOKEN_STORE) {
-				switch (item) {
-				case 7759:
-					return new Object[] { 5000, "VIP Gems" };
-				case 7760:
-					return new Object[] { 5000, "VIP Gems" };
-				case 7761:
-					return new Object[] { 5000, "VIP Gems" };
-				case 7762:
-					
-				case 13999:
-					return new Object[] { 3000, "VIP Gems" };
-					
-				case 7682:
-					return new Object[] { 3000, "VIP Gems" };
-				case 7683:
-					return new Object[] { 3000, "VIP Gems" };
-				case 7684:
-					return new Object[] { 3000, "VIP Gems" };
-				case 7686:
-					return new Object[] { 3000, "VIP Gems" };
-				case 7687:
-					return new Object[] { 3000, "VIP Gems" };
-				case 7688:
-					return new Object[] { 3000, "VIP Gems" };
-				case 7763:
-					return new Object[] { 5000, "VIP Gems" };
-				case 7764:
-					return new Object[] { 5000, "VIP Gems" };
-				case 7765:
-					return new Object[] { 5000, "VIP Gems" };
 
 				}
 			} else if (shop == GRAVEYARD_STORE) {
@@ -1836,51 +1542,6 @@ public class Shop extends ItemContainer {
 					return new Object[] { 2, "zombie fragments" };
 				}
 				return new Object[] { 10000, "zombie fragments" };
-			} else if (shop == TOKKUL_EXCHANGE_STORE) {
-				switch (item) {
-				case 11978:
-					return new Object[] { 300000, "tokkul" };
-				case 438:
-				case 436:
-					return new Object[] { 10, "tokkul" };
-				case 440:
-					return new Object[] { 25, "tokkul" };
-				case 453:
-					return new Object[] { 30, "tokkul" };
-				case 442:
-					return new Object[] { 30, "tokkul" };
-				case 444:
-					return new Object[] { 40, "tokkul" };
-				case 447:
-					return new Object[] { 70, "tokkul" };
-				case 449:
-					return new Object[] { 120, "tokkul" };
-				case 451:
-					return new Object[] { 250, "tokkul" };
-				case 1623:
-					return new Object[] { 20, "tokkul" };
-				case 1621:
-					return new Object[] { 40, "tokkul" };
-				case 1619:
-					return new Object[] { 70, "tokkul" };
-				case 1617:
-					return new Object[] { 150, "tokkul" };
-				case 1631:
-					return new Object[] { 1600, "tokkul" };
-				case 6571:
-					return new Object[] { 50000, "tokkul" };
-				case 11128:
-					return new Object[] { 22000, "tokkul" };
-				case 6522:
-					return new Object[] { 20, "tokkul" };
-				case 6524:
-				case 6523:
-				case 6526:
-					return new Object[] { 5000, "tokkul" };
-				case 6528:
-				case 6568:
-					return new Object[] { 800, "tokkul" };
-				}
 			} else if (shop == DUNGEONEERING_STORE) {
 				switch (item) {
 				case 18351:

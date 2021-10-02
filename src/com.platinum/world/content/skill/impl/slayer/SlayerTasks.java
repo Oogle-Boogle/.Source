@@ -34,32 +34,25 @@ public enum SlayerTasks {
 	/**
 	 * Hard tasks
 	 */
-	GODZILLA1(SlayerMaster.KURADEL, 9932, "Godzilla can be found in the Medium Teleports", 1000, new Position(2452, 10147)),
-	CERBERUS1(SlayerMaster.KURADEL, 1999, "Cerberus can be found in the Medium Teleports", 1000, new Position(1240, 1247)),
-	LORD_VALOR(SlayerMaster.KURADEL, 9277, "Lord Valor can be found in the Hardened Teleports", 1000, new Position(2795, 2775)),
-	DZANTH(SlayerMaster.KURADEL, 9273, "Dzanth can be found in the Hardened Teleports", 1000, new Position(2731, 5095)),
-	KING_KONG(SlayerMaster.KURADEL, 9903, "King Kong can be found in the Hardened Teleports.", 1000, new Position(2710, 9441)),
-	CORP_BEAST(SlayerMaster.KURADEL, 8133, "Corp beastcan be found in the Hardened Teleports", 1000, new Position(1761, 5329, 1)),
-	LUCID_WARRIORS(SlayerMaster.KURADEL, 9247, "Lucid Warriors can be found in the Hardened Teleports", 1000, new Position(1767, 5340)),
-	HULK(SlayerMaster.KURADEL, 8493, "Hulk can be found in the Hardened Teleports", 1000, new Position(1763, 5358)),
+	CRAWLING_HANDS1(SlayerMaster.SUMONA, 9935, "Find crawling hands in slayer tower", 750, new Position(2602, 5713)),
+	BLOODVIEL1(SlayerMaster.SUMONA, 170, "Find bloodveld in slayer tower", 750, new Position(2273, 4680, 1)),
+	INFERNAL_MAGE1(SlayerMaster.SUMONA, 169, "Find infernal mages in slayer tower", 750, new Position(1908, 4367)),
 
 	/**
 	 * Elite
 	 */
-	DARKWIZARDS(SlayerMaster.SUMONA, 9203, "Find Darkblue Wizards at ::wizards", 1500, new Position(2903, 5203)),
-	HEATED_PYRO(SlayerMaster.SUMONA, 172, "Heated Pyro can be found in the Elite Teleports", 1500, new Position(2863, 5354, 2)),
-	PURPLE_WYRM(SlayerMaster.SUMONA, 9935, "Purple Wyrm can be found in the Elite Teleports", 1500, new Position(2602, 5713)),
-	TRINITY(SlayerMaster.SUMONA, 170, "Trinity can be found in the Elite Teleports", 1500, new Position(2273, 4680, 1)),
-	CLOUD(SlayerMaster.SUMONA, 169, "Cloud can be found in the Elite Teleports", 1500, new Position(1908, 4367));
+	CRAWLING_HANDS(SlayerMaster.SUMONA, 9935, "Find crawling hands in slayer tower", 1500, new Position(2602, 5713)),
+	BLOODVIEL(SlayerMaster.SUMONA, 170, "Find bloodviel in slayer tower", 1500, new Position(2273, 4680, 1)),
+	INFERNAL_MAGE(SlayerMaster.SUMONA, 169, "Find infernal mages in slayer tower", 1500, new Position(1908, 4367)),
 	
 	/**
 	 * Extreme - Bravek
 	 */
 
-/*	NOXIOUS_TROLLS(SlayerMaster.BRAVEK, 5957, "Find noxious trolls in teleports", 2500, new Position(3247, 3033)),
-	AZAZEL_BEAST(SlayerMaster.BRAVEK, 5958, "Find azazel beasts in teleports", 2500, new Position(2463, 3372)),
-	CUSTOM_HELLHOUNDS(SlayerMaster.BRAVEK, 6311, "Find azazel beasts in teleports", 2500, new Position(3178, 3032)),
-	RAVANNA(SlayerMaster.BRAVEK, 5959, "Find azazel beasts in teleports", 2500, new Position(3593, 3493));*/
+	ABBERANT_SPECTRE(SlayerMaster.BRAVEK, 1604, "Find aberrant spectres in slayer tower", 2500, new Position(3247, 3033)),
+	GARGOYLE(SlayerMaster.BRAVEK, 1610, "Find gargoyles in slayer tower", 2500, new Position(2463, 3372)),
+	NECHRYAEL(SlayerMaster.BRAVEK, 1613, "Find nechryaels in slayer tower", 2500, new Position(3178, 3032)),
+	ABYSSAL_DEMON(SlayerMaster.BRAVEK, 4230, "Find abyssal demons in slayer tower", 2500, new Position(3593, 3493));
 
 
 
@@ -122,8 +115,8 @@ public enum SlayerTasks {
 				hardTasks++;
 			else if (task.getTaskMaster() == SlayerMaster.SUMONA)
 				eliteTasks++;
-/*			else if (task.getTaskMaster() == SlayerMaster.BRAVEK)
-				extremeTasks++;*/
+			else if (task.getTaskMaster() == SlayerMaster.BRAVEK)
+				extremeTasks++;
 		}
 
 		if (master == SlayerMaster.VANNAKA) {
@@ -140,7 +133,7 @@ public enum SlayerTasks {
 		} else if (master == SlayerMaster.SUMONA) {
 			slayerTaskId = 1 + easyTasks + mediumTasks + hardTasks + Misc.getRandom(eliteTasks - 1);
 			slayerTaskAmount = 25 + Misc.getRandom(5);
-		} /*else if (master == SlayerMaster.BRAVEK) {
+		} else if (master == SlayerMaster.BRAVEK) {
 			slayerTaskId = 1 + easyTasks + mediumTasks + hardTasks + eliteTasks + Misc.getRandom(extremeTasks - 1);
 			if (player.getBravekDifficulty() == null) {
 				slayerTaskAmount = 30 + Misc.getRandom(5);
@@ -157,7 +150,7 @@ public enum SlayerTasks {
 					break;
 				}
 			}
-		}*/
+		}
 		return new int[] { slayerTaskId, slayerTaskAmount };
 	}
 	
