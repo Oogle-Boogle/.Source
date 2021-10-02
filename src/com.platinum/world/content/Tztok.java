@@ -138,12 +138,13 @@ public class Tztok extends NPC {
 
 			Player killer = entry.getKey();
 			int damage = entry.getValue();
-
-			handleDrop(npc, killer, damage);
+			if (damage >= 1500000) {
+				handleDrop(npc, killer, damage);
 			NpcGain.WorldBossXP(killer);
 
-			if (++count >= 4) {
+			if (++count >= 10) {
 				break;
+			}
 			}
 
 		}
@@ -161,7 +162,7 @@ public class Tztok extends NPC {
 		GroundItemManager.spawnGroundItem(player,
 				new GroundItem(new Item(10835, 100), pos, player.getUsername(), false, 150, true, 200));
 
-		if (chance >= 98) {
+		if (chance >= 99) {
 			GroundItemManager.spawnGroundItem(player,
 					new GroundItem(new Item(superrare), pos, player.getUsername(), false, 150, true, 200));
 			String itemName = (new Item(superrare).getDefinition().getName());

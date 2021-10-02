@@ -134,14 +134,15 @@ public class Assassin extends NPC {
 
 			Player killer = entry.getKey();
 			int damage = entry.getValue();
+			if (damage >= 1500000) {
 
-			handleDrop(npc, killer, damage);
-			NpcGain.WorldBossXP(killer);
+				handleDrop(npc, killer, damage);
+				NpcGain.WorldBossXP(killer);
 
-			if (++count >= 4) {
-				break;
+				if (++count >= 10) {
+					break;
+				}
 			}
-
 		}
 
 	}
