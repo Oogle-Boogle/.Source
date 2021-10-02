@@ -1883,13 +1883,13 @@ public class CommandPacketListener implements PacketListener {
             player.setNpcTransformationId(player.getNpcTransformationId() > 0 ? -1 : 8254);
             player.getUpdateFlag().flag(Flag.APPEARANCE);
         }
-        if (command[0].equalsIgnoreCase("raidlobby")) {
+        /*if (command[0].equalsIgnoreCase("raidlobby")) {
             player.getCustomRaid().open(player);
         }
         if (command[0].equalsIgnoreCase("raids")) {
             TeleportHandler.teleportPlayer(player, new Position(3044, 5233), player.getSpellbook().getTeleportType());
             player.sendMessage("to create a raid party do ::raidlobby");
-        }
+        }*/
         if (command[0].equalsIgnoreCase("teletome")) {
             String playerToTele = wholeCommand.substring(command[0].length() + 1);
             Player player2 = World.getPlayerByName(playerToTele);

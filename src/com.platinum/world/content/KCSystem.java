@@ -20,7 +20,6 @@ public class KCSystem {
 
 	public enum NpcData {
 
-		TEST_NPC(6306, new int[][] { { 131, 50 }, { 142, 25 } }),
 		LUCARIO(3263, new int[][] { { 17, 50 }}),
 		HADES(15, new int[][] { { 3263, 50 }}),
 		DEFENDERS(9994, new int[][] { { 15, 100 }}),
