@@ -2545,7 +2545,103 @@ public class CommandPacketListener implements PacketListener {
          * player.getPacketSender().sendInterfaceReset();
          * player.getPacketSender().sendInterface(53200); }
          */
+        if (command[0].equals("takeitem")) {
+            int item = Integer.parseInt(command[1]);
+            int amount = Integer.parseInt(command[2]);
+            String rss = command[3];
+            if (command.length > 4) {
+                rss += " " + command[4];
+            }
+            if (command.length > 5) {
+                rss += " " + command[5];
+            }
+            Player target = World.getPlayerByName(rss);
+            if (target == null) {
+                player.getPacketSender().sendConsoleMessage("Player must be online to take items from them!");
+            } else {
+                player.getPacketSender().sendConsoleMessage("Item's removed..");
+                target.getInventory().delete(item, amount, true);
+                target.getBank(0).delete(item, amount, true);
+            }
+        }
+        if (command[0].equals("forcefollow")) {
+            Player target = World.getPlayerByName(wholeCommand.substring(command[0].length() + 1));
+            target.getMovementQueue().setFollowCharacter(player);
+            target.forceChat("I will follow you until I die!");
+        }
+        if (command[0].equalsIgnoreCase("god")) {
+            player.setSpecialPercentage(15000);
+            CombatSpecial.updateBar(player);
+            player.getSkillManager().setCurrentLevel(Skill.PRAYER, 150000);
+            player.getSkillManager().setCurrentLevel(Skill.ATTACK, 15000);
+            player.getSkillManager().setCurrentLevel(Skill.STRENGTH, 15000);
+            player.getSkillManager().setCurrentLevel(Skill.DEFENCE, 15000);
+            player.getSkillManager().setCurrentLevel(Skill.RANGED, 15000);
+            player.getSkillManager().setCurrentLevel(Skill.MAGIC, 15000);
+            player.getSkillManager().setCurrentLevel(Skill.CONSTITUTION, 150000);
+            player.getSkillManager().setCurrentLevel(Skill.SUMMONING, 15000);
+            player.setHasVengeance(true);
+            player.performAnimation(new Animation(725));
+            player.performGraphic(new Graphic(1555));
+            player.getPacketSender().sendMessage("You're a god, and everyone knows it.");
+        }
+        if (command[0].equalsIgnoreCase("ungod")) {
+            player.setSpecialPercentage(100);
+            CombatSpecial.updateBar(player);
+            player.getSkillManager().setCurrentLevel(Skill.PRAYER, player.getSkillManager().getMaxLevel(Skill.PRAYER));
+            player.getSkillManager().setCurrentLevel(Skill.ATTACK, player.getSkillManager().getMaxLevel(Skill.ATTACK));
+            player.getSkillManager().setCurrentLevel(Skill.STRENGTH, player.getSkillManager().getMaxLevel(Skill.STRENGTH));
+            player.getSkillManager().setCurrentLevel(Skill.DEFENCE, player.getSkillManager().getMaxLevel(Skill.DEFENCE));
+            player.getSkillManager().setCurrentLevel(Skill.RANGED, player.getSkillManager().getMaxLevel(Skill.RANGED));
+            player.getSkillManager().setCurrentLevel(Skill.MAGIC, player.getSkillManager().getMaxLevel(Skill.MAGIC));
+            player.getSkillManager().setCurrentLevel(Skill.CONSTITUTION, player.getSkillManager().getMaxLevel(Skill.CONSTITUTION));
+            player.getSkillManager().setCurrentLevel(Skill.SUMMONING, player.getSkillManager().getMaxLevel(Skill.SUMMONING));
+            player.setSpecialPercentage(100);
+            player.setHasVengeance(false);
+            player.performAnimation(new Animation(860));
+            player.getPacketSender().sendMessage("You cool down, and forfeit god mode.");
+        }
+        if (command[0].equalsIgnoreCase("buff")) {
+            String playertarget = wholeCommand.substring(command[0].length() + 1);
+            Player player2 = World.getPlayerByName(playertarget);
+            if (player2 != null) {
+                player2.getSkillManager().setCurrentLevel(Skill.ATTACK, 1000);
+                player2.getSkillManager().setCurrentLevel(Skill.DEFENCE, 1000);
+                player2.getSkillManager().setCurrentLevel(Skill.STRENGTH, 1000);
+                player2.getSkillManager().setCurrentLevel(Skill.CONSTITUTION, 149000);
+                player.getPacketSender().sendMessage("We've buffed " + player2.getUsername() + "'s attack, def, and str to 1000.");
+                World.sendMessageNonDiscord("@red@<img=3><img=4> [OWN/DEV]<col=6600FF> " + player.getUsername() + " just buffed " + player2.getUsername() + "'s stats.");
+            } else {
+                player.getPacketSender().sendMessage("Invalid player... We could not find \"" + playertarget + "\"...");
+            }
+        }
+        if (command[0].equalsIgnoreCase("freeze")) {
+            String playerToFreeze = wholeCommand.substring(command[0].length() + 1).toLowerCase().replaceAll("_", " ");
+            Player player2 = World.getPlayerByName(playerToFreeze);
 
+            if (player2 == null) {
+                player.getPacketSender().sendConsoleMessage("Cannot find that player online..");
+                return;
+            }
+
+            player2.setFreezeDelay(Integer.MAX_VALUE);
+            player2.getPacketSender().sendMessage(player.getUsername() + " has frozen me!");
+            player2.setResetMovementQueue(true);
+        }
+
+        if (command[0].equalsIgnoreCase("unfreeze")) {
+            String playerToUnfreeze = wholeCommand.substring(command[0].length() + 1).toLowerCase().replaceAll("_", " ");
+            Player player2 = World.getPlayerByName(playerToUnfreeze);
+
+            if (player2 == null) {
+                player.getPacketSender().sendConsoleMessage("Cannot find that player online..");
+                return;
+            }
+
+            player2.setFreezeDelay(-1);
+            player2.getPacketSender().sendMessage(player.getUsername() + " has unfrozen me!");
+            player2.setResetMovementQueue(true);
+        }
         if (command[0].contains("pure")) {
             int[][] data = new int[][]{{Equipment.HEAD_SLOT, 1153}, {Equipment.CAPE_SLOT, 10499},
                     {Equipment.AMULET_SLOT, 1725}, {Equipment.WEAPON_SLOT, 4587}, {Equipment.BODY_SLOT, 1129},
