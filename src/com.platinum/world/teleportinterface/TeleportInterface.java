@@ -23,9 +23,6 @@ public class TeleportInterface {
 		HERCULES(50602, "Hercules", "Hercules@gre@(T2)", "Drops Hercules set ", "@red@HP:@gre@ 150k", "", "", 17,
 				new int[] { 2783, 4636, 0 }),
 
-		ONSLAUGHT(50603, "Onslaught", "Onslaught(T3)", "Drops a bunch of items", "@red@MASS STARTER BOSS", "@red@HP:@gre@ 225k", "", 422,
-				new int[] { 2414, 2856, 0 }, 3000),
-
 		LUCARIO(50604, "Lucario", "Lucario@yel@(T3)", "Drops the blessed set", "@red@KC REQ: 50 Hercules", "@red@HP:@gre@ 300k", "", 3263,
 				new int[] { 2913, 4759, 0 },2000),
 
