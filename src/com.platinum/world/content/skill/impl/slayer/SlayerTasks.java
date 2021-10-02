@@ -50,16 +50,16 @@ public enum SlayerTasks {
 	HEATED_PYRO(SlayerMaster.SUMONA, 172, "Heated Pyro can be found in the Elite Teleports", 1500, new Position(2863, 5354, 2)),
 	PURPLE_WYRM(SlayerMaster.SUMONA, 9935, "Purple Wyrm can be found in the Elite Teleports", 1500, new Position(2602, 5713)),
 	TRINITY(SlayerMaster.SUMONA, 170, "Trinity can be found in the Elite Teleports", 1500, new Position(2273, 4680, 1)),
-	CLOUD(SlayerMaster.SUMONA, 169, "Cloud can be found in the Elite Teleports", 1500, new Position(1908, 4367)),
+	CLOUD(SlayerMaster.SUMONA, 169, "Cloud can be found in the Elite Teleports", 1500, new Position(1908, 4367));
 	
 	/**
 	 * Extreme - Bravek
 	 */
 
-	NOXIOUS_TROLLS(SlayerMaster.BRAVEK, 5957, "Find noxious trolls in teleports", 2500, new Position(3247, 3033)),
+/*	NOXIOUS_TROLLS(SlayerMaster.BRAVEK, 5957, "Find noxious trolls in teleports", 2500, new Position(3247, 3033)),
 	AZAZEL_BEAST(SlayerMaster.BRAVEK, 5958, "Find azazel beasts in teleports", 2500, new Position(2463, 3372)),
 	CUSTOM_HELLHOUNDS(SlayerMaster.BRAVEK, 6311, "Find azazel beasts in teleports", 2500, new Position(3178, 3032)),
-	RAVANNA(SlayerMaster.BRAVEK, 5959, "Find azazel beasts in teleports", 2500, new Position(3593, 3493));
+	RAVANNA(SlayerMaster.BRAVEK, 5959, "Find azazel beasts in teleports", 2500, new Position(3593, 3493));*/
 
 
 
@@ -122,8 +122,8 @@ public enum SlayerTasks {
 				hardTasks++;
 			else if (task.getTaskMaster() == SlayerMaster.SUMONA)
 				eliteTasks++;
-			else if (task.getTaskMaster() == SlayerMaster.BRAVEK)
-				extremeTasks++;
+/*			else if (task.getTaskMaster() == SlayerMaster.BRAVEK)
+				extremeTasks++;*/
 		}
 
 		if (master == SlayerMaster.VANNAKA) {
@@ -140,7 +140,7 @@ public enum SlayerTasks {
 		} else if (master == SlayerMaster.SUMONA) {
 			slayerTaskId = 1 + easyTasks + mediumTasks + hardTasks + Misc.getRandom(eliteTasks - 1);
 			slayerTaskAmount = 25 + Misc.getRandom(5);
-		} else if (master == SlayerMaster.BRAVEK) {
+		} /*else if (master == SlayerMaster.BRAVEK) {
 			slayerTaskId = 1 + easyTasks + mediumTasks + hardTasks + eliteTasks + Misc.getRandom(extremeTasks - 1);
 			if (player.getBravekDifficulty() == null) {
 				slayerTaskAmount = 30 + Misc.getRandom(5);
@@ -157,7 +157,7 @@ public enum SlayerTasks {
 					break;
 				}
 			}
-		}
+		}*/
 		return new int[] { slayerTaskId, slayerTaskAmount };
 	}
 	
