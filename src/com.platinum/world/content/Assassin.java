@@ -160,7 +160,7 @@ public class Assassin extends NPC {
 		GroundItemManager.spawnGroundItem(player,
 				new GroundItem(new Item(10835, 100), pos, player.getUsername(), false, 150, true, 200));
 
-		if (chance >= 95) {
+		if (chance >= 98) {
 			GroundItemManager.spawnGroundItem(player,
 					new GroundItem(new Item(superrare), pos, player.getUsername(), false, 150, true, 200));
 			String itemName = (new Item(superrare).getDefinition().getName());
@@ -171,7 +171,7 @@ public class Assassin extends NPC {
 			return;
 		}
 
-		if (chance >= 85) {
+		if (chance >= 90) {
 			GroundItemManager.spawnGroundItem(player,
 					new GroundItem(new Item(rare), pos, player.getUsername(), false, 150, true, 200));
 			String itemName = (new Item(rare).getDefinition().getName());

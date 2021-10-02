@@ -652,15 +652,15 @@ public class CommandPacketListener implements PacketListener {
             player.sendMessage("@blu@Your @red@Total @blu@ drop rate bonus is currently: " + bonus + "%");
         }
 
-        if (command[0].equalsIgnoreCase("juggernaut")) {
+/*        if (command[0].equalsIgnoreCase("juggernaut")) {
             TeleportHandler.teleportPlayer(player, new Position(2419, 4655, 0),
                     player.getSpellbook().getTeleportType());
-        }
+        }*/
 
-        if (command[0].equalsIgnoreCase("onslaught")) {
+/*        if (command[0].equalsIgnoreCase("onslaught")) {
             TeleportHandler.teleportPlayer(player, new Position(2414, 2856, 0),
                     player.getSpellbook().getTeleportType());
-        }
+        }*/
 
 
         if (command[0].equalsIgnoreCase("hween")) {
@@ -797,10 +797,10 @@ public class CommandPacketListener implements PacketListener {
                     player.getSpellbook().getTeleportType());
         }
 
-        if (command[0].equalsIgnoreCase("may")) {
+/*        if (command[0].equalsIgnoreCase("may")) {
             TeleportHandler.teleportPlayer(player, new Position(2848, 3043, 0),
                     player.getSpellbook().getTeleportType());
-        }
+        }*/
         if (command[0].equalsIgnoreCase("worldboss")) {
             TeleportHandler.teleportPlayer(player, new Position(2410, 4679, 0),
                     player.getSpellbook().getTeleportType());

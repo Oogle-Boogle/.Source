@@ -59,9 +59,9 @@ public class TheMay extends NPC {
 	 * 
 	 * 
 	 */
-	public static void initialize() {
+/*	public static void initialize() {
 
-		TaskManager.submit(new Task(9176, false) { // 4500
+		TaskManager.submit(new Task(-1, false) { // 4500
 
 			
 			
@@ -72,7 +72,7 @@ public class TheMay extends NPC {
 
 		});
 
-	}
+	}*/
 
 	/**
 	 * 

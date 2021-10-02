@@ -60,9 +60,9 @@ public class Onslaught extends NPC {
 	/**
 	 * 
 	 */
-	public static void initialize() {
+/*	public static void initialize() {
 
-		TaskManager.submit(new Task(1500, false) { // 6000
+		TaskManager.submit(new Task(-1, false) { // 6000
 
 			@Override
 			public void execute() {
@@ -71,7 +71,7 @@ public class Onslaught extends NPC {
 
 		});
 
-	}
+	}*/
 
 	/**
 	 * 

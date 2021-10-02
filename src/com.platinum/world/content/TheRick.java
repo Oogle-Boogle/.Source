@@ -27,7 +27,7 @@ public class TheRick extends NPC {
 	public static Item[] COMMONLOOT = { new Item(10835, 25), new Item(10835, 50),
 			new Item(19721, 1), new Item(19722, 1), new Item(19723, 1), new Item(19724, 1), new Item(19736), new Item(19734), new Item(18380), new Item(18381), new Item(18382), new Item(9006), new Item(3941), new Item(18392) };
 
-	public static Item[] RARELOOT = { new Item(4799), new Item(4800), new Item(4801), new Item(5079), new Item(3951), new Item(3960), new Item(3958), new Item(3959), new Item(5187), new Item(5186), new Item(3316), new Item(3931), new Item(14559),
+	public static Item[] RARELOOT = { new Item(4799), new Item(4800), new Item(4801), new Item(5079), new Item(3951), new Item(5187), new Item(5186), new Item(3316), new Item(3931), new Item(14559),
 			new Item(10835, 100) };
 
 	public static Item[] SUPERRARELOOT = { new Item(18950), new Item(4673), new Item(18748), new Item(18751),
@@ -62,7 +62,7 @@ public class TheRick extends NPC {
 	 */
 	public static void initialize() {
 
-		TaskManager.submit(new Task(3600, false) { // 6000
+		TaskManager.submit(new Task(10080, false) { // 6000
 
 			@Override
 			public void execute() {
@@ -162,7 +162,7 @@ public class TheRick extends NPC {
 		GroundItemManager.spawnGroundItem(player,
 				new GroundItem(new Item(10835, 10), pos, player.getUsername(), false, 150, true, 200));
 
-		if (chance >= 980) {
+		if (chance >= 985) {
 			GroundItemManager.spawnGroundItem(player,
 					new GroundItem(superrare, pos, player.getUsername(), false, 150, true, 200));
 			String itemName = (superrare.getDefinition().getName());
@@ -173,7 +173,7 @@ public class TheRick extends NPC {
 			return;
 		}
 
-		if (chance >= 830) {
+		if (chance >= 925) {
 			GroundItemManager.spawnGroundItem(player,
 					new GroundItem(rare, pos, player.getUsername(), false, 150, true, 200));
 			String itemName = rare.getDefinition().getName();
