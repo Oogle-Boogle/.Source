@@ -41,7 +41,7 @@ public enum SlayerTasks {
 	/**
 	 * Elite
 	 */
-	CRAWLING_HANDS(SlayerMaster.SUMONA, 9935, "Find crawling hands in slayer tower", 1500, new Position(2602, 5713)),
+	CRAWLING_HANDS(SlayerMaster.SUMONA, 1652, "Find crawling hands in slayer tower", 1500, new Position(2602, 5713)),
 	BLOODVIEL(SlayerMaster.SUMONA, 170, "Find bloodviel in slayer tower", 1500, new Position(2273, 4680, 1)),
 	INFERNAL_MAGE(SlayerMaster.SUMONA, 169, "Find infernal mages in slayer tower", 1500, new Position(1908, 4367)),
 	
