@@ -668,6 +668,8 @@ public class NPCOptionPacketListener implements PacketListener {
             return;
         }
 
+        /** Comment this out if it's fucked **/
+
         if (player.getKcSystem().meetsRequirements(player.getKcSystem().getData(npc.getId()))
                 && npc.getId() == player.getSlayer().getSlayerTask().getNpcId()
                 && !player.getRights().isSeniorStaff()
@@ -684,6 +686,7 @@ public class NPCOptionPacketListener implements PacketListener {
             return;
         }
 
+        /** Stop the comment here **/
 
         if (player.getCombatBuilder().getStrategy() == null) {
             //System.out.println("player strategy is null");
