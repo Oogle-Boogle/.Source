@@ -20,6 +20,10 @@ import com.platinum.world.content.combat.strategy.impl.HarLakkRiftsplitter;
 import com.platinum.world.content.combat.strategy.impl.KalphiteQueen;
 import com.platinum.world.content.combat.strategy.impl.Nex;
 import com.platinum.world.content.combat.strategy.impl.SuicsBoss;
+import com.platinum.world.content.multi.MultiBoss;
+import com.platinum.world.content.multi.MultiBossHandler;
+import com.platinum.world.content.multi7.MultiBoss7;
+import com.platinum.world.content.multi7.MultiBoss7Handler;
 import com.platinum.world.content.raids.OldRaidParty;
 import com.platinum.world.content.raids.RaidNpc;
 import com.platinum.world.content.serverperks.GlobalPerks;
@@ -96,7 +100,10 @@ public class NPCDeathTask extends Task {
 			switch (ticks) {
 			case 2:
 				npc.getMovementQueue().setLockMovement(true).reset();
-				killer = npc.getCombatBuilder().getKiller(npc.getId() != 2745 && npc.getId() != 25
+				killer = npc.getCombatBuilder().getKiller(
+						!(npc instanceof MultiBoss)
+								&& !(npc instanceof MultiBoss7)
+								&& npc.getId() != 8507 && npc.getId() != 2745 && npc.getId() != 25
 						&& npc.getId() != 6309 && npc.getId() != 8548 && npc.getId() != 8949 && npc.getId() != 6593
 						&& npc.getId() != 9993 && npc.getId() != 9903 && npc.getId() != 2005 && npc.getId() != 421
 						&& npc.getId() != 6313 && npc.getId() != 9913 && npc.getId() != 422 && npc.getId() != 7286
@@ -507,6 +514,11 @@ public class NPCDeathTask extends Task {
 						stop();
 						return;
 					}
+
+					if(npc instanceof MultiBoss)
+						MultiBossHandler.onDeath((MultiBoss)npc);
+					if(npc instanceof MultiBoss7)
+						MultiBoss7Handler.onDeath((MultiBoss7)npc);
 					/*
 					 * Halloween event dropping
 					 */

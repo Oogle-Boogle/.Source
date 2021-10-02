@@ -314,13 +314,13 @@ public class DropUtils {
 			{1739, 1}, //lucario
 			{229, 1}, //donald duck
 			{230, 1}, //baby yoda
-			{641, 5}, //Charizard
+			{641, 1}, //Charizard
 			{8512, 1}, //Vorago
 			{744, 1}, //Godzilla
 			{806, 1}, //Goku
 			{808, 1}, //Vegeta
 			{809, 5}, //Fuzed Goku
-			{3137, 1}, //Eevee
+			{3137, 7}, //Eevee
 			{3138, 1}, //Jolteon
 			{642, 1}, //Flareon
 			{644, 1}, //Vapereon
