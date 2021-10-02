@@ -34,16 +34,16 @@ public enum SlayerTasks {
 	/**
 	 * Hard tasks
 	 */
-	CRAWLING_HANDS1(SlayerMaster.SUMONA, 9935, "Find crawling hands in slayer tower", 750, new Position(2602, 5713)),
-	BLOODVIEL1(SlayerMaster.SUMONA, 170, "Find bloodveld in slayer tower", 750, new Position(2273, 4680, 1)),
-	INFERNAL_MAGE1(SlayerMaster.SUMONA, 169, "Find infernal mages in slayer tower", 750, new Position(1908, 4367)),
+	CRAWLING_HANDS1(SlayerMaster.SUMONA, 1652, "Find crawling hands in slayer tower", 750, new Position(2602, 5713)),
+	BLOODVIEL1(SlayerMaster.SUMONA, 1618, "Find bloodveld in slayer tower", 750, new Position(2273, 4680, 1)),
+	INFERNAL_MAGE1(SlayerMaster.SUMONA, 1643, "Find infernal mages in slayer tower", 750, new Position(1908, 4367)),
 
 	/**
 	 * Elite
 	 */
 	CRAWLING_HANDS(SlayerMaster.SUMONA, 1652, "Find crawling hands in slayer tower", 1500, new Position(2602, 5713)),
-	BLOODVIEL(SlayerMaster.SUMONA, 170, "Find bloodviel in slayer tower", 1500, new Position(2273, 4680, 1)),
-	INFERNAL_MAGE(SlayerMaster.SUMONA, 169, "Find infernal mages in slayer tower", 1500, new Position(1908, 4367)),
+	BLOODVIEL(SlayerMaster.SUMONA, 1618, "Find bloodviel in slayer tower", 1500, new Position(2273, 4680, 1)),
+	INFERNAL_MAGE(SlayerMaster.SUMONA, 1643, "Find infernal mages in slayer tower", 1500, new Position(1908, 4367)),
 	
 	/**
 	 * Extreme - Bravek
@@ -52,7 +52,7 @@ public enum SlayerTasks {
 	ABBERANT_SPECTRE(SlayerMaster.BRAVEK, 1604, "Find aberrant spectres in slayer tower", 2500, new Position(3247, 3033)),
 	GARGOYLE(SlayerMaster.BRAVEK, 1610, "Find gargoyles in slayer tower", 2500, new Position(2463, 3372)),
 	NECHRYAEL(SlayerMaster.BRAVEK, 1613, "Find nechryaels in slayer tower", 2500, new Position(3178, 3032)),
-	ABYSSAL_DEMON(SlayerMaster.BRAVEK, 4230, "Find abyssal demons in slayer tower", 2500, new Position(3593, 3493));
+	ABYSSAL_DEMON(SlayerMaster.BRAVEK, 1615, "Find abyssal demons in slayer tower", 2500, new Position(3593, 3493));
 
 
 
