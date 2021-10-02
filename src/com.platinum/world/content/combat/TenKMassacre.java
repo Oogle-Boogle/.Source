@@ -113,6 +113,7 @@ public class TenKMassacre {
 
     public static void restartGame() {
         POSSIBLE_WINNERS.clear();
+        CURRENT_SERVER_KILLS = 0;
     }
 
 

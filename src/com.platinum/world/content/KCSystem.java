@@ -81,6 +81,8 @@ public class KCSystem {
 		if (player.getLocation() == Locations.Location.INSTANCE_ARENA) //Remove KC in the instance arena
 			return true;
 
+
+
 		if (npcData == null) {
 			return true;
 		}
@@ -93,20 +95,21 @@ public class KCSystem {
 			return true;
 		}
 		else {
-		}
-		List<String> messages = new ArrayList<>();
-		for (Map.Entry<Integer, Integer> kcData : kcMap.entrySet()) {
-			String name = NpcDefinition.forId(kcData.getKey()).getName();
-			int amount = kcData.getValue();
-			int killedAmount = player.getNpcKillCount(kcData.getKey());
-			messages.add("Requirements needed: @red@" + amount + " @blu@of @red@" + name + "@blu@ - Killed: @red@"
-					+ killedAmount);
-			messages.add("@red@This is not while in Raids or doing slayer");
-		}
-		for (String reqs : messages) {
-			//player.sendMessage(reqs);
-		}
-		return false;
+
+            List<String> messages = new ArrayList<>();
+            for (Map.Entry<Integer, Integer> kcData : kcMap.entrySet()) {
+                String name = NpcDefinition.forId(kcData.getKey()).getName();
+                int amount = kcData.getValue();
+                int killedAmount = player.getNpcKillCount(kcData.getKey());
+                messages.add("Requirements needed: @red@" + amount + " @blu@of @red@" + name + "@blu@ - Killed: @red@"
+                        + killedAmount);
+                messages.add("@red@This is not while in Raids or doing slayer");
+            }
+            for (String reqs : messages) {
+                //player.sendMessage(reqs);
+            }
+            return false;
+        }
 	}
 
 	public void sendRequirementsMessage() {
@@ -118,11 +121,10 @@ public class KCSystem {
 			int killedAmount = player.getNpcKillCount(kcData.getKey());
 			messages.add("Requirements needed: @red@" + amount + " @blu@of @red@" + name + "@blu@ - Killed: @red@"
 					+ killedAmount);
-			messages.add("@red@This is not while in Raids or doing slayer");
+			messages.add("@red@This does not apply in Raids or whilst doing slayer.");
 		}
 		for (String reqs : messages) {
 			player.sendMessage(reqs);
 		}
 	}
 }
-

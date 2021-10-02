@@ -10,20 +10,20 @@ public enum PlayerRights {
 
 
 	PLAYER(-1, "", 1, 1, 1, 0, 0),
-	MODERATOR(-1, "><col=6600CC>", 1, 1.5,1, 0, 0),
-	ADMINISTRATOR(-1, "<col=FFFF64>", 1, 1.5,1, 0,0),
-	OWNER(-1, "<col=B40404>", 1, 1.5,1,0,0),
-	DEVELOPER(-1, "<col=fa0505>", 1, 1.5,1,0,0),
+	MODERATOR(-1, "<col=7838a3>", 1, 1.5,1, 0, 0),
+	ADMINISTRATOR(-1, "<col=7838a3>", 1, 1.5,1, 0,0),
+	OWNER(-1, "<col=7838a3>", 1, 1.5,1,0,0),
+	DEVELOPER(-1, "<col=7838a3>", 1, 1.5,1,0,0),
 	DONATOR(60, "<shad=FF7F00>", 1.5, 1.25,1,1,1),
 	SUPER_DONATOR(40, "<col=787878>", 1.5, 1.5,1,1,1),
  	EXTREME_DONATOR(20, "<col=D9D919>", 2, 1.8, 2,2,2),
 	LEGENDARY_DONATOR(10, "<shad=697998>", 2.5, 2.2, 3,2,2),
 	UBER_DONATOR(0, "<col=0EBFE9>", 3, 2.5, 4,3,3),
 	DELUXE_DONATOR(0, "<col=8600CC>", 6, 3, 5,3,3),
-	SUPPORT(-1, "@blu@", 1, 1.5, 1,0,0),
+	SUPPORT(-1, "<col=7838a3>", 1, 1.5, 1,0,0),
 	YOUTUBER(30, "<col=CD661D>", 1, 1.1, 1,0,0),
-	COMMUNITY_MANAGER(0, "<col=B40404>", 1, 1.5, 1,0,0),
-	VIP_DONATOR(0, "<col=8600CC", 10, 4,6,4,4),
+	COMMUNITY_MANAGER(0, "<col=7838a3>", 1, 1.5, 1,0,0),
+	VIP_DONATOR(0, "<col=8600CC>", 10, 4,6,4,4),
 	HADMIN(-1, "<col=FFFF64>", 1, 1.5, 1,0,0);
 
 	PlayerRights(int yellDelaySeconds, String yellHexColor, double loyaltyPointsGainModifier, double xpMofifier, int votePtModifier, int bonusBossPts, int bonusTriviaPts) {
@@ -56,7 +56,7 @@ public enum PlayerRights {
 	private static final ImmutableSet<PlayerRights> HIGH_RANK_STAFF = Sets.immutableEnumSet(ADMINISTRATOR, OWNER, DEVELOPER, COMMUNITY_MANAGER,HADMIN);
 	private static final ImmutableSet<PlayerRights> HAS_BAN_RIGHTS = Sets.immutableEnumSet(OWNER, DEVELOPER,ADMINISTRATOR, HADMIN);
 	private static final ImmutableSet<PlayerRights> MEMBERS = Sets.immutableEnumSet(DONATOR, SUPER_DONATOR, EXTREME_DONATOR, LEGENDARY_DONATOR, UBER_DONATOR, DELUXE_DONATOR, VIP_DONATOR);
-	private static final ImmutableSet<PlayerRights> ALL_STAFF = Sets.immutableEnumSet(MODERATOR, ADMINISTRATOR, OWNER, DEVELOPER, COMMUNITY_MANAGER, HADMIN);
+	private static final ImmutableSet<PlayerRights> ALL_STAFF = Sets.immutableEnumSet(SUPPORT, MODERATOR, ADMINISTRATOR, OWNER, DEVELOPER, COMMUNITY_MANAGER, HADMIN);
 	
 	public String customYellTitle;
 	

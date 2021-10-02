@@ -10,10 +10,11 @@ import static sun.audio.AudioPlayer.player;
 
 public class MapTeleportInterface {
 
+    public static final int VIEWING_ORB = 9391;
+    public static final int MAP_INTERFACE_ID = 23500;
+
     public static boolean processButton(Player p, int ButtonID) {
 
-        final int VIEWING_ORB = 9391;
-        final int MAP_INTERFACE_ID = 23500;
 
         /** Handles clicking the viewing orb **/
         if (ButtonID == VIEWING_ORB)

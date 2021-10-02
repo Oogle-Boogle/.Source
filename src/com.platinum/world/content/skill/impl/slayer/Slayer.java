@@ -237,6 +237,14 @@ public class Slayer {
                 break;
         }
 
+        switch (player.getSecondaryPlayerRights()) {
+            case LEGENDARY_DONATOR:
+            case UBER_DONATOR:
+            case DELUXE_DONATOR:
+                pointsReceived *= 2;
+                break;
+        }
+
 
         if (player.getSlayer().getTaskStreak() == 5) {
             player.getPointsHandler().setSlayerPoints(per5, true);

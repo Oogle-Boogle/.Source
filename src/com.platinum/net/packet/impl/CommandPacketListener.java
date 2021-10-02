@@ -49,6 +49,7 @@ import com.platinum.world.content.fuser.CombineHandler;
 import com.platinum.world.content.grandexchange.GrandExchange;
 import com.platinum.world.content.grandexchange.GrandExchangeOffers;
 import com.platinum.world.content.guidesInterface.GuideBook;
+import com.platinum.world.content.mapteleportinterface.MapTeleportInterface;
 import com.platinum.world.content.minigames.impl.FreeForAll;
 import com.platinum.world.content.minimes.MiniMeData;
 import com.platinum.world.content.minimes.MiniMeFunctions;
@@ -375,6 +376,10 @@ public class CommandPacketListener implements PacketListener {
 
         if (command[0].equalsIgnoreCase("difficulty")) {
             DifficultyHandler.openInterface(player);
+        }
+
+        if (command[0].equalsIgnoreCase("map")) {
+            player.getPacketSender().sendInterface(MapTeleportInterface.MAP_INTERFACE_ID);
         }
 
         if (command[0].equals("tot") && TrickOrTreat.currentLocation != null) {
@@ -1379,7 +1384,7 @@ public class CommandPacketListener implements PacketListener {
                 return;
             }
 
-            if (player.getRights() == PlayerRights.OWNER) {
+            /*if (player.getRights() == PlayerRights.OWNER) {
                 World.sendMessageNonDiscord(player.getRights().getYellPrefix() + rankIcons + "<col=ff0000>" + player.getRights().getCustomYellPrefix(true) + "</col> @bla@"
                         + player.getUsername() + ":" + yellMessage);
                 return;
@@ -1407,7 +1412,13 @@ public class CommandPacketListener implements PacketListener {
             if (player.getRights() == PlayerRights.ADMINISTRATOR) {
                 World.sendMessageNonDiscord(player.getRights().getYellPrefix() + rankIcons + "@or2@ Administrator @bla@" + player.getUsername() + ":" + yellMessage);
                 return;
+            }*/
+
+            if (player.getRights().isStaff()) {
+                World.sendMessageNonDiscord("<col=7838a3><shad=555>" + player.getRights().getYellPrefix() + rankIcons + "</shad>[" + player.getRights().toString().toUpperCase() + "]" + player.getUsername() + ":" + player.getRights().getYellHexColor() + yellMessage);
+                return;
             }
+
             if (player.getRights() == PlayerRights.DELUXE_DONATOR) {
                 World.sendMessageNonDiscord(player.getRights().getYellPrefix() + rankIcons + " <col=8600CC>"
                         + player.getRights().getCustomYellPrefix(false) + "</col> @bla@" + player.getUsername() + ":"

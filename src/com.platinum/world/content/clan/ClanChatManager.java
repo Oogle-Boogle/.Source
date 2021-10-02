@@ -305,27 +305,12 @@ public class ClanChatManager {
 		String bracketColor = "<col=16777215>";
 		String clanNameColor = "<col=255>";
 		String nameColor = "@bla@";
-		String chatColor = "<col=0b6d7a>";
-		//if(clan.getName().equalsIgnoreCase("help")) {
-			//Main.jda.getTextChannelById(619888927070879749L).sendMessage("`" + player.getUsername() + ": " + message + "`").queue();
-		//}
+		String chatColor = "@blu@";
+
 		for (Player memberPlayer : clan.getMembers()) {
 			if (memberPlayer != null) {
 				if (memberPlayer.getRelations().getIgnoreList().contains(player.getLongUsername()))
 					continue;
-
-				//int irn = 0;
-				/*if (!player.getRights().isStaff() && !player.getRights().isMember()) {
-					if (player.getGameMode() == GameMode.IRONMAN) {
-						irn = 1193;
-					} else if (player.getGameMode() == GameMode.HARDCORE_IRONMAN) {
-						irn = 1192;
-					}
-				}*/
-
-
-				//int img = player.getRights().ordinal();
-				//int img2 = player.getSecondaryPlayerRights().ordinal();
 
 				String primaryRights = player.getRights().ordinal() > 0 ? "<img=" + player.getRights().ordinal() + ">" : "";
 				String secondaryRights = player.getSecondaryPlayerRights().ordinal() > 0 ? "<zmg=" + player.getSecondaryPlayerRights().ordinal() + ">" : "";
@@ -349,10 +334,6 @@ public class ClanChatManager {
 				// If the player IS an ironman, prefix is ironman + secondary
 				String prefix = player.getGameMode() == GameMode.NORMAL ? primaryRights + secondaryRights : irn + secondaryRights;
 
-				//System.out.println("CLAN CHAT PREFIX WAS " + prefix);
-
-				//String rankImg = img > 0 ? "<img=" + img + ">" : "";
-				//String secondImg = img2 > 0 ? "<zmg=" + img2 + ">" : "";
 				memberPlayer.getPacketSender()
 						.sendMessage("@clan:A@" + bracketColor + "[" + clanNameColor + clan.getName() + bracketColor
 								+ "]" + nameColor + ""

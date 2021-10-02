@@ -387,6 +387,29 @@ public class DropUtils {
 		default:
 			break;
 		}
+
+		switch (player.getSecondaryPlayerRights()) {
+			case DONATOR:
+				totalBonus += 2;
+				break;
+			case SUPER_DONATOR:
+				totalBonus += 5;
+				break;
+			case EXTREME_DONATOR:
+				totalBonus += 10;
+				break;
+			case LEGENDARY_DONATOR:
+				totalBonus += 15;
+				break;
+			case UBER_DONATOR:
+				totalBonus += 20;
+				break;
+			case DELUXE_DONATOR:
+				totalBonus += 30;
+				break;
+			default:
+				break;
+		}
 		
 		switch (player.getGameMode()) {
 		case HARDCORE_IRONMAN:

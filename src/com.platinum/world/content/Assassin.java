@@ -138,7 +138,7 @@ public class Assassin extends NPC {
 			handleDrop(npc, killer, damage);
 			NpcGain.WorldBossXP(killer);
 
-			if (++count >= 10) {
+			if (++count >= 4) {
 				break;
 			}
 
@@ -165,7 +165,6 @@ public class Assassin extends NPC {
 					new GroundItem(new Item(superrare), pos, player.getUsername(), false, 150, true, 200));
 			String itemName = (new Item(superrare).getDefinition().getName());
 			String itemMessage = Misc.anOrA(itemName) + " " + itemName;
-			DiscordMessenger.sendRareDrop(player.getUsername(), " received<col=eaeaea><img=11>[ " + itemMessage + "<col=eaeaea>]<img=11><col=FF0000>from the Assassin!");
 			World.sendMessageNonDiscord(
 					"<img=11><col=FF0000>" + player.getUsername() + " received<col=eaeaea><img=11>[ " + itemMessage + "<col=eaeaea>]<img=11><col=FF0000>from the Assassin!");
 			DiscordMessenger.sendRareDrop(player.getUsername(), " Just received " + itemMessage + " from the Assassin!");

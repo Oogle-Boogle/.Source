@@ -142,7 +142,7 @@ public class Juggernaut extends NPC {
 
 			handleDrop(npc, killer, damage);
 
-			if (++count >= 10) {
+			if (++count >= 4) {
 				break;
 			}
 

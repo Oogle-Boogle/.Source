@@ -1,5 +1,5 @@
 {
-  "total-play-time-ms": 60927083,
+  "total-play-time-ms": 63404737,
   "username": "Flub",
   "placeholders": false,
   "password": "hqqwNDSngxD2GvfrVy9M1Q\u003d\u003d",
@@ -7,7 +7,7 @@
   "staff-rights": "OWNER",
   "secondary-rights": "DEFAULT",
   "game-mode": "NORMAL",
-  "difficulty": "Zezima",
+  "difficulty": "Insane",
   "last-known-daily-task-npc": 0,
   "daily-NPC-task-kc": 0,
   "progression-task-progress": [
@@ -504,82 +504,6 @@
         0
       ],
       "hasCompleted": false
-    },
-    {
-      "progressionName": "Supreme Master",
-      "taskNames": [
-        "kill 2K baby bronze dragon",
-        "Kill 75K assigned tasks",
-        "Get 500 slayer spree"
-      ],
-      "taskAmounts": [
-        2000,
-        75000,
-        500
-      ],
-      "progress": [
-        0,
-        0,
-        0
-      ],
-      "hasCompleted": false
-    },
-    {
-      "progressionName": "Dissolver",
-      "taskNames": [
-        "Dissolve 8K items",
-        "Get 1K slayer spree",
-        "10K Cursedzone kills"
-      ],
-      "taskAmounts": [
-        8000,
-        1000,
-        10000
-      ],
-      "progress": [
-        0,
-        0,
-        0
-      ],
-      "hasCompleted": false
-    },
-    {
-      "progressionName": "Dedicated Son",
-      "taskNames": [
-        "Dissolve 10k items",
-        "Donate 3 times",
-        "Loot 5K slayer chests"
-      ],
-      "taskAmounts": [
-        10000,
-        3,
-        5000
-      ],
-      "progress": [
-        0,
-        0,
-        0
-      ],
-      "hasCompleted": false
-    },
-    {
-      "progressionName": "Grand Master",
-      "taskNames": [
-        "Open 5K slayer boxes",
-        "Kill 100K assigned tasks",
-        "Dissolve 15k items"
-      ],
-      "taskAmounts": [
-        5000,
-        100000,
-        15000
-      ],
-      "progress": [
-        0,
-        0,
-        0
-      ],
-      "hasCompleted": false
     }
   ],
   "raid-points": 0,
@@ -591,19 +515,19 @@
   "boss-kills": 0,
   "starter-zone-map": {},
   "custom-boss-points": 0,
-  "platinum-points": 19,
+  "platinum-points": 0,
   "loyalty-title": "NONE",
   "crashGameBalance": 0,
   "position": {
-    "x": 1908,
-    "y": 5224,
+    "x": 1892,
+    "y": 5219,
     "z": 0
   },
   "online-status": "ON",
-  "given-starter": true,
-  "money-pouch": 0,
+  "given-starter": false,
+  "money-pouch": 3,
   "donated": 0,
-  "referral": true,
+  "referral": false,
   "indragon": false,
   "starterclaimed": false,
   "has-pin": false,
@@ -639,16 +563,16 @@
   "breaker-kc": 0,
   "apollo-kc": 0,
   "minutes-bonus-exp": -1,
-  "total-gained-exp": 13528227,
+  "total-gained-exp": 474,
   "prestige-points": 0,
-  "achievement-points": 4,
+  "achievement-points": 0,
   "dung-tokens": 0,
   "custom-pest-control-points": 0,
-  "loyalty-points": 16263,
-  "total-loyalty-points": 16263.0,
+  "loyalty-points": 624,
+  "total-loyalty-points": 624.0,
   "voting-points": 0,
   "slayer-points": 0,
-  "npc-kills": 5,
+  "npc-kills": 0,
   "presetItems": [
     0,
     0,
@@ -1137,7 +1061,7 @@
   "spell-book": "NORMAL",
   "shop-updated": false,
   "shop-earnings": 0,
-  "prayer-book": "CURSES",
+  "prayer-book": "NORMAL",
   "running": true,
   "run-energy": 100,
   "music": false,
@@ -1145,8 +1069,8 @@
   "auto-retaliate": false,
   "xp-locked": false,
   "veng-cast": false,
-  "last-veng": 337357120,
-  "fight-type": "SHORTBOW_ACCURATE",
+  "last-veng": 2314647,
+  "fight-type": "UNARMED_PUNCH",
   "sol-effect": 0,
   "skull-timer": 0,
   "fuse-combination-timer": 0,
@@ -1174,7 +1098,7 @@
   "summon-npc": -1,
   "summon-death": -1,
   "process-farming": false,
-  "clanchat": "Flub",
+  "clanchat": "null",
   "autocast": false,
   "autocast-spell": -1,
   "dfs-charges": 0,
@@ -1304,11 +1228,11 @@
   ],
   "skills": {
     "level": [
-      52,
+      4,
       1,
       1,
-      830,
-      96,
+      100,
+      1,
       10,
       1,
       1,
@@ -1333,11 +1257,11 @@
       1
     ],
     "maxLevel": [
-      52,
+      4,
       1,
       1,
-      830,
-      96,
+      100,
+      1,
       10,
       1,
       1,
@@ -1362,11 +1286,11 @@
       1
     ],
     "experience": [
-      127807,
+      384,
       0,
       0,
-      2820730,
-      10580874,
+      1274,
+      0,
       0,
       0,
       0,
@@ -1393,73 +1317,73 @@
   },
   "inventory": [
     {
-      "id": 592,
+      "id": 995,
+      "amount": 999999973,
+      "slot": 0
+    },
+    {
+      "id": 391,
       "amount": 1,
       "slot": 0
     },
     {
-      "id": 592,
+      "id": 391,
       "amount": 1,
       "slot": 0
     },
     {
-      "id": 4563,
-      "amount": 198,
-      "slot": 0
-    },
-    {
-      "id": 5182,
+      "id": 391,
       "amount": 1,
       "slot": 0
     },
     {
-      "id": 123,
+      "id": 391,
       "amount": 1,
       "slot": 0
     },
     {
-      "id": 123,
+      "id": 391,
       "amount": 1,
       "slot": 0
     },
     {
-      "id": 123,
+      "id": 391,
       "amount": 1,
       "slot": 0
     },
     {
-      "id": 123,
+      "id": 15243,
       "amount": 1,
       "slot": 0
     },
     {
-      "id": 10835,
-      "amount": 5,
+      "id": -1,
+      "amount": 0,
       "slot": 0
     },
     {
-      "id": 8851,
-      "amount": 20,
+      "id": -1,
+      "amount": 0,
       "slot": 0
     },
     {
-      "id": 19864,
-      "amount": 45,
+      "id": -1,
+      "amount": 0,
       "slot": 0
     },
     {
-      "id": 15373,
-      "amount": 1,
+      "id": -1,
+      "amount": 0,
       "slot": 0
     },
     {
-      "id": 22199,
-      "amount": 1,
+      "id": -1,
+      "amount": 0,
       "slot": 0
     },
     {
-      "id": 15648,
-      "amount": 1,
+      "id": -1,
+      "amount": 0,
       "slot": 0
     },
     {
@@ -1550,11 +1474,6 @@
       "slot": 0
     },
     {
-      "id": 7764,
-      "amount": 1,
-      "slot": 0
-    },
-    {
       "id": -1,
       "amount": 0,
       "slot": 0
@@ -1600,8 +1519,13 @@
       "slot": 0
     },
     {
-      "id": 15243,
-      "amount": 98995,
+      "id": -1,
+      "amount": 0,
+      "slot": 0
+    },
+    {
+      "id": -1,
+      "amount": 0,
       "slot": 0
     }
   ],
@@ -1679,11 +1603,6 @@
     false,
     false,
     false,
-    true,
-    true,
-    false,
-    false,
-    true,
     false,
     false,
     false,
@@ -1708,7 +1627,12 @@
     false,
     false,
     false,
-    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
     false,
     false,
     false,
@@ -1752,7 +1676,7 @@
     false
   ],
   "achievements-progress": [
-    292,
+    19,
     0,
     0,
     0,
@@ -1773,8 +1697,7 @@
     0,
     0,
     0,
-    292,
-    21589,
+    19,
     0,
     0,
     0,
@@ -1795,13 +1718,14 @@
     0,
     0,
     0,
-    292,
-    1306281,
+    0,
+    19,
     0,
     0,
     0,
     0,
-    5,
+    0,
+    0,
     0,
     0,
     0,
@@ -1815,7 +1739,7 @@
     false,
     false,
     false,
-    true,
+    false,
     false,
     false,
     false,
@@ -2002,13 +1926,7 @@
   "lastSpecialPotClaim": 0,
   "roulette-balance": 0,
   "roulette-bet-amount": 0,
-  "npc-kc-data": {
-    "5923": 1,
-    "2": 1,
-    "12841": 1,
-    "9766": 1,
-    "5666": 1
-  },
+  "npc-kc-data": {},
   "savedKeyCount1": 0,
   "savedKeyCount2": 0,
   "savedKeyCount3": 0,
@@ -2022,5 +1940,5 @@
   ],
   "is-gim": false,
   "favourite-teles": [],
-  "knockedHweenDoor": true
+  "knockedHweenDoor": false
 }
