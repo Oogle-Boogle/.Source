@@ -2035,33 +2035,6 @@ public class Player extends Character {
 		int speed = weapon.getSpeed();
 		int weaponId = equipment.get(Equipment.WEAPON_SLOT).getDefinition().getId();
 
-		if (weaponId == 3082
-				|| weaponId == 14006
-				|| weaponId == 3928
-				|| weaponId == 18865
-				|| weaponId == 19468
-				|| weaponId == 16137
-				|| weaponId == 3951
-				|| weaponId == 14559
-				|| weaponId == 7806
-		) {
-			return 1;
-		}
-		if (weaponId == 5131
-				|| weaponId == 6197
-				|| weaponId == 923
-				|| weaponId == 5130
-				|| weaponId == 19720
-				|| weaponId == 13207
-				|| weaponId == 5132
-				|| weaponId == 15653
-				|| weaponId == 5089
-				|| weaponId == 5173
-				|| weaponId == 5195
-				|| weaponId == 15656
-		) {
-			return 2;
-		}
 		if (weaponId == 5129
 				|| weaponId == 19618
 				|| weaponId == 19163
@@ -2082,6 +2055,33 @@ public class Player extends Character {
 				|| weaponId == 22196
 				|| weaponId == 13265
 				|| weaponId == 8655
+		) {
+			return 1;
+		}
+		if (weaponId == 5131
+				|| weaponId == 6197
+				|| weaponId == 923
+				|| weaponId == 5130
+				|| weaponId == 19720
+				|| weaponId == 13207
+				|| weaponId == 5132
+				|| weaponId == 15653
+				|| weaponId == 5089
+				|| weaponId == 5173
+				|| weaponId == 5195
+				|| weaponId == 15656
+		) {
+			return 2;
+		}
+		if (weaponId == 3082
+				|| weaponId == 14006
+				|| weaponId == 3928
+				|| weaponId == 18865
+				|| weaponId == 19468
+				|| weaponId == 16137
+				|| weaponId == 3951
+				|| weaponId == 14559
+				|| weaponId == 7806
 		) {
 			return 3;
 		}
