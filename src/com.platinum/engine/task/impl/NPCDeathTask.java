@@ -222,7 +222,7 @@ public class NPCDeathTask extends Task {
 
 					if (npc.getId() == 17 || npc.getId() == 422 || npc.getId() == 3253 || npc.getId() == 15 || npc.getId() == 9994 || npc.getId() == 9932 || npc.getId() == 224 || npc.getId() == 1999
 							|| npc.getId() == 16 || npc.getId() == 9993 || npc.getId() == 9277 || npc.getId() == 9935 || npc.getId() == 9273 || npc.getId() == 9903 || npc.getId() == 3034
-							|| npc.getId() == 9247 || npc.getId() == 8493 || npc.getId() == 9203 || npc.getId() == 172) {
+							|| npc.getId() == 9247 || npc.getId() == 8493 || npc.getId() == 9203 || npc.getId() == 172 || npc.getId() == 184) {
 
 						if (Misc.random(1000) <= 50) { // 48 / 1000
 							killer.sendMessage("@blu@[RARE DROP]: You get some Tokens for Frankenstiens Minigame");
