@@ -20075,6 +20075,45 @@
     "npc-id": 8133,
     "face": "WEST",
     "position": {
+      "x": 2900,
+      "y": 4403,
+      "z": 0
+    },
+    "walking-policy": {
+      "coordinate": true,
+      "radius": 2
+    }
+  },
+  {
+    "npc-id": 8133,
+    "face": "WEST",
+    "position": {
+      "x": 2899,
+      "y": 4382,
+      "z": 0
+    },
+    "walking-policy": {
+      "coordinate": true,
+      "radius": 2
+    }
+  },
+  {
+    "npc-id": 8133,
+    "face": "WEST",
+    "position": {
+      "x": 2891,
+      "y": 4386,
+      "z": 0
+    },
+    "walking-policy": {
+      "coordinate": true,
+      "radius": 2
+    }
+  },
+  {
+    "npc-id": 8133,
+    "face": "WEST",
+    "position": {
       "x": 2903,
       "y": 4386,
       "z": 0
