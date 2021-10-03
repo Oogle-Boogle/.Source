@@ -6397,7 +6397,7 @@
 	"aggressive": false,
 	"retreats": false,
 	"poisonous": false,
-	"respawn": 100,
+	"respawn": 10,
 	"maxHit": 60,
 	"hitpoints": 750000,
 	"attackSpeed": 7,
