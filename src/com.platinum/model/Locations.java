@@ -276,6 +276,9 @@ public class Locations {
 		DEATH(new int[] { 3021, 3056 }, new int[] { 5325, 5365 }, true, true, true, true, true, true) {
 
 		},
+		Seph(new int[] { 2605, 2586 }, new int[] { 5710, 5749 }, true, true, true, true, true, true) {
+
+		},
 		DUNGEON_MINIGAME(new int[] { 2463, 2495 }, new int[] { 10153, 10179 }, true, true, true, true, true, true) {
 
 		},

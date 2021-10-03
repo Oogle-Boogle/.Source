@@ -783,10 +783,10 @@ public class CommandPacketListener implements PacketListener {
 				return;
 			}
 		}*/
-        if (command[0].equalsIgnoreCase("chests")) {
+/*        if (command[0].equalsIgnoreCase("chests")) {
             TeleportHandler.teleportPlayer(player, new Position(2331, 3682, 0),
                     player.getSpellbook().getTeleportType());
-        }
+        }*/
 
         if (command[0].equalsIgnoreCase("wb")) {
             TeleportHandler.teleportPlayer(player, new Position(2410, 4679, 0),

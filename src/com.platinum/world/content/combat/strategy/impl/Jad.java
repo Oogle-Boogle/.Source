@@ -2,10 +2,7 @@ package com.platinum.world.content.combat.strategy.impl;
 
 import com.platinum.engine.task.Task;
 import com.platinum.engine.task.TaskManager;
-import com.platinum.model.Animation;
-import com.platinum.model.Graphic;
-import com.platinum.model.Locations;
-import com.platinum.model.Projectile;
+import com.platinum.model.*;
 import com.platinum.util.Misc;
 import com.platinum.world.content.combat.CombatContainer;
 import com.platinum.world.content.combat.CombatType;
@@ -14,6 +11,7 @@ import com.platinum.world.entity.impl.Character;
 import com.platinum.world.entity.impl.npc.NPC;
 
 public class Jad implements CombatStrategy {
+	private static final Graphic jad_healing_graphic = new Graphic(444);
 
 	@Override
 	public boolean canAttack(Character entity, Character victim) {
@@ -39,6 +37,12 @@ public class Jad implements CombatStrategy {
 		}
 		if(jad.isChargingAttack()) {
 			return true;
+		}
+		if 	(Misc.random(1000) <= 320 && jad.getConstitution() <= 6000000) {
+			jad.performGraphic(jad_healing_graphic);
+			jad.forceChat("Welcome to the new me! Now Suffer!");
+			victim.dealDamage(new Hit(150, Hitmask.DARK_RED, CombatIcon.NONE));
+			jad.setConstitution(jad.getConstitution() + Misc.getRandom(5000000));
 		}
 		int random = Misc.getRandom(10);
 		if(random <= 8 && Locations.goodDistance(jad.getPosition().getX(), jad.getPosition().getY(), victim.getPosition().getX(), victim.getPosition().getY(), 3)) {

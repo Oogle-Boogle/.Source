@@ -3,6 +3,7 @@ package com.platinum.world.content.combat.strategy;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.platinum.world.content.TheSeph;
 import com.platinum.world.content.combat.strategy.impl.*;
 import com.platinum.world.content.combat.strategy.impl.dks.DagannothSupreme;
 import com.platinum.world.content.combat.strategy.impl.godwars.Aviansie;
@@ -90,6 +91,7 @@ public class CombatStrategies {
 		 STRATEGIES.put(2042, new RemadeZulrah());
 			STRATEGIES.put(2043, new RemadeZulrah());
 			STRATEGIES.put(2044, new RemadeZulrah());
+			STRATEGIES.put(25, new Sephstrat());
 		
 		Dragon dragonStrategy = new Dragon();
 		STRATEGIES.put(50, dragonStrategy);

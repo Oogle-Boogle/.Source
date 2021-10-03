@@ -2992,7 +2992,7 @@
         "count": [
           1
         ],
-        "chance": 5
+        "chance": 10
       }
     ]
   },
@@ -3006,42 +3006,42 @@
         "count": [
           1
         ],
-        "chance": 7
+        "chance": 10
       },
       {
         "id": 6928,
         "count": [
           1
         ],
-        "chance": 7
+        "chance": 10
       },
       {
         "id": 6929,
         "count": [
           1
         ],
-        "chance": 7
+        "chance": 10
       },
       {
         "id": 12845,
         "count": [
           1
         ],
-        "chance": 7
+        "chance": 10
       },
       {
         "id": 12846,
         "count": [
           1
         ],
-        "chance": 7
+        "chance": 10
       },
       {
         "id": 12847,
         "count": [
           1
         ],
-        "chance": 7
+        "chance": 10
       }
     ]
   },
@@ -3538,21 +3538,21 @@
         "count": [
           1
         ],
-        "chance": 7
+        "chance": 10
       },
       {
         "id": 12846,
         "count": [
           1
         ],
-        "chance": 7
+        "chance": 10
       },
       {
         "id": 12847,
         "count": [
           1
         ],
-        "chance": 7
+        "chance": 10
       },
       {
         "id": 19618,
@@ -3664,7 +3664,7 @@
         "count": [
           1
         ],
-        "chance": 7
+        "chance": 10
       }
     ]
   },

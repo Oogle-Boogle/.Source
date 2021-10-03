@@ -2042,7 +2042,7 @@
     "retreats": false,
     "poisonous": false,
     "respawn": -1,
-    "maxHit": 200,
+    "maxHit": 600,
     "hitpoints": 25000000,
     "attackSpeed": 2,
     "attackAnim": 422,

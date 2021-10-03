@@ -3278,42 +3278,6 @@
 	    ],
 	    "currency":-1
 	  },
-	  {
-    "id":92,
-    "name":"Boss Point store",
-    "items":[
-	
-      {
-        "id":3810,
-        "amount":10
-      },
-      {
-        "id":3811,
-        "amount":10
-      },
-      {
-              "id":18965,
-        "amount":10
-      },
-      {
-        "id":3812,
-        "amount":10
-      },
-      {
-        "id":3813,
-        "amount":10
-      },
-      {
-        "id":3814,
-        "amount":10
-      },
-      {
-        "id":19886,
-        "amount":10
-      } 
-    ],
-    "currency":-1
-  },
   {
     "id":59,
     "name":"Skilling Point Store",
