@@ -16,12 +16,12 @@ import java.util.stream.Stream;
 public class GlobalPerks {
 
     public enum Perk {
-    	x2_SLAYER_POINTS(0, 3500, 1225),
-        x2_DAMAGE(1, 5000, 1226),
-        x2_NPC_KILLS(2, 7000, 1227),
-        x2_BOSS_POINTS(3, 7000, 1228),
-        x3_XP(4, 5000, 1229),
-        DOUBLE_DROPS(5, 10000, 1229);
+    	x2_SLAYER_POINTS(0, 13500, 1225),
+        x2_DAMAGE(1, 15000, 1226),
+        x2_NPC_KILLS(2, 17000, 1227),
+        x2_BOSS_POINTS(3, 17000, 1228),
+        x3_XP(4, 15000, 1229),
+        DOUBLE_DROPS(5, 30000, 1229);
 
         private final int index;
         private final int amount;
