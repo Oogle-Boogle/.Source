@@ -79,10 +79,10 @@
   },
   {
     "npc-id": 1597,
-    "face": "WEST",
+    "face": "SOUTH",
     "position": {
-      "x": 1913,
-      "y": 5244,
+      "x": 2586,
+      "y": 3106,
       "z": 0
     },
     "walking-policy": {
@@ -198,26 +198,26 @@
     "npc-id": 560,
     "face": "EAST",
     "position": {
-      "x": 1888,
-      "y": 5224,
+      "x": 2568,
+      "y": 3090,
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
-      "radius": -1
+      "coordinate": true,
+      "radius": 2
     }
   },
   {
     "npc-id": 2633,
     "face": "EAST",
     "position": {
-      "x": 1889,
-      "y": 5225,
+      "x": 2568,
+      "y": 3094,
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
-      "radius": -1
+      "coordinate": true,
+      "radius": 2
     }
   },
   {
@@ -250,13 +250,13 @@
     "npc-id": 150,
     "face": "NORTH",
     "position": {
-      "x": 3039,
-      "y": 2837,
+      "x": 2604,
+      "y": 3100,
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
-      "radius": -1
+      "coordinate": true,
+      "radius": 4
     }
   },
   {
@@ -274,10 +274,10 @@
   },
   {
     "npc-id": 729,
-    "face": "SOUTH",
+    "face": "EAST",
     "position": {
-      "x": 3061,
-      "y": 2860,
+      "x": 2573,
+      "y": 3104,
       "z": 0
     },
     "walking-policy": {
@@ -300,10 +300,10 @@
   },
   {
     "npc-id": 4581,
-    "face": "WEST",
+    "face": "SOUTH",
     "position": {
-      "x": 3068,
-      "y": 2860,
+      "x": 2575,
+      "y": 3106,
       "z": 0
     },
     "walking-policy": {
@@ -352,10 +352,10 @@
   },
   {
     "npc-id": 9085,
-    "face": "WEST",
+    "face": "SOUTH",
     "position": {
-      "x": 3068,
-      "y": 2843,
+      "x": 2584,
+      "y": 3106,
       "z": 0
     },
     "walking-policy": {
@@ -443,15 +443,15 @@
   },
   {
     "npc-id": 273,
-    "face": "SOUTH",
+    "face": "EAST",
     "position": {
-      "x": 3043,
-      "y": 2859,
+      "x": 2568,
+      "y": 3088,
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
-      "radius": -1
+      "coordinate": true,
+      "radius": 2
     }
   },
   {
@@ -469,15 +469,15 @@
   },
   {
     "npc-id": 683,
-    "face": "SOUTH",
+    "face": "EAST",
     "position": {
-      "x": 3045,
-      "y": 2866,
+      "x": 2568,
+      "y": 3086,
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
-      "radius": -1
+      "coordinate": true,
+      "radius": 2
     }
   },
   {
@@ -495,10 +495,10 @@
   },
   {
     "npc-id": 2676,
-    "face": "SOUTH",
+    "face": "NORTH",
     "position": {
-      "x": 3042,
-      "y": 2866,
+      "x": 2613,
+      "y": 3088,
       "z": 0
     },
     "walking-policy": {
@@ -1951,15 +1951,15 @@
   },
   {
     "npc-id": 1394,
-    "face": "WEST",
+    "face": "EAST",
     "position": {
-      "x": 2895,
-      "y": 4075,
+      "x": 2568,
+      "y": 3084,
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
-      "radius": 1
+      "coordinate": true,
+      "radius": 2
     }
   },
   {
@@ -1977,15 +1977,15 @@
   },
   {
     "npc-id": 364,
-    "face": "WEST",
+    "face": "NORTH",
     "position": {
-      "x": 2895,
-      "y": 4068,
+      "x": 2611,
+      "y": 3088,
       "z": 0
     },
     "walking-policy": {
       "coordinate": false,
-      "radius": 1
+      "radius": -1
     }
   },
   {
@@ -2029,10 +2029,10 @@
   },
   {
     "npc-id": 7780,
-    "face": "SOUTH",
+    "face": "EAST",
     "position": {
-      "x": 2923,
-      "y": 4094,
+      "x": 2583,
+      "y": 3105,
       "z": 0
     },
     "walking-policy": {
@@ -2120,15 +2120,15 @@
   },
   {
     "npc-id": 712,
-    "face": "NORTH",
+    "face": "EAST",
     "position": {
-      "x": 2939,
-      "y": 4056,
+      "x": 2574,
+      "y": 3084,
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
-      "radius": 1
+      "coordinate": true,
+      "radius": 2
     }
   },
   {
@@ -2655,13 +2655,13 @@
     "npc-id": 4569,
     "face": "SOUTH",
     "position": {
-      "x": 2318,
-      "y": 3681,
+      "x": 2575,
+      "y": 3102,
       "z": 0
     },
     "walking-policy": {
       "coordinate": false,
-      "radius": 1
+      "radius": -1
     }
   },
   {
@@ -5161,45 +5161,6 @@
     }
   },
   {
-    "npc-id": 6325,
-    "face": "EAST",
-    "position": {
-      "x": 2152,
-      "y": 5103,
-      "z": 0
-    },
-    "walking-policy": {
-      "coordinate": false,
-      "radius": 3
-    }
-  },
-  {
-    "npc-id": 6325,
-    "face": "EAST",
-    "position": {
-      "x": 2160,
-      "y": 5103,
-      "z": 0
-    },
-    "walking-policy": {
-      "coordinate": false,
-      "radius": 3
-    }
-  },
-  {
-    "npc-id": 6325,
-    "face": "EAST",
-    "position": {
-      "x": 2151,
-      "y": 5094,
-      "z": 0
-    },
-    "walking-policy": {
-      "coordinate": false,
-      "radius": 3
-    }
-  },
-  {
     "npc-id": 1982,
     "face": "EAST",
     "position": {
@@ -6404,7 +6365,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -6417,7 +6378,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -6430,7 +6391,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -6443,7 +6404,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -6456,7 +6417,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -6469,7 +6430,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -6495,7 +6456,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -6508,7 +6469,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -6521,7 +6482,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -6534,7 +6495,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -6547,7 +6508,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -6560,7 +6521,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -6586,7 +6547,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -6599,7 +6560,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -6612,7 +6573,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -6625,7 +6586,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -6638,7 +6599,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -6651,7 +6612,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -6677,7 +6638,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -6690,7 +6651,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -6703,7 +6664,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -6716,7 +6677,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -6729,7 +6690,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -6742,7 +6703,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -6768,7 +6729,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -6781,7 +6742,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -6794,7 +6755,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -6807,7 +6768,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -6820,7 +6781,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -6833,7 +6794,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -6859,7 +6820,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -6872,7 +6833,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -6885,7 +6846,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -6898,7 +6859,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -6911,7 +6872,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -6924,7 +6885,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -6950,7 +6911,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -6963,7 +6924,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -6976,7 +6937,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -6989,7 +6950,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -7002,7 +6963,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -7015,7 +6976,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -7041,7 +7002,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -7054,7 +7015,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -7067,7 +7028,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -7080,7 +7041,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -7093,7 +7054,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -7106,7 +7067,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -7132,7 +7093,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -7145,7 +7106,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -7158,7 +7119,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -7171,7 +7132,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -7184,7 +7145,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -7197,7 +7158,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -7210,7 +7171,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -7223,7 +7184,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -7236,7 +7197,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -7249,7 +7210,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -7262,7 +7223,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -7275,7 +7236,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -7288,7 +7249,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -7301,7 +7262,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -7314,7 +7275,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -7327,7 +7288,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -7340,7 +7301,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -7353,7 +7314,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -7366,7 +7327,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -7379,7 +7340,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -7392,7 +7353,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -7405,7 +7366,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -7418,7 +7379,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -7431,7 +7392,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -7444,7 +7405,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -7457,7 +7418,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -7470,7 +7431,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -7483,7 +7444,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -7496,7 +7457,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -7509,7 +7470,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -7522,7 +7483,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -7535,7 +7496,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -7548,7 +7509,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -7561,7 +7522,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -7574,7 +7535,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -7587,7 +7548,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -7600,7 +7561,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -7613,7 +7574,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -7626,7 +7587,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -7639,7 +7600,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -7652,7 +7613,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -7665,7 +7626,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -7678,7 +7639,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -7691,7 +7652,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -7704,7 +7665,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -7717,7 +7678,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -7730,7 +7691,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -7743,7 +7704,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -7769,7 +7730,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -7782,7 +7743,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -7795,7 +7756,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -7808,7 +7769,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -7821,7 +7782,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -7834,7 +7795,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": -1
     }
   },
@@ -7860,7 +7821,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": 3
     }
   },
@@ -7873,7 +7834,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": 3
     }
   },
@@ -7886,7 +7847,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": 3
     }
   },
@@ -7899,7 +7860,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": 3
     }
   },
@@ -7912,7 +7873,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": 3
     }
   },
@@ -7925,7 +7886,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": 3
     }
   },
@@ -9491,15 +9452,15 @@
   },
   {
     "npc-id": 4657,
-    "face": "WEST",
+    "face": "EAST",
     "position": {
-      "x": 2352,
-      "y": 3668,
+      "x": 2570,
+      "y": 3082,
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
-      "radius": -1
+      "coordinate": true,
+      "radius": 2
     }
   },
   {
@@ -9556,28 +9517,15 @@
   },
   {
     "npc-id": 4902,
-    "face": "EAST",
+    "face": "NORTH",
     "position": {
-      "x": 3202,
-      "y": 3162,
+      "x": 3201,
+      "y": 3161,
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
-      "radius": -1
-    }
-  },
-  {
-    "npc-id": 4902,
-    "face": "EAST",
-    "position": {
-      "x": 2334,
-      "y": 3719,
-      "z": 0
-    },
-    "walking-policy": {
-      "coordinate": false,
-      "radius": -1
+      "coordinate": true,
+      "radius": 4
     }
   },
   {
@@ -9646,19 +9594,6 @@
     }
   },
   {
-    "npc-id": 659,
-    "face": "SOUTH",
-    "position": {
-      "x": 2338,
-      "y": 3685,
-      "z": 0
-    },
-    "walking-policy": {
-      "coordinate": false,
-      "radius": -1
-    }
-  },
-  {
     "npc-id": 2579,
     "face": "NORTH",
     "position": {
@@ -9688,13 +9623,13 @@
     "npc-id": 947,
     "face": "EAST",
     "position": {
-      "x": 3207,
-      "y": 3204,
+      "x": 2609,
+      "y": 3095,
       "z": 0
     },
     "walking-policy": {
       "coordinate": false,
-      "radius": 2
+      "radius": -1
     }
   },
   {
@@ -9792,13 +9727,13 @@
     "npc-id": 6139,
     "face": "NORTH",
     "position": {
-      "x": 2341,
-      "y": 3675,
+      "x": 2604,
+      "y": 3087,
       "z": 0
     },
     "walking-policy": {
       "coordinate": true,
-      "radius": 4
+      "radius": 3
     }
   },
   {
@@ -9855,10 +9790,10 @@
   },
   {
     "npc-id": 961,
-    "face": "EAST",
+    "face": "SOUTH",
     "position": {
-      "x": 2307,
-      "y": 9804,
+      "x": 2598,
+      "y": 3100,
       "z": 0
     },
     "walking-policy": {
@@ -10686,19 +10621,6 @@
     }
   },
   {
-    "npc-id": 5886,
-    "face": "SOUTH",
-    "position": {
-      "x": 3331,
-      "y": 3871,
-      "z": 0
-    },
-    "walking-policy": {
-      "coordinate": true,
-      "radius": 5
-    }
-  },
-  {
     "npc-id": 5666,
     "face": "WEST",
     "position": {
@@ -11212,19 +11134,6 @@
       "x": 2525,
       "y": 4785,
       "z": 4
-    },
-    "walking-policy": {
-      "coordinate": false,
-      "radius": 3
-    }
-  },
-  {
-    "npc-id": 3217,
-    "face": "NORTH",
-    "position": {
-      "x": 2271,
-      "y": 3246,
-      "z": 0
     },
     "walking-policy": {
       "coordinate": false,
@@ -17064,7 +16973,7 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
       "radius": 3
     }
   },
@@ -17077,7 +16986,125 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": false,
+      "coordinate": true,
+      "radius": 3
+    }
+  },
+  {
+    "npc-id": 1069,
+    "face": "EAST",
+    "position": {
+      "x": 2929,
+      "y": 3405,
+      "z": 0
+    },
+    "walking-policy": {
+      "coordinate": true,
+      "radius": 3
+    }
+  },
+  {
+    "npc-id": 1069,
+    "face": "EAST",
+    "position": {
+      "x": 2919,
+      "y": 3405,
+      "z": 0
+    },
+    "walking-policy": {
+      "coordinate": true,
+      "radius": 3
+    }
+  },
+  {
+    "npc-id": 1069,
+    "face": "EAST",
+    "position": {
+      "x": 2919,
+      "y": 3411,
+      "z": 0
+    },
+    "walking-policy": {
+      "coordinate": true,
+      "radius": 3
+    }
+  },
+  {
+    "npc-id": 1069,
+    "face": "EAST",
+    "position": {
+      "x": 2918,
+      "y": 3417,
+      "z": 0
+    },
+    "walking-policy": {
+      "coordinate": true,
+      "radius": 3
+    }
+  },
+  {
+    "npc-id": 11,
+    "face": "EAST",
+    "position": {
+      "x": 2907,
+      "y": 3409,
+      "z": 0
+    },
+    "walking-policy": {
+      "coordinate": true,
+      "radius": 3
+    }
+  },
+  {
+    "npc-id": 11,
+    "face": "EAST",
+    "position": {
+      "x": 2907,
+      "y": 3413,
+      "z": 0
+    },
+    "walking-policy": {
+      "coordinate": true,
+      "radius": 3
+    }
+  },
+
+  {
+    "npc-id": 11,
+    "face": "EAST",
+    "position": {
+      "x": 2901,
+      "y": 3418,
+      "z": 0
+    },
+    "walking-policy": {
+      "coordinate": true,
+      "radius": 3
+    }
+  },
+  {
+    "npc-id": 11,
+    "face": "EAST",
+    "position": {
+      "x": 2901,
+      "y": 3413,
+      "z": 0
+    },
+    "walking-policy": {
+      "coordinate": true,
+      "radius": 3
+    }
+  },
+  {
+    "npc-id": 11,
+    "face": "EAST",
+    "position": {
+      "x": 2899,
+      "y": 3417,
+      "z": 0
+    },
+    "walking-policy": {
+      "coordinate": true,
       "radius": 3
     }
   },
@@ -17677,19 +17704,6 @@
     "walking-policy": {
       "coordinate": true,
       "radius": 1
-    }
-  },
-  {
-    "npc-id": 1360,
-    "face": "NORTH",
-    "position": {
-      "x": 2335,
-      "y": 3679,
-      "z": 0
-    },
-    "walking-policy": {
-      "coordinate": true,
-      "radius": 2
     }
   },
   {
@@ -19150,15 +19164,15 @@
   },
   {
     "npc-id": 8275,
-    "face": "EAST",
+    "face": "SOUTH",
     "position": {
-      "x": 2323,
-      "y": 3673,
+      "x": 2585,
+      "y": 3106,
       "z": 0
     },
     "walking-policy": {
       "coordinate": false,
-      "radius": 1
+      "radius": -1
     }
   },
   {
@@ -21442,19 +21456,6 @@
     "position": {
       "x": 3473,
       "y": 3088,
-      "z": 0
-    },
-    "walking-policy": {
-      "coordinate": false,
-      "radius": 2
-    }
-  },
-  {
-    "npc-id": 3208,
-    "face": "WEST",
-    "position": {
-      "x": 2356,
-      "y": 3680,
       "z": 0
     },
     "walking-policy": {
@@ -27989,6 +27990,45 @@
     }
   },
   {
+    "npc-id": 683,
+    "face": "WEST",
+    "position": {
+      "x": 2356,
+      "y": 3674,
+      "z": 0
+    },
+    "walking-policy": {
+      "coordinate": false,
+      "radius": -1
+    }
+  },
+  {
+    "npc-id": 4475,
+    "face": "WEST",
+    "position": {
+      "x": 2616,
+      "y": 3091,
+      "z": 0
+    },
+    "walking-policy": {
+      "coordinate": false,
+      "radius": -1
+    }
+  },
+  {
+    "npc-id": 4559,
+    "face": "EAST",
+    "position": {
+      "x": 2568,
+      "y": 3096,
+      "z": 0
+    },
+    "walking-policy": {
+      "coordinate": true,
+      "radius": 2
+    }
+  },
+  {
     "npc-id": 125,
     "face": "SOUTH",
     "position": {
@@ -28020,6 +28060,19 @@
     "position": {
       "x": 3226,
       "y": 5539,
+      "z": 0
+    },
+    "walking-policy": {
+      "coordinate": true,
+      "radius": 2
+    }
+  },
+  {
+    "npc-id": 212,
+    "face": "EAST",
+    "position": {
+      "x": 2568,
+      "y": 3092,
       "z": 0
     },
     "walking-policy": {
@@ -30590,10 +30643,10 @@
   },
   {
     "npc-id": 3212,
-    "face": "EAST",
+    "face": "WEST",
     "position": {
-      "x": 2323,
-      "y": 3669,
+      "x": 2587,
+      "y": 3105,
       "z": 0
     },
     "walking-policy": {
@@ -30696,39 +30749,13 @@
     "npc-id": 1394,
     "face": "SOUTH",
     "position": {
-      "x": 1918,
-      "y": 4668,
+      "x": 3190,
+      "y": 3165,
       "z": 0
     },
     "walking-policy": {
       "coordinate": false,
-      "radius": 3
-    }
-  },
-  {
-    "npc-id": 3218,
-    "face": "WEST",
-    "position": {
-      "x": 2354,
-      "y": 3680,
-      "z": 0
-    },
-    "walking-policy": {
-      "coordinate": false,
-      "radius": 3
-    }
-  },
-  {
-    "npc-id": 3218,
-    "face": "WEST",
-    "position": {
-      "x": 3193,
-      "y": 3250,
-      "z": 0
-    },
-    "walking-policy": {
-      "coordinate": false,
-      "radius": 3
+      "radius": 0
     }
   },
   {

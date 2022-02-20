@@ -1,4 +1,4 @@
 @echo off
-title Running Platinum!
-java -server -Xmx3600m -cp bin;lib/* com.platinum.GameServer
+title Running Zamron 317!
+java -server -Xmx3600m -cp bin;lib/* com.zamron.GameServer
 pause

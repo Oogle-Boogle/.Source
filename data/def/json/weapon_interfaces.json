@@ -40,6 +40,11 @@
 	    "item-id": 19467,
 	    "interface": "CROSSBOW"
 	  },
+  {
+    "hash": 3275,
+    "item-id": 3275,
+    "interface": "CROSSBOW"
+  },
 	  {
       "hash": 3664,
     "item-id": 3664,
@@ -616,6 +621,11 @@
   {
     "hash": 15653,
     "item-id": 15653,
+    "interface": "STAFF"
+  },
+  {
+    "hash": 15656,
+    "item-id": 15656,
     "interface": "STAFF"
   },
   {
@@ -3105,7 +3115,7 @@
   {
       "hash": 7764,
     "item-id": 7764,
-    "interface": "SHORTBOW"
+    "interface": "CROSSBOW"
   },
   {
       "hash": 5130,

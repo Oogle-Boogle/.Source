@@ -2,7 +2,7 @@
   <artifact type="jar" name="Platinum-Server:jar">
     <output-path>$PROJECT_DIR$/Platinum_Server_jar</output-path>
     <root id="archive" name="Platinum-Server.jar">
-      <element id="module-output" name="Platinum-Server" />
+      <element id="module-output" name=".Server" />
       <element id="extracted-dir" path="$PROJECT_DIR$/lib/mysql.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/lib/mvgate3.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/lib/gson-2.2.4.jar" path-in-jar="/" />
