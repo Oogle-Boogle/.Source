@@ -1667,7 +1667,11 @@ public class ItemActionPacketListener implements PacketListener {
 			player.setMbox5(false);
 			player.getMysteryBox().openInterface();
 			break;
-		case 19670:
+			case 18343:
+				//TODO NAME CHANGE
+				System.out.println("NEED TO DO THIS NAME CHANGE");
+				break;
+			case 19670:
 			if (player.getInventory().contains(19670) && player.getClickDelay().elapsed(700)) {
 				int amt = player.getInventory().getAmount(19670);
 				int pointAmount = 1;
