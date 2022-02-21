@@ -508,6 +508,8 @@ public class NPCDrops {
 
 		player.handleCollectedItem(npc.getId(), item);
 
+
+		//TODO FIX THIS SHIT - Items drop on floor 
 		Familiar pet = player.getSummoning().getFamiliar();
 		if (pet != null && PetPerkData.hasLootEffect(pet.getSummonNpc().getId())) {
 			player.getBank(0).add(item.getId(), item.getAmount());

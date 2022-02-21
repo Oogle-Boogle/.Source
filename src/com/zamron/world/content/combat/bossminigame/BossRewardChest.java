@@ -189,7 +189,7 @@ public class BossRewardChest {
             }
         }
 
-        World.sendMessageNonDiscord("@bla@[@blu@"+player.getUsername()+"@bla@] has won @blu@"+rewardGiven.getAmount()+" @bla@x @blu@"+rewardGiven.getDefinition().getName()+"@bla@ from @blu@wave "+player.getCurrentBossWave() + " at ::boss!");
+        World.sendMessageNonDiscord("@bla@[@blu@"+player.getUsername()+"@bla@] has won @blu@"+rewardGiven.getAmount()+" @bla@x @blu@"+rewardGiven.getDefinition().getName()+"@bla@ from @blu@wave "+player.getCurrentBossWave() + " at the OS Battle minigame!");
 
         player.getPacketSender().sendInterfaceRemoval();
         BossMinigameFunctions.resetProgress(player);

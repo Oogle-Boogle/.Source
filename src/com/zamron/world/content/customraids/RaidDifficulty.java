@@ -2,6 +2,10 @@ package com.zamron.world.content.customraids;
 
 
 import com.zamron.model.Item;
+import com.zamron.model.definitions.ItemDefinition;
+import com.zamron.world.World;
+
+import static sun.audio.AudioPlayer.player;
 
 public enum RaidDifficulty {
 
@@ -46,7 +50,7 @@ public enum RaidDifficulty {
                     new Item(22198, 1), new Item(22199, 1), new Item(22200, 1), new Item(22201, 1), new Item(22202, 1),
                     new Item(22203, 1), new Item(19936, 1), new Item(19937, 1), new Item(19938, 1)
 
-            },90, "@red@Hard raid"); //Rare Rewards 10% chance to win.
+            },0, "@red@Hard raid"); //Rare Rewards 10% chance to win.
 
     RaidDifficulty(int x, int y, String description, Item[] commonRewards, Item[] rareRewards, int rareChance, String name) {
         this.x = x;

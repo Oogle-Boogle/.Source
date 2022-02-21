@@ -30,6 +30,8 @@ import com.zamron.world.content.DonorBonds;
 import com.zamron.world.content.combat.range.DwarfMultiCannon;
 import com.zamron.world.content.dialogue.DialogueManager;
 import com.zamron.world.content.guidesInterface.GuideBook;
+import com.zamron.world.content.minimes.MiniMeData;
+import com.zamron.world.content.minimes.MiniMeFunctions;
 import com.zamron.world.content.raids.OldRaidParty;
 import com.zamron.world.content.skill.impl.construction.Construction;
 import com.zamron.world.content.skill.impl.dungeoneering.ItemBinding;
@@ -1583,8 +1585,12 @@ public class ItemActionPacketListener implements PacketListener {
 			return;
 		}
 		switch (itemId) {
-		case 14019:
-		/*case 14022:
+			case 18391:
+				MiniMeFunctions.create(player);
+				player.sendMessage("You called your 'minime' to assist you.");
+				break;
+		//case 14019:
+		case 14022:
 			player.setCurrentCape(itemId);
 			int[] colors = itemId == 14019 ? player.getMaxCapeColors() : player.getCompCapeColors();
 			String[] join = new String[colors.length];
@@ -1593,7 +1599,7 @@ public class ItemActionPacketListener implements PacketListener {
 			}
 			player.getPacketSender().sendString(60000, "[CUSTOMIZATION]" + itemId + "," + String.join(",", join));
 			player.getPacketSender().sendInterface(60000);
-			break;*/
+			break;
 
 		/*
 		 * case 1050: player.setCurrentHat(itemId); int[] santaColors =

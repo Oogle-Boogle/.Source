@@ -348,6 +348,7 @@ public class CustomRaid {
 
             if (randomNumberRolled >= playersChanceToWin) { // If the player wins..
                 first = difficulty.getRareRewards()[random.nextInt(difficulty.getRareRewards().length)];
+                World.sendMessageDiscord("<img=11><col=bababa>[<col=0999ad><shad=200>RAIDS<col=bababa>] " +player.getUsername() + " has just received a " + first.getDefinition().getName() + " from raids!");
             } else {
                 first = difficulty.getCommonRewards()[random.nextInt(difficulty.getCommonRewards().length)];
             }
