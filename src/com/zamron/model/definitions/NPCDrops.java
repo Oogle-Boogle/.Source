@@ -157,6 +157,7 @@ public class NPCDrops {
 		public int getId() {
 			return id;
 		}
+
 		public final int PLAT_TOKEN = 10835;
 
 		/**
@@ -266,7 +267,7 @@ public class NPCDrops {
 
 	public enum DropChance {
 		ALWAYS(0), ALMOST_ALWAYS(2), VERY_COMMON(5), COMMON(15), UNCOMMON(40), NOTTHATRARE(75), RARE(125),
-		LEGENDARY(150), LEGENDARY_2(900), LEGENDARY_3(1500), LEGENDARY_4(2000), LEGENDARY_5(3500),LEGENDARY_6(5000),LEGENDARY_7(7000);
+		LEGENDARY(150), LEGENDARY_2(900), LEGENDARY_3(1500), LEGENDARY_4(2000), LEGENDARY_5(3500), LEGENDARY_6(5000), LEGENDARY_7(7000);
 
 		DropChance(int randomModifier) {
 			this.random = randomModifier;
@@ -479,20 +480,19 @@ public class NPCDrops {
 	public static double getDroprate(Player p, boolean display) {
 		double drBoost = 0;
 
-		if(p.getGameMode() == GameMode.IRONMAN) {
+		if (p.getGameMode() == GameMode.IRONMAN) {
 			drBoost += 5;
-		}if(p.getGameMode() == GameMode.HARDCORE_IRONMAN) {
+		}
+		if (p.getGameMode() == GameMode.HARDCORE_IRONMAN) {
 			drBoost += 15;
-		}if(p.getGameMode() == GameMode.GROUP_IRONMAN) {
+		}
+		if (p.getGameMode() == GameMode.GROUP_IRONMAN) {
 			drBoost += 10;
 		}
 		return drBoost;
 	}
 
 	public static void drop(Player player, Item item, NPC npc, Position pos, boolean goGlobal) {
-
-		//boolean dropPerks = GlobalPerks.getInstance().getActivePerk().equals(GlobalPerks.Perk.DOUBLE_DROPS);
-		//boolean scrollDrop = player.isDoubleDropsActive();
 
 		if (npc.getId() == 227 || npc.getId() == 2043 || npc.getId() == 2044) {
 			pos = player.getPosition();
@@ -507,30 +507,48 @@ public class NPCDrops {
 
 		player.handleCollectedItem(npc.getId(), item);
 
-		//normal drops
+		boolean isWearingCollector = DropUtils.hasCollItemEquipped(player);
+		boolean isWearingCollectorUpgraded = DropUtils.hasUpgradedCOLL(player);
+		boolean dropPerks = GlobalPerks.getInstance().getActivePerk() == GlobalPerks.Perk.DOUBLE_DROPS;
+		boolean scrollDrop = player.getCleansingTime() > 100;
+
 		Familiar pet = player.getSummoning().getFamiliar();
 		if (pet != null && PetPerkData.hasLootEffect(pet.getSummonNpc().getId())) {
+			if (dropPerks || scrollDrop) {
+				player.getBank(0).add(item.getId(), item.getAmount() * 2);
+				player.sendMessage("Added " + item.getDefinition().getName() + " to your bank because of pet perk.");
+				return;
+			}
 			player.getBank(0).add(item.getId(), item.getAmount());
-			player.sendMessage("Added "+ item.getDefinition().getName() + " to your bank because of pet perk.");
+			player.sendMessage("Added " + item.getDefinition().getName() + " to your bank because of pet perk.");
 			return;
-		} else {
-			boolean isWearingCollectorUpgraded = DropUtils.hasUpgradedCOLL(player);
-			if (isWearingCollectorUpgraded && !player.getBlockedCollectorsList().contains(item.getId())) {
-				player.getBank(0).add(item.getId(), item.getAmount());
-				player.sendMessage("@red@Your Collector has picked up @blu@" + item.getAmount() + "x "
+		}
+		if (isWearingCollectorUpgraded && !player.getBlockedCollectorsList().contains(item.getId())) {
+			if (dropPerks || scrollDrop) {
+				player.getBank(0).add(item.getId(), item.getAmount() * 2);
+				player.sendMessage("@red@Your Collector has picked up @blu@" + item.getAmount() * 2 + "x "
 						+ item.getDefinition().getName() + " @red@and added them to your bank!");
 				return;
 			}
-			boolean isWearingCollector = DropUtils.hasCollItemEquipped(player);
-			if (isWearingCollector && !player.getBlockedCollectorsList().contains(item.getId())) {
-				player.getInventory().add(item.getId(), item.getAmount());
-				player.sendMessage("@red@Your Collector has picked up @blu@" + item.getAmount() + "x "
+			player.getBank(0).add(item.getId(), item.getAmount());
+			player.sendMessage("@red@Your Collector has picked up @blu@" + item.getAmount() + "x "
+					+ item.getDefinition().getName() + " @red@and added them to your bank!");
+			return;
+		}
+		if (isWearingCollector && !player.getBlockedCollectorsList().contains(item.getId())) {
+			if (dropPerks || scrollDrop) {
+				player.getInventory().add(item.getId(), item.getAmount() * 2);
+				player.sendMessage("@red@Your Collector has picked up @blu@" + item.getAmount() * 2+ "x "
 						+ item.getDefinition().getName() + " @red@and added them to your inventory!");
 				return;
 			}
-			GroundItemManager.spawnGroundItem(player,
-					new GroundItem(item, pos, player.getUsername(), false, 150, goGlobal, 200));
+			player.getInventory().add(item.getId(), item.getAmount());
+			player.sendMessage("@red@Your Collector has picked up @blu@" + item.getAmount() + "x "
+					+ item.getDefinition().getName() + " @red@and added them to your inventory!");
+			return;
 		}
+		GroundItemManager.spawnGroundItem(player,
+				new GroundItem(item, pos, player.getUsername(), false, 150, goGlobal, 200));
 
 		if (player.getInventory().contains(18337) && BonesData.forId(item.getId()) != null) {
 			player.getPacketSender().sendGlobalGraphic(new Graphic(777), pos);
