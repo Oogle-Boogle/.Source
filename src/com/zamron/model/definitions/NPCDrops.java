@@ -3,6 +3,7 @@ package com.zamron.model.definitions;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.zamron.GameSettings;
+import com.zamron.engine.task.impl.CleansingTask;
 import com.zamron.model.*;
 import com.zamron.model.Locations.Location;
 import com.zamron.model.container.impl.Bank;
@@ -401,22 +402,17 @@ public class NPCDrops {
 
 			if (drops[i].getChance() == DropChance.ALWAYS || adjustedDr == 1) {
 				Item drop = drops[i].getItem();
-				if (GlobalPerks.getInstance().getActivePerk() == GlobalPerks.Perk.DOUBLE_DROPS) {
+				if (GlobalPerks.getInstance().getActivePerk() == GlobalPerks.Perk.DOUBLE_DROPS || player.isDoubleDropsActive()) {
 					drop = new Item(drop.getId(), drop.getAmount() * getDropAmntMult(player));
 					drop(player, drop, npc, npcPos, goGlobal);
-					System.out.println("Double Drops Perk <3: " + drop.getId() + ", " + drop.getAmount());
+					System.out.println("Double Drops Perk / Double drop scroll <3: " + drop.getId() + ", " + drop.getAmount());
 				}
-				if (player.isDoubleDropsActive())
-					drop = new Item(drop.getId(), drop.getAmount() * getDropAmntMult(player));
-				drop(player, drop, npc, npcPos, goGlobal);
-				System.out.println("Drop: " + drop.getId() + ", " + drop.getAmount());
-
 			} else if (RandomUtility.getRandom(adjustedDr) == 1 && !hasRecievedDrop) {
 				Item drop = drops[i].getItem();
 				if (player.isDoubleDropsActive())
 					drop = new Item(drop.getId(), drop.getAmount() * getDropAmntMult(player));
 				drop(player, drop, npc, npcPos, goGlobal);
-				System.out.println("Drop1: " + drop.getId() + ", " + drop.getAmount());
+				System.out.println("Normal Drop: " + drop.getId() + ", " + drop.getAmount());
 				hasRecievedDrop = true;
 			}
 
@@ -495,6 +491,9 @@ public class NPCDrops {
 
 	public static void drop(Player player, Item item, NPC npc, Position pos, boolean goGlobal) {
 
+		//boolean dropPerks = GlobalPerks.getInstance().getActivePerk().equals(GlobalPerks.Perk.DOUBLE_DROPS);
+		//boolean scrollDrop = player.isDoubleDropsActive();
+
 		if (npc.getId() == 227 || npc.getId() == 2043 || npc.getId() == 2044) {
 			pos = player.getPosition();
 		}
@@ -508,32 +507,27 @@ public class NPCDrops {
 
 		player.handleCollectedItem(npc.getId(), item);
 
-
-		//TODO FIX THIS SHIT - Items drop on floor 
+		//normal drops
 		Familiar pet = player.getSummoning().getFamiliar();
 		if (pet != null && PetPerkData.hasLootEffect(pet.getSummonNpc().getId())) {
 			player.getBank(0).add(item.getId(), item.getAmount());
 			player.sendMessage("Added "+ item.getDefinition().getName() + " to your bank because of pet perk.");
 			return;
-		}
-		boolean isWearingCollectorUpgraded = DropUtils.hasUpgradedCOLL(player);
-		if (isWearingCollectorUpgraded && !player.getBlockedCollectorsList().contains(item.getId())) {
-			player.getBank(0).add(item.getId(), item.getAmount());
-			player.sendMessage("@red@Your Collector has picked up @blu@" + item.getAmount() + "x "
-					+ item.getDefinition().getName() + " @red@and added them to your bank!");
 		} else {
-			GroundItemManager.spawnGroundItem(player,
-					new GroundItem(item, pos, player.getUsername(), false, 150, goGlobal, 200));
-		}
-
-
-		boolean isWearingCollector = DropUtils.hasCollItemEquipped(player);
-		if (isWearingCollector && !player.getBlockedCollectorsList().contains(item.getId())) {
-			player.getInventory().add(item);
-			player.sendMessage("@red@Your Collector has picked up @blu@" + item.getAmount() + "x "
-					+ item.getDefinition().getName() + " @red@and added them to your inventory!");
-
-		} else {
+			boolean isWearingCollectorUpgraded = DropUtils.hasUpgradedCOLL(player);
+			if (isWearingCollectorUpgraded && !player.getBlockedCollectorsList().contains(item.getId())) {
+				player.getBank(0).add(item.getId(), item.getAmount());
+				player.sendMessage("@red@Your Collector has picked up @blu@" + item.getAmount() + "x "
+						+ item.getDefinition().getName() + " @red@and added them to your bank!");
+				return;
+			}
+			boolean isWearingCollector = DropUtils.hasCollItemEquipped(player);
+			if (isWearingCollector && !player.getBlockedCollectorsList().contains(item.getId())) {
+				player.getInventory().add(item.getId(), item.getAmount());
+				player.sendMessage("@red@Your Collector has picked up @blu@" + item.getAmount() + "x "
+						+ item.getDefinition().getName() + " @red@and added them to your inventory!");
+				return;
+			}
 			GroundItemManager.spawnGroundItem(player,
 					new GroundItem(item, pos, player.getUsername(), false, 150, goGlobal, 200));
 		}
