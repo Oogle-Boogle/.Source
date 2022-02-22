@@ -38,7 +38,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
  *         Samy
  *
  */
-public class NPCDrops {
+public class NPCDrops { //LOL
 
 	/**
 	 * The map containing all the npc drops.
