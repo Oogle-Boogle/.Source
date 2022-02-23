@@ -1585,9 +1585,8 @@ public class ItemActionPacketListener implements PacketListener {
 			return;
 		}
 		switch (itemId) {
-			case 18391:
+			case 18391: //iPhone minime
 				MiniMeFunctions.create(player);
-				player.sendMessage("You called your 'minime' to assist you.");
 				break;
 		//case 14019:
 		case 14022:

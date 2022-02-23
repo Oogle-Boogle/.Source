@@ -13,6 +13,7 @@ import com.zamron.util.RandomUtility;
 import com.zamron.world.World;
 import com.zamron.world.content.*;
 import com.zamron.world.content.DropLog.DropLogEntry;
+import com.zamron.world.content.aoesystem.AOESystem;
 import com.zamron.world.content.clan.ClanChatManager;
 import com.zamron.world.content.collectionlog.CollectionEntry;
 import com.zamron.world.content.discord.DiscordMessenger;
@@ -303,8 +304,6 @@ public class NPCDrops { //LOL
 	 * @param npc NPC to receive drop FROM.
 	 */
 	public static void dropItems(Player p, NPC npc) {
-
-
 		if (npc.getLocation() == Location.WARRIORS_GUILD)
 			WarriorsGuild.handleDrop(p, npc);
 		NPCDrops drops = NPCDrops.forId(npc.getId());
@@ -312,6 +311,7 @@ public class NPCDrops { //LOL
 			return;
 		if (npc.getLocation() == Location.RAIDS)
 			return;
+
 
 		SecureRandom random = new SecureRandom();
 		int randomInt = random.nextInt(5000);
@@ -545,6 +545,13 @@ public class NPCDrops { //LOL
 			player.getInventory().add(item.getId(), item.getAmount());
 			player.sendMessage("@red@Your Collector has picked up @blu@" + item.getAmount() + "x "
 					+ item.getDefinition().getName() + " @red@and added them to your inventory!");
+			return;
+		}
+		if (dropPerks || scrollDrop) {
+			GroundItemManager.spawnGroundItem(player,
+					new GroundItem(item, pos, player.getUsername(), false, 150, goGlobal, 200));
+			GroundItemManager.spawnGroundItem(player,
+					new GroundItem(item, pos, player.getUsername(), false, 150, goGlobal, 200));
 			return;
 		}
 		GroundItemManager.spawnGroundItem(player,

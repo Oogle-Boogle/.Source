@@ -3,10 +3,12 @@ package com.zamron.world.content;
 import java.util.Arrays;
 import java.util.List;
 
+import com.zamron.model.GroundItem;
 import com.zamron.model.Position;
 import com.zamron.model.definitions.NPCDrops;
 import com.zamron.model.definitions.NpcDefinition;
 import com.zamron.world.World;
+import com.zamron.world.entity.impl.GroundItemManager;
 import com.zamron.world.entity.impl.npc.NPC;
 import com.zamron.world.entity.impl.player.Player;
 
@@ -24,7 +26,7 @@ public class InstanceInterfaceManager {
 		this.player = player;
 	}
 
-	private static List<Integer> npcs = Arrays.asList(3154, 33, 1684, 5957, 5958, 5959, 185, 6311);
+	private static List<Integer> npcs = Arrays.asList(7563, 610, 609, 1069, 11, 3154, 33, 1684, 5957, 5958, 5959, 185, 6311);
 
 	//
 
@@ -129,7 +131,6 @@ public class InstanceInterfaceManager {
 	}
 
 	public void respawn() {
-
 		World.register(npcToSpawn);
 	}
 

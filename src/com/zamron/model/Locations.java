@@ -6,6 +6,7 @@ import com.zamron.GameSettings;
 import com.zamron.engine.task.Task;
 import com.zamron.engine.task.TaskManager;
 import com.zamron.model.RegionInstance.RegionInstanceType;
+import com.zamron.model.definitions.NPCDrops;
 import com.zamron.util.Misc;
 import com.zamron.world.World;
 import com.zamron.world.content.CustomFreeForAll;
@@ -36,6 +37,8 @@ import com.zamron.world.entity.impl.Character;
 import com.zamron.world.entity.impl.npc.NPC;
 import com.zamron.world.entity.impl.npc.Bosses.zulrah.DangerousLocation;
 import com.zamron.world.entity.impl.player.Player;
+
+import static com.zamron.model.definitions.NPCDrops.rollDropTable;
 
 public class Locations {
 
@@ -1328,10 +1331,11 @@ public class Locations {
 				System.out.println(killer.getUsername() + " Has just killed an " + npc.getDefinition().getName() + "!");
 				if (killer.getInstanceSystem().getNpcsToSpawn() != null
 						&& killer.getInstanceSystem().getNpcsToSpawn()[0].getId() == npc.getId() && killer.getRegionInstance().getType().equals(RegionInstanceType.INSTANCE_ARENA)) {
-
+					NPCDrops.dropItems(killer, npc);
 					World.deregister(npc);
 					System.out.println("NPC REMOVED FROM INSTANCE");
 
+					//TODO drops here
 					TaskManager.submit(new Task(3) {
 						@Override
 						protected void execute() {

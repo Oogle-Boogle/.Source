@@ -22,7 +22,7 @@ import lombok.Setter;
 /**
  * 
  * @author Flub
- *
+ * @Edited Oogleboogle
  */
 
 public class InstanceSystem {
@@ -39,7 +39,7 @@ public class InstanceSystem {
 	public static int INSTANCE_TOKEN_ID = 11179;
 
 	/** List to store NPC ID's **/
-	private static List<Integer> npcs = Arrays.asList(3154, 33, 1684, 5957, 5958, 5959, 185, 6311);
+	private static List<Integer> npcs = Arrays.asList(7563, 610, 609, 1069, 11, 3154, 33, 1684, 5957, 5958, 5959, 185, 6311);
 
 	/** Sets the total cost of tokens based on rank **/
 	public static int COST_TO_ENTER(Player player) {
@@ -95,7 +95,7 @@ public class InstanceSystem {
 	/** Deals with clicks, selecting the relevant NPC and sending the new data **/
 	public boolean handleClick(int id) {
 
-		if (!(id >= -6816 && id <= -6807)) {
+		if (!(id >= -6816 && id <= -6804)) {
 			return false;
 		}
 		int index = -1;
@@ -117,6 +117,7 @@ public class InstanceSystem {
 
 		return true;
 	}
+
 
 	/** Sends the drops to the interface **/
 	private void sendDrops(int npcId) {

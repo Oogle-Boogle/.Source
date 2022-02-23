@@ -345,7 +345,7 @@ public class UseItemPacketListener implements PacketListener {
 		Player target = World.getPlayers().get(targetIndex);
 		if (target == null)
 			return;
-		if (target.isMiniMe && target.getMinimeOwner() != player) {
+		/**if (target.isMiniMe && target.getMinimeOwner() != player) {
 			player.sendMessage("@red@This is not your minime!");
 			return;
 		} else if (target.isMiniMe && target.getMinimeOwner() == player) {
@@ -353,7 +353,7 @@ public class UseItemPacketListener implements PacketListener {
 			//target.getInventory().addItem(itemId, amount);
 			MiniMeFunctions.handleItemOnPlayer(itemId, amount, player);
 			return;
-		}
+		}**/
 		switch (itemId) {
 		case 6950: // MAGICAL ORB
 			OldRaidParty oldRaidParty = player.getOldRaidParty();

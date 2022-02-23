@@ -13,20 +13,21 @@ import com.zamron.world.entity.impl.player.Player;
 public class MiniMeFunctions {
 
     public static void create(Player owner) {
+        Player shadow = new Player(null).setUsername("Mini " + owner.getUsername() + "!");
         if (owner.getMinime() != null) {
-            owner.sendMessage("@red@You already have a mini-me active.");
+            owner.sendMessage("@red@You call your mini-me!");
+            MiniMeFunctions.startFollowing(owner);
             return;
         }
-        Player shadow = new Player(null).setUsername("Mini " + owner.getUsername() + "!");
         shadow.moveTo(owner.getPosition());
         shadow.setLongUsername(NameUtils.stringToLong(shadow.getUsername()));
         shadow.isMiniMe = true;
         shadow.minimeOwner = owner;
-        //shadow.getSkillManager().setSkills(owner.getSkillManager().getSkills());
         owner.setMinime(shadow);
         World.register(shadow);
-        owner.sendMessage("@blu@You summon your mini-me!");
-        //shadow.getMovementQueue().setFollowCharacter(owner);
+        shadow.getSkillManager().setSkills(owner.getSkillManager().getSkills());
+        owner.sendMessage("@blu@You call your mini-me!");
+        shadow.getMovementQueue().setFollowCharacter(owner);
         CharacterAnimations originalPlayer = owner.getCharacterAnimations().clone(); // Makes it possible to store animations from the owner of the bot.
         Player MiniMe = owner.getMinime();
         MiniMeData.load(MiniMe);
@@ -110,7 +111,7 @@ public class MiniMeFunctions {
 
     }
 
-    public static void handleItemOnPlayer(int itemID, int amount, Player owner) {
+    /**public static void handleItemOnPlayer(int itemID, int amount, Player owner) {
 
         Item item = new Item(itemID, amount);
         ItemDefinition itemDef = item.getDefinition();
@@ -173,5 +174,5 @@ public class MiniMeFunctions {
             owner.getMinime().getInventory().add(itemID, amount);
             owner.sendMessage("@red@Added @blu@" + amount + "@red@ x @blu@" + itemDef.getName() + " @red@ to your minime's inventory.@blu@ Total: " + owner.getMinime().getInventory().getAmount(itemID) + " Free Slots: " + owner.getMinime().getInventory().getFreeSlots());
         }
-    }
+    }**/
 }

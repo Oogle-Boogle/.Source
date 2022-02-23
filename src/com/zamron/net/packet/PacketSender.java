@@ -7,6 +7,7 @@ import com.zamron.model.container.ItemContainer;
 import com.zamron.model.container.impl.Shop;
 import com.zamron.net.packet.Packet.PacketType;
 import com.zamron.world.content.CustomObjects;
+import com.zamron.world.content.minimes.MiniMeData;
 import com.zamron.world.content.skill.impl.construction.ConstructionData.Furniture;
 import com.zamron.world.content.skill.impl.construction.Palette;
 import com.zamron.world.content.skill.impl.construction.Palette.PaletteTile;
@@ -333,7 +334,12 @@ public class PacketSender {
 		PacketBuilder out = new PacketBuilder(73);
 		out.putShort(player.getPosition().getRegionX() + 6, ValueType.A);
 		out.putShort(player.getPosition().getRegionY() + 6);
-		player.getSession().queueMessage(out);
+		try {
+			player.getSession().queueMessage(out);
+			//System.out.println("Tried...");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		return this;
 	}
 
