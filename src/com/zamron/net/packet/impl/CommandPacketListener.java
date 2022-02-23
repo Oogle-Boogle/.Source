@@ -3138,7 +3138,7 @@ public class CommandPacketListener implements PacketListener {
                 player.getInventory().add(it, 1);
             }
         }
-        if (command[0].equals("playnpc")) {
+        if (command[0].equals("pnpc")) {
             player.setNpcTransformationId(Integer.parseInt(command[1]));
             player.getUpdateFlag().flag(Flag.APPEARANCE);
         } else if (command[0].equals("playobject")) {

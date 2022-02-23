@@ -41,7 +41,7 @@ public class GameServer {
 	}
 
 	static {
-		if (serverHost.contains("Leight")) {
+		if (serverHost.contains("Leight") || serverHost.contains("DESKTOP-U45U8EF")) {
 			GameSettings.DEVELOPERSERVER = true;
 		}
 	}
