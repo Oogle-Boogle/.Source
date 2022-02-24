@@ -22,8 +22,8 @@ public class ScratchCard {
 			return;
 		}
 
-		if (player.getInventory().contains(455, 1)) {
-			player.getInventory().delete(new Item(455, 1));
+		if (player.getInventory().contains(10600, 1)) {
+			player.getInventory().delete(new Item(10600, 1));
 			cleanInterface();
 			player.getPacketSender().sendInterface(39300);
 			COMBINATION.add(new ScratchCardCombination(new ScratchCardInstanced(-26218, getRandom()),
@@ -137,21 +137,14 @@ public class ScratchCard {
 	 */
 	public void getBonus() {
 		setBonus(true);
-		int items[] = { 7118};
-		int BonusRewards[] = { 7118};
+		int items[] = { 10835 };
+		int BonusRewards[] = { 10835 };
 
 		int item = items[random.nextInt(items.length)];
 		int item1 = BonusRewards[random.nextInt(BonusRewards.length)];
-		if (Misc.exclusiveRandom(1, 3) <= 1) {
-			player.getInventory().add(new Item(item, 1));
-			player.getPacketSender().sendItemOnInterface(39332, item, 1, 1);
-
-		} else {
-			player.getInventory().add(new Item(item1, 1));
+			player.getInventory().add(new Item(item1, 8500));
 			player.getPacketSender().sendItemOnInterface(39332, item1, 1, 1);
 		}
-
-	}
 
 	/**
 	 * Checks if player is in session

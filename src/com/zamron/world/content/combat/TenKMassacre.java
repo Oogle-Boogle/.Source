@@ -20,7 +20,11 @@ public class TenKMassacre {
     public static String lastWinnerName;
 
     public static final Item[] REWARDS = {new Item(10835, 5000), //TODO CHANGE THE REWARDS
-                                        new Item(10835, 5000), new Item(10835, 5000)};
+                                        new Item(10835, 5000), new Item(10835, 5000), new Item(10835, 5000), new Item(10835, 5000), new Item(10835, 5000),new Item(10835, 5000),
+
+            //Better items
+            new Item(11179, 5), new Item(20260, 1000), new Item(12848, 1), new Item(19081, 1), new Item(19103, 1), new Item(12845, 10), new Item(12846, 10),
+            new Item(12847, 10)};
 
     public static int CURRENT_SERVER_KILLS = 0; //Used to keep track of current server kills (obviously)
     public static int REQUIRED_SERVER_KILLS = 10000; //How many kills are required to start prize draw?
@@ -31,7 +35,7 @@ public class TenKMassacre {
             CURRENT_SERVER_KILLS += numberOfKills;
             //System.out.println("CURRENT SERVER KILLS = "+CURRENT_SERVER_KILLS);
             POSSIBLE_WINNERS.add(possibleWinner.getUsername());
-            updateQuestTab();
+            //updateQuestTab();
         } else {
             pickWinner();
             restartGame();
@@ -65,24 +69,16 @@ public class TenKMassacre {
             if (winningPlayer != null && !winnerReceivedReward) { //If player is online and winner hasn't been rewarded yet
                 //System.out.println("Reward player reached part 2");
                 //TODO CHANGE THE GLOBAL MESSAGE BELOW TO SOMETHING YOU LIKE
-                String rewardMessage = ("<img=11><col=bababa>[<col=0999ad><shad=200>RAIDS<col=bababa>] " + winningPlayer.getUsername() + " has won " + reward.getAmount() + " x " + reward.getDefinition().getName() + " from TenKMassacre.");
+                String rewardMessage = ("<img=11><col=bababa>[<col=0999ad><shad=200>TenKMassacre<col=bababa>] " + winningPlayer.getUsername() + " has won " + reward.getAmount() + " x " + reward.getDefinition().getName() + " from TenKMassacre.");
                 int freeInvSlots = winningPlayer.getInventory().getFreeSlots();
                 //IF THE PLAYER IS ONLINE...
-                if (stackable && freeInvSlots >= 1) { //STACKABLE REWARD ONLY NEEDS 1 INV SLOT
-                    winningPlayer.getInventory().add(reward);
+                    winningPlayer.getBank().add(reward);
                     World.sendMessageNonDiscord(rewardMessage);
                     winnerReceivedReward = true;
                     restartGame();
-                } else if (!stackable && freeInvSlots >= reward.getAmount()) { //NON STACKABLE
-                    winningPlayer.getInventory().add(reward);
-                    World.sendMessageNonDiscord(rewardMessage);
-                    winnerReceivedReward = true;
-                    restartGame();
-                } else {
                     winningPlayer.getPacketSender().sendMessage("You won the 10k Massacre prize! Free up some invent space and relog to claim.");
                     winnerReceivedReward = false;
                 }
-            }
         } catch (Exception e) {
             //System.out.println("Winner of 10k Massacre was offline.");
         }

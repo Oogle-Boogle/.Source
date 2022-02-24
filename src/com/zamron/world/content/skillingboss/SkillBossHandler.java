@@ -52,7 +52,6 @@ public class SkillBossHandler {
         selectedSkill = selectSkill();
         World.register(skillBoss);
 
-
         World.sendMessageNonDiscord("@blu@The Skilling boss has spawned (::sb)- Selected Skill: "+selectedSkill.getFormatName()+"!");
 
         DiscordMessenger.sendInGameMessage("@blu@The Skilling boss has spawned (::sb) - Selected Skill: "+selectedSkill.getFormatName()+"!");

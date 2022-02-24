@@ -15,7 +15,7 @@ public class SkillBossConfig {
     // The value that holds the global XP
     public static long serverXPCounter;
     // How much XP requred until the boss will spawn?
-    public static long requiredServerXP = 50000000; //1000000000
+    public static long requiredServerXP = 500000000; //1000000000
 
 
     public static void resetTimer() {

@@ -1324,13 +1324,18 @@ public class Shop extends ItemContainer {
 					case 4635:
 						return new Object[] {100000, "AFK tokens"};
 					case 14691:
-						return new Object[] {8000, "AFK Tokens"};
-					case 15648:
-						return new Object[] {500, "AFK Tokens"};
-					case 3824:
 						return new Object[] {50000, "AFK Tokens"};
-					case 15374:
+					case 15648:
+						return new Object[] {15000, "AFK Tokens"};
+						//TODO ADD SCROLLS TO SPAWN WORLDBOSSES
+					case 15357: //Jad
+					case 15361:
+					case 15362:
 						return new Object[] {150000, "AFK Tokens"};
+					case 15363:
+					case 15359:
+					case 15358:
+						return new Object[] {185000, "AFK Tokens"};
 				}
 
 			} else if (shop == PRESTIGE_STORE) {

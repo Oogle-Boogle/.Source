@@ -33,6 +33,7 @@ import com.zamron.world.content.guidesInterface.GuideBook;
 import com.zamron.world.content.minimes.MiniMeData;
 import com.zamron.world.content.minimes.MiniMeFunctions;
 import com.zamron.world.content.raids.OldRaidParty;
+import com.zamron.world.content.scratchcards.ScratchCard;
 import com.zamron.world.content.skill.impl.construction.Construction;
 import com.zamron.world.content.skill.impl.dungeoneering.ItemBinding;
 import com.zamron.world.content.skill.impl.herblore.Herblore;
@@ -169,6 +170,37 @@ public class ItemActionPacketListener implements PacketListener {
 		int drinkingAnimation = 829;
 		switch (itemId) {
 
+			case 15357:
+				player.getInventory().delete(15357, 1);
+				Tztok.spawn();
+				World.sendMessageNonDiscord(player.getUsername() + " has just spawned World Boss!");
+				break;
+			case 15358:
+				player.getInventory().delete(15358, 1);
+				Assassin.spawn();
+				World.sendMessageNonDiscord(player.getUsername() + " has just spawned Assassin!");
+				break;
+			case 15359:
+				player.getInventory().delete(15359, 1);
+				DarkRanger.spawn();
+				World.sendMessageNonDiscord(player.getUsername() + " has just spawned Dark Ranger!");
+				break;
+			case 15363:
+				player.getInventory().delete(15363, 1);
+				TheSeph.spawn();
+				World.sendMessageNonDiscord(player.getUsername() + " has just spawned Sephiroph!");
+				break;
+			case 15361:
+				player.getInventory().delete(15361, 1);
+				TheRick.spawn();
+				World.sendMessageNonDiscord(player.getUsername() + " has just spawned Rick!");
+				break;
+			case 15362:
+				player.getInventory().delete(15362, 1);
+				TheMay.spawn();
+				World.sendMessageNonDiscord(player.getUsername() + " has just spawned May!");
+				break;
+
 			case 19479:
 				if (player.getInventory().contains(itemId)) {
 					if (player.getPointsHandler().getSlayerPoints() > 20000) {
@@ -182,7 +214,7 @@ public class ItemActionPacketListener implements PacketListener {
 				}
 				break;
 
-			case 455:
+			case 10600:
 				new com.zamron.world.content.scratchcard.ScratchCard(player).display();
 				break;
 
