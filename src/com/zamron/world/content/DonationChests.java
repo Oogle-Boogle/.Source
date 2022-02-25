@@ -75,8 +75,6 @@ public class DonationChests {
                 chance = 40;
                 break;
             case UBER_DONATOR:
-                chance = 50;
-                break;
             case DELUXE_DONATOR:
                 chance = 50;
                 break;

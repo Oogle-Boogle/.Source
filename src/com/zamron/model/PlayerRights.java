@@ -18,10 +18,10 @@ public enum PlayerRights {
 	LEGENDARY_DONATOR(10, "<shad=697998>", 2.5, 2.2, 3,2,2),
 	UBER_DONATOR(0, "<col=0EBFE9>", 3, 2.5, 4,3,3),
 	DELUXE_DONATOR(0, "<col=8600CC>", 6, 3, 5,3,3),
+	VIP_DONATOR(0, "<col=8600CC>", 10, 4,6,4,4),
 	SUPPORT(-1, "<col=7838a3>", 1, 1.5, 1,0,0),
 	YOUTUBER(20, "<col=CD661D>", 1, 1.1, 1,0,0),
 	COMMUNITY_MANAGER(0, "<col=7838a3>", 1, 1.5, 1,0,0),
-	VIP_DONATOR(0, "<col=8600CC>", 10, 4,6,4,4),
 	HADMIN(-1, "<col=FFFF64>", 1, 1.5, 1,0,0);
 
 	PlayerRights(int yellDelaySeconds, String yellHexColor, double loyaltyPointsGainModifier, double xpMofifier, int votePtModifier, int bonusBossPts, int bonusTriviaPts) {

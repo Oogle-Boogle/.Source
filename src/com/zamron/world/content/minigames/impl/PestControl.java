@@ -306,11 +306,17 @@ public class PestControl {
 
 
 					}
+					if (p.getRights() == PlayerRights.VIP_DONATOR) {
+						p.getPointsHandler().setCustompestcontrolpoints(50, true);
+						p.getPacketSender().sendMessage("You've received 50 Custom Pest Control Points and "+p.getSkillManager().getCombatLevel() * 300+" coins.");
+
+
+					}
 					if (p.getRights().isHighDonator() || p.getRights() == PlayerRights.DEVELOPER) {
-						p.getPointsHandler().setCustompestcontrolpoints(40, true);
+						p.getPointsHandler().setCustompestcontrolpoints(500, true);
 						p.getPacketSender().sendMessage("You've received 40 Custom Pest Control Points and "+p.getSkillManager().getCombatLevel() * 50+" coins.");
 						p.getInventory().add(10835, 1);
-						p.sendMessage("You have recieved a Bulging Zamron 1b coin because your a DEVELOPER");
+						p.sendMessage("You have recieved a Bulging Zamron 1b coin because you're a DEVELOPER");
 
 
 					}

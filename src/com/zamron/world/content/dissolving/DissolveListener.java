@@ -33,7 +33,7 @@ public class DissolveListener {
 							} else if (tick == 3) {
 								boolean success = random.nextInt(100) <= val.getChance() ? true : false;
 								if (success) {
-									World.sendMessageNonDiscord("<img=11><col=FF0000><shad=200>" + player.getUsername() + " @gre@Successfully<col=FF0000> dissolved their " + val.getReward().getDefinition().getName() + " !");
+									World.sendMessageNonDiscord("<img=12><col=FF0000><shad=200>" + player.getUsername() + " @gre@Successfully<col=FF0000> dissolved their " + val.getReward().getDefinition().getName() + " !");
 									player.getInventory().add(val.getReward());
 								} else {
 									player.getPacketSender().sendMessage("You @red@failed@bla@ your dissolve, better luck next time!");

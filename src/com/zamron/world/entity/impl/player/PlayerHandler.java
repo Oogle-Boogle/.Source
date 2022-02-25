@@ -239,13 +239,13 @@ public class PlayerHandler {
 		Lottery.onLogin(player);
 		Locations.login(player);
 		
-		player.getPacketSender().sendMessage("<img=11><col=368a24><shad=555>Welcome To Zamron!");
+		player.getPacketSender().sendMessage("<img=12><col=368a24><shad=555>Welcome To Zamron!");
 		player.getPacketSender()
-				.sendMessage("<img=11><col=187518><shad=555>Join Discord to stay up to date with updates / information ::discord");
+				.sendMessage("<img=12><col=187518><shad=555>Join Discord to stay up to date with updates / information ::discord");
 		player.getPacketSender()
-				.sendMessage("<img=11><col=7838a3><shad=555>For any questions contact <col=dddddd><shad=111><img=3>Oogle");
+				.sendMessage("<img=12><col=7838a3><shad=555>For any questions contact <col=dddddd><shad=111><img=3>Oogle");
 		player.getPacketSender()
-		.sendMessage("<img=11><shad=20><col=b96900>Did you know? We reward players who report bugs! <img=392>");
+		.sendMessage("<img=12><shad=20><col=b96900>Did you know? We reward players who report bugs! <img=392>");
 
 		if (player.getHasPin() == false) {
 			player.getPacketSender().sendMessage("<img=18>Your account isn't safe! Make sure to ::setpin");
@@ -280,7 +280,7 @@ public class PlayerHandler {
 								|| player.getRights() == PlayerRights.HADMIN
 						
 				|| player.getRights() == PlayerRights.DEVELOPER) {
-			World.sendMessageNonDiscord("<img=13><shad=20><col=1eaa08> " + Misc.formatText(player.getRights().toString().toLowerCase()) + " " + player.getUsername()
+			World.sendMessageNonDiscord("<img=14><shad=20><col=1eaa08> " + Misc.formatText(player.getRights().toString().toLowerCase()) + " " + player.getUsername()
 			+ " has just logged in, feel free to message them for support.");
 		}
 		if (player.getRights() == PlayerRights.MODERATOR || player.getRights() == PlayerRights.ADMINISTRATOR

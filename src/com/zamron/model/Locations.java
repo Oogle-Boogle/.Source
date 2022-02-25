@@ -955,7 +955,7 @@ public class Locations {
 			public void enter(Player player) {
 				PLAYERS_IN_DUEL_ARENA++;
 				player.getPacketSender().sendMessage(
-						"<img=11> <col=996633>Warning! Do not stake items which you are not willing to lose.");
+						"<img=12> <col=996633>Warning! Do not stake items which you are not willing to lose.");
 			}
 
 			@Override
@@ -1040,7 +1040,7 @@ public class Locations {
 			public void enter(Player player) {
 				DialogueManager.start(player, 110);
 				player.getPacketSender().sendMessage(
-						"<img=11> If you die in a boss room, you will lose your items. You have been warned.");
+						"<img=12> If you die in a boss room, you will lose your items. You have been warned.");
 				// GWD.startPreview(player);
 			}
 

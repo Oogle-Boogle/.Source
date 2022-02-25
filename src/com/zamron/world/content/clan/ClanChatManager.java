@@ -261,8 +261,6 @@ public class ClanChatManager {
 						if (others.getRights().equals(PlayerRights.ADMINISTRATOR)) {
 							prefix = "<img=63>";
 						}
-
-
 						member.getPacketSender().sendString(childId, prefix + others.getUsername());
 						childId++;
 					}

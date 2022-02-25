@@ -1479,11 +1479,11 @@ public class ButtonClickPacketListener implements PacketListener {
             case -26369:
                 if (WellOfGoodwill.isActive()) {
                     player.getPacketSender().sendMessage(
-                            "<img=11> <col=008FB2>The Well of Goodwill is granting 30% bonus experience for another "
+                            "<img=12> <col=008FB2>The Well of Goodwill is granting 30% bonus experience for another "
                                     + WellOfGoodwill.getMinutesRemaining() + " minutes.");
                 } else {
                     player.getPacketSender()
-                            .sendMessage("<img=11> <col=008FB2>The Well of Goodwill needs another "
+                            .sendMessage("<img=12> <col=008FB2>The Well of Goodwill needs another "
                                     + Misc.insertCommasToNumber("" + WellOfGoodwill.getMissingAmount())
                                     + " coins before becoming full.");
                 }
@@ -1576,7 +1576,7 @@ public class ButtonClickPacketListener implements PacketListener {
                 TeleportHandler.teleportPlayer(player, new Position(2595, 4772), player.getSpellbook()
                         .getTeleportType());
                 player.getPacketSender().sendMessage(
-                        "<img=11> To get started with Runecrafting, buy a talisman and use the locate option on it.");
+                        "<img=12> To get started with Runecrafting, buy a talisman and use the locate option on it.");
                 break;
             case 8861:
                 TeleportHandler.teleportPlayer(player, new Position(3208, 3160), player.getSpellbook()

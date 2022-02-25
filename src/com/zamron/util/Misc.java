@@ -101,8 +101,8 @@ public class Misc {
 		string = string.replaceAll("@sup@", "");
 		string = string.replaceAll("@str@", "~~");
 		string = string.replaceAll("@end@", "~~");
-		string = string.replaceAll("<img=11>", ":information_source:");
-		//string = string.replaceAll("<img=111>", ":star:");
+		string = string.replaceAll("<img=12>", ":information_source:");
+		//string = string.replaceAll("<img=121>", ":star:");
 		//string = string.replaceAll("<img=7>", ":moneybag:");
 		string = string.replaceAll("@sta@", "");
 		string = string.replaceAll("@com@", "");

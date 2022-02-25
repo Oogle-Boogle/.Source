@@ -88,7 +88,7 @@ public class Juggernaut extends NPC {
 		setCurrent(instance);
 		// System.out.print("spawned.");
 
-		World.sendMessageNonDiscord("<img=11>@red@The Juggernaut boss has spawned at the " + location.getLocation() + "!");
+		World.sendMessageNonDiscord("<img=12>@red@The Juggernaut boss has spawned at the " + location.getLocation() + "!");
 		
 		Juggernaut.amountNeeded = 10000;
 	}
@@ -167,7 +167,7 @@ public class Juggernaut extends NPC {
 			String itemName = (new Item(superrare).getDefinition().getName());
 			String itemMessage = Misc.anOrA(itemName) + " " + itemName;
 			World.sendMessageNonDiscord(
-					"<img=11><col=FF0000>" + player.getUsername() + " received<col=eaeaea>[ " + itemMessage + "<col=eaeaea>]<col=FF0000> from the Juggernaut!");
+					"<img=12><col=FF0000>" + player.getUsername() + " received<col=eaeaea>[ " + itemMessage + "<col=eaeaea>]<col=FF0000> from the Juggernaut!");
 			return;
 		}
 
@@ -177,7 +177,7 @@ public class Juggernaut extends NPC {
 			String itemName = (new Item(rare).getDefinition().getName());
 			String itemMessage = Misc.anOrA(itemName) + " " + itemName;
 			World.sendMessageNonDiscord(
-					"<img=11><col=FF0000>" + player.getUsername() + " received<col=eaeaea>[ " + itemMessage + "<col=eaeaea>]<col=FF0000> from the Juggernaut!");
+					"<img=12><col=FF0000>" + player.getUsername() + " received<col=eaeaea>[ " + itemMessage + "<col=eaeaea>]<col=FF0000> from the Juggernaut!");
 			return;
 		}
 		if (chance >= 0) {
@@ -185,7 +185,7 @@ public class Juggernaut extends NPC {
 					new GroundItem(new Item(common), pos, player.getUsername(), false, 150, true, 200));
 			String itemName = (new Item(common).getDefinition().getName());
 			World.sendMessageNonDiscord(
-					"<img=11><col=FF0000>" + player.getUsername() + " received<col=eaeaea>[  " + itemName + "<col=eaeaea>]<col=FF0000> from the Juggernaut");
+					"<img=12><col=FF0000>" + player.getUsername() + " received<col=eaeaea>[  " + itemName + "<col=eaeaea>]<col=FF0000> from the Juggernaut");
 			return;
 		}
 

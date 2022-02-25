@@ -413,7 +413,7 @@ public class DropUtils {
 				totalBonus += 10;
 				break;
 			case VIP_DONATOR:
-				totalBonus += 40;
+				totalBonus += 13;
 				break;
 			default:
 				break;
@@ -437,6 +437,9 @@ public class DropUtils {
 				break;
 			case DELUXE_DONATOR:
 				totalBonus += 10;
+				break;
+			case VIP_DONATOR:
+				totalBonus += 13;
 				break;
 			default:
 				break;

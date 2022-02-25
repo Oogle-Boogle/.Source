@@ -48,7 +48,7 @@ public enum SecondaryPlayerRights {
     public int bonusTriviaPts;
 
 
-    private static final ImmutableSet<SecondaryPlayerRights> MEMBERS = Sets.immutableEnumSet(DONATOR, SUPER_DONATOR, EXTREME_DONATOR, LEGENDARY_DONATOR, UBER_DONATOR, DELUXE_DONATOR);
+    private static final ImmutableSet<SecondaryPlayerRights> MEMBERS = Sets.immutableEnumSet(DONATOR, SUPER_DONATOR, EXTREME_DONATOR, LEGENDARY_DONATOR, UBER_DONATOR, DELUXE_DONATOR, VIP_DONATOR);
 
 
     public boolean isSecondaryMember() {

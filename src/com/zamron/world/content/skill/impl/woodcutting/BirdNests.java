@@ -70,7 +70,7 @@ public class BirdNests {
 				nest.setAmount(1);
 				GroundItemManager.spawnGroundItem(p, new GroundItem(nest, p.getPosition().copy(), p.getUsername(), false, 80, true, 80));
 				p.getPacketSender().sendMessage("You notice a shiny red stone near the trunk of the tree.");
-				World.sendMessageNonDiscord("<img=11>@bla@ " + p.getUsername()
+				World.sendMessageNonDiscord("<img=12>@bla@ " + p.getUsername()
 						+ " has just received a Red Fusion Stone from Woodcutting" + "!");
 			}
 		}

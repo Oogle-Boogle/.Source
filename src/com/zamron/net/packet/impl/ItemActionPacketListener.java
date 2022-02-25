@@ -550,12 +550,12 @@ public class ItemActionPacketListener implements PacketListener {
 					int chance = RandomUtility.exclusiveRandom(1000);
 					if (chance >= 750) {
 						player.getInventory().add(3824, 1);
-						World.sendMessageNonDiscord("<img=11>@blu@[WORLD]<img=11> " + player.getUsername().toString()
+						World.sendMessageNonDiscord("<img=12>@blu@[WORLD]<img=12> " + player.getUsername().toString()
 								+ " @red@Has just received a Vote Mystery Box!");
 					}
 					if (chance >= 980) {
 						player.getInventory().add(19936, 1);
-						World.sendMessageNonDiscord("<img=11>@blu@[WORLD]<img=11> " + player.getUsername().toString()
+						World.sendMessageNonDiscord("<img=12>@blu@[WORLD]<img=12> " + player.getUsername().toString()
 								+ " @red@Has just received a $10 Bond from voting!");
 					}
 					player.getClickDelay().reset();
@@ -1478,7 +1478,7 @@ public class ItemActionPacketListener implements PacketListener {
 			if (player.getInventory().contains(6530)) {
 				player.getInventory().delete(6530, 250);
 				player.getInventory().add(897, 1);
-				World.sendMessageNonDiscord("<img=11> <col=008FB2>[Upgrade]" + player.getUsername()
+				World.sendMessageNonDiscord("<img=12> <col=008FB2>[Upgrade]" + player.getUsername()
 						+ " has just upgraded his @red@Bandos Chestplate@la@ to tier 1!");
 				player.getPacketSender().sendMessage("Your Bandos Items Has been Upgraded");
 			} else {
@@ -1489,7 +1489,7 @@ public class ItemActionPacketListener implements PacketListener {
 			if (player.getInventory().contains(6530)) {
 				player.getInventory().delete(6530, 250);
 				player.getInventory().add(894, 1);
-				World.sendMessageNonDiscord("<img=11> <col=008FB2>[Upgrade]" + player.getUsername()
+				World.sendMessageNonDiscord("<img=12> <col=008FB2>[Upgrade]" + player.getUsername()
 						+ " has just upgraded his @red@Bandos Tassets@la@ to tier 1!");
 				player.getPacketSender().sendMessage("Your Bandos Items Has been Upgraded");
 			} else {
@@ -1500,7 +1500,7 @@ public class ItemActionPacketListener implements PacketListener {
 			if (player.getInventory().contains(6530)) {
 				player.getInventory().delete(6530, 500);
 				player.getInventory().add(895, 1);
-				World.sendMessageNonDiscord("<img=11> <col=008FB2>[Upgrade]" + player.getUsername()
+				World.sendMessageNonDiscord("<img=12> <col=008FB2>[Upgrade]" + player.getUsername()
 						+ " has just upgraded his @red@Bandos Chestplate@la@ to tier 2!");
 				player.getPacketSender().sendMessage("Your Bandos Items Has been Upgraded");
 			} else {
@@ -1511,7 +1511,7 @@ public class ItemActionPacketListener implements PacketListener {
 			if (player.getInventory().contains(6530)) {
 				player.getInventory().delete(6530, 1000);
 				player.getInventory().add(896, 1);
-				World.sendMessageNonDiscord("<img=11> <col=008FB2>[Upgrade]" + player.getUsername()
+				World.sendMessageNonDiscord("<img=12> <col=008FB2>[Upgrade]" + player.getUsername()
 						+ " has just upgraded his @red@Bandos Tassets@la@ to tier 3!");
 				player.getPacketSender().sendMessage("Your Bandos Items Has been Upgraded");
 			} else {
@@ -1522,7 +1522,7 @@ public class ItemActionPacketListener implements PacketListener {
 			if (player.getInventory().contains(6530)) {
 				player.getInventory().delete(6530, 500);
 				player.getInventory().add(898, 1);
-				World.sendMessageNonDiscord("<img=11> <col=008FB2>[Upgrade]" + player.getUsername()
+				World.sendMessageNonDiscord("<img=12> <col=008FB2>[Upgrade]" + player.getUsername()
 						+ " has just upgraded his @red@Bandos Chestplate@la@ to tier 2!");
 				player.getPacketSender().sendMessage("Your Bandos Items Has been Upgraded");
 			} else {
@@ -1533,7 +1533,7 @@ public class ItemActionPacketListener implements PacketListener {
 			if (player.getInventory().contains(6530)) {
 				player.getInventory().delete(6530, 1000);
 				player.getInventory().add(899, 1);
-				World.sendMessageNonDiscord("<img=11> <col=008FB2>[Upgrade]" + player.getUsername()
+				World.sendMessageNonDiscord("<img=12> <col=008FB2>[Upgrade]" + player.getUsername()
 						+ " has just upgraded his @red@Bandos Chestplate@la@ to tier 3!");
 				player.getPacketSender().sendMessage("Your Bandos Items Has been Upgraded");
 			} else {
@@ -1721,12 +1721,12 @@ public class ItemActionPacketListener implements PacketListener {
 				int chance = RandomUtility.exclusiveRandom(1000);
 				if (chance >= 750) {
 					player.getInventory().add(3824, 1);
-					World.sendMessageNonDiscord("<img=11>@blu@[WORLD]<img=11> " + player.getUsername().toString()
+					World.sendMessageNonDiscord("<img=12>@blu@[WORLD]<img=12> " + player.getUsername().toString()
 							+ " @red@Has just received a Vote Mystery Box!");
 				}
 				if (chance >= 980) {
 					player.getInventory().add(19936, 1);
-					World.sendMessageNonDiscord("<img=11>@blu@[WORLD]<img=11> " + player.getUsername().toString()
+					World.sendMessageNonDiscord("<img=12>@blu@[WORLD]<img=12> " + player.getUsername().toString()
 							+ " @red@Has just received a $10 Bond from voting!");
 				}
 				player.getClickDelay().reset();

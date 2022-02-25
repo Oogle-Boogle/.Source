@@ -84,7 +84,7 @@ public class NPCOptionPacketListener implements PacketListener {
 
                     case 212:
                         ShopManager.getShops().get(48).open(player);
-                        player.sendMessage("<img=11>You currently have @red@" + player.getPointsHandler().getDonationPoints()
+                        player.sendMessage("<img=12>You currently have @red@" + player.getPointsHandler().getDonationPoints()
                                 + " Donation Points!");
                         break;
 
@@ -94,7 +94,7 @@ public class NPCOptionPacketListener implements PacketListener {
 
                     case 606:
                         ShopManager.getShops().get(33).open(player);
-                        player.sendMessage("<img=11>You currently have @red@" + player.getPointsHandler().getAmongPoints()
+                        player.sendMessage("<img=12>You currently have @red@" + player.getPointsHandler().getAmongPoints()
                                 + " Among Points!");
                         break;
 
@@ -179,7 +179,7 @@ public class NPCOptionPacketListener implements PacketListener {
 
                     case 1923:
                         ShopManager.getShops().get(116).open(player);
-                        player.sendMessage("<img=11>You should spend the tokens wisely :D");
+                        player.sendMessage("<img=12>You should spend the tokens wisely :D");
                         break;
 
                     case 6603:
@@ -269,7 +269,7 @@ public class NPCOptionPacketListener implements PacketListener {
                     case 712:
                         try {
                             ShopManager.getShops().get(59).open(player);
-                            player.sendMessage("<img=11>You currently have @red@"
+                            player.sendMessage("<img=12>You currently have @red@"
                                     + player.getPointsHandler().getSkillPoints() + " Skilling Points!");
                             player.getPacketSender().sendMessage("Skilling points are obtained by leveling up");
                             player.sendMessage("After u reach 99 in a skill, you can either prestige");
@@ -307,7 +307,7 @@ public class NPCOptionPacketListener implements PacketListener {
                         break;
                     case 741:
                         ShopManager.getShops().get(49).open(player);
-                        player.sendMessage("<img=11>You currently have @red@" + player.getPointsHandler().getDonationPoints()
+                        player.sendMessage("<img=12>You currently have @red@" + player.getPointsHandler().getDonationPoints()
                                 + " Donation Points!");
                         break;
                     case 2998:
@@ -378,7 +378,7 @@ public class NPCOptionPacketListener implements PacketListener {
                         break;
                     case 273: // Boss point shop npc id can be anything as long as it opens shop 92
                         ShopManager.getShops().get(92).open(player);
-                        player.sendMessage("<img=11>You currently have @red@" + player.getBossPoints() + " Boss Points!");
+                        player.sendMessage("<img=12>You currently have @red@" + player.getBossPoints() + " Boss Points!");
                         break;
 
 
@@ -462,7 +462,7 @@ public class NPCOptionPacketListener implements PacketListener {
                         break;
                     case 3789:
                         ShopManager.getShops().get(115).open(player);
-                        player.sendMessage("<img=11>You currently have @red@"
+                        player.sendMessage("<img=12>You currently have @red@"
                                 + player.getPointsHandler().getCustompestcontrolpoints() + " Custom Pest Control Points!");
                         break;
                     case 2948:
@@ -752,7 +752,7 @@ public class NPCOptionPacketListener implements PacketListener {
                         //ShopManager.getShops().get(49).open(player);
                         System.out.println("Add buy bonds option here.");
                         player.getPacketSender().openURL("https://zamron.everythingrs.com/services/store");
-                        //player.sendMessage("<img=11>You currently have @red@" + player.getPointsHandler().getDonationPoints() + " Donation Points!");
+                        //player.sendMessage("<img=12>You currently have @red@" + player.getPointsHandler().getDonationPoints() + " Donation Points!");
                         break;
 
                     case 150:
@@ -868,7 +868,7 @@ public class NPCOptionPacketListener implements PacketListener {
                     // break;
                     case 364:
                         ShopManager.getShops().get(27).open(player);
-                        player.sendMessage("<img=11>You currently have @red@" + player.getPointsHandler().getVotingPoints()
+                        player.sendMessage("<img=12>You currently have @red@" + player.getPointsHandler().getVotingPoints()
                                 + " Voting Points!");
                         break;
 

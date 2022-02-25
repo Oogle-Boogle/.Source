@@ -538,7 +538,7 @@ public class Tutorial {
 					p.getAppearance().setCanChangeAppearance(true);
 					p.setPlayerLocked(false);
 					ClanChatManager.join(p, "help");
-					World.sendMessageDiscord("<img=11> <col=6600CC>[NEW PLAYER]: "+p.getUsername()+" has logged into Zamron for the first time!");
+					World.sendMessageDiscord("<img=12> <col=6600CC>[NEW PLAYER]: "+p.getUsername()+" has logged into Zamron for the first time!");
 
 					//reset interface?
 					//resetInterface(player);
@@ -546,7 +546,7 @@ public class Tutorial {
 						@Override
 						protected void execute() {
 							if(p != null && p.isRegistered()) {
-								p.getPacketSender().sendMessage("<img=11> @blu@Want to go player killing? Mandrith now sells premade PvP sets.");
+								p.getPacketSender().sendMessage("<img=12> @blu@Want to go player killing? Mandrith now sells premade PvP sets.");
 							}
 							stop();
 						}

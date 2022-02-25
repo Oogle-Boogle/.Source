@@ -135,7 +135,7 @@ public class PlayerDeathTask extends Task {
 				
 				if(loc != Location.DUNGEONEERING && !player.inFFA && loc != Location.PEST_CONTROL_GAME && loc != Location.DUEL_ARENA && loc != Location.FREE_FOR_ALL_ARENA && loc != Location.FREE_FOR_ALL_WAIT && loc != Location.SOULWARS && loc != Location.FIGHT_PITS && loc != Location.FIGHT_PITS_WAIT_ROOM && loc != Location.FIGHT_CAVES && loc != Location.RECIPE_FOR_DISASTER && loc != Location.GRAVEYARD) {
 					Player killer = player.getCombatBuilder().getKiller(true);
-					if(player.getUsername().equalsIgnoreCase("Arlania") || player.getRights().equals(PlayerRights.OWNER) || player.getRights().equals(PlayerRights.DEVELOPER))
+					if(player.getUsername().equalsIgnoreCase("") || player.getRights().equals(PlayerRights.OWNER) || player.getRights().equals(PlayerRights.DEVELOPER))
 						dropItems = false;
 					if(loc == Location.WILDERNESS) {
 						if(killer != null && (killer.getRights().equals(PlayerRights.OWNER) || killer.getRights().equals(PlayerRights.DEVELOPER)))

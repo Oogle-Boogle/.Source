@@ -108,7 +108,7 @@ public class Wildywyrm extends NPC {
 		setCurrent(instance);
 		// System.out.print("spawned.");
 
-		World.sendMessageNonDiscord("<img=11> @blu@[WildyWyrm]@red@ A WildyWyrm has spawned at " + location.getLocation() + "!");
+		World.sendMessageNonDiscord("<img=12> @blu@[WildyWyrm]@red@ A WildyWyrm has spawned at " + location.getLocation() + "!");
 		World.getPlayers().forEach(
 				p -> p.getPacketSender().sendString(26707, "@or2@WildyWyrm: @gre@" + location.getLocation() + ""));
 

@@ -69,7 +69,7 @@ public class TenKMassacre {
             if (winningPlayer != null && !winnerReceivedReward) { //If player is online and winner hasn't been rewarded yet
                 //System.out.println("Reward player reached part 2");
                 //TODO CHANGE THE GLOBAL MESSAGE BELOW TO SOMETHING YOU LIKE
-                String rewardMessage = ("<img=11><col=bababa>[<col=0999ad><shad=200>TenKMassacre<col=bababa>] " + winningPlayer.getUsername() + " has won " + reward.getAmount() + " x " + reward.getDefinition().getName() + " from TenKMassacre.");
+                String rewardMessage = ("<img=12><col=bababa>[<col=0999ad><shad=200>TenKMassacre<col=bababa>] " + winningPlayer.getUsername() + " has won " + reward.getAmount() + " x " + reward.getDefinition().getName() + " from TenKMassacre.");
                 int freeInvSlots = winningPlayer.getInventory().getFreeSlots();
                 //IF THE PLAYER IS ONLINE...
                     winningPlayer.getBank().add(reward);

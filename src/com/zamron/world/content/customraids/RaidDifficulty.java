@@ -50,7 +50,7 @@ public enum RaidDifficulty {
                     new Item(22198, 1), new Item(22199, 1), new Item(22200, 1), new Item(22201, 1), new Item(22202, 1),
                     new Item(22203, 1), new Item(19936, 1), new Item(19937, 1), new Item(19938, 1)
 
-            },0, "@red@Hard raid"); //Rare Rewards 10% chance to win.
+            },90, "@red@Hard raid"); //Rare Rewards 10% chance to win.
 
     RaidDifficulty(int x, int y, String description, Item[] commonRewards, Item[] rareRewards, int rareChance, String name) {
         this.x = x;

@@ -108,14 +108,14 @@ public class GlobalPerks {
         currentTime = TIME;
         active = true;
         activePerk = perk;
-        World.sendMessageDiscord("<img=11>@bla@[@whi@Server Perks@bla@]<img=11> @red@ " + StringUtils.usToSpace(activePerk.toString()) + " has Started");
+        World.sendMessageDiscord("<img=12>@bla@[@whi@Server Perks@bla@]<img=12> @red@ " + StringUtils.usToSpace(activePerk.toString()) + " has Started");
         updateOverlay();
     }
 
     private void end() {
         active = false;
         contributions.put(activePerk, 0);
-        World.sendMessageDiscord("<img=11>[Server Perks]<img=11> @red@Perk " + StringUtils.usToSpace(activePerk.toString()) + " has ended");
+        World.sendMessageDiscord("<img=12>[Server Perks]<img=12> @red@Perk " + StringUtils.usToSpace(activePerk.toString()) + " has ended");
         activePerk = null;
         resetInterface();
     }

@@ -89,7 +89,7 @@ public class Death extends NPC {
         setCurrent(instance);
         // System.out.print("spawned.");
 
-        /*World.sendMessageNonDiscord("<img=11><<shad=10>[@or2@BOSS] @bla@ Death @or2@has respawned Use ::death");*/
+        /*World.sendMessageNonDiscord("<img=12><<shad=10>[@or2@BOSS] @bla@ Death @or2@has respawned Use ::death");*/
     }
     public static void handleDrop(NPC npc) {
         World.getPlayers().forEach(p -> p.getPacketSender().sendString(26707, "@or2@WildyWyrm: @gre@N/A"));
@@ -164,9 +164,9 @@ public class Death extends NPC {
                     new GroundItem(new Item(superrare), pos, player.getUsername(), false, 150, true, 200));
             String itemName = (new Item(superrare).getDefinition().getName());
             String itemMessage = Misc.anOrA(itemName) + " " + itemName;
-            //DiscordMessenger.sendRareDrop(player.getUsername(), " received<col=eaeaea><img=11>[ " + itemMessage + "<col=eaeaea>]<img=11><col=FF0000>from the Death!");
+            //DiscordMessenger.sendRareDrop(player.getUsername(), " received<col=eaeaea><img=12>[ " + itemMessage + "<col=eaeaea>]<img=12><col=FF0000>from the Death!");
             World.sendMessageNonDiscord(
-                    "<img=11><col=FF0000>" + player.getUsername() + " received<col=eaeaea><img=11>[ " + itemMessage + "<col=eaeaea>]<img=11><col=FF0000>from the Death!");
+                    "<img=12><col=FF0000>" + player.getUsername() + " received<col=eaeaea><img=12>[ " + itemMessage + "<col=eaeaea>]<img=12><col=FF0000>from the Death!");
             //DiscordMessenger.sendRareDrop(player.getUsername(), " Just received " + itemMessage + " from the Death!");
             return;
         }
@@ -177,7 +177,7 @@ public class Death extends NPC {
             String itemName = (new Item(rare).getDefinition().getName());
             String itemMessage = Misc.anOrA(itemName) + " " + itemName;
             World.sendMessageNonDiscord(
-                    "<img=11><col=FF0000>" + player.getUsername() + " received<img=11><col=eaeaea>[ " + itemMessage + "<col=eaeaea>]<img=11><col=FF0000> from the Death!");
+                    "<img=12><col=FF0000>" + player.getUsername() + " received<img=12><col=eaeaea>[ " + itemMessage + "<col=eaeaea>]<img=12><col=FF0000> from the Death!");
             //DiscordMessenger.sendRareDrop(player.getUsername(), " Just received " + itemMessage + " from the Death!");
             return;
         }
@@ -186,7 +186,7 @@ public class Death extends NPC {
                     new GroundItem(new Item(common, 1), pos, player.getUsername(), false, 150, true, 200));
             String itemName = (new Item(common).getDefinition().getName());
             World.sendMessageNonDiscord(
-                    "<img=11><col=FF0000>" + player.getUsername() + " received<col=eaeaea><img=11>[<col=07b481> " + itemName + "<col=eaeaea>]<img=11><col=FF0000> from the Death!");
+                    "<img=12><col=FF0000>" + player.getUsername() + " received<col=eaeaea><img=12>[<col=07b481> " + itemName + "<col=eaeaea>]<img=12><col=FF0000> from the Death!");
             return;
         }
 

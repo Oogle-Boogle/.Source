@@ -628,7 +628,7 @@ public class CommandPacketListener implements PacketListener {
 
             case "npckills":
                 player.getPacketSender();
-                player.sendMessage("<img=11>Your Overall KC on Zamron is <shad=10>@blu@" + player.getNpcKills() + "");
+                player.sendMessage("<img=12>Your Overall KC on Zamron is <shad=10>@blu@" + player.getNpcKills() + "");
                 return;
         }
 
@@ -721,9 +721,9 @@ public class CommandPacketListener implements PacketListener {
                 player.hasEntered = true;
                 entries++;
                 player.sendMessage("You have entered the giveaway");
-                World.sendMessageNonDiscord("<img=11>@blu@[WORLD]<img=11> @red@" + player.getUsername()
+                World.sendMessageNonDiscord("<img=12>@blu@[WORLD]<img=12> @red@" + player.getUsername()
                         + " @blu@ Has entered the giveaway");
-                World.sendMessageNonDiscord("<img=11>@blu@[WORLD]<img=11> @red@ There is now a total of: " + entries
+                World.sendMessageNonDiscord("<img=12>@blu@[WORLD]<img=12> @red@ There is now a total of: " + entries
                         + " people entered in the giveaway.");
             }
         }
@@ -1093,6 +1093,7 @@ public class CommandPacketListener implements PacketListener {
         if (command[0].equals("players")) {
             int players = World.getPlayers().size() + 0;
             player.getPacketSender().sendMessage("There are currently " + players + " players online!");
+            PlayersOnlineInterface.showInterface(player);
         }
 /*        if (command[0].equals("platwarriors") || command[0].equals("platwarrior")) {
             TeleportHandler.teleportPlayer(player, new Position(2766, 2799), player.getSpellbook().getTeleportType());
@@ -1785,11 +1786,11 @@ public class CommandPacketListener implements PacketListener {
 
         if (command[0].equals("remindvote")) {
             World.sendMessageNonDiscord(
-                    "<img=11> <col=008FB2>Remember to collect rewards by using the ::vote command every 12 hours!");
+                    "<img=12> <col=008FB2>Remember to collect rewards by using the ::vote command every 12 hours!");
         }
         if (command[0].equals("remindvoting")) {
             World.sendMessageNonDiscord(
-                    "<img=11> <col=008FB2>Did you know that The voting is currently tripled? Vote for 9 points now");
+                    "<img=12> <col=008FB2>Did you know that The voting is currently tripled? Vote for 9 points now");
         }
 
         if (command[0].equals("staffzone")) {
@@ -2379,7 +2380,7 @@ public class CommandPacketListener implements PacketListener {
 
 
         if (wholeCommand.equals("afk")) {
-            World.sendMessageNonDiscord("<img=11> <col=FF0000><shad=0>" + player.getUsername()
+            World.sendMessageNonDiscord("<img=12> <col=FF0000><shad=0>" + player.getUsername()
                     + ": I am now away, please don't message me; I won't reply.");
         }
 

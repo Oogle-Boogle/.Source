@@ -85,7 +85,7 @@ public class DailyNpc extends NPC {
 		setCurrent(instance);
 		// System.out.print("spawned.");
 
-		World.sendMessageNonDiscord("<img=11><shad=200><col=000000>[<col=b96900>HALLOWEEN<col=000000>]<col=b96900>Killer Pumpkin has respawned!  " + location.getLocation() + "!");
+		World.sendMessageNonDiscord("<img=12><shad=200><col=000000>[<col=b96900>HALLOWEEN<col=000000>]<col=b96900>Killer Pumpkin has respawned!  " + location.getLocation() + "!");
 	}
 
 	/**
@@ -162,7 +162,7 @@ public class DailyNpc extends NPC {
 			String itemName = (new Item(superrare).getDefinition().getName());
 			Misc.anOrA(itemName);
 			World.sendMessageNonDiscord(
-					"<img=11><col=FF0000>" + player.getUsername() +"received<col=eaeaea>[ " + itemName + "<col=eaeaea>]<col=FF0000>from Sephiroth");
+					"<img=12><col=FF0000>" + player.getUsername() +"received<col=eaeaea>[ " + itemName + "<col=eaeaea>]<col=FF0000>from Sephiroth");
 			return;
 		}
 
@@ -172,7 +172,7 @@ public class DailyNpc extends NPC {
 			String itemName = (new Item(rare).getDefinition().getName());
 			Misc.anOrA(itemName);
 			World.sendMessageNonDiscord(
-					"<img=11><col=FF0000>" + player.getUsername() + "received<col=eaeaea>[ " + itemName + "<col=eaeaea>]<col=FF0000>from Sephiroth");
+					"<img=12><col=FF0000>" + player.getUsername() + "received<col=eaeaea>[ " + itemName + "<col=eaeaea>]<col=FF0000>from Sephiroth");
 			return;
 		}
 		if (chance >= 1) {
@@ -180,7 +180,7 @@ public class DailyNpc extends NPC {
 					new GroundItem(new Item(10835, 100), pos, player.getUsername(), false, 150, true, 200));
 			String itemName = (new Item(common).getDefinition().getName());
 			World.sendMessageNonDiscord(
-					"<img=11><col=FF0000>" + player.getUsername() + "received<col=eaeaea>[ " + itemName + "<col=eaeaea>]<col=FF0000>from Sephiroth");
+					"<img=12><col=FF0000>" + player.getUsername() + "received<col=eaeaea>[ " + itemName + "<col=eaeaea>]<col=FF0000>from Sephiroth");
 			return;
 		}
 

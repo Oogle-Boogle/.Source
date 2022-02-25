@@ -40,7 +40,7 @@ public class SupremeMysteryBox {
 			player.sendMessage("You got a uncommon reward");
 		} else if(chance >=90) {
 			player.getInventory().add(bestRewards[Misc.getRandom(bestRewards.length - 1)], 1);
-			World.sendMessageDiscord("<img=11>@blu@[Supreme Mystery Box] @red@"+player.getUsername().toString() + " @blu@Has just received a rare reward!.");
+			World.sendMessageDiscord("<img=12>@blu@[Supreme Mystery Box] @red@"+player.getUsername().toString() + " @blu@Has just received a rare reward!.");
 		}
 	}
 

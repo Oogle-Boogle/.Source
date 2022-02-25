@@ -85,7 +85,7 @@ public class CustomVoragoMultiDrop extends NPC {
 		setCurrent(instance);
 		// System.out.print("spawned.");
 
-		World.sendMessageNonDiscord("<img=11>@red@The Event NPC has spawned at the " + location.getLocation() + "!");
+		World.sendMessageNonDiscord("<img=12>@red@The Event NPC has spawned at the " + location.getLocation() + "!");
 	}
 
 	/**
@@ -162,7 +162,7 @@ public class CustomVoragoMultiDrop extends NPC {
 			String itemName = (new Item(superrare).getDefinition().getName());
 			String itemMessage = Misc.anOrA(itemName) + " " + itemName;
 			World.sendMessageNonDiscord(
-					"<img=11><col=FF0000>" + player.getUsername() + " received " + itemMessage + " from Fuzed Goku");
+					"<img=12><col=FF0000>" + player.getUsername() + " received " + itemMessage + " from Fuzed Goku");
 			return;
 		}
 
@@ -172,7 +172,7 @@ public class CustomVoragoMultiDrop extends NPC {
 			String itemName = (new Item(rare).getDefinition().getName());
 			String itemMessage = Misc.anOrA(itemName) + " " + itemName;
 			World.sendMessageNonDiscord(
-					"<img=11><col=FF0000>" + player.getUsername() + " received " + itemMessage + " From Fuzed Goku");
+					"<img=12><col=FF0000>" + player.getUsername() + " received " + itemMessage + " From Fuzed Goku");
 			return;
 		}
 		if (chance >= 0) {

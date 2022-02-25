@@ -37,7 +37,7 @@ public class DarkRanger extends NPC {
     /**
      * add your maps to that folder open me your client.java in client
      */
-    public static final DarkRangerLocations[] LOCATIONS = { new DarkRangerLocations(2212, 5100, 0, "<col=0999ad> <img=11> ::darkranger ") };
+    public static final DarkRangerLocations[] LOCATIONS = { new DarkRangerLocations(2212, 5100, 0, "<col=0999ad> <img=12> ::darkranger ") };
 
     /**
      *
@@ -87,7 +87,7 @@ public class DarkRanger extends NPC {
         setCurrent(instance);
         System.out.print("Dark Ranger has spawned..");
 
-        World.sendMessageDiscord("<img=11><col=bababa><shad=10>[<col=0999ad>BOSS<col=bababa>]<col=0999ad>Dark Ranger <col=00a745>has <shad=10>respawned <img=11> ::DarkRanger");
+        World.sendMessageDiscord("<img=12><col=bababa><shad=10>[<col=0999ad>BOSS<col=bababa>]<col=0999ad>Dark Ranger <col=00a745>has <shad=10>respawned <img=12> ::DarkRanger");
     }
 
     public static void handleDrop(NPC npc) {
@@ -167,7 +167,7 @@ public class DarkRanger extends NPC {
             String itemName = (new Item(superrare).getDefinition().getName());
             String itemMessage = Misc.anOrA(itemName) + " " + itemName;
             World.sendMessageNonDiscord(
-                    "<img=11><col=FF0000>" + player.getUsername() + " received<col=eaeaea><img=11>[ " + itemMessage + "<col=eaeaea>]<img=11><col=FF0000>from the Dark Ranger!");
+                    "<img=12><col=FF0000>" + player.getUsername() + " received<col=eaeaea><img=12>[ " + itemMessage + "<col=eaeaea>]<img=12><col=FF0000>from the Dark Ranger!");
             DiscordMessenger.sendRareDrop(player.getUsername(), " Just received " + itemMessage + " from the Dark Ranger!");
             return;
         }
@@ -178,7 +178,7 @@ public class DarkRanger extends NPC {
             String itemName = (new Item(rare).getDefinition().getName());
             String itemMessage = Misc.anOrA(itemName) + " " + itemName;
             World.sendMessageNonDiscord(
-                    "<img=11><col=FF0000>" + player.getUsername() + " received<img=11><col=eaeaea>[ " + itemMessage + "<col=eaeaea>]<img=11><col=FF0000> from the Dark Ranger!");
+                    "<img=12><col=FF0000>" + player.getUsername() + " received<img=12><col=eaeaea>[ " + itemMessage + "<col=eaeaea>]<img=12><col=FF0000> from the Dark Ranger!");
             DiscordMessenger.sendRareDrop(player.getUsername(), " Just received " + itemMessage + " from the Dark Ranger!");
             return;
         }
@@ -187,7 +187,7 @@ public class DarkRanger extends NPC {
                     new GroundItem(new Item(common, 1), pos, player.getUsername(), false, 150, true, 200));
             String itemName = (new Item(common).getDefinition().getName());
             World.sendMessageNonDiscord(
-                    "<img=11><col=FF0000>" + player.getUsername() + " received<col=eaeaea><img=11>[<col=07b481> " + itemName + "<col=eaeaea>]<img=11><col=FF0000> from the Dark Ranger!");
+                    "<img=12><col=FF0000>" + player.getUsername() + " received<col=eaeaea><img=12>[<col=07b481> " + itemName + "<col=eaeaea>]<img=12><col=FF0000> from the Dark Ranger!");
             DiscordMessenger.sendRareDrop(player.getUsername(), " Just received " + itemName + " from the Dark Ranger!");
             return;
         }

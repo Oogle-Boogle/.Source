@@ -86,7 +86,7 @@ public class TheCustomBoss extends NPC {
 		setCurrent(instance);
 		// System.out.print("spawned.");
 
-		World.sendMessageNonDiscord("<img=11>@red@The CustomBoss has spawned at the " + location.getLocation() + "!");
+		World.sendMessageNonDiscord("<img=12>@red@The CustomBoss has spawned at the " + location.getLocation() + "!");
 	}
 
 	/**
@@ -162,7 +162,7 @@ public class TheCustomBoss extends NPC {
 			String itemName = (superrare.getDefinition().getName());
 			String itemMessage = Misc.anOrA(itemName) + " " + itemName;
 			World.sendMessageNonDiscord(
-					"<img=11><col=FF0000>" + player.getUsername() + " received " + itemMessage + " from the Infernal Beast!");
+					"<img=12><col=FF0000>" + player.getUsername() + " received " + itemMessage + " from the Infernal Beast!");
 			return;
 		}
 
@@ -172,7 +172,7 @@ public class TheCustomBoss extends NPC {
 			String itemName = rare.getDefinition().getName();
 			String itemMessage = Misc.anOrA(itemName) + " " + itemName;
 			World.sendMessageNonDiscord(
-					"<img=11><col=FF0000>" + player.getUsername() + " received " + itemMessage + " from the Infernal Beast!");
+					"<img=12><col=FF0000>" + player.getUsername() + " received " + itemMessage + " from the Infernal Beast!");
 			return;
 		}
 		if (chance >= 0) {

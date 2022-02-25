@@ -113,7 +113,7 @@ public class PlayersOnlineInterface {
 		sendString(57010, "Time Played: @whi@"+Misc.getHoursPlayed((player2.getTotalPlayTime() + player2.getRecordedLogin().elapsed()))).sendString(57011, "Claimed: @whi@$"+player2.getAmountDonated()).
 		sendString(57012, "Game Mode: @whi@"+Misc.formatText(player2.getGameMode().name().toLowerCase())).sendString(57013, "Combat Level: @whi@"+player2.getSkillManager().getCombatLevel()).
 		sendString(57014, "Total Level: @whi@ "+player2.getSkillManager().getTotalLevel()).sendString(57015, "Slayer Points: @whi@"+player2.getPointsHandler().getSlayerPoints()).
-		sendString(57016, "Voting Points: @whi@"+player2.getPointsHandler().getVotingPoints()).sendString(57017, "Custom Pest Control Points: @whi@"+player2.getPointsHandler().getCustompestcontrolpoints()).
+		sendString(57016, "Voting Points: @whi@"+player2.getPointsHandler().getVotingPoints()).sendString(57017, "PestControl Points: @whi@"+player2.getPointsHandler().getCustompestcontrolpoints()).
 		sendString(57018, "Dung Tokens: @whi@"+player2.getPointsHandler().getDungeoneeringTokens()).sendString(57019, "Pk Points: @whi@"+player2.getPointsHandler().getPkPoints()).
 		sendString(57020, "Wild Streak: @whi@"+player2.getPlayerKillingAttributes().getPlayerKillStreak()).sendString(57021, "Player Kills: @whi@"+player2.getPlayerKillingAttributes().getPlayerKills()).
 		sendString(57022, "Wild Deaths: @whi@"+player2.getPlayerKillingAttributes().getPlayerDeaths()).sendString(57023, "Arena Victories: @whi@"+player2.getDueling().arenaStats[0]).

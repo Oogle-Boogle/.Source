@@ -148,9 +148,9 @@ public class StartScreen {
                 player.getUpdateFlag().flag(Flag.APPEARANCE);
                 PlayerPunishment.addIpToStarterList1(player.getHostAddress());
                 PlayerPunishment.addIpToStarter1(player.getHostAddress());
-                World.sendMessageNonDiscord("@blu@<img=11>[NEW PLAYER]@bla@: " + player.getUsername() + " has logged into Zamron for the first time!");
+                World.sendMessageNonDiscord("@blu@<img=12>[NEW PLAYER]@bla@: " + player.getUsername() + " has logged into Zamron for the first time!");
                 World.sendMessageNonDiscord(
-                        "<img=11>@blu@Please give them a warm welcome <3");
+                        "<img=12>@blu@Please give them a warm welcome <3");
                 
             } else if (PlayerPunishment.hasRecieved1stStarter(player.getHostAddress()) && !PlayerPunishment
                     .hasRecieved2ndStarter(player.getHostAddress())) {
@@ -166,9 +166,9 @@ public class StartScreen {
                 player.getUpdateFlag().flag(Flag.APPEARANCE);
                 PlayerPunishment.addIpToStarterList2(player.getHostAddress());
                 PlayerPunishment.addIpToStarter2(player.getHostAddress());
-                World.sendMessageNonDiscord("@blu@<img=11>[NEW PLAYER]@bla@: " + player.getUsername() + " has logged into Zamron for the first time!");
+                World.sendMessageNonDiscord("@blu@<img=12>[NEW PLAYER]@bla@: " + player.getUsername() + " has logged into Zamron for the first time!");
                 World.sendMessageNonDiscord(
-                        "<img=11>@blu@Please give them a warm welcome <3");
+                        "<img=12>@blu@Please give them a warm welcome <3");
                 
             } else if (PlayerPunishment.hasRecieved1stStarter(player.getHostAddress()) && PlayerPunishment
                     .hasRecieved2ndStarter(player.getHostAddress())) {
@@ -180,9 +180,9 @@ public class StartScreen {
                 player.setNewPlayer(false);
                 player.getUpdateFlag().flag(Flag.APPEARANCE);
                 player.getPacketSender().sendMessage("You've recieved to many starters.");
-                World.sendMessageNonDiscord("@blu@<img=11>[NEW PLAYER]@bla@: " + player.getUsername() + " has logged into Zamron for the first time!");
+                World.sendMessageNonDiscord("@blu@<img=12>[NEW PLAYER]@bla@: " + player.getUsername() + " has logged into Zamron for the first time!");
                 World.sendMessageNonDiscord(
-                        "<img=11>@blu@Please give them a warm welcome <3");
+                        "<img=12>@blu@Please give them a warm welcome <3");
                 
             } else if (PlayerPunishment.hasRecieved1stStarter(player.getHostAddress()) && !PlayerPunishment
                     .hasRecieved2ndStarter(player.getHostAddress())) {
@@ -198,9 +198,9 @@ public class StartScreen {
                 player.getUpdateFlag().flag(Flag.APPEARANCE);
                 PlayerPunishment.addIpToStarterList2(player.getHostAddress());
                 PlayerPunishment.addIpToStarter2(player.getHostAddress());
-                World.sendMessageNonDiscord("@blu@<img=11>[NEW PLAYER]@bla@: " + player.getUsername() + " has logged into Zamron for the first time!");
+                World.sendMessageNonDiscord("@blu@<img=12>[NEW PLAYER]@bla@: " + player.getUsername() + " has logged into Zamron for the first time!");
                 World.sendMessageNonDiscord(
-                        "<img=11>@blu@Please give them a warm welcome <3");
+                        "<img=12>@blu@Please give them a warm welcome <3");
                 
             }
             player.getPacketSender().sendRights();
