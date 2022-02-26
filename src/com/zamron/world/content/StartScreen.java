@@ -13,6 +13,8 @@ import com.zamron.world.entity.impl.player.Player;
  *
  * @author Joey wijers
  */
+
+//item 5092 ironman cape
 public class StartScreen {
     public enum GameModes {
         //NORMAL("Normal", 52761,-12780, 1, 0, new Item[] { new Item(2441, 10), new Item(2437, 10), new Item(2443, 10), new Item(3025, 10), new Item(392, 200), new Item(10835, 1), (new Item (18928, 1)), (new Item (896, 1)), (new Item (15243, 100)), (new Item (15373, 1)),(new Item (927, 1)), (new Item (928, 1)),(new Item (1639, 1)), (new Item (15037, 1)), (new Item (15118, 1)),   (new Item (13867, 1)), (new Item (929, 1)), (new Item (4767, 1)), (new Item (11142, 1)), (new Item (7806, 1))}, "As a normal player you will be able to", "play the game without any restrictions.", "", "", "", "", ""),
@@ -30,28 +32,27 @@ public class StartScreen {
                 "x25", "x150"),
         IRONMAN("  Ironman", 52762, -12779, 1, 1, new Item[]{
                 new Item(2441, 10), new Item(2437, 10), new Item(2443, 10), new Item(3025, 10),
-                new Item(392, 200), new Item(10835, 1), new Item(18928, 1), new Item(896, 1),
+                new Item(392, 200), new Item(10835, 1), new Item(896, 1),
                 new Item(15243, 100), new Item(15373, 1), new Item(927, 1), new Item(928, 1),
                 new Item(1639, 1), new Item(15037, 1), new Item(15118, 1), new Item(13867, 1),
-                new Item(929, 1), new Item(4767, 1), new Item(7806, 1)//
+                new Item(929, 1), new Item(4767, 1), new Item(7806, 1), new Item(5092, 1)
         },
-
                 "Play Zamron as an Iron man.", "You will be restricted from trading,", " staking and looting items from killed players.", "You will not get a npc drop,", " if another player has done more damage.", "You will have to rely on your starter, skilling, pvming, and shops.", "This game mode is for players that love a challenge.", "", "", ""),
 
         ULTIMATE_IRON("  Ultimate Iron", 52763, -12778, 1, 2, new Item[]{
                 new Item(2441, 10), new Item(2437, 10), new Item(2443, 10), new Item(3025, 10),
-                new Item(392, 200), new Item(10835, 1), new Item(18928, 1), new Item(896, 1),
+                new Item(392, 200), new Item(10835, 1), new Item(896, 1),
                 new Item(15243, 100), new Item(15373, 1), new Item(927, 1), new Item(928, 1),
                 new Item(1639, 1), new Item(15037, 1), new Item(15118, 1), new Item(13867, 1),
-                new Item(929, 1), new Item(4767, 1), new Item(7806, 1),}//
+                new Item(929, 1), new Item(4767, 1), new Item(7806, 1), new Item(5092, 1)}//
                 , "Play Zamron as a Ultimate Ironman.", "In addiction to the iron man rules,", " you cannot use banks.", "This gamemode is for the players,", " that love the impossible.", "", "", "", "", ""),
 
         GROUP_IRONMAN("  Group ironman", 50773, -14763, 1, 3, new Item[]{
                 new Item(2441, 10), new Item(2437, 10), new Item(2443, 10), new Item(3025, 10),
-                new Item(392, 200), new Item(10835, 1), new Item(18928, 1), new Item(896, 1),
+                new Item(392, 200), new Item(10835, 1), new Item(896, 1),
                 new Item(15243, 100), new Item(15373, 1), new Item(927, 1), new Item(928, 1),
                 new Item(1639, 1), new Item(15037, 1), new Item(15118, 1), new Item(13867, 1),
-                new Item(929, 1), new Item(4767, 1), new Item(7806, 1)//
+                new Item(929, 1), new Item(4767, 1), new Item(7806, 1), new Item(5092, 1)//
         },
 
                 "Play Zamron as an Group Iron man.", "You will be restricted from trading,", " staking and looting items from killed players.", "You will not get a npc drop,", " if another player has done more damage.", "You will have to rely on your starter, skilling, pvming, and shops.", "This game mode is for players that love a challenge.", "", "", "");

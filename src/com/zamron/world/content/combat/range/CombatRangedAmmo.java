@@ -24,8 +24,8 @@ public class CombatRangedAmmo {
 		MAPLE_SHORTBOW(new int[] {853}, new AmmunitionData[] {AmmunitionData.FRACTITIE_ARROW}, RangedWeaponType.SHORTBOW),
 		YEW_LONGBOW(new int[] {855}, new AmmunitionData[] {AmmunitionData.FRACTITIE_ARROW}, RangedWeaponType.LONGBOW),
 		YEW_SHORTBOW(new int[] {857}, new AmmunitionData[] {AmmunitionData.FRACTITIE_ARROW}, RangedWeaponType.SHORTBOW),
-		MAGIC_LONGBOW(new int[] {859}, new AmmunitionData[] {AmmunitionData.DRAGON_ARROW}, RangedWeaponType.LONGBOW),
-		MAGIC_SHORTBOW(new int[] {4312, 3666, 3072, 3069, 3663, 3074, 18965, 861, 6724}, new AmmunitionData[] {AmmunitionData.DRAGON_ARROW}, RangedWeaponType.SHORTBOW),
+		MAGIC_LONGBOW(new int[] {859}, new AmmunitionData[] {AmmunitionData.DRAGON_ARROW, AmmunitionData.KRATONITE_ARROW}, RangedWeaponType.LONGBOW),
+		MAGIC_SHORTBOW(new int[] {4312, 3666, 3072, 3069, 3663, 3074, 18965, 861, 6724}, new AmmunitionData[] {AmmunitionData.DRAGON_ARROW, AmmunitionData.KRATONITE_ARROW, AmmunitionData.FRACTITIE_ARROW}, RangedWeaponType.SHORTBOW),
 		GODBOW(new int[] {19143, 19149, 19146}, new AmmunitionData[] {AmmunitionData.DRAGON_ARROW}, RangedWeaponType.SHORTBOW),
 		
 		TOXIC_BLOWPIPE(new int[] {12926}, new AmmunitionData[] {AmmunitionData.BLOWPIPE}, RangedWeaponType.BLOWPIPE),
