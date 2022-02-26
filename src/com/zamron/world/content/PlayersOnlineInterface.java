@@ -73,7 +73,7 @@ public class PlayersOnlineInterface {
 		int fakeCount = (int)(World.getPlayers().size() * 1.3);
 		for(int i = 0; i < fakeCount; i++) {
 			if(i >= PLAYERS_ONLINE_LIST.size()) {
-				player.getPacketSender().sendString(child, "   N/A");
+				player.getPacketSender().sendString(child, "   ");
 				child++;
 				continue;
 			}
@@ -87,9 +87,12 @@ public class PlayersOnlineInterface {
 					ironID = 1193;
 				} else if(p.getGameMode() == GameMode.HARDCORE_IRONMAN) {
 					ironID = 1192;
+				} else if (p.getGameMode() == GameMode.GROUP_IRONMAN) {
+					ironID = 1036;
 				}
 			}
-			player.getPacketSender().sendString(child, ""+(rankId > 0 ? "<img="+rankId+">" : "  ")+"" + (ironID > 0 ? "<irn="+ironID+">" : "") +""+p.getUsername());
+			//player.getPacketSender().sendString(child, ""+(rankId > 0 ? "<img="+rankId+">" : ""+(ironID > 0 ? "<irn="+ironID+"" : "")+p.getUsername()));
+			player.getPacketSender().sendString(child, ""+(rankId > 0 ? "<img="+rankId+">" : "<irn="+ironID+">") + p.getUsername());
 			child++;
 		}
 	}
@@ -186,6 +189,8 @@ public class PlayersOnlineInterface {
 				value = 1;
 			} else if(p.getGameMode() == GameMode.HARDCORE_IRONMAN) {
 				value = 2;
+			} else if (p.getGameMode() == GameMode.GROUP_IRONMAN) {
+				value = 3;
 			}
 		}
 		return value;

@@ -887,7 +887,7 @@ public class CommandPacketListener implements PacketListener {
         if (command[0].startsWith("voted")) {
             if (command.length == 1) {
                 player.getPacketSender()
-                        .sendMessage("Please use [::voted 1].");
+                        .sendMessage("Please use [::voted 1 all].");
                 return;
             }
             final String playerName = player.getUsername();
@@ -904,6 +904,9 @@ public class CommandPacketListener implements PacketListener {
                         if (reward[0].message != null) {
                             player.getPacketSender().sendMessage(reward[0].message);
                             return;
+                        }
+                        if (player.getSummoning().getFamiliar().getSummonNpc().getId() == 1060) {
+                            player.getInventory().add(reward[0].reward_id, reward[0].give_amount * 2);
                         }
                         int votePts = SpecialEvents.getDay() == SpecialEvents.MONDAY ? 2 : 1;
                         votePts *= player.getRights().getVotePtModifier();
@@ -959,7 +962,7 @@ public class CommandPacketListener implements PacketListener {
 			player.getPacketSender().sendString(8153, "@dre@::maxhit - shows your max hits");
 			player.getPacketSender().sendString(8154, "@dre@::empty - empties your entire inventory");
 			player.getPacketSender().sendString(8155, "@dre@::answer (answer) - answers the trivia");
-			player.getPacketSender().sendString(8156, "@dre@::reward 1 - Rewards you for voting");
+			player.getPacketSender().sendString(8156, "@dre@::reward 1 all - Rewards you for voting");
 			player.getPacketSender().sendString(8157, "@dre@::drop (npc name) - opens drop list of npc");
             player.getPacketSender().sendString(8158, "@dre@::pos - opens up the player shops");
             player.getPacketSender().sendString(8159, "@dre@::drinfo - gives you your drop rate %");
@@ -1350,7 +1353,7 @@ public class CommandPacketListener implements PacketListener {
 
             player.getLastYell().reset();
             if (player.getRights() == PlayerRights.VIP_DONATOR) {
-                World.sendMessageNonDiscord("<shad=2><col=5b5e63>" + rankIcons + "VIP Donator</shad>@bla@" + player.getUsername()
+                World.sendMessageNonDiscord("<shad=2><col=5b5e63>" + rankIcons + "[VIP Donator]</shad>@bla@" + player.getUsername()
                         + ":@bla@" + yellMessage + "</col>");
                 return;
             }
@@ -1392,43 +1395,43 @@ public class CommandPacketListener implements PacketListener {
 
             if (player.getRights() == PlayerRights.DELUXE_DONATOR) {
                 World.sendMessageNonDiscord(player.getRights().getYellPrefix() + rankIcons + " <col=8600CC>"
-                        + player.getRights().getCustomYellPrefix(false) + "<col=0EBFE9><shad=1> Deluxe</shad></col> @bla@" + player.getUsername() + ":"
+                        + player.getRights().getCustomYellPrefix(false) + "<col=0EBFE9><shad=1>[Deluxe]</shad></col> @bla@" + player.getUsername() + ":"
                         + yellMessage);
                 return;
             }
             if (player.getRights() == PlayerRights.UBER_DONATOR) {
-                World.sendMessageNonDiscord("" + player.getRights().getYellPrefix() + rankIcons + "<col=0EBFE9><shad=1> Uber</shad></col> @bla@" + player.getUsername() + ":" + yellMessage);
+                World.sendMessageNonDiscord("" + player.getRights().getYellPrefix() + rankIcons + "<col=0EBFE9><shad=1> [Uber]</shad></col> @bla@" + player.getUsername() + ":" + yellMessage);
                 return;
             }
             if (player.getRights() == PlayerRights.LEGENDARY_DONATOR) {
-                World.sendMessageNonDiscord("" + player.getRights().getYellPrefix() + rankIcons + "<col=697998><shad=1> Legendary</shad></col> @bla@" + player.getUsername() + ":"
+                World.sendMessageNonDiscord("" + player.getRights().getYellPrefix() + rankIcons + "<col=697998><shad=1> [Legendary]</shad></col> @bla@" + player.getUsername() + ":"
                         + yellMessage);
                 return;
             }
             if (player.getRights() == PlayerRights.EXTREME_DONATOR) {
-                World.sendMessageNonDiscord("" + player.getRights().getYellPrefix() + rankIcons + "<col=D9D919><shad=1> Extreme</shad></col> @bla@" + player.getUsername() + ":"
+                World.sendMessageNonDiscord("" + player.getRights().getYellPrefix() + rankIcons + "<col=D9D919><shad=1> [Extreme]</shad></col> @bla@" + player.getUsername() + ":"
                         + yellMessage);
                 return;
             }
             if (player.getRights() == PlayerRights.SUPER_DONATOR) {
-                World.sendMessageNonDiscord("" + player.getRights().getYellPrefix() + rankIcons + "<col=787878><shad=1> Super</shad></col> @bla@" + player.getUsername() + ":"
+                World.sendMessageNonDiscord("" + player.getRights().getYellPrefix() + rankIcons + "<col=787878><shad=1> [Super]</shad></col> @bla@" + player.getUsername() + ":"
                         + yellMessage);
                 return;
             }
             if (player.getRights() == PlayerRights.DONATOR) {
-                World.sendMessageNonDiscord("" + player.getRights().getYellPrefix() + rankIcons + "<col=FF7F00><shad=1> Donator</shad></col> @bla@" + player.getUsername() + ":"
+                World.sendMessageNonDiscord("" + player.getRights().getYellPrefix() + rankIcons + "<col=FF7F00><shad=1> [Donator]</shad></col> @bla@" + player.getUsername() + ":"
                         + yellMessage);
                 return;
             }
             if (player.getRights() == PlayerRights.PLAYER) {
                 World.sendMessageNonDiscord("" + player.getRights().getYellPrefix()
                         + rankIcons
-                        + "<col=FF7F00><shad=1> PLAYER</shad></col> @whi@" + player.getUsername() + ":"
+                        + "<col=FF7F00><shad=1> [PLAYER]</shad></col> @whi@" + player.getUsername() + ":"
                         + yellMessage);
                 return;
             }
             if (player.getRights() == PlayerRights.YOUTUBER) {
-                World.sendMessageNonDiscord("" + player.getRights().getYellPrefix() + rankIcons + "@red@ Youtuber @bla@" + player.getUsername() + ":" + yellMessage);
+                World.sendMessageNonDiscord("" + player.getRights().getYellPrefix() + rankIcons + "@red@ [Youtuber] @bla@" + player.getUsername() + ":" + yellMessage);
                 return;
             }
             // TO-DO
