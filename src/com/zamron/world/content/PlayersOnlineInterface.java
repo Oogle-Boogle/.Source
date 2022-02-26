@@ -92,7 +92,7 @@ public class PlayersOnlineInterface {
 				}
 			}
 			//player.getPacketSender().sendString(child, ""+(rankId > 0 ? "<img="+rankId+">" : ""+(ironID > 0 ? "<irn="+ironID+"" : "")+p.getUsername()));
-			player.getPacketSender().sendString(child, ""+(rankId > 0 ? "<img="+rankId+">" : "<irn="+ironID+">") + p.getUsername());
+			player.getPacketSender().sendString(child, ""+(rankId > 0 ? "<img="+rankId+">" : "") + p.getUsername());
 			child++;
 		}
 	}
