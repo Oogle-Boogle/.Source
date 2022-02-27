@@ -21,7 +21,6 @@ public class PetPerkData {
 			{815, 0, 1.5, 1.5, true, 1.25, 2.0},//Zorbak
 			{816, 0, 1.5, 1.5, true, 1.25, 2.0},//Stoned toad
 			{755, 0, 1.5, 1.5, true, 3.0, 2.0},//Cookie monster
-
 	};
 	
 	public static boolean hasPerks(int petId) {

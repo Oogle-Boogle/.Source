@@ -453,7 +453,7 @@ public class DropUtils {
 				totalBonus += 5.0;
 				break;
 			case GROUP_IRONMAN:
-				totalBonus += 7.5;
+				totalBonus += 5.0;
 				break;
 			default:
 				break;
