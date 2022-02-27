@@ -516,21 +516,25 @@ public class NPCDrops { //LOL
 		if (pet != null && PetPerkData.hasLootEffect(pet.getSummonNpc().getId())) {
 			if (dropPerks || scrollDrop) {
 				player.getBank(0).add(item.getId(), item.getAmount() * 2);
+				player.getGroupIronmanGroup().addItem(player, item.getId(), item.getAmount() * 2);
 				player.sendMessage("Added " + item.getDefinition().getName() + " to your bank because of pet perk.");
 				return;
 			}
 			player.getBank(0).add(item.getId(), item.getAmount());
+			player.getGroupIronmanGroup().addItem(player, item.getId(), item.getAmount());
 			player.sendMessage("Added " + item.getDefinition().getName() + " to your bank because of pet perk.");
 			return;
 		}
 		if (isWearingCollectorUpgraded && !player.getBlockedCollectorsList().contains(item.getId())) {
 			if (dropPerks || scrollDrop) {
 				player.getBank(0).add(item.getId(), item.getAmount() * 2);
+				player.getGroupIronmanGroup().addItem(player, item.getId(), item.getAmount() * 2);
 				player.sendMessage("@red@Your Collector has picked up @blu@" + item.getAmount() * 2 + "x "
 						+ item.getDefinition().getName() + " @red@and added them to your bank!");
 				return;
 			}
 			player.getBank(0).add(item.getId(), item.getAmount());
+			player.getGroupIronmanGroup().addItem(player, item.getId(), item.getAmount());
 			player.sendMessage("@red@Your Collector has picked up @blu@" + item.getAmount() + "x "
 					+ item.getDefinition().getName() + " @red@and added them to your bank!");
 			return;
