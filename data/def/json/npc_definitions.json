@@ -62333,7 +62333,7 @@
 				  "deathAnim": 10924,
 			    "attackBonus": 1200,
 			    "defenceMelee": 1200,
-			    "defenceRange": 1200,
+			    "defenceRange": 2147000000,
 			    "defenceMage": 1200
 			  },
 			  {

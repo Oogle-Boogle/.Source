@@ -8,11 +8,11 @@ import com.zamron.world.entity.impl.player.Player;
 
 public enum SlayerMaster {
 	
-	VANNAKA(1, 1597, new Position(2325, 3671)),
-	DURADEL(50, 8275, new Position(2325, 3671)),
-	KURADEL(80, 9085, new Position(2325, 3671)),
-	SUMONA(92, 7780, new Position(2325, 3671)),
-	BRAVEK(99, 3212, new Position(2325, 3671));
+	VANNAKA(1, 1597, new Position(2585, 3104)),
+	DURADEL(50, 8275, new Position(2585, 3104)),
+	KURADEL(80, 9085, new Position(2585, 3104)),
+	SUMONA(92, 7780, new Position(2585, 3104)),
+	BRAVEK(99, 3212, new Position(2585, 3104));
 	
 	private SlayerMaster(int slayerReq, int npcId, Position telePosition) {
 		this.slayerReq = slayerReq;

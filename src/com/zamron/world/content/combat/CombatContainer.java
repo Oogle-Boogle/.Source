@@ -122,17 +122,17 @@ public class CombatContainer {
  			}
 		}
 		if (attacker.isPlayer()) {
-			if (((Player)attacker).getEquipment().containsAny( 5131,6197,923,5130,19720,13207,5132,15653,5089,5173,5195,15656, 4059, 13201, 3072)) {
+			if (((Player)attacker).getEquipment().containsAny( 3651,18385,7682,7688,19620,19123,6930,3276,16550,5115,18683,1667,2543,6320,13094,6483,5131,6197,923,5130,13207,5132,15653,5195, 13201, 3072,14559,3941,896,5125,5130,5134,5195,5129,19618)) {
 				hitAmount = 2; //Client doesn't support more than 4
  			}
 		}
 		if (attacker.isPlayer()) {
-			if (((Player)attacker).getEquipment().containsAny( 5129,19618,19163,9492,2760,19727,4796,8664,18931,13995,10905,19154,8656,20427 )) {
+			if (((Player)attacker).getEquipment().containsAny( 19163,16429,18398,3250,3279,3282,8001,9492,2760,19727,10905,19154,3072,6197,19720,5132,5089,3991,5133,15656,2760)) {
 				hitAmount = 3; //Client doesn't support more than 4
  			}
 		}
 		if (attacker.isPlayer()) {
-			if (((Player)attacker).getEquipment().containsAny( 6320,1413,3920,22196, 3077, 8654, 8655, 8656)) {
+			if (((Player)attacker).getEquipment().containsAny( 1413,3274,3920,22196, 3077, 8654, 8655, 8656,923,3990,5081,18919,8664,4796,18931,13995,20427, 4059)) {
 				hitAmount = 4; //Client doesn't support more than 4
  			}
 		}

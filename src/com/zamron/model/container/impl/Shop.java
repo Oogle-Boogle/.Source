@@ -1159,8 +1159,14 @@ public class Shop extends ItemContainer {
 					case 4058:
 					case 4059:
 						return new Object[]{150000, "Boss Points"};
-					case 8655:
-						return new Object[]{1500000, "Boss Points"};
+					case 15357:
+					case 15361:
+					case 15362:
+						return new Object[]{200000, "Boss Points"};
+					case 15358:
+					case 15359:
+					case 15363:
+						return new Object[] {285000, "Boss Points"};
 				}
 			} else if (shop == LOYALTYPOINT_STORE) {
 				switch (item) {

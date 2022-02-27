@@ -18,10 +18,10 @@ public class DropUtils {
 			{19776, 2}, // 2% swanky boots
 			{19821, 2}, // 2% swanky boots
 
-			{9503, 2}, // 5% dr blessed amulet
-			{18402, 2}, // 5% dr blazed wings
-			{18750, 2}, // 5% dr demonic olm partyhat
-			{18751, 2}, // 5% dr demonic olm gloves
+			{9503, 2}, // 2% dr blessed amulet
+			{18402, 2}, // 2% dr blazed wings
+			{18750, 2}, // 2% dr demonic olm partyhat
+			{18751, 2}, // 2% dr demonic olm gloves
 
 			{20016, 0, 5}, // 0.5% DR Tier 1 item
 			{20017, 0, 5}, // 0.5% DR Tier 1 item

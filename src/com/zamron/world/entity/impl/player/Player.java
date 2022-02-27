@@ -2031,16 +2031,10 @@ public class Player extends Character {
 		int speed = weapon.getSpeed();
 		int weaponId = equipment.get(Equipment.WEAPON_SLOT).getDefinition().getId();
 
-		if (weaponId == 5129
-				|| weaponId == 19618
-				|| weaponId == 19163
+		if (weaponId == 19618
 				|| weaponId == 9492
 				|| weaponId == 2760
 				|| weaponId == 19727
-				|| weaponId == 4796
-				|| weaponId == 8664
-				|| weaponId == 18931
-				|| weaponId == 13995
 				|| weaponId == 10905
 				|| weaponId == 19154
 				|| weaponId == 8656
@@ -2053,18 +2047,26 @@ public class Player extends Character {
 				|| weaponId == 8655
 				|| weaponId == 8654
 				|| weaponId == 3077
+
+				|| weaponId == 3072
+				|| weaponId == 5089
+				|| weaponId == 3991
+				|| weaponId == 18919
+				|| weaponId == 3651
+				|| weaponId == 3274
+				|| weaponId == 19123
+				|| weaponId == 3282
+				|| weaponId == 19620
+				|| weaponId == 18398
+				|| weaponId == 16429
 		) {
 			return 1;
 		}
 		if (weaponId == 5131
-				|| weaponId == 6197
-				|| weaponId == 923
 				|| weaponId == 5130
 				|| weaponId == 19720
-				|| weaponId == 13207
 				|| weaponId == 5132
 				|| weaponId == 15653
-				|| weaponId == 5089
 				|| weaponId == 5173
 				|| weaponId == 5195
 				|| weaponId == 15656
@@ -2073,20 +2075,50 @@ public class Player extends Character {
 				|| weaponId == 13201
 				|| weaponId == 16550
 				|| weaponId == 3275
+
+				|| weaponId == 3951
+				|| weaponId == 14559
+				|| weaponId == 3941
+				|| weaponId == 3990
+				|| weaponId == 5081
+				|| weaponId == 5125
+				|| weaponId == 5133
+				|| weaponId == 5134
+				|| weaponId == 5129
+				|| weaponId == 19163
+				|| weaponId == 8664
+				|| weaponId == 4796
+				|| weaponId == 18931
+				|| weaponId == 13995
+				|| weaponId == 6483
+				|| weaponId == 13094
+				|| weaponId == 18865
+				|| weaponId == 2543
+				|| weaponId == 18683
+				|| weaponId == 5115
+				|| weaponId == 3276
+				|| weaponId == 6930
+				|| weaponId == 8001
+				|| weaponId == 3279
+				|| weaponId == 3250
+				|| weaponId == 7682
+				|| weaponId == 7688
+				|| weaponId == 18385
 		) {
 			return 2;
 		}
 		if (weaponId == 3082
 				|| weaponId == 14006
 				|| weaponId == 3928
-				|| weaponId == 18865
+
 				|| weaponId == 19468
 				|| weaponId == 16137
-				|| weaponId == 3951
-				|| weaponId == 14559
 				|| weaponId == 7806
-				|| weaponId == 3941
-				|| weaponId == 3072
+				|| weaponId == 6197
+				|| weaponId == 923
+				|| weaponId == 13207
+				|| weaponId == 896
+				|| weaponId == 1667
 		) {
 			return 3;
 		}
