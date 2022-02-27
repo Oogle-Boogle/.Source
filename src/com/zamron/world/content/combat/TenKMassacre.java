@@ -3,6 +3,7 @@ package com.zamron.world.content.combat;
 import com.zamron.model.Item;
 import com.zamron.util.Misc;
 import com.zamron.world.World;
+import com.zamron.world.content.PlayerPanel;
 import com.zamron.world.entity.impl.player.Player;
 
 import java.util.ArrayList;
@@ -33,9 +34,9 @@ public class TenKMassacre {
         //System.out.println("Player "+possibleWinner.getUsername() + " Added to 10kMassacre list after "+numberOfKills+" kills");
         if (CURRENT_SERVER_KILLS <= REQUIRED_SERVER_KILLS) {
             CURRENT_SERVER_KILLS += numberOfKills;
-            //System.out.println("CURRENT SERVER KILLS = "+CURRENT_SERVER_KILLS);
+            System.out.println("CURRENT SERVER KILLS = "+CURRENT_SERVER_KILLS);
             POSSIBLE_WINNERS.add(possibleWinner.getUsername());
-            //updateQuestTab();
+            updateQuestTab();
         } else {
             pickWinner();
             restartGame();
@@ -66,18 +67,13 @@ public class TenKMassacre {
                 winnerReceivedReward = false;
                 //System.out.println("User "+lastWinnerName+" is Offline");
             }
-            if (winningPlayer != null && !winnerReceivedReward) { //If player is online and winner hasn't been rewarded yet
-                //System.out.println("Reward player reached part 2");
-                //TODO CHANGE THE GLOBAL MESSAGE BELOW TO SOMETHING YOU LIKE
+            if (winningPlayer != null && !winnerReceivedReward) {
                 String rewardMessage = ("<img=12><col=bababa>[<col=0999ad><shad=200>TenKMassacre<col=bababa>] " + winningPlayer.getUsername() + " has won " + reward.getAmount() + " x " + reward.getDefinition().getName() + " from TenKMassacre.");
-                int freeInvSlots = winningPlayer.getInventory().getFreeSlots();
                 //IF THE PLAYER IS ONLINE...
                     winningPlayer.getBank().add(reward);
                     World.sendMessageNonDiscord(rewardMessage);
                     winnerReceivedReward = true;
                     restartGame();
-                    winningPlayer.getPacketSender().sendMessage("You won the 10k Massacre prize! Free up some invent space and relog to claim.");
-                    winnerReceivedReward = false;
                 }
         } catch (Exception e) {
             //System.out.println("Winner of 10k Massacre was offline.");
@@ -87,6 +83,7 @@ public class TenKMassacre {
     public static void checkOnLogin(Player player) {
         if (!winnerReceivedReward && player.getUsername().equalsIgnoreCase(lastWinnerName)) {
                 rewardPlayer(player);
+                winnerReceivedReward = true;
         }
     }
 

@@ -17,18 +17,18 @@ public enum RaidDifficulty {
 
 
 	EASY(3042, 5212, "Easy raid", new Item[] {new Item(10835, 500), new Item(15334, 1), new Item(18346, 1)},  //Common Rewards
-            new Item[]{new Item(1499), new Item(3973), new Item(926 ,1), new Item(3985), new Item(19776), new Item(20693), new Item(15220, 1),
+            new Item[]{new Item(1499), new Item(3973), new Item(926 ,1), new Item(3985), new Item(20693), new Item(15220, 1),
             new Item(20694), new Item(2749, 1), new Item(2750, 1), new Item(2751, 1), new Item(2752, 1),
             new Item(2753, 1), new Item(2754, 1), new Item(2755, 1),
             new Item(19721, 1), new Item(19722, 1), new Item(19723, 1), new Item(19724, 1), new Item(19725, 1),
                     new Item(19734, 1), new Item(19736, 1), new Item(3951, 1), new Item(19720, 1),
                     new Item(4770, 1), new Item(4771, 1), new Item(4772, 1), new Item(5131, 1), new Item(6733, 1),
                     new Item(6583, 1), new Item(15653, 1), new Item(5132, 1), new Item(19935, 1)
-            },75, "@gre@Easy raid"), //Rare Rewards
+            },85, "@gre@Easy raid"), //Rare Rewards
 
     MEDIUM(3042, 5212, "Medium raid", new Item[] {new Item(1499), new Item(3973), new Item(926 ,1), new Item(3985), new Item(19776), new Item(20693), new Item(15220, 1),
             new Item(20694), new Item(2749, 1), new Item(2750, 1), new Item(2751, 1), new Item(2752, 1),
-            new Item(2753, 1), new Item(2754, 1), new Item(2755, 1),
+            new Item(2753, 1), new Item(2754, 1), new Item(2755, 1), new Item(19776),
             new Item(19721, 1), new Item(19722, 1), new Item(19723, 1), new Item(19724, 1), new Item(19725, 1),
             new Item(19734, 1), new Item(19736, 1), new Item(3951, 1), new Item(19720, 1),
             new Item(4770, 1), new Item(4771, 1), new Item(4772, 1), new Item(5131, 1), new Item(6733, 1),
@@ -40,17 +40,23 @@ public enum RaidDifficulty {
                     new Item(923),new Item(3994),new Item(3995),new Item(3996), new Item(12426, 1), new Item(20054, 1),
                     new Item(20695), new Item(6583, 1), new Item(12601, 1), new Item(3908, 1), new Item(3909, 1),
                     new Item(3910, 1), new Item(19004, 1), new Item(19935, 1), new Item(19936, 1)
-                    },80, "@red@Medium raid"), //Rare Rewards 15% chance
+                    },90, "@red@Medium raid"), //Rare Rewards 15% chance
 
-    HARD(3042, 5212, "Hard raid", new Item[] {new Item(10835, 5000), new Item(20260, 10)}, //Common Rewards
+    HARD(3042, 5212, "Hard raid", new Item[] {new Item(10835, 5000), new Item(20260, 10),new Item(14559),new Item(18750),new Item(18751),new Item(5131),new Item(4770),new Item(4772),new Item(5209),
+            new Item(923),new Item(3994),new Item(3995),new Item(3996), new Item(20054, 1), new Item(20695), new Item(6583, 1), new Item(12601, 1), new Item(3908, 1), new Item(3909, 1),
+            new Item(12845, 3), new Item(12846, 3), new Item(12847, 3)},//Common Rewards
+
+
+
+            //Rare rewards
             new Item[]{ new Item(19159),new Item(19160),new Item(19161), new Item(19163),new Item(19164),new Item(19166),
                     new Item(19469), new Item(20427), new Item(20431), new Item(20700), new Item(3820, 1), new Item(3821, 1),
-                    new Item(3822, 1), new Item(9104, 1), new Item(1413, 1), new Item(3313, 1), new Item(3314, 1),
-                    new Item(3315, 1), new Item(38818, 1), new Item(3322, 1), new Item(22196, 1), new Item(22197, 1),
-                    new Item(22198, 1), new Item(22199, 1), new Item(22200, 1), new Item(22201, 1), new Item(22202, 1),
-                    new Item(22203, 1), new Item(19936, 1), new Item(19937, 1), new Item(19938, 1)
+                    new Item(3822, 1), new Item(9104, 1), new Item(19936, 1), new Item(19937, 1), new Item(19938, 1),
 
-            },90, "@red@Hard raid"); //Rare Rewards 10% chance to win.
+                    new Item(18391, 1), new Item(12848, 1), new Item(12845, 100), new Item(12846, 100), new Item(12847, 100),
+                    new Item(8644, 1), new Item(8654, 1), new Item(8655, 1), new Item(8656, 1), new Item(3458, 1)
+
+            },95, "@red@Hard raid"); //Rare Rewards 10% chance to win.
 
     RaidDifficulty(int x, int y, String description, Item[] commonRewards, Item[] rareRewards, int rareChance, String name) {
         this.x = x;

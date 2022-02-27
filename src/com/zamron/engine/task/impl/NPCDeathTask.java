@@ -216,19 +216,6 @@ public class NPCDeathTask extends Task {
 						String pnts = killer.getBossPoints() == 15 ? "Point" : "Points";
 						killer.sendMessage("<img=0>You now have @red@" + killer.getBossPoints() + " Boss " + pnts + "!");
 					}
-
-					//Add here
-
-					if (npc.getId() == 4541 && killer.getcustomOlmKC() < 99) {
-						killer.incrementCustomOlmKC(1);
-						killer.sendMessage(
-								"@red@You now have: @blu@" + killer.getcustomOlmKC() + " Custom Olm Kill-count");
-					}
-					if (killer.getcustomOlmKC() == 99) {
-						killer.setCustomOlmKC(0);
-						killer.getInventory().add(19100, 1);
-						killer.sendMessage("@red@Enjoy the key");
-					}
 					
 					killer.addNpcKillCount(npc.getId());
 					killer.getStarterProgression().handleKill(npc.getId());
@@ -249,7 +236,6 @@ public class NPCDeathTask extends Task {
 							killer.getInventory().add(10835, 1);
 							//killer.sendMessage("@red@You received 1x Tax Bag for killing this NPC");
 						}
-
 
 						// expcustomskill
 						if (killer.getOldRaidParty() == null && !(npc instanceof RaidNpc)) {
@@ -307,7 +293,6 @@ public class NPCDeathTask extends Task {
 							killer.sendMessage("You get some Tokens for Frankenstiens Minigame");
 							killer.giveItem(8851, 10);
 						}
-
 
 						int easyAmount = Misc.random(10);
 						if ((killer.getInventory().contains(CASH) || killer.getInventory().getFreeSlots() > 0)) {

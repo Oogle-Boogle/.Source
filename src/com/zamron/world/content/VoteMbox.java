@@ -1,5 +1,6 @@
 package com.zamron.world.content;
 
+import com.zamron.model.definitions.ItemDefinition;
 import com.zamron.util.Misc;
 import com.zamron.util.RandomUtility;
 import com.zamron.world.World;
@@ -27,9 +28,10 @@ public class VoteMbox {
 			player.getInventory().add(goodRewards[Misc.getRandom(goodRewards.length - 1)], 1);
 			player.sendMessage("You got a uncommon reward");
 		} else if(chance >=96) {
-			player.getInventory().add(bestRewards[Misc.getRandom(bestRewards.length - 1)], 1);
+			int reward = (bestRewards[Misc.getRandom(bestRewards.length -1)]);
+			player.getInventory().add(reward,1);
 			player.sendMessage("You got a rare reward");
-			World.sendMessageNonDiscord("<img=12>@blu@[VOTE BOX]<img=12> @red@"+player.getUsername().toString() + " @blu@Has just received a rare reward.");
+			World.sendMessageNonDiscord("<img=12>@blu@[VOTE BOX]<img=12> @red@"+player.getUsername() + " @blu@Has just received a "+ ItemDefinition.forId(reward)+ "!!");
 		}
 	}
 	

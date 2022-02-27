@@ -20,14 +20,20 @@ public class TeleportInterface {
 		STARTER(50601, "Starter Zone", "Bugs Bunny@gre@(T1)", "Starter Tasks", "@red@HP:@gre@ 2.5k", "", "", 4455,
 				new int[] { 3795, 3543, 0 }),
 
-		HERCULES(50602, "Hercules", "Hercules@gre@(T2)", "Drops Hercules set ", "@red@HP:@gre@ 150k", "", "", 17,
+		HERCULES(50602, "Hercules", "Hercules@gre@(T2)", "Drops Hercules set ", "@red@HP:@gre@ 85k", "", "", 17,
 				new int[] { 2783, 4636, 0 }),
 
-		LUCARIO(50603, "Lucario", "Lucario@yel@(T3)", "Drops the blessed set", "@red@KC REQ: 50 Hercules", "@red@HP:@gre@ 300k", "", 3263,
+		LUCARIO(50603, "Lucario", "Lucario@yel@(T3)", "Drops the blessed set", "@red@KC REQ: 50 Hercules", "@red@HP:@gre@ 185k", "", 3263,
 				new int[] { 2913, 4759, 0 },2000),
 
-		HADES(50604, "Hades", "Hades@yel@(T3)", "Drops Misc items", "@red@KC REQ: 50 Lucario", "@red@HP:@gre@ 350k", "", 15,
-				new int[] { 2095, 3677, 0 }, 3000);
+		HADES(50604, "Hades", "Hades@yel@(T3)", "Drops Misc items", "@red@KC REQ: 50 Lucario", "@red@HP:@gre@ 300k", "", 15,
+				new int[] { 2095, 3677, 0 }, 3000),
+
+		BOWSER(50605, "Bowser", "", "Drops Colorful Tokens", "", "SLAYER NPC", "@red@HP:@gre@ 100k", 728,
+				new int[] { 2528, 2850, 0 }, 3000),
+
+		LUIGI(50606, "Luigi", "", "Drops Colorful Tokens", "", "SLAYER NPC", "@red@HP:@gre@ 100k", 727,
+				new int[] { 2528, 2850, 0 }, 3000);
 
 
 		Starters(int textId, String name, String description1, String description2, String description3,
@@ -286,16 +292,19 @@ public class TeleportInterface {
 		EVENTBOSS(50605, "World boss Event", "THIS NPC Spawns", "Every Hour", "Multiple People ", "May be Required!", "", 2745,
 				new int[] { 2409, 4679, 0 }),
 
-		SEPH(50606, "Seph", "THIS NPC Spawns", "Every Hour", "Multiple People ", "May be Required!", "", 25,
-				new int[] { 2590, 5727, 0 }),
-
-		RICK(50607, "Rick", "THIS NPC Spawns", "Every Hour", "Multiple People ", "May be Required!", "", 421,
+		RICK(50606, "Rick", "THIS NPC Spawns", "Every Hour", "Multiple People ", "May be Required!", "", 421,
 				new int[] { 3043, 3409, 0 }),
 
-		ASSASSIN(50608, "Assassin (HARD)", "THIS NPC Spawns", "Every Hour", "Multiple People ", "May be Required!", "", 299,
+		SEPH(50607, "Seph (HARD)", "THIS NPC Spawns", "Every Hour", "Multiple People ", "May be Required!", "", 25,
+				new int[] { 2590, 5727, 0 }),
+
+		ASSASSIN(50608, "Assassin (HARD)", "THIS NPC Spawns", "Every Hour", "Multiple People ", "May be Required!", "", 9944,
 				new int[] { 3111, 5544, 0 }),
 
-		SKILLINGBOSS(50609, "Skilling Boss", "This NPC gives", "EXP in the", "selected skill!", "KILL ME!", "", 6306,
+		DARKRANGER(50609, "Dark Ranger (HARD)", "THIS NPC Spawns", "Every Hour", "Multiple People ", "May be Required!", "", 299,
+				new int[] { 3111, 5544, 0 }),
+
+		SKILLINGBOSS(50610, "Skilling Boss", "This NPC gives", "EXP in the", "selected skill!", "KILL ME!", "", 6306,
 				new int[] { 2604, 3123, 0 });
 
 

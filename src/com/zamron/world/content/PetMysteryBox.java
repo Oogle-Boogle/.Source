@@ -26,7 +26,11 @@ public class PetMysteryBox {
 		} else if (chance >= 31 && chance <= 96) {
 			player.getInventory().add(goodRewards[Misc.getRandom(goodRewards.length - 1)], 1);
 		} else if (chance >= 97 && chance <= 100) {
-			player.getInventory().add(bestRewards[Misc.getRandom(bestRewards.length - 1)], 1);
+			int reward = (bestRewards[Misc.getRandom(bestRewards.length - 1)]);
+			player.getInventory().add(reward, 1);
+			World.sendMessageNonDiscord("[PETS] " + player.getUsername() + " has just received a rare " +ItemDefinition.forId(reward));
+			
+			
 			//TODO Announce rare pet name
 		}
 
