@@ -158,7 +158,7 @@ public class Dungeoneering {
 		party.sendFrame(37508, "Party deaths: "+party.getDeaths());
 	}
 
-	private static final Item[] misc = {new Item(555, 121), new Item(557, 87), new Item(554, 81), new Item(565, 63), new Item(5678), new Item(560, 97), new Item(861, 1), new Item(892, 127), new Item(18161, 2), new Item(18159, 2), new Item(139, 1)};
+	private static final Item[] misc = {new Item(555, 121), new Item(557, 87), new Item(554, 81), new Item(565, 63), new Item(5678), new Item(560, 97), new Item(861, 1), new Item(16342, 127), new Item(18161, 2), new Item(18159, 2), new Item(139, 1)};
 
 	public static void handleNpcDeath(Player p, NPC n) {
 		if(n.getPosition().getZ() == p.getPosition().getZ()) {

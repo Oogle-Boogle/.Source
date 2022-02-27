@@ -495,7 +495,7 @@ public class Panel extends JFrame {
 			if (players == null)
 				continue;
 			players.setAnimation(new Animation(7071));
-			players.forceChat("[NEW PLAYER] Welcome to KnightScape317");
+			players.forceChat("[NEW PLAYER] Welcome to Zamron");
       }
 	}
 	
