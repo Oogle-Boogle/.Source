@@ -47,14 +47,20 @@ public enum SlayerTasks {
 	/**
 	 * Elite
 	 */
-	AMONGUSBLACK(SlayerMaster.SUMONA, 610, "Find Among us (Black) in Expert tele tab.", 5200, new Position(2922, 4083)),
-	AMONGUSCYAN(SlayerMaster.SUMONA, 609, "Find Among us (Cyan) in Expert tele tab.", 5200, new Position(2921, 4048)),
+	AMONGUS_BLACK(SlayerMaster.SUMONA, 610, "Find Among us (Black) in Zones tele tab.", 5200, new Position(2922, 4083)),
+	AMONGUS_CYAN(SlayerMaster.SUMONA, 609, "Find Among us (Cyan) in Zones tele tab.", 5200, new Position(2921, 4048)),
+	AMONGUS_GREEN(SlayerMaster.SUMONA, 607, "Find Among us (Green) in Zones tele tab.", 5200, new Position(2921, 4048)),
+	STORMTROOPER1(SlayerMaster.SUMONA, 1069, "Find Storm Troopers in the Starwars teleports at home!", 5200, new Position(0000, 0000)),
+	VADER2(SlayerMaster.SUMONA, 11, "Find Darth Vaders in the Starwars teleports at home!", 5200, new Position(0000, 0000)),
 	/**
 	 * Extreme - Bravek
 	 * Bosses
 	 **/
-	ABBERANT_SPECTRE(SlayerMaster.BRAVEK, 1604, "Find aberrant spectres in slayer tower", 5000, new Position(3247, 3033));
-
+	ANTMAN(SlayerMaster.BRAVEK, 9912, "Find Ant man in Hard raids!", 15000, new Position(3247, 3033)),
+	ONSLAUGHT(SlayerMaster.BRAVEK, 422, "You can find Onslaught in hard raids!", 15000, new Position(0000,0000)),
+	KINGKONG(SlayerMaster.BRAVEK, 111, "Find King Kong in Hard raids!", 15000, new Position(0000,0000)),
+	ASSASSIN(SlayerMaster.BRAVEK, 9944, "Assassin global world boss...", 15000, new Position(0000, 0000)),
+	DARKRANGER(SlayerMaster.BRAVEK, 299, "Dark Ranger global world boss...", 15000, new Position(0000, 0000));
 
 
 	private SlayerTasks(SlayerMaster taskMaster, int npcId, String npcLocation, int XP, Position taskPosition) {

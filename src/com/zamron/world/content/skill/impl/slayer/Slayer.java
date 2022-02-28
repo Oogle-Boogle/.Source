@@ -71,13 +71,13 @@ public class Slayer {
         this.amountToSlay = 0;
         this.taskStreak = 0;
         player.getPointsHandler()
-                .setSlayerPoints(player.getPointsHandler().getSlayerPoints() - 25, false);
+                .setSlayerPoints(player.getPointsHandler().getSlayerPoints() - 10, false);
         PlayerPanel.refreshPanel(player);
         Player duo = duoPartner == null ? null : World.getPlayerByName(duoPartner);
         if (duo != null) {
             duo.getSlayer().setSlayerTask(SlayerTasks.NO_TASK).setAmountToSlay(0).setTaskStreak(0);
             duo.getPacketSender()
-                    .sendMessage("Your partner exchanged 25 Slayer points to reset your team's Slayer task.");
+                    .sendMessage("Your partner exchanged 10 Slayer points to reset your team's Slayer task.");
             PlayerPanel.refreshPanel(duo);
             player.getPacketSender()
                     .sendMessage("You've successfully reset your team's Slayer task.");
@@ -153,7 +153,7 @@ public class Slayer {
                 break;
             case BRAVEK:
                 if (player.getBravekDifficulty() == null) {
-                    pointsReceived += 50;
+                    pointsReceived += 100;
                 } else {
                     switch (player.getBravekDifficulty()) {
 
@@ -169,22 +169,15 @@ public class Slayer {
                     }
                 }
                 player.incrementBravekTasksCompleted(1);
-                int chance = RandomUtility.random(300);
-                int amount = 1;
-                if (chance >= 300) {
-                    player.getInventory().add(5131, amount);
-                    player.getPacketSender()
-                            .sendMessage("As u were lucky , you have received " + amount + " Dragon Minigun ");
-                    if (chance >= 270) {
-                        player.getPointsHandler().incrementMiniGamePoints2(1);
-                        player.sendMessage("GJ bro you have recieved a MiniGamePoint2!");
-                        player.sendMessage("Do ::checkpoints to check how many points you have overall!");
-                    }
-                }
                 break;
         }
         if (Skillcape_Data.SLAYER.isWearingCape(player)) {
             pointsReceived += pointsReceived + 2;
+        }
+
+        if (player.getEquipment().contains(3949) || player.getEquipment().contains(936)) {
+            pointsReceived *= 2;
+            player.getPacketSender().sendMessage("You received double points for wearing slayer helm!");
         }
 
         if (GlobalPerks.getInstance().getActivePerk() == GlobalPerks.Perk.x2_SLAYER_POINTS) {
@@ -195,9 +188,9 @@ public class Slayer {
         int per5 = pointsReceived * 2;
         int per10 = pointsReceived * 3;
         //int per50 = pointsReceived * 5;
-        double custom1 = pointsReceived * 0.1;
-        double custom2 = pointsReceived * 0.25;
-        double custom3 = pointsReceived * 0.35;
+        double custom1 = pointsReceived * 1;
+        double custom2 = pointsReceived * 2;
+        double custom3 = pointsReceived * 3;
 
 
         //if (player.getEquipment().containsAny(5127, 5167)) {
@@ -216,7 +209,7 @@ public class Slayer {
 
         int random = RandomUtility.exclusiveRandom(250);
         if (random == 250) {
-            player.getInventory().add(14637, 1);
+            player.getInventory().add(19101, 1);
             player.sendMessage("Congratulations! A @red@Custom Slayer Helm@blu@Has been added to ur inventory!");
             World.sendMessageNonDiscord("<img=12>@blu@[SLAYER]<img=12>@red@ " + player.getUsername()
                     .toString() + " @blu@Has received a Custom Slayer Helmet");

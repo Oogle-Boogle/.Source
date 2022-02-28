@@ -266,7 +266,7 @@ public class SlayerDialogues {
 			@Override
 			public String[] dialogue() {
 				return new String[] {
-					"It currently costs 25 Slayer points to reset a task.",
+					"It currently costs 10 Slayer points to reset a task.",
 					"You will also lose your current Task Streak.",
 					"Are you sure you wish to continue?"
 				};

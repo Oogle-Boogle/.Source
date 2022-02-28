@@ -305,7 +305,9 @@ public class TeleportInterface {
 				new int[] { 3111, 5544, 0 }),
 
 		SKILLINGBOSS(50610, "Skilling Boss", "This NPC gives", "EXP in the", "selected skill!", "KILL ME!", "", 6306,
-				new int[] { 2604, 3123, 0 });
+				new int[] { 2604, 3123, 0 }),
+
+		AMONGUS(50611, "Among Us", "Slayer NPC's", "Juicy...", "", "Whos the TRAITOR!?", "", 610, new int[] {2914, 4064, 0});
 
 
 
@@ -607,7 +609,7 @@ public class TeleportInterface {
 		for (Starters data : Starters.values()) {
 			player.getPacketSender().sendString(data.textId, data.name);
 		}
-
+		return;
 	}
 
 	public static void sendMonsterTab(Player player) {
@@ -617,6 +619,7 @@ public class TeleportInterface {
 		for (Monsters data : Monsters.values()) {
 			player.getPacketSender().sendString(data.textId, data.name);
 		}
+		return;
 	}
 
 	public static void sendHardenedTab(Player player) {
@@ -626,6 +629,7 @@ public class TeleportInterface {
 		for (Hardened data : Hardened.values()) {
 			player.getPacketSender().sendString(data.textId, data.name);
 		}
+		return;
 	}
 
 	public static void sendExpertTab(Player player) {
@@ -635,6 +639,7 @@ public class TeleportInterface {
 		for (Expert data : Expert.values()) {
 			player.getPacketSender().sendString(data.textId, data.name);
 		}
+		return;
 	}
 
 	public static void sendZonesTab(Player player) {
@@ -644,6 +649,7 @@ public class TeleportInterface {
 		for (Zones data : Zones.values()) {
 			player.getPacketSender().sendString(data.textId, data.name);
 		}
+		return;
 	}
 
 	public static void sendMinigameTab(Player player) {
@@ -653,6 +659,7 @@ public class TeleportInterface {
 		for (Minigames data : Minigames.values()) {
 			player.getPacketSender().sendString(data.textId, data.name);
 		}
+		return;
 	}
 
 	public static void sendDrops(Player player, int npcId) {
@@ -664,10 +671,10 @@ public class TeleportInterface {
 				return;
 			}
 			for (int i = 0; i < drops.getDropList().length; i++) {
-
 				player.getPacketSender().sendItemOnInterface(51251, drops.getDropList()[i].getId(), i,
 						drops.getDropList()[i].getItem().getAmount());
 			}
+			return;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -316,17 +316,6 @@ public class NPCDeathTask extends Task {
 						}
 
 					}
-					if (npc.getId() == 2436) {
-						killer.setRuneUnityPoints(killer.getRuneUnityPoints() + 5);
-						killer.sendMessage(
-								"<img=12>You now have @red@" + killer.getRuneUnityPoints() + " Zamron Points!");
-					}
-					if (npc.getId() == 604 || npc.getId() == 605 || npc.getId() == 609 || npc.getId() == 600
-							|| npc.getId() == 603 || npc.getId() == 610 || npc.getId() == 607 || npc.getId() == 608
-							|| npc.getId() == 611) {
-						killer.setAmongPoints(killer.getAmongPoints() + 1);
-						killer.sendMessage("<img=12>You now have @red@" + killer.getAmongPoints() + " Among Points!");
-					}
 					if (npc.getId() == 9855 && killer.getEquipment().contains(5131)) {
 						killer.getPointsHandler().incrementMiniGamePoints1(1);
 						killer.sendMessage("@red@Since you're wearing DMG you recieve an extra Minigame1 point");

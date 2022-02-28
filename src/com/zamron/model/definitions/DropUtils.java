@@ -305,6 +305,12 @@ public class DropUtils {
 			{13095, 10}, // H'Ween Aura 10% DR
 			{19156, 10}, // Sharingan Aura 10% DR
 
+			{2548, 5},
+			{2545, 5},
+			{13087, 5},
+			{2546, 5},
+			{2547, 5},
+
 	};
 
 	//list of ids of items that have the collectors effect

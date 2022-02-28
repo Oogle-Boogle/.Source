@@ -656,6 +656,13 @@ public class NPCOptionPacketListener implements PacketListener {
             return;
         }
 
+        if (player.getSlayer().getSlayerTask() == SlayerTasks.AMONGUS_BLACK || player.getSlayer().getSlayerTask() == SlayerTasks.AMONGUS_CYAN || player.getSlayer().getSlayerTask() == SlayerTasks.AMONGUS_GREEN) {
+            player.getCombatBuilder().attack(npc);
+            } else {
+            player.getPacketSender().sendMessage("You must have among us as a slayer task to attack them.");
+            return;
+        }
+
         /** Comment this out if it's fucked **/
 
          if (!player.getKcSystem().meetsRequirements(player.getKcSystem().getData(npc.getId()))
