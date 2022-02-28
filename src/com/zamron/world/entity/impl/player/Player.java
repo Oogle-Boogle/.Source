@@ -107,6 +107,8 @@ public class Player extends Character {
 
 	private int perkIndex = 0;
 
+	public boolean clickToTeleport;
+
 	public int getPerkIndex() {
 		return perkIndex;
 	}

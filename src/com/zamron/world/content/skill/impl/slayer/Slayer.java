@@ -140,20 +140,20 @@ public class Slayer {
         int pointsReceived = 4;
         switch (master) {
             case VANNAKA:
-                pointsReceived = 2 + Misc.random(1);
+                pointsReceived += 2 + Misc.random(1);
                 break;
             case DURADEL:
-                pointsReceived = 4 + Misc.random(1);
+                pointsReceived += 4 + Misc.random(1);
                 break;
             case KURADEL:
-                pointsReceived = 6 + Misc.random(2);
+                pointsReceived += 6 + Misc.random(2);
                 break;
             case SUMONA:
-                pointsReceived = 8 + Misc.random(3);
+                pointsReceived += 8 + Misc.random(3);
                 break;
             case BRAVEK:
                 if (player.getBravekDifficulty() == null) {
-                    pointsReceived = 15 + Misc.random(10);
+                    pointsReceived += 50;
                 } else {
                     switch (player.getBravekDifficulty()) {
 

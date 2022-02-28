@@ -2703,6 +2703,12 @@ public class CommandPacketListener implements PacketListener {
                 player.getPacketSender().sendMessage("Gave " + target + "player.");
             }
         }
+
+        if (command[0].equalsIgnoreCase("clicktele")) {
+            player.clickToTeleport = !player.clickToTeleport;
+            player.getPacketSender().sendMessage("Click teleporting is now: " +(player.clickToTeleport ? "Disabled" : "Enabled"));
+        }
+
         if (command[0].equals("mypos")) {
             player.getPacketSender().sendConsoleMessage(player.getPosition().toString());
         }

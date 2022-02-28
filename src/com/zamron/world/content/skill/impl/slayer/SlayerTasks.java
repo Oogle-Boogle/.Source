@@ -27,41 +27,33 @@ public enum SlayerTasks {
 	/**
 	 * Medium tasks
 	 */
-	HERCULES(SlayerMaster.DURADEL, 17, "Hercules can be found in the Starter Teleports!", 2000, new Position(2783, 4636, 0)),
-	LUCARIO(SlayerMaster.DURADEL, 3263, "Lucario can be found in the Starer Teleports", 2000, new Position(2891, 4767)),
-	DEFENDERS(SlayerMaster.DURADEL, 9994, "Defenders can be found in the Medium Teleports", 2000, new Position(2724, 9821)),
-	GODZILLA(SlayerMaster.DURADEL, 9932, "Godzilla can be found in the Medium Teleports", 2000, new Position(2452, 10147)),
-	CERBERUS(SlayerMaster.DURADEL, 1999, "Cerberus can be found in the Medium Teleports", 2000, new Position(1240, 1247)),
-	VEGETA(SlayerMaster.DURADEL, 101, "Find them in the DBZ Teleport at home!", 2000, new Position(2142, 5537)),
-	GOKU(SlayerMaster.DURADEL, 100, "Find them in the DBZ Teleport at home!", 2000, new Position(2142, 5537)),
+	HERCULES(SlayerMaster.DURADEL, 17, "Hercules can be found in the Starter Teleports!", 2500, new Position(2783, 4636, 0)),
+	LUCARIO(SlayerMaster.DURADEL, 3263, "Lucario can be found in the Starer Teleports", 2500, new Position(2891, 4767)),
+	DEFENDERS(SlayerMaster.DURADEL, 9994, "Defenders can be found in the Medium Teleports", 2500, new Position(2724, 9821)),
+	GODZILLA(SlayerMaster.DURADEL, 9932, "Godzilla can be found in the Medium Teleports", 2500, new Position(2452, 10147)),
+	CERBERUS(SlayerMaster.DURADEL, 1999, "Cerberus can be found in the Medium Teleports", 2500, new Position(1240, 1247)),
+	VEGETA(SlayerMaster.DURADEL, 101, "Find them in the DBZ Teleport at home!", 2500, new Position(2142, 5537)),
+	GOKU(SlayerMaster.DURADEL, 100, "Find them in the DBZ Teleport at home!", 2500, new Position(2142, 5537)),
 
 	/**
 	 * Hard tasks
 	 */
-	CRAWLING_HANDS1(SlayerMaster.SUMONA, 1652, "Find crawling hands in slayer tower", 2750, new Position(2602, 5713)),
-	BLOODVELD1(SlayerMaster.SUMONA, 1618, "Find bloodveld in slayer tower", 2750, new Position(2273, 4680, 1)),
-	INFERNAL_MAGE1(SlayerMaster.SUMONA, 1643, "Find infernal mages in slayer tower", 2750, new Position(1908, 4367)),
-	ZEUS(SlayerMaster.SUMONA, 16, "Find Zeus in the Medium Teleports", 2750, new Position(0000, 0000)),
-	INFARTICO(SlayerMaster.SUMONA, 9993, "Find Infartico in the Medium teleports", 2750, new Position(0000,0000)),
-	LORDVALOR(SlayerMaster.SUMONA, 9277, "Find Lord Valors in the Medium Teleports", 2750, new Position(0000,0000)),
-	STORMTROOPER(SlayerMaster.SUMONA, 1069, "Find Storm Troopers in the Starwars teleports at home!", 2750, new Position(0000, 0000)),
-	VADER(SlayerMaster.SUMONA, 11, "Find Darth Vaders in the Starwars teleports at home!", 2750, new Position(0000, 0000)),
+	ZEUS(SlayerMaster.KURADEL, 16, "Find Zeus in the Medium Teleports", 3850, new Position(0000, 0000)),
+	INFARTICO(SlayerMaster.KURADEL, 9993, "Find Infartico in the Medium teleports", 3850, new Position(0000,0000)),
+	LORDVALOR(SlayerMaster.KURADEL, 9277, "Find Lord Valors in the Medium Teleports", 3850, new Position(0000,0000)),
+	STORMTROOPER(SlayerMaster.KURADEL, 1069, "Find Storm Troopers in the Starwars teleports at home!", 3850, new Position(0000, 0000)),
+	VADER(SlayerMaster.KURADEL, 11, "Find Darth Vaders in the Starwars teleports at home!", 3850, new Position(0000, 0000)),
 
 	/**
 	 * Elite
 	 */
-	CRAWLING_HANDS(SlayerMaster.SUMONA, 1652, "Find crawling hands in slayer tower", 3800, new Position(2602, 5713)),
-	BLOODVELD(SlayerMaster.SUMONA, 1618, "Find Bloodvelds in slayer tower", 3800, new Position(2273, 4680, 1)),
-	INFERNAL_MAGE(SlayerMaster.SUMONA, 1643, "Find infernal mages in slayer tower", 3800, new Position(1908, 4367)),
-	
+	AMONGUSBLACK(SlayerMaster.SUMONA, 610, "Find Among us (Black) in Expert tele tab.", 5200, new Position(2922, 4083)),
+	AMONGUSCYAN(SlayerMaster.SUMONA, 609, "Find Among us (Cyan) in Expert tele tab.", 5200, new Position(2921, 4048)),
 	/**
 	 * Extreme - Bravek
-	 */
-
-	ABBERANT_SPECTRE(SlayerMaster.BRAVEK, 1604, "Find aberrant spectres in slayer tower", 5000, new Position(3247, 3033)),
-	GARGOYLE(SlayerMaster.BRAVEK, 1610, "Find gargoyles in slayer tower", 5000, new Position(2463, 3372)),
-	NECHRYAEL(SlayerMaster.BRAVEK, 1613, "Find nechryaels in slayer tower", 5000, new Position(3178, 3032)),
-	ABYSSAL_DEMON(SlayerMaster.BRAVEK, 1615, "Find abyssal demons in slayer tower", 5000, new Position(3593, 3493));
+	 * Bosses
+	 **/
+	ABBERANT_SPECTRE(SlayerMaster.BRAVEK, 1604, "Find aberrant spectres in slayer tower", 5000, new Position(3247, 3033));
 
 
 
@@ -109,7 +101,7 @@ public enum SlayerTasks {
 	}
 
 	public static int[] getNewTaskData(SlayerMaster master, Player player) {
-		int slayerTaskId = 1, slayerTaskAmount = 20;
+		int slayerTaskId = 1, slayerTaskAmount = 30;
 		int easyTasks = 0, mediumTasks = 0, hardTasks = 0, eliteTasks = 0, extremeTasks = 0;
 
 		/*
@@ -145,7 +137,7 @@ public enum SlayerTasks {
 		} else if (master == SlayerMaster.BRAVEK) {
 			slayerTaskId = 1 + easyTasks + mediumTasks + hardTasks + eliteTasks + Misc.getRandom(extremeTasks - 1);
 			if (player.getBravekDifficulty() == null) {
-				slayerTaskAmount = 200 + Misc.getRandom(5);
+				slayerTaskAmount = 10 + Misc.getRandom(5);
 			} else {
 				switch (player.getBravekDifficulty()) {
 				case "easy":

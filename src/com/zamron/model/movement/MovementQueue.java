@@ -119,6 +119,10 @@ public final class MovementQueue {
 		return true;
 	}
 
+	//Click to teleport
+	private int firstStepX;
+	private int firstStepY;
+
 	/**
 	 * Adds a step to walk to the queue.
 	 * 

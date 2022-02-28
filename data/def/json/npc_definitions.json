@@ -1437,7 +1437,7 @@
   {
     "id": 1,
     "name": "Man",
-    "examine": "One of Runeunity's many citizens.",
+    "examine": "One of Zamron's many citizens.",
     "combat": 2,
     "size": 1,
     "attackable": true,
@@ -1459,7 +1459,7 @@
   {
     "id": 2,
     "name": "Man",
-    "examine": "One of Runeunity's many citizens.",
+    "examine": "One of Zamron's many citizens.",
     "combat": 2,
     "size": 1,
     "attackable": true,
@@ -1595,7 +1595,7 @@
   {
     "id": 3,
     "name": "Man",
-    "examine": "One of Runeunity's many citizens.",
+    "examine": "One of Zamron's many citizens.",
     "combat": 2,
     "size": 1,
     "attackable": true,
@@ -1617,7 +1617,7 @@
   {
     "id": 4,
     "name": "Woman",
-    "examine": "One of Runeunity's many citizens.",
+    "examine": "One of Zamron's many citizens.",
     "combat": 2,
     "size": 1,
     "attackable": true,
@@ -1639,7 +1639,7 @@
   {
     "id": 5,
     "name": "Woman",
-    "examine": "One of Runeunity's many citizens.",
+    "examine": "One of Zamron's many citizens.",
     "combat": 2,
     "size": 1,
     "attackable": true,
@@ -1661,7 +1661,7 @@
   {
     "id": 6,
     "name": "Woman",
-    "examine": "One of Runeunity's many citizens.",
+    "examine": "One of Zamron's many citizens.",
     "combat": 2,
     "size": 1,
     "attackable": true,
@@ -2057,7 +2057,7 @@
   {
     "id": 24,
     "name": "Man",
-    "examine": "One of Runeunity's many citizens.",
+    "examine": "One of Zamron's many citizens.",
     "combat": 2,
     "size": 1,
     "attackable": true,
@@ -9273,7 +9273,7 @@
   {
     "id": 351,
     "name": "Man",
-    "examine": "One of Runeunity's many citizens.",
+    "examine": "One of Zamron's many citizens.",
     "combat": 4,
     "size": 1,
     "attackable": true,
@@ -9295,7 +9295,7 @@
   {
     "id": 352,
     "name": "Woman",
-    "examine": "One of Runeunity's many citizens.",
+    "examine": "One of Zamron's many citizens.",
     "combat": 3,
     "size": 1,
     "attackable": true,
@@ -9317,7 +9317,7 @@
   {
     "id": 353,
     "name": "Woman",
-    "examine": "One of Runeunity's many citizens.",
+    "examine": "One of Zamron's many citizens.",
     "combat": 4,
     "size": 1,
     "attackable": true,
@@ -9339,7 +9339,7 @@
   {
     "id": 354,
     "name": "Woman",
-    "examine": "One of Runeunity's many citizens.",
+    "examine": "One of Zamron's many citizens.",
     "combat": 3,
     "size": 1,
     "attackable": true,
@@ -9449,7 +9449,7 @@
   {
     "id": 359,
     "name": "Man",
-    "examine": "One of Runeunity's many citizens.",
+    "examine": "One of Zamron's many citizens.",
     "combat": 0,
     "size": 1,
     "attackable": false,
@@ -9471,7 +9471,7 @@
   {
     "id": 360,
     "name": "Woman",
-    "examine": "One of Runeunity's many citizens.",
+    "examine": "One of Zamron's many citizens.",
     "combat": 4,
     "size": 1,
     "attackable": true,
@@ -9493,7 +9493,7 @@
   {
     "id": 361,
     "name": "Woman",
-    "examine": "One of Runeunity's many citizens.",
+    "examine": "One of Zamron's many citizens.",
     "combat": 12,
     "size": 1,
     "attackable": true,
@@ -9515,7 +9515,7 @@
   {
     "id": 362,
     "name": "Woman",
-    "examine": "One of Runeunity's many citizens.",
+    "examine": "One of Zamron's many citizens.",
     "combat": 3,
     "size": 1,
     "attackable": true,
@@ -9537,7 +9537,7 @@
   {
     "id": 363,
     "name": "Woman",
-    "examine": "One of Runeunity's many citizens.",
+    "examine": "One of Zamron's many citizens.",
     "combat": 14,
     "size": 1,
     "attackable": true,
@@ -17692,7 +17692,7 @@
   {
     "id": 726,
     "name": "Man",
-    "examine": "One of Runeunity's many citizens.",
+    "examine": "One of Zamron's many citizens.",
     "combat": 0,
     "size": 1,
     "attackable": false,
@@ -17758,7 +17758,7 @@
   {
     "id": 729,
     "name": "Token Zone",
-    "examine": "One of Runeunity's many citizens.",
+    "examine": "One of Zamron's many citizens.",
     "combat": 0,
     "size": 1,
     "attackable": false,
@@ -17780,7 +17780,7 @@
   {
     "id": 730,
     "name": "Man",
-    "examine": "One of Runeunity's many citizens.",
+    "examine": "One of Zamron's many citizens.",
     "combat": 0,
     "size": 1,
     "attackable": false,
@@ -22596,8 +22596,8 @@
   },
   {
     "id": 945,
-    "name": "Runeunity Guide",
-    "examine": "Your introduction to the world of Runeunity.",
+    "name": "Zamron Guide",
+    "examine": "Your introduction to the world of Zamron.",
     "combat": 0,
     "size": 1,
     "attackable": false,
@@ -22641,7 +22641,7 @@
   {
     "id": 947,
     "name": "Financial Advisor",
-    "examine": "An official representative from the First National Bank of Runeunity.",
+    "examine": "An official representative from the First National Bank of Zamron.",
     "combat": 0,
     "size": 1,
     "attackable": false,
@@ -22685,7 +22685,7 @@
   {
     "id": 949,
     "name": "Quest Guide",
-    "examine": "Your introduction to the world of Runeunity.",
+    "examine": "Your introduction to the world of Zamron.",
     "combat": 0,
     "size": 1,
     "attackable": false,
@@ -25699,7 +25699,7 @@
   {
     "id": 1086,
     "name": "Man",
-    "examine": "One of Runeunity's many citizens.",
+    "examine": "One of Zamron's many citizens.",
     "combat": 2,
     "size": 1,
     "attackable": true,
@@ -30121,7 +30121,7 @@
   {
     "id": 1287,
     "name": "Council workman",
-    "examine": "Supposedly fixes things around Runeunity.",
+    "examine": "Supposedly fixes things around Zamron.",
     "combat": 0,
     "size": 1,
     "attackable": false,
@@ -58600,7 +58600,7 @@
   {
     "id": 2579,
     "name": "Veteran",
-    "examine": "A Veteran from Runeunity.",
+    "examine": "A Veteran from Zamron.",
     "combat": 27,
     "size": 1,
     "attackable": false,
@@ -60712,7 +60712,7 @@
   {
     "id": 2675,
     "name": "Man",
-    "examine": "One of Runeunity's many citizens.",
+    "examine": "One of Zamron's many citizens.",
     "combat": 2,
     "size": 1,
     "attackable": true,
@@ -63112,7 +63112,7 @@
   {
     "id": 2775,
     "name": "Null",
-    "examine": "One of Runeunity's many citizens.",
+    "examine": "One of Zamron's many citizens.",
     "combat": 1,
     "size": 1,
     "attackable": false,
@@ -63134,7 +63134,7 @@
   {
     "id": 2776,
     "name": "Woman",
-    "examine": "One of Runeunity's many citizens.",
+    "examine": "One of Zamron's many citizens.",
     "combat": 0,
     "size": 1,
     "attackable": false,
@@ -65246,7 +65246,7 @@
   {
     "id": 2872,
     "name": "Child",
-    "examine": "One of Runeunity's many citizens.",
+    "examine": "One of Zamron's many citizens.",
     "combat": 0,
     "size": 1,
     "attackable": false,
@@ -65268,7 +65268,7 @@
   {
     "id": 2873,
     "name": "Child",
-    "examine": "One of Runeunity's many citizens.",
+    "examine": "One of Zamron's many citizens.",
     "combat": 0,
     "size": 1,
     "attackable": false,
@@ -65290,7 +65290,7 @@
   {
     "id": 2874,
     "name": "Child",
-    "examine": "One of Runeunity's many citizens.",
+    "examine": "One of Zamron's many citizens.",
     "combat": 0,
     "size": 1,
     "attackable": false,
@@ -65312,7 +65312,7 @@
   {
     "id": 2875,
     "name": "Child",
-    "examine": "One of Runeunity's many citizens.",
+    "examine": "One of Zamron's many citizens.",
     "combat": 0,
     "size": 1,
     "attackable": false,
@@ -65334,7 +65334,7 @@
   {
     "id": 2876,
     "name": "Child",
-    "examine": "One of Runeunity's many citizens.",
+    "examine": "One of Zamron's many citizens.",
     "combat": 0,
     "size": 1,
     "attackable": false,
@@ -65356,7 +65356,7 @@
   {
     "id": 2877,
     "name": "Child",
-    "examine": "One of Runeunity's many citizens.",
+    "examine": "One of Zamron's many citizens.",
     "combat": 0,
     "size": 1,
     "attackable": false,
@@ -69734,7 +69734,7 @@
   {
     "id": 3075,
     "name": "Illegal Monk",
-    "examine": "One of the illegal bretheren of Runeunity.",
+    "examine": "One of the illegal bretheren of Zamron.",
     "combat": 0,
     "size": 1,
     "attackable": false,
@@ -72968,7 +72968,7 @@
   {
     "id": 3222,
     "name": "Drunken man",
-    "examine": "One of Runeunity's many citizens, currently incapacitated by alcohol.",
+    "examine": "One of Zamron's many citizens, currently incapacitated by alcohol.",
     "combat": 3,
     "size": 1,
     "attackable": true,
@@ -72990,7 +72990,7 @@
   {
     "id": 3223,
     "name": "Man",
-    "examine": "One of Runeunity's many citizens.",
+    "examine": "One of Zamron's many citizens.",
     "combat": 2,
     "size": 1,
     "attackable": true,
@@ -73078,7 +73078,7 @@
   {
     "id": 3227,
     "name": "Woman",
-    "examine": "One of Runeunity's many citizens. She looks rich.",
+    "examine": "One of Zamron's many citizens. She looks rich.",
     "combat": 2,
     "size": 1,
     "attackable": true,
@@ -82384,7 +82384,7 @@
   {
     "id": 3650,
     "name": "Confusion beast",
-    "examine": "What on Runeunity is that?!?",
+    "examine": "What on Zamron is that?!?",
     "combat": 43,
     "size": 2,
     "attackable": true,
@@ -82406,7 +82406,7 @@
   {
     "id": 3651,
     "name": "Confusion beast",
-    "examine": "What on Runeunity is that?!?",
+    "examine": "What on Zamron is that?!?",
     "combat": 43,
     "size": 2,
     "attackable": true,
@@ -82428,7 +82428,7 @@
   {
     "id": 3652,
     "name": "Confusion beast",
-    "examine": "What on Runeunity is that?!?",
+    "examine": "What on Zamron is that?!?",
     "combat": 43,
     "size": 2,
     "attackable": true,
@@ -82450,7 +82450,7 @@
   {
     "id": 3653,
     "name": "Confusion beast",
-    "examine": "What on Runeunity is that?!?",
+    "examine": "What on Zamron is that?!?",
     "combat": 43,
     "size": 2,
     "attackable": true,
@@ -82472,7 +82472,7 @@
   {
     "id": 3654,
     "name": "Confusion beast",
-    "examine": "What on Runeunity is that?!?",
+    "examine": "What on Zamron is that?!?",
     "combat": 43,
     "size": 2,
     "attackable": true,
@@ -82736,7 +82736,7 @@
   {
     "id": 3666,
     "name": "Confusion beast",
-    "examine": "What on Runeunity is that?!?",
+    "examine": "What on Zamron is that?!?",
     "combat": 63,
     "size": 2,
     "attackable": true,
@@ -88214,7 +88214,7 @@
   {
     "id": 3915,
     "name": "Man",
-    "examine": "One of Runeunity's many citizens.",
+    "examine": "One of Zamron's many citizens.",
     "combat": 2,
     "size": 1,
     "attackable": true,
@@ -98334,7 +98334,7 @@
   {
     "id": 4375,
     "name": "Security Guard",
-    "examine": "A retired Runeunity security guard.",
+    "examine": "A retired Zamron security guard.",
     "combat": 0,
     "size": 1,
     "attackable": true,
@@ -112921,7 +112921,7 @@
   {
     "id": 5040,
     "name": "Penance Fighter",
-    "examine": "What on Runeunity is that?",
+    "examine": "What on Zamron is that?",
     "combat": 0,
     "size": 1,
     "attackable": false,
@@ -113009,7 +113009,7 @@
   {
     "id": 5044,
     "name": "Penance Fighter",
-    "examine": "What on Runeunity is that?",
+    "examine": "What on Zamron is that?",
     "combat": 30,
     "size": 1,
     "attackable": true,
@@ -113031,7 +113031,7 @@
   {
     "id": 5045,
     "name": "Penance Fighter",
-    "examine": "What on Runeunity is that?",
+    "examine": "What on Zamron is that?",
     "combat": 32,
     "size": 1,
     "attackable": true,
@@ -116727,7 +116727,7 @@
   {
     "id": 5213,
     "name": "Penance Fighter",
-    "examine": "What on Runeunity is that?",
+    "examine": "What on Zamron is that?",
     "combat": 37,
     "size": 1,
     "attackable": true,
@@ -116749,7 +116749,7 @@
   {
     "id": 5214,
     "name": "Penance Fighter",
-    "examine": "What on Runeunity is that?",
+    "examine": "What on Zamron is that?",
     "combat": 42,
     "size": 1,
     "attackable": true,
@@ -116771,7 +116771,7 @@
   {
     "id": 5215,
     "name": "Penance Fighter",
-    "examine": "What on Runeunity is that?",
+    "examine": "What on Zamron is that?",
     "combat": 47,
     "size": 1,
     "attackable": true,
@@ -116793,7 +116793,7 @@
   {
     "id": 5216,
     "name": "Penance Fighter",
-    "examine": "What on Runeunity is that?",
+    "examine": "What on Zamron is that?",
     "combat": 56,
     "size": 1,
     "attackable": true,
@@ -116815,7 +116815,7 @@
   {
     "id": 5217,
     "name": "Penance Fighter",
-    "examine": "What on Runeunity is that?",
+    "examine": "What on Zamron is that?",
     "combat": 61,
     "size": 1,
     "attackable": true,
@@ -116837,7 +116837,7 @@
   {
     "id": 5218,
     "name": "Penance Fighter",
-    "examine": "What on Runeunity is that?",
+    "examine": "What on Zamron is that?",
     "combat": 68,
     "size": 1,
     "attackable": true,
@@ -116859,7 +116859,7 @@
   {
     "id": 5219,
     "name": "Penance Fighter",
-    "examine": "What on Runeunity is that?",
+    "examine": "What on Zamron is that?",
     "combat": 77,
     "size": 1,
     "attackable": true,
@@ -132392,7 +132392,7 @@
   {
     "id": 5923,
     "name": "Man",
-    "examine": "One of Runeunity's many citizens.",
+    "examine": "One of Zamron's many citizens.",
     "combat": 2,
     "size": 1,
     "attackable": true,
@@ -132414,7 +132414,7 @@
   {
     "id": 5924,
     "name": "Woman",
-    "examine": "One of Runeunity's many citizens.",
+    "examine": "One of Zamron's many citizens.",
     "combat": 2,
     "size": 1,
     "attackable": true,
@@ -132568,7 +132568,7 @@
   {
     "id": 5931,
     "name": "Historian Minas",
-    "examine": "Seth Minas - an aged expert in Runeunity history.",
+    "examine": "Seth Minas - an aged expert in Zamron history.",
     "combat": 0,
     "size": 1,
     "attackable": false,
