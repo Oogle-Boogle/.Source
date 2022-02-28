@@ -30,7 +30,7 @@ public class VoteMbox {
 			int reward = (bestRewards[Misc.getRandom(bestRewards.length -1)]);
 			player.getInventory().add(reward,1);
 			player.sendMessage("You got a rare reward");
-			World.sendMessageNonDiscord("<img=12>@blu@[VOTE BOX]<img=12> @red@"+player.getUsername() + " @blu@Has just received a "+ ItemDefinition.forId(reward)+ "!!");
+			World.sendMessageNonDiscord("<img=12>@blu@[VOTE BOX]<img=12> @red@"+player.getUsername() + " @blu@Has just received a "+ ItemDefinition.forId(reward).getName()+ "!!");
 		}
 	}
 	
