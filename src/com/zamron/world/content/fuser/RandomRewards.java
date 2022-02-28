@@ -145,6 +145,6 @@ public class RandomRewards {
                 + ItemDefinition.forId(stoneID).getName()
                 + plural
                 + "@bla@!");
-            World.sendMessageNonDiscord("<img=12><shad=20><col=b96900>"+player.getUsername() + " Has just received " +amountToGive+ " " + ItemDefinition.forId(stoneID).getName()+plural);
+           // World.sendMessageNonDiscord("<img=12><shad=20><col=b96900>"+player.getUsername() + " Has just received " +amountToGive+ " " + ItemDefinition.forId(stoneID).getName()+plural);
     }
 }
