@@ -8,10 +8,10 @@ public class Achievements {
 
 	public enum AchievementData {
 
-		FILL_WELL_OF_GOODWILL_1M(AchievementDifficulty.EASY, "Pour 1m Into The Well", 45006, null, "", "", "", "", "", "", new Item(10835, 1), new Item(8851, 10), new Item(19864, 10)),
+		FILL_WELL_OF_GOODWILL_1M(AchievementDifficulty.EASY, "Pour 1m Into The Well", 45006, null, "", "", "", "", "", "", new Item(10835, 1000), new Item(8851, 10), new Item(19864, 10)),
 		CUT_AN_OAK_TREE(AchievementDifficulty.EASY, "Cut An Oak Tree", 45007, null, "", "", "", "", "", "",  new Item(10835, 1), new Item(8851, 10), new Item(19864, 10)),
 		BURN_AN_OAK_LOG(AchievementDifficulty.EASY, "Burn An Oak Log", 45008, null, "", "", "", "", "", "",  new Item(10835, 1), new Item(8851, 10), new Item(19864, 10)),
-		FISH_A_SALMON(AchievementDifficulty.EASY, "Fish A Salmon", 45009, null, "", "", "", "", "", "",  new Item(10835, 1), new Item(8851, 10), new Item(19864, 10)),
+		FISH_A_SALMON(AchievementDifficulty.EASY, "Fish A Salmon", 45009, null, "", "", "", "", "", "",  new Item(10835, 1000), new Item(8851, 10), new Item(19864, 10)),
 		COOK_A_SALMON(AchievementDifficulty.EASY, "Cook A Salmon", 45010, null, "", "", "", "", "", "",  new Item(10835, 1), new Item(8851, 10), new Item(19864, 10)),
 		EAT_A_SALMON(AchievementDifficulty.EASY, "Eat A Salmon", 45011, null, "", "", "", "", "", "",  new Item(10835, 1), new Item(8851, 10), new Item(19864, 10)),
 		MINE_SOME_IRON(AchievementDifficulty.EASY, "Mine Some Iron", 45012, null, "", "", "", "", "", "",  new Item(10835, 1), new Item(8851, 10), new Item(19864, 10)),

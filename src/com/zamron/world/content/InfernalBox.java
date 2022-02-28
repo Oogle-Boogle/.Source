@@ -1,5 +1,6 @@
 package com.zamron.world.content;
 
+import com.zamron.model.definitions.ItemDefinition;
 import com.zamron.util.Misc;
 import com.zamron.util.RandomUtility;
 import com.zamron.world.World;
@@ -11,9 +12,9 @@ public class InfernalBox {
 	* Array of all the available rewards
 	*/
 
-	public static final int[] badRewards = { 3984, 3985, 3983, 3986, 19018, 1050, 7671, 19335, 15332, 2572};
-    public static final int[] goodRewards = { 3984, 3985, 3983, 3986};
-    public static final int[] bestRewards = {  4630, 3932, 3975, 14605, 3976, 3090, 6183, 4084, 18979};
+	public static final int[] badRewards = { 3459, 15398,18782};
+    public static final int[] goodRewards = { 15357, 15361,15362 };
+    public static final int[] bestRewards = { 15358, 15359, 15363, 19890,3317,4780, 19935, 19936,19140};
 	
     /*
      * Chances for the 3 array fields
@@ -27,9 +28,11 @@ public class InfernalBox {
 			player.getInventory().add(goodRewards[Misc.getRandom(goodRewards.length - 1)], 1);
 			player.sendMessage("You got a uncommon reward");
 		} else if(chance >=96) {
-			player.getInventory().add(bestRewards[Misc.getRandom(bestRewards.length - 1)], 1);
+			//Use this method in future =) ~Love oogle <3
+			int reward = (bestRewards[Misc.getRandom(bestRewards.length - 1)]);
+			player.getInventory().add(reward, 1);
 			player.sendMessage("You got a rare reward");
-			World.sendMessageNonDiscord("<img=12>@blu@[INFERNAL BOX] @red@"+player.getUsername().toString() + " @blu@Has just received a rare reward.");
+			World.sendMessageNonDiscord("<img=12>@blu@[INFERNAL BOX] @red@"+player.getUsername() + " @blu@Has just received a "+ ItemDefinition.forId(reward).getName());
 		}
 	}
 	
