@@ -44,7 +44,7 @@ public class World {
 	private static CharacterList<Player> players = new CharacterList<>(1000);
 
 	/** All of the registered NPCs. */
-	private static CharacterList<NPC> npcs = new CharacterList<>(5000);
+	private static CharacterList<NPC> npcs = new CharacterList<>(8000); //was 5000
 
 	/** Used to block the game thread until updating has completed. */
 	private static Phaser synchronizer = new Phaser(1);

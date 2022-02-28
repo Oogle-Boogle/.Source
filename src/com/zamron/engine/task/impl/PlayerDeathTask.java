@@ -207,6 +207,7 @@ public class PlayerDeathTask extends Task {
 				}
 				if(death != null) {
 					World.deregister(death);
+					System.out.println("Death isnt null");
 				}
 				player.restart();
 				player.getUpdateFlag().flag(Flag.APPEARANCE);
@@ -217,7 +218,7 @@ public class PlayerDeathTask extends Task {
 				}
 				player = null;
 				oldPosition = null;
-				stop();
+				//stop();
 				break;
 			}
 			ticks--;

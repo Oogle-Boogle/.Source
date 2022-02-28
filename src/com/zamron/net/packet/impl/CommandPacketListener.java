@@ -650,6 +650,11 @@ public class CommandPacketListener implements PacketListener {
             TeleportHandler.teleportPlayer(player, new Position(2605, 3093), player.getSpellbook().getTeleportType());
         }
 
+        if (command[0].equalsIgnoreCase("heal") && player.getSkillManager().getCurrentLevel(Skill.CONSTITUTION) <= 1) {
+            player.getPacketSender().sendMessage("You've healed yourself.");
+            player.heal(10);
+        }
+
         if (command[0].equalsIgnoreCase("may")) {
             TeleportHandler.teleportPlayer(player, new Position(2848, 3022, 0), player.getSpellbook().getTeleportType());
         }

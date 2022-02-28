@@ -521,7 +521,12 @@ public class NPCDrops { //LOL
 				return;
 			}
 			player.getBank(0).add(item.getId(), item.getAmount());
-			player.getGroupIronmanGroup().addItem(player, item.getId(), item.getAmount());
+			try {
+				player.getGroupIronmanGroup().addItem(player, item.getId(), item.getAmount());
+				System.out.println("TRIED TO CATCH ?");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 			player.sendMessage("Added " + item.getDefinition().getName() + " to your bank because of pet perk.");
 			return;
 		}
