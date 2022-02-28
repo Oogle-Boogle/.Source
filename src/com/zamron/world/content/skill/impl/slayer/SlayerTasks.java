@@ -45,6 +45,7 @@ public enum SlayerTasks {
 	INFARTICO(SlayerMaster.SUMONA, 9993, "Find Infartico in the Medium teleports", 2750, new Position(0000,0000)),
 	LORDVALOR(SlayerMaster.SUMONA, 9277, "Find Lord Valors in the Medium Teleports", 2750, new Position(0000,0000)),
 	STORMTROOPER(SlayerMaster.SUMONA, 1069, "Find Storm Troopers in the Starwars teleports at home!", 2750, new Position(0000, 0000)),
+	VADER(SlayerMaster.SUMONA, 11, "Find Darth Vaders in the Starwars teleports at home!", 2750, new Position(0000, 0000)),
 
 	/**
 	 * Elite

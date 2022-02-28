@@ -924,6 +924,8 @@ public class Shop extends ItemContainer {
 				
 			} else if (shop == SELL_FOR_TAXBAGS_SHOP) {
 				switch (item) {
+					case 952:
+						return new Object[] {100, "1b coins"};
 				//Thiev items
 					case 18199:
 						return new Object[] {100, "1b coins"};
@@ -997,11 +999,6 @@ public class Shop extends ItemContainer {
 					case 11076:
 					case 11077:
 						return new Object[] { 2850, "1b coins"};
-
-
-
-
-
 				}
 			} else if (shop == GAMBLING_STORE) {
 				switch (item) {
@@ -1231,17 +1228,25 @@ public class Shop extends ItemContainer {
 				}
 			} else if (shop == TOKEN_STORE) {
 				switch (item) {
+					case 3912:
+						return new Object[] {300, "Colorful Tokens"};
+
+					case 3459:
+						return new Object[] {2000, "Colorful Tokens"};
+
+					case 19140:
+						return new Object[] {85000, "Colorful Tokens"};
+
 				case 3810:
 				case 3811:
 				case 3812:
 				case 3813:
 				case 3814:
 				case 3815:
-					return new Object[] { 10000, "Colorful Tokens" };
-				case 5118:
-				case 5119:
-				case 5120:
-					return new Object[] { 10000, "Colorful Tokens" };
+					case 5118:
+					case 5119:
+					case 5120:
+						return new Object[] { 125000, "Colorful Tokens" };
 
 				}
 			} else if (shop == GRAVEYARD_STORE) {

@@ -6,7 +6,7 @@ public class PetPerkData {
 	
 	private static final Object[][] PERK_DATA = new Object[][] {
 		//npcId,
-		{2322, 0, 1.1, 1.2, true, 1.1, 1.1}, //Chucky
+		{2322, 0, 1.1, 1.2, true, 1.3, 1.1}, //Chucky
 		{230, 0, 1.2, 1.0, true, 1.25, 1.2},//Yoda
 		{6304, 0, 2.0, 2.0, true, 2.0, 2.0},//Abbadon
 		{5960, 0, 1.0, 1.0, true, 2.0, 2.0},////Rainbow Eeve
@@ -16,7 +16,7 @@ public class PetPerkData {
 		{642, 0, 1.5, 1.5, true, 1.25, 2.0},//Flareon
 		{644, 0, 1.5, 1.5, true, 1.25, 2.0},//Vapereon
 		{811, 0, 1.5, 1.5, true, 1.25, 2.0},//Antman
-		{1785, 0, 5.0, 5.0, true, 5.0, 5.0},//Bugatti
+		{1785, 0, 5.0, 1.8, true, 2.0, 5.0},//Bugatti
 		{810, 0, 1.5, 1.5, true, 1.25, 2.0},//Mewtwo
 			{815, 0, 1.5, 1.5, true, 1.25, 2.0},//Zorbak
 			{816, 0, 1.5, 1.5, true, 1.25, 2.0},//Stoned toad
