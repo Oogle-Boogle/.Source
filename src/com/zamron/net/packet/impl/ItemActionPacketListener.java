@@ -19,6 +19,7 @@ import com.zamron.model.container.impl.Shop.ShopManager;
 import com.zamron.model.PlayerRights;
 import com.zamron.model.Position;
 import com.zamron.model.Skill;
+import com.zamron.model.input.impl.ChangeUsername;
 import com.zamron.net.packet.Packet;
 import com.zamron.net.packet.PacketListener;
 import com.zamron.util.Misc;
@@ -28,6 +29,7 @@ import com.zamron.world.World;
 import com.zamron.world.content.*;
 import com.zamron.world.content.DonorBonds;
 import com.zamron.world.content.combat.range.DwarfMultiCannon;
+import com.zamron.world.content.dialogue.Dialogue;
 import com.zamron.world.content.dialogue.DialogueManager;
 import com.zamron.world.content.guidesInterface.GuideBook;
 import com.zamron.world.content.minimes.MiniMeData;
@@ -169,6 +171,12 @@ public class ItemActionPacketListener implements PacketListener {
 
 		int drinkingAnimation = 829;
 		switch (itemId) {
+
+			case 18343:
+				//player.getPacketSender().sendEnterInputPrompt("What would you like to change your username to?");
+				//player.setInputHandling(new ChangeUsername());
+				player.getPacketSender().sendMessage("Currently being worked on. Hand this to Oogle for a name change.");
+				break;
 
 			case 15357:
 				player.getInventory().delete(15357, 1);
@@ -1704,10 +1712,6 @@ public class ItemActionPacketListener implements PacketListener {
 			player.setMbox5(false);
 			player.getMysteryBox().openInterface();
 			break;
-			case 18343:
-				//TODO NAME CHANGE
-				System.out.println("NEED TO DO THIS NAME CHANGE");
-				break;
 			case 19670:
 			if (player.getInventory().contains(19670) && player.getClickDelay().elapsed(700)) {
 				int amt = player.getInventory().getAmount(19670);

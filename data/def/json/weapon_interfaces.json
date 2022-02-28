@@ -2574,6 +2574,11 @@
     "interface": "SHORTBOW"
   },
   {
+    "hash": 5115,
+    "item-id": 5115,
+    "interface": "LONGBOW"
+  },
+  {
     "hash": 845,
     "item-id": 845,
     "interface": "LONGBOW"
@@ -2801,6 +2806,11 @@
   {
     "hash": 3053,
     "item-id": 3053,
+    "interface": "STAFF"
+  },
+  {
+    "hash": 3250,
+    "item-id": 3250,
     "interface": "STAFF"
   },
   {
@@ -3042,6 +3052,11 @@
     "interface": "STAFF"
   },
   {
+    "hash": 8001,
+    "item-id": 8001,
+    "interface": "CROSSBOW"
+  },
+  {
     "hash": 18357,
     "item-id": 18357,
     "interface": "CROSSBOW"
@@ -3178,6 +3193,16 @@
     "interface": "STAFF"
   },
   {
+    "hash": 18389,
+    "item-id": 18389,
+    "interface": "SCIMITAR"
+  },
+  {
+    "hash": 18385,
+    "item-id": 18385,
+    "interface": "SCIMITAR"
+  },
+  {
     "hash": 10010,
     "item-id": 10010,
     "interface": "SCIMITAR"
@@ -3285,6 +3310,11 @@
     {
     "hash": 1413,
     "item-id": 1413,
+    "interface": "HALBERD"
+  },
+  {
+    "hash": 3279,
+    "item-id": 3279,
     "interface": "HALBERD"
   },
     {

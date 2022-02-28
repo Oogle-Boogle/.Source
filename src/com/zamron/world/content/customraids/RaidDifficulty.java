@@ -37,7 +37,7 @@ public enum RaidDifficulty {
             new Item[]{new Item(4800),new Item(4801),new Item(4802),new Item(5079),new Item(15012),new Item(3951), new Item(5133,1),
                     new Item(3316),new Item(3931),new Item(3959),new Item(3960),new Item(5186),new Item(5187),new Item(6584),
                     new Item(14559),new Item(18750),new Item(18751),new Item(5131),new Item(4770),new Item(4772),new Item(5209),
-                    new Item(923),new Item(3994),new Item(3995),new Item(3996), new Item(12426, 1), new Item(20054, 1),
+                    new Item(923),new Item(3994),new Item(3995),new Item(3996), new Item(20054, 1),
                     new Item(20695), new Item(6583, 1), new Item(12601, 1), new Item(3908, 1), new Item(3909, 1),
                     new Item(3910, 1), new Item(19004, 1), new Item(19935, 1), new Item(19936, 1)
                     },90, "@red@Medium raid"), //Rare Rewards 15% chance
@@ -47,14 +47,13 @@ public enum RaidDifficulty {
             new Item(12845, 3), new Item(12846, 3), new Item(12847, 3)},//Common Rewards
 
 
-
             //Rare rewards
             new Item[]{ new Item(19159),new Item(19160),new Item(19161), new Item(19163),new Item(19164),new Item(19166),
                     new Item(19469), new Item(20427), new Item(20431), new Item(20700), new Item(3820, 1), new Item(3821, 1),
                     new Item(3822, 1), new Item(9104, 1), new Item(19936, 1), new Item(19937, 1), new Item(19938, 1),
 
                     new Item(18391, 1), new Item(12848, 1), new Item(12845, 100), new Item(12846, 100), new Item(12847, 100),
-                    new Item(8644, 1), new Item(8654, 1), new Item(8655, 1), new Item(8656, 1), new Item(3458, 1)
+                    new Item(8644, 1), new Item(8654, 1), new Item(8655, 1), new Item(8656, 1), new Item(3458, 1), new Item(12426, 1)
 
             },95, "@red@Hard raid"); //Rare Rewards 10% chance to win.
 

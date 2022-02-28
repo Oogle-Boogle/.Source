@@ -1843,7 +1843,7 @@ public class CommandPacketListener implements PacketListener {
                 }
             }
         }
-        if (command[0].equalsIgnoreCase("movehome")) {
+        if (command[0].equalsIgnoreCase("sendhome")) {
             String player2 = command[1];
             player2 = Misc.formatText(player2.replaceAll("_", " "));
             if (command.length >= 3 && command[2] != null) {
@@ -1852,6 +1852,7 @@ public class CommandPacketListener implements PacketListener {
             Player playerToMove = World.getPlayerByName(player2);
             if (playerToMove != null) {
                 playerToMove.moveTo(GameSettings.DEFAULT_POSITION.copy());
+                playerToMove.heal(990);
                 playerToMove.getPacketSender()
                         .sendMessage("You've been teleported home by " + player.getUsername() + ".");
                 player.getPacketSender()
@@ -2648,7 +2649,7 @@ public class CommandPacketListener implements PacketListener {
             player2.setResetMovementQueue(true);
         }
 
-        if (command[0].equalsIgnoreCase("unfreeze")) {
+        if (command[0].equalsIgnoreCase("unnull")) {
             String playerToUnfreeze = wholeCommand.substring(command[0].length() + 1).toLowerCase().replaceAll("_", " ");
             Player player2 = World.getPlayerByName(playerToUnfreeze);
 
@@ -2658,6 +2659,7 @@ public class CommandPacketListener implements PacketListener {
             }
 
             player2.setFreezeDelay(-1);
+            player2.heal(990);
             player2.getPacketSender().sendMessage(player.getUsername() + " has unfrozen me!");
             player2.setResetMovementQueue(true);
         }
@@ -2794,7 +2796,14 @@ public class CommandPacketListener implements PacketListener {
                 return;
             }
             case "toggledonations": {
-                World.DOUBLE_DONATIONS = true;
+                World.DOUBLE_DONATIONS = !World.DOUBLE_DONATIONS;
+                String toggle = "";
+                if (World.DOUBLE_DONATIONS) {
+                    toggle = "Enabled";
+                } else {
+                    toggle = "Disabled";
+                }
+                World.sendMessageNonDiscord("<img=12>@blu@[DOUBLE DONATIONS] "+player.getUsername() + " has "+toggle+" double donations!");
                 return;
             }
             case "doublexp": {
@@ -2908,11 +2917,6 @@ public class CommandPacketListener implements PacketListener {
                 PlayerPanel.refreshPanel(target);
                 target.sendMessage("@red@Your total donated has been incremented by " + amount);
             }
-        }
-
-
-        if (command[0].equalsIgnoreCase("sstar")) {
-            CustomObjects.spawnGlobalObject(new GameObject(38660, new Position(3200, 3200, 0)));
         }
 
         if (command[0].equals("antibot")) {

@@ -304,6 +304,7 @@ public class CustomRaid {
             player.getPacketSender().sendWalkableInterface(OVERLAY_ID, false);
             player.setRaidParty(null);
             player.moveTo(RAID_LOBBY);
+            NpcGain.RaidFailed(player);
         }
     }
 

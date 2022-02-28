@@ -2059,15 +2059,19 @@ public class Player extends Character {
 				|| weaponId == 19620
 				|| weaponId == 18398
 				|| weaponId == 16429
+				|| weaponId == 925
+				|| weaponId == 12426   //ICY GLAIVE
+				|| weaponId == 17931   //Sires glaive
+				|| weaponId == 18398
 		) {
 			return 1;
 		}
 		if (weaponId == 5131
+				|| weaponId == 19004
 				|| weaponId == 5130
 				|| weaponId == 19720
 				|| weaponId == 5132
 				|| weaponId == 15653
-				|| weaponId == 5173
 				|| weaponId == 5195
 				|| weaponId == 15656
 				|| weaponId == 4059
@@ -2110,7 +2114,7 @@ public class Player extends Character {
 		if (weaponId == 3082
 				|| weaponId == 14006
 				|| weaponId == 3928
-
+				|| weaponId == 5173
 				|| weaponId == 19468
 				|| weaponId == 16137
 				|| weaponId == 7806
@@ -2119,6 +2123,7 @@ public class Player extends Character {
 				|| weaponId == 13207
 				|| weaponId == 896
 				|| weaponId == 1667
+				|| weaponId == 3641  //Solace glaive
 		) {
 			return 3;
 		}

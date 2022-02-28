@@ -1419,6 +1419,8 @@ public class Shop extends ItemContainer {
 					case 5114:
 					case 5115:
 						return new Object[] {1250, "Slayer Points"};
+					case 3641:
+						return new Object[] {500, "Slayer Points"};
 				}
 
 			}

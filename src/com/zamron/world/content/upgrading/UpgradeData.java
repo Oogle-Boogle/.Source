@@ -14,6 +14,11 @@ public enum UpgradeData {
 	RINGOFOVL(new Item(19140, 1), new Item(19141, 1), 40, 50000),
 	RINGOFOVLX(new Item(19141, 1), new Item(19142, 1), 25, 100000),
 
+	CUSTOMSLAYHELM(new Item(19101, 1), new Item(936, 1), 40, 85000),
+
+	SOLACEGLAIVE(new Item(3641, 1), new Item(17931, 1), 40, 200000),
+	SIRESGLAIVE(new Item(17931, 1), new Item(12426, 1), 25, 200000),
+
 	//Magic
 	DEFENDERSHELM(new Item(4799, 1), new Item(3994, 1), 45, 25000),
 	DEFENDERSBODY(new Item(4800, 1), new Item(3996, 1), 45, 25000),

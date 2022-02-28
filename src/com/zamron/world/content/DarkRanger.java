@@ -27,7 +27,7 @@ public class DarkRanger extends NPC {
 
     public static int[] COMMONLOOT = { 12708, 4770, 4771, 4772, 18782 };
     public static int[] RARELOOT = { 3914, 19886, 18347, 4781, 4782, 4783, 4785, 3957, 18392, };
-    public static int[] SUPERRARELOOT = { 3077, 6312, 6309, 6308, 6307, 6311, 6310, 5170, 19938, 19937, 3990, 3991, 5081, 5125, 5133, 10905};
+    public static int[] SUPERRARELOOT = { 3077, 6312, 6309, 6308, 6307, 6311, 6310, 19938, 19937, 3990, 3991, 5081, 5125, 5133, 10905};
 
     /**
      *

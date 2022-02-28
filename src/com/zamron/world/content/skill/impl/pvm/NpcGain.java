@@ -10,6 +10,7 @@ public class NpcGain {
 	public static int RaidReward = 1000;
 	public static int DropReward = 250;
 	public static int WBReward = 750;
+
 	public static void GainBossesXP (Player player) {
 		/*player.sendMessage("@red@You received 50 PVM exp from killing this monster");*/
 		player.getSkillManager().addExperience(Skill.PVM, BossesXP);
@@ -44,7 +45,6 @@ public class NpcGain {
 		}
 	}
 	public static void GainMediumChestXP (Player player) {
-
 		int mediumxpamount = 250;
 		if (player.getSkillManager().getMaxLevel(Skill.PVM) >= 45) {
 			/*player.sendMessage("@yel@You just received PVM XP for opening this chest! (X2)");*/
@@ -78,8 +78,9 @@ public class NpcGain {
 			player.getSkillManager().setCurrentLevel(Skill.PVM, player.getSkillManager().getMaxLevel(Skill.PVM));
 	}
 	public static void RaidComplete (Player player) {
+		int level = player.getSkillManager().getCurrentLevel(Skill.PVM);
 		/*player.sendMessage("@red@You received PVM exp for completing the Raids!");*/
-		player.getSkillManager().addExperience(Skill.PVM, RaidReward);
+		player.getSkillManager().addExperience(Skill.PVM, RaidReward * level);
 		player.getSkillManager().setCurrentLevel(Skill.PVM, player.getSkillManager().getMaxLevel(Skill.PVM));
 	}
 	public static void RaidFailed (Player player) {
