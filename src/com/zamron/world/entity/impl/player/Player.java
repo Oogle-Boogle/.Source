@@ -2065,6 +2065,7 @@ public class Player extends Character {
 				|| weaponId == 12426   //ICY GLAIVE
 				|| weaponId == 17931   //Sires glaive
 				|| weaponId == 18398
+				|| weaponId == 12428
 		) {
 			return 1;
 		}
