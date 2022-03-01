@@ -656,11 +656,16 @@ public class NPCOptionPacketListener implements PacketListener {
             return;
         }
 
-        /**if (npc.getId() == 610 || npc.getId() == 609 || npc.getId() == 607){
-            if (player.getSlayer().getSlayerTask())
+        if (npc.getId() == 610 || npc.getId() == 609 || npc.getId() == 607){
+            if (player.getSlayer().getSlayerTask().equals(SlayerTasks.AMONGUS_BLACK) || player.getSlayer().getSlayerTask().equals(SlayerTasks.AMONGUS_GREEN) || player.getSlayer().getSlayerTask().equals(SlayerTasks.AMONGUS_CYAN)) {
+                player.getCombatBuilder().attack(npc);
+            } else {
+                player.getPacketSender().sendMessage("You must have " + npc.getDefinition().getName()+ " as a slayer task.");
+                return;
+            }
         }
 
-        if (player.getSlayer().getSlayerTask() == SlayerTasks.AMONGUS_BLACK || player.getSlayer().getSlayerTask() == SlayerTasks.AMONGUS_CYAN || player.getSlayer().getSlayerTask() == SlayerTasks.AMONGUS_GREEN) {
+        /**if (player.getSlayer().getSlayerTask() == SlayerTasks.AMONGUS_BLACK || player.getSlayer().getSlayerTask() == SlayerTasks.AMONGUS_CYAN || player.getSlayer().getSlayerTask() == SlayerTasks.AMONGUS_GREEN) {
             player.getCombatBuilder().attack(npc);
             } else {
             player.getPacketSender().sendMessage("You must have among us as a slayer task to attack them.");

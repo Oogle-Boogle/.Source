@@ -24,7 +24,7 @@ public class DailyNPCTask {
     public static String lastWinner;
     /** Stores the reward items **/
     public static final Item[] REWARDS = {
-            new Item(10835, 15000),
+           /** new Item(10835, 15000),
             new Item(10835, 10000),
             new Item(10835, 25000),
             new Item(10835, 35000),
@@ -73,7 +73,7 @@ public class DailyNPCTask {
             new Item(5170, 1),
             new Item(3063, 1),
             new Item(4082, 1),
-            new Item(14559, 1),
+            new Item(14559, 1),**/
     };
 
     /** Picks a random NPC for the next task **/
