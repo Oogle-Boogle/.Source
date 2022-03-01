@@ -177,6 +177,15 @@ public class CombatStrategies {
 		//Dark Ranger
 		STRATEGIES.put(299, new Sagittare());
 
+
+		//Broly
+		STRATEGIES.put(1059, new Harambe());
+
+		STRATEGIES.put(420, new Joker());
+
+		STRATEGIES.put(2843, new Charizard());
+		STRATEGIES.put(174, new Charizard());
+
 		/**
 		 * Converted Bosses.
 		 */
@@ -185,11 +194,14 @@ public class CombatStrategies {
         STRATEGIES.put(6305, new Dragonix());
         STRATEGIES.put(10141, new BallakPummeler());
         STRATEGIES.put(10039, new ToKashBloodchiller());
+
+		STRATEGIES.put(10038, new ToKashBloodchiller());
+		STRATEGIES.put(10140, new BallakPummeler());
+
         STRATEGIES.put(6307, new ZamorakIktomi());
         STRATEGIES.put(839, new MiniDire());
         STRATEGIES.put(509, new Nazastarool());
         STRATEGIES.put(433, new Cyrisus());
-        STRATEGIES.put(6307, new ZamorakIktomi());
         
 		/**
 		 * End of converted bosses.

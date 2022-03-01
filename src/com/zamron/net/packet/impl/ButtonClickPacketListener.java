@@ -123,7 +123,7 @@ import com.zamron.world.content.transportation.TeleportHandler;
 import com.zamron.world.content.upgrading.UpgradeListener;
 import com.zamron.world.entity.impl.player.Player;
 import com.zamron.world.teleportinterface.TeleportInterface;
-import com.zamron.world.teleportinterface.TeleportInterface.Starters;
+import com.zamron.world.teleportinterface.TeleportInterface.Slayers;
 
 /**
  * This packet listener manages a button that the player has clicked upon.
@@ -158,8 +158,8 @@ public class ButtonClickPacketListener implements PacketListener {
             player.getPacketSender().sendMessage("Clicked button: " + id);
         }
 
-
-        if(id >= -12235 && id <= -12224)
+        //Update this every time VVVVVV
+        if(id >= -12235 && id <= -12223)
 		{
             if(player.combiner == 0)
             {
@@ -465,10 +465,10 @@ public class ButtonClickPacketListener implements PacketListener {
                 player.getPacketSender().openURL("https://zamron.net/gearguide.html");
                 break;
             case 19091:
-                player.getPacketSender().openURL("https://zamron.everythingrs.com/services/vote");
+                player.getPacketSender().openURL("https://zamron/net/vote");
                 break;
             case 19096:
-                player.getPacketSender().openURL("https://zamron.everythingrs.com/services/store");
+                player.getPacketSender().openURL("https://zamron.net/store");
                 break;
             case 19101:
                 player.getPacketSender().openURL("https://www.zamron.net/");
@@ -1314,6 +1314,8 @@ public class ButtonClickPacketListener implements PacketListener {
                 break;
             case -31196:
                 //player.getPacketSender().sendTabInterface(GameSettings.QUESTS_TAB, 45000); // 26600
+                NpcTasks.updateInterface(player);
+                player.getPacketSender().sendInterfaceReset();
                 player.getPacketSender().sendInterface(65400);
                 break;
             case 19066:
@@ -1628,7 +1630,7 @@ public class ButtonClickPacketListener implements PacketListener {
                 break;
 
             case 10003:
-                TeleportInterface.sendBossData(player, TeleportInterface.Starters.STARTER);
+                TeleportInterface.sendBossData(player, TeleportInterface.Slayers.BOWSER);
                 TeleportInterface.sendBossTab(player);
                 //player.getTeleportInterface().open();
                 break;
@@ -1839,20 +1841,20 @@ public class ButtonClickPacketListener implements PacketListener {
             case 8669:
             case 8660:
             case 11008:
-            	TeleportInterface.sendBossData(player, Starters.STARTER);
+            	TeleportInterface.sendBossData(player, Slayers.BOWSER);
                 TeleportInterface.sendBossTab(player);
                 break;
             case 11017:
-            	TeleportInterface.sendBossData(player, Starters.STARTER);
+            	TeleportInterface.sendBossData(player, Slayers.BOWSER);
                 TeleportInterface.sendBossTab(player);
                 break;
             case 11011:
-            	TeleportInterface.sendBossData(player, TeleportInterface.Starters.STARTER);
+            	TeleportInterface.sendBossData(player, TeleportInterface.Slayers.BOWSER);
                 TeleportInterface.sendBossTab(player);
                 break;
 
             case 11020:
-            	TeleportInterface.sendBossData(player, Starters.STARTER);
+            	TeleportInterface.sendBossData(player, Slayers.BOWSER);
                 TeleportInterface.sendHardenedTab(player);
                 break;
 

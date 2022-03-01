@@ -20,15 +20,17 @@ import com.zamron.world.entity.impl.player.Player;
 
 public class Slayer {
 
-    private Player player;
+    private static Player player;
 
     public Slayer(Player p) {
         this.player = p;
     }
 
-    private SlayerTasks slayerTask = SlayerTasks.NO_TASK, lastTask = SlayerTasks.NO_TASK;
-    private SlayerMaster slayerMaster = SlayerMaster.VANNAKA;
-    private int amountToSlay, taskStreak;
+    private static SlayerTasks slayerTask = SlayerTasks.NO_TASK;
+    private static SlayerTasks lastTask = SlayerTasks.NO_TASK;
+    private static SlayerMaster slayerMaster = SlayerMaster.VANNAKA;
+    private static int amountToSlay;
+    private static int taskStreak;
     public static String duoPartner, duoInvitation;
 
     public void assignTask() {
@@ -107,7 +109,7 @@ public class Slayer {
         }
     }
 
-    public void handleSlayerTaskDeath(boolean giveXp) {
+    public static void handleSlayerTaskDeath(boolean giveXp) {
         int xp = slayerTask.getXP() + Misc.getRandom(slayerTask.getXP() / 5);
         if (amountToSlay > 1) {
             amountToSlay--;
@@ -136,7 +138,7 @@ public class Slayer {
     }
 
     @SuppressWarnings("incomplete-switch")
-    public void givePoints(SlayerMaster master) {
+    public static void givePoints(SlayerMaster master) {
         int pointsReceived = 4;
         switch (master) {
             case VANNAKA:
@@ -411,7 +413,7 @@ public class Slayer {
         this.lastTask = lastTask;
     }
 
-    public boolean doubleSlayerXP = false;
+    public static boolean doubleSlayerXP = false;
 
     public Slayer setDuoPartner(String duoPartner) {
         Slayer.duoPartner = duoPartner;

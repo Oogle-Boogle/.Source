@@ -304,6 +304,10 @@ public class DropUtils {
 			{3277, 10}, // Donators Aura 10% DR
 			{13095, 10}, // H'Ween Aura 10% DR
 			{19156, 10}, // Sharingan Aura 10% DR
+			{3310, 3}, //Blue aura
+			{3307, 3}, //yellow aura
+			{3308, 12}, //red aura
+			{3309, 3}, //black aura
 
 			{2548, 5},
 			{2545, 5},
@@ -320,6 +324,10 @@ public class DropUtils {
 			3277, // Donators Aura 10% DR
 			774, // 'Perfect' Necklace 10% DR
 			13095,  // H'ween Aura
+			3310, //Blue aiyan aura
+			3307,
+			3308,
+			3310,
 	};
 
 	private static final int[] COLLITEMSUPGRADED = {
@@ -327,6 +335,7 @@ public class DropUtils {
 			19106, //col neck i
 			15566, // Owner Cape 10% DR
 			15454, // Collector Lvl 5 10% DR
+			3309,
 	};
 
 

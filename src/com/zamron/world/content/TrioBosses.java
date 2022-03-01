@@ -82,7 +82,7 @@ public class TrioBosses {
 		player.getInventory().delete(1959, 1);
 		player.performAnimation(new Animation(865));
 		player.performGraphic(new Graphic(199, GraphicHeight.HIGH));
-		player.forceChat("Happy Halloween everyone from "+player.getUsername());
+		//player.forceChat("Happy Halloween everyone from "+player.getUsername());
 	}
 	
 	/*

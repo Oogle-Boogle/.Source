@@ -645,17 +645,20 @@ public class CommandPacketListener implements PacketListener {
             TeleportHandler.teleportPlayer(player, new Position(2606, 3125, 0), player.getSpellbook().getTeleportType());
         }
 
+        if (command[0].equalsIgnoreCase("death")) {
+            TeleportHandler.teleportPlayer(player, new Position(3038, 5340, 0), player.getSpellbook().getTeleportType());
+        }
+
+        if (command[0].equalsIgnoreCase("broly")) {
+            TeleportHandler.teleportPlayer(player, new Position(2580, 3122, 0), player.getSpellbook().getTeleportType());
+        }
+
         if (command[0].equalsIgnoreCase("shops")) {
             TeleportHandler.teleportPlayer(player, new Position(2574, 3098), player.getSpellbook().getTeleportType());
         }
 
         if (command[0].equalsIgnoreCase("fuser")) {
             CombineHandler.openInterface(CombineEnum.AURA, player);
-        }
-
-        if (command[0].equalsIgnoreCase("teleportinterface")) {
-            TeleportInterface.sendBossData(player, TeleportInterface.Starters.STARTER);
-            TeleportInterface.sendBossTab(player);
         }
 
         if (command[0].equalsIgnoreCase("ds")) {
@@ -892,16 +895,17 @@ public class CommandPacketListener implements PacketListener {
                             player.getPacketSender().sendMessage(reward[0].message);
                             return;
                         }
-                        if (player.getSummoning().getFamiliar().getSummonNpc().getId() == 1060) {
-                            player.getInventory().add(reward[0].reward_id, reward[0].give_amount * 2);
-                        }
                         int votePts = SpecialEvents.getDay() == SpecialEvents.MONDAY ? 2 : 1;
+                        boolean pet = player.getSummoning().getFamiliar().getSummonNpc().getId() == 1060;
                         votePts *= player.getRights().getVotePtModifier();
                         /**player.getPointsHandler().setVotingPoints(player.getPointsHandler().getVotingPoints() + (votePts * reward[0].give_amount));**/
                         player.getInventory().add(reward[0].reward_id, (votePts * reward[0].give_amount));
                         player.getPacketSender().sendMessage("Thank you for voting! You currently have " + player.getPointsHandler().getVotingPoints() + " vote points.");
                             World.sendMessageNonDiscord("<shad=2><col=5b5e63><img=22>[VOTED]</shad>@bla@ " + player.getUsername()
                                     + ":@bla@ has voted and received a Vote Scroll!</col>");
+                        if (pet) {
+                            player.getInventory().add(reward[0].reward_id, (reward[0].give_amount));
+                        }
                     } catch (Exception e) {
                         player.getPacketSender()
                                 .sendMessage("Api Services are currently offline. Please check back shortly");

@@ -8,7 +8,11 @@ import lombok.Getter;
 import lombok.Setter;
 
 public enum CombineEnum {
-
+    /**
+     * @Author Oogle
+     * Make sure to search Update this every time VVVVVV and update in ButtonClickPacketListener.java
+     * :)
+     */
 
     AURA(new Item[]{new Item(10835, 850000), new Item(12845, 500),
             new Item(12846, 500), new Item(12847, 500), new Item(19886, 1), new Item(15454, 1)}, 19156, 100, 3600000), //3600000
@@ -18,6 +22,12 @@ public enum CombineEnum {
 
     PERMENANT_DR(new Item[]{new Item(10835, 100000), new Item(12845, 1),
             new Item(12846, 1), new Item(12847, 1), new Item(18401, 2)}, 5197, 100, 3600000),
+
+    COLLECTOR(new Item[]{new Item(10835, 100000), new Item(12845, 10),
+            new Item(12846, 10), new Item(12847, 10)}, 19886, 100, 3600000),
+
+    NEWAURA(new Item[]{new Item(10835, 350000), new Item(3310, 1),
+            new Item(3308, 1), new Item(3307, 1)}, 3309, 100, 3600000),
 
     SULPHUR_HELMET(new Item[]{new Item(10835, 1000000), new Item(12845, 300),
             new Item(12846, 300), new Item(12847, 300), new Item(19619, 1), new Item(13992, 1)}, 3322, 100, 3600000),
@@ -43,10 +53,7 @@ public enum CombineEnum {
             3920, 100, 3600000),
 
     SKATEBOARD(new Item[]{new Item(10835, 25000), new Item(12845, 1),
-            new Item(12846, 1), new Item(12847, 1)}, 3063, 100, 3600000),
-
-    COLLECTOR(new Item[]{new Item(10835, 100000), new Item(12845, 10),
-            new Item(12846, 10), new Item(12847, 10)}, 19886, 100, 3600000);
+            new Item(12846, 1), new Item(12847, 1)}, 3063, 100, 3600000);
 
 
     CombineEnum(Item[] requirements, int endItem, int chance, long timer) {

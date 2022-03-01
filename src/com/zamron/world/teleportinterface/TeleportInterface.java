@@ -15,28 +15,47 @@ public class TeleportInterface {
 
 	private final static int CATEGORY_NAME_ID = 50508;
 
-	public enum Starters {
-		// this is 1st field etc
-		STARTER(50601, "Starter Zone", "Bugs Bunny@gre@(T1)", "Starter Tasks", "@red@HP:@gre@ 2.5k", "", "", 4455,
-				new int[] { 3795, 3543, 0 }),
+	public enum Slayers {
+		// this is 1st field etc,
 
-		HERCULES(50602, "Hercules", "Hercules@gre@(T2)", "Drops Hercules set ", "@red@HP:@gre@ 85k", "", "", 17,
-				new int[] { 2783, 4636, 0 }),
-
-		LUCARIO(50603, "Lucario", "Lucario@yel@(T3)", "Drops the blessed set", "@red@KC REQ: 50 Hercules", "@red@HP:@gre@ 185k", "", 3263,
-				new int[] { 2913, 4759, 0 },2000),
-
-		HADES(50604, "Hades", "Hades@yel@(T3)", "Drops Misc items", "@red@KC REQ: 50 Lucario", "@red@HP:@gre@ 300k", "", 15,
-				new int[] { 2095, 3677, 0 }, 3000),
-
-		BOWSER(50605, "Bowser", "", "Drops Colorful Tokens", "", "SLAYER NPC", "@red@HP:@gre@ 100k", 728,
+		BOWSER(50601, "Bowser", "", "Drops Colorful Tokens", "", "SLAYER NPC", "@red@HP:@gre@ 100k", 728,
 				new int[] { 2528, 2850, 0 }, 3000),
 
-		LUIGI(50606, "Luigi", "", "Drops Colorful Tokens", "", "SLAYER NPC", "@red@HP:@gre@ 100k", 727,
-				new int[] { 2528, 2850, 0 }, 3000);
+		LUIGI(50602, "Luigi", "", "Drops Colorful Tokens", "", "SLAYER NPC", "@red@HP:@gre@ 100k", 727,
+				new int[] { 2528, 2850, 0 }, 3000),
+
+		BULBASAUR(50603, "Bulbasaur", "", "", "", "SLAYER NPC", "@red@HP:@gre@ 100k", 842,
+				new int[] { 2254, 3356, 0 }, 3000),
+
+		CHARMANDER(50604, "Charmander", "", "Drops Frankenstein Tokens", "", "SLAYER NPC", "@red@HP:@gre@ 100k", 174,
+				new int[] { 2338, 4059, 0 }, 3000),
+
+		CHARIZARD(50605, "Charizard", "", "Drops Frankenstein Tokens", "Scratch cards bonus", "SLAYER NPC", "@red@HP:@gre@ 500k", 2843,
+				new int[] { 2207, 3302, 0 }, 3000),
+
+		MAGICSPIDER(50606, "Magic Spider", "", "A magical poisonous spider", "", "SLAYER NPC", "@gre@HP:@red@ 650k", 6309,
+				new int[] { 2917, 3625, 0 }, 3000),
+
+		PUMPKIN(50607, "Killer Pumpkin", "Underestimate the pumpkin?", "Drops H'Ween cosmetics", "Is that a collector aura?", "SLAYER NPC", "@gre@HP:@red@ 1M", 8548,
+				new int[] { 2960, 9779, 0 }, 3000),
+
+		JOKER(50608, "Joker", "", "", "", "SLAYER NPC", "@gre@HP:@red@ 1M", 420,
+				new int[] { 3310, 2788, 0 }, 3000),
+
+		TOKASH(50609, "To'Kash", "", "", "", "SLAYER NPC", "@gre@HP:@red@ 2.5M", 10038,
+				new int[] { 3354, 9402, 0 }, 3000),
+
+		BALLAK(50610, "Bal'lak", "", "", "", "SLAYER NPC", "@gre@HP:@red@ 2.5M", 10140,
+				new int[] { 3354, 9402, 0 }, 3000),
+
+		OOGLE(50611, "Baby Oogle", "", "", "", "SLAYER NPC", "@gre@HP:@red@ 10M", 4541,
+				new int[] { 2254, 3356, 0 }, 3000);
+
+		/**(50611, "Bal'lak", "", "", "", "SLAYER NPC", "@gre@HP:@red@ 3M", 10140,
+				new int[] { 2254, 3356, 0 }, 3000),**/
 
 
-		Starters(int textId, String name, String description1, String description2, String description3,
+		Slayers(int textId, String name, String description1, String description2, String description3,
 				 String description4, String description5, int npcId, int[] teleportCords) {
 			this.textId = textId;
 			this.name = name;
@@ -50,7 +69,7 @@ public class TeleportInterface {
 
 		}
 
-		Starters(int textId, String name, String description1, String description2, String description3,
+		Slayers(int textId, String name, String description1, String description2, String description3,
 				 String description4, String description5, int npcId, int[] teleportCords, int adjustedZoom) {
 			this.textId = textId;
 			this.name = name;
@@ -74,40 +93,48 @@ public class TeleportInterface {
 	}
 
 	public enum Monsters {
+		STARTER(50601, "Starter Zone", "Bugs Bunny@gre@(T1)", "Starter Tasks", "@red@HP:@gre@ 2.5k", "", "", 4455,
+				new int[] { 3795, 3543, 0 }),
 
+		HERCULES(50602, "Hercules", "Hercules@gre@(T2)", "Drops Hercules set ", "@red@HP:@gre@ 85k", "", "", 17,
+				new int[] { 2783, 4636, 0 }),
 
+		LUCARIO(50603, "Lucario", "Lucario@yel@(T3)", "Drops the blessed set", "@red@KC REQ: 50 Hercules", "@red@HP:@gre@ 185k", "", 3263,
+				new int[] { 2913, 4759, 0 },2000),
 
+		HADES(50604, "Hades", "Hades@yel@(T3)", "Drops Misc items", "@red@KC REQ: 50 Lucario", "@red@HP:@gre@ 300k", "", 15,
+				new int[] { 2095, 3677, 0 }, 3000),
 
-		DEFENDERS(50601, "Defenders", "Defenders@yel@(T4)", "Protects Itself", "from Range!", "@red@KC REQ: 100 Hades", "@red@HP:@gre@ 400k", 9994,
+		DEFENDERS(50605, "Defenders", "Defenders@yel@(T4)", "Protects Itself", "from Range!", "@red@KC REQ: 100 Hades", "@red@HP:@gre@ 400k", 9994,
 				new int[] { 2724, 9821, 0 }, 2000),
 
 
-		GODZILLA(50602, "Godzilla", "Godzilla@yel@(T4)", "This NPC drops", "the Rex set", "@red@KC REQ: 150 Defenders", "@red@HP:@gre@ 425k", 9932,
+		GODZILLA(50606, "Godzilla", "Godzilla@yel@(T4)", "This NPC drops", "the Rex set", "@red@KC REQ: 150 Defenders", "@red@HP:@gre@ 425k", 9932,
 				new int[] { 3374, 9807, 0 }),
 
-		DEMONOLM(50603, "Demonic Olm", "Demonic Olm@yel@(T4)", "This NPC drops", "Misc Items", "@red@KC REQ: 175 Godzilla", "@red@HP:@gre@ 450k", 224,
+		DEMONOLM(50607, "Demonic Olm", "Demonic Olm@yel@(T4)", "This NPC drops", "Misc Items", "@red@KC REQ: 175 Godzilla", "@red@HP:@gre@ 450k", 224,
 				new int[] { 2399, 3548, 0 }),
 
-		CERBERUS(50604, "Cerberus", "Cerberus@yel@(T4)", "Drops Misc Gear", "@red@KC REQ: 200 Demonic Olm", "@red@HP:@gre@ 500k", "", 1999,
+		CERBERUS(50608, "Cerberus", "Cerberus@yel@(T4)", "Drops Misc Gear", "@red@KC REQ: 200 Demonic Olm", "@red@HP:@gre@ 500k", "", 1999,
 				new int[] { 1240, 1247, 0 }, 3000),
 
-		ZEUS(50605, "Zeus", "Zeus@yel@(T5)", "Drops Zeus set", "@red@KC REQ: 225 Cerberus", "@red@HP:@gre@ 500k", "", 16,
+		ZEUS(50609, "Zeus", "Zeus@yel@(T5)", "Drops Zeus set", "@red@KC REQ: 225 Cerberus", "@red@HP:@gre@ 500k", "", 16,
 				new int[] { 2065, 3663, 0 }, 3000),
 
-		INFERNAL_BEAST(50606, "Infartico", "Infartico@red@(T5)", "@red@KC REQ: 260 Zeus", "@red@HP:@gre@ 525k", "", "", 9993,
+		INFERNAL_BEAST(50610, "Infartico", "Infartico@red@(T5)", "@red@KC REQ: 260 Zeus", "@red@HP:@gre@ 525k", "", "", 9993,
 				new int[] { 3479, 3087, 0 }, 3000),
 
 
-		VALOR(50607, "Lord Valor", "Lord Valor@red@(T5)", "Hybrid NPC", "@red@KC REQ: 350 Infartico", "@red@HP:@gre@ 550k", "", 9277,
+		VALOR(50611, "Lord Valor", "Lord Valor@red@(T5)", "Hybrid NPC", "@red@KC REQ: 350 Infartico", "@red@HP:@gre@ 550k", "", 9277,
 				new int[] { 2780, 10000, 0 }),
 
-		STORMBREAKER(50608, "Storm Breaker", "Storm Breaker@bla@(T5)", "This drops Stormbreaker", "@red@KC REQ: 450 Lord Valor", "@red@HP:@gre@ 600k", "", 33,
+		STORMBREAKER(50612, "Storm Breaker", "Storm Breaker@bla@(T5)", "This drops Stormbreaker", "@red@KC REQ: 450 Lord Valor", "@red@HP:@gre@ 600k", "", 33,
 				new int[] { 3226, 2844, 0 },2000),
 
-		TRIDENT(50609, "Dzanth", "Dzanth@red@(T6)", "@red@KC REQ: 550 Storm Breakers", "@red@HP:@gre@ 625k", "", "", 9273,
+		TRIDENT(50613, "Dzanth", "Dzanth@red@(T6)", "@red@KC REQ: 550 Storm Breakers", "@red@HP:@gre@ 625k", "", "", 9273,
 				new int[] { 2369, 4944, 0 }),
 
-		HARAMBE(50610, "King Kong", "King Kong@red@(T6)", "Multi MASS BOSS", "@red@KC REQ: 750 Dzanth", "@red@HP:@gre@ 650k)", "", 9903,
+		HARAMBE(50614, "King Kong", "King Kong@red@(T6)", "Multi MASS BOSS", "@red@KC REQ: 750 Dzanth", "@red@HP:@gre@ 650k)", "", 9903,
 				new int[] { 2720, 9880, 0 });
 
 		Monsters(int textId, String name, String description1, String description2, String description3,
@@ -401,7 +428,7 @@ public class TeleportInterface {
 	public static void handleTeleports(Player player) {
 		switch (currentTab) {
 			case 0:
-				Starters bossData = Starters.values()[currentClickIndex];
+				Slayers bossData = Slayers.values()[currentClickIndex];
 				handleBossTeleport(player, bossData);
 				break;
 			case 1:
@@ -427,7 +454,7 @@ public class TeleportInterface {
 		}
 	}
 
-	public static void handleBossTeleport(Player player, Starters bossData) {
+	public static void handleBossTeleport(Player player, Slayers bossData) {
 
 		TeleportHandler.teleportPlayer(player,
 				new Position(bossData.teleportCords[0], bossData.teleportCords[1], bossData.teleportCords[2]),
@@ -487,9 +514,9 @@ public class TeleportInterface {
 			index = 14935 + buttonID;
 		}
 		if (currentTab == 0) {
-			if (index >= 0 && index < Starters.values().length) {
+			if (index >= 0 && index < Slayers.values().length) {
 				//System.out.println("Handled boss data [As index was 0]");
-				Starters bossData = Starters.values()[index];
+				Slayers bossData = Slayers.values()[index];
 				currentClickIndex = index;
 				sendBossData(player, bossData);
 				sendDrops(player, bossData.npcId);
@@ -546,7 +573,7 @@ public class TeleportInterface {
 
 	public static int currentClickIndex = 0;
 
-	public static void sendBossData(Player player, Starters data) {
+	public static void sendBossData(Player player, Slayers data) {
 		player.getPacketSender().sendString(51200, data.description1);
 		player.getPacketSender().sendString(51201, data.description2);
 		player.getPacketSender().sendString(51202, data.description3);
@@ -605,8 +632,8 @@ public class TeleportInterface {
 		currentTab = 0;
 		clearData(player);
 		resetOldData();
-		player.getPacketSender().sendString(CATEGORY_NAME_ID, "@red@Starters");
-		for (Starters data : Starters.values()) {
+		player.getPacketSender().sendString(CATEGORY_NAME_ID, "@red@Slayer NPC's");
+		for (Slayers data : Slayers.values()) {
 			player.getPacketSender().sendString(data.textId, data.name);
 		}
 		return;

@@ -18,7 +18,8 @@ public enum BonesData {
 	 DAGANNOTH_BONES(6729, 10890),
 	 OURG_BONES(14793, 10985),
 	 FROSTDRAGON_BONES(18830, 14870),
-	 INFERNAL_BONES(19080, 100000);
+	 INFERNAL_BONES(19080, 100000),
+	 PUMPKIN(18834, 100000);
 	
 	BonesData(int boneId, int buryXP) {
 		this.boneId = boneId;

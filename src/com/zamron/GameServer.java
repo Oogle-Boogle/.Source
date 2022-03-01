@@ -17,7 +17,7 @@ import java.util.logging.Logger;
 
 
 /**
- * The starting point of Arlania.
+ * The starting point of Zamron.
  * 
  * @author Gabriel
  * @author Samy
@@ -54,6 +54,18 @@ public class GameServer {
 			} else {
 				logger.info("Launching the - LIVE LIVE LIVE LIVE - server!");
 				DiscordMessenger.sendGeneralChat("Zamron has been updated!", "Check out the update log for more information!");
+				com.everythingrs.playersonline.PlayersOnline.service.scheduleAtFixedRate(new Runnable() {
+					@Override
+					public void run() {
+						int online = 0;
+						for (Player player: World.getPlayers()) {
+							if (player != null) {
+								online += 1;
+							}
+						}
+						com.everythingrs.playersonline.PlayersOnline.insert("Sg3go6GjOMB0nV2iUiFmqAmwGxb5mj93i1KsWpvymi5awKjhtsfpjQnpWQ2snaBv4tsyWjt9", online, false);
+					}
+				}, 0, 30, TimeUnit.SECONDS);
 			}
 			logger.info("Server Host Name is " + serverHost);
 			loader.init();
@@ -68,18 +80,6 @@ public class GameServer {
 				logger.info("Configurations loaded.");
 			}
 			logger.info("Zamron is now online on IP: port " + GameSettings.GAME_PORT + "!");
-			com.everythingrs.playersonline.PlayersOnline.service.scheduleAtFixedRate(new Runnable() {
-				@Override
-				public void run() {
-					int online = 0;
-					for (Player player: World.getPlayers()) {
-						if (player != null) {
-							online += 1;
-						}
-					}
-					com.everythingrs.playersonline.PlayersOnline.insert("Sg3go6GjOMB0nV2iUiFmqAmwGxb5mj93i1KsWpvymi5awKjhtsfpjQnpWQ2snaBv4tsyWjt9", online, false);
-				}
-			}, 0, 30, TimeUnit.SECONDS);
 		} catch (Exception ex) {
 			logger.log(Level.SEVERE, "Could not start Zamron Program terminated.", ex);
 			System.exit(1);

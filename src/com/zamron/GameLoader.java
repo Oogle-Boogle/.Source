@@ -100,9 +100,10 @@ public final class GameLoader {
 		serviceLoader.execute(() -> Tztok.initialize());
 		serviceLoader.execute(() -> Assassin.initialize());
 		serviceLoader.execute(() -> DarkRanger.initialize());
-		serviceLoader.execute(() -> Death.initialize());
+		serviceLoader.execute(() -> TheDeath.initialize());
 /*		serviceLoader.execute(() -> Onslaught.initialize());*/
 		serviceLoader.execute(() -> TheRick.initialize());
+		serviceLoader.execute(() -> Broly.initialize());
 		serviceLoader.execute(() -> TheMay.initialize());
 		serviceLoader.execute(() -> TheSeph.initialize());
 		serviceLoader.execute(() -> GuideBook.loadGuideDataFile());

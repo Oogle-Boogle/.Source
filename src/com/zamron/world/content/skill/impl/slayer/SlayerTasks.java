@@ -34,6 +34,10 @@ public enum SlayerTasks {
 	CERBERUS(SlayerMaster.DURADEL, 1999, "Cerberus can be found in the Medium Teleports", 2500, new Position(1240, 1247)),
 	VEGETA(SlayerMaster.DURADEL, 101, "Find them in the DBZ Teleport at home!", 2500, new Position(2142, 5537)),
 	GOKU(SlayerMaster.DURADEL, 100, "Find them in the DBZ Teleport at home!", 2500, new Position(2142, 5537)),
+	CHARIZARD(SlayerMaster.DURADEL, 2843, "Find them in the slayer tab!", 2500, new Position(0000, 0000)),
+	CHARMANDER(SlayerMaster.DURADEL, 174, "Find them in the slayer tab!", 2500, new Position(0000, 0000)),
+	BULBASAUR(SlayerMaster.DURADEL, 842, "Find them in the slayer tab!", 2500, new Position(2251, 3357)),
+	PUMPKIN(SlayerMaster.DURADEL, 8548, "Find them in the slayer tab!", 3500, new Position(0000,0000)),
 
 	/**
 	 * Hard tasks
@@ -43,15 +47,25 @@ public enum SlayerTasks {
 	LORDVALOR(SlayerMaster.KURADEL, 9277, "Find Lord Valors in the Medium Teleports", 3850, new Position(0000,0000)),
 	STORMTROOPER(SlayerMaster.KURADEL, 1069, "Find Storm Troopers in the Starwars teleports at home!", 3850, new Position(0000, 0000)),
 	VADER(SlayerMaster.KURADEL, 11, "Find Darth Vaders in the Starwars teleports at home!", 3850, new Position(0000, 0000)),
+	CHARIZARD1(SlayerMaster.KURADEL, 2843, "Find them in the slayer tab!", 3850, new Position(0000, 0000)),
+	MAGIC_SPIDER(SlayerMaster.KURADEL, 6309, "Find them in the slayer tab!", 3850, new Position(0000, 0000)),
+	JOKER(SlayerMaster.KURADEL, 420, "Find them in the slayer tab!", 3850, new Position(0000, 0000)),
+	PUMPKIN1(SlayerMaster.KURADEL, 8548, "Find them in the slayer tab!", 3850, new Position(0000,0000)),
+
 
 	/**
 	 * Elite
 	 */
+	PUMPKIN2(SlayerMaster.SUMONA, 8548, "Find them in the slayer tab!", 5200, new Position(0000,0000)),
+	JOKER1(SlayerMaster.SUMONA, 420, "Find them in the slayer tab!", 5200, new Position(0000, 0000)),
 	AMONGUS_BLACK(SlayerMaster.SUMONA, 610, "Find Among us (Black) in Zones tele tab.", 5200, new Position(2922, 4083)),
 	AMONGUS_CYAN(SlayerMaster.SUMONA, 609, "Find Among us (Cyan) in Zones tele tab.", 5200, new Position(2921, 4048)),
+	BAL(SlayerMaster.SUMONA, 10140, "Find them in the slayer tab!", 5200, new Position(0000,0000)),
+	KASH(SlayerMaster.SUMONA, 10038, "Find them in the slayer tab!", 5200, new Position(0000, 0000)),
 	AMONGUS_GREEN(SlayerMaster.SUMONA, 607, "Find Among us (Green) in Zones tele tab.", 5200, new Position(2921, 4048)),
 	STORMTROOPER1(SlayerMaster.SUMONA, 1069, "Find Storm Troopers in the Starwars teleports at home!", 5200, new Position(0000, 0000)),
 	VADER2(SlayerMaster.SUMONA, 11, "Find Darth Vaders in the Starwars teleports at home!", 5200, new Position(0000, 0000)),
+	MAGIC_SPIDER2(SlayerMaster.SUMONA, 6309, "Find them in the slayer tab!", 5200, new Position(0000, 0000)),
 	/**
 	 * Extreme - Bravek
 	 * Bosses

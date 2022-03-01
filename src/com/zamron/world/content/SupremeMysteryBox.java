@@ -12,8 +12,8 @@ public class SupremeMysteryBox {
 	 * Rewards
 	 */
 	public static final int [] shitRewards = {5187, 5186, 5131, 15398, 16137,};
-	public static final int [] mediumRewards = {19886,3317, 3810, 3811, 5118, 5119  };
-	public static final int [] bestRewards = {15045,926,931,930,5210,5211,5171,19620,5082,5083,5084,15656,3812,3814,3813,5120};
+	public static final int [] mediumRewards = {3317, 3810, 3811, 5118, 5119  };
+	public static final int [] bestRewards = {15045,926,931,930,5210,5211,5171,19620,5082,5083,5084,15656,3812,3814,3813,5120, 19886};
 	
 	
 
@@ -39,8 +39,9 @@ public class SupremeMysteryBox {
 			player.getInventory().add(mediumRewards[Misc.getRandom(mediumRewards.length - 1)], 1);
 			player.sendMessage("You got a uncommon reward");
 		} else if(chance >=90) {
-			player.getInventory().add(bestRewards[Misc.getRandom(bestRewards.length - 1)], 1);
-			World.sendMessageDiscord("<img=12>@blu@[Supreme Mystery Box] @red@"+player.getUsername().toString() + " @blu@Has just received a rare reward!.");
+			int reward = bestRewards[Misc.getRandom(bestRewards.length -1)];
+			player.getInventory().add(reward, 1);
+			World.sendMessageDiscord("<img=12>@blu@[Supreme Mystery Box] @red@"+player.getUsername()+ " @blu@Has just received a " +reward+ " !!!!");
 		}
 	}
 

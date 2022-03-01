@@ -133,10 +133,10 @@ public class DonationChests {
         }
         int reward = (lowTierItems[Misc.getRandom(lowTierItems.length - 1)]);
         invent.add(reward, 1);
-        World.sendMessageNonDiscord("[T1-T3 Chest] "+player.getUsername()
+       /** World.sendMessageNonDiscord("[T1-T3 Chest] "+player.getUsername()
                 + " has just received 1 x "
                 + ItemDefinition.forId(reward).getName()
-                + "!");
+                + "!");**/
     }
 
     /** Medium tier 4-7 rewards **/

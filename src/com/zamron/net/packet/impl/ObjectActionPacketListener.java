@@ -72,7 +72,7 @@ import com.zamron.world.content.trickortreat.TrickOrTreatData;
 import com.zamron.world.entity.impl.npc.minigame.KeyRoom;
 import com.zamron.world.entity.impl.player.Player;
 import com.zamron.world.teleportinterface.TeleportInterface;
-import com.zamron.world.teleportinterface.TeleportInterface.Starters;
+import com.zamron.world.teleportinterface.TeleportInterface.Slayers;
 
 /**
  * This packet listener is called when a player clicked
@@ -352,7 +352,7 @@ public class ObjectActionPacketListener implements PacketListener {
 						}
 					}
 					else;
-					TeleportInterface.sendBossData(player, Starters.STARTER);
+					TeleportInterface.sendBossData(player, Slayers.BOWSER);
 					TeleportInterface.sendBossTab(player);
 					
 					break;

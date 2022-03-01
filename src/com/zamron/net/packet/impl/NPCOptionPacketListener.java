@@ -656,8 +656,16 @@ public class NPCOptionPacketListener implements PacketListener {
             return;
         }
 
-        if (npc.getId() == 610 || npc.getId() == 609 || npc.getId() == 607){
-            if (player.getSlayer().getSlayerTask().equals(SlayerTasks.AMONGUS_BLACK) || player.getSlayer().getSlayerTask().equals(SlayerTasks.AMONGUS_GREEN) || player.getSlayer().getSlayerTask().equals(SlayerTasks.AMONGUS_CYAN)) {
+        if (npc.getId() == 610) {
+            if (player.getSlayer().getSlayerTask().equals(SlayerTasks.AMONGUS_BLACK)) {
+                player.getCombatBuilder().attack(npc);
+            } else {
+                player.getPacketSender().sendMessage("You must have " + npc.getDefinition().getName()+ " as a slayer task.");
+                return;
+            }
+        }
+        if (npc.getId() == 609) {
+            if (player.getSlayer().getSlayerTask().equals(SlayerTasks.AMONGUS_CYAN)) {
                 player.getCombatBuilder().attack(npc);
             } else {
                 player.getPacketSender().sendMessage("You must have " + npc.getDefinition().getName()+ " as a slayer task.");
@@ -665,11 +673,14 @@ public class NPCOptionPacketListener implements PacketListener {
             }
         }
 
-        /**if (player.getSlayer().getSlayerTask() == SlayerTasks.AMONGUS_BLACK || player.getSlayer().getSlayerTask() == SlayerTasks.AMONGUS_CYAN || player.getSlayer().getSlayerTask() == SlayerTasks.AMONGUS_GREEN) {
-            player.getCombatBuilder().attack(npc);
+        if (npc.getId() == 607) {
+            if (player.getSlayer().getSlayerTask().equals(SlayerTasks.AMONGUS_GREEN)) {
+                player.getCombatBuilder().attack(npc);
             } else {
-            player.getPacketSender().sendMessage("You must have among us as a slayer task to attack them.");
-        }**/
+                player.getPacketSender().sendMessage("You must have " + npc.getDefinition().getName()+ " as a slayer task.");
+                return;
+            }
+        }
 
         /** Comment this out if it's fucked **/
 
@@ -766,7 +777,7 @@ public class NPCOptionPacketListener implements PacketListener {
                     case 212:
                         //ShopManager.getShops().get(49).open(player);
                         System.out.println("Add buy bonds option here.");
-                        player.getPacketSender().openURL("https://zamron.everythingrs.com/services/store");
+                        player.getPacketSender().openURL("https://zamron.net/store");
                         //player.sendMessage("<img=12>You currently have @red@" + player.getPointsHandler().getDonationPoints() + " Donation Points!");
                         break;
 
@@ -1174,6 +1185,7 @@ public class NPCOptionPacketListener implements PacketListener {
                 handleFourthClick(player, packet);
                 break;
             case MAGE_NPC:
+                attackNPC(player, packet); //REMOVE IF THIS CAUSES ISSUES - MAGIC BYPASS REQUIREMENTS ?
                 int npcIndex = packet.readLEShortA();
                 int spellId = packet.readShortA();
 
