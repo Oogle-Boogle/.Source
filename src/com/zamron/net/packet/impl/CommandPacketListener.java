@@ -866,15 +866,15 @@ public class CommandPacketListener implements PacketListener {
 			NPCDropTableChecker.getSingleton().open(player);
 		}*/
 		
-/*		if (command[0].equalsIgnoreCase("npctasks")) {
+		if (command[0].equalsIgnoreCase("npctasks")) {
 			NpcTasks.updateInterface(player);
 			player.getPacketSender().sendInterfaceReset();
 			player.getPacketSender().sendInterface(65400);
-		}*/
+		}
 
-        if (command[0].equalsIgnoreCase("rankicons")) {
+       /** if (command[0].equalsIgnoreCase("rankicons")) {
             player.getPacketSender().sendInterface(61500);
-        }
+        }**/
 
 /*        if (command[0].equalsIgnoreCase("war")) {
             if (player.getLastZulrah().elapsed(600000)) {

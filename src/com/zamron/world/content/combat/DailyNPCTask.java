@@ -24,7 +24,7 @@ public class DailyNPCTask {
     public static String lastWinner;
     /** Stores the reward items **/
     public static final Item[] REWARDS = {
-           /** new Item(10835, 15000),
+            new Item(10835, 15000),
             new Item(10835, 10000),
             new Item(10835, 25000),
             new Item(10835, 35000),
@@ -73,7 +73,7 @@ public class DailyNPCTask {
             new Item(5170, 1),
             new Item(3063, 1),
             new Item(4082, 1),
-            new Item(14559, 1),**/
+            new Item(14559, 1),
     };
 
     /** Picks a random NPC for the next task **/
@@ -93,6 +93,7 @@ public class DailyNPCTask {
         if (lastKnownNPC != CHOSEN_NPC_ID || lastKnownNPC == 0) { //If the last task wasn't finished and we're onto a new NPC, we need to reset the KC
             player.setCurrentDailyNPCKills(1); //Resetting KC and adding one for the current kill
             player.setCurrentDailyNPC(CHOSEN_NPC_ID); //Setting the last known NPC Task to the current one
+            player.setCurrentDailyNPCKills(1); //Resetting KC and adding one for the current kill
         }
         if (lastKnownNPC == CHOSEN_NPC_ID) { //Players last killed NPC task matches the current one
             if (player.getCurrentDailyNPCKills() < KILLS_REQUIRED) { //Player hasn't won yet
@@ -101,13 +102,14 @@ public class DailyNPCTask {
                         + " "
                         + NpcDefinition.forId(CHOSEN_NPC_ID).getName()
                         + " kills remaining.")); //Tells the player their current KC every time they get a kill
-            } else if (player.getCurrentDailyNPCKills() >= KILLS_REQUIRED) {
+            } else if (player.getCurrentDailyNPCKills() == KILLS_REQUIRED) {
                 if (winner == player) {
-                        //player.sendMessage("You've already received a reward for completing this daily task.");
-                        return;
-                    } else {
+                    //player.sendMessage("You've already received a reward for completing this daily task.");
+                    return;
+                } else {
                     winner = player; //Save the winner
                     rewardWinner(winner); //Reward the winner
+                    player.setCurrentDailyNPCKills(101);
                 }
             }
         }
@@ -120,27 +122,27 @@ public class DailyNPCTask {
         int rewardQuantity = reward.getAmount(); //Int saved to make it clean
         int freeSlots = player.getInventory().getFreeSlots(); //Int saved to make it clean
 
-            if (stackable) { //If the item is stackable
-                if (freeSlots >= 1) //If stackable we only need 1 slot
-                    player.getInventory().add(reward); //Add to inventory
-                else if (freeSlots == 0) //If player has no slots
-                    player.getBank(0).add(reward, true); //Add reward to bank
-                player.getPacketSender().sendMessage("@red@Congratulations on winning the daily NPC task! Reward sent to your bank!");
-            }
-            if (!stackable) { //Non stackable reward
-                if (freeSlots >= rewardQuantity) //Check if the player has enough slots
-                    player.getInventory().add(reward);//Add to inventory
-
-                if (freeSlots < rewardQuantity) //If player doesn't have enough slots
-                    player.getBank(0).add(reward, true); //Add reward to bank
-                player.getPacketSender().sendMessage("@red@Congratulations on winning the daily NPC task! Reward sent to your bank!");
-            }
-            World.sendMessageDiscord("@red@" + winner.getUsername() + " has completed today's NPC task and was rewarded "
-                    + reward.getAmount() + " x "
-                    + reward.getDefinition().getName()
-                    + "!");
-            winner = player;
+        if (stackable) { //If the item is stackable
+            if (freeSlots >= 1) //If stackable we only need 1 slot
+                player.getInventory().add(reward); //Add to inventory
+            else if (freeSlots == 0) //If player has no slots
+                player.getBank(0).add(reward, true); //Add reward to bank
+            player.getPacketSender().sendMessage("@red@Congratulations on winning the daily NPC task! Reward sent to your bank!");
         }
+        if (!stackable) { //Non stackable reward
+            if (freeSlots >= rewardQuantity) //Check if the player has enough slots
+                player.getInventory().add(reward);//Add to inventory
+
+            if (freeSlots < rewardQuantity) //If player doesn't have enough slots
+                player.getBank(0).add(reward, true); //Add reward to bank
+            player.getPacketSender().sendMessage("@red@Congratulations on winning the daily NPC task! Reward sent to your bank!");
+        }
+        World.sendMessageDiscord("@red@" + winner.getUsername() + " has completed today's NPC task and was rewarded "
+                + reward.getAmount() + " x "
+                + reward.getDefinition().getName()
+                + "!");
+        winner = player;
+    }
 
     /** Simply restarts the game **/
     public static void resetDailyNPCGame(Player player) {
@@ -148,7 +150,7 @@ public class DailyNPCTask {
         winner = null; // Wipes the current winner value
         pickDailyNPC(); // Picks new NPC Task
         //Thread.sleep(60);
-        player.setCurrentDailyNPCKills(1); //TODO ???
+//        player.setCurrentDailyNPCKills(1); //TODO ???
     }
 
     public static void dailyResetTask() {
@@ -162,7 +164,7 @@ public class DailyNPCTask {
 
     public static void sequence(Player player) {
         if (timer.elapsed(TIME)) {
-           // resetDailyNPCGame();
+            // resetDailyNPCGame();
         }
     }
 }

@@ -204,6 +204,7 @@ public class World {
 		// Then we execute post-updating code.
 		players.forEach(playerUpdate::executePostUpdate);
 		npcs.forEach(npcUpdate::executePostUpdate);
+		//DailyNPCTask.dailyResetTask();
 		DailyNPCTask.dailyResetTask();
 	}
 

@@ -1313,7 +1313,8 @@ public class ButtonClickPacketListener implements PacketListener {
                 player.getPacketSender().sendTabInterface(GameSettings.QUESTS_TAB, 38333); // 26600
                 break;
             case -31196:
-                player.getPacketSender().sendTabInterface(GameSettings.QUESTS_TAB, 45000); // 26600
+                //player.getPacketSender().sendTabInterface(GameSettings.QUESTS_TAB, 45000); // 26600
+                player.getPacketSender().sendInterface(65400);
                 break;
             case 19066:
                 PlayerPanel.refreshPanel(player);
