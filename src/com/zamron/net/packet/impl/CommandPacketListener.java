@@ -396,33 +396,15 @@ public class CommandPacketListener implements PacketListener {
                 player.getPacketSender().sendMessage("You do not currently have a slayer task");
                 return;
             }
-            int cost = 100;
-            switch (player.getRights()) {
-                case DONATOR:
-                    cost = 90;
-                    break;
-                case SUPER_DONATOR:
-                    cost = 80;
-                    break;
-                case EXTREME_DONATOR:
-                    cost = 70;
-                    break;
-                case LEGENDARY_DONATOR:
-                    cost = 60;
-                    break;
-                case UBER_DONATOR:
-                case DELUXE_DONATOR:
-                case VIP_DONATOR:
-                    cost = 0;
-                    break;
-            }
-            if (player.getInventory().contains(10835, cost)) {
-                player.getPacketSender().sendMessage("You have reset your slayer task for " + cost + " 1b coins!");
-                player.getSlayer().resetSlayerTask();
-                player.getInventory().delete(10835, cost);
+            int cost = 10;
+            if (player.getPointsHandler().getSlayerPoints() >= 10) {
+                player.getPointsHandler()
+                        .setSlayerPoints(player.getPointsHandler().getSlayerPoints() - cost, false);
+                player.getSlayer().setSlayerTask(SlayerTasks.NO_TASK);
+                player.getPacketSender().sendMessage("You've paid 10 slayer points to reset your slayer task.");
             } else {
-                player.getPacketSender().sendMessage("You do not have enough 1b coins to reset this task!");
-                player.getPacketSender().sendMessage("The charge for using this command is " + cost + " 1b coins!");
+                player.getPacketSender().sendMessage("To reset your slayer task you must have 10 or more slayer points.");
+                return;
             }
         }
 
