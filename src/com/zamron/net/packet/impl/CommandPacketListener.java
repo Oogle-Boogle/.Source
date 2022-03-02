@@ -1516,20 +1516,11 @@ public class CommandPacketListener implements PacketListener {
 					if (player.getRights().isSeniorStaff()
 							|| player.getRights() == PlayerRights.DELUXE_DONATOR
 							|| player.getRights() == PlayerRights.VIP_DONATOR
-
 					)
-
 						TeleportHandler.teleportPlayer(player, new Position(3221, 2780),
 								player.getSpellbook().getTeleportType());
 				}*/
         }
-
-		
-	/*	if (command[0].equals("uzone333")) {
-			if (player.getRights().isSeniorStaff() || player.getRights().isHighDonator())
-				TeleportHandler.teleportPlayer(player, new Position(2408, 4724),
-						player.getSpellbook().getTeleportType());
-	}*/
         if (command[0].equalsIgnoreCase("customtitle")) {
             String title = wholeCommand.substring(12);
             if (title.length() < 1 || title.length() > 21) {

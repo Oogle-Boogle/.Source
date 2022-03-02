@@ -656,6 +656,24 @@ public class NPCOptionPacketListener implements PacketListener {
             return;
         }
 
+        if (npc.getId() == 10140) {
+            if (player.getSlayer().getSlayerTask().equals(SlayerTasks.BAL)) {
+                player.getCombatBuilder().attack(npc);
+            } else {
+                player.getPacketSender().sendMessage("You must have " + npc.getDefinition().getName()+ " as a slayer task.");
+                return;
+            }
+        }
+
+        if (npc.getId() == 10038) {
+            if (player.getSlayer().getSlayerTask().equals(SlayerTasks.KASH)) {
+                player.getCombatBuilder().attack(npc);
+            } else {
+                player.getPacketSender().sendMessage("You must have " + npc.getDefinition().getName()+ " as a slayer task.");
+                return;
+            }
+        }
+
         if (npc.getId() == 812) {
             if (player.getSlayer().getSlayerTask().equals(SlayerTasks.TOAD)) {
                 player.getCombatBuilder().attack(npc);
