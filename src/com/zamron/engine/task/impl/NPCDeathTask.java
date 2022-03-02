@@ -651,13 +651,13 @@ public class NPCDeathTask extends Task {
 							}
 						}
 						/** SLAYER **/
-						/**if (killer.getSlayer().getSlayerTask() == SlayerTasks.MAGIC_SPIDER && npc.getId() == 2000) {
-							killer.getSlayer().killedNpc(npc);
-							Slayer.handleSlayerTaskDeath(true);
+						if (killer.getSlayer().getSlayerTask() == SlayerTasks.MAGIC_SPIDER && npc.getId() == 2000) {
+							killer.getSlayer().killedNpc(npc);2
+							//Slayer.handleSlayerTaskDeath(true); //DO NOT MAKE STATIC
 							System.out.println("Killed venenatis");
 							stop();
 							break;
-						}**/
+						}
 						killer.getSlayer().killedNpc(npc);
 						System.out.println("Counted");
 					}

@@ -1629,7 +1629,7 @@ public class ButtonClickPacketListener implements PacketListener {
                 }
                 break;
 
-            case 10003:
+            case 10003: //Change this to monster
                 TeleportInterface.sendBossData(player, TeleportInterface.Slayers.BOWSER);
                 TeleportInterface.sendBossTab(player);
                 //player.getTeleportInterface().open();

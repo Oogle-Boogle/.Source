@@ -20,7 +20,7 @@ import com.zamron.world.entity.impl.player.Player;
 
 public class Slayer {
 
-    private static Player player;
+    private Player player;
 
     public Slayer(Player p) {
         this.player = p;
