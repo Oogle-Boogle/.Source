@@ -656,6 +656,69 @@ public class NPCOptionPacketListener implements PacketListener {
             return;
         }
 
+        if (npc.getId() == 812) {
+            if (player.getSlayer().getSlayerTask().equals(SlayerTasks.TOAD)) {
+                player.getCombatBuilder().attack(npc);
+            } else {
+                player.getPacketSender().sendMessage("You must have " + npc.getDefinition().getName()+ " as a slayer task.");
+                return;
+            }
+        }
+
+        if (npc.getId() == 6309) {
+            if (player.getSlayer().getSlayerTask().equals(SlayerTasks.MAGIC_SPIDER) || player.getSlayer().getSlayerTask().equals(SlayerTasks.MAGIC_SPIDER2)) {
+                player.getCombatBuilder().attack(npc);
+            } else {
+                player.getPacketSender().sendMessage("You must have " + npc.getDefinition().getName()+ " as a slayer task.");
+                return;
+            }
+        }
+
+        if (npc.getId() == 420) {
+            if (player.getSlayer().getSlayerTask().equals(SlayerTasks.JOKER) || player.getSlayer().getSlayerTask().equals(SlayerTasks.JOKER1)) {
+                player.getCombatBuilder().attack(npc);
+            } else {
+                player.getPacketSender().sendMessage("You must have " + npc.getDefinition().getName()+ " as a slayer task.");
+                return;
+            }
+        }
+
+        if (npc.getId() == 8548) {
+            if (player.getSlayer().getSlayerTask().equals(SlayerTasks.PUMPKIN) || player.getSlayer().getSlayerTask().equals(SlayerTasks.PUMPKIN1) || player.getSlayer().getSlayerTask().equals(SlayerTasks.PUMPKIN2)) {
+                player.getCombatBuilder().attack(npc);
+            } else {
+                player.getPacketSender().sendMessage("You must have " + npc.getDefinition().getName()+ " as a slayer task.");
+                return;
+            }
+        }
+
+        if (npc.getId() == 2843) {
+            if (player.getSlayer().getSlayerTask().equals(SlayerTasks.CHARIZARD) || player.getSlayer().getSlayerTask().equals(SlayerTasks.CHARIZARD1)) {
+                player.getCombatBuilder().attack(npc);
+            } else {
+                player.getPacketSender().sendMessage("You must have " + npc.getDefinition().getName()+ " as a slayer task.");
+                return;
+            }
+        }
+
+        if (npc.getId() == 174) {
+            if (player.getSlayer().getSlayerTask().equals(SlayerTasks.CHARMANDER)) {
+                player.getCombatBuilder().attack(npc);
+            } else {
+                player.getPacketSender().sendMessage("You must have " + npc.getDefinition().getName()+ " as a slayer task.");
+                return;
+            }
+        }
+
+        if (npc.getId() == 842) {
+            if (player.getSlayer().getSlayerTask().equals(SlayerTasks.BULBASAUR)) {
+                player.getCombatBuilder().attack(npc);
+            } else {
+                player.getPacketSender().sendMessage("You must have " + npc.getDefinition().getName()+ " as a slayer task.");
+                return;
+            }
+        }
+
         if (npc.getId() == 610) {
             if (player.getSlayer().getSlayerTask().equals(SlayerTasks.AMONGUS_BLACK)) {
                 player.getCombatBuilder().attack(npc);
