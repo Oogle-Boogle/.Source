@@ -19681,7 +19681,7 @@
     "poisonous": true,
     "respawn": 10,
     "maxHit": 750,
-    "hitpoints": 16000000,
+    "hitpoints": 1600000,
     "attackSpeed": 7,
     "attackAnim": 0,
     "defenceAnim": 0,

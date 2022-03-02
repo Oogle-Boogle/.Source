@@ -29,8 +29,8 @@ public class Slayer {
     private SlayerTasks slayerTask = SlayerTasks.NO_TASK;
     private SlayerTasks lastTask = SlayerTasks.NO_TASK;
     private SlayerMaster slayerMaster = SlayerMaster.VANNAKA;
-    private  int amountToSlay;
-    private static int taskStreak;
+    private int amountToSlay;
+    private int taskStreak;
     public static String duoPartner, duoInvitation;
 
     public void assignTask() {
@@ -138,7 +138,7 @@ public class Slayer {
     }
 
     @SuppressWarnings("incomplete-switch")
-    public static void givePoints(SlayerMaster master) {
+    public void givePoints(SlayerMaster master) {
         int pointsReceived = 4;
         switch (master) {
             case VANNAKA:
@@ -413,7 +413,7 @@ public class Slayer {
         this.lastTask = lastTask;
     }
 
-    public static boolean doubleSlayerXP = false;
+    public boolean doubleSlayerXP = false;
 
     public Slayer setDuoPartner(String duoPartner) {
         Slayer.duoPartner = duoPartner;
