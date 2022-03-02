@@ -309,6 +309,8 @@ public class DropUtils {
 			{3308, 12}, //red aura
 			{3309, 3}, //black aura
 
+			{18950, 3},
+
 			{2548, 5},
 			{2545, 5},
 			{13087, 5},

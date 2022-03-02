@@ -42,17 +42,21 @@ public class TeleportInterface {
 		JOKER(50608, "Joker", "", "", "", "SLAYER NPC", "@gre@HP:@red@ 1M", 420,
 				new int[] { 3310, 2788, 0 }, 3000),
 
-		TOKASH(50609, "To'Kash", "", "", "", "SLAYER NPC", "@gre@HP:@red@ 2.5M", 10038,
+		/**TOAD(50609, "Stoned Toad", "", "", "", "SLAYER NPC", "@gre@HP:@red@ 1.6M", 812,
+				new int[] { 2197, 4945, 0 }, 3000),**/
+
+		TOAD(50609, "Disabled", "", "", "", "SLAYER NPC", "@gre@HP:@red@ 1.6M", 812,
+				new int[] { 2605, 3093, 0 }, 3000),
+
+		TOKASH(50610, "To'Kash", "", "", "", "SLAYER NPC", "@gre@HP:@red@ 2.5M", 10038,
 				new int[] { 3354, 9402, 0 }, 3000),
 
-		BALLAK(50610, "Bal'lak", "", "", "", "SLAYER NPC", "@gre@HP:@red@ 2.5M", 10140,
+		BALLAK(50611, "Bal'lak", "", "", "", "SLAYER NPC", "@gre@HP:@red@ 2.5M", 10140,
 				new int[] { 3354, 9402, 0 }, 3000),
 
-		OOGLE(50611, "Baby Oogle", "", "", "", "SLAYER NPC", "@gre@HP:@red@ 10M", 4541,
-				new int[] { 2254, 3356, 0 }, 3000);
+		OOGLE(50612, "Baby Oogle", "", "", "", "SLAYER NPC", "@gre@HP:@red@ 10M", 4541,
+				new int[] { 2605, 3093, 0 }, 3000);
 
-		/**(50611, "Bal'lak", "", "", "", "SLAYER NPC", "@gre@HP:@red@ 3M", 10140,
-				new int[] { 2254, 3356, 0 }, 3000),**/
 
 
 		Slayers(int textId, String name, String description1, String description2, String description3,
@@ -632,7 +636,7 @@ public class TeleportInterface {
 		currentTab = 0;
 		clearData(player);
 		resetOldData();
-		player.getPacketSender().sendString(CATEGORY_NAME_ID, "@red@Slayer NPC's");
+		player.getPacketSender().sendString(CATEGORY_NAME_ID, "Slayer NPC's");
 		for (Slayers data : Slayers.values()) {
 			player.getPacketSender().sendString(data.textId, data.name);
 		}
@@ -642,7 +646,7 @@ public class TeleportInterface {
 	public static void sendMonsterTab(Player player) {
 		currentTab = 1;
 		clearData(player);
-		player.getPacketSender().sendString(CATEGORY_NAME_ID, "@red@Monsters");
+		player.getPacketSender().sendString(CATEGORY_NAME_ID, "Monsters");
 		for (Monsters data : Monsters.values()) {
 			player.getPacketSender().sendString(data.textId, data.name);
 		}
@@ -652,7 +656,7 @@ public class TeleportInterface {
 	public static void sendHardenedTab(Player player) {
 		currentTab = 2;
 		clearData(player);
-		player.getPacketSender().sendString(CATEGORY_NAME_ID, "@red@Hardened ");
+		player.getPacketSender().sendString(CATEGORY_NAME_ID, "Hardened ");
 		for (Hardened data : Hardened.values()) {
 			player.getPacketSender().sendString(data.textId, data.name);
 		}
@@ -662,7 +666,7 @@ public class TeleportInterface {
 	public static void sendExpertTab(Player player) {
 		currentTab = 3;
 		clearData(player);
-		player.getPacketSender().sendString(CATEGORY_NAME_ID, "@red@Expert");
+		player.getPacketSender().sendString(CATEGORY_NAME_ID, "Expert");
 		for (Expert data : Expert.values()) {
 			player.getPacketSender().sendString(data.textId, data.name);
 		}
@@ -672,7 +676,7 @@ public class TeleportInterface {
 	public static void sendZonesTab(Player player) {
 		currentTab = 4;
 		clearData(player);
-		player.getPacketSender().sendString(CATEGORY_NAME_ID, "@red@Zones");
+		player.getPacketSender().sendString(CATEGORY_NAME_ID, "Zones");
 		for (Zones data : Zones.values()) {
 			player.getPacketSender().sendString(data.textId, data.name);
 		}
@@ -682,7 +686,7 @@ public class TeleportInterface {
 	public static void sendMinigameTab(Player player) {
 		currentTab = 5;
 		clearData(player);
-		player.getPacketSender().sendString(CATEGORY_NAME_ID, "@red@Minigames");
+		player.getPacketSender().sendString(CATEGORY_NAME_ID, "Minigames");
 		for (Minigames data : Minigames.values()) {
 			player.getPacketSender().sendString(data.textId, data.name);
 		}

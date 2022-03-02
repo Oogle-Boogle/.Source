@@ -66,6 +66,7 @@ public enum SlayerTasks {
 	STORMTROOPER1(SlayerMaster.SUMONA, 1069, "Find Storm Troopers in the Starwars teleports at home!", 5200, new Position(0000, 0000)),
 	VADER2(SlayerMaster.SUMONA, 11, "Find Darth Vaders in the Starwars teleports at home!", 5200, new Position(0000, 0000)),
 	MAGIC_SPIDER2(SlayerMaster.SUMONA, 6309, "Find them in the slayer tab!", 5200, new Position(0000, 0000)),
+	TOAD(SlayerMaster.SUMONA, 812, "Find them in slayer tab!", 5299, new Position(0000, 0000)),
 	/**
 	 * Extreme - Bravek
 	 * Bosses
