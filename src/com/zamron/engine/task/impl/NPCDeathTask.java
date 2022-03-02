@@ -130,10 +130,10 @@ public class NPCDeathTask extends Task {
 					if (npc.getId() == 13447) {
 						Nex.handleDeath();
 					}
-					if (npc.getId() == 2862) {
+					/**if (npc.getId() == 2862) {
 						Death.handleDeath();
 						TheDeath.handleDrop(npc);
-					}
+					}**/
 
 					break;
 				case 0:
