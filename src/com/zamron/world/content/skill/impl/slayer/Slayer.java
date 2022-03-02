@@ -26,10 +26,10 @@ public class Slayer {
         this.player = p;
     }
 
-    private static SlayerTasks slayerTask = SlayerTasks.NO_TASK;
-    private static SlayerTasks lastTask = SlayerTasks.NO_TASK;
-    private static SlayerMaster slayerMaster = SlayerMaster.VANNAKA;
-    private static int amountToSlay;
+    private SlayerTasks slayerTask = SlayerTasks.NO_TASK;
+    private SlayerTasks lastTask = SlayerTasks.NO_TASK;
+    private SlayerMaster slayerMaster = SlayerMaster.VANNAKA;
+    private  int amountToSlay;
     private static int taskStreak;
     public static String duoPartner, duoInvitation;
 
@@ -109,7 +109,7 @@ public class Slayer {
         }
     }
 
-    public static void handleSlayerTaskDeath(boolean giveXp) {
+    public void handleSlayerTaskDeath(boolean giveXp) {
         int xp = slayerTask.getXP() + Misc.getRandom(slayerTask.getXP() / 5);
         if (amountToSlay > 1) {
             amountToSlay--;

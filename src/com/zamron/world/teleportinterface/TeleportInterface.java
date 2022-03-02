@@ -130,7 +130,6 @@ public class TeleportInterface {
 		INFERNAL_BEAST(50610, "Infartico", "Infartico@red@(T5)", "@red@KC REQ: 260 Zeus", "@red@HP:@gre@ 525k", "", "", 9993,
 				new int[] { 3479, 3087, 0 }, 3000),
 
-
 		VALOR(50611, "Lord Valor", "Lord Valor@red@(T5)", "Hybrid NPC", "@red@KC REQ: 350 Infartico", "@red@HP:@gre@ 550k", "", 9277,
 				new int[] { 2780, 10000, 0 }),
 
