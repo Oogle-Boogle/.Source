@@ -1630,8 +1630,8 @@ public class ButtonClickPacketListener implements PacketListener {
                 break;
 
             case 10003:
-                TeleportInterface.sendBossData(player, TeleportInterface.Slayers.BOWSER);
-                TeleportInterface.sendBossTab(player);
+                TeleportInterface.sendMonsterData(player, TeleportInterface.Monsters.STARTER);
+                TeleportInterface.sendMonsterTab(player);
                 //player.getTeleportInterface().open();
                 break;
 
