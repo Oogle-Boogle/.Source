@@ -55,7 +55,9 @@ public class TeleportInterface {
 				new int[] { 3354, 9402, 0 }, 3000),
 
 		OOGLE(50612, "Baby Oogle", "", "", "", "SLAYER NPC", "@gre@HP:@red@ 10M", 4541,
-				new int[] { 2605, 3093, 0 }, 3000);
+				new int[] { 2605, 3093, 0 }, 3000),
+
+		AMONGUS(50613, "Among Us", "Slayer NPC's", "Juicy...", "", "Whos the TRAITOR!?", "", 610, new int[] {2914, 4064, 0});
 
 
 
@@ -336,9 +338,7 @@ public class TeleportInterface {
 				new int[] { 3111, 5544, 0 }),
 
 		SKILLINGBOSS(50610, "Skilling Boss", "This NPC gives", "EXP in the", "selected skill!", "KILL ME!", "", 6306,
-				new int[] { 2604, 3123, 0 }),
-
-		AMONGUS(50611, "Among Us", "Slayer NPC's", "Juicy...", "", "Whos the TRAITOR!?", "", 610, new int[] {2914, 4064, 0});
+				new int[] { 2604, 3123, 0 });
 
 
 
