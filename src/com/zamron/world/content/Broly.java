@@ -21,7 +21,7 @@ import java.util.Map.Entry;
 public class Broly extends NPC {
 	public static Item[] COMMONLOOT = { };
 
-	public static Item[] RARELOOT = {};
+	public static Item[] RARELOOT = { new Item(7630, 1)};
 
 	public static Item[] SUPERRARELOOT = { };
 

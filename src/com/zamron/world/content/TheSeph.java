@@ -31,7 +31,7 @@ public class TheSeph extends NPC {
 
 	public static Item[] RARELOOT = { new Item(5131, 1),new Item(4770, 1),new Item(4771, 1),new Item(4772, 1),
 			new Item(5131, 1),new Item(15012,1), new Item(4799, 1),new Item(4800, 1), new Item(4801, 1),
-			new Item(5131, 1), new Item(3988, 1), new Item(10835, 100), new Item(3973, 1)};
+			new Item(5131, 1), new Item(3988, 1), new Item(10835, 100), new Item(3973, 1), new Item(7630, 1)};
 
 	public static Item[] SUPERRARELOOT = { new Item(13270, 1), new Item(13269, 1), new Item(13268, 1), new Item(13267, 1),
 			new Item(13265, 1),new Item(19890, 1),new Item(12162, 1),new Item(19886, 1), new Item(19938, 1),
