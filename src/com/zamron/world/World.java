@@ -101,12 +101,15 @@ public class World {
 
 	public static void sendMessageNonDiscord(String message) {
 		players.stream().filter(p -> p != null && (!p.isMiniMe)).forEach(p -> p.getPacketSender().sendMessage(message));
-
 	}
 
 	public static void sendStaffMessage(String message) {
 		players.stream().filter(p -> p != null && (p.getRights().isSeniorStaff())).forEach(p -> p.getPacketSender().sendMessage(message));
 		DiscordMessenger.sendStaffMessage(message);
+	}
+
+	public static void sendStaffYell(String message) {
+		players.stream().filter(p -> p != null && (p.getRights().isStaff())).forEach(p -> p.getPacketSender().sendMessage(message));
 	}
 
 	public static void updateServerTime() {

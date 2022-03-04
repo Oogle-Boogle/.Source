@@ -56,6 +56,7 @@ import com.zamron.world.content.skill.SkillManager;
 import com.zamron.world.content.skill.impl.herblore.Decanting;
 import com.zamron.world.content.skill.impl.slayer.SlayerMaster;
 import com.zamron.world.content.skill.impl.slayer.SlayerTasks;
+import com.zamron.world.content.skill.impl.summoning.Familiar;
 import com.zamron.world.content.skillingboss.SkillBossHandler;
 import com.zamron.world.content.transportation.TeleportHandler;
 import com.zamron.world.content.transportation.TeleportType;
@@ -375,10 +376,6 @@ public class CommandPacketListener implements PacketListener {
 
         if (command[0].equalsIgnoreCase("difficulty")) {
             DifficultyHandler.openInterface(player);
-        }
-
-        if (command[0].equalsIgnoreCase("map")) {
-            player.getPacketSender().sendInterface(MapTeleportInterface.MAP_INTERFACE_ID);
         }
 
         if (command[0].equals("tot") && TrickOrTreat.currentLocation != null) {
@@ -873,6 +870,7 @@ public class CommandPacketListener implements PacketListener {
                 player.getPacketSender().sendMessage("You can only teleport here every 10 minutes!");
             }
         }*/
+        Familiar pet = player.getSummoning().getFamiliar();
 
         if (command[0].startsWith("voted")) {
             if (command.length == 1) {
@@ -896,15 +894,17 @@ public class CommandPacketListener implements PacketListener {
                             return;
                         }
                         int votePts = SpecialEvents.getDay() == SpecialEvents.MONDAY ? 2 : 1;
-                        boolean pet = player.getSummoning().getFamiliar().getSummonNpc().getId() == 1060;
+                        int petCheck = 1060;
                         votePts *= player.getRights().getVotePtModifier();
                         /**player.getPointsHandler().setVotingPoints(player.getPointsHandler().getVotingPoints() + (votePts * reward[0].give_amount));**/
                         player.getInventory().add(reward[0].reward_id, (votePts * reward[0].give_amount));
                         player.getPacketSender().sendMessage("Thank you for voting! You currently have " + player.getPointsHandler().getVotingPoints() + " vote points.");
                             World.sendMessageNonDiscord("<shad=2><col=5b5e63><img=22>[VOTED]</shad>@bla@ " + player.getUsername()
                                     + ":@bla@ has voted and received a Vote Scroll!</col>");
-                        if (pet) {
+                        if (pet != null && pet.getSummonNpc().getId() == petCheck) {
                             player.getInventory().add(reward[0].reward_id, (reward[0].give_amount));
+                            player.getPacketSender().sendMessage("You received an extra bonus for using broly pet.");
+                            System.out.println("Gave extra reward for brolypet");
                         }
                     } catch (Exception e) {
                         player.getPacketSender()
@@ -1303,6 +1303,7 @@ public class CommandPacketListener implements PacketListener {
                 ClanChatManager.setName(player, wholeCommand.substring(wholeCommand.indexOf(command[1])));
             }
         }*/
+
         if (wholeCommand.toLowerCase().startsWith("yell")) {
             String primaryRights = player.getRights().ordinal() > 0 ? "<img=" + player.getRights().ordinal() + ">" : "";
             String secondaryRights = player.getSecondaryPlayerRights().ordinal() > 0 ? "<zmg=" + player.getSecondaryPlayerRights().ordinal() + ">" : "";
@@ -1345,12 +1346,12 @@ public class CommandPacketListener implements PacketListener {
 
             player.getLastYell().reset();
             if (player.getRights() == PlayerRights.VIP_DONATOR) {
-                World.sendMessageNonDiscord("<shad=2><col=5b5e63>" + rankIcons + "[VIP Donator]</shad>@bla@" + player.getUsername()
+                World.sendMessageNonDiscord("<shad=2><col=03FFEA>" + rankIcons + "[VIP Donator]</shad>@bla@" + player.getUsername()
                         + ":@bla@" + yellMessage + "</col>");
                 return;
             }
 
-            /*if (player.getRights() == PlayerRights.OWNER) {
+            /**if (player.getRights() == PlayerRights.OWNER) {
                 World.sendMessageNonDiscord(player.getRights().getYellPrefix() + rankIcons + "<col=ff0000>" + player.getRights().getCustomYellPrefix(true) + "</col> @bla@"
                         + player.getUsername() + ":" + yellMessage);
                 return;
@@ -1363,55 +1364,54 @@ public class CommandPacketListener implements PacketListener {
             if (player.getRights() == PlayerRights.COMMUNITY_MANAGER) {
                 World.sendMessageNonDiscord("" + player.getRights().getYellPrefix() + rankIcons + "@cya@ Manager @bla@" + player.getUsername() + ":" + yellMessage);
                 return;
-            }
+            }**/
             if (player.getRights() == PlayerRights.SUPPORT) {
-                World.sendMessageNonDiscord("" + player.getRights().getYellPrefix() + rankIcons + "@blu@ Support @bla@" + player.getUsername() + ":" + yellMessage);
+                World.sendMessageNonDiscord("" + player.getRights().getYellPrefix() + rankIcons + "@blu@[Support]@bla@" + player.getUsername() + ":" + yellMessage);
                 return;
             }
 
             if (player.getRights() == PlayerRights.MODERATOR) {
-                World.sendMessageNonDiscord(player.getRights().getYellPrefix() + rankIcons + "<col=6600CC>"
-                        + player.getRights().getCustomYellPrefix(false) + "</col> @bla@" + player.getUsername() + ":"
-                        + yellMessage);
+                World.sendMessageNonDiscord("<shad=2><col=f5faf6>" + rankIcons + "[Moderator]</shad>@bla@" + player.getUsername()
+                        + ":@bla@" + yellMessage + "</col>");
                 return;
             }
             if (player.getRights() == PlayerRights.ADMINISTRATOR) {
                 World.sendMessageNonDiscord(player.getRights().getYellPrefix() + rankIcons + "@or2@ Administrator @bla@" + player.getUsername() + ":" + yellMessage);
                 return;
-            }*/
+            }
 
             if (player.getRights().isStaff()) {
-                World.sendMessageNonDiscord("<col=7838a3><shad=555>" + player.getRights().getYellPrefix() + rankIcons + "</shad>[" + player.getRights().toString().toUpperCase() + "]" + player.getUsername() + ":" + player.getRights().getYellHexColor() + yellMessage);
+                World.sendMessageNonDiscord("<col=#ffffff><shad=555>" + player.getRights().getYellPrefix() + rankIcons + "</shad>[" + player.getRights().toString().toUpperCase() + "]" + player.getUsername() + ":" + player.getRights().getYellHexColor() + yellMessage);
                 return;
             }
 
             if (player.getRights() == PlayerRights.DELUXE_DONATOR) {
                 World.sendMessageNonDiscord(player.getRights().getYellPrefix() + rankIcons + " <col=8600CC>"
-                        + player.getRights().getCustomYellPrefix(false) + "<col=0EBFE9><shad=1>[Deluxe]</shad></col> @bla@" + player.getUsername() + ":"
+                        + player.getRights().getCustomYellPrefix(false) + "<col=0D75A5><shad=1>[Deluxe]</shad></col> @bla@" + player.getUsername() + ":"
                         + yellMessage);
                 return;
             }
             if (player.getRights() == PlayerRights.UBER_DONATOR) {
-                World.sendMessageNonDiscord("" + player.getRights().getYellPrefix() + rankIcons + "<col=0EBFE9><shad=1> [Uber]</shad></col> @bla@" + player.getUsername() + ":" + yellMessage);
+                World.sendMessageNonDiscord("" + player.getRights().getYellPrefix() + rankIcons + "<col=cdd406><shad=1> [Uber]</shad></col> @bla@" + player.getUsername() + ":" + yellMessage);
                 return;
             }
             if (player.getRights() == PlayerRights.LEGENDARY_DONATOR) {
-                World.sendMessageNonDiscord("" + player.getRights().getYellPrefix() + rankIcons + "<col=697998><shad=1> [Legendary]</shad></col> @bla@" + player.getUsername() + ":"
+                World.sendMessageNonDiscord("" + player.getRights().getYellPrefix() + rankIcons + "<col=E0AF09><shad=1> [Legendary]</shad></col> @bla@" + player.getUsername() + ":"
                         + yellMessage);
                 return;
             }
             if (player.getRights() == PlayerRights.EXTREME_DONATOR) {
-                World.sendMessageNonDiscord("" + player.getRights().getYellPrefix() + rankIcons + "<col=D9D919><shad=1> [Extreme]</shad></col> @bla@" + player.getUsername() + ":"
+                World.sendMessageNonDiscord("" + player.getRights().getYellPrefix() + rankIcons + "<col=851CF7><shad=1> [Extreme]</shad></col> @bla@" + player.getUsername() + ":"
                         + yellMessage);
                 return;
             }
             if (player.getRights() == PlayerRights.SUPER_DONATOR) {
-                World.sendMessageNonDiscord("" + player.getRights().getYellPrefix() + rankIcons + "<col=787878><shad=1> [Super]</shad></col> @bla@" + player.getUsername() + ":"
+                World.sendMessageNonDiscord("" + player.getRights().getYellPrefix() + rankIcons + "<col=23F112><shad=1> [Super]</shad></col> @bla@" + player.getUsername() + ":"
                         + yellMessage);
                 return;
             }
             if (player.getRights() == PlayerRights.DONATOR) {
-                World.sendMessageNonDiscord("" + player.getRights().getYellPrefix() + rankIcons + "<col=FF7F00><shad=1> [Donator]</shad></col> @bla@" + player.getUsername() + ":"
+                World.sendMessageNonDiscord("" + player.getRights().getYellPrefix() + rankIcons + "<col=CE1B1C><shad=1> [Donator]</shad></col> @bla@" + player.getUsername() + ":"
                         + yellMessage);
                 return;
             }
@@ -1642,6 +1642,12 @@ public class CommandPacketListener implements PacketListener {
     }
 
     private static void helperCommands(final Player player, String[] command, String wholeCommand) {
+
+        if (wholeCommand.toLowerCase().startsWith("staff")) {
+            String staffMessage = wholeCommand.substring(5);
+            String crown = player.getRights().ordinal() > 0 ? "<img=" + player.getRights().ordinal() + ">" : "";
+            World.sendStaffYell("<img=12><shad=2><col=03FFEA>[STAFF YELL] : " + crown + player.getUsername() +" " + staffMessage + "</col>");
+        }
 
 
         if (command[0].equalsIgnoreCase("permban") || command[0].equalsIgnoreCase("permaban")) {

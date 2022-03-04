@@ -4,6 +4,7 @@ package com.zamron.world.content.serverperks;
 import com.zamron.util.QuickUtils;
 import com.zamron.util.StringUtils;
 import com.zamron.world.World;
+import com.zamron.world.content.discord.DiscordMessenger;
 import com.zamron.world.entity.impl.player.Player;
 
 import java.io.IOException;
@@ -16,12 +17,12 @@ import java.util.stream.Stream;
 public class GlobalPerks {
 
     public enum Perk {
-    	x2_SLAYER_POINTS(0, 235000, 1225),
-        x2_DAMAGE(1, 250000, 1226),
-        x2_NPC_KILLS(2, 300000, 1227),
+    	x2_SLAYER_POINTS(0, 250000, 1225),
+        x2_DAMAGE(1, 500000, 1226),
+        x2_NPC_KILLS(2, 350000, 1227),
         x2_BOSS_POINTS(3, 350000, 1228),
-        x3_XP(4, 250000, 1229),
-        DOUBLE_DROPS(5, 300000, 1229);
+        x3_XP(4, 200000, 1229),
+        DOUBLE_DROPS(5, 500000, 1229);
 
         private final int index;
         private final int amount;
@@ -108,14 +109,16 @@ public class GlobalPerks {
         currentTime = TIME;
         active = true;
         activePerk = perk;
-        World.sendMessageDiscord("<img=12>@bla@[@whi@Server Perks@bla@]<img=12> @red@ " + StringUtils.usToSpace(activePerk.toString()) + " has Started");
+        World.sendMessageNonDiscord("<img=12>@bla@[@whi@Server Perks@bla@]<img=12> @red@ " + StringUtils.usToSpace(activePerk.toString()) + " has Started");
+        DiscordMessenger.sendGeneralChat("[Server Perks]",StringUtils.usToSpace(activePerk.toString()) + " has started!");
         updateOverlay();
     }
 
     private void end() {
         active = false;
         contributions.put(activePerk, 0);
-        World.sendMessageDiscord("<img=12>[Server Perks]<img=12> @red@Perk " + StringUtils.usToSpace(activePerk.toString()) + " has ended");
+        World.sendMessageNonDiscord("<img=12>[Server Perks]<img=12> @red@Perk " + StringUtils.usToSpace(activePerk.toString()) + " has ended");
+        DiscordMessenger.sendGeneralChat("[Server Perks]",StringUtils.usToSpace(activePerk.toString()) + " has ended");
         activePerk = null;
         resetInterface();
     }
@@ -214,6 +217,4 @@ public class GlobalPerks {
     private GlobalPerks() {
 
     }
-
-
 }

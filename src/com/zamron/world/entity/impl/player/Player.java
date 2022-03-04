@@ -2066,6 +2066,7 @@ public class Player extends Character {
 				|| weaponId == 17931   //Sires glaive
 				|| weaponId == 18398
 				|| weaponId == 12428
+				|| weaponId == 4059
 		) {
 			return 1;
 		}
@@ -2077,7 +2078,6 @@ public class Player extends Character {
 				|| weaponId == 15653
 				|| weaponId == 5195
 				|| weaponId == 15656
-				|| weaponId == 4059
 				|| weaponId == 7764
 				|| weaponId == 13201
 				|| weaponId == 16550

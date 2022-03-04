@@ -42,22 +42,25 @@ public class TeleportInterface {
 		JOKER(50608, "Joker", "", "", "", "SLAYER NPC", "@gre@HP:@red@ 1M", 420,
 				new int[] { 3310, 2788, 0 }, 3000),
 
-		/**TOAD(50609, "Stoned Toad", "", "", "", "SLAYER NPC", "@gre@HP:@red@ 1.6M", 812,
-				new int[] { 2197, 4945, 0 }, 3000),**/
+		TOAD(50609, "Stoned Toad", "", "Toadly stoned", "", "SLAYER NPC", "@gre@HP:@red@ 1.6M", 812,
+				new int[] { 2197, 4945, 0 }, 3000),
 
-		TOAD(50609, "Disabled", "", "", "", "SLAYER NPC", "@gre@HP:@red@ 1.6M", 812,
-				new int[] { 2605, 3093, 0 }, 3000),
+		ZORBAK(50610, "Zorbak", "", "", "", "SLAYER NPC", "@gre@HP:@red@ 1.8M", 5922,
+				new int[] { 2214, 4944, 0 }, 3000),
 
-		TOKASH(50610, "To'Kash", "", "", "", "SLAYER NPC", "@gre@HP:@red@ 2.5M", 10038,
+		MEWTWO(50611, "Mewtwo", "Magical Mewtwo", "", "", "SLAYER NPC", "@gre@HP:@red@ 2.5M", 6357,
+				new int[] { 2206, 4957, 0 }, 3000),
+
+		TOKASH(50612, "To'Kash", "", "", "", "SLAYER NPC", "@gre@HP:@red@ 2.5M", 10038,
 				new int[] { 3354, 9402, 0 }, 3000),
 
-		BALLAK(50611, "Bal'lak", "", "", "", "SLAYER NPC", "@gre@HP:@red@ 2.5M", 10140,
+		BALLAK(50613, "Bal'lak", "", "", "", "SLAYER NPC", "@gre@HP:@red@ 2.5M", 10140,
 				new int[] { 3354, 9402, 0 }, 3000),
 
-		OOGLE(50612, "Baby Oogle", "", "", "", "SLAYER NPC", "@gre@HP:@red@ 10M", 4541,
+		OOGLE(50614, "Baby Oogle", "", "", "", "SLAYER NPC", "@gre@HP:@red@ 10M", 4541,
 				new int[] { 2605, 3093, 0 }, 3000),
 
-		AMONGUS(50613, "Among Us", "Slayer NPC's", "Juicy...", "", "Whos the TRAITOR!?", "", 610, new int[] {2914, 4064, 0});
+		AMONGUS(50615, "Among Us", "Slayer NPC's", "Juicy...", "", "Whos the TRAITOR!?", "", 610, new int[] {2914, 4064, 0});
 
 
 
@@ -203,10 +206,11 @@ public class TeleportInterface {
 
 		TRINITY(50607, "Trinity", "Trinity@bla@(T8)", "ITS a Massboss", "@red@KC REQ: 1000 Purple Wyrms", "@red@HP:@gre@ 725k", "", 170,
 				new int[] { 2517, 4645, 0 }, 3000),
+
 		CLOUD(50608, "Cloud", "Cloud@bla@(T9)", "@red@KC REQ: 1000 Trinity", "@red@HP:@gre@ 750k", "", "", 169,
 				new int[] { 2539, 5774, 0 }),
 
-		HERBAL(50609, "Herbal Rogue", "Herbal Rogue@bla@(T9)", "@red@KC REQ: 1000 Cloud", "@red@HP:@gre@ 750000(750k)", "", "", 219, new int[] { 2737, 5087, 0 },
+		HERBAL(50609, "Herbal Rogue", "Herbal Rogue@bla@(T9)", "@red@KC REQ: 1000 Cloud", "@red@HP:@gre@ 750k", "", "", 219, new int[] { 2737, 5087, 0 },
 				4000),
 
 		EXODEN(50610, "Exoden", "Exoden@bla@(T9)", "@red@KC REQ: 1000 Herbal Rogue", "@red@HP:@gre@ 800k", "", "", 12239, new int[] { 2540, 10162, 0 },
@@ -507,7 +511,6 @@ public class TeleportInterface {
 	private static int currentTab = 0; // 0 = Boss, 1 = Monsters, 2 = Wildy, 3 = Zones, 4 = Minigame, 5 = Cities
 
 	public static boolean handleButton(Player player, int buttonID) {
-
 		if (!(buttonID >= -14935 && buttonID <= -14836)) {
 			return false;
 		}
@@ -521,7 +524,7 @@ public class TeleportInterface {
 				//System.out.println("Handled boss data [As index was 0]");
 				Slayers bossData = Slayers.values()[index];
 				currentClickIndex = index;
-				sendBossData(player, bossData);
+				sendSlayerData(player, bossData);
 				sendDrops(player, bossData.npcId);
 			}
 		}
@@ -576,7 +579,7 @@ public class TeleportInterface {
 
 	public static int currentClickIndex = 0;
 
-	public static void sendBossData(Player player, Slayers data) {
+	public static void sendSlayerData(Player player, Slayers data) {
 		player.getPacketSender().sendString(51200, data.description1);
 		player.getPacketSender().sendString(51201, data.description2);
 		player.getPacketSender().sendString(51202, data.description3);
@@ -645,7 +648,7 @@ public class TeleportInterface {
 	public static void sendMonsterTab(Player player) {
 		currentTab = 1;
 		clearData(player);
-		player.getPacketSender().sendString(CATEGORY_NAME_ID, "Monsters");
+		player.getPacketSender().sendString(CATEGORY_NAME_ID, "Beginner NPC's");
 		for (Monsters data : Monsters.values()) {
 			player.getPacketSender().sendString(data.textId, data.name);
 		}
@@ -655,7 +658,7 @@ public class TeleportInterface {
 	public static void sendHardenedTab(Player player) {
 		currentTab = 2;
 		clearData(player);
-		player.getPacketSender().sendString(CATEGORY_NAME_ID, "Hardened ");
+		player.getPacketSender().sendString(CATEGORY_NAME_ID, "Medium NPC's");
 		for (Hardened data : Hardened.values()) {
 			player.getPacketSender().sendString(data.textId, data.name);
 		}
@@ -665,7 +668,7 @@ public class TeleportInterface {
 	public static void sendExpertTab(Player player) {
 		currentTab = 3;
 		clearData(player);
-		player.getPacketSender().sendString(CATEGORY_NAME_ID, "Expert");
+		player.getPacketSender().sendString(CATEGORY_NAME_ID, "Hard NPC's");
 		for (Expert data : Expert.values()) {
 			player.getPacketSender().sendString(data.textId, data.name);
 		}
@@ -675,7 +678,7 @@ public class TeleportInterface {
 	public static void sendZonesTab(Player player) {
 		currentTab = 4;
 		clearData(player);
-		player.getPacketSender().sendString(CATEGORY_NAME_ID, "Zones");
+		player.getPacketSender().sendString(CATEGORY_NAME_ID, "Zones & WBosses");
 		for (Zones data : Zones.values()) {
 			player.getPacketSender().sendString(data.textId, data.name);
 		}
@@ -685,7 +688,7 @@ public class TeleportInterface {
 	public static void sendMinigameTab(Player player) {
 		currentTab = 5;
 		clearData(player);
-		player.getPacketSender().sendString(CATEGORY_NAME_ID, "Minigames");
+		player.getPacketSender().sendString(CATEGORY_NAME_ID, "Minigame tele");
 		for (Minigames data : Minigames.values()) {
 			player.getPacketSender().sendString(data.textId, data.name);
 		}

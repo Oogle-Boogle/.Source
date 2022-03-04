@@ -2,6 +2,7 @@ package com.zamron.world.content.skill.impl.slayer;
 
 import com.zamron.model.Position;
 import com.zamron.util.Misc;
+import com.zamron.world.content.Broly;
 import com.zamron.world.entity.impl.player.Player;
 
 /**
@@ -75,8 +76,8 @@ public enum SlayerTasks {
 	ONSLAUGHT(SlayerMaster.BRAVEK, 422, "You can find Onslaught in hard raids!", 15000, new Position(0000,0000)),
 	KINGKONG(SlayerMaster.BRAVEK, 111, "Find King Kong in Hard raids!", 15000, new Position(0000,0000)),
 	ASSASSIN(SlayerMaster.BRAVEK, 9944, "Assassin global world boss...", 15000, new Position(0000, 0000)),
-	DARKRANGER(SlayerMaster.BRAVEK, 299, "Dark Ranger global world boss...", 15000, new Position(0000, 0000));
-
+	DARKRANGER(SlayerMaster.BRAVEK, 299, "Dark Ranger global world boss...", 15000, new Position(0000, 0000)),
+	BROLY(SlayerMaster.BRAVEK, 1059, "Find broly at ::broly spawn.", 10000, new Position(0000,0000));
 
 	private SlayerTasks(SlayerMaster taskMaster, int npcId, String npcLocation, int XP, Position taskPosition) {
 		this.taskMaster = taskMaster;

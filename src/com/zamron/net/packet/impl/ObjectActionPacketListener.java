@@ -352,9 +352,8 @@ public class ObjectActionPacketListener implements PacketListener {
 						}
 					}
 					else;
-					TeleportInterface.sendBossData(player, Slayers.BOWSER);
+					TeleportInterface.sendSlayerData(player, TeleportInterface.Slayers.BOWSER);
 					TeleportInterface.sendBossTab(player);
-					
 					break;
 					
 				case 2079:

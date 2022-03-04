@@ -39,7 +39,7 @@ public class InfernalWizardCombat implements CombatStrategy {
 			protected void execute() {
 				tick -= 1;
 				if(tick == 14) {
-					npc.forceChat("Prepare for this!");
+					npc.forceChat("Ya Ranen!");
 				}
 				
 				if(tick == 13) {
@@ -47,7 +47,7 @@ public class InfernalWizardCombat implements CombatStrategy {
 				}
 				
 				if(tick == 12) {
-					npc.forceChat("Oh these were grenades btw :C");
+					npc.forceChat("Zariajayu Vzryvchatku!");
 				}
 				
 				if(tick == 8) {

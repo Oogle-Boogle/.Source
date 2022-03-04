@@ -69,7 +69,6 @@ public class CombatStrategies {
 		STRATEGIES.put(2745, new Jad());
 		STRATEGIES.put(8528, new Nomad());
 		STRATEGIES.put(8349, new TormentedDemon());
-		STRATEGIES.put(9994, new TormentedDemon());
 		STRATEGIES.put(3200, new ChaosElemental());
 		STRATEGIES.put(4540, new BandosAvatar());
 		STRATEGIES.put(8133, new CorporealBeast());
@@ -173,18 +172,16 @@ public class CombatStrategies {
 
 		//Starwars zone
 		STRATEGIES.put(1069, new Sagittare());
-
 		//Dark Ranger
-		STRATEGIES.put(299, new Sagittare());
-
-
+		STRATEGIES.put(299, new RangerBoss()); //Sagittare
 		//Broly
-		STRATEGIES.put(1059, new Harambe());
-
+		STRATEGIES.put(1059, new BrolyCombat());
 		STRATEGIES.put(420, new Joker());
-
 		STRATEGIES.put(2843, new Charizard());
 		STRATEGIES.put(174, new Charizard());
+		STRATEGIES.put(812, new Toad());
+		STRATEGIES.put(5922, new Zorbak());
+		STRATEGIES.put(6357, new Mewtwo());
 
 		/**
 		 * Converted Bosses.
@@ -206,8 +203,6 @@ public class CombatStrategies {
 		/**
 		 * End of converted bosses.
 		 */
-        
-        
 		STRATEGIES.put(7553, new TheGeneral());
 		STRATEGIES.put(12841, new Warmonger());
 		STRATEGIES.put(6313, new ArmadylAbyzou());
@@ -227,8 +222,6 @@ public class CombatStrategies {
 		STRATEGIES.put(8675, new OlmMinionsCombat());
 		STRATEGIES.put(2, new SuicsBoss());
 		STRATEGIES.put(9944, new AssassinStrategy());
-		
-		
 	}
 	
 	public static CombatStrategy getStrategy(NPC npc) {

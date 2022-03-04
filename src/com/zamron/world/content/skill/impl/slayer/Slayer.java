@@ -26,11 +26,9 @@ public class Slayer {
         this.player = p;
     }
 
-    private SlayerTasks slayerTask = SlayerTasks.NO_TASK;
-    private SlayerTasks lastTask = SlayerTasks.NO_TASK;
+    private SlayerTasks slayerTask = SlayerTasks.NO_TASK, lastTask = SlayerTasks.NO_TASK;
     private SlayerMaster slayerMaster = SlayerMaster.VANNAKA;
-    private int amountToSlay;
-    private int taskStreak;
+    private int amountToSlay, taskStreak;
     public static String duoPartner, duoInvitation;
 
     public void assignTask() {
@@ -136,7 +134,6 @@ public class Slayer {
 
         PlayerPanel.refreshPanel(player);
     }
-
     @SuppressWarnings("incomplete-switch")
     public void givePoints(SlayerMaster master) {
         int pointsReceived = 4;
@@ -185,7 +182,6 @@ public class Slayer {
         if (GlobalPerks.getInstance().getActivePerk() == GlobalPerks.Perk.x2_SLAYER_POINTS) {
             pointsReceived *= 2;
         }
-
 
         int per5 = pointsReceived * 2;
         int per10 = pointsReceived * 3;
@@ -239,8 +235,6 @@ public class Slayer {
                 pointsReceived *= 2;
                 break;
         }
-
-
         if (player.getSlayer().getTaskStreak() == 5) {
             player.getPointsHandler().setSlayerPoints(per5, true);
             player.getPacketSender().sendMessage("You received " + per5 + " Slayer points.");

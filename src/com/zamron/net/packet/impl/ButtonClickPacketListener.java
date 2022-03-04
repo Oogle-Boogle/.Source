@@ -139,9 +139,6 @@ public class ButtonClickPacketListener implements PacketListener {
     
     @Override
     public void handleMessage(Player player, Packet packet) {
-        
-
-
         int id = packet.readShort();
 
 
@@ -590,7 +587,10 @@ public class ButtonClickPacketListener implements PacketListener {
              */
 
             case -15034:
+                //TeleportInterface.sendBossTab(player);
+                TeleportInterface.sendSlayerData(player, TeleportInterface.Slayers.BOWSER);
                 TeleportInterface.sendBossTab(player);
+                TeleportInterface.sendDrops(player, 728);
                 break;
 
             case 11014:
@@ -599,23 +599,38 @@ public class ButtonClickPacketListener implements PacketListener {
                 break;
 
             case -15033:
+                //TeleportInterface.sendMonsterTab(player);
+                TeleportInterface.sendMonsterData(player, TeleportInterface.Monsters.STARTER);
                 TeleportInterface.sendMonsterTab(player);
+                TeleportInterface.sendDrops(player, 4455);
                 break;
 
             case -15032:
+                //TeleportInterface.sendHardenedTab(player);
+                TeleportInterface.sendWildyData(player, TeleportInterface.Hardened.CORPOREAL_BEAST);
                 TeleportInterface.sendHardenedTab(player);
+                TeleportInterface.sendDrops(player, 8133);
                 break;
 
             case -15031:
+                //TeleportInterface.sendExpertTab(player);
+                TeleportInterface.sendZonesData(player, TeleportInterface.Expert.NEX);
                 TeleportInterface.sendExpertTab(player);
+                TeleportInterface.sendDrops(player, 3154);
                 break;
 
             case -15030:
+                //TeleportInterface.sendZonesTab(player);
+                TeleportInterface.sendMinigameData(player, TeleportInterface.Zones.BOX_ZONE);
                 TeleportInterface.sendZonesTab(player);
+                TeleportInterface.sendDrops(player, 197);
                 break;
 
             case -15029:
+                //TeleportInterface.sendMinigameTab(player);
+                TeleportInterface.sendCityData(player, TeleportInterface.Minigames.FRANKENSTIEN);
                 TeleportInterface.sendMinigameTab(player);
+                TeleportInterface.sendDrops(player, 4291);
                 break;
 
             case -1136:
@@ -1630,9 +1645,11 @@ public class ButtonClickPacketListener implements PacketListener {
                 break;
 
             case 10003: //Change this to monster
-                TeleportInterface.sendBossData(player, TeleportInterface.Slayers.BOWSER);
+                //TeleportInterface.sendSlayerData(player, TeleportInterface.Slayers.BOWSER);
+                //TeleportInterface.sendBossTab(player);
+                TeleportInterface.sendSlayerData(player, TeleportInterface.Slayers.BOWSER);
                 TeleportInterface.sendBossTab(player);
-                //player.getTeleportInterface().open();
+                TeleportInterface.sendDrops(player, 728);
                 break;
 
             case -4934:
@@ -1841,20 +1858,20 @@ public class ButtonClickPacketListener implements PacketListener {
             case 8669:
             case 8660:
             case 11008:
-            	TeleportInterface.sendBossData(player, Slayers.BOWSER);
+            	TeleportInterface.sendSlayerData(player, Slayers.BOWSER);
                 TeleportInterface.sendBossTab(player);
                 break;
             case 11017:
-            	TeleportInterface.sendBossData(player, Slayers.BOWSER);
+            	TeleportInterface.sendSlayerData(player, Slayers.BOWSER);
                 TeleportInterface.sendBossTab(player);
                 break;
             case 11011:
-            	TeleportInterface.sendBossData(player, TeleportInterface.Slayers.BOWSER);
+            	TeleportInterface.sendSlayerData(player, TeleportInterface.Slayers.BOWSER);
                 TeleportInterface.sendBossTab(player);
                 break;
 
             case 11020:
-            	TeleportInterface.sendBossData(player, Slayers.BOWSER);
+            	TeleportInterface.sendSlayerData(player, Slayers.BOWSER);
                 TeleportInterface.sendHardenedTab(player);
                 break;
 

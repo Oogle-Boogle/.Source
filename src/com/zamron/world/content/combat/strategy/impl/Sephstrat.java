@@ -17,11 +17,7 @@ public class Sephstrat implements CombatStrategy {
     private static final Graphic seph_healing_graphic = new Graphic(444);
 
     private static void attackAll(Character entity, Character victim) {
-
-
-
     }
-
 
     @Override
     public boolean canAttack(Character entity, Character victim) {

@@ -652,7 +652,8 @@ public class NPCDeathTask extends Task {
 						}
 						/** SLAYER **/
 						if (killer.getSlayer().getSlayerTask() == SlayerTasks.MAGIC_SPIDER && npc.getId() == 2000) {
-							killer.getSlayer().killedNpc(npc);2
+							killer.getSlayer().killedNpc(npc);
+							killer.getSlayer().handleSlayerTaskDeath(true);
 							//Slayer.handleSlayerTaskDeath(true); //DO NOT MAKE STATIC
 							System.out.println("Killed venenatis");
 							stop();

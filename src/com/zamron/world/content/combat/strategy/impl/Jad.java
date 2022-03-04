@@ -40,7 +40,7 @@ public class Jad implements CombatStrategy {
 		}
 		if 	(Misc.random(1000) <= 320 && jad.getConstitution() <= 6000000) {
 			jad.performGraphic(jad_healing_graphic);
-			jad.forceChat("Welcome to the new me! Now Suffer!");
+			jad.forceChat("You must suffer!");
 			victim.dealDamage(new Hit(150, Hitmask.DARK_RED, CombatIcon.NONE));
 			jad.setConstitution(jad.getConstitution() + Misc.getRandom(5000000));
 		}
