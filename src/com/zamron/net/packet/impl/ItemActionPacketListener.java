@@ -431,6 +431,15 @@ public class ItemActionPacketListener implements PacketListener {
 				GuideBook.displayGuideInterface(player);
 				break;
 
+			case 7630:
+				if (player.getInventory().getFreeSlots() < 7) {
+					player.getPacketSender().sendMessage("You need atleast 7 free slots to open this supply crate.");
+				} else {
+					SupplyCrate.openBox(player);
+					ScavengeGain.MysteryBox(player);
+				}
+				break;
+
 			case 6199:
 				if (player.getInventory().getFreeSlots() < 3) {
 					player.sendMessage("You need atleast 3 free inventory slots to open this box.");
