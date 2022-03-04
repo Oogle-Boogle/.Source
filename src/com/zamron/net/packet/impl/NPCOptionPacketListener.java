@@ -656,6 +656,24 @@ public class NPCOptionPacketListener implements PacketListener {
             return;
         }
 
+        if (npc.getId() == 5922) {
+            if (player.getSlayer().getSlayerTask().equals(SlayerTasks.ZORBAK)) {
+                player.getCombatBuilder().attack(npc);
+            } else {
+                player.getPacketSender().sendMessage("You must have " + npc.getDefinition().getName()+ " as a slayer task.");
+                return;
+            }
+        }
+
+        if (npc.getId() == 6357) {
+            if (player.getSlayer().getSlayerTask().equals(SlayerTasks.MEWTWO)) {
+                player.getCombatBuilder().attack(npc);
+            } else {
+                player.getPacketSender().sendMessage("You must have " + npc.getDefinition().getName()+ " as a slayer task.");
+                return;
+            }
+        }
+
         if (npc.getId() == 10140) {
             if (player.getSlayer().getSlayerTask().equals(SlayerTasks.BAL)) {
                 player.getCombatBuilder().attack(npc);
@@ -683,7 +701,7 @@ public class NPCOptionPacketListener implements PacketListener {
             }
         }
 
-        if (npc.getId() == 6309) {
+        if (npc.getId() == 6309 || npc.getId() == 2000) {
             if (player.getSlayer().getSlayerTask().equals(SlayerTasks.MAGIC_SPIDER) || player.getSlayer().getSlayerTask().equals(SlayerTasks.MAGIC_SPIDER2)) {
                 player.getCombatBuilder().attack(npc);
             } else {

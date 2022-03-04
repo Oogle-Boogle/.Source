@@ -32,8 +32,6 @@ public class ChristmasMysteryBox {
 			World.sendMessageNonDiscord("<img=12>@blu@[CHRISTMAS BOX]<img=12> @red@"+player.getUsername().toString() + " @blu@Has just received a rare reward.");
 		}
 	}
-	
-	
 	/*
 	 * Handles the opening
 	 */

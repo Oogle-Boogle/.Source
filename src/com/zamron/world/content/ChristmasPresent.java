@@ -15,7 +15,6 @@ public class ChristmasPresent {
 			 */
 			player.getInventory().add(1050, 1);
 			player.getPacketSender().sendMessage("Congratulations you recieved the santa hat");
-			
 		} else {
 			/*
 			 * Not landing on 5

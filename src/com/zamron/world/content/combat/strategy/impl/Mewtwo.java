@@ -38,11 +38,11 @@ public class Mewtwo implements CombatStrategy {
         if(jad.isChargingAttack()) {
             return true;
         }
-        if 	(Misc.random(1000) <= 320 && jad.getConstitution() <= 6000000) {
+        if 	(Misc.random(10000) <= 320 && jad.getConstitution() <= 10000) {
             jad.performGraphic(jad_healing_graphic);
-            jad.forceChat("You must suffer!");
-            victim.dealDamage(new Hit(150, Hitmask.DARK_RED, CombatIcon.NONE));
-            jad.setConstitution(jad.getConstitution() + Misc.getRandom(5000000));
+            jad.forceChat("Humans may have created me. But they will never enslave me! This cannot be my destiny!");
+            victim.dealDamage(new Hit(350, Hitmask.DARK_RED, CombatIcon.NONE));
+            jad.setConstitution(jad.getConstitution() + Misc.getRandom(2500));
         }
         int random = Misc.getRandom(10);
         if(random <= 8 && Locations.goodDistance(jad.getPosition().getX(), jad.getPosition().getY(), victim.getPosition().getX(), victim.getPosition().getY(), 3)) {
@@ -68,7 +68,7 @@ public class Mewtwo implements CombatStrategy {
                 }
             });
         } else {
-            jad.getCombatBuilder().setContainer(new CombatContainer(jad, victim, 1, 5, CombatType.RANGED, true));
+            jad.getCombatBuilder().setContainer(new CombatContainer(jad, victim, 1, 5, CombatType.MAGIC, true));
             jad.performAnimation(anim4);
             jad.performGraphic(gfx2);
             jad.setChargingAttack(true);
@@ -95,15 +95,15 @@ public class Mewtwo implements CombatStrategy {
         return 10;
     }
 
-    private static final Animation anim1 = new Animation(4442); //healing
+    private static final Animation anim1 = new Animation(2273); //healing
     private static final Animation anim2 = new Animation(716); //Confuse animation
-    private static final Animation anim3 = new Animation(9300); //
-    private static final Animation anim4 = new Animation(9276);
+    private static final Animation anim3 = new Animation(716); //
+    private static final Animation anim4 = new Animation(724);
     private static final Graphic gfx1 = new Graphic(444);
     private static final Graphic gfx2 = new Graphic(102);
-    private static final Graphic gfx3 = new Graphic(1626);
-    private static final Graphic gfx4 = new Graphic(451);
-    private static final Graphic gfx5 = new Graphic(1627);
+    private static final Graphic gfx3 = new Graphic(104);
+    private static final Graphic gfx4 = new Graphic(110);
+    private static final Graphic gfx5 = new Graphic(444);
 
     @Override
     public CombatType getCombatType() {

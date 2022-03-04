@@ -715,6 +715,14 @@ public class ItemActionPacketListener implements PacketListener {
 
 			case 5136: // DUNGEON FLOOR 2 TP
 				TeleportHandler.teleportPlayer(player, new Position(2518, 4645, 8), TeleportType.NORMAL);
+				player.getInventory().delete(5136, 1);
+				break;
+
+			case 6749:
+				player.getInventory().delete(6749, 1);
+				//player.getSkillManager().setCurrentLevel(Skill.MAGIC, player.getSkillManager().getMaxLevel(Skill.MAGIC) + 7);
+				Consumables.overloadIncrease(player, Skill.MAGIC, 2);
+				Sounds.sendSound(player, Sounds.Sound.ACTIVATE_PRAYER_OR_CURSE);
 				break;
 
 			case 8008: // Lumbridge

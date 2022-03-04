@@ -190,8 +190,7 @@ public class Bank extends ItemContainer {
 
 	@Override
 	public int capacity() {
-
-		return 352;
+		return 500;
 
 	}
 

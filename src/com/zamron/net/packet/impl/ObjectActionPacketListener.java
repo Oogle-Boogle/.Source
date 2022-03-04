@@ -295,8 +295,9 @@ public class ObjectActionPacketListener implements PacketListener {
 					player.sendMessage("Disabled - Currently being worked on.");
 					break;
 				case 2469:
-					TeleportHandler.teleportPlayer(player, new Position(2582, 4609), player.getSpellbook().getTeleportType());
-					player.sendMessage("@red@Get the key from the NPCS to advance to room 2");
+					//TeleportHandler.teleportPlayer(player, new Position(2582, 4609), player.getSpellbook().getTeleportType());
+					//player.sendMessage("@red@Get the key from the NPCS to advance to room 2");
+					player.getPacketSender().sendMessage("@red@Disabled.");
 					break;
 					
 				case 11231:

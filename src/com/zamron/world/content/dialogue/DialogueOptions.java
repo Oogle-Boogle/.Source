@@ -1483,10 +1483,6 @@ public class DialogueOptions {
                     player.setDifficulty(player.getSelectedDifficulty());
                     player.getPacketSender().sendMessage("New difficulty :" + player.getDifficulty().toString());
                     player.getPacketSender().sendInterfaceRemoval();
-                    if (!player.hasReferral) {
-                        player.getPacketSender().sendEnterInputPrompt("Referral code: If you don't have one use Oogle.");
-                        player.setInputHandling(new EnterReferral());
-                    }
                     break;
 
                 case 656:

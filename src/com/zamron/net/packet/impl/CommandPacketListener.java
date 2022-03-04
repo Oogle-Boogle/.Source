@@ -753,7 +753,7 @@ public class CommandPacketListener implements PacketListener {
         if (command[0].equalsIgnoreCase("refer")) {
             if (!player.hasReferral) {
                 player.getPacketSender()
-                        .sendEnterInputPrompt("Hi :D Where did you find this server from type Nothing if no-one");
+                        .sendEnterInputPrompt("Hello " +player.getUsername() + ". How did you hear about Zamron?");
                 player.setInputHandling(new EnterReferral());
             } else {
                 player.sendMessage("@red@You already used a code before :(");
