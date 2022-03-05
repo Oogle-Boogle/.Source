@@ -38,6 +38,7 @@ import com.zamron.world.content.combat.DesolaceFormulas;
 import com.zamron.world.content.combat.bossminigame.BossMinigameFunctions;
 import com.zamron.world.content.combat.prayer.CurseHandler;
 import com.zamron.world.content.combat.prayer.PrayerHandler;
+import com.zamron.world.content.combat.strategy.CombatStrategies;
 import com.zamron.world.content.combat.weapon.CombatSpecial;
 import com.zamron.world.content.discord.DiscordMessenger;
 import com.zamron.world.content.dropchecker.NPCDropTableChecker;
@@ -576,6 +577,9 @@ public class CommandPacketListener implements PacketListener {
                             }
                             for (com.everythingrs.donate.Donation donate : donations) {
                                 player.getInventory().add(new Item(donate.product_id, donate.product_amount));
+                                if (World.DOUBLE_DONATIONS) {
+                                    player.getInventory().add(new Item(donate.product_id, donate.product_amount));
+                                }
                                 if (donate.product_id == 19935) {
                                     player.incrementAmountDonatedToday(+5);
                                 }
@@ -3031,19 +3035,21 @@ public class CommandPacketListener implements PacketListener {
             player.getPacketSender().sendConsoleMessage("UUID bans reloaded!");
         }
 
-        //if (command[0].equals("reloadnpcs")) {
-        //NpcDefinition.parseNpcs().load();
-        //World.sendFilteredMessage("@red@NPC Definitions Reloaded.");
-        //}
-        //if (command[0].equals("reloadcombat")) {
-        //CombatStrategies.init();
+        if (command[0].equals("reloadnpcs")) {
+            NpcDefinition.parseNpcs().load();
+            DiscordMessenger.sendStaffMessage("@red@NPC Definitions Reloaded.");
+        }
+
+        if (command[0].equals("reloadcombat")) {
+        CombatStrategies.init();
         //World.sendFilteredMessage("@red@Combat Strategies have been reloaded");
-        //}
+        DiscordMessenger.sendStaffMessage("@red@Combat Strategies have been reloaded.");
+        }
 
 
-        //if (command[0].equalsIgnoreCase("npcreset")) {
-        //NPC.init();
-        //}
+        if (command[0].equalsIgnoreCase("npcreset")) {
+        NPC.init();
+        }
 
         if (command[0].equals("reloadipbans")) {
             PlayerPunishment.reloadIPBans();
@@ -3093,11 +3099,11 @@ public class CommandPacketListener implements PacketListener {
         if (command[0].equals("saveall")) {
             World.savePlayers();
         }
-        if (command[0].equals("reloadshops")) {
-            ShopManager.parseShops().load();//
-            player.getInventory().refreshItems();
-            World.sendMessageNonDiscord("@red@Shops have been reloaded");
-        }
+//        if (command[0].equals("reloadshops")) {
+//            ShopManager.parseShops().load();//
+//            player.getInventory().refreshItems();
+//            World.sendMessageNonDiscord("@red@Shops have been reloaded");
+//        }
 
         if (command[0].equalsIgnoreCase("frame")) {
             int frame = Integer.parseInt(command[1]);

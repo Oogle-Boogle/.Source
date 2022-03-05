@@ -128,15 +128,15 @@ public class NPCOptionPacketListener implements PacketListener {
                         break;
 
                     case 4581:
-                        if (player.getNpcKills() < 250 && player.getRights() != PlayerRights.DEVELOPER) {
-                            player.sendMessage("@red@You need 250 NPC kill count to visit the Starwars zone");
-                            player.sendMessage("@red@You have " + player.getNpcKills() + " NPC kills.");
+                        if (player.getSkillManager().getCurrentLevel(Skill.PVM) > 65 && player.getNpcKills() > 2500) {
+                            TeleportHandler.teleportPlayer(player, new Position(2912, 3413, 0), player.getSpellbook().getTeleportType());
+                            //TeleportHandler.teleportPlayer(player, new Position(2912, 3413, 0), TeleportType.NORMAL);
+                            player.getPacketSender().sendMessage("@gre@Welcome to the StarWars Zone");
+                        } else {
+                            player.getPacketSender().sendMessage("@red@You must have 65+ PVM level & 2500+ NPC Killcount.");
+                            player.getPacketSender().sendMessage("@red@You currently have " +player.getNPCKILLCount() + " & " +player.getSkillManager().getCurrentLevel(Skill.PVM)+ " PVM Level.");
                             return;
                         }
-                        TeleportHandler.teleportPlayer(player, new Position(2912, 3413, 0), player.getSpellbook().getTeleportType());
-                        //TeleportHandler.teleportPlayer(player, new Position(2912, 3413, 0), TeleportType.NORMAL);
-                        player.getPacketSender()
-                                .sendMessage("@blu@Welcome to the StarWars Zone");
                         break;
 
 

@@ -261,17 +261,17 @@ public class TeleportInterface {
 
 		NEX(50601, "Supreme nex", "Supreme nex@bla@(T9)", "This npc drops Supreme set", "@red@KC REQ: 1000 Exoden", "@red@HP:@gre@ 825k", "", 3154,
 				new int[] { 2599, 4699, 0 },2000),
-		APOLLO(50602, "Apollo Ranger", "Apollo Ranger@bla@(T10)", "This drops Apollo Set", "@red@KC REQ: 1000 Supreme Nex'", "@red@HP:@gre@ 850k", "", 1684,
+		APOLLO(50602, "Apollo Ranger", "Apollo Ranger@bla@(T10)", "This drops Apollo Set", "@red@KC REQ: 550 Supreme Nex'", "@red@HP:@gre@ 3m", "", 1684,
 				new int[] { 3178, 4237, 2 },2000),
-		TROLL(50603, "Noxious Troll", "Noxious Troll@bla@(T10)", "This drops Noxious Set", "@red@KC REQ: 1000 Apollo Rangers", "@red@HP:@gre@ 900k", "", 5957,
+		TROLL(50603, "Noxious Troll", "Noxious Troll@bla@(T10)", "This drops Noxious Set", "@red@KC REQ: 550 Apollo Rangers", "@red@HP:@gre@ 3m", "", 5957,
 				new int[] { 3232, 3043, 0 },3000),
-		AZAZEL(50604, "Azazel Beast", "Azazel Beast@bla@(T10)", "This drops Azazel Set", "@red@KC REQ: 1000 Noxious Trolls", "@red@HP:@gre@ 925k", "", 5958,
+		AZAZEL(50604, "Azazel Beast", "Azazel Beast@bla@(T10)", "This drops Azazel Set", "@red@KC REQ: 550 Noxious Trolls", "@red@HP:@gre@ 3m", "", 5958,
 				new int[] { 2468, 3372, 0 },3000),
-		RAVANA(50605, "Ravana", "Ravana@bla@(T10)", "This drops Detrimental Set", "@red@KC REQ: 1000 Azazel Beasts", "@red@HP:@gre@ 950k", "", 5959,
+		RAVANA(50605, "Ravana", "Ravana@bla@(T10)", "This drops Detrimental Set", "@red@KC REQ: 550 Azazel Beasts", "@red@HP:@gre@ 3m", "", 5959,
 				new int[] { 3595, 3492, 0 },3000),
-		LUMINITIOS(50606, "Luminitous Warriors", "Warriors@bla@(T10)", "This drops Luminitous Set", "@red@KC REQ: 1000 Ravanas", "@red@HP:@gre@ 1m", "", 185,
+		LUMINITIOS(50606, "Luminitous Warriors", "Warriors@bla@(T10)", "This drops Luminitous Set", "@red@KC REQ: 550 Ravanas", "@red@HP:@gre@ 3m", "", 185,
 				new int[] { 2525, 4776, 0 },3000),
-		HELLHOUND(50607, "Custom Hellhounds", "Hell Hounds@bla@(T10)", "This drops BFG set", "@red@KC REQ: 1000 Luminitous warriors", "@red@HP:@gre@ 1.25m", "", 6311,
+		HELLHOUND(50607, "Custom Hellhounds", "Hell Hounds@bla@(T10)", "This drops BFG set", "@red@KC REQ: 550 Luminitous warriors", "@red@HP:@gre@ 3m", "", 6311,
 				new int[] { 3176, 3029, 0 },3000);
 
 		Expert(int textId, String name, String description1, String description2, String description3,

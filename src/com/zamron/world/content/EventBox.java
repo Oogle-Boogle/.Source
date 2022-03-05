@@ -45,7 +45,7 @@ public class EventBox {
 				/**World.sendMessageNonDiscord("<shad=bf0000>[Rare Reward]</shad>@bla@: "+player.getUsername().toString() +
 				 " has just received a <col=FFFF64><shad=ebf217>" + ItemDefinition.forId(reward).getName() +
 				 " </shad>@bla@from the @red@" + ItemDefinition.forId(boxId).getName() );**/
-			} else if (chance >= 26 && chance <= 35) {
+			} else if (chance >= 26 && chance <= 33) {
 				reward = goodRewards[RandomUtility.exclusiveRandom(0, goodRewards.length)];
 			} else if (chance >= 0 && chance <= 25) {
 				reward = shitRewards[RandomUtility.exclusiveRandom(0, shitRewards.length)]; // ye its correct.
