@@ -1448,6 +1448,26 @@ public class ItemActionPacketListener implements PacketListener {
 			MoneyPouch.depositTaxBag(player, player.getInventory().getAmount(995), false, 995);
 		break;
 
+			/**case 6199:
+			case 15373:
+			case 15375:
+			case 15374:
+			case 13997:
+			case 4635:
+			case 3824:
+				//TODO open all
+				if (player.getInventory().getFreeSlots() < 4) {
+					int amount = player.getInventory().getAmount(itemId);
+					player.getInventory().delete(player.getInventory().getById(itemId));
+					player.getPacketSender().sendMessage("You've opened " + amount + " of box's.");
+					player.getMysteryBox().openInterface();
+					return;
+				} else {
+				//canny open box
+					player.sendMessage("You don't have enough inventory space to open those.");
+				}
+				break;**/
+
 		case 6500:
 			if (player.getCombatBuilder().isAttacking() || player.getCombatBuilder().isBeingAttacked()) {
 				player.getPacketSender().sendMessage("You cannot configure this right now.");
