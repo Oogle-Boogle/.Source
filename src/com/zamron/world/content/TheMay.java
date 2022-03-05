@@ -29,7 +29,7 @@ public class TheMay extends NPC {
 			new Item(18940, 1), new Item(10835, 25),new Item(18941, 1), new Item(18942, 2),
 			new Item(4772, 1), new Item(4771, 1),new Item(4770, 1) };
 
-	public static Item[] RARELOOT = { new Item(5131, 1),new Item(4770, 1),new Item(4771, 1),new Item(4772, 1),new Item(5131, 1),new Item(15012,1), new Item(4799, 1),new Item(4800, 1), new Item(4801, 1), new Item(5131, 1), new Item(3988, 1), new Item(10835, 100), new Item(3973, 1)};
+	public static Item[] RARELOOT = { new Item(7630, 1) ,new Item(5131, 1),new Item(4770, 1),new Item(4771, 1),new Item(4772, 1),new Item(5131, 1),new Item(15012,1), new Item(4799, 1),new Item(4800, 1), new Item(4801, 1), new Item(5131, 1), new Item(3988, 1), new Item(10835, 100), new Item(3973, 1)};
 
 	public static Item[] SUPERRARELOOT = { new Item(16429, 1), new Item(19886, 1), };
 	
