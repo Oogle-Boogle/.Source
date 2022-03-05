@@ -155,6 +155,7 @@ public class Consumables {
 		MANTA_RAY(new Item(391), 220),
 		CAVEFISH(new Item(15266), 230),
 		ROCKTAIL(new Item(15272), 230),
+		KARAMBWAN(new Item(3144), 250),
 		/*
 		 * Baked goods food types a player
 		 * can make with the cooking skill.
