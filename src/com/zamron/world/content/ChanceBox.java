@@ -4,6 +4,9 @@ import com.zamron.util.Misc;
 import com.zamron.util.RandomUtility;
 import com.zamron.world.entity.impl.player.Player;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  *
  * Created by Oogleboogle
@@ -20,9 +23,30 @@ public class ChanceBox {
 		int chance = RandomUtility.random(100);
 
 		if (chance >= 0 && chance <= 97) {
-			player.getInventory().add(NORMALREWARD[Misc.getRandom(NORMALREWARD.length - 1)], 50); // 90% chance of getting a Frimb reward.
+			player.getInventory().add(NORMALREWARD[Misc.getRandom(NORMALREWARD.length - 1)], 50);
 		} else if (chance >= 98 && chance <= 100) {
-			player.getInventory().add(JACKPOT[Misc.getRandom(JACKPOT.length - 1)], 10000); // 10% chance of getting a Kahos reward
+			player.getInventory().add(JACKPOT[Misc.getRandom(JACKPOT.length - 1)], 10000);
+		}
+	}
+
+	public static void openAll(Player player, int boxId) {
+		int amount = player.getInventory().getAmount(boxId);
+		Map<Integer, Integer> rewards = new HashMap<>();
+		for (int i = 0; i < amount; i++) {
+			int reward = -1;
+			int chance = RandomUtility.inclusiveRandom(0, 100);
+
+			if (chance >= 98 && chance <= 100) {
+				player.getInventory().add(JACKPOT[Misc.getRandom(JACKPOT.length - 1)], 10000);
+				player.getInventory().delete(boxId, amount);
+				/**World.sendMessageNonDiscord("<shad=bf0000>[Rare Reward]</shad>@bla@: "+player.getUsername().toString() +
+				 " has just received a <col=FFFF64><shad=ebf217>" + ItemDefinition.forId(reward).getName() +
+				 " </shad>@bla@from the @red@" + ItemDefinition.forId(boxId).getName() );**/
+			} else if (chance >= 0 && chance <= 97) {
+				player.getInventory().add(NORMALREWARD[Misc.getRandom(NORMALREWARD.length - 1)], 50);
+				player.getInventory().delete(boxId, amount);
+			}
+			rewards.merge(reward, 1, Integer::sum);
 		}
 	}
 			

@@ -2,13 +2,14 @@ package com.zamron.world.content;
 
 import com.zamron.model.definitions.ItemDefinition;
 import com.zamron.util.Misc;
+import com.zamron.util.RandomUtility;
 import com.zamron.world.World;
 import com.zamron.world.content.skill.impl.scavenging.ScavengeGain;
 import com.zamron.world.entity.impl.player.Player;
 
-/**
- * @author Miscellania (joey)
- */
+import java.util.HashMap;
+import java.util.Map;
+
 public class MysteryBox {
 
 	/**
@@ -64,17 +65,13 @@ public class MysteryBox {
 				{19721,19722,19723,19734,19736,19468,18363,15398,15418}, //Common, 0
 				{9006,3941,3974,18392,4799,4800,4801}, //Uncommon, 1
 				{15012,1499,3951,5079,5187,5186,3316,3931,14559,6583} };
-		
-		int[] common = { 19721,19722,19723,19734,19736,19468,18363,15398,15418};
-		int[] uncommon = { 19721,19722,19723,19734,19736,19468,18363,15398,15418 };
-		int[] veryUncommon = { 18380,18381,18382,9006,3941,4799,4800,4801 };
-		int[] rare = { 18380,18381,18382,9006,3941,3974,18392,4799,4800,4801};
-		int[] veryRare = { 18380,18381,18382,9006,3941,18392,4799,4800,4801};
-		int[] extremelyRare = { 15012,1499,3951,5079,5187,5186,3316,3931,14559,6583 };
-		int[] legendary = {3974, 19722, 19723, 19724, 19734, 19736, 19468, 19137 };
 
-		int[][] all = {common, uncommon, veryUncommon, rare, veryRare, extremelyRare, legendary};
-		int[] tier = all[Misc.random(6)];
+		int[] common = { 19721,19722,19723,19734,19736,19468,18363,15398,15418};
+		int[] uncommon = { 9006,3941,3974,18392,4799,4800,4801 };
+		int[] veryUncommon = { 15012,1499,3951,5079,5187,5186,3316,3931,14559,6583 };
+
+		int[][] all = {common, uncommon, veryUncommon};
+		int[] tier = all[Misc.random(2)];
 		int PRIZE_ID = tier[Misc.random(tier.length -1)];
 
 		//final int PRIZE_ID = 1040; // TODO: Add box prize logic here, use mysteryPrizeTier too (0-6) for different coloured reward text
@@ -84,13 +81,13 @@ public class MysteryBox {
 		// Move non-prize items client side if you would like to reduce server load
 		if (spinNum == 0) {
 			for (int i=0; i<66; i++){
-				tier = all[Misc.random(6)];			
+				tier = all[Misc.random(2)];
 				final int NOT_PRIZE_ID = tier[Misc.random(tier.length -1)];
 				sendItem(i, 55, PRIZE_ID, NOT_PRIZE_ID);
 			}
 		} else {
 			for (int i=spinNum*50 + 16; i<spinNum*50 + 66; i++){
-				tier = all[Misc.random(6)];			
+				tier = all[Misc.random(2)];
 				final int NOT_PRIZE_ID = tier[Misc.random(tier.length -1)];
 				sendItem(i, (spinNum+1)*50 + 5, PRIZE_ID, NOT_PRIZE_ID);
 			}

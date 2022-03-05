@@ -1,7 +1,11 @@
 package com.zamron.world.content;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
+
+import com.zamron.util.RandomUtility;
 import com.zamron.world.entity.impl.player.Player;
 
 public final class StoreMBox {
@@ -12,7 +16,7 @@ public final class StoreMBox {
 		DEMONIC_CAPE(1, 18748),
 		DEMONI_OLM_GLOVES(1, 18751),
 		TAXBAGS(200, 10835),
-		
+
 		DRAGON_MINIGUN(1, 5131),
 		CRIMSON_PERNIX_COWL(1, 4772),
 		CRIMSON_PERNIX_BODY(1, 4771),
@@ -67,5 +71,4 @@ public final class StoreMBox {
 		return player.getInventory().getFreeSlots() >= 3 && player.getInventory().contains(BOX_ID);
 
 	}
-
 }

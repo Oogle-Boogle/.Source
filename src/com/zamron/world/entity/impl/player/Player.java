@@ -3731,6 +3731,12 @@ public class Player extends Character {
 		return this;
 	}
 
+	private MysteryBoxOpener mysteryBoxOpener = new MysteryBoxOpener(this);
+
+	public MysteryBoxOpener getMysteryBoxOpener() {
+		return mysteryBoxOpener;
+	}
+
 	public Stopwatch getSqlTimer() {
 		return sqlTimer;
 	}

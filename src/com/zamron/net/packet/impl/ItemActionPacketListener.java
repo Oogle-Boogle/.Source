@@ -1356,46 +1356,7 @@ public class ItemActionPacketListener implements PacketListener {
 		case 292:
 			IngridientsBook.readBook(player, 0, false);
 			break;
-			
-		/**
-		 * case 6199: int rewards2[][] = { {20072, 7327, 7323, 989, 1959, 3749, 3753,
-		 * 10828, 1215, 4587, 4091, 4093, 4095, 4097, 1079, 1127, 1093, 15332, 3024,
-		 * 15272, 6685, 1434, 2, 536, 534, 1149, 1305, 1377, 1434, 1615, 3000, 3204,
-		 * 2941, 2947, 2503, 15272, 2503, 10499, 6199, 6326, 861, 1163, 1201, 6111, 544,
-		 * 6199, 542, 5574, 5575, 5576, 1215, 3105, 13734, 7400, 2572, 11118}, //Common,
-		 * 0 {11730, 10025, 6739, 15501, 11133, 15126, 10828, 6199, 3751, 3753, 11884,
-		 * 10589, 18782, 6739, 6739, 2577, 2581, 18782, 15332, 15332, 15332, 11732,
-		 * 6199, 10564, 6809, 4587, 1249, 3204, 1305, 1377, 1434, 6528, 7158, 4153, 6,
-		 * 8, 10, 12, 4675, 6914, 6889, 4716, 4718, 4720, 4722, 4745, 4747, 4749, 4751,
-		 * 4708, 4710, 4712, 4714, 4732, 4734, 4736, 4738, 4724, 4726, 4728, 4730, 4151,
-		 * 11732, 6585, 2577, 2581, 6737, 11235, 4675, 4087, 1187, 6914, 6889, 3140,
-		 * 6916, 6918, 6920, 6922, 6924, 6731, 6735, 6733}, //Uncommon, 1 {18357, 18349,
-		 * 3749, 3753, 10828, 1215, 4587, 4091, 4093, 4095, 4097, 1079, 1127,6739,
-		 * 15259, 15332, 15126, 11856, 11854, 11852, 11846, 11850, 11732, 11848, 2577,
-		 * 2581, 2572, 15501, 18782, 6920, 6922, 11335, 15241, 15243, 6585, 4151, 11696,
-		 * 11724, 11726, 11728, 11694, 11718, 11720, 11722, 11700, 11716, 11698, 11730,
-		 * 11283, 18349, 18351, 18353, 18355, 18357, 18359, 11484, 2527, 12601, 15486,
-		 * 15018, 15019, 15020, 15220} //Rare, 2 }; double numGen = Math.random();
-		 * Chances 50% chance of Common Items - cheap gear, high-end consumables 40%
-		 * chance of Uncommon Items - various high-end coin-bought gear 10% chance of
-		 * Rare Items - Highest-end co15370in-bought gear, some voting-point/pk-point
-		 * equipment
-		 * 
-		 * int rewardGrade = numGen >= 0.5 ? 0 : numGen >= 0.20 ? 1 : 2; rewardPos =
-		 * RandomUtility.getRandom(rewards2[rewardGrade].length-1);
-		 * player.getInventory().delete(6199, 1);
-		 * player.getInventory().add(rewards2[rewardGrade][rewardPos],
-		 * 1).refreshItems(); break;
-		 **/
-		case 15501:
-			player.setLegendary(false);
-			player.setMbox1(false);
-			player.setMbox2(false);
-			player.setMbox3(false);
-			player.setMbox4(false);
-			player.setMbox5(true);
-			player.getMysteryBox().openInterface();
-			break;
+
 		case 11882:
 			player.getInventory().delete(11882, 1);
 			player.getInventory().add(2595, 1).refreshItems();
@@ -1675,60 +1636,66 @@ public class ItemActionPacketListener implements PacketListener {
 		case 12926:
 			player.getBlowpipeLoading().handleCheckBlowpipe();
 			break;
-		case 6199:
-			player.setLegendary(false);
-			player.setMbox1(false);
-			player.setMbox2(false);
-			player.setMbox3(false);
-			player.setMbox4(false);
-			player.setMbox5(false);
-			player.getMysteryBox().openInterface();
-			break;
-		case 15369:
-			player.setMbox1(true);
-			player.setMbox2(false);
-			player.setMbox3(false);
-			player.setMbox4(false);
-			player.setMbox5(false);
-			player.setLegendary(false);
-			player.getMysteryBox().openInterface();
-			break;
-		case 15370:
-			player.setMbox1(false);
-			player.setMbox2(true);
-			player.setMbox3(false);
-			player.setMbox4(false);
-			player.setMbox5(false);
-			player.setLegendary(false);
-			player.getMysteryBox().openInterface();
-			break;
-		case 15371:
-			player.setMbox1(false);
-			player.setMbox2(false);
-			player.setMbox3(true);
-			player.setMbox4(false);
-			player.setMbox5(false);
-			player.setLegendary(false);
-			player.getMysteryBox().openInterface();
-			break;
-		case 15372:
-			player.setMbox1(false);
-			player.setMbox2(false);
-			player.setMbox3(false);
-			player.setMbox4(true);
-			player.setMbox5(false);
-			player.setLegendary(false);
-			player.getMysteryBox().openInterface();
-			break;
+			/**
+			 *
+			 * Open all - Mystery Box's
+			 * @Author oogle
+			 *
+			 */
+			case 6199:
+				int[] common = { 19721,19722,19723,19734,19736,19468,18363,15398,15418};
+				int[] uncommon = { 9006,3941,3974,18392,4799,4800,4801 };
+				int[] veryUncommon = { 15012,1499,3951,5079,5187,5186,3316,3931,14559,6583 };
+				player.getMysteryBoxOpener().setOpenBox(6199);
+				player.getMysteryBoxOpener().display(6199, "Advanced Box", common, uncommon, veryUncommon);
+				player.getMysteryBoxOpener().openAll(player.getMysteryBoxOpener().getOpenBox());
+				ScavengeGain.MysteryBox(player);
+				break;
 		case 15373:
-			player.setLegendary(true);
-			player.setMbox1(false);
-			player.setMbox2(false);
-			player.setMbox3(false);
-			player.setMbox4(false);
-			player.setMbox5(false);
-			player.getMysteryBox().openInterface();
+			int[] common2 = { 2577, 902, 903, 904, 905,3082 };
+			int[] uncommon2 = {2577, 902, 903, 904, 905,3082, 19892,3956,3928,17908,17909,3932,4775 };
+			int[] veryUncommon2 = { 20016,20017,20018,20021,20022,17911,19892,3956,3928,17908,17909,3932,4775, 19137, 19138, 19139, 18940,18942, 18941 };
+			player.getMysteryBoxOpener().setOpenBox(15373);
+			player.getMysteryBoxOpener().display(15373, "Starter Box", common2, uncommon2, veryUncommon2);
+			player.getMysteryBoxOpener().openAll(player.getMysteryBoxOpener().getOpenBox());
+			ScavengeGain.MysteryBox(player);
 			break;
+
+			case 4635:
+				int[] badRewards = { 3459, 15398,18782};
+				int[] goodRewards = { 15357, 15361,15362 };
+				int[] bestRewards = { 15358, 15359, 15363, 19890,3317,4780, 19935, 19936,19140};
+				player.getMysteryBoxOpener().setOpenBox(4635);
+				player.getMysteryBoxOpener().display(4635, "Infernal Box", badRewards, goodRewards, bestRewards);
+				player.getMysteryBoxOpener().openAll(player.getMysteryBoxOpener().getOpenBox());
+				ScavengeGain.MysteryBox(player);
+				break;
+
+			case 3824:
+				int[] badRewards2 = {15373,18950};
+				int[] goodRewards2 = {18380,18392,18381,18382,18383,18384,18385,3937,3938,3939,3944,3945,3946,3947,3948};
+				int[] bestRewards2 = {20054,19140,5185,5163,19886};
+				player.getMysteryBoxOpener().setOpenBox(3824);
+				player.getMysteryBoxOpener().display(3824, "Vote Box", badRewards2, goodRewards2, bestRewards2);
+				player.getMysteryBoxOpener().openAll(player.getMysteryBoxOpener().getOpenBox());
+				ScavengeGain.MysteryBox(player);
+				break;
+
+			case 15375:
+				ChanceBox.openAll(player, 15375);
+				ScavengeGain.MysteryBox(player);
+				break;
+
+			case 13997:
+				EventBox.openAll(player, 13997);
+				ScavengeGain.MysteryBox(player);
+				break;
+
+			case 15374:
+				SupremeMysteryBox.openAll(player, 15374);
+				ScavengeGain.MysteryBox(player);
+				break;
+
 			case 19670:
 			if (player.getInventory().contains(19670) && player.getClickDelay().elapsed(700)) {
 				int amt = player.getInventory().getAmount(19670);
@@ -1761,6 +1728,7 @@ public class ItemActionPacketListener implements PacketListener {
 			DialogueManager.start(player, 103);
 			player.setDialogueActionId(65);
 			break;
+
 		case 13281:
 		case 13282:
 		case 13283:
