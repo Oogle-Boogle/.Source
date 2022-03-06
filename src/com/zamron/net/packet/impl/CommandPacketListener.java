@@ -2798,6 +2798,7 @@ public class CommandPacketListener implements PacketListener {
                     toggle = "Disabled";
                 }
                 World.sendMessageNonDiscord("<img=12>@blu@[DOUBLE DONATIONS] "+player.getUsername() + " has "+toggle+" double donations!");
+                DiscordMessenger.sendDonationDeals("[DOUBLE DONATIONS] " +player.getUsername()+ " has " +toggle+ " double donations!");
                 return;
             }
             case "doublexp": {

@@ -143,7 +143,6 @@ public class ObjectActionPacketListener implements PacketListener {
 			public void execute() {
 				player.setPositionToFace(gameObject.getPosition());
 
-
 				if(player.getRegionInstance() != null) {
 					Construction.handleFifthObjectClick(x, y, id, player);
 					

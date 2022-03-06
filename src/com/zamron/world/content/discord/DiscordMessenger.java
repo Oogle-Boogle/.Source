@@ -25,6 +25,40 @@ public class DiscordMessenger extends JSONObject {
     private static String inGameMessages = "https://discord.com/api/webhooks/934445397479407666/eHq4TKOb-uLrFWLaTCnQG09Mern9uIDN60ibJKTf_3nivSZ76u_hjiOnPae4pGmCfic3";
     private static String bugChannel = "https://discord.com/api/webhooks/934446741925789697/kPq7zGjLUq_ytttBgls2YiJ9VM6rOhjCMqzAQkNzhWl8u6G5A5SWWTXAf_wIsVggCoSV";
     private static String generalChat = "https://discord.com/api/webhooks/934446836276658238/4vXggZq6L-ZsCEM9gQuI5lvoQLTiKGW9zOYyMxc15YqlWMIVARw5zyN8wBQw_0Hf-Swv";
+    private static String donationDeals = "https://discord.com/api/webhooks/950003563650744331/IRVhYCx_sTH-LtXiRVOjRDNCWNCmNrQp3OLWUtzRNdy61BIwHj_uLcUqKb74rA4pSruK";
+
+
+    public static void sendDonationDeals(String msg) {
+        if (GameSettings.DEVELOPERSERVER) {
+            return;
+        }
+        try {
+
+            String webhook = donationDeals;
+
+            WebhookClient client = new WebhookClientBuilder()
+                    .withURI(new URI(webhook))
+                    .build(); // Create the webhook client
+
+            @SuppressWarnings("unused")
+            DiscordEmbed embed = new DiscordEmbed.Builder()
+                    .withTitle("Donation Deals") // The title of the embed element
+                    .withURL("https://zamron.net") // The URL of the embed element
+                    .withColor(Color.RED) // The color of the embed. You can leave this at null for no color
+                    .withDescription(msg) // The description of the embed object
+                    .build(); // Build the embed element
+
+            DiscordMessage message = new DiscordMessage.Builder("") // The content of the message
+                    .withEmbed(embed) // Add our embed object
+                    .withUsername("Donations") // Override the username of the bot
+                    .build(); // Build the message
+
+            client.sendPayload(message);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     public static void sendBug(String bug, Player player) {
         if (GameSettings.DEVELOPERSERVER) {

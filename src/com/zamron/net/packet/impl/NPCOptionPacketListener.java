@@ -113,7 +113,7 @@ public class NPCOptionPacketListener implements PacketListener {
                         break;
 
                     case 2358:
-                        if (player.getNpcKills() < 250 && player.getRights() != PlayerRights.DEVELOPER) {
+                        if (player.getNpcKills() < 250) {
                             player.sendMessage("@red@You need 250 NPC kill count to create your own party.");
                             player.sendMessage("@red@You have " + player.getNpcKills() + " NPC kills.");
                             return;
