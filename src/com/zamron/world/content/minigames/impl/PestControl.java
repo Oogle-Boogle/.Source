@@ -748,7 +748,7 @@ public class PestControl {
 
 	}
 
-	public static final int WAIT_TIMER = 5;
+	public static final int WAIT_TIMER = 60;
 
 	public static int waitTimer = WAIT_TIMER;
 	private static NPC[] portals = new NPC[4];
