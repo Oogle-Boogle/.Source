@@ -11,6 +11,9 @@ import com.zamron.model.Item;
 
 public enum UpgradeData {
 
+	VOIDTOP(new Item(8839, 1), new Item(19785, 1), 50, 1),
+	VOIDLEG(new Item(8840, 1), new Item(19786, 1), 50, 1),
+
 	RINGOFOVL(new Item(19140, 1), new Item(19141, 1), 40, 50000),
 	RINGOFOVLX(new Item(19141, 1), new Item(19142, 1), 25, 100000),
 

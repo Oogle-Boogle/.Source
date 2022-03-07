@@ -42,6 +42,8 @@ import com.zamron.world.content.transportation.JewelryTeleporting;
 import com.zamron.world.content.upgrading.UpgradeData;
 import com.zamron.world.entity.impl.player.Player;
 
+import java.util.Arrays;
+
 public class ItemContainerActionPacketListener implements PacketListener {
 
 	/**
@@ -487,6 +489,14 @@ public class ItemContainerActionPacketListener implements PacketListener {
 			case 11126:
 				player.getPacketSender().sendMessage("Your bracelet has run out of charges.");
 				break;
+				case 19785:
+					int[] charges1 = player.getVoidTopChargers();
+					player.getPacketSender().sendMessage("You Elite void top has " + Arrays.toString(charges1)+ "/1500 left before it crumbles.");
+					break;
+				case 19786:
+					int[] charges2 = player.getVoidLegChargers();
+					player.getPacketSender().sendMessage("You Elite void legs has " + Arrays.toString(charges2)+ "/1500 left before it crumbles.");
+					break;
 			case 11283:
 			case 11613:
 				int charges = player.getDfsCharges();
