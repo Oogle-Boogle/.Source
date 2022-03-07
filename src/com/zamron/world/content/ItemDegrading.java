@@ -30,6 +30,7 @@ public class ItemDegrading {
 	}
 
 	public static int getAndIncrementCharge(Player p, DegradingItem d, boolean reset) {
+		int index = d.ordinal() - 1;
 		switch(d) {
 		case BRAWLING_GLOVES_COOKING:
 		case BRAWLING_GLOVES_FIREMAKING:
@@ -40,12 +41,23 @@ public class ItemDegrading {
 		case BRAWLING_GLOVES_SMITHING:
 		case BRAWLING_GLOVES_THIEVING:
 		case BRAWLING_GLOVES_WOODCUTTING:
-			int index = d.ordinal() - 1;
 			if(reset) {
 				return p.getBrawlerChargers()[index] = 0;
 			} else {
 				return p.getBrawlerChargers()[index]++;
 			}
+			case ELITE_VOID_TOP:
+				if (reset) {
+					return p.getVoidTopChargers()[index] = 0;
+				} else {
+					return p.getVoidTopChargers()[index]++;
+				}
+			case ELITE_VOID_LEG:
+				if (reset) {
+					return p.getVoidLegChargers()[index] = 0;
+				} else {
+					return p.getVoidLegChargers()[index]++;
+				}
 		case RING_OF_RECOIL:
 			if(reset) {
 				return p.setRecoilCharges(0);
@@ -65,6 +77,10 @@ public class ItemDegrading {
 		 * Recoil
 		 */
 		RING_OF_RECOIL(2550, 2550, Equipment.RING_SLOT, 100),
+
+		//Elite Void
+		ELITE_VOID_TOP(19785, 19785, Equipment.BODY_SLOT, 1500),
+		ELITE_VOID_LEG(19786, 19786, Equipment.LEG_SLOT, 1500),
 		/*
 		 * Statius's equipment
 		 *

@@ -678,8 +678,8 @@ public class Locations {
 		PEST_CONTROL_GAME(new int[] { 2624, 2690 }, new int[] { 2550, 2619 }, true, true, true, false, true, true) {
 			@Override
 			public void process(Player player) {
-				if (player.getWalkableInterfaceId() != 21100)
-					player.sendParallellInterfaceVisibility(21100, true);
+//				if (player.getWalkableInterfaceId() != 21100)
+//					player.sendParallellInterfaceVisibility(21100, true);
 			}
 
 			@Override

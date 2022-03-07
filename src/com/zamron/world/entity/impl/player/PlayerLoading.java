@@ -272,8 +272,8 @@ public class PlayerLoading {
 				player.getPointsHandler().setAchievementPoints(reader.get("achievement-points").getAsInt(), false);
 			}
 
-			if (reader.has("Custom Pest Control Points")) {
-				player.getPointsHandler().setCustompestcontrolpoints(reader.get("custom pest control points").getAsInt(), false);
+			if (reader.has("custom-pest-control-points")) {
+				player.getPointsHandler().setCustompestcontrolpoints(reader.get("custom-pest-control-points").getAsInt(), false);
 			}
 
 			if (reader.has("loyalty-points")) {
@@ -658,6 +658,14 @@ public class PlayerLoading {
 
 			if (reader.has("brawler-deg")) {
 				player.setBrawlerCharges(builder.fromJson(reader.get("brawler-deg").getAsJsonArray(), int[].class));
+			}
+
+			if (reader.has("void-top-deg")) {
+				player.setVoidTopCharges(builder.fromJson(reader.get("void-top-deg").getAsJsonArray(), int[].class));
+			}
+
+			if (reader.has("void-leg-deg")) {
+				player.setVoidLegCharges(builder.fromJson(reader.get("void-leg-deg").getAsJsonArray(), int[].class));
 			}
 
 			if (reader.has("killed-players")) {

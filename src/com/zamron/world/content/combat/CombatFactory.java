@@ -649,9 +649,11 @@ public final class CombatFactory {
 		}
 
 		if (EquipmentBonus.wearingVoid(player, CombatType.MELEE)) {
-			otherBonusMultiplier = 1.1;
+			otherBonusMultiplier = 1.5;
 		}
-
+		if (EquipmentBonus.wearingEliteVoid(player, CombatType.MELEE)) {
+			otherBonusMultiplier = 2.5;
+		}
 
 
 
@@ -686,11 +688,22 @@ public final class CombatFactory {
 
 			/** SLAYER HELMET **/
 			if(npc.getId() == player.getSlayer().getSlayerTask().getNpcId()) {
-				if(player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 13263) {
+				if(player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 19101) {
 					maxHit *= 1.35;
 				}
 			}
-
+			//Dragon slayer helmet
+			if (npc.getId() == player.getSlayer().getSlayerTask().getNpcId()) {
+				if (player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 936) {
+					maxHit *= 1.85;
+			}
+			}
+			//Dragon slayer helm cyan
+			if (npc.getId() == player.getSlayer().getSlayerTask().getNpcId()) {
+				if (player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 3949) {
+					maxHit *= 1.85;
+				}
+			}
 		}
 
 		return maxHit;
@@ -735,9 +748,11 @@ public final class CombatFactory {
 		double baseDamage = (13 + effectiveRangeDamage + (rangedStrength / 8) + ((effectiveRangeDamage * rangedStrength) / 65)) / 11;
 
 		if (EquipmentBonus.wearingVoid(player, CombatType.RANGED)) {
-			otherBonusMultiplier = 1.1;
+			otherBonusMultiplier = 1.5;
 		}
-
+		if (EquipmentBonus.wearingEliteVoid(player, CombatType.RANGED)) {
+			otherBonusMultiplier = 2.5;
+		}
 
 		if (player.isSpecialActivated()) {
 			specialMultiplier = player.getCombatSpecial().getStrengthBonus();
@@ -756,8 +771,20 @@ public final class CombatFactory {
 			}
 			/** SLAYER HELMET **/
 			if(npc.getId() == player.getSlayer().getSlayerTask().getNpcId()) {
-				if(player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 13263) {
-					maxHit *= 1.12;
+				if(player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 19101) {
+					maxHit *= 1.35;
+				}
+			}
+			//Dragon slayer helmet
+			if (npc.getId() == player.getSlayer().getSlayerTask().getNpcId()) {
+				if (player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 936) {
+					maxHit *= 1.85;
+				}
+			}
+			//Dragon slayer helm cyan
+			if (npc.getId() == player.getSlayer().getSlayerTask().getNpcId()) {
+				if (player.getEquipment().getItems()[Equipment.HEAD_SLOT].getId() == 3949) {
+					maxHit *= 1.85;
 				}
 			}
 
@@ -1288,6 +1315,23 @@ public final class CombatFactory {
 						recDamage = t2.getConstitution();
 					attacker.dealDamage(new Hit(recDamage, Hitmask.RED, CombatIcon.DEFLECT));
 					ItemDegrading.handleItemDegrading(t2, DegradingItem.RING_OF_RECOIL);
+				}
+
+				else if (t2.getEquipment().getItems()[Equipment.BODY_SLOT].getId() == 19785) {
+					int recDamage = (int) (damage * 10);
+					if (recDamage <= 0)
+						return;
+					if (recDamage >= 200)
+						recDamage = 200;
+						ItemDegrading.handleItemDegrading(t2, DegradingItem.ELITE_VOID_TOP);
+				}
+				else if (t2.getEquipment().getItems()[Equipment.LEG_SLOT].getId() == 19786) {
+					int recDamage = (int) (damage * 10);
+					if (recDamage <= 0)
+						return;
+					if (recDamage >= 200)
+						recDamage = 200;
+					ItemDegrading.handleItemDegrading(t2, DegradingItem.ELITE_VOID_LEG);
 				}
 
 				/** PHOENIX NECK **/

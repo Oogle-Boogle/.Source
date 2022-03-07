@@ -3675,13 +3675,69 @@
 	    },
 		 {
 	    "id":115,
-	    "name":"Custom Pest Control Store",
+	    "name":"Pest Control Store",
 	    "items":[
+          {
+            "id":14044,
+            "amount":1000
+          },
+          {
+            "id":14050,
+            "amount":1000
+          },
+          {
+            "id":11288,
+            "amount":1000
+          },
 	      {
-	        "id":10835,
+	        "id":8839,
 	        "amount":1000
-	      }
-	    ],
+	      },
+          {
+            "id":8840,
+            "amount":1000
+          },
+          {
+            "id":8841,
+            "amount":1000
+          },
+          {
+            "id":8842,
+            "amount":1000
+          },
+          {
+            "id":11663,
+            "amount":1000
+          },
+          {
+            "id":11664,
+            "amount":1000
+          },
+          {
+            "id":11665,
+            "amount":1000
+          },
+          {
+            "id":18891,
+            "amount":1000
+          },
+          {
+            "id":18889,
+            "amount":1000
+          },
+          {
+            "id":18890,
+            "amount":1000
+          },
+          {
+            "id": 19712,
+            "amount": 1000
+          },
+          {
+            "id":9083,
+            "amount":1000
+          }
+        ],
 	    "currency":-1
 	  },
   {

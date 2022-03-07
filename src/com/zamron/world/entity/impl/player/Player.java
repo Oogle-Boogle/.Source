@@ -2471,6 +2471,8 @@ public class Player extends Character {
 	private int[] ores = new int[2];
 	private int[] constructionCoords;
 	private int recoilCharges;
+	private int[] voidTopCharges = new int[1];
+	private int[] voidLegCharges = new int[1];
 	private int runEnergy = 100;
 	private int currentBankTab;
 	private int interfaceId, walkableInterfaceId, multiIcon;
@@ -4172,6 +4174,14 @@ public class Player extends Character {
 		this.constructionInterface = constructionInterface;
 	}
 
+	public int getRecoilCharges() {
+		return this.recoilCharges;
+	}
+
+	public int setRecoilCharges(int recoilCharges) {
+		return this.recoilCharges = recoilCharges;
+	}
+
 	public int[] getBrawlerChargers() {
 		return this.brawlerCharges;
 	}
@@ -4180,12 +4190,20 @@ public class Player extends Character {
 		this.brawlerCharges = brawlerCharges;
 	}
 
-	public int getRecoilCharges() {
-		return this.recoilCharges;
+	public int[] getVoidTopChargers() {
+		return this.voidTopCharges;
 	}
 
-	public int setRecoilCharges(int recoilCharges) {
-		return this.recoilCharges = recoilCharges;
+	public void setVoidTopCharges(int[] voidTopCharges) {
+		this.voidTopCharges = voidTopCharges;
+	}
+
+	public int[] getVoidLegChargers() {
+		return this.voidLegCharges;
+	}
+
+	public void setVoidLegCharges(int[] voidLegCharges) {
+		this.voidLegCharges = voidLegCharges;
 	}
 
 	public boolean voteMessageSent() {

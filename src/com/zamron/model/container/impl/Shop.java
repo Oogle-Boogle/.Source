@@ -1203,16 +1203,30 @@ public class Shop extends ItemContainer {
 				return new Object[] { 150, "Donation Points" };
 			} else if (shop == VOID_STORE) {
 				switch (item) {
-				case 10835:// Tax bag lol
-					return new Object[] { 5000000, "Custom Pest Control Points" };
+					case 9083:
+						return new Object[] {200, "Pest Control Points"};
 				case 14044:// Black Partyhat
 				case 14050:// Black Santa Hat
 				case 11288:// Black hween
-					return new Object[] { 50, "Custom Pest Control Points" };
-				case 11858:// 3rd Melee
-					return new Object[] { 75, "Custom Pest Control Points" };
+					return new Object[] { 100, "Pest Control Points" };
+					case 8839:
+					case 8840:
+					case 8841:
+						return new Object[] {250, "Pest Control Points"};
+					case 11664:
+					case 11665:
+					case 11663:
+						return new Object[] {200, "Pest Control Points"};
+					case 8842:
+						return new Object[] {150, "Pest Control Points"};
+					case 18889:
+					case 18891:
+						return new Object[] {400, "Pest Control Points"};
+					case 18890:
+					case 19712:
+						return new Object[] {300, "Pest Control Points"};
 				}
-				return new Object[] { 100, "Custom Pest Control Points" };
+				return new Object[] { 100, "Pest Control Points" };
 			} else if (shop == AGILITY_TICKET_STORE) {
 				switch (item) {
 				case 14936:

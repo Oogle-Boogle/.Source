@@ -463,7 +463,7 @@ public class NPCOptionPacketListener implements PacketListener {
                     case 3789:
                         ShopManager.getShops().get(115).open(player);
                         player.sendMessage("<img=12>You currently have @red@"
-                                + player.getPointsHandler().getCustompestcontrolpoints() + " Custom Pest Control Points!");
+                                + player.getPointsHandler().getCustompestcontrolpoints() + " Pest Control Points!");
                         break;
                     case 2948:
                         DialogueManager.start(player, WarriorsGuild.warriorsGuildDialogue(player));

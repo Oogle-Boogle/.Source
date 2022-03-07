@@ -110,6 +110,12 @@ public class Equipment extends ItemContainer {
 	 */
 	//public static final int AURA_SLOT = 15;
 
+	public boolean wearingSeal() {
+	int necklace = getPlayer().getEquipment().getItems()[AMULET_SLOT].getId();
+	boolean seal = necklace == 9083;
+	return seal;
+	}
+
 
 	public boolean wearingNexAmours() {
 		int head = getPlayer().getEquipment().getItems()[HEAD_SLOT].getId();

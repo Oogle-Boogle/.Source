@@ -23,7 +23,7 @@ public class PointsHandler {
 
 
 		p.getPacketSender().sendString(26702, "@or2@Prestige Points: @gre@" + prestigePoints);
-		p.getPacketSender().sendString(26706, "@or2@Custom Pest Control Points: @gre@ " + custompestcontrolpoints);
+		p.getPacketSender().sendString(26706, "@or2@Pest Control Points: @gre@ " + custompestcontrolpoints);
 		p.getPacketSender().sendString(26701, "@or2@Loyalty Points: @gre@" + (int) loyaltyPoints);
 		p.getPacketSender().sendString(26707, "@or2@Bossing Points: @gre@ " + p.getBossPoints());
 		p.getPacketSender().sendString(26709, "@or2@Among Points: @gre@ " + amongPoints);

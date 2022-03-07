@@ -185,7 +185,7 @@ public class PlayerPanel {
  "@whi@-@gre@Raid Points: ",
  "@bla@*@whi@"	+player.getPointsHandler().getRaidPoints(),
 
- "@whi@-@gre@Custom pest control points: ",
+ "@whi@-@gre@Pest Control points: ",
  "@bla@*@whi@"	+player.getPointsHandler().getCustompestcontrolpoints(),
 
  "@whi@-@gre@Dung. Tokens: ",

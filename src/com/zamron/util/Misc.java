@@ -58,7 +58,7 @@ public class Misc {
 				string = string.replaceAll("<img="+i+">", "");
 			}
 		}*/
-
+		string = string.replaceAll("@pup@", "<col=CE0CED>");
 		string = string.replaceAll("@red@", "");
 		string = string.replaceAll("@gre@", "");
 		string = string.replaceAll("@blu@", "");

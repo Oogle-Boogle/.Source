@@ -245,6 +245,8 @@ public class PlayerSaving {
 			object.addProperty("double-slay-xp", player.getSlayer().doubleSlayerXP);
 			object.addProperty("recoil-deg", new Integer(player.getRecoilCharges()));
 			object.add("brawler-deg", builder.toJsonTree(player.getBrawlerChargers()));
+			object.add("void-top-deg", builder.toJsonTree(player.getVoidTopChargers()));
+			object.add("void-leg-deg", builder.toJsonTree(player.getVoidLegChargers()));
 			object.add("killed-players", builder.toJsonTree(player.getPlayerKillingAttributes().getKilledPlayers()));
 			object.add("killed-gods", builder.toJsonTree(player.getAchievementAttributes().getGodsKilled()));
 			object.add("blocked-collectors-items", builder.toJsonTree(player.getBlockedCollectorsList()));
