@@ -74,7 +74,6 @@ public class PlayerDeathTask extends Task {
 				//this.death = getDeathNpc(player);
 				break;
 			case 1:
-				
 					if(player.inLMS) {
 						Player lmsKiller = player.getCombatBuilder().getKiller(true);
 						int amount = lmsKiller.getLMSKillStreak() >= 3 ? 5 : 3; 

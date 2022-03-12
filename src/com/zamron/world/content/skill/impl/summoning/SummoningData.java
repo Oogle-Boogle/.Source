@@ -54,6 +54,7 @@ public class SummoningData {
 	public static int calculateScrolls(Player player) {
 		if(player.getSummoning().getFamiliar() != null) {
 			int scrollId = FamiliarData.forNPCId(player.getSummoning().getFamiliar().getSummonNpc().getId()).scroll;
+			System.out.println("Did it reach here ??");
 			return player.getInventory().getAmount(scrollId);
 		}
 		return 0;
@@ -69,6 +70,7 @@ public class SummoningData {
 				}
 				boolean renew = player.getSummoning().getFamiliar() != null && FamiliarData.forNPCId(player.getSummoning().getFamiliar().getSummonNpc().getId()).getPouchId() == item;
 				player.getSummoning().summon(familiar, renew, false);
+				System.out.print("Reached?");
 				return true;
 			}
 		} else if(action == 3) {

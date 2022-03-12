@@ -143,7 +143,7 @@ public class ScratchCard {
 		int item = items[random.nextInt(items.length)];
 		int item1 = BonusRewards[random.nextInt(BonusRewards.length)];
 			player.getInventory().add(new Item(item1, 8500));
-			player.getPacketSender().sendItemOnInterface(39332, item1, 1, 1);
+			player.getPacketSender().sendItemOnInterface(39332, item1, 1, 8500);
 		}
 
 	/**

@@ -180,7 +180,7 @@ public class DwarfMultiCannon {
 			return;
 		}
 		if(cannon.getCannonballs() <= 15) {
-			int playerCannonballs = c.getInventory().getAmount(2) > 30 ? 30: c.getInventory().getAmount(2);
+			int playerCannonballs = c.getInventory().getAmount(2) > 60 ? 60: c.getInventory().getAmount(2);
 			int cannonballsToAdd = playerCannonballs - cannon.getCannonballs();
 			if(playerCannonballs < 1) {
 				c.getPacketSender().sendMessage("You do not have any cannonballs in your inventory to fire the cannon with.");

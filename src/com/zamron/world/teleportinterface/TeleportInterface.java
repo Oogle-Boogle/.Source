@@ -338,7 +338,7 @@ public class TeleportInterface {
 				new int[] { 3111, 5544, 0 }),
 
 		DARKRANGER(50609, "Dark Ranger (HARD)", "THIS NPC Spawns", "Every Hour", "Multiple People ", "May be Required!", "", 299,
-				new int[] { 3111, 5544, 0 }),
+				new int[] { 2222, 5099, 0 }),
 
 		SKILLINGBOSS(50610, "Skilling Boss", "This NPC gives", "EXP in the", "selected skill!", "KILL ME!", "", 6306,
 				new int[] { 2604, 3123, 0 });

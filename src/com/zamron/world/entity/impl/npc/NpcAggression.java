@@ -31,6 +31,7 @@ public final class NpcAggression {
 
 		// Loop through all of the aggressive npcs.
 		for (NPC npc : player.getLocalNpcs()) {
+
 			/**
 			 *
 			 * Book that makes NPC's aggressive towards you
@@ -39,10 +40,9 @@ public final class NpcAggression {
 			if (!npc.getDefinition().isAttackable()) {
 				return;
 			} else if (player.getInventory().contains(9078, 1) && player.getKcSystem().meetsRequirements(player.getKcSystem().getData(npc.getId()))) {
-				//System.out.println("Targeted the NPC and made it aggro.");
 				player.setTargeted(true);
 				npc.getCombatBuilder().attack(player);
-				player.getTolerance().reset();
+				continue;
 			}
 
 			if(npc == null || npc.getConstitution() <= 0 || !(dung && npc.getId() != 11226) && !npc.getDefinition().isAggressive()) {

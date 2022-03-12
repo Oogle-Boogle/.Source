@@ -17,7 +17,7 @@ public class MiningData {
 		Adamant(1271, 31, 629, 1.25),
 		Rune(1275, 41, 624, 1.3),
 		Dragon(15259, 61, 12188, 1.50),
-		Adze(13661, 80, 10226, 1.60),
+		Adze(13661, 80, 10226, 2.5),
 		Infernal(5080, 99, 12188, 5);
 
 		private int id, req, anim;

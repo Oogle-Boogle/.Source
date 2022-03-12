@@ -283,51 +283,51 @@ public class PestControl {
 			if(state != null && state.equals(PLAYING)) {
 				leave(p, false);
 				if (won && p.getMinigameAttributes().getPestControlAttributes().getDamageDealt() >= 35000) {
-					int points = SpecialEvents.getDay() == SpecialEvents.THURSDAY ? 3 : 0;
+					int points = SpecialEvents.getDay() == SpecialEvents.THURSDAY ? 2 : 0;
 					switch (p.getRights()) {
 						case DONATOR:
-							points *= 4;
-							break;
-						case SUPER_DONATOR:
 							points *= 5;
 							break;
-						case EXTREME_DONATOR:
-							points *= 6;
-							break;
-						case LEGENDARY_DONATOR:
+						case SUPER_DONATOR:
 							points *= 7;
 							break;
-						case UBER_DONATOR:
-							points *= 8;
-							break;
-						case DELUXE_DONATOR:
+						case EXTREME_DONATOR:
 							points *= 9;
 							break;
+						case LEGENDARY_DONATOR:
+							points *= 11;
+							break;
+						case UBER_DONATOR:
+							points *= 13;
+							break;
+						case DELUXE_DONATOR:
+							points *= 15;
+							break;
 						case VIP_DONATOR:
-							points *= 10;
+							points *= 18;
 							break;
 					}
 					switch (p.getSecondaryPlayerRights()) {
 						case DONATOR:
-							points *= 4;
-							break;
-						case SUPER_DONATOR:
 							points *= 5;
 							break;
-						case EXTREME_DONATOR:
-							points *= 6;
-							break;
-						case LEGENDARY_DONATOR:
+						case SUPER_DONATOR:
 							points *= 7;
 							break;
-						case UBER_DONATOR:
-							points *= 8;
-							break;
-						case DELUXE_DONATOR:
+						case EXTREME_DONATOR:
 							points *= 9;
 							break;
+						case LEGENDARY_DONATOR:
+							points *= 11;
+							break;
+						case UBER_DONATOR:
+							points *= 13;
+							break;
+						case DELUXE_DONATOR:
+							points *= 15;
+							break;
 						case VIP_DONATOR:
-							points *= 10;
+							points *= 18;
 							break;
 					}
 					p.getPointsHandler().setCustompestcontrolpoints(points, true);
@@ -339,45 +339,43 @@ public class PestControl {
 
 					}
 					if (p.getRights() == PlayerRights.DONATOR || p.getSecondaryPlayerRights() == SecondaryPlayerRights.DONATOR) {
-						p.getPointsHandler().setCustompestcontrolpoints(4, true);
-						p.getPacketSender().sendMessage("You've received 4 Pest Control Points and "+p.getSkillManager().getCombatLevel() * 80+" coins.");
-
-
-					}
-					if (p.getRights() == PlayerRights.SUPER_DONATOR || p.getSecondaryPlayerRights() == SecondaryPlayerRights.SUPER_DONATOR) {
 						p.getPointsHandler().setCustompestcontrolpoints(5, true);
 						p.getPacketSender().sendMessage("You've received 5 Pest Control Points and "+p.getSkillManager().getCombatLevel() * 80+" coins.");
 
 
 					}
-					if (p.getRights() == PlayerRights.EXTREME_DONATOR || p.getSecondaryPlayerRights() == SecondaryPlayerRights.EXTREME_DONATOR) {
-						p.getPointsHandler().setCustompestcontrolpoints(6, true);
-						p.getPacketSender().sendMessage("You've received 6 Pest Control Points and "+p.getSkillManager().getCombatLevel() * 80+" coins.");
-
-
-					}
-					if (p.getRights() == PlayerRights.LEGENDARY_DONATOR || p.getSecondaryPlayerRights() == SecondaryPlayerRights.LEGENDARY_DONATOR) {
+					if (p.getRights() == PlayerRights.SUPER_DONATOR || p.getSecondaryPlayerRights() == SecondaryPlayerRights.SUPER_DONATOR) {
 						p.getPointsHandler().setCustompestcontrolpoints(7, true);
 						p.getPacketSender().sendMessage("You've received 7 Pest Control Points and "+p.getSkillManager().getCombatLevel() * 80+" coins.");
 
 
 					}
-					if (p.getRights() == PlayerRights.DELUXE_DONATOR || p.getSecondaryPlayerRights() == SecondaryPlayerRights.DELUXE_DONATOR) {
-						p.getPointsHandler().setCustompestcontrolpoints(8, true);
-						p.getPacketSender().sendMessage("You've received 8 Pest Control Points and "+p.getSkillManager().getCombatLevel() * 80+" coins.");
-
-
-					}
-					
-					if (p.getRights() == PlayerRights.UBER_DONATOR || p.getSecondaryPlayerRights() == SecondaryPlayerRights.UBER_DONATOR) {
+					if (p.getRights() == PlayerRights.EXTREME_DONATOR || p.getSecondaryPlayerRights() == SecondaryPlayerRights.EXTREME_DONATOR) {
 						p.getPointsHandler().setCustompestcontrolpoints(9, true);
 						p.getPacketSender().sendMessage("You've received 9 Pest Control Points and "+p.getSkillManager().getCombatLevel() * 80+" coins.");
 
 
 					}
+					if (p.getRights() == PlayerRights.LEGENDARY_DONATOR || p.getSecondaryPlayerRights() == SecondaryPlayerRights.LEGENDARY_DONATOR) {
+						p.getPointsHandler().setCustompestcontrolpoints(11, true);
+						p.getPacketSender().sendMessage("You've received 11 Pest Control Points and "+p.getSkillManager().getCombatLevel() * 80+" coins.");
+
+
+					}
+					if (p.getRights() == PlayerRights.UBER_DONATOR || p.getSecondaryPlayerRights() == SecondaryPlayerRights.UBER_DONATOR) {
+						p.getPointsHandler().setCustompestcontrolpoints(13, true);
+						p.getPacketSender().sendMessage("You've received 13 Pest Control Points and "+p.getSkillManager().getCombatLevel() * 80+" coins.");
+					}
+
+					if (p.getRights() == PlayerRights.DELUXE_DONATOR || p.getSecondaryPlayerRights() == SecondaryPlayerRights.DELUXE_DONATOR) {
+						p.getPointsHandler().setCustompestcontrolpoints(15, true);
+						p.getPacketSender().sendMessage("You've received 15 Pest Control Points and "+p.getSkillManager().getCombatLevel() * 80+" coins.");
+
+
+					}
 					if (p.getRights() == PlayerRights.VIP_DONATOR || p.getSecondaryPlayerRights() == SecondaryPlayerRights.VIP_DONATOR) {
-						p.getPointsHandler().setCustompestcontrolpoints(10, true);
-						p.getPacketSender().sendMessage("You've received 10 Pest Control Points and "+p.getSkillManager().getCombatLevel() * 80+" coins.");
+						p.getPointsHandler().setCustompestcontrolpoints(18, true);
+						p.getPacketSender().sendMessage("You've received 18 Pest Control Points and "+p.getSkillManager().getCombatLevel() * 80+" coins.");
 					}
 					if (p.getEquipment().wearingSeal()) {
 						int extraPoints = 0;
@@ -386,48 +384,48 @@ public class PestControl {
 								extraPoints += 3;
 								break;
 							case DONATOR:
-								extraPoints += 4;
-								break;
-							case SUPER_DONATOR:
 								extraPoints += 5;
 								break;
-							case EXTREME_DONATOR:
-								extraPoints += 6;
-								break;
-							case LEGENDARY_DONATOR:
+							case SUPER_DONATOR:
 								extraPoints += 7;
 								break;
-							case UBER_DONATOR:
-								extraPoints += 8;
-								break;
-							case DELUXE_DONATOR:
+							case EXTREME_DONATOR:
 								extraPoints += 9;
 								break;
+							case LEGENDARY_DONATOR:
+								extraPoints += 11;
+								break;
+							case UBER_DONATOR:
+								extraPoints += 13;
+								break;
+							case DELUXE_DONATOR:
+								extraPoints += 15;
+								break;
 							case VIP_DONATOR:
-								extraPoints += 10;
+								extraPoints += 18;
 								break;
 						}
 						switch (p.getSecondaryPlayerRights()) {
 							case DONATOR:
-								extraPoints += 4;
-								break;
-							case SUPER_DONATOR:
 								extraPoints += 5;
 								break;
-							case EXTREME_DONATOR:
-								extraPoints += 6;
-								break;
-							case LEGENDARY_DONATOR:
+							case SUPER_DONATOR:
 								extraPoints += 7;
 								break;
-							case UBER_DONATOR:
-								extraPoints += 8;
-								break;
-							case DELUXE_DONATOR:
+							case EXTREME_DONATOR:
 								extraPoints += 9;
 								break;
+							case LEGENDARY_DONATOR:
+								extraPoints += 11;
+								break;
+							case UBER_DONATOR:
+								extraPoints += 13;
+								break;
+							case DELUXE_DONATOR:
+								extraPoints += 15;
+								break;
 							case VIP_DONATOR:
-								extraPoints += 10;
+								extraPoints += 18;
 								break;
 						}
 						p.getPointsHandler().setCustompestcontrolpoints(extraPoints, true);

@@ -903,7 +903,7 @@ public class Shop extends ItemContainer {
 					case 12847:
 						return new Object[] {3, "Voting Points"};
 					case 9078: //Agg book
-						return new Object[] {150, "Voting Points"};
+						return new Object[] {100, "Voting Points"};
 					case 15374: //Supreme box
 						return new Object[] {5, "Voting Points"};
 					case 19935: //5 bond
@@ -1133,9 +1133,14 @@ public class Shop extends ItemContainer {
 				
 			} else if (shop == BOSS_POINT_STORE) {
 				switch (item) {
+					case 6:
+					case 8:
+					case 10:
+					case 12:
+						return new Object[] {2250, "Boss Points"};
 					case 19935:
 					case 12848:
-						return new Object[]{12500, "Boss Points"};
+						return new Object[]{7500, "Boss Points"};
 					case 3810:
 					case 3811:
 					case 3812:

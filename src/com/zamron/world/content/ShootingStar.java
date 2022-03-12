@@ -75,11 +75,11 @@ public class ShootingStar {
 				World.getPlayers().forEach(p -> p.getPacketSender().sendString(26623, "@or2@Crashed star: @gre@"+ShootingStar.CRASHED_STAR.getStarLocation().playerPanelFrame+""));
 				timer.reset();
 			}
-		} else {
+		/**} else {
 			if(CRASHED_STAR.starObject.getPickAmount() >= MAXIMUM_MINING_AMOUNT) {
 				despawn(false);
 				timer.reset();
-			}
+			}**/
 		}
 	}
 

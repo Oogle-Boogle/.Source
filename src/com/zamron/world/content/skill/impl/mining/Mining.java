@@ -144,9 +144,10 @@ public class Mining {
 										oreRespawn(player, oreObject, o);
 									} else {
 										if (oreObject.getId() == 38660) {
-											if (ShootingStar.CRASHED_STAR == null
+											/**if (ShootingStar.CRASHED_STAR == null
 													|| ShootingStar.CRASHED_STAR.getStarObject()
-															.getPickAmount() >= ShootingStar.MAXIMUM_MINING_AMOUNT) {
+															.getPickAmount() >= ShootingStar.MAXIMUM_MINING_AMOUNT) {**/
+											if (ShootingStar.CRASHED_STAR == null) {
 												player.getPacketSender().sendClientRightClickRemoval();
 												player.getSkillManager().stopSkilling();
 												return;

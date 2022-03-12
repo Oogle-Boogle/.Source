@@ -456,7 +456,9 @@ public class NPCDeathTask extends Task {
 
 						if (killer.getSummoning() != null && killer.getSummoning().getFamiliar() != null
 								&& killer.getSummoning().getFamiliar().getSummonNpc().getId() == 3032) {
-							killer.incrementNPCKills(1);
+							//killer.incrementNPCKills(1);
+							killer.incrementNPCKills(+1);
+							System.out.println("Added extra kill for jad pet");
 						}
 
 						if (npc.getId() == 6306) {

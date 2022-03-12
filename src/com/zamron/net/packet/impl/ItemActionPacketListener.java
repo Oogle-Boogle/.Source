@@ -19,6 +19,7 @@ import com.zamron.model.container.impl.Shop.ShopManager;
 import com.zamron.model.PlayerRights;
 import com.zamron.model.Position;
 import com.zamron.model.Skill;
+import com.zamron.model.input.impl.ChangePassword;
 import com.zamron.model.input.impl.ChangeUsername;
 import com.zamron.net.packet.Packet;
 import com.zamron.net.packet.PacketListener;
@@ -173,9 +174,9 @@ public class ItemActionPacketListener implements PacketListener {
 		switch (itemId) {
 
 			case 18343:
-				//player.getPacketSender().sendEnterInputPrompt("What would you like to change your username to?");
 				//player.setInputHandling(new ChangeUsername());
-				player.getPacketSender().sendMessage("Currently being worked on. Hand this to Oogle for a name change.");
+				//player.getPacketSender().sendEnterInputPrompt("What would you like to change your username to?");
+				player.getPacketSender().sendMessage("Currently disabled. Hand this scroll into Oogle for username change.");
 				break;
 
 			case 15357:
