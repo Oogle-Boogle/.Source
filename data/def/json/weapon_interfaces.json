@@ -14,6 +14,21 @@
     "item-id": 19008,
     "interface": "FASTSPEED1"
   },
+  {
+    "hash": 5,
+    "item-id": 5,
+    "interface": "SWORD"
+  },
+  {
+    "hash": 22205,
+    "item-id": 22205,
+    "interface": "HALBERD"
+  },
+  {
+    "hash": 22207,
+    "item-id": 22207,
+    "interface": "HALBERD"
+  },
     {
     "hash": 7682,
     "item-id": 7682,
